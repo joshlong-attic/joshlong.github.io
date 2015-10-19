@@ -23,4 +23,6 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin source
-git subtree push  --prefix=output git@github.com:joshlong/joshlong.github.io.git master
+git subtree push  --prefix=output git@github.com:joshlong/blawg-content.git gh-pages
+
+echo "the page is available now as http://joshlong.github.io/blawg-content"
