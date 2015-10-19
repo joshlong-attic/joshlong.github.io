@@ -5,10 +5,13 @@ echo -e "deploying updates to Github.."
 # Build the project.
 rm -rf output
 jbake
-#cp CNAME output/CNAME
-#git add output/CNAME
-#git commit -a -m "adding CNAME"
-git add output 
+
+git add output
+
+cp CNAME output/CNAME
+git add output/CNAME
+git commit -a -m "adding CNAME"
+
 git add -A
 
 # Commit changes.
