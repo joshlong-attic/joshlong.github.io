@@ -8,9 +8,9 @@ jbake
 
 git add output
 
-cp CNAME output/CNAME
-git add output/CNAME
-git commit -a -m "adding CNAME"
+# cp CNAME output/CNAME
+# git add output/CNAME
+# git commit -a -m "adding CNAME"
 
 git add -A
 
