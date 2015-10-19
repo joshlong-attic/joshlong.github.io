@@ -40,14 +40,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../../">JBake</a>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../about.html">About</a></li>
-            <li><a href="../../feed.xml">Subscribe</a></li>
-            <li class="dropdown">
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
@@ -58,12 +62,13 @@
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
+            </li>-->
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
-    <div class="container">	
+    <div class="container">
+	
 	<div class="page-header">
 		<h1>Data Integration, Stream Processing and Spring XD</h1>
 	</div>
@@ -83,7 +88,7 @@
 
 <p>It&#39;s a very vibrant field. I like the way <a href="https://twitter.com/medriscoll">Michael E. Driscoll (@medriscoll)</a>, CEO at Metamarkets, put it: </p>
 
-<p><img src = "/media/18757" /></p>
+<p><img src = "media/18757" /></p>
 
 <p><a href="http://projects.spring.io/spring-integration">Spring Integration</a> makes it dead simple to integrate with various messaging systems (JMS, AMQP, STOMP, MQTT, websockets, Twitter, Kafka, etc.)   to build <a href="http://wikipedia.org/wiki/pipe-and-filter">pipe-and-filter</a> architectures. Its API elements mirror the patterns of the same name in Gregor Hohpe and Bobby Woolf&#39;s canonical tome on the subject,  <a href="http://www.eaipatterns.com/"><em>Enterprise Integration Patterns</em></a>.  In Spring Integration, <code>Message</code>s flow from one component - a splitter, or <em>router</em>, an <em>aggregator</em>, a <em>transformer</em>, etc. - along <em>channels</em>. Components are decoupled in that they communicate only through <code>Message</code>s. <code>Message</code>s in turn have headers - a map of metadata about the payload - and a payload. </p>
 
@@ -95,7 +100,7 @@
 
 <p>To do this right, you need  data processing support (extraction, transformation, and loading) and a  event- and messaging-centric programming model to stitch together otherwise decoupled components in  distributed, messaging-centric workflows. This is where <a href="http://projects.spring.io/spring-xd"><strong>Spring XD</strong></a> comes in. Spring XD is a new project in the stream processing space. It builds on the strengths of <a href="http://projects.spring.io/Spring-Batch">Spring Batch</a>, <a href="http://projects.spring.io/Spring-Integration">Spring Integration</a>, and <a href="http://projects.spring.io/Spring-Data">Spring Data </a> and <a href="http://projects.spring.io/spring-hadoop/">Spring for Hadoop</a> to meet this new generation of challenges. </p>
 
-<p><img src = "/media/18756" /></p>
+<p><img src = "media/18756" /></p>
 
 <p>That picture&#39;s fairly marketitecture-ish, but it does a nice job of sort of visualizing the place of Spring XD in your architecture <em>and</em> in understanding it, you <em>already</em> understand the programming model of Spring XD: <em>streams</em> represent the flow of data from a <em>source</em> to a <em>sink</em>. A <em>source</em> is some point of entry, like a database, syslog, HDFS, etc. A <em>sink</em>  represents the place where the data ultimately gets written to. You can put in processors along the stream to process, transform, and audit the data. A <em>tap</em> is a component that intercepts the data, but doesn&#39;t terminate the stream. In the integration world, the closest analog is a <em>wire tap</em>.   </p>
 
