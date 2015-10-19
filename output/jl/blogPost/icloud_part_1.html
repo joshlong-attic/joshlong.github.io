@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>iCloud (Part #1)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>iCloud (Part #1)</h1>
+	</div>
+
+	<p><em>01 July 2013</em></p>
+
+	<p>
+<p>I really liked Apple's iCloud when I first started playing with it. The idea is many-pronged. </p>
+
+<p>Apple's in the SaaS business: they've got email, calendaring, messaging, and a whole slew of other stuff. And, if you're an application developer, then your application can also participate in iCloud, storing OSX-application or iOS application-specific state in Apple's cloud.  </p>
+
+<p>Additionally, Apple's Operating Systems are cloud-aware. To their credit, it's fairly easy to plugin standard e-mail servers, CalDAV servers, etc., from other vendors. There are even more expedient setup processes for well-known SaaS providers like Google Accounts (Google Calendar, Gmail, Tasks, GTalk, etc.), Vimeo, Flickr, Weibo, Facebook, Twitter. You can access all of this in <strong>System Preferences</strong> -&gt; <strong>Mail, Contacts &amp; Calendars</strong>. </p>
+
+<p>So, if you're on OSX, or an iPhone, or an iPad, in theory you could setup a calendar entry and see that same calendar entry across all devices. You could also see reminders, notes, email, etc. For me, I'm most interested in synchronzing with Google's applications. I use them at both <a href="http://gopivotal.com">Pivotal</a> and for my personal e-mail. </p>
+
+<p>So, I set up <code>Mail.app</code>. Mail is a fine application, but it just felt underpowered. It's way better than Thunderbird, but not particularly great. I don't feel more, or less, empowered in it than I do in GMail, and at least in the GMail web app once something's visually acknowledged, it's as good as done. (no sync'ing!) Anyway, I've tried a few other things. So far I'm digging <a href="http://www.postbox-inc.com/">Postbox.app</a> for OSX, and while I love the official GMail app on iPad, I got access to <a href="http://www.wired.com/business/2013/05/gentry-underwood/">Mailbox</a>. Postbox is a fine app with a lot going for it, but for me it's mostly just that it feels snappy <em>and</em> it's offline friendly. I tried using GMail's <em>offline</em> client before, but that's a whole separate flow - a separate application - and as such isn't likely to be primed with your email when you're unexpectedly offline.</p>
+
+<p>Mailbox, for those of you who follow the news, is a mail client for iOS that makes it dead simple to blaze through a <em>lot</em> of e-mail using gestures. It's lacking a <em>lot</em> of features. When I started using it, there was no easy to way to accept calendar invites. Forwarding email is still a nightmare. So is word wrapping in the compose e-mail panel. Yet, it's <em>still</em> so insanely popular that it was sold to Dropbox for $100 million before one person had even started using it. They even setup a waiting list stretching into the 800,000s. When I signed up, I was <em>permitted</em> to start using it within a month. Why? Because most people get a <em>lot</em> of e-mail and all the other e-mail solutions are designed with one-by-one inspection and processing workflows in mind. So, Postbox.app on the desktop, Gmail on the iPad and when at another person's computer, and Mailbox on my iPhone. All of these talking to my two Google Gmail e-mail accounts. Mailbox, by the way, doesn't even work with other mail services. Only GMail. Typing (and reading) that still shocks me. So, basically, what this application says (perhaps I'm reading between the lines?) is: <em>Gmail is so unproductive that any grossly deficient alternative that makes processing email much more productive is worth a $100 million, and is so-demanded that it merits a waiting list</em>! </p>
+
+<p>Anyway, e-mail on Apple devices tangent aside, I really quite like the rest of the setup: Apple <code>Reminders.app</code> works nicely, as does <code>Notes.app</code> and <code>Calendar.app</code>. Just set up the appropriate services when setting up the Google accounts and these should all work out of the box. Except when they don't. One problem I encountered when working with Calendar and Reminders is that it would some times stop syncing. In this situation, I found it helpful to go to the <em>System Preferences</em> &gt; <em>Mail, Contacts &amp; Calendars</em>. Disable the <em>Calendar &amp; Reminders</em> option, then <code>mv ~/Library/Calendars ~/some_where_else</code>. Then, doing your best Windows shutdown theme hum, reboot. Re-enable everything and it should start working again. </p>
+
+<p>The other problem I've encountered is that it's easy to get duplicate notes or reminders. The easiest way to fix this is to pick on service capable of storing notes and reminders and just stick with it, disabling the rest. For me, this is my personal GMail account. So I've disabled the Reminders from iCloud, deleted all the notes and now when I add a note in one account it appaears across the other devices. </p>
+
+<p>I'll chime back in as I discover more.</p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

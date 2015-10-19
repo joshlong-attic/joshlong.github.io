@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>How to get your twitter results visible on your site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>How to get your twitter results visible on your site</h1>
+	</div>
+
+	<p><em>08 November 2008</em></p>
+
+	<p>
+Matt Raible added <a href="http://www.twitter.com">Twitter</a> updates to his blog. (<a href="http://www.raibledesigns.com">Exhibit A</a>). I decided to the do same. First, you'll need the twitter.js JavaScript. This can be found <a href="http://twitterjs.googlecode.com/">here</a>. I would download <a href="http://twitterjs.googlecode.com/files/twitter-1.11.2.min.js">this one</a>.  Install that script onto your site, ie: 
+ <pre><code>
+ &lt;script type = "text/javascript" src="/js/twitter-1.11.2.min.js" &gt;&lt;/script&gt; 
+ </code></pre>
+</p>
+<p> Finally, add the code on your page to configure and use it.  </p>
+<p>This looks something like this: 
+<pre><code>&lt;script type = "text/javascript"  &gt; 
+     getTwitters('twitter_box', {
+        id: 'YOUR_TWITTER_ID', 
+        prefix: '', 
+        clearContents: false, // leave the original message in place
+        count: 3, 
+        withFriends: true,
+        ignoreReplies: false
+    });
+&lt;/script&gt;   </code></pre></p>
+
+<p> This javascript tells the script to load the latest 3 updates (<code>count</code>) in the HTML element (in my case, a regular old DIV element) having ID "twitter_box". It tells the script that, if there's already something inside that DIV element, it should merely append to it, not overwrite it. </p> 
+
+<p>The <code>prefix</code> attribute let's you specify what code you want to have inserted above and beyond the link and status text. This javascript has its own little macro substitution routine! You can dynamically insert variables like the url of your tweet ("<i>tweet</i> being what a single status update on twitter is called.) into the prefix string and it'll get replaced at runtime. </p> 
+
+<p>Finally, make sure to insert the HTML element where you want the Twitter updates to display somewhere on your page. 
+</p><p>The html is easy, and could be as simple as <br/>
+<code> <PRE> &lt;div id = "twitter_box"&gt; My &lt;a href="http://www.twitter.com"&gt;Twitter.com&lt;/a&gt;. &lt;div&gt;  </PRE></code> 
+ </p>
+<p> Thanks, Matt!</p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

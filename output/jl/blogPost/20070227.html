@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>A Tapestry 4 Maven Archetype Based On The Tapestry 5 Archetype, Spring and samples included.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>A Tapestry 4 Maven Archetype Based On The Tapestry 5 Archetype, Spring and samples included.</h1>
+	</div>
+
+	<p><em>27 February 2007</em></p>
+
+	<p>
+I love working with Tapestry 4, but I figure that it's because it's already configured to do the cool tricks I want to do with it. It's not easy getting off the ground on a blank new project. (Nor is it easy getting off the ground in a Ruby On Rails project without using the project generator!). Maven offers a solution, but, seemingly, no good archetype for it exists. I want something that'll let me type mvn jetty6:run and pull up a page immediately after I've run the familiar "mvn archetype:create" incantation.<br><br>I tried the (admittedly preliminary, at this stage in the game) Appfuse archetype,&nbsp; and the one from Webtide. However, I wanted something that I could demo with really quickly. I imagine: 1.) I have the archetype. 2.) I mvn clean install it, and voilà, instant "hello world" application that could be aggressively/quickly modified. I took Howard Lewis Ship's Tapestry 5 Simple-Project archetype and expanded it/retrofitted it with a lot of Tapestry 4 scenarios. <br><br>I also wanted something that eased some real-world concerns or, at least, hid them. Something that already had a working example of most common things (setting up an ASO, using Spring. Perhaps I'll add SEO friendly URLs configured by default (well, for the common ones, with the less-obvious options commented and explained.). <br><br>Anyway, thanks again to Howard and the Tapestry for such a wonderful product. I'll evolve this version and clean it up. If there are any suggestions, I'd definitely appreciate it. <br><br>It's deployed to my repostory. Run the following command, and you'll have the archetype installed and a project created. Then, merely cd into the wordking directory and run <code>mvn idea:idea</code>, or <code>mvn eclipse:eclipse</code>, and then run <code>mvn jetty6:run</code> to get started. This will get your application running on port 8080. Simply bring up http://127.0.0.1:8080/ and you'll get a listing of all the contexts. You can modify the various configuration fles (save, of course, for web.xml), and HTML ad-infinitum without restarting. The second you compile a fresh class, Jetty will reload the context automatically. <br><br><code>mvn archetype:create -DarchetypeGroupId=com.codecafe.archetypes
+-DarchetypeArtifactId=tapestry-simple
+-DremoteRepositories=http://codecafe.dev-hda.com/repository
+-DarchetypeVersion=4.1.2-SNAPSHOT -DgroupId=c.b -DartifactId=view</code><br><br>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

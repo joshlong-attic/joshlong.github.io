@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>REPL vs. Unit Tests misses the Point</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>REPL vs. Unit Tests misses the Point</h1>
+	</div>
+
+	<p><em>20 March 2013</em></p>
+
+	<p>
+<P> 
+  An   interesting thread emerged on Twitter today regarding ways to explore a problem: <a href="http://wikipedia.org/wiki/REPL">REPL</a> or Unit tests?   <A href="https://twitter.com/mtnygard">Michael Nygard (@mtnygard)</a> said:
+
+  </p>
+   <blockquote>Exploratory unit tests are a crappy REPL with a really slow response time.</blockquote>
+  <P>
+  This    - to mine own scripting and interpreted-language friendly ears - sounds 
+  about right. 
+  
+  On the other hand, there's definitely an argument to be made for unit tests, which a lot of people did. To wit, <a href="http://twitter.com/judsonlester">@judsonlester</a> replied:
+
+  
+  
+ </P>  <blockquote>
+  Also: a REPL is a crappy unit test that requires a lot of extra typing and programmer recall.
+  </blockquote> 
+  <P> This also makes sense! 
+	  So, we've got two great perspectives offering competing views. It's important to not to get too lost in the methodology and step back from it.
+	  What we have here are two competing perspectives on the <EM>same</EM> agreed upon approach: better programs result from <EM>thinking</EM> about the problem space before trying to solve it.
+	  I would argue that - depending on what you're trying to do - there are a lot of valid approaches. 
+	  If you're trying to build your own API that others will consume - then exploring possible arrangements in  TextMate for me is far more useful than a unit test or a REPL.
+	  
+	  If you're trying to explore and kick the tires on an unknown API, then a REPL (if it's available!) gives you more immediate feedback. Once you've gained some facts about the behavior of the API, codify them with a unit test.  
+  </p>
+  <P>
+	  This whole discussion, of course, centers around whether  or not your programming language of choice supports a REPL! I work principally on the JVM, particularly in Java and Scala. 
+	  As Java has no REPL, it can be useful to drop into some other shell or language and use that. Groovy is great for this as it is a full featured (more-than fully featured) language
+	  that you can interact with in a REPL and that can interface with JVM libraries.  
+  </p><P>
+In the same vein, years ago, there was a project called <A href="http://www.beanshell.org/"> BeanShell</a>, which provided a REPL for Java.   I confess I haven't heard much about it of late, probably due to   the prevalence of Groovy. 
+	There was even <A href="http://jcp.org/en/jsr/detail?id=274"> a JSR (JSR 274) to advance the project</a> to a standard with the expectation that it would one day be folded into the Java platform itself. 
+   </p>
+   <P> 
+ Anyway, I'm just thinking aloud. I thought it was an interesting thread. If you've got any thoughts, I'd love to hear about it on <A href="http://twitter.com/starbuxman">Twitter</a> or <a href="https://plus.google.com/u/0/105805020312347758498/posts">Google+</a>
+   </p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

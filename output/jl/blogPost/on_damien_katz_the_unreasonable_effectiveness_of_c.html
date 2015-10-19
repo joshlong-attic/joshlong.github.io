@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>On Damien Katz&apos; &quot;The Unreasonable Effectiveness of C&quot;</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>On Damien Katz&apos; &quot;The Unreasonable Effectiveness of C&quot;</h1>
+	</div>
+
+	<p><em>19 January 2013</em></p>
+
+	<p>
+<P> 
+ I loved <a href="http://damienkatz.net/2013/01/the_unreasonable_effectiveness_of_c.html"> Damien Katz' blog on <EM>The Unreasonable Effectivenes of C</EM>. </a></p>
+<P> I also really liked commentor <a href="http://www.infoq.com/news/2013/01/C-Language#view_93855"> Mark Peskin's input on the news re-cap of Damien's blog over on InfoQ</a>. I just wanted to offer my 2c from the perspective of someone who's done enough C to have 2c. 
+</P> <P>
+
+One thing that Damien noted is that it's rare to see really large, comprehensive framework-like APIs in C. As long you as build small, singly-focused APIs with light domains (a few typedefs / structs and functions as the 'contract') then it's very easy to 'export' the library and re-use it. This, I think, is a sweet spot for C. I would never write something in C for performance, but instead because it's simply easier to do certain things in C (kernel programming, embedded programming, anything working with the hardware, anything relying on APIs that aren't both established and widespread enough as to have warranted an cross-platform 'abstraction' in a higher level language like Java, Ruby, Python etc). 
+ </p><P>
+I would also try to not write a full blown system in C, simply because it doesn't 'scale' for large projects. The large projects that do use C end up re-inventing a lot of things (like 'objects' and namespacing). IMHO, there are very few domains that truly need to be in C the whole way through. Some very notable exceptions are systems level components like operating systems (Linux) or UIs like GNOME, of course. But for applications, it's easier to build out in a higher level language and 'integrate' with lower level APIs where the higher level language and platform has gaps. Java has many such 'gaps,' though some've been slowly addressed in the last decade as APIs have become commonplace across many different operating systems: event driven IO, file system notifications, file permissions and metadata, etc.
+ </p><P>
+Mark makes a great point about how to integrate C libraries and modules. He suggests JNI sucks, and to use messaging. I am a big fan of messaging. Fundamentally, successful use of messaging and successful use of JNI both require the same thing: you need to simplify the exported API drastically. 
+ </p><P>
+When using JNI, I try to never 'leak' any complex C types into my java API and vice versa, always communicating through numeric types and <CODE>char*</code> -&gt; <CODE>jstrings</code>. Even if the native code I'm exposing is C++, I'll still use the C-flavor of JNI (not C++) because it forces this canonicalization that's favorable to interop. If you keep the surface area of the C API very light, and try to avoid threading, it's easy to make it work as a native extension via Java JNI or CPYthon or MRI Ruby, etc. 
+ </p><P>
+Once you've gone through this process, then exposing the C API via messaging is easier because the message payloads between two systems can't, by definition, be much more complicated than the surface area of the C library. Of course, if you're using messaging, that means either writing messaging code in C, or exposing the C library to some higher level language and doing the messaging there. The nice part about messaging is that insulates your higher-level language code from your C code which - let's be honest - might be flakier than your Java code. I still won't link code written against the imagemagick C APIs directly to my application! There is some black magic in that library...! If the C code dies, the messaging system absorbs the requests until another node running the C code can pick up the slack. On the other hand, if you really are using C for performance, then messaging introduces at least a network hop, not to mention another component in the system, and you might lose any gains you made by writing it in C. In this case, it is possible to use write stable, well-behaved JNI or native extensions, but this again requires keeping the surface area small and understanding the pre-conditions nad post-conditions. No threads. Don't pass around pointers to complex objects between C and Java. Make sure you understand who's supposed to clean up memory, and when. 
+</p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>AOP&apos;s Not Just Logging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>AOP&apos;s Not Just Logging</h1>
+	</div>
+
+	<p><em>05 July 2011</em></p>
+
+	<p>
+<P>If you've ever read about <a href="http://static.springsource.org/spring/docs/3.0.x/reference/aop.html#aop-introduction">Spring's powerful AOP support</a> then you've probably heard about the canonical example of  introducing logging functionality  - a <em>cross-cutting</em> concern - to your beans. The example goes like this: you want to log the start and stop time for every method invocation. You can either modify every method and introduce logging, which is tedious and error-prone, or you can simply use AOP to <em>wrap</em> every method invocation. With AOP, you'll get a chance to perform logging every time a method is started and finished, or both! This is a common example, but it doesn't even begin to illustrate how powerful AOP can be. The most powerful example of AOP is perhaps the Spring framework itself. It uses it every where! Let's look at some common examples:</P>
+ <UL><LI> In Spring, beans are by default singletons and have no particular guarantees about thread-safety. This is fine most of the time as many objects are thread-safe (e.g., the <code>JdbcTemplate</code>) so consumers never need to know. This usually ends up being the most performant, and most natural, style of Spring bean. One example where Spring uses AOP to acheive the feeling of thread-safety without concerning the developer with it is in  Spring's <code>EntityManager</code> support. Spring will correctly inject a  proxy <code>EntityManager</code> using AOP. <code>EntityManager</code>s   are <EM>not</EM> thread-safe, but the consumer doesn't need to know. As an example, you might write: <code>@PersistenceContext EntityManager em.</code> Spring   then  automatically routes all concurrent requests to the appropriate, thread-local instance being maintained in the background.
+    </li>
+ <LI> 
+	 Spring's declarative transaction management is based heavily on AOP. With a single annotation, Spring can start a transaction before your method is invoked, then commit (or, in the case of an exception, roll it back) when the method terminates. You don't need to know about this as a consumer, of course, but behind the scenes.
+	</li>
+	<LI>Spring Security can guard method invocation access, limiting
+		
+	the call to clients that are secured. This authentication checks against a security context, and - if authorized - proceeds. This works through the judicious use of AOP and some thread local state.</li>
+</UL>
+                                                                                                                                                                                                          
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

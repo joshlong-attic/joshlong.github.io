@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Python? Good. Python on CloudFoundry? Better.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>Python? Good. Python on CloudFoundry? Better.</h1>
+	</div>
+
+	<p><em>01 October 2011</em></p>
+
+	<p>
+<P> I love the characterization of <a href= "http://www.infoq.com/news/2011/09/python-django-heroku">Python</A> in this post    from InfoQ:
+</P>
+<BLOCKQUOtE>"For Adam, Python fostered the development of modern web frameworks, with Zope and Plone. These frameworks introduced concepts like separation of business and display logic via view templating, ORMs for database interaction, and test-driven development were built into Zope 5 years before Rails was born. The main reason why they have not been successful in the market is their complexity and a steep learning curve while being way ahead of their time. Eventually, and despite the initial lack of involvement of the Python community, Django emerged as a strong competitor to rails. .." </BLOCKQUOTE>
+<P> 
+That basically says it all: <a href ="http://en.wikipedia.org/wiki/Zope">Zope</a> (and <a href ="http://plone.org/">Plone</a>) was an integrated, productive framework/application server before EJB 1.0x and it already had ORM, a proper MVC web framework, etc. It was no wonder that EJB and J2EE left a lot of us who had Python backgrounds a little... underwhelmed. I love the point surrounding the "noise" of the community: Python's <em>everywhere</em> - it's a "sleeper" success and yet most people would still not describe it as either legacy or <a href ="http://www.twitter.com/hipsterhacker"><Em>hipster</EM></a>.  I remember learning Python in the late 90's and it had already seen adoption by companies that were doing amazing things. That's actually what struck me so much about Python: people who could use <EM>any</EM> language and technology they wanted, as long as they got results, chose Python. Among the companies that "chose" Python instead of C++ or PHP or even Java (at that point) were unambitious, fly-by-night organizations like Google, NASA, ILM, and many, many more. That spoke  <EM>volumes</EM> more than all the noise Node's generated. (As an aside, if you want to <em>actually</EM> build software and take advantage of Node's promise with a language and platform you trust, may I recommend <a  HREF="https://github.com/purplefox/node.x">Node.X?</a>)
+</P> <P>		 Python offers a wealth of options for developers. My first Python use cases - even at Python 1.5 a decade ago - were all about exploiting Python's "batteries included" mantra to build distributed applications on grids. Oh, and text processing. Honestly, Python does a remarkable job at text processing. I don't miss Perl, at all!).  </P>
+<P> 
+I note that if you want a seriously good Python cloud-story, check out ActiveState's (you know, ActiveState, the maker of leading IDEs and integrated language bundles/SDKs for Python, Perl, Tcl, etc., for at least the last decade?) <a href= "http://www.activestate.com/cloud">Stackato</A>, which is based on <a href= "http://www.cloudfoundry.org">CloudFoundry, the open-source PaaS</a>, is awesome. As much as I love the <A href= "http://blog.springsource.com/2011/08/24/micro-cloud-foundry-for-spring-developers/">MicroCloud Foundry VM instance</a>, the truth is that the ActiveState guys beat us (I work for <a href="http://blog.springsource.com/author/jolong/">SpringSource</a>, a division of VMware) to the punch: they had a VMWare image running their port of the CloudFoundry cloud <em>before</EM> VMware! Awesome ;-)  </P> 
+ 
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

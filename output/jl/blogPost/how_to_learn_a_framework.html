@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>How to Learn a Framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>How to Learn a Framework</h1>
+	</div>
+
+	<p><em>18 September 2012</em></p>
+
+	<p>
+<P>
+I was asked recently how I might suggest going about learning a framework (like Spring). 
+ I replied in an email and I reproduce most of that email below.
+</p>
+<blockquote>Basically, <EM>don't</EM> learn a framework first. Learn how to solve the problem.   Once you learn how to solve the problem, identify common design patterns that will help you solve the problem. 
+ <EM> Then</EM>, find the framework that lets you work with those design patterns. 
+  If you're trying to build a web application - learn what principles people use in building web applications. One common pattern when building web applications is MVC. Spring MVC makes it very easy to build MVC-based applications. 
+  If you're trying to build a service, you will typically learn about data-access technologies and repositories and ORM. Spring and Spring Data have great support for building service objects (a pattern) and repositories or data access objects (DAOs). 
+  If you're trying to build an application that has many layers - services, web tier, repositories, unit tests, etc.- then it is helpful to have dependency injection, which is another pattern that Spring also supports.
+  That is the 'correct way' to learn new technologies, in my opinion. If you understand the problem you're trying to solve, and you've identified a good technology, then looking at other people's code can be VERY helpful. This is one of the reasons I love open source so much. You can look at so many other peoples' code.<A href = "http://www.github.com">GitHub</A> is an amazing place. Look at <a href = "http://github.com/SpringSource/">the SpringSource repository</A>  and you'll see the source code for many different projects. If you look, you will often find '-samples' projects inside of <a href ="http://github.com/SpringSource">the SpringSource project</A>. Also, <A href ="http://github.com/CloudFoundry-Samples">the Cloud Foundry Samples repository</a> provides great, multi-language samples that you can refer to for getting started on <a href = "http://www.cloudfoundry.org">Cloud Foundry</a>. These projects show how to use the patterns. 
+ 
+<a href ="https://github.com/CloudFoundry-Samples/springmvc-hibernate-template">The Spring Hibernate Template</A> shows a good example of building an application on Spring MVC and Spring that works on Cloud Foundry.
+ 
+In addition to looking at source code and looking at design patterns, you should always ask questions. If you have a chance, go to the Java User Groups in your area. Ask questions on <a href ="http://forums.springsource.org">the SpringSource forums</A> or Stack Overflow. And, of course, i am always happy to help answer questions, too ;-)  
+</blockquote>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

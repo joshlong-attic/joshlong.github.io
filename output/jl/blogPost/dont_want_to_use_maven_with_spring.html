@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Don&apos;t Want to use Maven with Spring?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>Don&apos;t Want to use Maven with Spring?</h1>
+	</div>
+
+	<p><em>03 June 2014</em></p>
+
+	<p>
+<p>A reader recently protested that he felt he had to use  Maven. I put together a reply that I've extracted here for this blog post.</p>
+
+<p>You're most certainly not required to use Maven. We use Maven-managed dependencies pretty heavily, but, you can use those dependencies via Ant + Ivy, Maven, Gradle, SBT, Buildr (anybody remember that one?), etc. Maven just happens to be what most of the developer community is using, for better or for worse. I (personally) prefer Gradle, but I try to build examples that will work w/ the majority of readers.</p>
+
+<p>I'm sorry we didn't get your favorite build tool. This was simply to show how to get started w/ a fairly common tool. Almost 4 years ago. We have far more up-to-date guides on, for example, <a href="https://spring.io/guides?filter=maven">Maven</a> and <a href="https://spring.io/guides?filter=gradle">Gradle</a>.</p>
+
+<p>If you want direct downloads, please check out our <a href="http://repo.spring.io">Artifactory server</a>, and have a look at the <a href="https://github.com/spring-projects/spring-framework/wiki/Spring-repository-FAQ">Spring Repository FAQ</a></p>
+
+<p>If you want a VERY quick starter for Spring MVC (and everything else, via Spring Boot), goto <a href="http://start.spring.io">the Spring Initialzr</a>, choose the "Web" checkbox, then choose "Generate." It'll download a <code>.zip</code> with both a Maven <code>pom.xml</code> or a Gradle <code>build.gradle</code>. Delete the one you don't want. You'll have a single <code>Application.java</code>. From there, just start coding! Eclipse, IntelliJ, and NetBeans all have great support for Maven. Our free, open-source Eclipse distribution, Spring Tool Suite (STS), has nice support for Gradle.</p>
+
+<p>There's <a href="https://spring.io/blog/2014/04/01/spring-boot-1-0-ga-released">a 10-minute video here</a> on using Spring Boot and STS to build a REST service. This also includes a look at some of the tools STS provides to manage Maven for you. You should just be able to write code and have it bring the correct libraries in for you, automatically.</p>
+
+<p> The nice thing about working with Spring Boot "starter" dependencies (like <code>org.springframework.boot</code>:<code>spring-boot-starter-web</code>:<code>1.0.3.RELEASE</code>) is that they represent <em>everything</em> you're likely to need to build a certain style of application. In this case, that one dependency brings in all the important bits from Spring MVC, JSON support, file upload support, embedded Tomcat, and a lot more. Just add that dependency and add a simple REST controller and you can run it, as shown in that aforementioned video. This approach should <em>hopefully</em> represent a <em>much</em> simpler workflow for using Maven or Gradle.</p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

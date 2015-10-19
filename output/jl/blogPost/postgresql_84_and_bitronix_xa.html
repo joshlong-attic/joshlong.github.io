@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>PostgreSQL 8.4 and Bitronix XA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>PostgreSQL 8.4 and Bitronix XA</h1>
+	</div>
+
+	<p><em>31 December 2009</em></p>
+
+	<p>
+<p>I use <a href="http://www.postgresql.org/">PostgreSQL</a> 8.3 - 
+highly recommended by the way - 
+and I just updated an application to 8.4. 
+The application is built principally using Spring, Hibernate, and JMS. 
+Naturally, some level of 
+cooperation among transactions is required, so I use an XA provider - 
+<a href="http://docs.codehaus.org/display/BTM/Home">Bitronix.</a> 
+Everything was working swimmingly 
+with PostgreSQL 8.3, but the application buckled on startup with 
+errors when I upgrade PostgreSQL to 8.4: 
+</p><PRE><CODE>Dec 30, 2009 11:25:50 PM 
+bitronix.tm.twopc.AbstractPhaseEngine logFailedResources 
+<b>SEVERE: resource xasql failed on a Bitronix XID [737072696E672D62746D2D- 
+73656E64657200000125E3A04B9900000038 : 737072696E672D62746D2D73656E6465720- 
+0000125E3A04BA40000003A] 
+org.postgresql.xa.PGXAException: Error preparing transaction</b> 
+at org.postgresql.xa.PGXAConnection.prepare(PGXAConnection.java:254) 
+at bitronix.tm.twopc.Preparer$PrepareJob.run(Preparer.java:134) 
+at bitronix.tm.twopc.executor.SyncExecutor.submit(SyncExecutor.java:12) 
+at bitronix.tm.twopc.AbstractPhaseEngine.runJobsForPosition(AbstractPhaseEngine.java:109) 
+at bitronix.tm.twopc.AbstractPhaseEngine.executePhase(AbstractPhaseEngine.java:71) 
+at bitronix.tm.twopc.Preparer.prepare(Preparer.java:68) 
+at bitronix.tm.BitronixTransaction.commit(BitronixTransaction.java:176) 
+at bitronix.tm.BitronixTransactionManager.commit(BitronixTransactionManager.java:95) 
+at org.springframework.transaction.jta.JtaTransactionManager.doCommit(JtaTransactionManager.java:1009) 
+at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:754) 
+at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:723) 
+at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:394) 
+at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:117) 
+at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172) 
+at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:89) 
+at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172) 
+at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:202) 
+... 
+<b>Caused by: org.postgresql.util.PSQLException: ERROR: prepared 
+transactions are disabled</b> 
+at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:1592) 
+at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1327) 
+at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:192) 
+at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:451 
+</CODE></PRE> 
+<P> 
+If you're in my situation, the immediate cure is to uncomment and set 
+the <code>max_prepared_transactions</code> 
+attribute in <code>data/postgresql.conf</code>. A safe value seems to 
+be 10, though your mileage may vary. 
+There must be a reason they've disabled this in 8.4, so further 
+investigation is required. In the meantime, though, everything seems 
+performant and works as it did before. 
+</P>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

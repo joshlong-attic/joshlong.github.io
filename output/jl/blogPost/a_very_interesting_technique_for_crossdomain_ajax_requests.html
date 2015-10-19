@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>A Very Interesting Technique For Cross-Domain AJAX Requests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<img alt="JoshLong.com" src="../../joshlong-logo.jpg" />
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>A Very Interesting Technique For Cross-Domain AJAX Requests</h1>
+	</div>
+
+	<p><em>13 January 2010</em></p>
+
+	<p>
+<P> 
+I read a <b>very</b> good article on breaking the crossdomain wall for 
+Ajax requests. It's presented   <span style ="font-size:larger;"><a 
+href="http://www.wait-till-i.com/2010/01/10/loading-external-content-with-ajax-using-jquery-and-yql/">here, 
+as an entry on http://www.wait-till-i.com</a></span>. In it, Chris 
+Heilmann talks about using a Yahoo service and JSON-P requests with 
+Ajax to load any site's contents. You should most certainly read his 
+article - it's fantastic. 
+I post here the most salient bit (for me) since it genuinely knocked 
+my socks off. To re-use this in your own code, copy the parts I've 
+highlighted in bold. You can use your own version of jQuery, 
+naturally, as the most interesting aspect is the bits inside the 
+<code>ajax</code> function (which itself is pretty trivial. I created 
+the wrapper function so that the code could be stashed away and 
+re-used more readily). 
+I demonstrate its use in the script fragment below that, where I load 
+the HTML for this very site. 
+<PRE> 
+<CODE> 
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd"&gt; 
+&lt;html&gt; 
+&lt;head&gt; 
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt; 
+  &lt;title&gt; ZOMG! &lt;/title&gt; 
+  &lt;link rel="stylesheet" href="styles.css" type="text/css"&gt; 
+&lt;/head&gt; 
+&lt;body&gt; 
+<b> 
+&lt;script src="http://code.jquery.com/jquery-latest.pack.js"&gt;&lt;/script&gt; 
+&lt;script language="javascript"&gt; 
+function ajax( url, cb){ 
+ var yqlUrl =  "http://query.yahooapis.com/v1/public/yql?"+ 
+            "q=select%20*%20from%20html%20where%20url%3D%22"+ 
+              encodeURIComponent(url)+ 
+            "%22&format=xml'&callback=?" ; 
+ $.getJSON( yqlUrl,  cb ); 
+} 
+&lt;/script&gt; 
+</b> 
+&lt;script language="javascript"&gt; 
+$(document).ready(function(){ 
+ ajax( 'http://www.joshlong.com', function(data){ 
+  alert( data.results[0] +'' ) ; 
+ }); 
+}); 
+&lt;/script&gt; 
+&lt;/body&gt; 
+&lt;/html&gt; 
+</CODE></PRE> 
+</P>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>
