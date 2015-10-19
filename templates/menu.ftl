@@ -1,3 +1,13 @@
+<style type="text/css">
+/* .navbar-brand img {
+ height : 80px ;
+ border: 1px solid grey ;
+ padding :10px;
+ background-color: white ;
+}*/
+
+
+</style>
 	<!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
@@ -9,8 +19,10 @@
             <span class="icon-bar"></span>
           </button>
 <a class="navbar-brand" href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>">
-	<img alt="JoshLong.com" src="<#if (content.rootpath)??>${content.rootpath}<#else></#if>joshlong-logo.jpg" />
-</a>
+	<!-- <img alt="JoshLong.com" height = "30" src="<#if (content.rootpath)??>${content.rootpath}<#else></#if>joshlong-logo.jpg" />-->
+	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
