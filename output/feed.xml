@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 19 Oct 2015 09:52:46 +0300</pubDate>
-    <lastBuildDate>Mon, 19 Oct 2015 09:52:46 +0300</lastBuildDate>
+    <pubDate>Mon, 19 Oct 2015 09:54:43 +0300</pubDate>
+    <lastBuildDate>Mon, 19 Oct 2015 09:54:43 +0300</lastBuildDate>
 
     <item>
       <title>Tech Tip: Geting Started with Spring Boot</title>

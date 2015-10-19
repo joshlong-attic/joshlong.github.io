@@ -4,9 +4,9 @@ echo -e "deploying updates to Github.."
 
 # Build the project.
 jbake
-cp CNAME output/CNAME
-git add output/CNAME
-git commit -a -m "adding CNAME"
+#cp CNAME output/CNAME
+#git add output/CNAME
+#git commit -a -m "adding CNAME"
 
 git add -A
 
