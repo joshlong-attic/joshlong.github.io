@@ -12,7 +12,7 @@ cp CNAME output/CNAME
 git add output/CNAME
 git commit -a -m "adding CNAME"
 
-git add -A
+git add -a
 
 # Commit changes.
 msg="rebuilding site `date`"
