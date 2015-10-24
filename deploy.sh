@@ -8,7 +8,7 @@ jbake
 
 git add output
 
-cp -r media output/media
+cp -r content/media output/media
 git add output/media
 git commit -a -m "adding media"
 
