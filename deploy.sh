@@ -2,7 +2,7 @@
 
 echo -e "deploying updates to Github.."
 
-# Build the project.
+# Build the project
 rm -rf output
 jbake
 
