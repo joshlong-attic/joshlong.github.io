@@ -54,55 +54,55 @@ Ruby, Node.js, and Scala. Other ecosystem partners have taken the code and run t
 To make sure that everything is easy to find in STS for this tutorial,
 use the <code>Window </code>-> <code>Reset Perspective</code> command.
 </p>
-  <img width ="800" src = "media/18523"/>
+  <img width ="800" src = "/media/18523"/>
  
 <P>
 If you're using STS (which is an Eclipse -based distribution) you'll
 need to install the Cloud Foundry WTP (web tools project) connector. Go to the <CODE> Help</code> -> <code>Eclipse Marketplace</code>. Search for "CloudFoundry" and you'll
 find the "Cloud Foundry integration for Eclipse." Install it if you
 haven't already.   </p> 
- <img src = "media/18512" width = "800"/>
+ <img src = "/media/18512" width = "800"/>
 <P> Once installation finishes, right click on the white space in your Servers panel,
 and choose <code>New Server.</code>  
 	</p>
 
-		 <img src = "media/18520" width = "800"/>
+		 <img src = "/media/18520" width = "800"/>
 	
  <P>  Then choose  <code>VMWare</code>  -> <code>Cloud Foundry</code>.  </p> 
-		 <img src = "media/18514" width = "800"/>
+		 <img src = "/media/18514" width = "800"/>
  
 	<p>
 Click <CODE>Next</CODE> on the first screen (there's no need to change anything
 there.) and then enter your credentials to log in to the cloud. </p>
- <img src = "media/18517" width="800"/>
+ <img src = "/media/18517" width="800"/>
 <P> You can verify your credentials by clicking <CODE>Validate Account</CODE>. Then,
 click <code>Finish</code>. 
 </p>
  <P> Once installed, you can double click on the Cloud Foundry server to see what's going on in your account, just as you would from the <code>vmc</code> command line tool. The tab that presents itself can take up some serious screen real estate, so you might close the <CODE>Spring Explorer</code>,   <CODE>Outline</CODE>, and <CODE>Task List</CODE> panels, as I have. The Cloud Foundry tab has two sub tabs at the bottom: one called <CODE>Overview</code>, and another called <CODE>Applications</CODE>. You can click on an application to see the resources provisioned for the application, including which  <em>services</em> (databases, message queues, etc) have been apportioned for it and how much RAM and CPU the application is taking. </p>
 	
-<table><tr><td>	<img src = "media/18513" width = "400"/></td><td>
-	 <img src = "media/18510" width = "400"/>
+<table><tr><td>	<img src = "/media/18513" width = "400"/></td><td>
+	 <img src = "/media/18510" width = "400"/>
 	
 </td></tr></table>
 <P> 
 
 To create an application, go to the <CODE> File</code> menu, choose  <CODE>New</code> ->  <CODE>Spring 
 Template Project</code>. </p>
- <img src = "media/18511" width = "800"/>
+ <img src = "/media/18511" width = "800"/>
  <P>  Then choose  <CODE>Spring MVC project</code> and click  <CODE>Next</code>.
 	</p>
-	 <img src = "media/18519" width = "800"/>
+	 <img src = "/media/18519" width = "800"/>
 	<P>
 It might ask you to download a few kilobytes to get the tutorial if you haven't already downloaded this before. 
 If so, click <code>Yes</code>.
 </p>
- <img src = "media/18521" width ="800"/>
+ <img src = "/media/18521" width ="800"/>
  <P>
  Then fill in an application name and a top-level package. The
 wizard requires 3 tokens in the top-level package name, so
  <CODE>com.joshlong.cloudfoundrydemo</code> would work, but  <CODE>com.joshlong</code> won't.
 	</p>
-   <img src = "media/18516" width   ="800"/>
+   <img src = "/media/18516" width   ="800"/>
 	<P>
 
 Once you have an application, it's easy enough to deploy it to Cloud
@@ -111,15 +111,15 @@ Foundry server in the  <CODE> Servers </code> panel. It'll ask you to specify
 information about the application: what runtime, what language, etc.
 The defaults are good enough in this case, so just leave them as-is  and click <CODE>Next</code>.
 </p>
- <img src = "media/18522" width = "800"/>
+ <img src = "/media/18522" width = "800"/>
 <p>Next, you'll  be asked to specify the URL for the application as well as how much memory to allocate. Again, the defaults are fine in this case.</p>
-<br/> <img src = "media/18518" width = "800"/>
+<br/> <img src = "/media/18518" width = "800"/>
 <P>
 The application will deploy, and - if you open the URL given in a browser window - you'll be greeted with a new
 application on Cloud Foundry!
 
 
- </p> <img src = "media/18515" width = "800"/>
+ </p> <img src = "/media/18515" width = "800"/>
  <P> Getting started with programming Spring is another story for another blog post   at least! 
 	 In the meantime, <A href= "http://blog.springsource.org/category/green-beans/">you might checkout the <EM>Green Beans</EM> blogs on SpringSource.org</a>
 	</P>
