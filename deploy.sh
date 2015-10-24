@@ -8,6 +8,10 @@ jbake
 
 git add output
 
+cp -r media output/media
+git add output/media
+git commit -a -m "adding media"
+
 cp CNAME output/CNAME
 git add output/CNAME
 git commit -a -m "adding CNAME"
