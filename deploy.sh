@@ -25,4 +25,4 @@ git commit -m "$msg"
 git push origin source
 git subtree push --prefix=output git@github.com:joshlong/joshlong.github.io.git master
 
-echo "the page is available now as http://joshlong.github.io/blawg-content"
+echo "the page is available now as http://github.com/joshlong/joshlong.github.io.git"
