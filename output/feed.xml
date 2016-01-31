@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 24 Oct 2015 14:03:33 -0700</pubDate>
-    <lastBuildDate>Sat, 24 Oct 2015 14:03:33 -0700</lastBuildDate>
+    <pubDate>Sat, 30 Jan 2016 16:43:07 -0800</pubDate>
+    <lastBuildDate>Sat, 30 Jan 2016 16:43:07 -0800</lastBuildDate>
 
     <item>
       <title>Tech Tip: Getting Started with Spring Boot</title>
@@ -7794,19 +7794,7 @@ Webmonkey.com is back! I just noticed this -- it&apos;s laid dormant for years a
       <guid isPermaLink="false">jl/blogPost/200804121.html</guid>
       	<description>
 	
-&lt;p&gt; Adobe&apos;s Finally Released Their Much Rumored Media Player: &quot;Adobe Media
-Player&quot;It&apos;s sweet. Built on AIR, it&apos;s a stand-alone &quot;installable&quot; Flash
-program that allows you to manage, search out, and watch FLV / H264
-content inside of Flash. It&apos;s beautiful to use but my big gripe is that
-because it runs on AIR, there&apos;s no Linux version.They seem to have
-lined up some pretty big content-producers, which should make the
-deployment easier. I wonder if they&apos;re fixing to be to digitial video /
-flash video what iTunes is to music. A one-stop video content shop /
-hub.. Absolutely stunning UI - and it&apos;s consistent with some of their
-more recent stuff, including Colour and Adobe Photoshop Express. I
-wonder where they&apos;ll take this - I wonder if there&apos;s a way to share
-video playlists etc? Integration with Youtube.com just like Apple TV
-did?&lt;/p&gt;
+&lt;p&gt; Adobe&apos;s Finally Released Their Much Rumored Media Player: &quot;Adobe Media Player&quot;It&apos;s sweet. Built on AIR, it&apos;s a stand-alone &quot;installable&quot; Flash program that allows you to manage, search out, and watch FLV / H264 content inside of Flash. It&apos;s beautiful to use but my big gripe is that because it runs on AIR, there&apos;s no Linux version.They seem to have lined up some pretty big content-producers, which should make the deployment easier. I wonder if they&apos;re fixing to be to digitial video / flash video what iTunes is to music. A one-stop video content shop / hub.. Absolutely stunning UI - and it&apos;s consistent with some of their more recent stuff, including Colour and Adobe Photoshop Express. I wonder where they&apos;ll take this - I wonder if there&apos;s a way to share video playlists etc? Integration with Youtube.com just like Apple TV did?&lt;/p&gt;
 
 	</description>
     </item>
