@@ -6,9 +6,18 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 30 Jan 2016 16:47:27 -0800</pubDate>
-    <lastBuildDate>Sat, 30 Jan 2016 16:47:27 -0800</lastBuildDate>
+    <pubDate>Sat, 30 Jan 2016 17:00:01 -0800</pubDate>
+    <lastBuildDate>Sat, 30 Jan 2016 17:00:01 -0800</lastBuildDate>
 
+    <item>
+      <title>Spring Cloud Guides</title>
+      <link>http://joshlong.com/jl/blogPost/spring-cloud-guides.html</link>
+      <pubDate>Sat, 30 Jan 2016 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring-cloud-guides.html</guid>
+      	<description>
+	&lt;p&gt;Kenny and I have been hard at work on the O&apos;Reilly &lt;em&gt;Cloud Native Java&lt;/em&gt; book, and Phil and I have been hard at work on the updated &lt;em&gt;Building Microservices with Spring Boot LiveLessons&lt;/em&gt; for the more in-depth introductions to Spring Boot and Spring Cloud, but I am &lt;em&gt;very&lt;/em&gt; happy to report that we on the Spring team &lt;em&gt;finally&lt;/em&gt; started to add guides to the &lt;a href=&quot;http://spring.io/guides&quot;&gt;Spring Guides section&lt;/a&gt; on &lt;a href=&quot;http://spring.io/guides/gs/service-registration-and-discovery/&quot;&gt;service registration and discovery&lt;/a&gt;, &lt;a href=&quot;http://spring.io/guides/gs/routing-and-filtering/&quot;&gt;Zuul-based microproxies for routing and filtering&lt;/a&gt;, &lt;a href=&quot;http://spring.io/guides/gs/circuit-breaker/&quot;&gt;circuit breakers&lt;/a&gt;, and &lt;a href=&quot;http://spring.io/guides/gs/centralized-configuration/&quot;&gt;centralized configuration&lt;/a&gt;! Get &apos;em while they&apos;re hot!&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Tech Tip: Getting Started with Spring Boot</title>
       <link>http://joshlong.com/jl/blogPost/tech_tip_geting_started_with_spring_boot.html</link>
