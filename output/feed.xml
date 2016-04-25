@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 25 Apr 2016 03:57:48 +0200</pubDate>
-    <lastBuildDate>Mon, 25 Apr 2016 03:57:48 +0200</lastBuildDate>
+    <pubDate>Mon, 25 Apr 2016 03:59:04 +0200</pubDate>
+    <lastBuildDate>Mon, 25 Apr 2016 03:59:04 +0200</lastBuildDate>
 
     <item>
       <title>Pieter Hintjens</title>
@@ -15,7 +15,7 @@
       <pubDate>Mon, 25 Apr 2016 00:00:00 +0200</pubDate>
       <guid isPermaLink="false">jl/blogPost/pieter-hintjens.html</guid>
       	<description>
-	&lt;p&gt;The amazing &lt;a href=&quot;https://en.wikipedia.org/wiki/Pieter_Hintjens&quot;&gt;Pieter Hintjens&lt;/a&gt; is not well. He&apos;s contributed a lot to the open-source community, notably to the AMQP protocol (which underpins RabbitMQ) and to ZeroMQ. He&apos;s talked about his state in a blog called [http://hintjens.com/blog:115](_A Protocol for Dying_). If you&apos;re a fan, perhaps now&apos;s your chance to let him know. If you&apos;re not a fan, then perhaps you could investigate some of his work? He &lt;a href=&quot;http://zeromq.org/&quot;&gt;leads the ZeroMQ project&lt;/a&gt;, wrote &lt;a href=&quot;http://hintjens.com/books&quot;&gt;a few books&lt;/a&gt;, and did a lot of great videos. I really liked this one &lt;a href=&quot;http://www.ustream.tv/recorded/61450822&quot;&gt;from 2015&apos;s Craft Conf&lt;/a&gt;. I&apos;ll be at Craft Conf (starting today, actually) this year and I&apos;ll be thinking of Pieter. &lt;/p&gt;
+	&lt;p&gt;The amazing &lt;a href=&quot;https://en.wikipedia.org/wiki/Pieter_Hintjens&quot;&gt;Pieter Hintjens&lt;/a&gt; is not well. He&apos;s contributed a lot to the open-source community, notably to the AMQP protocol (which underpins RabbitMQ) and to ZeroMQ. He&apos;s talked about his state in a blog called &lt;a href=&quot;http://hintjens.com/blog:115&quot;&gt;&lt;em&gt;A Protocol for Dying&lt;/em&gt;&lt;/a&gt;. If you&apos;re a fan, perhaps now&apos;s your chance to let him know. If you&apos;re not a fan, then perhaps you could investigate some of his work? He &lt;a href=&quot;http://zeromq.org/&quot;&gt;leads the ZeroMQ project&lt;/a&gt;, wrote &lt;a href=&quot;http://hintjens.com/books&quot;&gt;a few books&lt;/a&gt;, and did a lot of great videos. I really liked this one &lt;a href=&quot;http://www.ustream.tv/recorded/61450822&quot;&gt;from 2015&apos;s Craft Conf&lt;/a&gt;. I&apos;ll be at Craft Conf (starting today, actually) this year and I&apos;ll be thinking of Pieter. &lt;/p&gt;
 	</description>
     </item>
     <item>
