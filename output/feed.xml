@@ -6,9 +6,48 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 25 Apr 2016 03:59:04 +0200</pubDate>
-    <lastBuildDate>Mon, 25 Apr 2016 03:59:04 +0200</lastBuildDate>
+    <pubDate>Sat, 30 Apr 2016 02:38:02 +0200</pubDate>
+    <lastBuildDate>Sat, 30 Apr 2016 02:38:02 +0200</lastBuildDate>
 
+    <item>
+      <title>Craft Conf 2016</title>
+      <link>http://joshlong.com/jl/blogPost/craftconf-2016-trip-review.html</link>
+      <pubDate>Sat, 30 Apr 2016 00:00:00 +0200</pubDate>
+      <guid isPermaLink="false">jl/blogPost/craftconf-2016-trip-review.html</guid>
+      	<description>
+	&lt;p&gt;This was my first Craft Conf. I have been invited every year since the debut and have always had to decline in order to make the Great Indian Developer Summit (a great show to be sure!), to which I was previous committed. This year, I &lt;em&gt;finally&lt;/em&gt; remembered to give it a shot and I am &lt;em&gt;so&lt;/em&gt; glad I did! I met many of my heroes and heroines and see &lt;em&gt;many&lt;/em&gt; old friends all in one dense, information packed show. The content was superb, the endless Nespresso and beer made the occasional intermissions go over well, and (incredibly!) the wi-fi was top-notch, as well. It was a genuinely good show.&lt;/p&gt;&lt;p&gt;There were two parts that weren&apos;t as great as they should be:&lt;/p&gt;&lt;p&gt;First, the electricity for the room I was in failed. I was one of the first session talks after the keynote on the first day, so the whole thing hadn&apos;t yet been proven. This whole show was in an amazing &lt;a href=&quot;http://www.vasuttortenetipark.hu/&quot;&gt;&lt;em&gt;train museum&lt;/em&gt;, Magyar Vasúttörténeti Park&lt;/a&gt;, and so assembled with astonishingly good results just days before the big event! Unfortunately, this meant that while the engineers spent the first 25 minutes of my 40 minute slot trying to get the stage lighting and display working, I was left on stage just chatting with the audience. I tried to make up for it, later, in a smaller supposedly hands-on workshop which seemed to go over alright. The first session was 40 minutes. The later session was to be a hands-on session of 90 minutes. I was told I could repeat the earlier talk then, which I did. I hope it resonated with people. I would&apos;ve liked to have been able to take the audience that was in my room with me on a journey, as planned, though I&apos;m pleased people showed up later. Oh well..&lt;/p&gt;&lt;p&gt;Also, I was really keen on finally meeting &lt;a href=&quot;http://twitter.com/aphyr&quot;&gt;Kyle Kingsbury&lt;/a&gt;, author of &lt;a href=&quot;https://aphyr.com/tags/Jepsen&quot;&gt;the &lt;em&gt;Call Me Maybe&lt;/em&gt; series of blogs&lt;/a&gt; that disect the availability, partitionability and consistency qualities of distributed systems in &lt;em&gt;excruciating, hilarious&lt;/em&gt; detail. Unfortunately, he fell ill with an ear infection before boarding his flight for Budapest. I don&apos;t know if you&apos;ve ever had an ear infection but the &lt;em&gt;last&lt;/em&gt; thing you want to do is change atmospheric pressure! It&apos;s excruciating enough as it is! Obviously, I wish him a speedy recovery and look forward to seeing his streamed presentation this Saturday in the AM PST time. (Follow &lt;a href=&quot;http://twitter.com/aphyr&quot;&gt;him on Twitter for more&lt;/a&gt;!)&lt;/p&gt;&lt;p&gt;I took away a lot of great ideas from this show. A lot of great themes also resonated:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;agility is a way of working that is independant of any prescribed processes. Ignore the dogma.&lt;/li&gt;
+  &lt;li&gt;an agile organization learns, deploys and fails faster. This is a win.&lt;/li&gt;
+  &lt;li&gt;automation around builds, testing, production, and more were - as far as any of the speakers were concerned - long since arrived.&lt;/li&gt;
+  &lt;li&gt;Microservices, microservices, and microservices&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Also, &lt;a href=&quot;https://twitter.com/search?q=%40starbuxman%20%23craftconf&amp;src=typd&quot;&gt;I played Craft Conf selfie-Pokémon&lt;/a&gt; (gotta catch &apos;em all!) and took as many photos with friends as possible! :-)&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_francesc.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/francesc&quot;&gt;Francesc Campoy&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_grepory.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/grepory&quot;&gt;Greg Poirier&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_hadi_hariri.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/hhariri&quot;&gt;Hadi Hariri&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_kirk_pepperdine.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/kcpeppe&quot;&gt;Kirk Pepperdine&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_littleidea_bridget.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/littleidea&quot;&gt;Andrew Clay Shafer&lt;/a&gt; and &lt;a href=&quot;http://twitter.com/BridgetKromhout&quot;&gt;Bridget Kromhout&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_michael_feathers.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/mfeathers&quot;&gt;Michael Feathers&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_todd_l_montgomery.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/toddlmontgomery&quot;&gt;Todd L Montgomery&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_trisha_gee.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/Trisha_Gee&quot;&gt;Trisha Gee&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_venkat_subramaniam.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/venkat_s&quot;&gt;Dr. Venkat Subramaniam&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_adrian_cochroft.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/adrianco&quot;&gt;Adrian Cochroft&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_dan_north.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/tastapod&quot;&gt;Dan North&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_danielbryant_charleshumble.jpg&quot;/&gt;&lt;a href=&quot;https://twitter.com/danielbryantuk&quot;&gt;Daniel Bryant&lt;/a&gt; and &lt;a href=&quot;http://twitter.com/charleshumble&quot;&gt;Charles Humble&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_jessie frazelle.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/jessfraz&quot;&gt;Jessie Frazelle&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_kelsey_hightower.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/kelseyhightower&quot;&gt;Kelsey Hightower&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;craftconf_2016_shafer_allspaw_jezhumble.jpg&quot;/&gt;&lt;a href=&quot;http://twitter.com/littleidea&quot;&gt;Andrew Clay Shafer&lt;/a&gt;, &lt;a href=&quot;http://twitter.com/allspaw&quot;&gt;John Allspaw&lt;/a&gt; and
+&lt;a href=&quot;http://twitter.com/jezhumble&quot;&gt;Jez Humble&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;p&gt;This show was a &lt;em&gt;lot&lt;/em&gt; of fun and I certainly hope to be invited back next year! In the meantime, though, I am &lt;em&gt;very&lt;/em&gt; excited to be returning to San Francisco (where I live!) in a few short hours, for the first time since the last week of January!&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Pieter Hintjens</title>
       <link>http://joshlong.com/jl/blogPost/pieter-hintjens.html</link>
