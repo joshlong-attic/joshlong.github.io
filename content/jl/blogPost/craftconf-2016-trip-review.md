@@ -21,6 +21,8 @@ I took away a lot of great ideas from this show. A lot of great themes also reso
 * automation around builds, testing, production, and more were - as far as any of the speakers were concerned - long since arrived.
 * Microservices, microservices, and microservices
 
+
+
 Also, [I played Craft Conf selfie-Pokémon](https://twitter.com/search?q=%40starbuxman%20%23craftconf&src=typd) (gotta catch 'em all!) and took as many photos with friends as possible! :-)
 
 <table>
@@ -47,6 +49,11 @@ Also, [I played Craft Conf selfie-Pokémon](https://twitter.com/search?q=%40star
 <a href="http://twitter.com/jezhumble">Jez Humble</a></td>
 </tr>
 </table>
+
+
+I loved the speaker's gift, as well!
+
+<img src="/media/craftconf_speaker_gift.jpg" />
 
 
 This show was a _lot_ of fun and I certainly hope to be invited back next year! In the meantime, though, I am _very_ excited to be returning to San Francisco (where I live!) in a few short hours, for the first time since the last week of January!
