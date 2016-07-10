@@ -90,7 +90,7 @@
 		<h1>A Discussion on Distributed State and Microservices</h1>
 	</div>
 
-	<p><em>26 July 2016</em></p>
+	<p><em>26 June 2016</em></p>
 
 	<p><blockquote><p>Note: I was recently asked about CQRS and its role in buiilding microservices. I threw together an email - high level, devoid of specific technologies (like Spring Cloud Stream, Axon, or Eventuate) that looks at some of the patterns for connecting distributed systems. I figure I may as well share it here, briskly edited.</p>
 </blockquote><p>Hi,</p><p>I believe CQRS to be one (though, interesting) dimension tot he challenge of modeling distributed state. The challenge is, given that microservices stand up APIs in front of data, how do we connect these datasets? How do we get services to agree upon distributed state? this isn't a new problem. there are quite a few nice patterns and approaches for dealing w/ this.</p><p>the CAP theorem offers an interesting, but flawed, mental model when talking about distributed state. nominally, it states: given availability (A), consistency (C) and partitionability (P), you can only have 2/3. Specifically, you can have A+C (but not P) or PA (but not C). The truth, however, is that very few systems need perfect CAP 100% of the time. If you're willing to accept gradients then you can have all 3 at the same time. One way to introduce a gradient is temporal decoupling, or just <em>time</em>. If I'm ok with a bit of time, then I <em>can</em> (given time) guarantee consistency and availability. Most systems are OK w/ this.</p>
