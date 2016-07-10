@@ -1,5 +1,5 @@
 title=A Discussion on Distributed State and Microservices
-date=2016-07-26
+date=2016-06-26
 type=post
 tags=blog
 status=published
