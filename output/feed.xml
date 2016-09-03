@@ -6,13 +6,13 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sun, 10 Jul 2016 17:15:49 +0900</pubDate>
-    <lastBuildDate>Sun, 10 Jul 2016 17:15:49 +0900</lastBuildDate>
+    <pubDate>Sat, 3 Sep 2016 21:17:59 +0800</pubDate>
+    <lastBuildDate>Sat, 3 Sep 2016 21:17:59 +0800</lastBuildDate>
 
     <item>
       <title>Can You Recommend Some Worthy Alternatives to Dropbox?</title>
       <link>http://joshlong.com/jl/blogPost/alternatives-to-dropbox.html</link>
-      <pubDate>Sun, 10 Jul 2016 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 10 Jul 2016 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/alternatives-to-dropbox.html</guid>
       	<description>
 	&lt;p&gt;I need some recommendations for worthy alternatives to Dropbox. I&apos;ve found a few but would love some input and recommendations as this will, no doubt, be &lt;em&gt;very&lt;/em&gt; painful.&lt;/p&gt;&lt;p&gt;Here&apos;s the background on my motivations for leaving. I have an old credit card on file with Dropbox. It&apos;s about to expire and a few months ago Dropbox started sending me emails telling me to update it so as to ensure uninterrupted service. Fine. So, I logged into the website on iOS and tried to change my Credit Card and it gave me a cryptic message saying there was an error. It sometimes showed me an error saying it couldn&apos;t change the country code. I thought it might just be shite JavaScript and so tried it on Chrome on the Desktop. Same nonsense. I sent them an email asking for help and they responded, days later, that my country was Germany and that there&apos;s no way to change the country code without downgrading my account. I&apos;ve never lived in Germany, nor had a credit card or a billing address, in Germany. It happened, however, that I was in Germany at the time I was trying to update my credit card. (I am not sure if this bit&apos;s related). So, after I made them promise me nothing would be lost if i briefly downgraded, I went ahead and did it. Logged in to the site, and... the &lt;em&gt;Change Payment&lt;/em&gt; option didn&apos;t exist! There&apos;s no way to specify a new credit card! Or any credit card! All this after a week of emails back and forth and an hour or two trying to fiddle with the credit card dialog. They can seamlessly sync my files to all manner of devices, anywhere in the world, but updating the country in the credit card dialog? IMPOSSIBLE! If they don&apos;t want $200/yearly, that&apos;s fine, I&apos;ll just go somewhere else.&lt;/p&gt;&lt;p&gt;So, what can you recommend? &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;Please let me know on Twitter&lt;/a&gt;&lt;/p&gt;
@@ -21,7 +21,7 @@
     <item>
       <title>A Discussion on Distributed State and Microservices</title>
       <link>http://joshlong.com/jl/blogPost/an-email-on-distributed-state.html</link>
-      <pubDate>Sun, 26 Jun 2016 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 26 Jun 2016 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/an-email-on-distributed-state.html</guid>
       	<description>
 	&lt;blockquote&gt;&lt;p&gt;Note: I was recently asked about CQRS and its role in buiilding microservices. I threw together an email - high level, devoid of specific technologies (like Spring Cloud Stream, Axon, or Eventuate) that looks at some of the patterns for connecting distributed systems. I figure I may as well share it here, briskly edited.&lt;/p&gt;
@@ -37,7 +37,7 @@
     <item>
       <title>OSCON 2016</title>
       <link>http://joshlong.com/jl/blogPost/oscon-2016.html</link>
-      <pubDate>Sun, 1 May 2016 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 1 May 2016 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/oscon-2016.html</guid>
       	<description>
 	&lt;p&gt;I regretfully share that I&apos;ve had to drop out of OSCON 2016. I&apos;ve wanted to be back at OSCON, especially in light of its move to Austin, and I tried very hard to reschedule but it was not to be. That said, it looks like you&apos;ll be in good hands! I&apos;ve had my friend &lt;a href=&quot;https://twitter.com/kennybastani&quot;&gt;Kenny&lt;/a&gt; substitute for me at the &lt;em&gt;Cloud Native Workshop&lt;/em&gt; workshop and it looks like &lt;a href=&quot;https://twitter.com/jbaruch&quot;&gt;Baruch&lt;/a&gt; will be able to give another talk even though I&apos;ve had to drop out of our joint submission. I&apos;m so very sad to miss this year&apos;s show! It looks &lt;em&gt;amazing&lt;/em&gt;! Here&apos;s to next year..&lt;/p&gt;
@@ -46,7 +46,7 @@
     <item>
       <title>Craft Conf 2016</title>
       <link>http://joshlong.com/jl/blogPost/craftconf-2016-trip-review.html</link>
-      <pubDate>Sat, 30 Apr 2016 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 30 Apr 2016 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/craftconf-2016-trip-review.html</guid>
       	<description>
 	&lt;p&gt;This was my first Craft Conf. I have been invited every year since the debut and have always had to decline in order to make the Great Indian Developer Summit (a great show to be sure!), to which I was previous committed. This year, I &lt;em&gt;finally&lt;/em&gt; remembered to give it a shot and I am &lt;em&gt;so&lt;/em&gt; glad I did! I met many of my heroes and heroines and see &lt;em&gt;many&lt;/em&gt; old friends all in one dense, information packed show. The content was superb, the endless Nespresso and beer made the occasional intermissions go over well, and (incredibly!) the wi-fi was top-notch, as well. It was a genuinely good show.&lt;/p&gt;&lt;p&gt;There were two parts that weren&apos;t as great as they should be:&lt;/p&gt;&lt;p&gt;First, the electricity for the room I was in failed. I was one of the first session talks after the keynote on the first day, so the whole thing hadn&apos;t yet been proven. This whole show was in an amazing &lt;a href=&quot;http://www.vasuttortenetipark.hu/&quot;&gt;&lt;em&gt;train museum&lt;/em&gt;, Magyar Vasúttörténeti Park&lt;/a&gt;, and so assembled with astonishingly good results just days before the big event! Unfortunately, this meant that while the engineers spent the first 25 minutes of my 40 minute slot trying to get the stage lighting and display working, I was left on stage just chatting with the audience. I tried to make up for it, later, in a smaller supposedly hands-on workshop which seemed to go over alright. The first session was 40 minutes. The later session was to be a hands-on session of 90 minutes. I was told I could repeat the earlier talk then, which I did. I hope it resonated with people. I would&apos;ve liked to have been able to take the audience that was in my room with me on a journey, as planned, though I&apos;m pleased people showed up later. Oh well..&lt;/p&gt;&lt;p&gt;Also, I was really keen on finally meeting &lt;a href=&quot;http://twitter.com/aphyr&quot;&gt;Kyle Kingsbury&lt;/a&gt;, author of &lt;a href=&quot;https://aphyr.com/tags/Jepsen&quot;&gt;the &lt;em&gt;Call Me Maybe&lt;/em&gt; series of blogs&lt;/a&gt; that disect the availability, partitionability and consistency qualities of distributed systems in &lt;em&gt;excruciating, hilarious&lt;/em&gt; detail. Unfortunately, he fell ill with an ear infection before boarding his flight for Budapest. I don&apos;t know if you&apos;ve ever had an ear infection but the &lt;em&gt;last&lt;/em&gt; thing you want to do is change atmospheric pressure! It&apos;s excruciating enough as it is! Obviously, I wish him a speedy recovery and look forward to seeing his streamed presentation this Saturday in the AM PST time. (Follow &lt;a href=&quot;http://twitter.com/aphyr&quot;&gt;him on Twitter for more&lt;/a&gt;!)&lt;/p&gt;&lt;p&gt;I took away a lot of great ideas from this show. A lot of great themes also resonated:&lt;/p&gt;
@@ -85,7 +85,7 @@
     <item>
       <title>Pieter Hintjens</title>
       <link>http://joshlong.com/jl/blogPost/pieter-hintjens.html</link>
-      <pubDate>Mon, 25 Apr 2016 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 25 Apr 2016 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/pieter-hintjens.html</guid>
       	<description>
 	&lt;p&gt;The amazing &lt;a href=&quot;https://en.wikipedia.org/wiki/Pieter_Hintjens&quot;&gt;Pieter Hintjens&lt;/a&gt; is not well. He&apos;s contributed a lot to the open-source community, notably to the AMQP protocol (which underpins RabbitMQ) and to ZeroMQ. He&apos;s talked about his state in a blog called &lt;a href=&quot;http://hintjens.com/blog:115&quot;&gt;&lt;em&gt;A Protocol for Dying&lt;/em&gt;&lt;/a&gt;. If you&apos;re a fan, perhaps now&apos;s your chance to let him know. If you&apos;re not a fan, then perhaps you could investigate some of his work? He &lt;a href=&quot;http://zeromq.org/&quot;&gt;leads the ZeroMQ project&lt;/a&gt;, wrote &lt;a href=&quot;http://hintjens.com/books&quot;&gt;a few books&lt;/a&gt;, and did a lot of great videos. I really liked this one &lt;a href=&quot;http://www.ustream.tv/recorded/61450822&quot;&gt;from 2015&apos;s Craft Conf&lt;/a&gt;. I&apos;ll be at Craft Conf (starting today, actually) this year and I&apos;ll be thinking of Pieter. &lt;/p&gt;
@@ -94,7 +94,7 @@
     <item>
       <title>Belgium, on March 22, 2016</title>
       <link>http://joshlong.com/jl/blogPost/belgium-03-22-2016.html</link>
-      <pubDate>Tue, 12 Apr 2016 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 12 Apr 2016 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/belgium-03-22-2016.html</guid>
       	<description>
 	&lt;p&gt;I was in Paris the week of March 22nd, 2016, with customer meetings and meetups in both Brussels, Belgium and Paris, France scheduled. Indeed, I arrived in Paris, and was due to travel, &lt;em&gt;by train&lt;/em&gt;, the morning of March 22nd, 2016, to speak with customers and &lt;a href=&quot;https://www.eventbrite.com/e/ordina-jworks-hands-on-cloud-native-journey-workshop-with-josh-long-tickets-22864131232&quot;&gt;to appear at a meetup that evening&lt;/a&gt;. I woke up in the morning, in Paris, to a barrage of tweets and text messages from concerned family and colleagues (some of whom may as well be family); the unspeakable had happened. Earlier that morning, terrorists, cowards, attacked the Brussels station and murdered dozens of innocent people. I was encouraged to stay in Paris. My customers understandably evacuated their local staff and sent them home. We rescheduled the in-person meetup and directed all the would-be attendees to join us for a remote webinar which was well-received. I was not among the victims of that horrific day. I was safe, far away, in Paris, France. I was due to travel there, though. I know, logically, that I was never at risk because of the schedule. It disturbs me that it was as simple as the schedule: my travel was scheduled eight hours later. That&apos;s it. I am here because I had morning obligations in Paris, and the victims of that nightmare didn&apos;t. I am so very fortunate. I am so very sad those lost were lost. I am so sorry. Nothing can make right what happened.&lt;/p&gt;&lt;p&gt;My friend, colleague, and Belgian Stéphane Nicoll, said it best:&lt;/p&gt;
@@ -105,7 +105,7 @@
     <item>
       <title>I Wish I Could&apos;ve Made JPoint</title>
       <link>http://joshlong.com/jl/blogPost/sorry-about-jpoint.html</link>
-      <pubDate>Mon, 11 Apr 2016 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 11 Apr 2016 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/sorry-about-jpoint.html</guid>
       	<description>
 	&lt;p&gt;I was scheduled to appear at &lt;a href=&quot;http://javapoint.ru/&quot;&gt;JPoint&lt;/a&gt;, a conference in &lt;a href=&quot;https://en.wikipedia.org/wiki/Novosibirsk&quot;&gt;Novosibirsk&lt;/a&gt;, Russia. I was &lt;em&gt;very&lt;/em&gt; excited to go, I purchased tickets and - because my schedule is &lt;em&gt;very&lt;/em&gt; busy and I spend very few contiguous days in the US before in which I could secure a VISA, before having to venture out to parts unknown, I had to commit more than $800 USD towards securing an expedited VISA through a travel agent. Which I did. And then came the big day when I was to board a flight from Los Angeles to Russia, via China. It was a long-haul flight but I was excited. I got to the airport late as I was stuck in traffic in Los Angeles. The front desk was already closed and I couldn&apos;t even proceed to security. For some reason, the front desk wouldn&apos;t let me check in online enroute, so by the time I got there, there was no way to checkin, either. It was so frustrating. I called my travel agent and explained the situation and - miraculously - the agent with whom I was speaking found a route that left later, got me there earlier and was cheaper! Amazing! I had her book it! I waited in the airport, already exhausted, only to amble to the checkin counter (I couldn&apos;t even checkin and get to a lounge or somewhere comfortable for hours, before) only to discover the flight was to Moscow. Not Novosibirsk, the destination city. I scrambled. Was there a flight that connected from Moscow? Surely it couldn&apos;t be that big a delta?? It was. It was equivalent to landing in Los Angeles when I had a meeting in New York City where the timezone was three hours ahead. It was the wrong flight and it was too late to find an alternative flight, Star Alliance or not. This was so very frustrating and I wish the situation had been different. I am sorry, and I hope that, next time, things are better.&lt;/p&gt;
@@ -114,7 +114,7 @@
     <item>
       <title>Annoying &quot;Accept Incoming Requests&quot; Dialog when Using IntelliJ IDEA on OS X</title>
       <link>http://joshlong.com/jl/blogPost/accept-incoming-request-intellij.html</link>
-      <pubDate>Wed, 3 Feb 2016 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 3 Feb 2016 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/accept-incoming-request-intellij.html</guid>
       	<description>
 	&lt;p&gt;I recently got a new machine and did a &lt;code&gt;brew cask install intellij-idea&lt;/code&gt; and then quickly went to a dozen different customer meetings. When the dust finally settled, I realized I was being prompted by OS X&apos;s firewall and security subsystem to confirm that IntelliJ could accept incoming connections on &lt;em&gt;every&lt;/em&gt; launch of IntelliJ, as shown here:&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/media/accept-all-incoming-connections.png&quot;/&gt;&lt;/p&gt;&lt;p&gt;Lazy, and in sufficient pain as to warrant a Tweet, I asked if anybody knew of a way around this issue. I was given two interesting replies. First, we &lt;a href=&quot;https://youtrack.jetbrains.com/issue/IDEA-150782&quot;&gt;should watch and vote on this issue on the IntelliJ tracker&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/damian_bl/status/694891546462797824&quot;&gt;second&lt;/a&gt; (thanks &lt;em&gt;so much&lt;/em&gt; &lt;a href=&quot;http://twitter.com/damian_bl&quot;&gt;@damian_bl&lt;/a&gt;!) that if I wanted to fix it in the meantime &lt;a href=&quot;https://www.igorkromin.net/index.php/2015/07/05/fix-the-do-you-want-the-application-intellij-idea-14-ceapp-to-accept-incoming-network-connections-prompt/&quot;&gt;I could force it to resign itself&lt;/a&gt;:&lt;/p&gt;
@@ -125,7 +125,7 @@
     <item>
       <title>Spring Cloud Guides</title>
       <link>http://joshlong.com/jl/blogPost/spring-cloud-guides.html</link>
-      <pubDate>Sat, 30 Jan 2016 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 30 Jan 2016 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring-cloud-guides.html</guid>
       	<description>
 	&lt;p&gt;Kenny and I have been hard at work on the O&apos;Reilly &lt;em&gt;Cloud Native Java&lt;/em&gt; book, and Phil and I have been hard at work on the updated &lt;em&gt;Building Microservices with Spring Boot LiveLessons&lt;/em&gt; for the more in-depth introductions to Spring Boot and Spring Cloud, but I am &lt;em&gt;very&lt;/em&gt; happy to report that we on the Spring team &lt;em&gt;finally&lt;/em&gt; started to add guides to the &lt;a href=&quot;http://spring.io/guides&quot;&gt;Spring Guides section&lt;/a&gt; on &lt;a href=&quot;http://spring.io/guides/gs/service-registration-and-discovery/&quot;&gt;service registration and discovery&lt;/a&gt;, &lt;a href=&quot;http://spring.io/guides/gs/routing-and-filtering/&quot;&gt;Zuul-based microproxies for routing and filtering&lt;/a&gt;, &lt;a href=&quot;http://spring.io/guides/gs/circuit-breaker/&quot;&gt;circuit breakers&lt;/a&gt;, and &lt;a href=&quot;http://spring.io/guides/gs/centralized-configuration/&quot;&gt;centralized configuration&lt;/a&gt;! Get &apos;em while they&apos;re hot!&lt;/p&gt;
@@ -134,7 +134,7 @@
     <item>
       <title>Tech Tip: Getting Started with Spring Boot</title>
       <link>http://joshlong.com/jl/blogPost/tech_tip_geting_started_with_spring_boot.html</link>
-      <pubDate>Fri, 27 Jun 2014 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 27 Jun 2014 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/tech_tip_geting_started_with_spring_boot.html</guid>
       	<description>
 	
@@ -159,7 +159,7 @@
     <item>
       <title>Spring Integration Adapters, Gateways, and Channels</title>
       <link>http://joshlong.com/jl/blogPost/spring_integration_adapters_gateways_and_channels.html</link>
-      <pubDate>Fri, 6 Jun 2014 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 6 Jun 2014 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_integration_adapters_gateways_and_channels.html</guid>
       	<description>
 	
@@ -194,7 +194,7 @@
     <item>
       <title>Don&apos;t Want to use Maven with Spring?</title>
       <link>http://joshlong.com/jl/blogPost/dont_want_to_use_maven_with_spring.html</link>
-      <pubDate>Tue, 3 Jun 2014 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 3 Jun 2014 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/dont_want_to_use_maven_with_spring.html</guid>
       	<description>
 	
@@ -217,7 +217,7 @@
     <item>
       <title>Devoxx France 2014</title>
       <link>http://joshlong.com/jl/blogPost/devoxx_france_21.html</link>
-      <pubDate>Sat, 19 Apr 2014 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 19 Apr 2014 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/devoxx_france_21.html</guid>
       	<description>
 	
@@ -248,7 +248,7 @@
     <item>
       <title>It&apos;s 2014: Happy New Year!</title>
       <link>http://joshlong.com/jl/blogPost/its_2014_happy_new_year.html</link>
-      <pubDate>Wed, 1 Jan 2014 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 1 Jan 2014 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/its_2014_happy_new_year.html</guid>
       	<description>
 	
@@ -260,7 +260,7 @@
     <item>
       <title>Spring Boot M6&apos;s new Security features</title>
       <link>http://joshlong.com/jl/blogPost/spring_boot_m6s_new_security_featur.html</link>
-      <pubDate>Tue, 12 Nov 2013 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 12 Nov 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_boot_m6s_new_security_featur.html</guid>
       	<description>
 	
@@ -306,7 +306,7 @@ shell.auth=spring
     <item>
       <title>A Busy, Spring-filled November</title>
       <link>http://joshlong.com/jl/blogPost/a_busy_november.html</link>
-      <pubDate>Tue, 5 Nov 2013 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 5 Nov 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_busy_november.html</guid>
       	<description>
 	
@@ -322,7 +322,7 @@ shell.auth=spring
     <item>
       <title>Web Messaging with Spring 4.0&apos;s Support for WebSockets, STOMP and Sock.js</title>
       <link>http://joshlong.com/jl/blogPost/web_messaging_with_spring_40s_support_for_websockets_stomp_and_sockjs.html</link>
-      <pubDate>Mon, 23 Sep 2013 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 23 Sep 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/web_messaging_with_spring_40s_support_for_websockets_stomp_and_sockjs.html</guid>
       	<description>
 	
@@ -339,7 +339,7 @@ shell.auth=spring
     <item>
       <title>Data Integration, Stream Processing and Spring XD</title>
       <link>http://joshlong.com/jl/blogPost/data_integration_stream_processing_and_spring_xd.html</link>
-      <pubDate>Sun, 22 Sep 2013 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 22 Sep 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/data_integration_stream_processing_and_spring_xd.html</guid>
       	<description>
 	
@@ -378,7 +378,7 @@ shell.auth=spring
     <item>
       <title>Adding the ActionBar Sherlock Project to an Android Application</title>
       <link>http://joshlong.com/jl/blogPost/adding_the_actionbar_sherlock_project_to_an_android_application.html</link>
-      <pubDate>Wed, 18 Sep 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 18 Sep 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/adding_the_actionbar_sherlock_project_to_an_android_application.html</guid>
       	<description>
 	
@@ -481,7 +481,7 @@ shell.auth=spring
     <item>
       <title>Doing the Maven Dependency Dance for Spring Android Projects</title>
       <link>http://joshlong.com/jl/blogPost/doing_the_maven_dependency_dance_for_spring_android_projects.html</link>
-      <pubDate>Tue, 17 Sep 2013 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 17 Sep 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/doing_the_maven_dependency_dance_for_spring_android_projects.html</guid>
       	<description>
 	
@@ -569,7 +569,7 @@ shell.auth=spring
     <item>
       <title>Introducing Spring Boot</title>
       <link>http://joshlong.com/jl/blogPost/introducing_spring_boot.html</link>
-      <pubDate>Wed, 7 Aug 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 7 Aug 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/introducing_spring_boot.html</guid>
       	<description>
 	
@@ -594,7 +594,7 @@ class ThisWillActuallyRun {
     <item>
       <title>SpringOne2GX 2013 is Coming!</title>
       <link>http://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
-      <pubDate>Wed, 7 Aug 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 7 Aug 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
       	<description>
 	
@@ -607,7 +607,7 @@ Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.sprin
     <item>
       <title>iCloud (Part #1)</title>
       <link>http://joshlong.com/jl/blogPost/icloud_part_1.html</link>
-      <pubDate>Mon, 1 Jul 2013 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 1 Jul 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/icloud_part_1.html</guid>
       	<description>
 	
@@ -634,7 +634,7 @@ Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.sprin
     <item>
       <title>On Java Code Style</title>
       <link>http://joshlong.com/jl/blogPost/on_java_code_style.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
       	<description>
 	
@@ -653,7 +653,7 @@ Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.sprin
     <item>
       <title>Simplified Web Configuration with Spring</title>
       <link>http://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/simplified_web_configuration_with_spring.html</guid>
       	<description>
 	
@@ -796,7 +796,7 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
     <item>
       <title>Webinar Replay: Building REST APIs with Spring</title>
       <link>http://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</guid>
       	<description>
 	
@@ -815,7 +815,7 @@ The video of my webinar on
     <item>
       <title>MOAR HYPERMEDIA PAYPAL</title>
       <link>http://joshlong.com/jl/blogPost/moar_hypermedia.html</link>
-      <pubDate>Tue, 28 May 2013 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 28 May 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/moar_hypermedia.html</guid>
       	<description>
 	
@@ -828,7 +828,7 @@ The video of my webinar on
     <item>
       <title>Dependency Injection with Dagger on Android</title>
       <link>http://joshlong.com/jl/blogPost/dependency_injection_with_dagger_on_android.html</link>
-      <pubDate>Wed, 15 May 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 15 May 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/dependency_injection_with_dagger_on_android.html</guid>
       	<description>
 	
@@ -1010,7 +1010,7 @@ public class CrmBaseActivity extends Activity {
     <item>
       <title>Speaking at the Oakland JUG tonight at 6:30</title>
       <link>http://joshlong.com/jl/blogPost/speaking_at_the_oakland_jug_tonight_at_630.html</link>
-      <pubDate>Wed, 24 Apr 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 24 Apr 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/speaking_at_the_oakland_jug_tonight_at_630.html</guid>
       	<description>
 	
@@ -1027,7 +1027,7 @@ public class CrmBaseActivity extends Activity {
     <item>
       <title>Java Configuration with Spring Batch</title>
       <link>http://joshlong.com/jl/blogPost/java_configuration_with_spring_batch.html</link>
-      <pubDate>Sun, 14 Apr 2013 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 14 Apr 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_batch.html</guid>
       	<description>
 	
@@ -1116,7 +1116,7 @@ public class BatchImporterConfiguration {
     <item>
       <title>Java Configuration with Spring Social</title>
       <link>http://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</link>
-      <pubDate>Sun, 14 Apr 2013 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 14 Apr 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_social.html</guid>
       	<description>
 	
@@ -1189,7 +1189,7 @@ public void showProfileInformation( Model model){
     <item>
       <title>Java Configuration</title>
       <link>http://joshlong.com/jl/blogPost/java_configuration.html</link>
-      <pubDate>Sat, 13 Apr 2013 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/java_configuration.html</guid>
       	<description>
 	
@@ -1263,7 +1263,7 @@ This was by no means an exhaustive look at Java configuration, but hopefully you
     <item>
       <title>One Big Bag of Beans</title>
       <link>http://joshlong.com/jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</link>
-      <pubDate>Sat, 13 Apr 2013 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</guid>
       	<description>
 	
@@ -1281,7 +1281,7 @@ Then Java 5 came out and with it annotations. We had ways for the class files to
     <item>
       <title>Breaking the 1000ms Time to Glass Mobile Barrier</title>
       <link>http://joshlong.com/jl/blogPost/breaking_the_1000ms_time_to_glass_mobile_barribreaking_the_1000ms_time_to_glass_mobile_barri.html</link>
-      <pubDate>Thu, 11 Apr 2013 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 11 Apr 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/breaking_the_1000ms_time_to_glass_mobile_barribreaking_the_1000ms_time_to_glass_mobile_barri.html</guid>
       	<description>
 	
@@ -1304,7 +1304,7 @@ javascript and web applications.
     <item>
       <title>Fixing Facebook</title>
       <link>http://joshlong.com/jl/blogPost/fixing_facebook.html</link>
-      <pubDate>Sun, 31 Mar 2013 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 31 Mar 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/fixing_facebook.html</guid>
       	<description>
 	
@@ -1332,7 +1332,7 @@ The final benefit is that - as I&apos;m interested in the variety of content on 
     <item>
       <title>REPL vs. Unit Tests misses the Point</title>
       <link>http://joshlong.com/jl/blogPost/repl_vs_unit_tests_misses_the_point.html</link>
-      <pubDate>Wed, 20 Mar 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 20 Mar 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/repl_vs_unit_tests_misses_the_point.html</guid>
       	<description>
 	
@@ -1377,7 +1377,7 @@ In the same vein, years ago, there was a project called &lt;A href=&quot;http://
     <item>
       <title>Upgrading to JDK 7 on OSX</title>
       <link>http://joshlong.com/jl/blogPost/upgrading_to_jdk_7_on_osx.html</link>
-      <pubDate>Wed, 20 Mar 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 20 Mar 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/upgrading_to_jdk_7_on_osx.html</guid>
       	<description>
 	
@@ -1398,7 +1398,7 @@ In the same vein, years ago, there was a project called &lt;A href=&quot;http://
     <item>
       <title>SpringSource Bag &apos;o Swag</title>
       <link>http://joshlong.com/jl/blogPost/springsource_bag_o_swag.html</link>
-      <pubDate>Tue, 19 Mar 2013 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 19 Mar 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/springsource_bag_o_swag.html</guid>
       	<description>
 	
@@ -1415,7 +1415,7 @@ In the same vein, years ago, there was a project called &lt;A href=&quot;http://
     <item>
       <title>The Apache Hadoop Ecosystem, Visualized in Datameer</title>
       <link>http://joshlong.com/jl/blogPost/the_apache_hadoop_ecosystem_visualized_in_datameer.html</link>
-      <pubDate>Fri, 8 Mar 2013 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 8 Mar 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_apache_hadoop_ecosystem_visualized_in_datameer.html</guid>
       	<description>
 	
@@ -1432,7 +1432,7 @@ In the same vein, years ago, there was a project called &lt;A href=&quot;http://
     <item>
       <title>Multi Client Development with Spring Webinar on March 14, 2013</title>
       <link>http://joshlong.com/jl/blogPost/performance_and_the_restful_web.html</link>
-      <pubDate>Thu, 7 Mar 2013 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 7 Mar 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/performance_and_the_restful_web.html</guid>
       	<description>
 	
@@ -1451,7 +1451,7 @@ Once we&apos;ve introduced Spring&apos;s REST support, we&apos;ll look at how to
     <item>
       <title>Spring MVC Performance FTW</title>
       <link>http://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</link>
-      <pubDate>Thu, 7 Mar 2013 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 7 Mar 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_mvc_performance_ftw.html</guid>
       	<description>
 	
@@ -1468,7 +1468,7 @@ Once we&apos;ve introduced Spring&apos;s REST support, we&apos;ll look at how to
     <item>
       <title>My Post on Spring at China Scale</title>
       <link>http://joshlong.com/jl/blogPost/my_post_on_spring_at_china_scale.html</link>
-      <pubDate>Wed, 6 Mar 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 6 Mar 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_post_on_spring_at_china_scale.html</guid>
       	<description>
 	
@@ -1486,7 +1486,7 @@ Spring at China Scale: Alibaba Group (Alipay, Taobao, and Tmall)&lt;/a&gt; which
     <item>
       <title>Validating with Spring MVC, JSR 303, and BindingResult Arguments</title>
       <link>http://joshlong.com/jl/blogPost/validating_with_spring_mvc_jsr_303_and_bindingresult_arguments.html</link>
-      <pubDate>Tue, 5 Mar 2013 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 5 Mar 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/validating_with_spring_mvc_jsr_303_and_bindingresult_arguments.html</guid>
       	<description>
 	
@@ -1520,7 +1520,7 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
     <item>
       <title>How to Deploy Cloud Foundry to Amazon Web Services using BOSH</title>
       <link>http://joshlong.com/jl/blogPost/how_to_deploy_cloud_foundry_to_amazon_web_services_using_bosh.html</link>
-      <pubDate>Thu, 28 Feb 2013 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 28 Feb 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/how_to_deploy_cloud_foundry_to_amazon_web_services_using_bosh.html</guid>
       	<description>
 	
@@ -1554,7 +1554,7 @@ Also,  you&apos;ll need to have a domain you can point to this. During this proc
     <item>
       <title>Bubble Wrap</title>
       <link>http://joshlong.com/jl/blogPost/bubble_wrap.html</link>
-      <pubDate>Wed, 20 Feb 2013 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 20 Feb 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/bubble_wrap.html</guid>
       	<description>
 	
@@ -1568,7 +1568,7 @@ Also,  you&apos;ll need to have a domain you can point to this. During this proc
     <item>
       <title>Coffee Drinks in China</title>
       <link>http://joshlong.com/jl/blogPost/coffee_drinks_in_china.html</link>
-      <pubDate>Sat, 19 Jan 2013 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 19 Jan 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/coffee_drinks_in_china.html</guid>
       	<description>
 	
@@ -1585,7 +1585,7 @@ Also,  you&apos;ll need to have a domain you can point to this. During this proc
     <item>
       <title>On Damien Katz&apos; &quot;The Unreasonable Effectiveness of C&quot;</title>
       <link>http://joshlong.com/jl/blogPost/on_damien_katz_the_unreasonable_effectiveness_of_c.html</link>
-      <pubDate>Sat, 19 Jan 2013 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 19 Jan 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/on_damien_katz_the_unreasonable_effectiveness_of_c.html</guid>
       	<description>
 	
@@ -1610,7 +1610,7 @@ Once you&apos;ve gone through this process, then exposing the C API via messagin
     <item>
       <title>Programmer Pet Peeves #242942: Sheraton</title>
       <link>http://joshlong.com/jl/blogPost/programmer_pet_peeves.html</link>
-      <pubDate>Mon, 14 Jan 2013 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 14 Jan 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/programmer_pet_peeves.html</guid>
       	<description>
 	
@@ -1631,7 +1631,7 @@ Sometimes I wonder if people test things before they release it :/
     <item>
       <title>Super Productive Sick Days</title>
       <link>http://joshlong.com/jl/blogPost/super_productive_sick_days.html</link>
-      <pubDate>Thu, 3 Jan 2013 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 3 Jan 2013 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/super_productive_sick_days.html</guid>
       	<description>
 	
@@ -1647,7 +1647,7 @@ Sometimes I wonder if people test things before they release it :/
     <item>
       <title>Happy New Year, and Here&apos;s to 2013</title>
       <link>http://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
-      <pubDate>Mon, 31 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 31 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
       	<description>
 	
@@ -1658,7 +1658,7 @@ Sometimes I wonder if people test things before they release it :/
     <item>
       <title>They Think of Everything</title>
       <link>http://joshlong.com/jl/blogPost/they_think_of_everything.html</link>
-      <pubDate>Mon, 31 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 31 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/they_think_of_everything.html</guid>
       	<description>
 	
@@ -1672,7 +1672,7 @@ Sometimes I wonder if people test things before they release it :/
     <item>
       <title>Chinese Weather</title>
       <link>http://joshlong.com/jl/blogPost/chinese_weather.html</link>
-      <pubDate>Wed, 26 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 26 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/chinese_weather.html</guid>
       	<description>
 	
@@ -1689,7 +1689,7 @@ it&apos;s freaking &lt;EM&gt;cold&lt;/EM&gt; in China. Northern parts of China -
     <item>
       <title>Christmas in Shanghai</title>
       <link>http://joshlong.com/jl/blogPost/christmas_in_shanghai.html</link>
-      <pubDate>Wed, 26 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 26 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/christmas_in_shanghai.html</guid>
       	<description>
 	
@@ -1704,7 +1704,7 @@ it&apos;s freaking &lt;EM&gt;cold&lt;/EM&gt; in China. Northern parts of China -
     <item>
       <title>PeppedUp.org</title>
       <link>http://joshlong.com/jl/blogPost/peppeduporg.html</link>
-      <pubDate>Fri, 21 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 21 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/peppeduporg.html</guid>
       	<description>
 	
@@ -1721,7 +1721,7 @@ it&apos;s freaking &lt;EM&gt;cold&lt;/EM&gt; in China. Northern parts of China -
     <item>
       <title>A Shanghai French Connection</title>
       <link>http://joshlong.com/jl/blogPost/pink_people_and_shanghai_french_conne.html</link>
-      <pubDate>Mon, 17 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 17 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/pink_people_and_shanghai_french_conne.html</guid>
       	<description>
 	
@@ -1744,7 +1744,7 @@ Then I started thinking about it. Since I arrived in China  on  December 2, &lt;
     <item>
       <title>Booking.com rewrites the Java-based YUI compressor using Perl</title>
       <link>http://joshlong.com/jl/blogPost/booking_com_rewrites_the_java_based_yui_compressor_to_perl.html</link>
-      <pubDate>Sun, 16 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 16 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/booking_com_rewrites_the_java_based_yui_compressor_to_perl.html</guid>
       	<description>
 	
@@ -1758,7 +1758,7 @@ Then I started thinking about it. Since I arrived in China  on  December 2, &lt;
     <item>
       <title>Rest in Peace Ravi Shankar</title>
       <link>http://joshlong.com/jl/blogPost/rest_in_peace_ravi_shankar.html</link>
-      <pubDate>Wed, 12 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 12 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/rest_in_peace_ravi_shankar.html</guid>
       	<description>
 	
@@ -1777,7 +1777,7 @@ He was an amazingly talented musician, and all walks of music owe him a debt of 
     <item>
       <title>SpringOne Beijing and India Trip Report</title>
       <link>http://joshlong.com/jl/blogPost/springone_beijing_and_india_trip_report.html</link>
-      <pubDate>Wed, 12 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 12 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/springone_beijing_and_india_trip_report.html</guid>
       	<description>
 	
@@ -1807,7 +1807,7 @@ We &lt;a href= &quot;http://springonechina.cloudfoundry.com&quot;&gt;finished Sp
     <item>
       <title>Shanghai, December 4th</title>
       <link>http://joshlong.com/jl/blogPost/shanghai_december_4th.html</link>
-      <pubDate>Wed, 5 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 5 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/shanghai_december_4th.html</guid>
       	<description>
 	
@@ -1834,7 +1834,7 @@ We &lt;a href= &quot;http://springonechina.cloudfoundry.com&quot;&gt;finished Sp
     <item>
       <title>Living in China for 2 Months</title>
       <link>http://joshlong.com/jl/blogPost/living_in_china_for_2_months.html</link>
-      <pubDate>Sat, 1 Dec 2012 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 1 Dec 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/living_in_china_for_2_months.html</guid>
       	<description>
 	
@@ -1848,7 +1848,7 @@ Wish me luck!
     <item>
       <title>The Kettle in Manhattan Beach, Los Angeles, at 4am</title>
       <link>http://joshlong.com/jl/blogPost/the_kettle_in_manhattan_beach_los_angeles_at_4am.html</link>
-      <pubDate>Tue, 27 Nov 2012 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 27 Nov 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_kettle_in_manhattan_beach_los_angeles_at_4am.html</guid>
       	<description>
 	
@@ -1862,7 +1862,7 @@ Wish me luck!
     <item>
       <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
       <link>http://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
-      <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
       	<description>
 	
@@ -1875,7 +1875,7 @@ Wish me luck!
     <item>
       <title>Spring Data Mongo transaction synchronization does not find a bound DB</title>
       <link>http://joshlong.com/jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</link>
-      <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</guid>
       	<description>
 	
@@ -1912,7 +1912,7 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
     <item>
       <title>Devoxx 2012 Trip Report</title>
       <link>http://joshlong.com/jl/blogPost/devoxx_2012_trip_report.html</link>
-      <pubDate>Fri, 16 Nov 2012 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 16 Nov 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/devoxx_2012_trip_report.html</guid>
       	<description>
 	
@@ -1937,7 +1937,7 @@ I can&apos;t wait until next year.   Although, I&apos;m not sure if I&apos;ll be
     <item>
       <title>Getting Started with Cloud Foundry for Java and Spring Developers</title>
       <link>http://joshlong.com/jl/blogPost/getting_started_with_cloud_foundry_for_java_and_spring_developers.html</link>
-      <pubDate>Fri, 16 Nov 2012 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 16 Nov 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/getting_started_with_cloud_foundry_for_java_and_spring_developers.html</guid>
       	<description>
 	
@@ -2068,7 +2068,7 @@ application on Cloud Foundry!
     <item>
       <title>Devoxx 2012</title>
       <link>http://joshlong.com/jl/blogPost/devoxx_2012.html</link>
-      <pubDate>Mon, 12 Nov 2012 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 12 Nov 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/devoxx_2012.html</guid>
       	<description>
 	
@@ -2087,7 +2087,7 @@ This will be my third year at Devoxx and, as usual, I&apos;d love to grab a beer
     <item>
       <title>Cloud Foundry Open Tour, Sofia, Bulgaria</title>
       <link>http://joshlong.com/jl/blogPost/cloud_foundry_open_tour_sofia_bulgaria.html</link>
-      <pubDate>Sat, 10 Nov 2012 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 10 Nov 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/cloud_foundry_open_tour_sofia_bulgaria.html</guid>
       	<description>
 	
@@ -2101,7 +2101,7 @@ This will be my third year at Devoxx and, as usual, I&apos;d love to grab a beer
     <item>
       <title>Java2Days 2012 Trip Report</title>
       <link>http://joshlong.com/jl/blogPost/java2days_2012_trip_report.html</link>
-      <pubDate>Wed, 31 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 31 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/java2days_2012_trip_report.html</guid>
       	<description>
 	
@@ -2134,7 +2134,7 @@ Twitter follower &lt;A href = &quot;http://twitter.com/ivelina&quot;&gt;@Ivelina
     <item>
       <title>Java2Days 2012</title>
       <link>http://joshlong.com/jl/blogPost/java2days_2012.html</link>
-      <pubDate>Tue, 23 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 23 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/java2days_2012.html</guid>
       	<description>
 	
@@ -2147,7 +2147,7 @@ Twitter follower &lt;A href = &quot;http://twitter.com/ivelina&quot;&gt;@Ivelina
     <item>
       <title>Arlington, VA Cloud Foundry Dev Day</title>
       <link>http://joshlong.com/jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html</link>
-      <pubDate>Fri, 19 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 19 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html</guid>
       	<description>
 	
@@ -2168,7 +2168,7 @@ There are two tracks -- one track focusing on application development using Clou
     <item>
       <title>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</title>
       <link>http://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</link>
-      <pubDate>Fri, 19 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 19 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</guid>
       	<description>
 	
@@ -2182,7 +2182,7 @@ There are two tracks -- one track focusing on application development using Clou
     <item>
       <title>SpringOne2GX 2012 Trip Report</title>
       <link>http://joshlong.com/jl/blogPost/springone2gx_2012_trip_report.html</link>
-      <pubDate>Thu, 18 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 18 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/springone2gx_2012_trip_report.html</guid>
       	<description>
 	
@@ -2216,7 +2216,7 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
     <item>
       <title>My Dear Aunt Sandra</title>
       <link>http://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_dear_aunt_sandra.html</guid>
       	<description>
 	
@@ -2228,7 +2228,7 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
     <item>
       <title>SpringOne2GX 2012</title>
       <link>http://joshlong.com/jl/blogPost/springone2gx_2012.html</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/springone2gx_2012.html</guid>
       	<description>
 	
@@ -2243,7 +2243,7 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
     <item>
       <title>Anders Hejlsberg Introducing TypeScript</title>
       <link>http://joshlong.com/jl/blogPost/anders_hejlsberg_introducing_typescript.html</link>
-      <pubDate>Wed, 10 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 10 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/anders_hejlsberg_introducing_typescript.html</guid>
       	<description>
 	
@@ -2261,7 +2261,7 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
     <item>
       <title>Mysterious Algorithm Responsible for 4 Percent of All Trading Activity Last Week</title>
       <link>http://joshlong.com/jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</link>
-      <pubDate>Wed, 10 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 10 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</guid>
       	<description>
 	
@@ -2277,7 +2277,7 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
     <item>
       <title>San Francisco</title>
       <link>http://joshlong.com/jl/blogPost/san_francisco.html</link>
-      <pubDate>Tue, 9 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 9 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/san_francisco.html</guid>
       	<description>
 	
@@ -2292,7 +2292,7 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
     <item>
       <title>Spanner, the Goldilocks database</title>
       <link>http://joshlong.com/jl/blogPost/spanner_the_goldilocks_database.html</link>
-      <pubDate>Tue, 9 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 9 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spanner_the_goldilocks_database.html</guid>
       	<description>
 	
@@ -2306,7 +2306,7 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
     <item>
       <title>Lanyrd</title>
       <link>http://joshlong.com/jl/blogPost/lanyrd.html</link>
-      <pubDate>Mon, 1 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 1 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/lanyrd.html</guid>
       	<description>
 	
@@ -2319,7 +2319,7 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
     <item>
       <title>Speaking at the Aarhus, Denmark Java User Group</title>
       <link>http://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</link>
-      <pubDate>Mon, 1 Oct 2012 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 1 Oct 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</guid>
       	<description>
 	
@@ -2330,7 +2330,7 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
     <item>
       <title>GOTO conference in Aarhus, Denmark, 2012</title>
       <link>http://joshlong.com/jl/blogPost/goto_conference_in_aarhus_denmark_2012.html</link>
-      <pubDate>Thu, 27 Sep 2012 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 27 Sep 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/goto_conference_in_aarhus_denmark_2012.html</guid>
       	<description>
 	
@@ -2341,7 +2341,7 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
     <item>
       <title>This guy!</title>
       <link>http://joshlong.com/jl/blogPost/this_guy.html</link>
-      <pubDate>Fri, 21 Sep 2012 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 21 Sep 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/this_guy.html</guid>
       	<description>
 	
@@ -2360,7 +2360,7 @@ A photo of me from &lt;A href =&quot;http://oscon.com&quot;&gt;OSCON 2012&lt;/A&
     <item>
       <title>How to Learn a Framework</title>
       <link>http://joshlong.com/jl/blogPost/how_to_learn_a_framework.html</link>
-      <pubDate>Tue, 18 Sep 2012 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 18 Sep 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/how_to_learn_a_framework.html</guid>
       	<description>
 	
@@ -2385,7 +2385,7 @@ In addition to looking at source code and looking at design patterns, you should
     <item>
       <title>Cloud Foundry System Integrators Tour in India, ArchSummit, OSChina in China, August 2012</title>
       <link>http://joshlong.com/jl/blogPost/cloud_foundry_system_integrators_tour_india_archsummit_and_oschina_in_india_and_china_august_2012.html</link>
-      <pubDate>Sun, 16 Sep 2012 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/cloud_foundry_system_integrators_tour_india_archsummit_and_oschina_in_india_and_china_august_2012.html</guid>
       	<description>
 	
@@ -2434,7 +2434,7 @@ In addition to looking at source code and looking at design patterns, you should
     <item>
       <title>The Cloud Foundry Open Tour 2012 in Pune and Bangalore, India</title>
       <link>http://joshlong.com/jl/blogPost/cloudfoundry_opentour_india_2012_pune_and_bangalore.html</link>
-      <pubDate>Sun, 16 Sep 2012 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/cloudfoundry_opentour_india_2012_pune_and_bangalore.html</guid>
       	<description>
 	
@@ -2454,7 +2454,7 @@ The show had the same format in each of two cities:  for the first several hours
     <item>
       <title>WTF</title>
       <link>http://joshlong.com/jl/blogPost/huh.html</link>
-      <pubDate>Sun, 16 Sep 2012 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/huh.html</guid>
       	<description>
 	
@@ -2465,7 +2465,7 @@ The show had the same format in each of two cities:  for the first several hours
     <item>
       <title>A Walking Tour of Spring 3.1</title>
       <link>http://joshlong.com/jl/blogPost/a_walking_tour_of_spring_31.html</link>
-      <pubDate>Thu, 8 Mar 2012 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 8 Mar 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_walking_tour_of_spring_31.html</guid>
       	<description>
 	
@@ -2476,7 +2476,7 @@ The show had the same format in each of two cities:  for the first several hours
     <item>
       <title>My trip to JFokus, Vaadin Dev Day, and Spring I/O with my Dad</title>
       <link>http://joshlong.com/jl/blogPost/my_trip_to_jfokus_vaadin_dev_day_and_spring_io_with_my_dad.html</link>
-      <pubDate>Tue, 21 Feb 2012 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 21 Feb 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_trip_to_jfokus_vaadin_dev_day_and_spring_io_with_my_dad.html</guid>
       	<description>
 	
@@ -2537,7 +2537,7 @@ This was my first time in Madrid, Spain, for the &lt;a href = &quot;http://www.s
     <item>
       <title>JFokus and Vaadin 2012</title>
       <link>http://joshlong.com/jl/blogPost/jfokus_and_vaadin_2012.html</link>
-      <pubDate>Fri, 17 Feb 2012 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 17 Feb 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/jfokus_and_vaadin_2012.html</guid>
       	<description>
 	
@@ -2555,7 +2555,7 @@ This was my first time in Madrid, Spain, for the &lt;a href = &quot;http://www.s
     <item>
       <title>Spring IO 2012</title>
       <link>http://joshlong.com/jl/blogPost/spring_io_2012.html</link>
-      <pubDate>Fri, 17 Feb 2012 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 17 Feb 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_io_2012.html</guid>
       	<description>
 	
@@ -2571,7 +2571,7 @@ Looking forward to presenting my talk on  &lt;a href =&quot;http://www.springio.
     <item>
       <title>A Google Music API, Please?</title>
       <link>http://joshlong.com/jl/blogPost/a_google_music_api_please.html</link>
-      <pubDate>Thu, 26 Jan 2012 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 26 Jan 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_google_music_api_please.html</guid>
       	<description>
 	
@@ -2588,7 +2588,7 @@ Finally, I want Google Music on Roku, and on other devices. Otherwise, I still d
     <item>
       <title>Supporting Your Own Field or Method Injection Annotation Processors in Spring</title>
       <link>http://joshlong.com/jl/blogPost/supporting_your_own_field_or_method_injection_annotation_processors_in_spring.html</link>
-      <pubDate>Sun, 1 Jan 2012 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 1 Jan 2012 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/supporting_your_own_field_or_method_injection_annotation_processors_in_spring.html</guid>
       	<description>
 	
@@ -2775,7 +2775,7 @@ object Main {
     <item>
       <title>The Week Spring 3.1 Went GA, or, The Holidays Begin Now!</title>
       <link>http://joshlong.com/jl/blogPost/the_week_spring_31_went_ga_or_the_holidays_begin_now.html</link>
-      <pubDate>Sat, 17 Dec 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 17 Dec 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_week_spring_31_went_ga_or_the_holidays_begin_now.html</guid>
       	<description>
 	
@@ -2837,7 +2837,7 @@ Beyond the above major themes, we invested into our O/R Mapping support, allowin
     <item>
       <title>Mamacita...</title>
       <link>http://joshlong.com/jl/blogPost/mamacita.html</link>
-      <pubDate>Sat, 10 Dec 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 10 Dec 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/mamacita.html</guid>
       	<description>
 	
@@ -2848,7 +2848,7 @@ Beyond the above major themes, we invested into our O/R Mapping support, allowin
     <item>
       <title>Simple things I do to OS X itself whenever I set it up</title>
       <link>http://joshlong.com/jl/blogPost/simple_things_i_do_to_os_x_itself_whenever_i_set_it_up.html</link>
-      <pubDate>Sat, 3 Dec 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 3 Dec 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/simple_things_i_do_to_os_x_itself_whenever_i_set_it_up.html</guid>
       	<description>
 	
@@ -2916,7 +2916,7 @@ Beyond the above major themes, we invested into our O/R Mapping support, allowin
     <item>
       <title>Devoxx 2011 Report and Seattle Mongo 2011</title>
       <link>http://joshlong.com/jl/blogPost/devoxx_2011_report_and_seattle_mongo_2011.html</link>
-      <pubDate>Wed, 30 Nov 2011 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 30 Nov 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/devoxx_2011_report_and_seattle_mongo_2011.html</guid>
       	<description>
 	
@@ -2939,7 +2939,7 @@ Beyond the above major themes, we invested into our O/R Mapping support, allowin
     <item>
       <title>Trip Roundup for October and November</title>
       <link>http://joshlong.com/jl/blogPost/trip_roundup_for_october_and_november.html</link>
-      <pubDate>Fri, 11 Nov 2011 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 11 Nov 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/trip_roundup_for_october_and_november.html</guid>
       	<description>
 	
@@ -3007,7 +3007,7 @@ Beyond the above major themes, we invested into our O/R Mapping support, allowin
     <item>
       <title>SpringOne2GX 2011</title>
       <link>http://joshlong.com/jl/blogPost/springone2gx_2011.html</link>
-      <pubDate>Mon, 24 Oct 2011 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 24 Oct 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/springone2gx_2011.html</guid>
       	<description>
 	
@@ -3028,7 +3028,7 @@ Beyond the above major themes, we invested into our O/R Mapping support, allowin
     <item>
       <title>Great Content to get Started with Neo4J and Spring Data Graph</title>
       <link>http://joshlong.com/jl/blogPost/great_content_to_get_started_with_neo4j_and_spring_data_graph.html</link>
-      <pubDate>Mon, 10 Oct 2011 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 10 Oct 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/great_content_to_get_started_with_neo4j_and_spring_data_graph.html</guid>
       	<description>
 	
@@ -3057,7 +3057,7 @@ Beyond the above major themes, we invested into our O/R Mapping support, allowin
     <item>
       <title>Python? Good. Python on CloudFoundry? Better.</title>
       <link>http://joshlong.com/jl/blogPost/python_good_python_on_cloudfoundry_better.html</link>
-      <pubDate>Sat, 1 Oct 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 1 Oct 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/python_good_python_on_cloudfoundry_better.html</guid>
       	<description>
 	
@@ -3076,7 +3076,7 @@ I note that if you want a seriously good Python cloud-story, check out ActiveSta
     <item>
       <title>Libraries and Component Models and APIs (in Spring), Oh My!</title>
       <link>http://joshlong.com/jl/blogPost/libraries_and_component_models_and_apis_in_spring_oh_my.html</link>
-      <pubDate>Fri, 23 Sep 2011 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 23 Sep 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/libraries_and_component_models_and_apis_in_spring_oh_my.html</guid>
       	<description>
 	
@@ -3149,7 +3149,7 @@ Exposing your frameworks and common abstractions in terms of these well known, i
     <item>
       <title>Trip Roundup and The Dallas Spring User Group</title>
       <link>http://joshlong.com/jl/blogPost/trip_roundup_and_the_dallas_spring_user_group.html</link>
-      <pubDate>Sat, 17 Sep 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 17 Sep 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/trip_roundup_and_the_dallas_spring_user_group.html</guid>
       	<description>
 	
@@ -3169,7 +3169,7 @@ Exposing your frameworks and common abstractions in terms of these well known, i
     <item>
       <title>Happiness is...</title>
       <link>http://joshlong.com/jl/blogPost/happiness_is.html</link>
-      <pubDate>Wed, 31 Aug 2011 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 31 Aug 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/happiness_is.html</guid>
       	<description>
 	
@@ -3193,7 +3193,7 @@ Exposing your frameworks and common abstractions in terms of these well known, i
     <item>
       <title>WTF! Linked Lists patented</title>
       <link>http://joshlong.com/jl/blogPost/wtf_linked_lists_patented.html</link>
-      <pubDate>Sat, 27 Aug 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 27 Aug 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/wtf_linked_lists_patented.html</guid>
       	<description>
 	
@@ -3208,7 +3208,7 @@ Exposing your frameworks and common abstractions in terms of these well known, i
     <item>
       <title>Getting Started with Spring Roo</title>
       <link>http://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
-      <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
       	<description>
 	
@@ -3220,7 +3220,7 @@ Exposing your frameworks and common abstractions in terms of these well known, i
     <item>
       <title>RabbitMQ is now officially available on CloudFoundry!</title>
       <link>http://joshlong.com/jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html</link>
-      <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html</guid>
       	<description>
 	
@@ -3239,7 +3239,7 @@ For you &lt;a href=&quot;http://github.com/CloudFoundry&quot;&gt;code lurkers&lt
     <item>
       <title>Speaking at JavaZone 2011</title>
       <link>http://joshlong.com/jl/blogPost/speaking_at_javazone_2011.html</link>
-      <pubDate>Sun, 7 Aug 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 7 Aug 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/speaking_at_javazone_2011.html</guid>
       	<description>
 	
@@ -3264,7 +3264,7 @@ I&apos;ll be talking about the Spring landscape - &lt;em&gt;everything&lt;/EM&gt
     <item>
       <title>Spring Corner: Beyond the FactoryBean</title>
       <link>http://joshlong.com/jl/blogPost/spring_corner_beyond_the_factorybean.html</link>
-      <pubDate>Sat, 23 Jul 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 23 Jul 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_corner_beyond_the_factorybean.html</guid>
       	<description>
 	
@@ -3416,7 +3416,7 @@ public class ServiceConfiguration {
     <item>
       <title>Spring Corner: What&apos;s a Factory Bean?</title>
       <link>http://joshlong.com/jl/blogPost/spring_corner_whats_a_factory_bean.html</link>
-      <pubDate>Fri, 22 Jul 2011 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 22 Jul 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_corner_whats_a_factory_bean.html</guid>
       	<description>
 	
@@ -3544,7 +3544,7 @@ public class CarConfiguration {
     <item>
       <title>OSCON Java 2011</title>
       <link>http://joshlong.com/jl/blogPost/oscon_java_2011.html</link>
-      <pubDate>Thu, 7 Jul 2011 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 7 Jul 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/oscon_java_2011.html</guid>
       	<description>
 	
@@ -3559,7 +3559,7 @@ I&apos;m also working with my colleague and friend Steve Mayzak to write an eboo
     <item>
       <title>AOP&apos;s Not Just Logging</title>
       <link>http://joshlong.com/jl/blogPost/aops_not_just_logging.html</link>
-      <pubDate>Tue, 5 Jul 2011 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 5 Jul 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/aops_not_just_logging.html</guid>
       	<description>
 	
@@ -3580,7 +3580,7 @@ I&apos;m also working with my colleague and friend Steve Mayzak to write an eboo
     <item>
       <title>Reframing the Question</title>
       <link>http://joshlong.com/jl/blogPost/reframing_the_question.html</link>
-      <pubDate>Thu, 30 Jun 2011 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 30 Jun 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/reframing_the_question.html</guid>
       	<description>
 	
@@ -3622,7 +3622,7 @@ To boot, new versions of Spring support programming models that are more powerfu
     <item>
       <title>Geecon 2011 Roundup</title>
       <link>http://joshlong.com/jl/blogPost/geecon_2011_roundup.html</link>
-      <pubDate>Wed, 29 Jun 2011 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 29 Jun 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/geecon_2011_roundup.html</guid>
       	<description>
 	
@@ -3663,7 +3663,7 @@ Juergen is easily one of the most indulging, humble  people you&apos;ll ever mee
     <item>
       <title>A Script for Retrieving Wayward OS X Windows</title>
       <link>http://joshlong.com/jl/blogPost/a_script_for_retrieving_wayward_os_x_windows.html</link>
-      <pubDate>Thu, 21 Apr 2011 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 21 Apr 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_script_for_retrieving_wayward_os_x_windows.html</guid>
       	<description>
 	
@@ -3679,7 +3679,7 @@ I just had to unplug my secondary monitor and follow &lt;a href=&quot;http://www
     <item>
       <title>So Close, but... So Far</title>
       <link>http://joshlong.com/jl/blogPost/so_close_but_so_far.html</link>
-      <pubDate>Tue, 22 Mar 2011 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 22 Mar 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/so_close_but_so_far.html</guid>
       	<description>
 	
@@ -3696,7 +3696,7 @@ They almost went an entire day without being ... &lt;EM&gt;Microsoft&lt;/EM&gt;.
     <item>
       <title>The Mystery of the Indexer Segfault in Eclipse CDT, a True Story</title>
       <link>http://joshlong.com/jl/blogPost/the_mystery_of_the_indexer_segfault_in_eclipse_cdt_a_true_story.html</link>
-      <pubDate>Fri, 18 Mar 2011 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 18 Mar 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_mystery_of_the_indexer_segfault_in_eclipse_cdt_a_true_story.html</guid>
       	<description>
 	
@@ -3780,7 +3780,7 @@ Java Threads: ( =&gt; current thread )
     <item>
       <title>Hot to Retrieve Your Application From Google App Engine</title>
       <link>http://joshlong.com/jl/blogPost/hot_to_retrieve_your_application_from_google_app_engine.html</link>
-      <pubDate>Sat, 12 Mar 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 12 Mar 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/hot_to_retrieve_your_application_from_google_app_engine.html</guid>
       	<description>
 	
@@ -3805,7 +3805,7 @@ He pointed out that I&apos;d already had the answer: use the Python SDK to &lt;e
     <item>
       <title>Getting Started with Various LAMP Languages</title>
       <link>http://joshlong.com/jl/blogPost/getting_started_with_various_lamp_languages.html</link>
-      <pubDate>Wed, 9 Mar 2011 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 9 Mar 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/getting_started_with_various_lamp_languages.html</guid>
       	<description>
 	
@@ -3840,7 +3840,7 @@ So, that&apos;s a lot of how I got started. I&apos;d of course be interested in 
     <item>
       <title>Dependency Injection and Inversion of Control Have Been Commoditized</title>
       <link>http://joshlong.com/jl/blogPost/dependency_injection_and_inversion_of_control_have_been_commoditized.html</link>
-      <pubDate>Sun, 6 Mar 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 6 Mar 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/dependency_injection_and_inversion_of_control_have_been_commoditized.html</guid>
       	<description>
 	
@@ -3885,7 +3885,7 @@ I think this is more true every day as the industry continues to grow and evolve
     <item>
       <title>Birthday week 2011</title>
       <link>http://joshlong.com/jl/blogPost/birthday_week_2011.html</link>
-      <pubDate>Wed, 26 Jan 2011 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 26 Jan 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/birthday_week_2011.html</guid>
       	<description>
 	
@@ -3913,7 +3913,7 @@ For my new year&apos;s resolutions, I decided I needed a hobby (err, besides cod
     <item>
       <title>And We&apos;re Off! 2011&apos;s Moving Way too Quick!</title>
       <link>http://joshlong.com/jl/blogPost/and_were_off_2011s_moving_way_too_quick.html</link>
-      <pubDate>Mon, 24 Jan 2011 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 24 Jan 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/and_were_off_2011s_moving_way_too_quick.html</guid>
       	<description>
 	
@@ -3931,7 +3931,7 @@ The other &quot;series&quot; I&apos;ve been working on (with occasional guest-sc
     <item>
       <title>Springing Forward</title>
       <link>http://joshlong.com/jl/blogPost/springing_forward.html</link>
-      <pubDate>Sun, 2 Jan 2011 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 2 Jan 2011 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/springing_forward.html</guid>
       	<description>
 	
@@ -4136,7 +4136,7 @@ fantastic new year, and a new decade.
     <item>
       <title>Devoxx 2010</title>
       <link>http://joshlong.com/jl/blogPost/devoxx_2010.html</link>
-      <pubDate>Tue, 23 Nov 2010 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
       	<description>
 	
@@ -4150,7 +4150,7 @@ fantastic new year, and a new decade.
     <item>
       <title>The H2 Embedded Database</title>
       <link>http://joshlong.com/jl/blogPost/the_h2_embedded_database.html</link>
-      <pubDate>Tue, 23 Nov 2010 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_h2_embedded_database.html</guid>
       	<description>
 	
@@ -4186,7 +4186,7 @@ featured exclusive support   for persisting process state in H2, and H2 alone. A
     <item>
       <title>Adobe MAX 2010</title>
       <link>http://joshlong.com/jl/blogPost/adobe_max_2010.html</link>
-      <pubDate>Sat, 30 Oct 2010 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 30 Oct 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/adobe_max_2010.html</guid>
       	<description>
 	
@@ -4204,7 +4204,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>SpringOne2GX 2010</title>
       <link>http://joshlong.com/jl/blogPost/springone2gx_2010.html</link>
-      <pubDate>Mon, 18 Oct 2010 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 18 Oct 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/springone2gx_2010.html</guid>
       	<description>
 	
@@ -4215,7 +4215,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>Java2Days 2010</title>
       <link>http://joshlong.com/jl/blogPost/java2days_2010.html</link>
-      <pubDate>Mon, 4 Oct 2010 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 4 Oct 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/java2days_2010.html</guid>
       	<description>
 	
@@ -4226,7 +4226,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>Ubuntu 10.10 (Maverick Meerkat) on a MacBook Pro</title>
       <link>http://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</link>
-      <pubDate>Mon, 4 Oct 2010 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 4 Oct 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</guid>
       	<description>
 	
@@ -4237,7 +4237,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>Spring and the Activiti BPMN2 engine  at JavaZone 2010</title>
       <link>http://joshlong.com/jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html</link>
-      <pubDate>Fri, 3 Sep 2010 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 3 Sep 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html</guid>
       	<description>
 	
@@ -4248,7 +4248,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>Spring for Force.com Developers</title>
       <link>http://joshlong.com/jl/blogPost/spring_for_forcecom_developers.html</link>
-      <pubDate>Fri, 3 Sep 2010 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 3 Sep 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_for_forcecom_developers.html</guid>
       	<description>
 	
@@ -4259,7 +4259,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>(Secure) File Transfer, the Only Way to Fly... err Copy</title>
       <link>http://joshlong.com/jl/blogPost/secure_file_transfer_the_only_way_to_fly_err_copy.html</link>
-      <pubDate>Tue, 24 Aug 2010 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 24 Aug 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/secure_file_transfer_the_only_way_to_fly_err_copy.html</guid>
       	<description>
 	
@@ -4270,7 +4270,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>My Weekend in Oregon</title>
       <link>http://joshlong.com/jl/blogPost/my_weekend_in_oregon.html</link>
-      <pubDate>Sat, 31 Jul 2010 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 31 Jul 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_weekend_in_oregon.html</guid>
       	<description>
 	
@@ -4281,7 +4281,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>Spring Integration at OSCON!</title>
       <link>http://joshlong.com/jl/blogPost/spring_integration_at_oscon.html</link>
-      <pubDate>Sat, 17 Jul 2010 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 17 Jul 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_integration_at_oscon.html</guid>
       	<description>
 	
@@ -4292,7 +4292,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>Is This Thing On?</title>
       <link>http://joshlong.com/jl/blogPost/is_this_thing_on.html</link>
-      <pubDate>Fri, 16 Jul 2010 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 16 Jul 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/is_this_thing_on.html</guid>
       	<description>
 	
@@ -4303,7 +4303,7 @@ As you might expect from a good conference, there were plenty of great hallway c
     <item>
       <title>Idempotent Queues With HornetQ (or: the &apos;Last Value  Header&apos;)</title>
       <link>http://joshlong.com/jl/blogPost/idempotent_queues_with_hornetq_or_the_last_value_header.html</link>
-      <pubDate>Tue, 4 May 2010 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 4 May 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/idempotent_queues_with_hornetq_or_the_last_value_header.html</guid>
       	<description>
 	
@@ -4399,7 +4399,7 @@ been delivered yet. Enjoy!&lt;/p&gt;
     <item>
       <title>A New Post on Artima.com Called &apos;SOA, 5 Years In&apos;</title>
       <link>http://joshlong.com/jl/blogPost/a_new_post_on_artimacom_called_soa_5_years_in.html</link>
-      <pubDate>Mon, 26 Apr 2010 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 26 Apr 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_new_post_on_artimacom_called_soa_5_years_in.html</guid>
       	<description>
 	
@@ -4416,7 +4416,7 @@ out! &lt;/p&gt;
     <item>
       <title>The ServerSide Java Symposium 2010 Recap</title>
       <link>http://joshlong.com/jl/blogPost/the_serverside_java_symposium_2010_recap.html</link>
-      <pubDate>Sat, 20 Mar 2010 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 20 Mar 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_serverside_java_symposium_2010_recap.html</guid>
       	<description>
 	
@@ -4470,7 +4470,7 @@ talk&lt;/a&gt; about the scale story at Shopzilla.
     <item>
       <title>A Month&apos;s Gap And No Explanation</title>
       <link>http://joshlong.com/jl/blogPost/a_months_gap_and_no_explanation.html</link>
-      <pubDate>Wed, 17 Feb 2010 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 17 Feb 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_months_gap_and_no_explanation.html</guid>
       	<description>
 	
@@ -4496,7 +4496,7 @@ my sessions!&lt;/a&gt;
     <item>
       <title>A Very Interesting Technique For Cross-Domain AJAX Requests</title>
       <link>http://joshlong.com/jl/blogPost/a_very_interesting_technique_for_crossdomain_ajax_requests.html</link>
-      <pubDate>Wed, 13 Jan 2010 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 13 Jan 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_very_interesting_technique_for_crossdomain_ajax_requests.html</guid>
       	<description>
 	
@@ -4557,7 +4557,7 @@ $(document).ready(function(){
     <item>
       <title>Modeling</title>
       <link>http://joshlong.com/jl/blogPost/modeling.html</link>
-      <pubDate>Mon, 11 Jan 2010 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 11 Jan 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/modeling.html</guid>
       	<description>
 	
@@ -4591,7 +4591,7 @@ scatch, unable to see the big picture.
     <item>
       <title>Spring BlazeDS and your RIA/Thick/Thin/Fat client</title>
       <link>http://joshlong.com/jl/blogPost/spring_blazeds_and_your_riathickthinfat_client.html</link>
-      <pubDate>Wed, 6 Jan 2010 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 6 Jan 2010 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_blazeds_and_your_riathickthinfat_client.html</guid>
       	<description>
 	
@@ -4655,7 +4655,7 @@ brings scalability.
     <item>
       <title>PostgreSQL 8.4 and Bitronix XA</title>
       <link>http://joshlong.com/jl/blogPost/postgresql_84_and_bitronix_xa.html</link>
-      <pubDate>Thu, 31 Dec 2009 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 31 Dec 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/postgresql_84_and_bitronix_xa.html</guid>
       	<description>
 	
@@ -4715,7 +4715,7 @@ performant and works as it did before.
     <item>
       <title>So Much to Do, So Little Time!</title>
       <link>http://joshlong.com/jl/blogPost/so_much_to_do_so_little_time.html</link>
-      <pubDate>Mon, 28 Dec 2009 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 28 Dec 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/so_much_to_do_so_little_time.html</guid>
       	<description>
 	
@@ -4955,7 +4955,7 @@ thoroughput.&lt;/li&gt;
     <item>
       <title>My Tweet Cloud</title>
       <link>http://joshlong.com/jl/blogPost/my_tweet_cloud.html</link>
-      <pubDate>Sun, 29 Nov 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 29 Nov 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_tweet_cloud.html</guid>
       	<description>
 	
@@ -4975,7 +4975,7 @@ width =&quot;400&quot; /&gt;&lt;/p&gt;
     <item>
       <title>Spring Batch&apos;s MultiResourceItemWriter</title>
       <link>http://joshlong.com/jl/blogPost/spring_batchs_multiresourceitemwriter.html</link>
-      <pubDate>Sat, 28 Nov 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 28 Nov 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_batchs_multiresourceitemwriter.html</guid>
       	<description>
 	
@@ -5086,7 +5086,7 @@ class=&quot;com...sitemapscreator.SiteMapUrlRowMapper&quot;/&amp;gt;
     <item>
       <title>Thanksgiving</title>
       <link>http://joshlong.com/jl/blogPost/thanksgiving.html</link>
-      <pubDate>Thu, 26 Nov 2009 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 26 Nov 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/thanksgiving.html</guid>
       	<description>
 	
@@ -5105,7 +5105,7 @@ which you&apos;re thankful, too. Happy Thanksgiving!&lt;/p&gt;
     <item>
       <title>&apos;Spring Enterprise Recipes,&apos; from Apress</title>
       <link>http://joshlong.com/jl/blogPost/spring_enterprise_recipes_from_apress.html</link>
-      <pubDate>Sat, 21 Nov 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 21 Nov 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_enterprise_recipes_from_apress.html</guid>
       	<description>
 	
@@ -5160,7 +5160,7 @@ more interesting solutions!
     <item>
       <title>Understanding Go</title>
       <link>http://joshlong.com/jl/blogPost/understanding_go.html</link>
-      <pubDate>Tue, 17 Nov 2009 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 17 Nov 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/understanding_go.html</guid>
       	<description>
 	
@@ -5250,7 +5250,7 @@ served by a custom implementation. Only time will tell. &lt;/p&gt;
     <item>
       <title>The Last 2 Crazy Months</title>
       <link>http://joshlong.com/jl/blogPost/the_last_2_crazy_months.html</link>
-      <pubDate>Thu, 12 Nov 2009 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 12 Nov 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_last_2_crazy_months.html</guid>
       	<description>
 	
@@ -5308,7 +5308,7 @@ Exciting times...
     <item>
       <title>CRUD&apos;s Not The Answer</title>
       <link>http://joshlong.com/jl/blogPost/cruds_not_the_answer.html</link>
-      <pubDate>Thu, 10 Sep 2009 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 10 Sep 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/cruds_not_the_answer.html</guid>
       	<description>
 	
@@ -5421,7 +5421,7 @@ the logic there, &lt;i&gt;except&lt;/i&gt; now the logic&apos;s codified and reu
     <item>
       <title>Setting Up jBPM 4&apos;s XSD File In Eclipse</title>
       <link>http://joshlong.com/jl/blogPost/setting_up_jbpm_4s_xsd_file_in_eclipse.html</link>
-      <pubDate>Thu, 3 Sep 2009 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 3 Sep 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/setting_up_jbpm_4s_xsd_file_in_eclipse.html</guid>
       	<description>
 	
@@ -5457,7 +5457,7 @@ href=&quot;http://jboss.org/jbossjbpm/&quot;&gt;new jBPM 4.1&lt;/a&gt;! &lt;/p&g
     <item>
       <title>My Christmas Wish, OR How the JVM Will Outlive the  Cockroach, and .NET</title>
       <link>http://joshlong.com/jl/blogPost/my_christmas_wish_or_how_the_jvm_will_outlive_the_cockroach_and_net.html</link>
-      <pubDate>Sat, 29 Aug 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 29 Aug 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_christmas_wish_or_how_the_jvm_will_outlive_the_cockroach_and_net.html</guid>
       	<description>
 	
@@ -5546,7 +5546,7 @@ our hearts.&lt;/p&gt; &lt;P&gt;&lt;i&gt;The End!&lt;/i&gt;&lt;/p&gt;
     <item>
       <title>A Survival Guide to Maven, OR, Why Maven&apos;s Still Cool</title>
       <link>http://joshlong.com/jl/blogPost/a_survival_guide_to_maven_or_why_mavens_still_cool.html</link>
-      <pubDate>Thu, 27 Aug 2009 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 27 Aug 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_survival_guide_to_maven_or_why_mavens_still_cool.html</guid>
       	<description>
 	
@@ -5788,7 +5788,7 @@ to this are the ideas (like Ivy) that are inspired by it in Ant.
     <item>
       <title>Building Servlets With Spring</title>
       <link>http://joshlong.com/jl/blogPost/building_servlets_with_spring.html</link>
-      <pubDate>Mon, 24 Aug 2009 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 24 Aug 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/building_servlets_with_spring.html</guid>
       	<description>
 	
@@ -5951,7 +5951,7 @@ somebody... &lt;/p&gt;
     <item>
       <title>Quick Update to RSS</title>
       <link>http://joshlong.com/jl/blogPost/quick_update_to_rss.html</link>
-      <pubDate>Sat, 22 Aug 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 22 Aug 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/quick_update_to_rss.html</guid>
       	<description>
 	
@@ -5974,7 +5974,7 @@ and using that to write/render (I wanted to say &quot;feed&quot;) the feed.&lt;/
     <item>
       <title>Component Oriented Architectures</title>
       <link>http://joshlong.com/jl/blogPost/component_oriented_architectures.html</link>
-      <pubDate>Thu, 20 Aug 2009 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 20 Aug 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/component_oriented_architectures.html</guid>
       	<description>
 	
@@ -6096,7 +6096,7 @@ architectures of tomorrow look like?&lt;/p&gt;
     <item>
       <title>Ooops!</title>
       <link>http://joshlong.com/jl/blogPost/ooops.html</link>
-      <pubDate>Mon, 17 Aug 2009 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 17 Aug 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/ooops.html</guid>
       	<description>
 	
@@ -6124,7 +6124,7 @@ it are old and can be marked as read... thanks. &lt;/p&gt;
     <item>
       <title>You&apos;re looking at a work in progress..</title>
       <link>http://joshlong.com/jl/blogPost/youre_looking_at_a_work_in_progress.html</link>
-      <pubDate>Sun, 16 Aug 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 16 Aug 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/youre_looking_at_a_work_in_progress.html</guid>
       	<description>
 	
@@ -6257,7 +6257,7 @@ leave a comment. Thanks!&lt;/p&gt;
     <item>
       <title>Composite components in JSF 1.2.x</title>
       <link>http://joshlong.com/jl/blogPost/composite_components_in_jsf_12x.html</link>
-      <pubDate>Wed, 22 Jul 2009 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 22 Jul 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/composite_components_in_jsf_12x.html</guid>
       	<description>
 	
@@ -6285,7 +6285,7 @@ The component&apos;s used in several places on the system and it would be magnif
     <item>
       <title>JoshLong.com on EC2</title>
       <link>http://joshlong.com/jl/blogPost/joshlongcom_on_ec2.html</link>
-      <pubDate>Sun, 19 Jul 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 19 Jul 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/joshlongcom_on_ec2.html</guid>
       	<description>
 	
@@ -6299,7 +6299,7 @@ The component&apos;s used in several places on the system and it would be magnif
     <item>
       <title>My talk on Spring Integration At TheServerSide.com &apos;09</title>
       <link>http://joshlong.com/jl/blogPost/my_talk_on_spring_integration_at_theserversidecom_09.html</link>
-      <pubDate>Mon, 15 Jun 2009 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 15 Jun 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_talk_on_spring_integration_at_theserversidecom_09.html</guid>
       	<description>
 	
@@ -6312,7 +6312,7 @@ The component&apos;s used in several places on the system and it would be magnif
     <item>
       <title>Tapestry 5.1</title>
       <link>http://joshlong.com/jl/blogPost/tapestry_51.html</link>
-      <pubDate>Sun, 7 Jun 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 7 Jun 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/tapestry_51.html</guid>
       	<description>
 	
@@ -6363,7 +6363,7 @@ The 5 minutes had become an hour. The reason I write this blog is because I&apos
     <item>
       <title>My Los Angeles Musings, Seam, Tapestry 5, JavaOne, Spring Workflow, Spring Python and more</title>
       <link>http://joshlong.com/jl/blogPost/my_los_angeles_musings_seam_tapestry_5_javaone_spring_workflow_spring_python_and_more.html</link>
-      <pubDate>Fri, 5 Jun 2009 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 5 Jun 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_los_angeles_musings_seam_tapestry_5_javaone_spring_workflow_spring_python_and_more.html</guid>
       	<description>
 	
@@ -6374,7 +6374,7 @@ The 5 minutes had become an hour. The reason I write this blog is because I&apos
     <item>
       <title>Moving to Los Angeles.</title>
       <link>http://joshlong.com/jl/blogPost/moving_to_los_angeles.html</link>
-      <pubDate>Mon, 6 Apr 2009 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 6 Apr 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/moving_to_los_angeles.html</guid>
       	<description>
 	
@@ -6398,7 +6398,7 @@ Then, I came home. I had given notice at my job at Wells Fargo and so the last w
     <item>
       <title>The Times, They Are A Changing</title>
       <link>http://joshlong.com/jl/blogPost/the_times_they_are_a_changing.html</link>
-      <pubDate>Sun, 15 Mar 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 15 Mar 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_times_they_are_a_changing.html</guid>
       	<description>
 	
@@ -6430,7 +6430,7 @@ Then, I came home. I had given notice at my job at Wells Fargo and so the last w
     <item>
       <title>Embedding The Apache Mina FTP Server</title>
       <link>http://joshlong.com/jl/blogPost/embedding_the_apache_mina_ftp_server.html</link>
-      <pubDate>Sun, 8 Mar 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 8 Mar 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/embedding_the_apache_mina_ftp_server.html</guid>
       	<description>
 	
@@ -6581,7 +6581,7 @@ I tested this code on Unix and Windows. I set it to run on port 2121, so that I 
     <item>
       <title>The West Wing, House MD, and MythBusters</title>
       <link>http://joshlong.com/jl/blogPost/the_west_wing_house_md_and_mythbusters.html</link>
-      <pubDate>Tue, 3 Mar 2009 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 3 Mar 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_west_wing_house_md_and_mythbusters.html</guid>
       	<description>
 	
@@ -6599,7 +6599,7 @@ Apparently, Sherlock Holmes himself was based on a doctor, so it&apos;s somethin
     <item>
       <title>And... we&apos;re back!</title>
       <link>http://joshlong.com/jl/blogPost/and_were_back.html</link>
-      <pubDate>Thu, 26 Feb 2009 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 26 Feb 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/and_were_back.html</guid>
       	<description>
 	
@@ -6614,7 +6614,7 @@ Apparently, Sherlock Holmes himself was based on a doctor, so it&apos;s somethin
     <item>
       <title>Obsolescence of Skills</title>
       <link>http://joshlong.com/jl/blogPost/obsolescence_of_skills.html</link>
-      <pubDate>Tue, 24 Feb 2009 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 24 Feb 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/obsolescence_of_skills.html</guid>
       	<description>
 	
@@ -6654,7 +6654,7 @@ has not obsolesced, although it is rarely used&quot;&lt;/p&gt;
     <item>
       <title>A Weekend With the Voices</title>
       <link>http://joshlong.com/jl/blogPost/a_weekend_with_the_voices.html</link>
-      <pubDate>Sat, 21 Feb 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 21 Feb 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_weekend_with_the_voices.html</guid>
       	<description>
 	
@@ -6685,7 +6685,7 @@ Not if I can help it.
     <item>
       <title>Mobile News Recap </title>
       <link>http://joshlong.com/jl/blogPost/mobile_news_recap.html</link>
-      <pubDate>Wed, 18 Feb 2009 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 18 Feb 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/mobile_news_recap.html</guid>
       	<description>
 	
@@ -6711,7 +6711,7 @@ Adding another Java platform to the roster, JavaFX 1.1 was just announced and wi
     <item>
       <title>Getting Started With Zero Turnaround&apos;s JavaRebel</title>
       <link>http://joshlong.com/jl/blogPost/getting_started_with_zero_turnarounds_javarebel.html</link>
-      <pubDate>Sat, 14 Feb 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 14 Feb 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/getting_started_with_zero_turnarounds_javarebel.html</guid>
       	<description>
 	
@@ -6781,7 +6781,7 @@ Hope this helps somebody else looking for information on how to get started. Thi
     <item>
       <title>Dust</title>
       <link>http://joshlong.com/jl/blogPost/dust.html</link>
-      <pubDate>Wed, 4 Feb 2009 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 4 Feb 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/dust.html</guid>
       	<description>
 	
@@ -6806,7 +6806,7 @@ Hope this helps somebody else looking for information on how to get started. Thi
     <item>
       <title>Revised Spring Integration Maven &lt;code&gt;pom.xml&lt;/code&gt; Example</title>
       <link>http://joshlong.com/jl/blogPost/revised_spring_integration_maven_codepomxmlcode_example.html</link>
-      <pubDate>Wed, 4 Feb 2009 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 4 Feb 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/revised_spring_integration_maven_codepomxmlcode_example.html</guid>
       	<description>
 	
@@ -6916,7 +6916,7 @@ A bug was &lt;a href=&quot;http://jira.springframework.org/browse/INT-245&quot;&
     <item>
       <title>&quot;Scalability Is Not An Architectural &quot;Capabity&quot; Anymore,&quot; on Artima.com</title>
       <link>http://joshlong.com/jl/blogPost/scalability_is_not_an_architectural_capabity_anymore_on_artimacom.html</link>
-      <pubDate>Mon, 2 Feb 2009 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 2 Feb 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/scalability_is_not_an_architectural_capabity_anymore_on_artimacom.html</guid>
       	<description>
 	
@@ -6927,7 +6927,7 @@ I&apos;ve just posted a new blog entry on my Artima.com blog: &lt;a href=&quot;h
     <item>
       <title>My Favorite Month</title>
       <link>http://joshlong.com/jl/blogPost/my_favorite_month.html</link>
-      <pubDate>Sat, 31 Jan 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 31 Jan 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_favorite_month.html</guid>
       	<description>
 	
@@ -6943,7 +6943,7 @@ I&apos;ve just posted a new blog entry on my Artima.com blog: &lt;a href=&quot;h
     <item>
       <title>Thinking About Meebo&apos;s Enterprise Service Bus</title>
       <link>http://joshlong.com/jl/blogPost/thinking_about_meebo_s_enterprise.html</link>
-      <pubDate>Tue, 27 Jan 2009 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 27 Jan 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/thinking_about_meebo_s_enterprise.html</guid>
       	<description>
 	
@@ -6968,7 +6968,7 @@ I&apos;ve just posted a new blog entry on my Artima.com blog: &lt;a href=&quot;h
     <item>
       <title>Whatever is Ray Ozzie Going To Do?</title>
       <link>http://joshlong.com/jl/blogPost/whatever_is_ray_ozzie_going.html</link>
-      <pubDate>Mon, 26 Jan 2009 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 26 Jan 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/whatever_is_ray_ozzie_going.html</guid>
       	<description>
 	
@@ -7046,7 +7046,7 @@ the first place.&lt;/p&gt; &lt;p&gt; Perhaps he can turn the ship around. So far
     <item>
       <title>If You Build It, They Will Come: Communally Crazy</title>
       <link>http://joshlong.com/jl/blogPost/if_you_build_it_they.html</link>
-      <pubDate>Sun, 25 Jan 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 25 Jan 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/if_you_build_it_they.html</guid>
       	<description>
 	
@@ -7068,7 +7068,7 @@ This all makes me wonder: are we seeing another dot-com boom? Do these new folks
     <item>
       <title>New article on Infoq.com</title>
       <link>http://joshlong.com/jl/blogPost/new_article_on_infoq_com.html</link>
-      <pubDate>Tue, 20 Jan 2009 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 20 Jan 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/new_article_on_infoq_com.html</guid>
       	<description>
 	
@@ -7079,7 +7079,7 @@ This all makes me wonder: are we seeing another dot-com boom? Do these new folks
     <item>
       <title>New Entry on Artima.com: &quot;Modeling to Avoid Hacking Your Model in ORM Mapping Format&quot;</title>
       <link>http://joshlong.com/jl/blogPost/new_entry_on_artima_com.html</link>
-      <pubDate>Sat, 17 Jan 2009 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 17 Jan 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/new_entry_on_artima_com.html</guid>
       	<description>
 	
@@ -7090,7 +7090,7 @@ I just posted another blog entry on Artima.com, called &quot;Modeling to Avoid H
     <item>
       <title>Web Framework Utility Llibraries: URLRewrite, JAWR, DWR, and HeaderFilter</title>
       <link>http://joshlong.com/jl/blogPost/web_framework_utility_llibraries_urlrewrite.html</link>
-      <pubDate>Fri, 9 Jan 2009 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 9 Jan 2009 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/web_framework_utility_llibraries_urlrewrite.html</guid>
       	<description>
 	
@@ -7123,7 +7123,7 @@ I wanted to make sure that any page elements I use were reasonably performant an
     <item>
       <title>My other blog on Artima.com, and my first post, &quot;The New Old&quot;</title>
       <link>http://joshlong.com/jl/blogPost/my_other_blog_on_artima.html</link>
-      <pubDate>Thu, 18 Dec 2008 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 18 Dec 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/my_other_blog_on_artima.html</guid>
       	<description>
 	
@@ -7137,7 +7137,7 @@ talk.
     <item>
       <title>A journey of a thousand miles begins with a single step: “Programming Collective Intelligence”, by O&apos;Reilly</title>
       <link>http://joshlong.com/jl/blogPost/a_journey_of_a_thousand.html</link>
-      <pubDate>Wed, 17 Dec 2008 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 17 Dec 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_journey_of_a_thousand.html</guid>
       	<description>
 	
@@ -7183,7 +7183,7 @@ refresher.   &lt;/p&gt;
     <item>
       <title>A Quick Guide to Posting To (A Few) Blogs with Java</title>
       <link>http://joshlong.com/jl/blogPost/a_quick_guide_to_posting.html</link>
-      <pubDate>Wed, 17 Dec 2008 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 17 Dec 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/a_quick_guide_to_posting.html</guid>
       	<description>
 	
@@ -7261,7 +7261,7 @@ XMLRPC library is quite formidable. I&apos;d not recommend using Apache XMLRPC
     <item>
       <title>Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10?</title>
       <link>http://joshlong.com/jl/blogPost/anyone_else_noticing_the_extreme.html</link>
-      <pubDate>Wed, 17 Dec 2008 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 17 Dec 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/anyone_else_noticing_the_extreme.html</guid>
       	<description>
 	
@@ -7281,7 +7281,7 @@ downgraded to 8.04 Ubuntu. &lt;/p&gt;
     <item>
       <title>Apple News, Mobile and Otherwise</title>
       <link>http://joshlong.com/jl/blogPost/apple_news_mobile_and_otherwise.html</link>
-      <pubDate>Wed, 17 Dec 2008 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 17 Dec 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/apple_news_mobile_and_otherwise.html</guid>
       	<description>
 	
@@ -7315,7 +7315,7 @@ One button. Finally, technology for fun and profit.
     <item>
       <title>How to Ride Spring Integration Head</title>
       <link>http://joshlong.com/jl/blogPost/how_to_ride_spring_integration.html</link>
-      <pubDate>Sat, 13 Dec 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 13 Dec 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/how_to_ride_spring_integration.html</guid>
       	<description>
 	
@@ -7333,7 +7333,7 @@ ant clean jar package publish-maven-local  &lt;br/&gt;
     <item>
       <title>Maven 2.0.9, Andromda 3.[2,3]</title>
       <link>http://joshlong.com/jl/blogPost/maven_2_0_9_andromda.html</link>
-      <pubDate>Sat, 6 Dec 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 6 Dec 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/maven_2_0_9_andromda.html</guid>
       	<description>
 	
@@ -7345,7 +7345,7 @@ ant clean jar package publish-maven-local  &lt;br/&gt;
     <item>
       <title>JavaFX 1.0 Released</title>
       <link>http://joshlong.com/jl/blogPost/javafx_1_0_released.html</link>
-      <pubDate>Thu, 4 Dec 2008 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 4 Dec 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/javafx_1_0_released.html</guid>
       	<description>
 	
@@ -7364,7 +7364,7 @@ I have some questions: what&apos;s the video streaming solution look like on thi
     <item>
       <title>Spring Integration 1.0 Released</title>
       <link>http://joshlong.com/jl/blogPost/spring_integration_1_0_released.html</link>
-      <pubDate>Wed, 3 Dec 2008 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 3 Dec 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/spring_integration_1_0_released.html</guid>
       	<description>
 	
@@ -7386,7 +7386,7 @@ Congratulations to the Spring Integration team! Wonderful tool and I look forwar
     <item>
       <title>Intellij 8.0</title>
       <link>http://joshlong.com/jl/blogPost/intellij_8_0.html</link>
-      <pubDate>Tue, 11 Nov 2008 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 11 Nov 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/intellij_8_0.html</guid>
       	<description>
 	
@@ -7408,7 +7408,7 @@ Annoying. I still don&apos;t know how to get the old functionality to return. Th
     <item>
       <title>How to get your twitter results visible on your site</title>
       <link>http://joshlong.com/jl/blogPost/how_to_get_your_twitter.html</link>
-      <pubDate>Sat, 8 Nov 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 8 Nov 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/how_to_get_your_twitter.html</guid>
       	<description>
 	
@@ -7445,7 +7445,7 @@ Matt Raible added &lt;a href=&quot;http://www.twitter.com&quot;&gt;Twitter&lt;/a
     <item>
       <title>And now for something completely different, OR, The code That Almost Toppled Microsoft. Almost.</title>
       <link>http://joshlong.com/jl/blogPost/the_code_that_almost_toppled.html</link>
-      <pubDate>Thu, 6 Nov 2008 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 6 Nov 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/the_code_that_almost_toppled.html</guid>
       	<description>
 	
@@ -7666,7 +7666,7 @@ Matt Raible added &lt;a href=&quot;http://www.twitter.com&quot;&gt;Twitter&lt;/a
     <item>
       <title>TestNG, Spring TestContext, and Maven</title>
       <link>http://joshlong.com/jl/blogPost/testng_spring_testcontext_and_maven.html</link>
-      <pubDate>Tue, 7 Oct 2008 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 7 Oct 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/testng_spring_testcontext_and_maven.html</guid>
       	<description>
 	
@@ -7689,7 +7689,7 @@ First, I added support for TestNG 5.7 (which is current as of this writing.):  &
     <item>
       <title>GWT Continues to Produce Beautiful Sites</title>
       <link>http://joshlong.com/jl/blogPost/gwt_continues_to_produce_beautiful.html</link>
-      <pubDate>Sat, 4 Oct 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 4 Oct 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/gwt_continues_to_produce_beautiful.html</guid>
       	<description>
 	
@@ -7700,7 +7700,7 @@ First, I added support for TestNG 5.7 (which is current as of this writing.):  &
     <item>
       <title>http://code.google.com/p/java-libcdrip/</title>
       <link>http://joshlong.com/jl/blogPost/http_code_google_com_p.html</link>
-      <pubDate>Thu, 2 Oct 2008 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 2 Oct 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/http_code_google_com_p.html</guid>
       	<description>
 	
@@ -7723,7 +7723,7 @@ I&apos;ve just &lt;a href=&quot;http://code.google.com/p/java-libcdrip&quot;&gt;
     <item>
       <title>J2ME and Android consitancy</title>
       <link>http://joshlong.com/jl/blogPost/j2me_and_android_consitancy.html</link>
-      <pubDate>Thu, 2 Oct 2008 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 2 Oct 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/j2me_and_android_consitancy.html</guid>
       	<description>
 	
@@ -7734,7 +7734,7 @@ Why is it that the basic &apos;optional&apos; components on J2ME are pretty much
     <item>
       <title>Getting Started with jBPM and Spring</title>
       <link>http://joshlong.com/jl/blogPost/getting_started_with_jbpm_and.html</link>
-      <pubDate>Mon, 22 Sep 2008 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 22 Sep 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/getting_started_with_jbpm_and.html</guid>
       	<description>
 	
@@ -7747,7 +7747,7 @@ Any ideas? Suggestion? Leave a comment! &lt;/p&gt;
     <item>
       <title>Oracle  Enterprise Pack for Eclipse</title>
       <link>http://joshlong.com/jl/blogPost/oracle_enterprise_pack_for_eclipse.html</link>
-      <pubDate>Wed, 17 Sep 2008 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 17 Sep 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/oracle_enterprise_pack_for_eclipse.html</guid>
       	<description>
 	
@@ -7762,7 +7762,7 @@ Thank you, Oracle, for making development in the Enterprise a little easier.   &
     <item>
       <title>Google Chrome, beta</title>
       <link>http://joshlong.com/jl/blogPost/google_chrome_beta.html</link>
-      <pubDate>Tue, 2 Sep 2008 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 2 Sep 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/google_chrome_beta.html</guid>
       	<description>
 	
@@ -7774,7 +7774,7 @@ Thank you, Oracle, for making development in the Enterprise a little easier.   &
     <item>
       <title>Continous Integration Conundrum</title>
       <link>http://joshlong.com/jl/blogPost/continous_integration_conundrum.html</link>
-      <pubDate>Tue, 19 Aug 2008 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 19 Aug 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/continous_integration_conundrum.html</guid>
       	<description>
 	
@@ -7791,7 +7791,7 @@ I write this down now so I have something to mind map tomorrow when I&apos;m mor
     <item>
       <title>mvn archetype:generate</title>
       <link>http://joshlong.com/jl/blogPost/mvn_archetype_generate.html</link>
-      <pubDate>Thu, 14 Aug 2008 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 14 Aug 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/mvn_archetype_generate.html</guid>
       	<description>
 	
@@ -7802,7 +7802,7 @@ Did you know that &lt;code&gt;mvn archetype:generate&lt;/code&gt;, by itself, on
     <item>
       <title>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</title>
       <link>http://joshlong.com/jl/blogPost/keith_donald_speaking_on_spring.html</link>
-      <pubDate>Sun, 10 Aug 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 10 Aug 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/keith_donald_speaking_on_spring.html</guid>
       	<description>
 	
@@ -7816,7 +7816,7 @@ Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.
     <item>
       <title>Subversion 1.5, IntelliJ IDEA, and you</title>
       <link>http://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
-      <pubDate>Sun, 10 Aug 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 10 Aug 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/subversion_1_5_intellij_idea.html</guid>
       	<description>
 	
@@ -7829,7 +7829,7 @@ Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.
     <item>
       <title>Installng PostGIS and the TIGER Geocoder</title>
       <link>http://joshlong.com/jl/blogPost/installng_postgis_and_the_tiger.html</link>
-      <pubDate>Sun, 13 Jul 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 13 Jul 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/installng_postgis_and_the_tiger.html</guid>
       	<description>
 	
@@ -7840,7 +7840,7 @@ Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.
     <item>
       <title>Digression: Setting Up Spring, Velocity, JavaMail, Multi Part MIME messages and Gmail</title>
       <link>http://joshlong.com/jl/blogPost/1.html</link>
-      <pubDate>Sat, 14 Jun 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 14 Jun 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/1.html</guid>
       	<description>
 	
@@ -7857,7 +7857,7 @@ This took quite a bit of Googling to get right, so here it is summarized to help
     <item>
       <title>Modeling Conversations</title>
       <link>http://joshlong.com/jl/blogPost/20080612.html</link>
-      <pubDate>Thu, 12 Jun 2008 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 12 Jun 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20080612.html</guid>
       	<description>
 	
@@ -7868,7 +7868,7 @@ This took quite a bit of Googling to get right, so here it is summarized to help
     <item>
       <title>Samuel Jackson for HTTP error codes!! Awesome.</title>
       <link>http://joshlong.com/jl/blogPost/20080525.html</link>
-      <pubDate>Sun, 25 May 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 25 May 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20080525.html</guid>
       	<description>
 	
@@ -7879,7 +7879,7 @@ This took quite a bit of Googling to get right, so here it is summarized to help
     <item>
       <title>Webmonkey.com is back!</title>
       <link>http://joshlong.com/jl/blogPost/20080524.html</link>
-      <pubDate>Sat, 24 May 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 24 May 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20080524.html</guid>
       	<description>
 	
@@ -7890,7 +7890,7 @@ Webmonkey.com is back! I just noticed this -- it&apos;s laid dormant for years a
     <item>
       <title>Spring Application Server</title>
       <link>http://joshlong.com/jl/blogPost/20080430.html</link>
-      <pubDate>Wed, 30 Apr 2008 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 30 Apr 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20080430.html</guid>
       	<description>
 	
@@ -7901,7 +7901,7 @@ Webmonkey.com is back! I just noticed this -- it&apos;s laid dormant for years a
     <item>
       <title>JAWR: a JavaScript compression library</title>
       <link>http://joshlong.com/jl/blogPost/20080412.html</link>
-      <pubDate>Sat, 12 Apr 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 12 Apr 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20080412.html</guid>
       	<description>
 	
@@ -7912,7 +7912,7 @@ Webmonkey.com is back! I just noticed this -- it&apos;s laid dormant for years a
     <item>
       <title>Adobe Media Player</title>
       <link>http://joshlong.com/jl/blogPost/200804121.html</link>
-      <pubDate>Sat, 12 Apr 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 12 Apr 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/200804121.html</guid>
       	<description>
 	
@@ -7923,7 +7923,7 @@ Webmonkey.com is back! I just noticed this -- it&apos;s laid dormant for years a
     <item>
       <title>Hibernate and RMI and you.</title>
       <link>http://joshlong.com/jl/blogPost/20080119.html</link>
-      <pubDate>Sat, 19 Jan 2008 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 19 Jan 2008 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20080119.html</guid>
       	<description>
 	
@@ -7934,7 +7934,7 @@ Alright -- this one bugs me to no end. &lt;br&gt;&lt;br&gt;Have you ever worked 
     <item>
       <title>The world keeps spinning.. quickly.</title>
       <link>http://joshlong.com/jl/blogPost/20071110.html</link>
-      <pubDate>Sat, 10 Nov 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 10 Nov 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20071110.html</guid>
       	<description>
 	
@@ -7945,7 +7945,7 @@ This is sort of Java-related, but as it&apos;s used in some way by all of the ma
     <item>
       <title>Quick Update, DIY Zoning, Mac/Ubuntu shock, and phantom key commands</title>
       <link>http://joshlong.com/jl/blogPost/20070722.html</link>
-      <pubDate>Sun, 22 Jul 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 22 Jul 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070722.html</guid>
       	<description>
 	
@@ -7956,7 +7956,7 @@ This is sort of Java-related, but as it&apos;s used in some way by all of the ma
     <item>
       <title>Moving On, Recap of The Phoenix Java User Group   Meeting on the 13th</title>
       <link>http://joshlong.com/jl/blogPost/20070616.html</link>
-      <pubDate>Sat, 16 Jun 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 16 Jun 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070616.html</guid>
       	<description>
 	
@@ -7967,7 +7967,7 @@ Yesterday (2 hours ago) was the last day at my job, and closes one chapter on my
     <item>
       <title>Safari For Windows! Huzzah!</title>
       <link>http://joshlong.com/jl/blogPost/20070613.html</link>
-      <pubDate>Wed, 13 Jun 2007 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 13 Jun 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070613.html</guid>
       	<description>
 	
@@ -7978,7 +7978,7 @@ Apple&apos;s got &lt;a href=&quot;http://www.apple.com/safari/&quot; target=&quo
     <item>
       <title>Java on the Client, Part 1</title>
       <link>http://joshlong.com/jl/blogPost/20070528.html</link>
-      <pubDate>Mon, 28 May 2007 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 28 May 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070528.html</guid>
       	<description>
 	
@@ -7989,7 +7989,7 @@ Apple&apos;s got &lt;a href=&quot;http://www.apple.com/safari/&quot; target=&quo
     <item>
       <title>Tapestry 4 Archetype Moved to the Tapestry Project at Apache</title>
       <link>http://joshlong.com/jl/blogPost/20070505.html</link>
-      <pubDate>Sat, 5 May 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 5 May 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070505.html</guid>
       	<description>
 	
@@ -8000,7 +8000,7 @@ Apple&apos;s got &lt;a href=&quot;http://www.apple.com/safari/&quot; target=&quo
     <item>
       <title>If I were a South Park character...</title>
       <link>http://joshlong.com/jl/blogPost/20070429.html</link>
-      <pubDate>Sun, 29 Apr 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 29 Apr 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070429.html</guid>
       	<description>
 	
@@ -8011,7 +8011,7 @@ If I were a South Park character ( &lt;a href=&quot;http://www.sp-studio.de/&quo
     <item>
       <title>Flex is open sourced!</title>
       <link>http://joshlong.com/jl/blogPost/20070425.html</link>
-      <pubDate>Wed, 25 Apr 2007 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 25 Apr 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070425.html</guid>
       	<description>
 	
@@ -8022,7 +8022,7 @@ If I were a South Park character ( &lt;a href=&quot;http://www.sp-studio.de/&quo
     <item>
       <title>A J2ME Archetype Based On Pyx4me.com&apos;s work, Antenna</title>
       <link>http://joshlong.com/jl/blogPost/20070408.html</link>
-      <pubDate>Sun, 8 Apr 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 8 Apr 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070408.html</guid>
       	<description>
 	
@@ -8033,7 +8033,7 @@ If I were a South Park character ( &lt;a href=&quot;http://www.sp-studio.de/&quo
     <item>
       <title>Pain Points with Location APIs and Sprint</title>
       <link>http://joshlong.com/jl/blogPost/20070405.html</link>
-      <pubDate>Thu, 5 Apr 2007 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 5 Apr 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070405.html</guid>
       	<description>
 	
@@ -8045,7 +8045,7 @@ developer.sprint.com article&lt;/a&gt; for more) and using Sprint&apos;s toolkit
     <item>
       <title>Spring and GPS (JSR 179 --javax.microedition.location) support</title>
       <link>http://joshlong.com/jl/blogPost/20070401.html</link>
-      <pubDate>Sun, 1 Apr 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 1 Apr 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070401.html</guid>
       	<description>
 	
@@ -8056,7 +8056,7 @@ developer.sprint.com article&lt;/a&gt; for more) and using Sprint&apos;s toolkit
     <item>
       <title>J# Post-Mortem</title>
       <link>http://joshlong.com/jl/blogPost/20070322.html</link>
-      <pubDate>Thu, 22 Mar 2007 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 22 Mar 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070322.html</guid>
       	<description>
 	
@@ -8069,7 +8069,7 @@ have 2 (conflicting) dates: 2015, or 2017. &lt;/p&gt;&lt;p&gt; Bah. Either way, 
     <item>
       <title>Developer Collaboration and Eclipse Jazz</title>
       <link>http://joshlong.com/jl/blogPost/20070310.html</link>
-      <pubDate>Sat, 10 Mar 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 10 Mar 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070310.html</guid>
       	<description>
 	
@@ -8080,7 +8080,7 @@ have 2 (conflicting) dates: 2015, or 2017. &lt;/p&gt;&lt;p&gt; Bah. Either way, 
     <item>
       <title>New version of the Tapestry 4.1 archetype</title>
       <link>http://joshlong.com/jl/blogPost/20070305.html</link>
-      <pubDate>Mon, 5 Mar 2007 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 5 Mar 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070305.html</guid>
       	<description>
 	
@@ -8091,7 +8091,7 @@ I just deployed a new version of the Tapestry 4.1 archetype. It&apos;s the same 
     <item>
       <title>Halfsteps on the Tapestry Archetype; Gmail&apos;s Down!</title>
       <link>http://joshlong.com/jl/blogPost/20070228.html</link>
-      <pubDate>Wed, 28 Feb 2007 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 28 Feb 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070228.html</guid>
       	<description>
 	
@@ -8105,7 +8105,7 @@ be sure, but there remains much more to be done...&lt;/p&gt;
     <item>
       <title>A Tapestry 4 Maven Archetype Based On The Tapestry 5 Archetype, Spring and samples included.</title>
       <link>http://joshlong.com/jl/blogPost/20070227.html</link>
-      <pubDate>Tue, 27 Feb 2007 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 27 Feb 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070227.html</guid>
       	<description>
 	
@@ -8119,7 +8119,7 @@ I love working with Tapestry 4, but I figure that it&apos;s because it&apos;s al
     <item>
       <title>Playing with Swing, JSR 296</title>
       <link>http://joshlong.com/jl/blogPost/20070224.html</link>
-      <pubDate>Sat, 24 Feb 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 24 Feb 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070224.html</guid>
       	<description>
 	
@@ -8130,7 +8130,7 @@ I just started playing with &lt;a href=&quot;http://jcp.org/en/jsr/detail?id=296
     <item>
       <title>IntelliJ 6.0 and JDK 6.0 upgrade</title>
       <link>http://joshlong.com/jl/blogPost/200702241.html</link>
-      <pubDate>Sat, 24 Feb 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 24 Feb 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/200702241.html</guid>
       	<description>
 	
@@ -8141,7 +8141,7 @@ I&apos;m about to upgrade to JDK6 on my Windows XP machine. I&apos;m running Int
     <item>
       <title>Sun Java Wireless Toolkit 2.5 for CLDC (Formerly, &amp;#8220;WTK&amp;#8221;) (finally)</title>
       <link>http://joshlong.com/jl/blogPost/20070212.html</link>
-      <pubDate>Mon, 12 Feb 2007 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 12 Feb 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070212.html</guid>
       	<description>
 	
@@ -8152,7 +8152,7 @@ I&apos;m about to upgrade to JDK6 on my Windows XP machine. I&apos;m running Int
     <item>
       <title>Salesforce.com&apos;s new language/platform pack: &quot;Apex&quot;</title>
       <link>http://joshlong.com/jl/blogPost/20070221.html</link>
-      <pubDate>Sun, 28 Jan 2007 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 28 Jan 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070221.html</guid>
       	<description>
 	
@@ -8163,7 +8163,7 @@ I&apos;m about to upgrade to JDK6 on my Windows XP machine. I&apos;m running Int
     <item>
       <title>EJB DAO &quot;data access layer&quot; spring hibernate persistence</title>
       <link>http://joshlong.com/jl/blogPost/20070125.html</link>
-      <pubDate>Thu, 25 Jan 2007 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 25 Jan 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070125.html</guid>
       	<description>
 	
@@ -8174,7 +8174,7 @@ I&apos;m about to upgrade to JDK6 on my Windows XP machine. I&apos;m running Int
     <item>
       <title>Archy - a maven archetype aggregator, and the 10 minute test your project so richly deserves</title>
       <link>http://joshlong.com/jl/blogPost/20070124.html</link>
-      <pubDate>Wed, 24 Jan 2007 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 24 Jan 2007 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/20070124.html</guid>
       	<description>
 	
