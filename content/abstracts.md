@@ -34,6 +34,9 @@ Join Spring Developer Advocate Josh Long to find out what Netflix, Alibaba, Tick
 
 We all talk about agile, but being agile means being shippable, and shippable specifically to production! Anyone who has ever read Michael Nygard's amazing tome, "Release It!" knows that code complete != production ready! In this talk we'll look at how Spring Boot provides solutions for things that will frustrate your attempts to move to production. We'll look at how to introduce smart, semantic metrics and logging, how to manage metric and log analysis and visualization in joined-up dashboards, how to manage processes in environments with init.d and system.d, and how to make services self describing and humane once they're deployed.
 
+### Reactive Spring
+
+Spring 5 is almost here! One of the most exciting introductions in this release is support for reactive programming, building on the Pivotal Reactor project to support message-driven, elastic, resilient and responsive services. Spring 5 integrates an MVC-like component model adapted to support reactive processing and a new type of web endpoint, functional reactive endpoints. In this talk, we'll look at the net-new Netty-based web runtime, how existing Servlet code can run on the new world, and how to integrate it with existing Spring-stack technologies.
 
 ## Workshops
 
