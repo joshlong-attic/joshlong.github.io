@@ -6,9 +6,33 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 5 Oct 2016 16:18:50 -0700</pubDate>
-    <lastBuildDate>Wed, 5 Oct 2016 16:18:50 -0700</lastBuildDate>
+    <pubDate>Sat, 15 Oct 2016 12:44:32 -0700</pubDate>
+    <lastBuildDate>Sat, 15 Oct 2016 12:44:32 -0700</lastBuildDate>
 
+    <item>
+      <title>Converting `.mp4` to `.gif`</title>
+      <link>http://joshlong.com/jl/blogPost/converting_mp4s_to_gifs.html</link>
+      <pubDate>Fri, 14 Oct 2016 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/converting_mp4s_to_gifs.html</guid>
+      	<description>
+	&lt;p&gt;I know there are probably a million worthy solutions to this, but I&apos;ve found one that works so I thought I&apos;d share it with others:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+mp4_to_gif (){
+  fn=$1
+  frames=`mktemp -d`
+  mkdir $frames
+  out=$2
+  ffmpeg -i $fn -vf scale=320:-1:flags=lanczos,fps=10 $frames/ffout%03d.png
+  convert -loop 0 $frames/ffout*.png $out
+  rm -rf $frames
+}
+
+mp4_to_gif dogs.mp4 dogs.gif
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Make sure you&apos;ve got &lt;code&gt;imagemagick&lt;/code&gt; and &lt;code&gt;ffmpeg&lt;/code&gt; and &lt;code&gt;ghostscript&lt;/code&gt; installed on your machine. On OS X/macOS Sierra: &lt;code&gt;brew install imagemagick ffmpeg ghostscript&lt;/code&gt; will do the trick. Why is this useful? Well, reusing funny content on Twitter for posts to Google Hangouts is my use case. Perhaps there are others..&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Can You Recommend Some Worthy Alternatives to Dropbox?</title>
       <link>http://joshlong.com/jl/blogPost/alternatives-to-dropbox.html</link>
