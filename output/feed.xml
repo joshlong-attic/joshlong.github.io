@@ -6,9 +6,67 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 15 Oct 2016 12:44:32 -0700</pubDate>
-    <lastBuildDate>Sat, 15 Oct 2016 12:44:32 -0700</lastBuildDate>
+    <pubDate>Sat, 15 Oct 2016 13:01:56 -0700</pubDate>
+    <lastBuildDate>Sat, 15 Oct 2016 13:01:56 -0700</lastBuildDate>
 
+    <item>
+      <title>The Version Controlled Operating System</title>
+      <link>http://joshlong.com/jl/blogPost/the-version-controlled-os.html</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/the-version-controlled-os.html</guid>
+      	<description>
+	&lt;p&gt;I hate having to remember which packages on each new operating system install. I keep a small script called josh-env.sh in a private Github repository (remember, Github now has unlimited private repositories!) that I then make sure is present in my home directory. The script does two things: it contributes important environment variables (typically the environment variables I use to run builds, as I might on the CI server) that are themselves version controlled, and it records the contents of my Homebrew and Homebrew Cask installations into text files and then &lt;code&gt;git commit&lt;/code&gt; and &lt;code&gt;git push&lt;/code&gt; those files if the contents have changed.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+c=`pwd`
+d=`dirname $0`
+
+## contribute environment variables
+source $d/josh-env-vars.sh
+
+
+## record homebrew
+
+mkdir -p $HOME/bin
+export PATH=$PATH:$HOME/bin
+# lets make sure that this and the brew manifest of the OS itself are all version controlled
+
+
+BC=$d/brew-cask.txt
+B=$d/brew.txt
+
+brew cask list &amp;gt; $BC
+brew list &amp;gt; $B
+
+cd $d
+
+n=`date`
+git add $B
+git add $BC
+git commit -a -m &amp;quot;updated brew manifest $n.&amp;quot;
+
+last_commit_status=$?
+
+if [ $last_commit_status -eq 0 ]; then
+  echo &amp;quot;changes detected on $n. running git push.&amp;quot;
+  git push;
+fi
+
+cd $c
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Naturally, this script needs to be run at somepoint. It&apos;s a cheap operation so I run it on every new user shell, inside &lt;code&gt;$HOME/.zshrc&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;...
+source $HOME/josh-env/josh-env.sh
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This way, if for any reason I need to restore a system tomorrow, I can &lt;code&gt;git clone&lt;/code&gt; the private project on a new machine and restore everything. It might be as simple as:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+cat brew.txt | while read l ; do brew install $l ; done
+
+cat brew-cask.txt | while read l ; do brew cask install $l ; done
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I keep everything &lt;em&gt;heavy&lt;/em&gt; weight inside of Dropbox, so that restores naturally. I keep all code inside Github, and those restore naturally. This ensures that the remaining personalizations to my environment are recorded and restored as well.&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Converting `.mp4` to `.gif`</title>
       <link>http://joshlong.com/jl/blogPost/converting_mp4s_to_gifs.html</link>
