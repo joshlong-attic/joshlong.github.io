@@ -14,14 +14,14 @@
     <meta name="generator" content="JBake">
 
     <!-- Le styles -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/asciidoctor.css" rel="stylesheet">
-    <link href="css/base.css" rel="stylesheet">
-    <link href="css/prettify.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
+      <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
@@ -29,7 +29,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="../../favicon.ico">
   </head>
   <body onload="prettyPrint()">
     <div id="wrap">
@@ -54,20 +54,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-<a class="navbar-brand" href="">
-	<!-- <img alt="JoshLong.com" height = "30" src="joshlong-logo.jpg" />-->
+<a class="navbar-brand" href="../../">
+	<!-- <img alt="JoshLong.com" height = "30" src="../../joshlong-logo.jpg" />-->
 	<span style="font-size:larger;font-weight :bold;">
 	Josh Long's Blog
 	</span> </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="abstracts.html">Abstracts</a></li>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
 
             <!--
-						<li><a href="feed.xml">Subscribe</a></li>
+						<li><a href="../../feed.xml">Subscribe</a></li>
 						<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -85,19 +85,17 @@
       </div>
     </div>
     <div class="container">
-
+	
 	<div class="page-header">
-		<h1>Blog</h1>
-	</div>
-  			<a href="jl/blogPost/travel_is_fatal_to_prejudice.html"><h1>FreeMarker template error:
+		<h1>FreeMarker template error:
 The following has evaluated to null or missing:
-==> post.title  [in template "index.ftl" at line 10, column 73]
+==> content.title  [in template "post.ftl" at line 6, column 43]
 
 Tip: If the failing expression is known to be legally null/missing, either specify a default value with myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthessis: (myOptionVar.foo)!myDefault, (myOptionVar.foo)??
 
 The failing instruction (FTL stack trace):
 ----------
-==> ${post.title} auto-escaped  [in template "index.ftl" at line 10, column 71]
+==> ${content.title} auto-escaped  [in template "post.ftl" at line 6, column 41]
 ----------
 
 Java stack trace (for programmers):
@@ -114,21 +112,13 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 	at freemarker.core.EscapeBlock.accept(EscapeBlock.java:85)
 	at freemarker.core.Environment.visit(Environment.java:265)
 	at freemarker.core.MixedContent.accept(MixedContent.java:93)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:286)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:86)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:286)
-	at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:193)
-	at freemarker.core.Environment.visitIteratorBlock(Environment.java:509)
-	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:103)
-	at freemarker.core.Environment.visit(Environment.java:265)
-	at freemarker.core.MixedContent.accept(MixedContent.java:93)
 	at freemarker.core.Environment.visit(Environment.java:265)
 	at freemarker.core.Environment.process(Environment.java:243)
 	at freemarker.template.Template.process(Template.java:277)
 	at org.jbake.template.FreemarkerTemplateEngine.renderDocument(FreemarkerTemplateEngine.java:66)
 	at org.jbake.template.DelegatingTemplateEngine.renderDocument(DelegatingTemplateEngine.java:65)
-	at org.jbake.app.Renderer.renderIndex(Renderer.java:125)
-	at org.jbake.app.Oven.bake(Oven.java:168)
+	at org.jbake.app.Renderer.render(Renderer.java:89)
+	at org.jbake.app.Oven.bake(Oven.java:157)
 	at org.jbake.launcher.Main.bake(Main.java:50)
 	at org.jbake.launcher.Main.run(Main.java:86)
 	at org.jbake.launcher.Main.main(Main.java:36)
