@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 18 Mar 2017 15:50:46 -0700</pubDate>
-    <lastBuildDate>Sat, 18 Mar 2017 15:50:46 -0700</lastBuildDate>
+    <pubDate>Sat, 18 Mar 2017 15:53:43 -0700</pubDate>
+    <lastBuildDate>Sat, 18 Mar 2017 15:53:43 -0700</lastBuildDate>
 
     <item>
       <title>Functionally Filtering a String in Java 8</title>
@@ -26,7 +26,7 @@ print &amp;#39;&amp;#39;.join([a for a in &amp;#39;123 a string !!!&amp;#39; if 
 &lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/starbuxman&quot;&gt;@starbuxman&lt;/a&gt; &amp;quot;a string !!&amp;quot;.filter(Char::isLetter)&lt;br&gt;&lt;br&gt;Did I break your Java?&lt;/p&gt;&amp;mdash; Hadi Hariri (@hhariri) &lt;a href=&quot;https://twitter.com/hhariri/status/843222983925792768&quot;&gt;March 18, 2017&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;p&gt;..or the &lt;code&gt;replace&lt;/code&gt; method:&lt;/p&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/starbuxman&quot;&gt;@starbuxman&lt;/a&gt; You don’t fancy:&lt;br&gt;&lt;br&gt;&amp;quot;a string !!&amp;quot;.replaceAll(&amp;quot;\\W&amp;quot;, &amp;quot;&amp;quot;)&lt;br&gt;&lt;br&gt;?&lt;/p&gt;&amp;mdash; Nicky Mølholm (@moelholm) &lt;a href=&quot;https://twitter.com/moelholm/status/843226794241200128&quot;&gt;March 18, 2017&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;p&gt;All of these are good ideas, but not quite what I wanted.&lt;/p&gt;&lt;p&gt;I was looking for trivial amounts of conceptual noise - something I could stare at and process, quickly. Maybe Python was the right thing, after all? So I tried embedding JYthon (the Python language implementation on the JVM):&lt;/p&gt;
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;p&gt;All of these are good ideas, but not quite what I wanted.&lt;/p&gt;&lt;p&gt;I was looking for trivial amounts of conceptual noise - something I could stare at and process, quickly. Maybe Python was the right thing, after all? So I tried embedding Jython (the Python language implementation on the JVM). This required a pesky, um, let&apos;s call it &lt;em&gt;utility&lt;/em&gt; library (the entire Python language and runtime) whose Maven coordinates are &lt;code&gt;org.python&lt;/code&gt; : &lt;code&gt;jython&lt;/code&gt; : &lt;code&gt;2.7.1.b3&lt;/code&gt; :&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;import org.python.util.PythonInterpreter;
 import java.util.Properties;
 
