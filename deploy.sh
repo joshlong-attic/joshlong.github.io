@@ -4,7 +4,7 @@ echo -e "deploying updates to Github.."
 
 # Build the project
 rm -rf output
-jbake
+jbake . output
 
 git add output
 
@@ -16,7 +16,7 @@ cp CNAME output/CNAME
 git add output/CNAME
 git commit -a -m "adding CNAME"
 
-git add -a
+git add -A
 
 # Commit changes.
 msg="rebuilding site `date`"
