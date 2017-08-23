@@ -40,6 +40,16 @@ Spring 5 is almost here! One of the most exciting introductions in this release 
 
 ## Workshops
 
+### Cloud Native Java - 3-6h
+
+“It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming
+
+Work takes time to flow through an organization and ultimately be deployed to production where it captures value. It’s critical to reduce time-to-production. Software - for many organizations and industries - is a competitive advantage. Organizations break their larger software ambitions into smaller, independently deployable, feature -centric batches of work - microservices. In order to reduce the round-trip between stations of work, organizations collapse or consolidate as much of them as possible and automate the rest; developers and operations beget “devops,” cloud-based services and platforms automate operations work and break down the need for ITIL tickets and change management boards. But velocity, for velocity’s sake, is dangerous. Microservices invite architectural complexity that few are prepared to address. In this talk, we’ll look at how high performance organizations like Ticketmaster, Alibaba, and Netflix make short work of that complexity with Spring Boot and Spring Cloud.
+
+In this workshop we'll look at how to build cloud-native Java systems that are elastic, agile, observable and robust.
+
+
+
 ### Cloud Native Java - 5-10 Days
 
 “It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming
@@ -67,17 +77,32 @@ A cloud native application is one that is _fault tolerant_, or *robust*. If a se
 
 In this workshop we'll cover:
 
-- *Basics* - we'll look at Spring Boot application development concepts like auto-configuration and embedded web container deployments
-- *REST APIs* - we'll look at concerns like API versioning and hypermedia    
-- *Data Access* - we'll model  a service domain and define bounded contexts  
-- *Observability* - what happens when there's a problem with your production application? How quickly can your team respond? How do you know if you're making improvements to a system? How do you measure progress? How do you monitor individual applications? How do you monitor the flow of requests through circuit breakers? How do you trace requests across the system? Can you visualize all the services in the system?
-- *Testing*. We'll look at the concepts of test-driven development. We'll cover unit testing individual components and mock them out. We'll look at how to test service interfaces. We'll look at how to write integration tests that don't sacrifice speed in order to be exhaustive using consumer driven contracts and consumer driven contract testing.  
-- *Routing and Load-Balancing* - where does your service live? How do your clients find it? How do you handle custom routing requirements? How do you handle custom load-balancing?
-- message-driven and integration-centric architectures.
-- stream processing
-- partitioned batch processing
-- reliability patterns like a circuit breaker and rate limiting
-- ad-hoc task processing
-- edge-services and concerns like rate limiting, backends-for-front-ends, proxying, and other cross-cutting concerns
-- OAuth security
-- service registration and discovery
+- *Basics* - we'll look at Spring Boot application development concepts like auto-configuration and embedded web container deployments (Spring Boot)
+
+- *REST APIs* - we'll look at concerns like API versioning and hypermedia. (Spring MVC, Spring Boot, Spring HATEOAS)
+
+- *Data Access* - we'll model  a service domain and define bounded contexts. (Spring Boot, Spring Data)
+
+- *Observability* - what happens when there's a problem with your production application? How quickly can your team respond? How do you know if you're making improvements to a system? How do you measure progress? How do you monitor individual applications? How do you monitor the flow of requests through circuit breakers? How do you trace requests across the system? Can you visualize all the services in the system? We'll look at how to surface information about your services and systems. (Spring Boot Actuator, Micrometer, Graphite, Spring Cloud Sleuth, OpenZipkin, Spring Cloud Hystrix Dashboard)
+
+- *Testing* -  we'll look at the concepts of test-driven development. We'll cover unit testing individual components and mock them out. We'll look at how to test service interfaces. We'll look at how to write integration tests that don't sacrifice speed in order to be exhaustive using consumer driven contracts and consumer driven contract testing.  (JUnit, Spring Boot, Spring MVC Test Framework, Spring Cloud Contract)
+
+- *Routing and Load-Balancing* - where does your service live? How do your clients find it? How do you handle custom routing requirements? How do you handle custom load-balancing? (Spring Cloud, Ribbon)
+
+- *Message-driven and integration-centric architectures*  -  We'll look at how to build microservices that talk to each other over messaging fabrics like Apache Kafka or RabbitMQ. We'll look at how to integrate existing systems and how to use messaging to connect disparate systems. (RabbitMQ, Spring Integration, Spring Cloud Stream)
+
+- *Stream Processing* - We'll look at how to build solutions that process ongoing data over time. We'll look at how to compose messaging-based microservices and orchestrate them over a cloud-based fabric. (Spring Cloud Stream, Spring Cloud Data Flow)
+
+- *Partitioned Batch Processing* - In this section we'll look at how to process large amounts of sequential data and scale the processing across a cloud fabric. We'll look at how to scale processing horizontally as our processing needs demand. (Spring Batch, Spring Integration)
+
+- *Reliability Patterns* - In this section we'll look at how to employ retries and circuit breakers to build fault-tolerence into service invocations. We'll look at approaches to gracefully degrade if a service invocation should fail. (Spring Cloud Hystrix, Spring Retry, Spring Boot)
+
+- *Ad-hoc Task Processing* - Need to send an email? Resize an image? Generate a report? In this section we'll look at a few ways to distribute these longer-running workloads across a cloud fabric. (Spring Batch, Spring Cloud Task, Spring Cloud Data Flow)
+
+- *Workflow* - In this section we'll look at how to use a workflow engine to choreograph work across a cloud platform, using  messaging-centric microservics and incorporating human actors to achieve a result. (Activiti, Spring Cloud Stream)
+
+- *Edge-services* - In this section we'll look at how to build client-centric adapter APIs. and concerns like rate limiting, backends-for-front-ends, proxying, and other cross-cutting concerns. (Spring Cloud, Zuul, Spring Cloud Gateway)
+
+- *Security* - In this section we'll look at how to secure individual microservices. We'll look at how to perpetuate authenticated principals across service invocations with OAuth. (Spring Boot, Spring Security OAuth, Spring Cloud Security)
+
+- *Service Registration and Discovery* - In this section we'll look at how to register and discover services dynamically with a service registry like Netflix Eureka or Hashicorp Consul. (Spring Cloud)
