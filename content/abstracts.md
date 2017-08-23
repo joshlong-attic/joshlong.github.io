@@ -40,15 +40,44 @@ Spring 5 is almost here! One of the most exciting introductions in this release 
 
 ## Workshops
 
-### Cloud Native Java Workshop
+### Cloud Native Java - 5-10 Days
 
-In this workshop we'll look at how to build cloud-native Java applications. A cloud native application is one that is designed to fully exploit a cloud platform both in the application layer - where things decompose into microservices - and at the data layer where NoSQL offers better horizontal scaling and fitness for specific purpose.
+“It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming
 
-We'll look at:
- - writing services and handling non-functional requirements like
-metrics and logging with Spring Boot
- - scaling out safely and building fault-tolerant systems using Spring
-Cloud and its support for distributed systems patterns like the
-circuit breaker, service registration and discovery, and centralized
-configuration management.
-- offloading as much operational work as possible to the platform, Cloud Foundry
+Work takes time to flow through an organization and ultimately be deployed to production where it captures value. It’s critical to reduce time-to-production. Software - for many organizations and industries - is a competitive advantage.
+
+Organizations break their larger software ambitions into smaller, independently deployable, feature -centric batches of work - microservices. In order to reduce the round-trip between stations of work, organizations collapse or consolidate as much of them as possible and automate the rest; developers and operations beget “devops,” cloud-based services and platforms automate operations work and break down the need for ITIL tickets and change management boards.
+
+But velocity, for velocity’s sake, is dangerous. Microservices invite architectural complexity that few are prepared to address. In this talk, we’ll look at how high performance organizations like Ticketmaster, Alibaba, and Netflix make short work of that complexity with Spring Boot and Spring Cloud.
+
+In this workshop we'll look at how to build cloud-native Java applications. A cloud native application is:
+
+* elastic
+* agile
+* observable
+* robust
+
+A cloud native application is one that is designed to fully exploit a cloud platform both in the application layer - where things decompose into microservices - and at the data layer where NoSQL offers better horizontal scaling and fitness for specific purpose. This is what we mean by *elastic*.
+
+A cloud native application is one that is _agile_. It should be easy to write,  change, test, deploy and operate. If the cost of change is prohibitive  then normal people under normal situations won't do it. We must make doing the right thing - that which supports change - the easy thing.
+
+A cloud native system is _observable_. It must support at-a-glance insight into what is happening in the system and support remediation. It must be instrumented at the application and systems levels to support the effort of crisis-management.
+
+A cloud native application is one that is _fault tolerant_, or *robust*. If a service should fail, the system must be able to recover and degrade gracefully.  Instead of trying to build a system that is predicated on the lie that things are highly available, build instead to optimize for time to remediation.
+
+In this workshop we'll cover:
+
+- *Basics* - we'll look at Spring Boot application development concepts like auto-configuration and embedded web container deployments
+- *REST APIs* - we'll look at concerns like API versioning and hypermedia    
+- *Data Access* - we'll model  a service domain and define bounded contexts  
+- *Observability* - what happens when there's a problem with your production application? How quickly can your team respond? How do you know if you're making improvements to a system? How do you measure progress? How do you monitor individual applications? How do you monitor the flow of requests through circuit breakers? How do you trace requests across the system? Can you visualize all the services in the system?
+- *Testing*. We'll look at the concepts of test-driven development. We'll cover unit testing individual components and mock them out. We'll look at how to test service interfaces. We'll look at how to write integration tests that don't sacrifice speed in order to be exhaustive using consumer driven contracts and consumer driven contract testing.  
+- *Routing and Load-Balancing* - where does your service live? How do your clients find it? How do you handle custom routing requirements? How do you handle custom load-balancing?
+- message-driven and integration-centric architectures.
+- stream processing
+- partitioned batch processing
+- reliability patterns like a circuit breaker and rate limiting
+- ad-hoc task processing
+- edge-services and concerns like rate limiting, backends-for-front-ends, proxying, and other cross-cutting concerns
+- OAuth security
+- service registration and discovery
