@@ -109,9 +109,59 @@
 <h3>Reactive Spring</h3>
 <p>Spring 5 is almost here! One of the most exciting introductions in this release is support for reactive programming, building on the Pivotal Reactor project to support message-driven, elastic, resilient and responsive services. Spring 5 integrates an MVC-like component model adapted to support reactive processing and a new type of web endpoint, functional reactive endpoints. In this talk, we'll look at the net-new Netty-based web runtime, how existing Servlet code can run on the new world, and how to integrate it with existing Spring-stack technologies.</p>
 <h2>Workshops</h2>
-<h3>Cloud Native Java Workshop</h3>
-<p>In this workshop we'll look at how to build cloud-native Java applications. A cloud native application is one that is designed to fully exploit a cloud platform both in the application layer - where things decompose into microservices - and at the data layer where NoSQL offers better horizontal scaling and fitness for specific purpose.</p>
-<p>We'll look at:<br/> - writing services and handling non-functional requirements like<br/>metrics and logging with Spring Boot<br/> - scaling out safely and building fault-tolerant systems using Spring<br/>Cloud and its support for distributed systems patterns like the<br/>circuit breaker, service registration and discovery, and centralized<br/>configuration management.<br/>- offloading as much operational work as possible to the platform, Cloud Foundry</p></p>
+<h3>Cloud Native Java - 3-6h</h3>
+<p>“It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming</p>
+<p>Work takes time to flow through an organization and ultimately be deployed to production where it captures value. It’s critical to reduce time-to-production. Software - for many organizations and industries - is a competitive advantage. Organizations break their larger software ambitions into smaller, independently deployable, feature -centric batches of work - microservices. In order to reduce the round-trip between stations of work, organizations collapse or consolidate as much of them as possible and automate the rest; developers and operations beget “devops,” cloud-based services and platforms automate operations work and break down the need for ITIL tickets and change management boards. But velocity, for velocity’s sake, is dangerous. Microservices invite architectural complexity that few are prepared to address. In this talk, we’ll look at how high performance organizations like Ticketmaster, Alibaba, and Netflix make short work of that complexity with Spring Boot and Spring Cloud.</p>
+<p>In this workshop we'll look at how to build cloud-native Java systems that are elastic, agile, observable and robust.</p>
+<h3>Cloud Native Java - 5-10 Days</h3>
+<p>“It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming</p>
+<p>Work takes time to flow through an organization and ultimately be deployed to production where it captures value. It’s critical to reduce time-to-production. Software - for many organizations and industries - is a competitive advantage.</p>
+<p>Organizations break their larger software ambitions into smaller, independently deployable, feature -centric batches of work - microservices. In order to reduce the round-trip between stations of work, organizations collapse or consolidate as much of them as possible and automate the rest; developers and operations beget “devops,” cloud-based services and platforms automate operations work and break down the need for ITIL tickets and change management boards.</p>
+<p>But velocity, for velocity’s sake, is dangerous. Microservices invite architectural complexity that few are prepared to address. In this talk, we’ll look at how high performance organizations like Ticketmaster, Alibaba, and Netflix make short work of that complexity with Spring Boot and Spring Cloud.</p>
+<p>In this workshop we'll look at how to build cloud-native Java applications. A cloud native application is:</p>
+<ul>
+  <li>elastic</li>
+  <li>agile</li>
+  <li>observable</li>
+  <li>robust</li>
+</ul>
+<p>A cloud native application is one that is designed to fully exploit a cloud platform both in the application layer - where things decompose into microservices - and at the data layer where NoSQL offers better horizontal scaling and fitness for specific purpose. This is what we mean by <em>elastic</em>.</p>
+<p>A cloud native application is one that is <em>agile</em>. It should be easy to write, change, test, deploy and operate. If the cost of change is prohibitive then normal people under normal situations won't do it. We must make doing the right thing - that which supports change - the easy thing.</p>
+<p>A cloud native system is <em>observable</em>. It must support at-a-glance insight into what is happening in the system and support remediation. It must be instrumented at the application and systems levels to support the effort of crisis-management.</p>
+<p>A cloud native application is one that is <em>fault tolerant</em>, or <em>robust</em>. If a service should fail, the system must be able to recover and degrade gracefully. Instead of trying to build a system that is predicated on the lie that things are highly available, build instead to optimize for time to remediation.</p>
+<p>In this workshop we'll cover:</p>
+<ul>
+  <li>
+  <p><em>Basics</em> - we'll look at Spring Boot application development concepts like auto-configuration and embedded web container deployments (Spring Boot)</p></li>
+  <li>
+  <p><em>REST APIs</em> - we'll look at concerns like API versioning and hypermedia. (Spring MVC, Spring Boot, Spring HATEOAS)</p></li>
+  <li>
+  <p><em>Data Access</em> - we'll model a service domain and define bounded contexts. (Spring Boot, Spring Data)</p></li>
+  <li>
+  <p><em>Observability</em> - what happens when there's a problem with your production application? How quickly can your team respond? How do you know if you're making improvements to a system? How do you measure progress? How do you monitor individual applications? How do you monitor the flow of requests through circuit breakers? How do you trace requests across the system? Can you visualize all the services in the system? We'll look at how to surface information about your services and systems. (Spring Boot Actuator, Micrometer, Graphite, Spring Cloud Sleuth, OpenZipkin, Spring Cloud Hystrix Dashboard)</p></li>
+  <li>
+  <p><em>Testing</em> - we'll look at the concepts of test-driven development. We'll cover unit testing individual components and mock them out. We'll look at how to test service interfaces. We'll look at how to write integration tests that don't sacrifice speed in order to be exhaustive using consumer driven contracts and consumer driven contract testing. (JUnit, Spring Boot, Spring MVC Test Framework, Spring Cloud Contract)</p></li>
+  <li>
+  <p><em>Routing and Load-Balancing</em> - where does your service live? How do your clients find it? How do you handle custom routing requirements? How do you handle custom load-balancing? (Spring Cloud, Ribbon)</p></li>
+  <li>
+  <p><em>Message-driven and integration-centric architectures</em> - We'll look at how to build microservices that talk to each other over messaging fabrics like Apache Kafka or RabbitMQ. We'll look at how to integrate existing systems and how to use messaging to connect disparate systems. (RabbitMQ, Spring Integration, Spring Cloud Stream)</p></li>
+  <li>
+  <p><em>Stream Processing</em> - We'll look at how to build solutions that process ongoing data over time. We'll look at how to compose messaging-based microservices and orchestrate them over a cloud-based fabric. (Spring Cloud Stream, Spring Cloud Data Flow)</p></li>
+  <li>
+  <p><em>Partitioned Batch Processing</em> - In this section we'll look at how to process large amounts of sequential data and scale the processing across a cloud fabric. We'll look at how to scale processing horizontally as our processing needs demand. (Spring Batch, Spring Integration)</p></li>
+  <li>
+  <p><em>Reliability Patterns</em> - In this section we'll look at how to employ retries and circuit breakers to build fault-tolerence into service invocations. We'll look at approaches to gracefully degrade if a service invocation should fail. (Spring Cloud Hystrix, Spring Retry, Spring Boot)</p></li>
+  <li>
+  <p><em>Ad-hoc Task Processing</em> - Need to send an email? Resize an image? Generate a report? In this section we'll look at a few ways to distribute these longer-running workloads across a cloud fabric. (Spring Batch, Spring Cloud Task, Spring Cloud Data Flow)</p></li>
+  <li>
+  <p><em>Workflow</em> - In this section we'll look at how to use a workflow engine to choreograph work across a cloud platform, using messaging-centric microservics and incorporating human actors to achieve a result. (Activiti, Spring Cloud Stream)</p></li>
+  <li>
+  <p><em>Edge-services</em> - In this section we'll look at how to build client-centric adapter APIs. and concerns like rate limiting, backends-for-front-ends, proxying, and other cross-cutting concerns. (Spring Cloud, Zuul, Spring Cloud Gateway)</p></li>
+  <li>
+  <p><em>Security</em> - In this section we'll look at how to secure individual microservices. We'll look at how to perpetuate authenticated principals across service invocations with OAuth. (Spring Boot, Spring Security OAuth, Spring Cloud Security)</p></li>
+  <li>
+  <p><em>Service Registration and Discovery</em> - In this section we'll look at how to register and discover services dynamically with a service registry like Netflix Eureka or Hashicorp Consul. (Spring Cloud)</p></li>
+</ul></p>
 
 	<hr />
 
