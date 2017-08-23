@@ -106,3 +106,5 @@ In this workshop we'll cover:
 - *Security* - In this section we'll look at how to secure individual microservices. We'll look at how to perpetuate authenticated principals across service invocations with OAuth. (Spring Boot, Spring Security OAuth, Spring Cloud Security)
 
 - *Service Registration and Discovery* - In this section we'll look at how to register and discover services dynamically with a service registry like Netflix Eureka or Hashicorp Consul. (Spring Cloud)
+
+- *Functions-as-a-service* - In this section we'll look at how to build serverless-style applications (Spring Cloud Function)
