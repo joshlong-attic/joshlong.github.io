@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 28 Aug 2017 17:02:08 +0800</pubDate>
-    <lastBuildDate>Mon, 28 Aug 2017 17:02:08 +0800</lastBuildDate>
+    <pubDate>Mon, 28 Aug 2017 17:04:12 +0800</pubDate>
+    <lastBuildDate>Mon, 28 Aug 2017 17:04:13 +0800</lastBuildDate>
 
     <item>
       <title>Cloud Native Java is Done</title>
@@ -15,7 +15,7 @@
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/cloud_native_java_is_done.html</guid>
       	<description>
-	&lt;p&gt;I&apos;m so happy to say that, at long last, &lt;em&gt;Cloud Native Java&lt;/em&gt; is done! &lt;a href=&quot;https://www.amazon.com/Cloud-Native-Java-Designing-Resilient/dp/1449374646/ref=sr_1_1?ie=UTF8&amp;qid=1503905875&amp;sr=8-1&amp;keywords=cloud+native+java#customerReviews&quot;&gt;Get it while it&apos;s hot!&lt;/a&gt;&lt;/p&gt;
+	&lt;p&gt;I&apos;m so happy to say that, at long last, &lt;em&gt;Cloud Native Java&lt;/em&gt; is done! &lt;a href=&quot;https://www.amazon.com/Cloud-Native-Java-Designing-Resilient/dp/1449374646/ref=sr_1_1?ie=UTF8&amp;qid=1503905875&amp;sr=8-1&amp;keywords=cloud+native+java#customerReviews&quot;&gt;Get it while it&apos;s hot!&lt;/a&gt; We talk a bit more about it &lt;a href=&quot;http://cloudnativejava.io/post/cloud_native_java_is_done/&quot;&gt;on the official blog&lt;/a&gt;.&lt;/p&gt;
 	</description>
     </item>
     <item>
