@@ -4,10 +4,9 @@ type=page
 status=published
 ~~~~~~
 
+All talks are workable in a one-hour slot  unless otherwise noted.
 
-## Talks
-
-###  Cloud Native Java
+##  Cloud Native Java
 
 “It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming
 
@@ -18,29 +17,31 @@ Organizations break their larger software ambitions into smaller, independently 
 But velocity, for velocity’s sake, is dangerous. Microservices invite architectural complexity that few are prepared to address. In this talk, we’ll look at how high performance organizations like Ticketmaster, Alibaba, and Netflix make short work of that complexity with Spring Boot and Spring Cloud.
 
 
-### The Bootiful Application
+## The Bootiful Application
 
 Alright, so maybe "bootiful" won't ever work, but I tried, and it was worth it too because you're reading this. Spring Boot, the new convention-over-configuration centric framework from the Spring team at Pivotal, marries Spring's flexibility with conventional, common sense defaults to make application development not just fly, but pleasant! Spring Boot aims to make address the common functional and non-functional requirements that gate quickly moving to production.
 
 Join Spring developer advocate Josh Long for a look at what Spring Boot is, why it's turning heads, why you should consider it for your next application (REST, micro services, web, batch, big data, integration, whatever!) and how to get started.
 
-### The Bootiful Microservice
+## The Bootiful Microservice
 
 We get it already! Microservices help you build smaller, singly-focused services, quicker. They scale out. They’re more agile because individual teams can deliver them at their own pace. They work well in the cloud because they’re smaller, and benefit from elastic, horizontal scaling. But what about the complexity? There’s a cost associated with adding services and coordinating the interactions between them. In this talk, we’ll look at Spring Cloud, which builds atop Spring Boot and the Netflix OSS stack, and see how it lets you easily integrate service-discovery, security, reliability patterns like the circuit breaker, and centralized and journaled property configuration (and more) to more quickly build microservices that scale.
 
 Join Spring Developer Advocate Josh Long to find out what Netflix, Alibaba, Ticketmaster, and countless other organizations already know: Spring Cloud handles the non-functional requirements associated with adopting microservices to enable them to progress quickly.
 
-### The Operationalized Application
+## The Operationalized Application
 
 We all talk about agile, but being agile means being shippable, and shippable specifically to production! Anyone who has ever read Michael Nygard's amazing tome, "Release It!" knows that code complete != production ready! In this talk we'll look at how Spring Boot provides solutions for things that will frustrate your attempts to move to production. We'll look at how to introduce smart, semantic metrics and logging, how to manage metric and log analysis and visualization in joined-up dashboards, how to manage processes in environments with init.d and system.d, and how to make services self describing and humane once they're deployed.
 
-### Reactive Spring
+## Reactive Spring
 
 Spring 5 is almost here! One of the most exciting introductions in this release is support for reactive programming, building on the Pivotal Reactor project to support message-driven, elastic, resilient and responsive services. Spring 5 integrates an MVC-like component model adapted to support reactive processing and a new type of web endpoint, functional reactive endpoints. In this talk, we'll look at the net-new Netty-based web runtime, how existing Servlet code can run on the new world, and how to integrate it with existing Spring-stack technologies.
 
-## Workshops
+## Bootiful Testing (1-3h)
 
-### Cloud Native Java - 3-6h
+How would you feel if you knew that any pat of the code was at most a few minutes away from being shippable and delivered into production?  How would you feel if you knew that any part of the code is a few ctrl+z's away from being shippable and delivered into production? Emboldened and confident? Test driven development (TDD) gives you that. TDD allows you to proceed with confidence that you're building the right thing. It provides you with imminent-horizons that you can meet and    measure. TDD gives developers the confidence to go faster, secure in the knowledge that what they break they will fix and be able to improve. In this talk, join Spring Developer Advocate Josh Long (@starbuxman) as he looks at how to test Spring applications and services. We'll look at how to test basic components, mocks, how to take advantage of test slices, and how to test web applications. We'll also  look at how to  ensure that  API producers and API consumers work well together using consumer driven contract testing (CDCT) without sacrificing the testing pyramid for  end-to-end integration tests.
+
+## Cloud Native Java (3-6h)
 
 “It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming
 
@@ -48,9 +49,7 @@ Work takes time to flow through an organization and ultimately be deployed to pr
 
 In this workshop we'll look at how to build cloud-native Java systems that are elastic, agile, observable and robust.
 
-
-
-### Cloud Native Java - 5-10 Days
+## Cloud Native Java (5-10 Days)
 
 “It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming
 
