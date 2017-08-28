@@ -6,9 +6,18 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 23 Aug 2017 22:57:11 +0800</pubDate>
-    <lastBuildDate>Wed, 23 Aug 2017 22:57:11 +0800</lastBuildDate>
+    <pubDate>Mon, 28 Aug 2017 17:02:08 +0800</pubDate>
+    <lastBuildDate>Mon, 28 Aug 2017 17:02:08 +0800</lastBuildDate>
 
+    <item>
+      <title>Cloud Native Java is Done</title>
+      <link>http://joshlong.com/jl/blogPost/cloud_native_java_is_done.html</link>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/cloud_native_java_is_done.html</guid>
+      	<description>
+	&lt;p&gt;I&apos;m so happy to say that, at long last, &lt;em&gt;Cloud Native Java&lt;/em&gt; is done! &lt;a href=&quot;https://www.amazon.com/Cloud-Native-Java-Designing-Resilient/dp/1449374646/ref=sr_1_1?ie=UTF8&amp;qid=1503905875&amp;sr=8-1&amp;keywords=cloud+native+java#customerReviews&quot;&gt;Get it while it&apos;s hot!&lt;/a&gt;&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Functionally Filtering a String in Java 8</title>
       <link>http://joshlong.com/jl/blogPost/functionally_processing_a_string_in_java.html</link>
@@ -2375,18 +2384,6 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
 	</description>
     </item>
     <item>
-      <title>My Dear Aunt Sandra</title>
-      <link>http://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/my_dear_aunt_sandra.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;img src  = &quot;/media/18467&quot; style = &quot;margin-bottom: 10px;&quot;   /&gt; &lt;br/&gt; My aunt Sandra passed gentle into that good night, yesterday morning, from complications of &lt;a href =&quot;http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/&quot; height = &quot;400&quot;&gt;ALS&lt;/a&gt;. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She&apos;s the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She&apos;d visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad&apos;s side of the family. A true family Matriarch. Sandra was the best of us, and I&apos;ll miss her with all my heart. RIP Aunt Sandra.
- &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
       <title>SpringOne2GX 2012</title>
       <link>http://joshlong.com/jl/blogPost/springone2gx_2012.html</link>
       <pubDate>Mon, 15 Oct 2012 00:00:00 +0800</pubDate>
@@ -2397,6 +2394,18 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
  &lt;img src = &quot;/media/18460&quot;/&gt; &lt;img src = &quot;/media/18462&quot;/&gt; &lt;img src = &quot;/media/18459&quot;/&gt;
  &lt;img src = &quot;/media/18461&quot;/&gt; &lt;/div&gt;It&apos;s my favorite time of year! SpringOne2GX kicks off tomorrow. I&apos;ll be &lt;A href=&quot;http://springone2gx.com/conference/washington/2012/10/speakers/josh_long&quot;&gt;giving two talks&lt;/a&gt; -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry.  This year&apos;s already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more.  If you&apos;re around, feel free to find me roaming the halls &lt;a href=&quot;http://www.twitter.com/starbuxman&quot;&gt;or ping me on Twitter&lt;/a&gt;!   
   
+ &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>My Dear Aunt Sandra</title>
+      <link>http://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/my_dear_aunt_sandra.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;img src  = &quot;/media/18467&quot; style = &quot;margin-bottom: 10px;&quot;   /&gt; &lt;br/&gt; My aunt Sandra passed gentle into that good night, yesterday morning, from complications of &lt;a href =&quot;http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/&quot; height = &quot;400&quot;&gt;ALS&lt;/a&gt;. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She&apos;s the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She&apos;d visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad&apos;s side of the family. A true family Matriarch. Sandra was the best of us, and I&apos;ll miss her with all my heart. RIP Aunt Sandra.
  &lt;/P&gt;
 
 	</description>
