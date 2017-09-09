@@ -5,7 +5,11 @@ tags=blog
 status=published
 ~~~~~~
 
-I got  a phone call Monday evening that would change everything: the devastating news that my father had been diagnosed with dementia. I spent the entire night (before a long day before two large customers, no less!) of the news of the diagnosis talking to my father and talking to my elder brother Troy about next steps. I felt - I still feel - lost. I don't know much about dementia [so I asked on Twitter]() for any insight people could share on the matter. What I got was a deluge of people responding with kindness, compassion and wisdom in both private and public channels. My tweets are synchronized with Facebook and so there, again, I was overwhelmed with oceans of kindness. Thank you, very much, everyone. I got lots of great tips from folks and from soaking up a book recommendation (called [the 36 Hour Day]()):
+I got  a phone call Monday evening that would change everything: the devastating news that my father had been diagnosed with dementia. I spent the entire night (before a long day before two large customers, no less!) of the news of the diagnosis talking to my father and talking to my elder brother Troy about next steps. I felt - I still feel - lost. I don't know much about dementia [so I asked on Twitter]() for any insight people could share on the matter. What I got was a deluge of people responding with kindness, compassion and wisdom in both private and public channels. My tweets are synchronized with Facebook and so there, again, I was overwhelmed with oceans of kindness. Thank you, very much, everyone.
+
+## Things I've Learned So Far
+
+I got lots of great tips from folks and from soaking up a book recommendation (called [the 36 Hour Day](https://www.amazon.com/36-Hour-Day-Alzheimer-Disease-Dementias/dp/1455521159)):
 
 Figure out _designated power of attorney_ (DPOA) as soon as possible. A person will soon lose the ability to be trusted with their own destiny, legally. It's important that when there's a crisis, somebody entrusted is able to act.
 
@@ -29,6 +33,13 @@ Figure out the patient's schedule. Many feel depressed and erratic as sunlight d
 
 Patients are people. Non-verbal communication is critical. Caregivers should assure patients that they're still people, and are cared for. Touch is valuable here. It fosters sympathy and gratitude. They lose capacity for recognition of a giving touch.
 
-Caregivers must have a solid strategy for self-care. The toll on the average person is incalcuabl large to have to help someone else so intensively. Its an unforgiving chore and you must be prepared for it. If you risk burning out you jeopardize your own health as well as that of the patient. It's important to know that you can lean on family and friends to help ease y our burden and perhaps even shoulder some of the burden here.
+Caregivers must have a solid strategy for self-care. It's hard to have to constantly look after someone else, in addition to whatever other duties life throws at you. It's an unforgiving chore and you must be prepared for it. If you risk burning out you jeopardize your own health as well as that of the patient. It's important to know that you can lean on family and friends to help ease y our burden and perhaps even shoulder some of the burden here.
 
 You're not alone. Take the time to learn about resources that can help you. There are numerous websites, organizations and government aid programs that can serve you here. In the United States it's well worth learning about how Medicare and Medicaid  can help people with dementia.
+
+
+## The Road Ahead
+
+My family and I are coming to grips with this. Dad already suffers from macular degeneration - he's effectively blind. And he has neuropathy in his legs - he can't walk. He's 80. It's not easy for him to take up a new hobby or even move around without escort.
+
+I bought him an Amazon Echo. I figure we'll set that up and he can play Audible books entirely with voice command. He can use it to get the latest news. I'm always keen on [getting any ideas to make dad's life easier](mailto:starbuxman@gmail.com), of course, so don't hesitate to reach out if you have experience in this situation. 

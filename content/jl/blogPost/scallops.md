@@ -2,7 +2,7 @@ title=Scallops
 date=2017-09-09
 type=post
 tags=blog
-status=published
+status=draft
 ~~~~~~
 
 I was just discharged  from the  United Christian Hospital (a public hospital) in Hong Kong after an overnight stay there. It started at a YOW! Hong Kong speaker dinner on Friday. The show was amazing, as you'd expect from any _YOW!_ event, and I was particularly looking forward to the speaker's dinner with so many of my heroes and friends.
