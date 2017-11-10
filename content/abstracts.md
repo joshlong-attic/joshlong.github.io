@@ -41,6 +41,11 @@ Spring 5 is almost here! One of the most exciting introductions in this release 
 
 How would you feel if you knew that any pat of the code was at most a few minutes away from being shippable and delivered into production?  How would you feel if you knew that any part of the code is a few ctrl+z's away from being shippable and delivered into production? Emboldened and confident? Test driven development (TDD) gives you that. TDD allows you to proceed with confidence that you're building the right thing. It provides you with imminent-horizons that you can meet and    measure. TDD gives developers the confidence to go faster, secure in the knowledge that what they break they will fix and be able to improve. In this talk, join Spring Developer Advocate Josh Long (@starbuxman) as he looks at how to test Spring applications and services. We'll look at how to test basic components, mocks, how to take advantage of test slices, and how to test web applications. We'll also  look at how to  ensure that  API producers and API consumers work well together using consumer driven contract testing (CDCT) without sacrificing the testing pyramid for  end-to-end integration tests.
 
+## Bootiful Reactive Microservices
+
+When you move to microservices you invite the complexity of distribution into your architecture. Thankfully, we can stand on the shoulders of giants and use frameworks like Spring Boot and Spring Cloud to address this complexity. In this talk, we're going to revisit these technologies in the light of the newly integrated support for reactive programming, starting from Spring Framework 5, Spring Boot 2.0, and Spring Cloud Finchley.
+
+
 
 
 
