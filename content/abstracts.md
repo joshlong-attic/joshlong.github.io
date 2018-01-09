@@ -6,7 +6,7 @@ status=published
 
 All talks are workable in a one-hour slot  unless otherwise noted.
 
-##  Cloud Native Java
+##  Cloud Native Spring: Reactive Kotlin Remix
 
 “It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming
 
@@ -15,6 +15,8 @@ Work takes time to flow through an organization and ultimately be deployed to pr
 Organizations break their larger software ambitions into smaller, independently deployable, feature -centric batches of work - microservices. In order to reduce the round-trip between stations of work, organizations collapse or consolidate as much of them as possible and automate the rest; developers and operations beget “devops,” cloud-based services and platforms (like Cloud Foundry) automate operations work and break down the need for ITIL tickets and change management boards.
 
 But velocity, for velocity’s sake, is dangerous. Microservices invite architectural complexity that few are prepared to address. In this talk, we’ll look at how high performance organizations like Ticketmaster, Alibaba, and Netflix make short work of that complexity with Spring Boot and Spring Cloud.
+
+This talk has been completely updated for a new year! It looks at centralized configuration, service registration and discovery, and reliability patterns, as before, but expands to include new coverage of Kotlin, reactive programming with project Reactor and Spring Boot 2.0, messaging with Apache Kafka, Micrometer.io-based observability, serverless with Spring Cloud Function and edge-services with Spring Cloud Gateway.
 
 
 ## The Bootiful Application
@@ -41,10 +43,15 @@ Spring 5 is almost here! One of the most exciting introductions in this release 
 
 How would you feel if you knew that any pat of the code was at most a few minutes away from being shippable and delivered into production?  How would you feel if you knew that any part of the code is a few ctrl+z's away from being shippable and delivered into production? Emboldened and confident? Test driven development (TDD) gives you that. TDD allows you to proceed with confidence that you're building the right thing. It provides you with imminent-horizons that you can meet and    measure. TDD gives developers the confidence to go faster, secure in the knowledge that what they break they will fix and be able to improve. In this talk, join Spring Developer Advocate Josh Long (@starbuxman) as he looks at how to test Spring applications and services. We'll look at how to test basic components, mocks, how to take advantage of test slices, and how to test web applications. We'll also  look at how to  ensure that  API producers and API consumers work well together using consumer driven contract testing (CDCT) without sacrificing the testing pyramid for  end-to-end integration tests.
 
-## Bootiful Reactive Microservices
 
-When you move to microservices you invite the complexity of distribution into your architecture. Thankfully, we can stand on the shoulders of giants and use frameworks like Spring Boot and Spring Cloud to address this complexity. In this talk, we're going to revisit these technologies in the light of the newly integrated support for reactive programming, starting from Spring Framework 5, Spring Boot 2.0, and Spring Cloud Finchley.
+## Bootiful Kotlin
 
+
+Spring Boot, the convention-over-configuration centric framework from the Spring team at Pivotal, marries Spring's flexibility with conventional, common sense defaults to make application development on the JVM not just fly, but pleasant! Spring Boot aims to make address the common functional and non-functional requirements that gate quickly moving to production. The framework is as clean as it gets, wouldn't it be nice if the language matched its elegance?
+
+Kotlin, the productivity-focused language from our friends at JetBrains, takes up the slack to make the experience leaner, cleaner and even more pleasant!
+
+The Spring and Kotlin teams have worked hard to make sure that Kotlin and Spring Boot are a first-class experience for all developers trying to get to production, faster and safer. Come for the Spring and stay for the Bootiful Kotlin.
 
 
 
