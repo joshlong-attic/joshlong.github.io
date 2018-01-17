@@ -6,15 +6,18 @@ status=published
 
 All talks are workable in a one-hour slot  unless otherwise noted.
 
-##  Cloud Native Spring: Reactive Kotlin Remix
+##  Cloud Native Java, part deux 
 
-“It is not necessary to change. Survival is not mandatory.” -W. Edwards Deming
+You know what nobody has ever said to me? "I wish you'd covered even more in your 45 minute 'Cloud Native Java' talk!" And I listened! In this talk, we'll look at Spring Cloud.next to support modern microservices development, focusing on the things that *really* matter (or, at least, the things we've got cooking in Spring Boot 2.0 and Spring Cloud Finchley, both due before April or so):
 
-Work takes time to flow through an organization and ultimately be deployed to production where it captures value. It’s critical to reduce time-to-production. Software - for many organizations and industries - is a competitive advantage.
+- functions-as-a-service with Spring Cloud Function. We've got FUNCTIONS (wrapped in apps, in containers, running on servers, in datacenters)
+- functional reactive REST endpoints (totally different meaning for "function" here, though)
+- reactive programming with Spring Framework 5. Leverage flow control at every layer and make the most efficient use of every  CPU when doing input/output. You're going to need every bit of efficiency that you can get after you've installed the patches for Spectre and Meltdown!
+- Kotlin. Yes, KOTLIN: you wanted Java and I'm giving it to you.. in libraries that I'll use from Kotlin.
+- messaging with Apache Kafka. Nothing funny here. It's just awesome.
+- Live on the edge with the new, reactive, rate-limiting, proxying, websocket-aware Spring Cloud Gateway
+- ASCII art!
 
-Organizations break their larger software ambitions into smaller, independently deployable, feature -centric batches of work - microservices. In order to reduce the round-trip between stations of work, organizations collapse or consolidate as much of them as possible and automate the rest; developers and operations beget “devops,” cloud-based services and platforms (like Cloud Foundry) automate operations work and break down the need for ITIL tickets and change management boards.
-
-But velocity, for velocity’s sake, is dangerous. Microservices invite architectural complexity that few are prepared to address. In this updated talk, we'll look at centralized configuration, service registration and discovery, and reliability patterns, as before, but expand to also include new coverage of Kotlin, reactive programming with project Reactor and Spring Boot 2.0, updates in Spring Cloud Finchley, messaging with Apache Kafka, Micrometer.io-based observability, serverless with Spring Cloud Function and edge-services with Spring Cloud Gateway.
 
 ## The Bootiful Application
 
@@ -23,8 +26,8 @@ Alright, so maybe "bootiful" won't ever work, but I tried, and it was worth it t
 Join Spring developer advocate Josh Long for a look at what Spring Boot is, why it's turning heads, why you should consider it for your next application (REST, micro services, web, batch, big data, integration, whatever!) and how to get started.
 
 ## Reactive Spring
- 
-Spring Framework 5 is here ! It introduces the Spring developer to a growing world of support for reactive programming across the Spring portfolio, starting with a new Netty-based web runtime, component model and module called Spring WebFlux, and then continuing to Spring Data Kay, Spring Security 5.0, Spring Boot 2.0 and Spring Cloud Finchley. Sure, it sounds like a lot, but don't worry! Join me, your guide, Spring developer advocate Josh Long, and we'll explore the wacky, wonderful world of Reactive Spring together. 
+
+Spring Framework 5 is here ! It introduces the Spring developer to a growing world of support for reactive programming across the Spring portfolio, starting with a new Netty-based web runtime, component model and module called Spring WebFlux, and then continuing to Spring Data Kay, Spring Security 5.0, Spring Boot 2.0 and Spring Cloud Finchley. Sure, it sounds like a lot, but don't worry! Join me, your guide, Spring developer advocate Josh Long, and we'll explore the wacky, wonderful world of Reactive Spring together.
 
 
 
