@@ -9,9 +9,12 @@ I finished my visit to Germany and jumped on plane to Oahu, Hawaii, connecting t
 
 My friends, trust me, you need to [add LavaOne 2019 to your conference calendar!](http://twitter.com/LavaOne)
 
-![just look at that!](/media/beach-lavaone2018-1.jpg)
+<div><em>Just look at that!</em></div>
+<img src =  "/media/beach-lavaone2018-1.jpg" width="300"/>
 
-![don't you wish you'd bought your tickets?](/media/beach-lavaone2018-2.jpg)
+<div> <em>Don't you wish you'd bought your tickets and joined us?</em>
+<img src = "/media/beach-lavaone2018-2.jpg" width = "300"/>
+</div>
 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Check out all the sessions from <a href="https://twitter.com/LavaOneConf?ref_src=twsrc%5Etfw">@LavaOneConf</a><a href="https://twitter.com/hashtag/Java?src=hash&amp;ref_src=twsrc%5Etfw">#Java</a> <a href="https://twitter.com/hashtag/Microservices?src=hash&amp;ref_src=twsrc%5Etfw">#Microservices</a> <a href="https://twitter.com/hashtag/Serverless?src=hash&amp;ref_src=twsrc%5Etfw">#Serverless</a><a href="https://t.co/6lTiPzVZMJ">https://t.co/6lTiPzVZMJ</a> <a href="https://t.co/4ukfUjQpxV">pic.twitter.com/4ukfUjQpxV</a></p>&mdash; Java (@java) <a href="https://twitter.com/java/status/955826709198073856?ref_src=twsrc%5Etfw">January 23, 2018</a></blockquote>
