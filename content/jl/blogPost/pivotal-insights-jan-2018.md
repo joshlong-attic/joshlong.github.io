@@ -1,4 +1,4 @@
-title=The Pivotal Insights podcast and Developer Catnip
+title=The Pivotal Insights podcast and "Developer Catnip"
 date=2018-01-31
 type=post
 tags=blog
