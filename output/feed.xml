@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 16 Feb 2018 05:34:00 -0800</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2018 05:34:00 -0800</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2018 05:35:09 -0800</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2018 05:35:09 -0800</lastBuildDate>
 
     <item>
       <title>Meeting the Master of Messages, Kafka Creator and CEO Jay Kreps</title>
@@ -17,7 +17,7 @@
       	<description>
 	&lt;p&gt;I had the privilege of meeting with the master of messages, Confluent CEO and Kafka-creator Jay Kreps to talk to him about the Spring ecosystem and its support for Kafka and to talk to him about what I think of as one of the most exciting things to happen to the cloud, Confluent&apos;s hosted, managed, and &lt;a href=&quot;https://www.confluent.io/confluent-cloud/&quot;&gt;ready-to-scale Kafka service&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;There&apos;s a lot of great opportunities for Spring developers working with Apache Kafka. &lt;a href=&quot;https://projects.spring.io/spring-kafka/&quot;&gt;Spring for Apache Kafka&lt;/a&gt; provides the base integration for Spring developers wanting to work with Apache Kafka, &lt;a href=&quot;https://github.com/spring-projects/spring-integration-kafka&quot;&gt;Spring Integration supports for Apache Kafka&lt;/a&gt; provides inbound and outbound adapters and messaging gateways for the Spring Integration EAI framework. &lt;a href=&quot;https://cloud.spring.io/spring-cloud-stream/&quot;&gt;Spring Cloud Stream provides binders for Apache Kafka&lt;/a&gt; that make a matter of configuration and convention the connection between one microservice and another as connected through a messaging technology like Apache Kafka. &lt;a href=&quot;https://cloud.spring.io/spring-cloud-dataflow/&quot;&gt;Spring Cloud Data Flow supports easy coordination and orchestration of messaging pipelines using Apache Kafka&lt;/a&gt;. There&apos;s a lot there! If you don&apos;t know where to start, it&apos;s my humble opinion that you should choose Spring Cloud Stream. Indeed, you can &lt;a href=&quot;http://start.spring.io&quot;&gt;go the Spring Initializr&lt;/a&gt; and generate a new project that&apos;s ready to go!&lt;/p&gt;
-&lt;div&gt;&lt;img src = &quot;media/jay-kreps-confluent.jpg&quot; width = &quot;300&quot; /&gt;&lt;/div&gt;
+&lt;div&gt;&lt;img src = &quot;media/jay-kreps-confluent.jpg&quot;  /&gt;&lt;/div&gt;
 &lt;div&gt; the amazing Jay Kreps &lt;/div&gt;
 &lt;p&gt;I learned a lot and can&apos;t wait to talk to more people about all things Kafka.&lt;/p&gt;
 	</description>
@@ -40,10 +40,10 @@
 	&lt;p&gt;I finished my visit to Germany and jumped on plane to Oahu, Hawaii, connecting through San Francisco. LavaOne was the first (and hopefully not the last!) conference I&apos;ve had the privilege of visiting in Oahu, Hawaii. It was &lt;em&gt;stunning&lt;/em&gt;! I admire anybody who&apos;s willing to listen to me (and any of the infinitely better other speakers) yammer on inside a conference hall when &lt;em&gt;paradise&lt;/em&gt; lay just beyond the sliding glass door. Madness! These are some &lt;em&gt;dedicated&lt;/em&gt; technologists! It was great to see and hang with the amazing technical community and to see old friends like Graal project ninja Chris Talinger, Java community legend Sharat Chandler, JRuby project lead and legend Charles Nutter, and Java EE community legend David Delabassee.&lt;/p&gt;
 &lt;p&gt;My friends, trust me, you need to &lt;a href=&quot;http://twitter.com/LavaOne&quot;&gt;add LavaOne 2019 to your conference calendar!&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;em&gt;Just look at that!&lt;/em&gt;&lt;/div&gt;
-&lt;div&gt;&lt;img src =  &quot;/media/beach-lavaone2018-1.jpg&quot; width=&quot;300&quot;/&gt;&lt;/div&gt;
+&lt;div&gt;&lt;img src =  &quot;/media/beach-lavaone2018-1.jpg&quot;  /&gt;&lt;/div&gt;
 &lt;br/&gt;
 &lt;div&gt; &lt;em&gt;Don&apos;t you wish you&apos;d bought your tickets and joined us?&lt;/em&gt;&lt;/div&gt;
-&lt;div&gt; &lt;img src = &quot;/media/beach-lavaone2018-2.jpg&quot; width = &quot;300&quot;/&gt; &lt;/div&gt;
+&lt;div&gt; &lt;img src = &quot;/media/beach-lavaone2018-2.jpg&quot; /&gt; &lt;/div&gt;
 &lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Check out all the sessions from &lt;a href=&quot;https://twitter.com/LavaOneConf?ref_src=twsrc%5Etfw&quot;&gt;@LavaOneConf&lt;/a&gt;&lt;a href=&quot;https://twitter.com/hashtag/Java?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Java&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Microservices?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Microservices&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Serverless?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Serverless&lt;/a&gt;&lt;a href=&quot;https://t.co/6lTiPzVZMJ&quot;&gt;&lt;a href=&quot;https://t.co/6lTiPzVZMJ&quot;&gt;https://t.co/6lTiPzVZMJ&lt;/a&gt;&lt;/a&gt; &lt;a href=&quot;https://t.co/4ukfUjQpxV&quot;&gt;pic.twitter.com/4ukfUjQpxV&lt;/a&gt;&lt;/p&gt;&amp;mdash; Java (@java) &lt;a href=&quot;https://twitter.com/java/status/955826709198073856?ref_src=twsrc%5Etfw&quot;&gt;January 23, 2018&lt;/a&gt;&lt;/blockquote&gt;&lt;br/&gt;&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
 	</description>
     </item>
