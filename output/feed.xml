@@ -6,18 +6,20 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 16 Feb 2018 05:29:49 -0800</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2018 05:29:49 -0800</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2018 05:32:10 -0800</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2018 05:32:10 -0800</lastBuildDate>
 
     <item>
-      <title>Meeting the Master of Messages</title>
+      <title>Meeting the Master of Messages, Kafka Creator and CEO Jay Kreps</title>
       <link>http://joshlong.com/jl/blogPost/kafka-and-confluence.html</link>
       <pubDate>Thu, 1 Feb 2018 00:00:00 -0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/kafka-and-confluence.html</guid>
       	<description>
 	&lt;p&gt;I had the privilege of meeting with the master of messages, Confluent CEO and Kafka-creator Jay Kreps to talk to him about the Spring ecosystem and its support for Kafka and to talk to him about what I think of as one of the most exciting things to happen to the cloud, Confluent&apos;s hosted, managed, and &lt;a href=&quot;https://www.confluent.io/confluent-cloud/&quot;&gt;ready-to-scale Kafka service&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;There&apos;s a lot of great opportunities for Spring developers working with Apache Kafka. &lt;a href=&quot;https://projects.spring.io/spring-kafka/&quot;&gt;Spring for Apache Kafka&lt;/a&gt; provides the base integration for Spring developers wanting to work with Apache Kafka, &lt;a href=&quot;https://github.com/spring-projects/spring-integration-kafka&quot;&gt;Spring Integration supports for Apache Kafka&lt;/a&gt; provides inbound and outbound adapters and messaging gateways for the Spring Integration EAI framework. &lt;a href=&quot;https://cloud.spring.io/spring-cloud-stream/&quot;&gt;Spring Cloud Stream provides binders for Apache Kafka&lt;/a&gt; that make a matter of configuration and convention the connection between one microservice and another as connected through a messaging technology like Apache Kafka. &lt;a href=&quot;https://cloud.spring.io/spring-cloud-dataflow/&quot;&gt;Spring Cloud Data Flow supports easy coordination and orchestration of messaging pipelines using Apache Kafka&lt;/a&gt;. There&apos;s a lot there! If you don&apos;t know where to start, it&apos;s my humble opinion that you should choose Spring Cloud Stream. Indeed, you can &lt;a href=&quot;http://start.spring.io&quot;&gt;go the Spring Initializr&lt;/a&gt; and generate a new project that&apos;s ready to go!&lt;/p&gt;
-&lt;img src = &quot;media/jay-kreps-confluent.jpg&quot; width = &quot;300&quot; /&gt;
+&lt;div&gt;&lt;img src = &quot;media/jay-kreps-confluent.jpg&quot; width = &quot;300&quot; /&gt;&lt;/div&gt;
+&lt;div&gt; the amazing Jay Kreps &lt;/div&gt;
+&lt;p&gt;I learned a lot and can&apos;t wait to talk to more people about all things Kafka.&lt;/p&gt;
 	</description>
     </item>
     <item>
