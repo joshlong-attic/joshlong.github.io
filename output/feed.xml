@@ -6,9 +6,18 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 16 Feb 2018 05:37:35 -0800</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2018 05:37:35 -0800</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2018 05:50:50 -0800</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2018 05:50:50 -0800</lastBuildDate>
 
+    <item>
+      <title>Tangent: I Got to See Prince&apos;s Paisley Park and It Was Awesome!</title>
+      <link>http://joshlong.com/jl/blogPost/prince-in-minnesota.html</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/prince-in-minnesota.html</guid>
+      	<description>
+	&lt;p&gt;I just had the privilege of visiting some customers in Minneapolis, Minnesota and while I was there I took some time to visit the compound that housed the late musician [Prince](&lt;a href=&quot;https://en.wikipedia.org/wiki/Prince_(musician))&apos;s&quot;&gt;https://en.wikipedia.org/wiki/Prince_(musician))&apos;s&lt;/a&gt; production facilities (studios, offices, and more) and personal residence, Prince was a musical legend and a personal hero, so it was an amazing experience to visit that place. Sadly, photos are prohibited within the compount itself, so I don&apos;t have much to share here except that you should visit the place if you have the opportunity. It&apos;s humbling. Think about it - Prince built it in the mid &apos;80s for TEN million dollars, out in the middle of &lt;em&gt;nowhere&lt;/em&gt;! The place is &lt;em&gt;massive&lt;/em&gt;!&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Meeting the Master of Messages, Kafka Creator and CEO Jay Kreps</title>
       <link>http://joshlong.com/jl/blogPost/kafka-and-confluence.html</link>
@@ -50,9 +59,39 @@
     </item>
     <item>
       <title>Bootiful Germany in January 2018</title>
+      <link>http://joshlong.com/jl/blogPost/bootiful-testing-in-san-diego.html</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/bootiful-testing-in-san-diego.html</guid>
+      	<description>
+	&lt;p&gt;On the 10th of &lt;a href=&quot;https://twitter.com/starbuxman/status/951014295994806272&quot;&gt;this month I visited&lt;/a&gt; the &lt;a href=&quot;http://www.jug-muenster.de/cloud-native-java-mit-spring-boot-10-1-2018-1489/&quot;&gt;Java User Group in Munster, Germany&lt;/a&gt;, and had the privilege of presenting for three hours in a cold winter January evening to a full room full of passionate Java developers. It was the first time I got to show a lot of new, reactive features in Spring Boot 2.0 and Spring Cloud Finchley. I&apos;m a big fan of anybodydy who chooses to stay late on a weekday and learn about the things I love to learn about, so &lt;em&gt;thank you&lt;/em&gt;, Munster, for an amazing experience!&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Glad to be at &lt;a href=&quot;https://twitter.com/Jug_MS?ref_src=twsrc%5Etfw&quot;&gt;@Jug_MS&lt;/a&gt; to watch &lt;a href=&quot;https://twitter.com/starbuxman?ref_src=twsrc%5Etfw&quot;&gt;@starbuxman&lt;/a&gt; live in action 😉👍🏻 &lt;a href=&quot;https://t.co/nOpEk5Bqhw&quot;&gt;pic.twitter.com/nOpEk5Bqhw&lt;/a&gt;&lt;/p&gt;&amp;mdash; xlab iq (@xlabiq) &lt;a href=&quot;https://twitter.com/xlabiq/status/951138815128850432?ref_src=twsrc%5Etfw&quot;&gt;January 10, 2018&lt;/a&gt;&lt;/blockquote&gt;&lt;br/&gt;&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;Then, it was off to Solingen, Germany, for a visit to the Codecentric world headquarters where they hosted a &lt;em&gt;Cloud Native Java&lt;/em&gt; day with yours truly, as the featured guest speaker. I loved the event, and the audience was &lt;em&gt;amazing&lt;/em&gt;! I spoke to the group about tons of different things, for around six hours, well into the evening, past 19:00! This was the first time in 2018 that I got to talk to developers about a number of things, including reactive microservices with Spring Boot and Spring Cloud, Spring Cloud Function (our abstraction for working with function-as-a-service offerings like AWS Lambda, Openwhisk, or of course Pivotal&apos;s white-hot new function-as-a-service &lt;a href=&quot;http://projectriff.io&quot;&gt;platform Project Riff&lt;/a&gt;). &lt;a href=&quot;https://github.com/joshlong/cloud-native-day-codecentric-2018&quot;&gt;The code for the event is here, if you&apos;re interested&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I loved the preview video for the talk, shown below.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/4RNIBaoGzQ0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Codecentric are a consulting business that specializes in next-level software and they &lt;em&gt;truly&lt;/em&gt; live and breath it. When you walk into their new and massive building, you&apos;re greeted with a friendly reception where you&apos;ll find a magazine that is, &lt;em&gt;of course&lt;/em&gt;, all about code! (Naturally!) The billboard in front of the building features their logo against code on a backlight screen.&lt;/p&gt;
+&lt;p&gt;It was also a pleasure to see a demo of Codecentric&apos;s spinoff business, &lt;a href=&quot;https://www.instana.com/&quot;&gt;&lt;em&gt;Instana&lt;/em&gt;&lt;/a&gt;, which is developing a post-cloud monitoring technology that just &lt;em&gt;knows&lt;/em&gt; what to do in a containerized, microservices-aware world. I really like this technology and hope that more people will give it a go.&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Bootiful Germany in January 2018</title>
       <link>http://joshlong.com/jl/blogPost/germany-jan-2018.html</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 -0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/germany-jan-2018.html</guid>
+      	<description>
+	&lt;p&gt;On the 10th of &lt;a href=&quot;https://twitter.com/starbuxman/status/951014295994806272&quot;&gt;this month I visited&lt;/a&gt; the &lt;a href=&quot;http://www.jug-muenster.de/cloud-native-java-mit-spring-boot-10-1-2018-1489/&quot;&gt;Java User Group in Munster, Germany&lt;/a&gt;, and had the privilege of presenting for three hours in a cold winter January evening to a full room full of passionate Java developers. It was the first time I got to show a lot of new, reactive features in Spring Boot 2.0 and Spring Cloud Finchley. I&apos;m a big fan of anybodydy who chooses to stay late on a weekday and learn about the things I love to learn about, so &lt;em&gt;thank you&lt;/em&gt;, Munster, for an amazing experience!&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Glad to be at &lt;a href=&quot;https://twitter.com/Jug_MS?ref_src=twsrc%5Etfw&quot;&gt;@Jug_MS&lt;/a&gt; to watch &lt;a href=&quot;https://twitter.com/starbuxman?ref_src=twsrc%5Etfw&quot;&gt;@starbuxman&lt;/a&gt; live in action 😉👍🏻 &lt;a href=&quot;https://t.co/nOpEk5Bqhw&quot;&gt;pic.twitter.com/nOpEk5Bqhw&lt;/a&gt;&lt;/p&gt;&amp;mdash; xlab iq (@xlabiq) &lt;a href=&quot;https://twitter.com/xlabiq/status/951138815128850432?ref_src=twsrc%5Etfw&quot;&gt;January 10, 2018&lt;/a&gt;&lt;/blockquote&gt;&lt;br/&gt;&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;Then, it was off to Solingen, Germany, for a visit to the Codecentric world headquarters where they hosted a &lt;em&gt;Cloud Native Java&lt;/em&gt; day with yours truly, as the featured guest speaker. I loved the event, and the audience was &lt;em&gt;amazing&lt;/em&gt;! I spoke to the group about tons of different things, for around six hours, well into the evening, past 19:00! This was the first time in 2018 that I got to talk to developers about a number of things, including reactive microservices with Spring Boot and Spring Cloud, Spring Cloud Function (our abstraction for working with function-as-a-service offerings like AWS Lambda, Openwhisk, or of course Pivotal&apos;s white-hot new function-as-a-service &lt;a href=&quot;http://projectriff.io&quot;&gt;platform Project Riff&lt;/a&gt;). &lt;a href=&quot;https://github.com/joshlong/cloud-native-day-codecentric-2018&quot;&gt;The code for the event is here, if you&apos;re interested&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I loved the preview video for the talk, shown below.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/4RNIBaoGzQ0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Codecentric are a consulting business that specializes in next-level software and they &lt;em&gt;truly&lt;/em&gt; live and breath it. When you walk into their new and massive building, you&apos;re greeted with a friendly reception where you&apos;ll find a magazine that is, &lt;em&gt;of course&lt;/em&gt;, all about code! (Naturally!) The billboard in front of the building features their logo against code on a backlight screen.&lt;/p&gt;
+&lt;p&gt;It was also a pleasure to see a demo of Codecentric&apos;s spinoff business, &lt;a href=&quot;https://www.instana.com/&quot;&gt;&lt;em&gt;Instana&lt;/em&gt;&lt;/a&gt;, which is developing a post-cloud monitoring technology that just &lt;em&gt;knows&lt;/em&gt; what to do in a containerized, microservices-aware world. I really like this technology and hope that more people will give it a go.&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Bootiful Germany in January 2018</title>
+      <link>http://joshlong.com/jl/blogPost/jfokus-2018.html</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/jfokus-2018.html</guid>
       	<description>
 	&lt;p&gt;On the 10th of &lt;a href=&quot;https://twitter.com/starbuxman/status/951014295994806272&quot;&gt;this month I visited&lt;/a&gt; the &lt;a href=&quot;http://www.jug-muenster.de/cloud-native-java-mit-spring-boot-10-1-2018-1489/&quot;&gt;Java User Group in Munster, Germany&lt;/a&gt;, and had the privilege of presenting for three hours in a cold winter January evening to a full room full of passionate Java developers. It was the first time I got to show a lot of new, reactive features in Spring Boot 2.0 and Spring Cloud Finchley. I&apos;m a big fan of anybodydy who chooses to stay late on a weekday and learn about the things I love to learn about, so &lt;em&gt;thank you&lt;/em&gt;, Munster, for an amazing experience!&lt;/p&gt;
 &lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Glad to be at &lt;a href=&quot;https://twitter.com/Jug_MS?ref_src=twsrc%5Etfw&quot;&gt;@Jug_MS&lt;/a&gt; to watch &lt;a href=&quot;https://twitter.com/starbuxman?ref_src=twsrc%5Etfw&quot;&gt;@starbuxman&lt;/a&gt; live in action 😉👍🏻 &lt;a href=&quot;https://t.co/nOpEk5Bqhw&quot;&gt;pic.twitter.com/nOpEk5Bqhw&lt;/a&gt;&lt;/p&gt;&amp;mdash; xlab iq (@xlabiq) &lt;a href=&quot;https://twitter.com/xlabiq/status/951138815128850432?ref_src=twsrc%5Etfw&quot;&gt;January 10, 2018&lt;/a&gt;&lt;/blockquote&gt;&lt;br/&gt;&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
@@ -4523,17 +4562,6 @@ As you might expect from a good conference, there were plenty of great hallway c
 	</description>
     </item>
     <item>
-      <title>Spring and the Activiti BPMN2 engine  at JavaZone 2010</title>
-      <link>http://joshlong.com/jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html</link>
-      <pubDate>Fri, 3 Sep 2010 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html</guid>
-      	<description>
-	
-&lt;P&gt;   &lt;img src = &quot;/media/17868&quot; style = &quot;float:left; padding-right:10px; &quot; /&gt; I&apos;ll be speaking at &lt;a href=&quot;http://jz10.java.no/&quot;&gt;JavaZone&lt;/a&gt; in &lt;a href=&quot;http://jz10.java.no/about.html#The_Venue&quot;&gt;Oslo, Norway&lt;/a&gt; on using &lt;a href=&quot;http://javazone.no/incogito10/events/JavaZone%202010/sessions#76db7d95-1ca5-4288-bc45-b71210a62b70&quot;&gt;Spring and Activiti&lt;/a&gt; together. 	If you want to learn a bit about &lt;a href=&quot;http://en.wikipedia.org/wiki/Business_process_management&quot;&gt;Business Process Management&lt;/a&gt; using &lt;a href=&quot;http://www.activiti.org&quot;&gt;Activiti&lt;/a&gt; in conjunction with the &lt;a href=&quot;http://www.springsource.org&quot;&gt;Spring framework,&lt;/a&gt; then this talk is for you!  We&apos;ll explore using Spring from Activiti&apos;s BPMN 2 engine, and we&apos;ll explore connecting your business processes to other interesting systems and offloading work using &lt;a href=&quot;http://www.springsource.org/spring-integration&quot;&gt;Spring Integration,&lt;/a&gt; SpringSource&apos;s framework for building event driven applications and connecting your applications to your data and services.  &lt;/p&gt; We&apos;ll talk a little bit about Spring Integration, but  you won&apos;t want to miss Spring Integration lead  &lt;a href=&quot;http://javazone.no/incogito10/events/JavaZone%202010/sessions#d8859c59-5c58-45bf-bd1c-39167c2268d6&quot;&gt;Mark Fisher&apos;s&lt;/a&gt; talk on Spring Integration either!  If you&apos;re new to the wide of world of Java configuration  in Spring 3, then be sure to check out Costin Leau&apos;s talk on &lt;a href=&quot;http://javazone.no/incogito10/events/JavaZone%202010/sessions#d1f50946-9c72-441c-b30b-70af5b21633c&quot;&gt;Spring 3 Java Config.&lt;/a&gt;&lt;/P&gt; &lt;p&gt; People may know about JavaZone from their excellent  &lt;a href=&quot;http://jz10.java.no/java-4-ever-trailer.html&quot;&gt;Java 4-Ever&lt;/a&gt; trailer  or their           &lt;a href=&quot;http://jz10.java.no/ladyjava-music-video.html&quot;&gt;Lady Java&lt;/a&gt; video. If you haven&apos;t seen these, then check them out! &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Spring for Force.com Developers</title>
       <link>http://joshlong.com/jl/blogPost/spring_for_forcecom_developers.html</link>
       <pubDate>Fri, 3 Sep 2010 00:00:00 -0700</pubDate>
@@ -4541,6 +4569,17 @@ As you might expect from a good conference, there were plenty of great hallway c
       	<description>
 	
 &lt;P&gt;    &lt;img src=&quot;/media/17869&quot; style = &quot;float:left; margin-right:10px;&quot;/&gt; I did a webinar with &lt;a href=&quot;http://www.twitter.com/cloudcoder&quot;&gt;Quinton Wall&lt;/a&gt;, the Developer Evangelist for  &lt;a href=&quot;http://www.salesforce.com&quot;&gt;Salesforce.com&lt;/a&gt; and specifically on the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; collaboration. The talk went very well (thanks for all the questions and good feedback, guys!) and we have the recorded webinar, code and slides up &lt;a href=&quot;http://www.springsource.org/node/2836&quot;&gt;here&lt;/a&gt;. This first webinar was more about introducing developers to the Spring framework, and establishing basic skills to enable developers to use &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce.com&lt;/a&gt;.  Stay tuned for the &lt;a href=&quot;http://www.developerforce.com/events/getstart_vmforce_techtalk/registration.php?d=70130000000FK2U&quot;&gt;next webinar,&lt;/a&gt; coming Sept 9, that will expand on the details of VMForce.com as an opportunity for Spring developers. &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring and the Activiti BPMN2 engine  at JavaZone 2010</title>
+      <link>http://joshlong.com/jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html</link>
+      <pubDate>Fri, 3 Sep 2010 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html</guid>
+      	<description>
+	
+&lt;P&gt;   &lt;img src = &quot;/media/17868&quot; style = &quot;float:left; padding-right:10px; &quot; /&gt; I&apos;ll be speaking at &lt;a href=&quot;http://jz10.java.no/&quot;&gt;JavaZone&lt;/a&gt; in &lt;a href=&quot;http://jz10.java.no/about.html#The_Venue&quot;&gt;Oslo, Norway&lt;/a&gt; on using &lt;a href=&quot;http://javazone.no/incogito10/events/JavaZone%202010/sessions#76db7d95-1ca5-4288-bc45-b71210a62b70&quot;&gt;Spring and Activiti&lt;/a&gt; together. 	If you want to learn a bit about &lt;a href=&quot;http://en.wikipedia.org/wiki/Business_process_management&quot;&gt;Business Process Management&lt;/a&gt; using &lt;a href=&quot;http://www.activiti.org&quot;&gt;Activiti&lt;/a&gt; in conjunction with the &lt;a href=&quot;http://www.springsource.org&quot;&gt;Spring framework,&lt;/a&gt; then this talk is for you!  We&apos;ll explore using Spring from Activiti&apos;s BPMN 2 engine, and we&apos;ll explore connecting your business processes to other interesting systems and offloading work using &lt;a href=&quot;http://www.springsource.org/spring-integration&quot;&gt;Spring Integration,&lt;/a&gt; SpringSource&apos;s framework for building event driven applications and connecting your applications to your data and services.  &lt;/p&gt; We&apos;ll talk a little bit about Spring Integration, but  you won&apos;t want to miss Spring Integration lead  &lt;a href=&quot;http://javazone.no/incogito10/events/JavaZone%202010/sessions#d8859c59-5c58-45bf-bd1c-39167c2268d6&quot;&gt;Mark Fisher&apos;s&lt;/a&gt; talk on Spring Integration either!  If you&apos;re new to the wide of world of Java configuration  in Spring 3, then be sure to check out Costin Leau&apos;s talk on &lt;a href=&quot;http://javazone.no/incogito10/events/JavaZone%202010/sessions#d1f50946-9c72-441c-b30b-70af5b21633c&quot;&gt;Spring 3 Java Config.&lt;/a&gt;&lt;/P&gt; &lt;p&gt; People may know about JavaZone from their excellent  &lt;a href=&quot;http://jz10.java.no/java-4-ever-trailer.html&quot;&gt;Java 4-Ever&lt;/a&gt; trailer  or their           &lt;a href=&quot;http://jz10.java.no/ladyjava-music-video.html&quot;&gt;Lady Java&lt;/a&gt; video. If you haven&apos;t seen these, then check them out! &lt;/p&gt;
 
 	</description>
     </item>
