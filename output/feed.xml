@@ -6,9 +6,20 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 16 Feb 2018 03:49:00 -0800</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2018 03:49:00 -0800</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2018 05:29:49 -0800</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2018 05:29:49 -0800</lastBuildDate>
 
+    <item>
+      <title>Meeting the Master of Messages</title>
+      <link>http://joshlong.com/jl/blogPost/kafka-and-confluence.html</link>
+      <pubDate>Thu, 1 Feb 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/kafka-and-confluence.html</guid>
+      	<description>
+	&lt;p&gt;I had the privilege of meeting with the master of messages, Confluent CEO and Kafka-creator Jay Kreps to talk to him about the Spring ecosystem and its support for Kafka and to talk to him about what I think of as one of the most exciting things to happen to the cloud, Confluent&apos;s hosted, managed, and &lt;a href=&quot;https://www.confluent.io/confluent-cloud/&quot;&gt;ready-to-scale Kafka service&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There&apos;s a lot of great opportunities for Spring developers working with Apache Kafka. &lt;a href=&quot;https://projects.spring.io/spring-kafka/&quot;&gt;Spring for Apache Kafka&lt;/a&gt; provides the base integration for Spring developers wanting to work with Apache Kafka, &lt;a href=&quot;https://github.com/spring-projects/spring-integration-kafka&quot;&gt;Spring Integration supports for Apache Kafka&lt;/a&gt; provides inbound and outbound adapters and messaging gateways for the Spring Integration EAI framework. &lt;a href=&quot;https://cloud.spring.io/spring-cloud-stream/&quot;&gt;Spring Cloud Stream provides binders for Apache Kafka&lt;/a&gt; that make a matter of configuration and convention the connection between one microservice and another as connected through a messaging technology like Apache Kafka. &lt;a href=&quot;https://cloud.spring.io/spring-cloud-dataflow/&quot;&gt;Spring Cloud Data Flow supports easy coordination and orchestration of messaging pipelines using Apache Kafka&lt;/a&gt;. There&apos;s a lot there! If you don&apos;t know where to start, it&apos;s my humble opinion that you should choose Spring Cloud Stream. Indeed, you can &lt;a href=&quot;http://start.spring.io&quot;&gt;go the Spring Initializr&lt;/a&gt; and generate a new project that&apos;s ready to go!&lt;/p&gt;
+&lt;img src = &quot;media/jay-kreps-confluent.jpg&quot; width = &quot;300&quot; /&gt;
+	</description>
+    </item>
     <item>
       <title>The Pivotal Insights podcast and &quot;Developer Catnip&quot;</title>
       <link>http://joshlong.com/jl/blogPost/pivotal-insights-jan-2018.html</link>
@@ -2419,6 +2430,20 @@ Twitter follower &lt;A href = &quot;http://twitter.com/ivelina&quot;&gt;@Ivelina
 	</description>
     </item>
     <item>
+      <title>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</title>
+      <link>http://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</link>
+      <pubDate>Fri, 19 Oct 2012 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</guid>
+      	<description>
+	
+&lt;p&gt; My talk from &lt;A href =&quot;http://www.javazone.no&quot;&gt; JavaZone&lt;/A&gt;  is now available online. I co-presented with &lt;a href=&quot;http://www.twitter.com/z_oleg&quot;&gt;Oleg Zhurakousky&lt;/A&gt;, colleague and co-committer on  &lt;a href=&quot;http://springsource.org/spring-integration&quot;&gt;Spring Integration&lt;/A&gt;. If you&apos;d like a quick look, &lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;check it - and all the other great videos on the JavaZone Vimeo page - out&lt;/A&gt;! 
+ 
+ &lt;DIV&gt; &lt;iframe src=&quot;http://player.vimeo.com/video/49477307&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;Enterprise Integration and Batch Processing on Cloud Foundry&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/javazone&quot;&gt;JavaZone&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt; &lt;/DIV&gt;
+&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Arlington, VA Cloud Foundry Dev Day</title>
       <link>http://joshlong.com/jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html</link>
       <pubDate>Fri, 19 Oct 2012 00:00:00 -0700</pubDate>
@@ -2436,20 +2461,6 @@ There are two tracks -- one track focusing on application development using Clou
 &lt;div &gt; &lt;caption&gt;
   My colleagues &lt;A href = &quot;http://twitter.com/ebottard&quot;&gt;Eric Bottard&lt;/A&gt; and &lt;A href = &quot;http://twitter.com/andypiper&quot;&gt;Andy Piper&lt;/A&gt; co-leading a developer hands-on session.  &lt;/caption&gt;
 &lt;/div&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</title>
-      <link>http://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</link>
-      <pubDate>Fri, 19 Oct 2012 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</guid>
-      	<description>
-	
-&lt;p&gt; My talk from &lt;A href =&quot;http://www.javazone.no&quot;&gt; JavaZone&lt;/A&gt;  is now available online. I co-presented with &lt;a href=&quot;http://www.twitter.com/z_oleg&quot;&gt;Oleg Zhurakousky&lt;/A&gt;, colleague and co-committer on  &lt;a href=&quot;http://springsource.org/spring-integration&quot;&gt;Spring Integration&lt;/A&gt;. If you&apos;d like a quick look, &lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;check it - and all the other great videos on the JavaZone Vimeo page - out&lt;/A&gt;! 
- 
- &lt;DIV&gt; &lt;iframe src=&quot;http://player.vimeo.com/video/49477307&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;Enterprise Integration and Batch Processing on Cloud Foundry&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/javazone&quot;&gt;JavaZone&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt; &lt;/DIV&gt;
-&lt;/p&gt;
 
 	</description>
     </item>
