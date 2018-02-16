@@ -1,5 +1,5 @@
-title="Bootiful Testing" in San Diego 
-date=2018-01-13
+title="Bootiful Testing" in San Diego
+date=2018-02-15
 type=post
 tags=blog
 status=published

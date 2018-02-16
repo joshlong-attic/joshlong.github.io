@@ -6,9 +6,18 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 16 Feb 2018 13:06:02 -0800</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2018 13:06:02 -0800</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2018 13:07:10 -0800</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2018 13:07:10 -0800</lastBuildDate>
 
+    <item>
+      <title>&quot;Bootiful Testing&quot; in San Diego</title>
+      <link>http://joshlong.com/jl/blogPost/bootiful-testing-in-san-diego.html</link>
+      <pubDate>Thu, 15 Feb 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/bootiful-testing-in-san-diego.html</guid>
+      	<description>
+	&lt;p&gt;My friends! Won&apos;t you join fellow Spring Developer Advocate Mario Gray and myself for a look at &lt;em&gt;&quot;Bootiful&quot; Testing&lt;/em&gt; in &lt;a href=&quot;&quot;&gt;our upcoming San Diego Java User Group talk&lt;/a&gt;?&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Tangent: I Got to See Prince&apos;s Paisley Park and It Was Awesome!</title>
       <link>http://joshlong.com/jl/blogPost/prince-in-minnesota.html</link>
@@ -55,15 +64,6 @@
 &lt;div&gt; &lt;img src = &quot;/media/beach-lavaone2018-2.jpg&quot; /&gt; &lt;/div&gt;
 &lt;p&gt;Luckily for the attendees (and for us!), the talks were recorded so the audience could go surfing and not missing anything :-)&lt;/p&gt;
 &lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Check out all the sessions from &lt;a href=&quot;https://twitter.com/LavaOneConf?ref_src=twsrc%5Etfw&quot;&gt;@LavaOneConf&lt;/a&gt;&lt;a href=&quot;https://twitter.com/hashtag/Java?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Java&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Microservices?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Microservices&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Serverless?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Serverless&lt;/a&gt;&lt;a href=&quot;https://t.co/6lTiPzVZMJ&quot;&gt;&lt;a href=&quot;https://t.co/6lTiPzVZMJ&quot;&gt;https://t.co/6lTiPzVZMJ&lt;/a&gt;&lt;/a&gt; &lt;a href=&quot;https://t.co/4ukfUjQpxV&quot;&gt;pic.twitter.com/4ukfUjQpxV&lt;/a&gt;&lt;/p&gt;&amp;mdash; Java (@java) &lt;a href=&quot;https://twitter.com/java/status/955826709198073856?ref_src=twsrc%5Etfw&quot;&gt;January 23, 2018&lt;/a&gt;&lt;/blockquote&gt;&lt;br/&gt;&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>&quot;Bootiful Testing&quot; in San Diego</title>
-      <link>http://joshlong.com/jl/blogPost/bootiful-testing-in-san-diego.html</link>
-      <pubDate>Sat, 13 Jan 2018 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/bootiful-testing-in-san-diego.html</guid>
-      	<description>
-	&lt;p&gt;My friends! Won&apos;t you join fellow Spring Developer Advocate Mario Gray and myself for a look at &lt;em&gt;&quot;Bootiful&quot; Testing&lt;/em&gt; in &lt;a href=&quot;&quot;&gt;our upcoming San Diego Java User Group talk&lt;/a&gt;?&lt;/p&gt;
 	</description>
     </item>
     <item>
