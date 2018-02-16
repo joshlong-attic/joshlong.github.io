@@ -6,9 +6,24 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 16 Feb 2018 02:27:24 -0800</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2018 02:27:24 -0800</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2018 02:44:47 -0800</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2018 02:44:47 -0800</lastBuildDate>
 
+    <item>
+      <title>LavaOne 2018</title>
+      <link>http://joshlong.com/jl/blogPost/lavaone-2018.html</link>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/lavaone-2018.html</guid>
+      	<description>
+	&lt;p&gt;I finished my visit to Germany and jumped on plane to Oahu, Hawaii, connecting through San Francisco. LavaOne was the first (and hopefully not the last!) conference I&apos;ve had the privilege of visiting in Oahu, Hawaii. It was &lt;em&gt;stunning&lt;/em&gt;! I admire anybody who&apos;s willing to listen to me (and any of the infinitely better other speakers) yammer on inside a conference hall when &lt;em&gt;paradise&lt;/em&gt; lay just beyond the sliding glass door. Madness! These are some &lt;em&gt;dedicated&lt;/em&gt; technologists! It was great to see and hang with the amazing technical community and to see old friends like Graal project ninja Chris Talinger, Java community legend Sharat Chandler, JRuby project lead and legend Charles Nutter, and Java EE community legend David Delabassee.&lt;/p&gt;
+&lt;p&gt;My friends, trust me, you need to &lt;a href=&quot;http://twitter.com/LavaOne&quot;&gt;add LavaOne 2019 to your conference calendar!&lt;/a&gt;&lt;/p&gt;
+&lt;img src =&quot;/media/beach-lavaone2018-1.jpg&quot;/&gt;
+&lt;p&gt;.just look at that!&lt;/p&gt;
+&lt;img src =&quot;/media/beach-lavaone2018-2.jpg&quot;/&gt;
+&lt;p&gt;.don&apos;t you wish you&apos;d bought your tickets?&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Check out all the sessions from &lt;a href=&quot;https://twitter.com/LavaOneConf?ref_src=twsrc%5Etfw&quot;&gt;@LavaOneConf&lt;/a&gt;&lt;a href=&quot;https://twitter.com/hashtag/Java?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Java&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Microservices?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Microservices&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Serverless?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Serverless&lt;/a&gt;&lt;a href=&quot;https://t.co/6lTiPzVZMJ&quot;&gt;&lt;a href=&quot;https://t.co/6lTiPzVZMJ&quot;&gt;https://t.co/6lTiPzVZMJ&lt;/a&gt;&lt;/a&gt; &lt;a href=&quot;https://t.co/4ukfUjQpxV&quot;&gt;pic.twitter.com/4ukfUjQpxV&lt;/a&gt;&lt;/p&gt;&amp;mdash; Java (@java) &lt;a href=&quot;https://twitter.com/java/status/955826709198073856?ref_src=twsrc%5Etfw&quot;&gt;January 23, 2018&lt;/a&gt;&lt;/blockquote&gt;&lt;br/&gt;&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Bootiful Germany in January 2018</title>
       <link>http://joshlong.com/jl/blogPost/germany-jan-2018.html</link>
@@ -2784,6 +2799,22 @@ This was my first time in Madrid, Spain, for the &lt;a href = &quot;http://www.s
 	</description>
     </item>
     <item>
+      <title>Spring IO 2012</title>
+      <link>http://joshlong.com/jl/blogPost/spring_io_2012.html</link>
+      <pubDate>Fri, 17 Feb 2012 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_io_2012.html</guid>
+      	<description>
+	
+&lt;P&gt; 
+ &lt;img src = &quot;/media/17885&quot; style = &quot;margin-right:10px;float:left;&quot; width  = &quot;300&quot;/&gt;
+Looking forward to presenting my talk on  &lt;a href =&quot;http://www.springio.net/agenda&quot;&gt;Integration and Batch Processing with Cloud Foundry&lt;/A&gt; tomorrow at Spring IO 2012.  
+	
+	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I&apos;ll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, &lt;a href = &quot;http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry&quot;&gt;it&apos;s available here&lt;/a&gt;.
+&lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>JFokus and Vaadin 2012</title>
       <link>http://joshlong.com/jl/blogPost/jfokus_and_vaadin_2012.html</link>
       <pubDate>Fri, 17 Feb 2012 00:00:00 -0800</pubDate>
@@ -2798,22 +2829,6 @@ This was my first time in Madrid, Spain, for the &lt;a href = &quot;http://www.s
  
  If you&apos;re in Helsinki, might I recommend  &lt;a href = &quot;https://vaadin.com/meetup/jfokus-2012&quot;&gt;the JFokus with Vaadin&lt;/A&gt; cruise which leaves from Helsinki aboard the &lt;a href = &quot;http://en.wikipedia.org/wiki/MS_Silja_Symphony&quot;&gt;MS Silja Symphony&lt;/A&gt; at 17:00 EET, and then works it way to Stockholm, where of course you&apos;re then free to attend JFokus. I&apos;ll be there, giving a talk on getting to production quicker with technologies like &lt;a href = &quot;http://www.cloudfoundry.org&quot;&gt;Cloud Foundry&lt;/A&gt;, &lt;A href = &quot;http://www.springframework.org&quot;&gt;Spring&lt;/A&gt; and &lt;A href = &quot;http://www.vaadin.com&quot;&gt;Vaadin&lt;/A&gt;. The deck from the  &lt;a href = &quot;http://www.slideshare.net/joshlong/cf-vaadin&quot;&gt;talk from the Vaadin dev meetup on Spring, Roo and Vaadin  is available&lt;/A&gt;, and so is the  deck from the &lt;a href= &quot;http://www.slideshare.net/joshlong/a-running-tour-of-cloud-foundry&quot;&gt;JFokus Cloud Foundry quickie is available here&lt;/a&gt;.
 	&lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Spring IO 2012</title>
-      <link>http://joshlong.com/jl/blogPost/spring_io_2012.html</link>
-      <pubDate>Fri, 17 Feb 2012 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_io_2012.html</guid>
-      	<description>
-	
-&lt;P&gt; 
- &lt;img src = &quot;/media/17885&quot; style = &quot;margin-right:10px;float:left;&quot; width  = &quot;300&quot;/&gt;
-Looking forward to presenting my talk on  &lt;a href =&quot;http://www.springio.net/agenda&quot;&gt;Integration and Batch Processing with Cloud Foundry&lt;/A&gt; tomorrow at Spring IO 2012.  
-	
-	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I&apos;ll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, &lt;a href = &quot;http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry&quot;&gt;it&apos;s available here&lt;/a&gt;.
-&lt;/P&gt;
 
 	</description>
     </item>
