@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 16 Feb 2018 05:50:50 -0800</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2018 05:50:50 -0800</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2018 06:04:09 -0800</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2018 06:04:09 -0800</lastBuildDate>
 
     <item>
       <title>Tangent: I Got to See Prince&apos;s Paisley Park and It Was Awesome!</title>
@@ -88,18 +88,13 @@
 	</description>
     </item>
     <item>
-      <title>Bootiful Germany in January 2018</title>
+      <title>JFokus 2018</title>
       <link>http://joshlong.com/jl/blogPost/jfokus-2018.html</link>
-      <pubDate>Sat, 13 Jan 2018 00:00:00 -0800</pubDate>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 -0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/jfokus-2018.html</guid>
       	<description>
-	&lt;p&gt;On the 10th of &lt;a href=&quot;https://twitter.com/starbuxman/status/951014295994806272&quot;&gt;this month I visited&lt;/a&gt; the &lt;a href=&quot;http://www.jug-muenster.de/cloud-native-java-mit-spring-boot-10-1-2018-1489/&quot;&gt;Java User Group in Munster, Germany&lt;/a&gt;, and had the privilege of presenting for three hours in a cold winter January evening to a full room full of passionate Java developers. It was the first time I got to show a lot of new, reactive features in Spring Boot 2.0 and Spring Cloud Finchley. I&apos;m a big fan of anybodydy who chooses to stay late on a weekday and learn about the things I love to learn about, so &lt;em&gt;thank you&lt;/em&gt;, Munster, for an amazing experience!&lt;/p&gt;
-&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Glad to be at &lt;a href=&quot;https://twitter.com/Jug_MS?ref_src=twsrc%5Etfw&quot;&gt;@Jug_MS&lt;/a&gt; to watch &lt;a href=&quot;https://twitter.com/starbuxman?ref_src=twsrc%5Etfw&quot;&gt;@starbuxman&lt;/a&gt; live in action 😉👍🏻 &lt;a href=&quot;https://t.co/nOpEk5Bqhw&quot;&gt;pic.twitter.com/nOpEk5Bqhw&lt;/a&gt;&lt;/p&gt;&amp;mdash; xlab iq (@xlabiq) &lt;a href=&quot;https://twitter.com/xlabiq/status/951138815128850432?ref_src=twsrc%5Etfw&quot;&gt;January 10, 2018&lt;/a&gt;&lt;/blockquote&gt;&lt;br/&gt;&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;p&gt;Then, it was off to Solingen, Germany, for a visit to the Codecentric world headquarters where they hosted a &lt;em&gt;Cloud Native Java&lt;/em&gt; day with yours truly, as the featured guest speaker. I loved the event, and the audience was &lt;em&gt;amazing&lt;/em&gt;! I spoke to the group about tons of different things, for around six hours, well into the evening, past 19:00! This was the first time in 2018 that I got to talk to developers about a number of things, including reactive microservices with Spring Boot and Spring Cloud, Spring Cloud Function (our abstraction for working with function-as-a-service offerings like AWS Lambda, Openwhisk, or of course Pivotal&apos;s white-hot new function-as-a-service &lt;a href=&quot;http://projectriff.io&quot;&gt;platform Project Riff&lt;/a&gt;). &lt;a href=&quot;https://github.com/joshlong/cloud-native-day-codecentric-2018&quot;&gt;The code for the event is here, if you&apos;re interested&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I loved the preview video for the talk, shown below.&lt;/p&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/4RNIBaoGzQ0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;p&gt;Codecentric are a consulting business that specializes in next-level software and they &lt;em&gt;truly&lt;/em&gt; live and breath it. When you walk into their new and massive building, you&apos;re greeted with a friendly reception where you&apos;ll find a magazine that is, &lt;em&gt;of course&lt;/em&gt;, all about code! (Naturally!) The billboard in front of the building features their logo against code on a backlight screen.&lt;/p&gt;
-&lt;p&gt;It was also a pleasure to see a demo of Codecentric&apos;s spinoff business, &lt;a href=&quot;https://www.instana.com/&quot;&gt;&lt;em&gt;Instana&lt;/em&gt;&lt;/a&gt;, which is developing a post-cloud monitoring technology that just &lt;em&gt;knows&lt;/em&gt; what to do in a containerized, microservices-aware world. I really like this technology and hope that more people will give it a go.&lt;/p&gt;
+	&lt;p&gt;I had the privilege of speaking at the Swedish Java conference, JFokus 2018, in beautiful Stockholm, Sweden. The conference is an amazing show because the community there tends to be enthusiastic and reflects a very diverse set of interests. I loved seeing old friends including JFokus founder Mattias Karlsson, Pratik Patel, Mark Heckler, Simon Ritter, and a million others besides! At the conference I had a reactive microservices workshop and a one-hour presentation.&lt;/p&gt;
+&lt;p&gt;The conference itself was rather uneventful, however, leaving Stockholm proved to be more of a challenge! My flight to Munich, where I was going to do a book signing (&lt;a href=&quot;http://cloudNativeJava.io&quot;&gt;&lt;em&gt;Cloud Native Java&lt;/em&gt;&lt;/a&gt;) and meet some amazing Pivotal customers, was cancelled because Munich itself was uncharacteristically deluged with snow. It took some doing but I took a 7am flight out the next morning and made it to the OOP conference in Munich for a book signing, &lt;em&gt;barely&lt;/em&gt;! That same night, exhausted, I took a train to Frankfurt and arrived in time to present to a few large customers there. Finally, on early Saturday, I flew out from Frankfurt and returned to San Francisco. What a journey!&lt;/p&gt;
 	</description>
     </item>
     <item>
