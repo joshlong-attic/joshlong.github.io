@@ -17,6 +17,7 @@ My friends, trust me, you need to [add LavaOne 2019 to your conference calendar!
 <div> <em>Don't you wish you'd bought your tickets and joined us?</em></div>
 <div> <img src = "/media/beach-lavaone2018-2.jpg" /> </div>
 
+Luckily for the attendees (and for us!), the talks were recorded so the audience could go surfing and not missing anything :-)
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Check out all the sessions from <a href="https://twitter.com/LavaOneConf?ref_src=twsrc%5Etfw">@LavaOneConf</a><a href="https://twitter.com/hashtag/Java?src=hash&amp;ref_src=twsrc%5Etfw">#Java</a> <a href="https://twitter.com/hashtag/Microservices?src=hash&amp;ref_src=twsrc%5Etfw">#Microservices</a> <a href="https://twitter.com/hashtag/Serverless?src=hash&amp;ref_src=twsrc%5Etfw">#Serverless</a><a href="https://t.co/6lTiPzVZMJ">https://t.co/6lTiPzVZMJ</a> <a href="https://t.co/4ukfUjQpxV">pic.twitter.com/4ukfUjQpxV</a></p>&mdash; Java (@java) <a href="https://twitter.com/java/status/955826709198073856?ref_src=twsrc%5Etfw">January 23, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
