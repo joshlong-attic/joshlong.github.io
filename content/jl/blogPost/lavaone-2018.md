@@ -9,12 +9,10 @@ I finished my visit to Germany and jumped on plane to Oahu, Hawaii, connecting t
 
 My friends, trust me, you need to [add LavaOne 2019 to your conference calendar!](http://twitter.com/LavaOne)
 
+![just look at that!](/media/beach-lavaone2018-1.jpg)
 
-<img src ="/media/beach-lavaone2018-1.jpg"/>
-.just look at that!
+![don't you wish you'd bought your tickets?](/media/beach-lavaone2018-2.jpg)
 
-<img src ="/media/beach-lavaone2018-2.jpg"/>
-.don't you wish you'd bought your tickets?
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Check out all the sessions from <a href="https://twitter.com/LavaOneConf?ref_src=twsrc%5Etfw">@LavaOneConf</a><a href="https://twitter.com/hashtag/Java?src=hash&amp;ref_src=twsrc%5Etfw">#Java</a> <a href="https://twitter.com/hashtag/Microservices?src=hash&amp;ref_src=twsrc%5Etfw">#Microservices</a> <a href="https://twitter.com/hashtag/Serverless?src=hash&amp;ref_src=twsrc%5Etfw">#Serverless</a><a href="https://t.co/6lTiPzVZMJ">https://t.co/6lTiPzVZMJ</a> <a href="https://t.co/4ukfUjQpxV">pic.twitter.com/4ukfUjQpxV</a></p>&mdash; Java (@java) <a href="https://twitter.com/java/status/955826709198073856?ref_src=twsrc%5Etfw">January 23, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
