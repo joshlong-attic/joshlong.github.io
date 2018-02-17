@@ -1,5 +1,5 @@
 title=JFokus 2018
-date=2018-01-10
+date=2018-02-07
 type=post
 tags=blog
 status=published

@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 16 Feb 2018 13:07:10 -0800</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2018 13:07:10 -0800</lastBuildDate>
+    <pubDate>Sat, 17 Feb 2018 00:07:04 -0800</pubDate>
+    <lastBuildDate>Sat, 17 Feb 2018 00:07:04 -0800</lastBuildDate>
 
     <item>
       <title>&quot;Bootiful Testing&quot; in San Diego</title>
@@ -25,6 +25,16 @@
       <guid isPermaLink="false">jl/blogPost/prince-in-minnesota.html</guid>
       	<description>
 	&lt;p&gt;I just had the privilege of visiting some customers in Minneapolis, Minnesota and while I was there I took some time to visit the compound that housed the late musician &lt;a href=&quot;https://en.wikipedia.org/wiki/Prince_(musician)&quot;&gt;Prince&lt;/a&gt; &apos;s production facilities (studios, offices, and more) and personal residence, Prince was a musical legend and a personal hero, so it was an amazing experience to visit that place. Sadly, photos are prohibited within the compount itself, so I don&apos;t have much to share here except that you should visit the place if you have the opportunity. It&apos;s humbling. Think about it - Prince built it in the mid &apos;80s for TEN million dollars, out in the middle of &lt;em&gt;nowhere&lt;/em&gt;! The place is &lt;em&gt;massive&lt;/em&gt;!&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>JFokus 2018</title>
+      <link>http://joshlong.com/jl/blogPost/jfokus-2018.html</link>
+      <pubDate>Wed, 7 Feb 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/jfokus-2018.html</guid>
+      	<description>
+	&lt;p&gt;I had the privilege of speaking at the Swedish Java conference, JFokus 2018, in beautiful Stockholm, Sweden. The conference is an amazing show because the community there tends to be enthusiastic and reflects a very diverse set of interests. I loved seeing old friends including JFokus founder Mattias Karlsson, Pratik Patel, Mark Heckler, Simon Ritter, and a million others besides! At the conference I had a reactive microservices workshop and a one-hour presentation.&lt;/p&gt;
+&lt;p&gt;The conference itself was rather uneventful, however, leaving Stockholm proved to be more of a challenge! My flight to Munich, where I was going to do a book signing (&lt;a href=&quot;http://cloudNativeJava.io&quot;&gt;&lt;em&gt;Cloud Native Java&lt;/em&gt;&lt;/a&gt;) and meet some amazing Pivotal customers, was cancelled because Munich itself was uncharacteristically deluged with snow. It took some doing but I took a 7am flight out the next morning and made it to the OOP conference in Munich for a book signing, &lt;em&gt;barely&lt;/em&gt;! That same night, exhausted, I took a train to Frankfurt and arrived in time to present to a few large customers there. Finally, on early Saturday, I flew out from Frankfurt and returned to San Francisco. What a journey!&lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -79,16 +89,6 @@
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/4RNIBaoGzQ0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;p&gt;Codecentric are a consulting business that specializes in next-level software and they &lt;em&gt;truly&lt;/em&gt; live and breath it. When you walk into their new and massive building, you&apos;re greeted with a friendly reception where you&apos;ll find a magazine that is, &lt;em&gt;of course&lt;/em&gt;, all about code! (Naturally!) The billboard in front of the building features their logo against code on a backlight screen.&lt;/p&gt;
 &lt;p&gt;It was also a pleasure to see a demo of Codecentric&apos;s spinoff business, &lt;a href=&quot;https://www.instana.com/&quot;&gt;&lt;em&gt;Instana&lt;/em&gt;&lt;/a&gt;, which is developing a post-cloud monitoring technology that just &lt;em&gt;knows&lt;/em&gt; what to do in a containerized, microservices-aware world. I really like this technology and hope that more people will give it a go.&lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>JFokus 2018</title>
-      <link>http://joshlong.com/jl/blogPost/jfokus-2018.html</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/jfokus-2018.html</guid>
-      	<description>
-	&lt;p&gt;I had the privilege of speaking at the Swedish Java conference, JFokus 2018, in beautiful Stockholm, Sweden. The conference is an amazing show because the community there tends to be enthusiastic and reflects a very diverse set of interests. I loved seeing old friends including JFokus founder Mattias Karlsson, Pratik Patel, Mark Heckler, Simon Ritter, and a million others besides! At the conference I had a reactive microservices workshop and a one-hour presentation.&lt;/p&gt;
-&lt;p&gt;The conference itself was rather uneventful, however, leaving Stockholm proved to be more of a challenge! My flight to Munich, where I was going to do a book signing (&lt;a href=&quot;http://cloudNativeJava.io&quot;&gt;&lt;em&gt;Cloud Native Java&lt;/em&gt;&lt;/a&gt;) and meet some amazing Pivotal customers, was cancelled because Munich itself was uncharacteristically deluged with snow. It took some doing but I took a 7am flight out the next morning and made it to the OOP conference in Munich for a book signing, &lt;em&gt;barely&lt;/em&gt;! That same night, exhausted, I took a train to Frankfurt and arrived in time to present to a few large customers there. Finally, on early Saturday, I flew out from Frankfurt and returned to San Francisco. What a journey!&lt;/p&gt;
 	</description>
     </item>
     <item>
