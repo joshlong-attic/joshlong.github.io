@@ -6,9 +6,27 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 17 Feb 2018 00:07:04 -0800</pubDate>
-    <lastBuildDate>Sat, 17 Feb 2018 00:07:04 -0800</lastBuildDate>
+    <pubDate>Sat, 17 Feb 2018 00:23:34 -0800</pubDate>
+    <lastBuildDate>Sat, 17 Feb 2018 00:23:34 -0800</lastBuildDate>
 
+    <item>
+      <title>IBM Index 2018</title>
+      <link>http://joshlong.com/jl/blogPost/index-2018.html</link>
+      <pubDate>Sat, 17 Feb 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/index-2018.html</guid>
+      	<description>
+	&lt;p&gt;Next week I&apos;ll be speaking at the &lt;a href=&quot;https://developer.ibm.com/indexconf/sessions/?cm_mmc=Search_Google-_-xIBM+Events_Global+Conferences-_-WW_US-_-+Index++IBM_Broad_&amp;cm_mmca2=10001376&amp;cm_mmca7=9060406&amp;cm_mmca8=kwd-433543267564&amp;cm_mmca9=d0a94465-7723-4671-a0b9-2bb8e14376a1&amp;cm_mmca10=249912056768&amp;cm_mmca11=b&amp;mkwid=d0a94465-7723-4671-a0b9-2bb8e14376a1&amp;cvosrc=ppc.google.&amp;cvo_campaign=000021SX&amp;cvo_crid=249912056768&amp;Matchtype=b#!?id=5557&quot;&gt;new Index conference&lt;/a&gt; talking about building reactive microservices with Spring Boot and Spring Cloud. I&apos;ve never been to this conference but I have high hopes. It looks to be fun and I hope you&apos;ll join me there!&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Devnexus 2018</title>
+      <link>http://joshlong.com/jl/blogPost/devnexus-2018.html</link>
+      <pubDate>Fri, 16 Feb 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/devnexus-2018.html</guid>
+      	<description>
+	&lt;p&gt;Next week I&apos;ll also be speaking at the &lt;a href=&quot;http://devnexus.com&quot;&gt;2018 edition of the &lt;em&gt;epic&lt;/em&gt; Devnexus show in Atlanta, GA&lt;/a&gt; talking about &lt;a href=&quot;https://devnexus.com/presentations/1884/&quot;&gt;testing applications&lt;/a&gt; (starting at individual beans in a Spring application and working [our way towards integration testing with microservices and consumer driven contract testing with Spring Cloud Contract) and then we&apos;ll look at building Kotlin-based applications &lt;a href=&quot;https://devnexus.com/presentations/1887/&quot;&gt;in &lt;em&gt;Bootiful Kotlin&lt;/em&gt;&lt;/a&gt;. Join me!&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>&quot;Bootiful Testing&quot; in San Diego</title>
       <link>http://joshlong.com/jl/blogPost/bootiful-testing-in-san-diego.html</link>
@@ -2176,19 +2194,6 @@ Wish me luck!
 	</description>
     </item>
     <item>
-      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
-      <link>http://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
-      <pubDate>Sun, 25 Nov 2012 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
-      	<description>
-	
-&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
-         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
- &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Spring Data Mongo transaction synchronization does not find a bound DB</title>
       <link>http://joshlong.com/jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 -0800</pubDate>
@@ -2222,6 +2227,19 @@ at org.springframework.transaction.support.AbstractPlatformTransactionManager.co
 at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:393) [spring-tx-3.1.1.RELEASE.jar:3.1.1.RELEASE]
  &lt;/pre&gt;
 &lt;/p&gt; &lt;p&gt; Hat tip to the one and only  &lt;a href= &quot;https://twitter.com/olivergierke&quot;&gt;Oliver Gierke&lt;/a&gt; for helping me with this! &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
+      <link>http://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
+      	<description>
+	
+&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
+         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
+ &lt;/p&gt;
 
 	</description>
     </item>
