@@ -6,9 +6,49 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 17 Feb 2018 00:23:34 -0800</pubDate>
-    <lastBuildDate>Sat, 17 Feb 2018 00:23:34 -0800</lastBuildDate>
+    <pubDate>Mon, 19 Feb 2018 05:01:54 -0800</pubDate>
+    <lastBuildDate>Mon, 19 Feb 2018 05:01:54 -0800</lastBuildDate>
 
+    <item>
+      <title>Functional Reactive Web Endpoints in Spring Framework 5.0 and Spring Boot 2.0</title>
+      <link>http://joshlong.com/jl/blogPost/functional_reactive_endpoints_with_spring_framework_5.html</link>
+      <pubDate>Sun, 18 Feb 2018 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/functional_reactive_endpoints_with_spring_framework_5.html</guid>
+      	<description>
+	&lt;p&gt;Want to get started with Spring Framework 5&apos;s functional reactive web endpoints? Read on..&lt;/p&gt;
+&lt;p&gt;Spring Framework 5 introduced a new way to build HTTP endpoints that&apos;s similar to the handler model in Express.js in the Node.js world, or Sinatra in the Ruby world, or Ratpack in the Groovy world, or Spark Java in the Java world. The idea is simple: contribute a predicate that matches incoming requests and provide a callback or handler that produces the response when the predicate matches an incoming request. This is a particularly compelling approach in the world of lambdas, in Java 8 or later, or in more sophisticated languages like Groovy, Kotlin, or Scala.&lt;/p&gt;
+&lt;p&gt;Go to &lt;a href=&quot;http://start.spring.io&quot;&gt;the Spring Initializr&lt;/a&gt;, choose the latest version of Spring Boot (version 2.0.RC1, as of this writing) in the dropdown menu on the top right, and then type &apos;Reactive Web&apos; in the &apos;Search for Dependencies&apos; text input field. You&apos;ll be given a default Maven project (though you could have selected Gradle). Open the Maven project in your iDE. IntellIJ will let you File &amp;gt; Open &amp;gt; select &lt;code&gt;pom.xml&lt;/code&gt;. In Eclipse you can go to File &amp;gt; Import &amp;gt; Maven and then select the &lt;code&gt;pom.xml&lt;/code&gt;. You&apos;ll be given a single class with a &lt;code&gt;public static void main&lt;/code&gt; method in it and the &lt;code&gt;@SpringBootApplication&lt;/code&gt; annotation on the Java class. Edit it, adding a single method, to make it look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.reactive.function.server.RouterFunction;
+import org.springframework.web.reactive.function.server.RouterFunctions;
+import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Flux;
+
+import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
+
+@SpringBootApplication
+public class DemoApplication {
+
+	@Bean
+	RouterFunction&amp;lt;ServerResponse&amp;gt; routes() {
+		return RouterFunctions
+				.route(GET(&amp;quot;/hi&amp;quot;), request -&amp;gt; ServerResponse.ok().body(Flux.just(&amp;quot;Hi, world&amp;quot;), String.class))
+				.andRoute(GET(&amp;quot;/hello&amp;quot;), request -&amp;gt; ServerResponse.ok().body(Flux.just(&amp;quot;Hello, world&amp;quot;), String.class));
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run the Java program and open the browser at &lt;code&gt;/hi&lt;/code&gt; and you&apos;ll see &lt;code&gt;Hello, world&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Congratulations on building your first functional reactive endpoint with Spring Framework 5 (and Spring Boot 2.0). &lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>IBM Index 2018</title>
       <link>http://joshlong.com/jl/blogPost/index-2018.html</link>

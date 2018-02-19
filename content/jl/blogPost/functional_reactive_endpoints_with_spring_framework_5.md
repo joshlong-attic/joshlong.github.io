@@ -1,5 +1,5 @@
 title=Functional Reactive Web Endpoints in Spring Framework 5.0 and Spring Boot 2.0
-date=2018-02-19
+date=2018-02-18
 type=post
 tags=blog
 status=published

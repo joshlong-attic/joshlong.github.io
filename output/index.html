@@ -89,6 +89,40 @@
 	<div class="page-header">
 		<h1>Blog</h1>
 	</div>
+  			<a href="jl/blogPost/functional_reactive_endpoints_with_spring_framework_5.html"><h1>Functional Reactive Web Endpoints in Spring Framework 5.0 and Spring Boot 2.0</h1></a>
+  			<p>18 February 2018</p>
+  			<p><p>Want to get started with Spring Framework 5's functional reactive web endpoints? Read on..</p>
+<p>Spring Framework 5 introduced a new way to build HTTP endpoints that's similar to the handler model in Express.js in the Node.js world, or Sinatra in the Ruby world, or Ratpack in the Groovy world, or Spark Java in the Java world. The idea is simple: contribute a predicate that matches incoming requests and provide a callback or handler that produces the response when the predicate matches an incoming request. This is a particularly compelling approach in the world of lambdas, in Java 8 or later, or in more sophisticated languages like Groovy, Kotlin, or Scala.</p>
+<p>Go to <a href="http://start.spring.io">the Spring Initializr</a>, choose the latest version of Spring Boot (version 2.0.RC1, as of this writing) in the dropdown menu on the top right, and then type 'Reactive Web' in the 'Search for Dependencies' text input field. You'll be given a default Maven project (though you could have selected Gradle). Open the Maven project in your iDE. IntellIJ will let you File &gt; Open &gt; select <code>pom.xml</code>. In Eclipse you can go to File &gt; Import &gt; Maven and then select the <code>pom.xml</code>. You'll be given a single class with a <code>public static void main</code> method in it and the <code>@SpringBootApplication</code> annotation on the Java class. Edit it, adding a single method, to make it look like this:</p>
+<pre><code>package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.reactive.function.server.RouterFunction;
+import org.springframework.web.reactive.function.server.RouterFunctions;
+import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Flux;
+
+import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
+
+@SpringBootApplication
+public class DemoApplication {
+
+	@Bean
+	RouterFunction&lt;ServerResponse&gt; routes() {
+		return RouterFunctions
+				.route(GET(&quot;/hi&quot;), request -&gt; ServerResponse.ok().body(Flux.just(&quot;Hi, world&quot;), String.class))
+				.andRoute(GET(&quot;/hello&quot;), request -&gt; ServerResponse.ok().body(Flux.just(&quot;Hello, world&quot;), String.class));
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+}
+</code></pre>
+<p>Run the Java program and open the browser at <code>/hi</code> and you'll see <code>Hello, world</code>.</p>
+<p>Congratulations on building your first functional reactive endpoint with Spring Framework 5 (and Spring Boot 2.0). </p></p>
   			<a href="jl/blogPost/index-2018.html"><h1>IBM Index 2018</h1></a>
   			<p>17 February 2018</p>
   			<p><p>Next week I'll be speaking at the <a href="https://developer.ibm.com/indexconf/sessions/?cm_mmc=Search_Google-_-xIBM+Events_Global+Conferences-_-WW_US-_-+Index++IBM_Broad_&cm_mmca2=10001376&cm_mmca7=9060406&cm_mmca8=kwd-433543267564&cm_mmca9=d0a94465-7723-4671-a0b9-2bb8e14376a1&cm_mmca10=249912056768&cm_mmca11=b&mkwid=d0a94465-7723-4671-a0b9-2bb8e14376a1&cvosrc=ppc.google.&cvo_campaign=000021SX&cvo_crid=249912056768&Matchtype=b#!?id=5557">new Index conference</a> talking about building reactive microservices with Spring Boot and Spring Cloud. I've never been to this conference but I have high hopes. It looks to be fun and I hope you'll join me there!</p></p>
