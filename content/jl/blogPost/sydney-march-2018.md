@@ -5,7 +5,7 @@ tags=blog
 status=published
 ~~~~~~
 
-# A Whirlwind Tour Starting in Sydney, Australia
+
 
 ## A Blessing in Disguise
 
