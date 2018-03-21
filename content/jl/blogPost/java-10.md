@@ -5,6 +5,8 @@ tags=blog
 status=published
 ~~~~~~
 
+UPDATE: you can find [the code for this project on my Github](https://github.com/joshlong/spring-boot-and-java-10).
+
 It's my favorite time of the year, the  first day of Spring! Happy Spring equinox!
 
 And, almost as if to ring in the new season with an extra jolt of caffeine, [Java 10 was released today](http://mail.openjdk.java.net/pipermail/announce/2018-March/000247.html), as well! There's so much to enjoy one hardly knows where to get started! So, I set about [downloading the new JDK](http://jdk.java.net/10/) and got it installed on my local machine. I had to do so manually, though. I'm running Ubuntu 17.10, (though I'm eagerly awaiting 18.04 due next month..) and there is no Java 10 / OpenJDK package, yet. This is fine. OpenJDK 10 went GA literally hours ago, so.. not a big deal.
@@ -20,7 +22,7 @@ Then I had to update the configuration for the alternatives available, telling U
 
 At this point, Ubuntu believed I was running Java 10, but - as I would soon discover - little else did.  
 
-I opened  up [the Spring Initialzr](http://start.spring.io), added `Reactive Web`, `JPA`, and `Actuator`, and generated a (Maven) project. I unzipped the project and then ran `mvn clean package` and got a number of errors complaining that JAXB was missing. Java 9 dropped support for the various types that used to be part of Java EE as those have since been moved to a separate foundation. So, we have to add the dependency back. Thankfully, the correct version is already managed for us by the Spring Boot starter parent so all that was required was adding the dependency:
+I opened  up [the Spring Initialzr](http://start.spring.io), added `Web`, `JPA`, and `Actuator`, `H2`, and generated a (Maven) project. I unzipped the project and then ran `mvn clean package` and got a number of errors complaining that JAXB was missing. Java 9 dropped support for the various types that used to be part of Java EE as those have since been moved to a separate foundation. So, we have to add the dependency back. Thankfully, the correct version is already managed for us by the Spring Boot starter parent so all that was required was adding the dependency:
 
 ```
 <dependency>
@@ -37,4 +39,4 @@ I then made sure I had the latest version of IntelliJ IDEA - version 2018.1, as 
 
 
 
-So far the experience seems to be alright, though I'm sad that I couldn't figure out how to get Lombok working. Here's hoping that gets sorted soon. If you have some other issue not addressed in this post, you might [check the evolving Spring Boot with Java 9 Wiki page](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-with-Java-9). If you're trying to use Spring Boot with Java 9 modules (Jigsaw) then.. why? But if you must, Nicolas Frankel has a nice few posts that seemed helpful. Here's [part one](https://blog.frankel.ch/migrating-to-java-9/1/) and here's [part two](https://blog.frankel.ch/migrating-to-java-9/2/).
+So far the experience seems to be alright, though I'm sad that I couldn't figure out how to get Lombok working. Here's hoping that gets sorted soon. If you have some other issue not addressed in this post, you might [check the evolving Spring Boot with Java 9 Wiki page](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-with-Java-9) or this example and explainer [from the good Dr. Dave Syer](https://github.com/dsyer/spring-boot-java-9). If you're trying to use Spring Boot with Java 9 modules (Jigsaw) then.. why? But if you must, Nicolas Frankel has a nice few posts that seemed helpful. Here's [part one](https://blog.frankel.ch/migrating-to-java-9/1/) and here's [part two](https://blog.frankel.ch/migrating-to-java-9/2/).
