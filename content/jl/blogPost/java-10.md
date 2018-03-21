@@ -7,7 +7,7 @@ status=published
 
 It's my favorite time of the year, the  first day of Spring! Happy Spring equinox!
 
-And, fittingly, [Java 10 was released today](http://mail.openjdk.java.net/pipermail/announce/2018-March/000247.html), as well! There's so much to enjoy one hardly knows where to get started! So, I set about [downloading the new JDK](http://jdk.java.net/10/) and got it installed on my local machine. I had to do so manually, though. I'm running Ubuntu 17.10, (though I'm eagerly awaiting 18.04 due next month..) and there is no Java 10 / OpenJDK package, yet. This is fine. OpenJDK 10 went GA literally hours ago, so.. not a big deal.
+And, almost as if to ring in the new season with an extra jolt of caffeine, [Java 10 was released today](http://mail.openjdk.java.net/pipermail/announce/2018-March/000247.html), as well! There's so much to enjoy one hardly knows where to get started! So, I set about [downloading the new JDK](http://jdk.java.net/10/) and got it installed on my local machine. I had to do so manually, though. I'm running Ubuntu 17.10, (though I'm eagerly awaiting 18.04 due next month..) and there is no Java 10 / OpenJDK package, yet. This is fine. OpenJDK 10 went GA literally hours ago, so.. not a big deal.
 
 I downloaded the Linux distro for JDK 10, unpacked it and then changed my `JAVA_HOME` variable to point to `$HOME/bin/jdk-10`, which is where I'd unpacked it. I also made sure that my `PATH` variable had  `$JAVA_HOME/bin` on it. I then have to tell Ubuntu to prefer the new JDK, not the existing `defaultjdk` that was already installed. For me, this has been Java 8. I used the following commands to make it work:
 
