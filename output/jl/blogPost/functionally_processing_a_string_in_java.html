@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>Functionally Filtering a String in Java 8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+<style type="text/css">
+/* .navbar-brand img {
+ height : 80px ;
+ border: 1px solid grey ;
+ padding :10px;
+ background-color: white ;
+}*/
+
+
+</style>
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<!-- <img alt="JoshLong.com" height = "30" src="../../joshlong-logo.jpg" />-->
+	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>Functionally Filtering a String in Java 8</h1>
+	</div>
+
+	<p><em>18 March 2017</em></p>
+
+	<p><p>I was looking for cleaner ways to filter a string in Java 8. I figured this would be easy as Java has lambdas nicely woven into the APIs, and <code>String</code> instances are <em>already</em> immutable so it seemed like a home-run.</p> 
+<p>I knew how to do it in a trivial Python example:</p> 
+<pre><code>#!/usr/bin/env python
+print ''.join([a for a in '123 a string !!!' if a.isalpha()])
+</code></pre> 
+<p>I asked on Twitter:</p> 
+<blockquote class="twitter-tweet" data-lang="en">
+ <p lang="en" dir="ltr">“a string !!”.chars().boxed()<br> .filter(c-&gt; isLetter(c))<br> .map(i -&gt; Character.toString(Character.toChars(i)[0])) <br> .collect(joining("")) 😞</p>— Josh Long (龙之春, जोश) (@starbuxman) 
+ <a href="https://twitter.com/starbuxman/status/843215420039553026">March 18, 2017</a>
+</blockquote> 
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<p>My initial attempt was valiant, but <em>very</em> complicated. A Java <code>String</code> returns an <code>IntStream</code> from the <code>chars()</code> method, so at some point there <em>has</em> to be a conversion to a <code>Character</code> - this means boxing and unboxing, <em>somewhere</em>.</p> 
+<p>Others replied suggesting that I use</p> 
+<p>..a regular expression:</p> 
+<blockquote class="twitter-tweet" data-lang="en">
+ <p lang="en" dir="ltr"><a href="https://twitter.com/phillip_webb">@phillip_webb</a> <a href="https://twitter.com/starbuxman">@starbuxman</a> <a href="https://twitter.com/java">@java</a> what's wrong with something like<br>"a string !!".replaceAll("[^a-zA-Z]","")<br>?</p>— Ralf D. Müller™ (@RalfDMueller) 
+ <a href="https://twitter.com/RalfDMueller/status/843224851267641349">March 18, 2017</a>
+</blockquote> 
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<p>..or Kotlin:</p> 
+<blockquote class="twitter-tweet" data-lang="en">
+ <p lang="en" dir="ltr"><a href="https://twitter.com/starbuxman">@starbuxman</a> "a string !!".filter(Char::isLetter)<br><br>Did I break your Java?</p>— Hadi Hariri (@hhariri) 
+ <a href="https://twitter.com/hhariri/status/843222983925792768">March 18, 2017</a>
+</blockquote> 
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<p>..or the <code>replace</code> method:</p> 
+<blockquote class="twitter-tweet" data-lang="en">
+ <p lang="en" dir="ltr"><a href="https://twitter.com/starbuxman">@starbuxman</a> You don’t fancy:<br><br>"a string !!".replaceAll("\\W", "")<br><br>?</p>— Nicky Mølholm (@moelholm) 
+ <a href="https://twitter.com/moelholm/status/843226794241200128">March 18, 2017</a>
+</blockquote> 
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<p>All of these are good ideas, but not quite what I wanted.</p> 
+<p>I was looking for trivial amounts of conceptual noise - something I could stare at and process, quickly. Maybe Python was the right thing, after all? So I tried embedding Jython (the Python language implementation on the JVM). This required a pesky, um, let's call it <em>utility</em> library (the entire Python language and runtime) whose Maven coordinates are <code>org.python</code> : <code>jython</code> : <code>2.7.1.b3</code> :</p> 
+<pre><code>import org.python.util.PythonInterpreter;
+import java.util.Properties;
+
+public class JythonApplication {
+	public static void main(String[] args) {
+		Properties properties = new Properties();
+		properties.put("python.import.site", "false");
+		PythonInterpreter.initialize(System.getProperties(), properties, new String[0]);
+		System.out.println(new PythonInterpreter().eval("''.join([a for a in '123 a string !!!' if a.isalpha()])"));
+	}
+}
+</code></pre> 
+<p>Not bad! (I'm only kidding. Half kidding, anyway.) <em>Some</em> people liked it, alright? Jeez! :D</p> 
+<blockquote class="twitter-tweet" data-lang="en">
+ <p lang="en" dir="ltr"><a href="https://twitter.com/rotnroll666">@rotnroll666</a> <a href="https://twitter.com/phillip_webb">@phillip_webb</a> <br>System.out.println(new PythonInterpreter().eval("''.join([a for a in '123 a string !!!' if a.isalpha()])")); :D</p>— Josh Long (龙之春, जोश) (@starbuxman) 
+ <a href="https://twitter.com/starbuxman/status/843226085118554112">March 18, 2017</a>
+</blockquote> 
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<p>The following example does a bit less gymnastics than my previous example, and is functional, so I suppose it's the best solution so far. I learned a lot from this example, too.</p> 
+<blockquote class="twitter-tweet" data-lang="en">
+ <p lang="en" dir="ltr"><a href="https://twitter.com/phillip_webb">@phillip_webb</a> <a href="https://twitter.com/starbuxman">@starbuxman</a> Not sure if more clearer but one functional alternative would be <a href="https://t.co/RNFOvLSnAi">pic.twitter.com/RNFOvLSnAi</a></p>— Tomche Delev (@tdelev) 
+ <a href="https://twitter.com/tdelev/status/843220643760037888">March 18, 2017</a>
+</blockquote> 
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>
