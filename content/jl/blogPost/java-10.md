@@ -35,4 +35,4 @@ I then made sure I had the latest version of IntelliJ IDEA - version 2018.1, as 
 
 <script src="https://gist.github.com/joshlong/808ff052844e9ed9c05d8e14c52753bb.js"></script>
 
-So far the experience seems to be alright, though I'm sad that I couldn't figure out how to get Lombok working. Here's hoping that gets sorted soon..
+So far the experience seems to be alright, though I'm sad that I couldn't figure out how to get Lombok working. Here's hoping that gets sorted soon.
