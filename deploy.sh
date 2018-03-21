@@ -25,11 +25,10 @@ if [ $# -eq 1 ]
 fi
 git commit -m "$msg"
 
-# Push source and build repos.
 git push origin source
 
-# git subtree push --prefix=output git@github.com:joshlong/joshlong.github.io.git master
+git push origin `git subtree split --prefix output source`:master --force
+# if you get some sort of error about not being able to push to unqualified master, comment out the line before and uncomment the line after
+# git push origin `git subtree split --prefix output source`:refs/heads/master --force
 
-# git push origin `git subtree split --prefix output source`:master --force
-git push origin `git subtree split --prefix output source`:refs/heads/master --force
 echo "the page is available now as http://github.com/joshlong/joshlong.github.io.git"
