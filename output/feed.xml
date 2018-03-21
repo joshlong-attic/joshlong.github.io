@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 20 Mar 2018 20:11:11 -0700</pubDate>
-    <lastBuildDate>Tue, 20 Mar 2018 20:11:11 -0700</lastBuildDate>
+    <pubDate>Tue, 20 Mar 2018 20:16:17 -0700</pubDate>
+    <lastBuildDate>Tue, 20 Mar 2018 20:16:17 -0700</lastBuildDate>
 
     <item>
       <title>Java 10</title>
@@ -32,7 +32,7 @@ sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &q
 &lt;p&gt;You would have had to add this dependency if you were using Java 9, too. I want to use Java 10, though, so I opened the &lt;code&gt;pom.xml&lt;/code&gt; file and changed the &lt;code&gt;java.version&lt;/code&gt; property value to be &lt;code&gt;10&lt;/code&gt;. The Maven surefire plugin broke the build next; it was complaining about not being able to parse the version of the JDK. I overrode the version by redefining the property for the plugin&apos;s version: &lt;code&gt;&amp;lt;maven-surefire-plugin.version&amp;gt;2.21.0&amp;lt;/maven-surefire-plugin.version&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
 &lt;p&gt;I then made sure I had the latest version of IntelliJ IDEA - version 2018.1, as of this writing - and set up my JDK as the default in the Default Project Settings and then I opened my new Spring Boot project in IntelliJ and was able to use some of the nice shiny new features that I&apos;ve not had a chance to enjoy since the release of Java 8, including local type inference (&lt;code&gt;var&lt;/code&gt;), and the collection builders &lt;code&gt;Map.of(..)&lt;/code&gt; and &lt;code&gt;Set.of(..)&lt;/code&gt;, among other things.&lt;/p&gt; 
 &lt;script src=&quot;https://gist.github.com/joshlong/808ff052844e9ed9c05d8e14c52753bb.js&quot;&gt;&lt;/script&gt; 
-&lt;p&gt;So far the experience seems to be alright, though I&apos;m sad that I couldn&apos;t figure out how to get Lombok working. Here&apos;s hoping that gets sorted soon.&lt;/p&gt;
+&lt;p&gt;So far the experience seems to be alright, though I&apos;m sad that I couldn&apos;t figure out how to get Lombok working. Here&apos;s hoping that gets sorted soon. If you have some other issue not addressed in this post, you might &lt;a href=&quot;https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-with-Java-9&quot;&gt;check the evolving Spring Boot with Java 9 Wiki page&lt;/a&gt;. If you&apos;re trying to use Spring Boot with Java 9 modules (Jigsaw) then.. why? But if you must, Nicolas Frankel has a nice few posts that seemed helpful. Here&apos;s &lt;a href=&quot;https://blog.frankel.ch/migrating-to-java-9/1/&quot;&gt;part one&lt;/a&gt; and here&apos;s &lt;a href=&quot;https://blog.frankel.ch/migrating-to-java-9/2/&quot;&gt;part two&lt;/a&gt;.&lt;/p&gt;
 	</description>
     </item>
     <item>
