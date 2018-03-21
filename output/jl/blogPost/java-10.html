@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>Java 10</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+<style type="text/css">
+/* .navbar-brand img {
+ height : 80px ;
+ border: 1px solid grey ;
+ padding :10px;
+ background-color: white ;
+}*/
+
+
+</style>
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+	<!-- <img alt="JoshLong.com" height = "30" src="../../joshlong-logo.jpg" />-->
+	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+
+            <!--
+						<li><a href="../../feed.xml">Subscribe</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>Java 10</h1>
+	</div>
+
+	<p><em>20 March 2018</em></p>
+
+	<p><p>It's my favorite time of the year, the first day of Spring! Happy Spring equinox!</p>
+<p>And, fittingly, <a href="http://mail.openjdk.java.net/pipermail/announce/2018-March/000247.html">Java 10 was released today</a>, as well! There's so much to enjoy one hardly knows where to get started! So, I set about <a href="http://jdk.java.net/10/">downloading the new JDK</a> and got it installed on my local machine. I had to do so manually, though. I'm running Ubuntu 17.10, (though I'm eagerly awaiting 18.04 due next month..) and there is no Java 10 / OpenJDK package, yet. This is fine. OpenJDK 10 went GA literally hours ago, so.. not a big deal.</p>
+<p>I downloaded the Linux distro for JDK 10, unpacked it and then changed my <code>JAVA_HOME</code> variable to point to <code>$HOME/bin/jdk-10</code>, which is where I'd unpacked it. I also made sure that my <code>PATH</code> variable had <code>$JAVA_HOME/bin</code> on it. I then have to tell Ubuntu to prefer the new JDK, not the existing <code>defaultjdk</code> that was already installed. For me, this has been Java 8. I used the following commands to make it work:</p>
+<pre><code>sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;${JAVA_HOME}/bin/javac&quot; 1
+sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;${JAVA_HOME}/bin/java&quot; 1
+</code></pre>
+<p>Then I had to update the configuration for the alternatives available, telling Ubuntu to prefer the new <code>java</code> and <code>javac</code> be from the JDK 10 release. This amounted to running <code>sudo update-alternatives --config java</code> and choosing the appropriate installation (one of which is the release I manually installed above). I did the same thing again, substituting <code>javac</code> for <code>java</code>. I opened a new shell and ran <code>java -version</code> and <code>javac -version</code> to confirm everything had taken. Looked good!</p>
+<p>At this point, Ubuntu believed I was running Java 10, but - as I would soon discover - little else did. </p>
+<p>I opened up <a href="http://start.spring.io">the Spring Initialzr</a>, added <code>Reactive Web</code>, <code>JPA</code>, and <code>Actuator</code>, and generated a (Maven) project. I unzipped the project and then ran <code>mvn clean package</code> and got a number of errors complaining that JAXB was missing. Java 9 dropped support for the various types that used to be part of Java EE as those have since been moved to a separate foundation. So, we have to add the dependency back. Thankfully, the correct version is already managed for us by the Spring Boot starter parent so all that was required was adding the dependency:</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;javax.xml.bind&lt;/groupId&gt;
+    &lt;artifactId&gt;jaxb-api&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>You would have had to add this dependency if you were using Java 9, too. I want to use Java 10, though, so I opened the <code>pom.xml</code> file and changed the <code>java.version</code> property value to be <code>10</code>. The Maven surefire plugin broke the build next; it was complaining about not being able to parse the version of the JDK. I overrode the version by redefining the property for the plugin's version: <code>&lt;maven-surefire-plugin.version&gt;2.21.0&lt;/maven-surefire-plugin.version&gt;</code>.</p>
+<p>I then made sure I had the latest version of IntelliJ IDEA - version 2018.1, as of this writing - and set up my JDK as the default in the Default Project Settings and then I opened my new Spring Boot project in IntelliJ and was able to use some of the nice shiny new features that I've not had a chance to enjoy since the release of Java 8, including local type inference (<code>var</code>), and the collection builders <code>Map.of(..)</code> and <code>Set.of(..)</code>, among other things.</p>
+<script src="https://gist.github.com/joshlong/808ff052844e9ed9c05d8e14c52753bb.js"></script>
+<p>So far the experience seems to be alright, though I'm sad that I couldn't figure out how to get Lombok working. Here's hoping that gets sorted soon.</p></p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.5.1</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>
