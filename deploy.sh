@@ -4,7 +4,7 @@ echo -e "deploying updates to Github.."
 
 # Build the project
 rm -rf output
-jbake  . output --reset 
+jbake  . output --reset
 
 git add output
 
@@ -30,6 +30,6 @@ git push origin source
 
 # git subtree push --prefix=output git@github.com:joshlong/joshlong.github.io.git master
 
-git push origin `git subtree split --prefix output source`:master --force
-
+# git push origin `git subtree split --prefix output source`:master --force
+git push origin `git subtree split --prefix output source`:refs/heads/master --force
 echo "the page is available now as http://github.com/joshlong/joshlong.github.io.git"
