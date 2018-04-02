@@ -6,9 +6,36 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 21 Mar 2018 16:23:22 -0700</pubDate>
-    <lastBuildDate>Wed, 21 Mar 2018 16:23:22 -0700</lastBuildDate>
+    <pubDate>Sun, 1 Apr 2018 19:20:38 -0700</pubDate>
+    <lastBuildDate>Sun, 1 Apr 2018 19:20:38 -0700</lastBuildDate>
 
+    <item>
+      <title>Happy... 1st of April, 2018!</title>
+      <link>http://joshlong.com/jl/blogPost/springone-tour-2018-dallas.html</link>
+      <pubDate>Sun, 1 Apr 2018 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/springone-tour-2018-dallas.html</guid>
+      	<description>
+	&lt;p&gt;Happy Easter, friends! I spent the day walking around San Francisco basking in the beautiful San Francisco Sunday sun. There&apos;s so much good stuff happening in the neighborhood that one can&apos;t help but soak it all up.&lt;/p&gt; 
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;
+ &lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;what a warm and wonderful Easter it’s been! &lt;a href=&quot;https://t.co/KmxE3PyGNQ&quot;&gt;pic.twitter.com/KmxE3PyGNQ&lt;/a&gt;&lt;/p&gt;— Josh Long (龙之春, जोश) (@starbuxman) 
+ &lt;a href=&quot;https://twitter.com/starbuxman/status/980629124325687297?ref_src=twsrc%5Etfw&quot;&gt;April 2, 2018&lt;/a&gt;
+&lt;/blockquote&gt; 
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+&lt;p&gt;Today, April 1st, 2018, is also (I beleive!) the 5th anniversary of the founding of Pivotal, a company that has given me so much in my life. I talked about it a bit on Twitter as well.&lt;/p&gt; 
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;
+ &lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;however you count it, &lt;a href=&quot;https://twitter.com/pivotal?ref_src=twsrc%5Etfw&quot;&gt;@pivotal&lt;/a&gt; has been at least 5 years in the making. We at VMW heard rumors about a spinoff for a solid two years before officially launching &lt;a href=&quot;https://twitter.com/pivotal?ref_src=twsrc%5Etfw&quot;&gt;@pivotal&lt;/a&gt;.&lt;/p&gt;— Josh Long (龙之春, जोश) (@starbuxman) 
+ &lt;a href=&quot;https://twitter.com/starbuxman/status/980567704737234944?ref_src=twsrc%5Etfw&quot;&gt;April 1, 2018&lt;/a&gt;
+&lt;/blockquote&gt; 
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+&lt;p&gt;And, of course, today is April Fool&apos;s Day, and so there were lots of good thing shappening out there in that wonderful world wide web, with the usual suspects - like Google - getting in on the action.&lt;/p&gt; 
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;
+ &lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Wow &lt;a href=&quot;https://twitter.com/googlemaps?ref_src=twsrc%5Etfw&quot;&gt;@googlemaps&lt;/a&gt; has “Where’s Waldo” today &lt;a href=&quot;https://twitter.com/hashtag/AprilFoolsJoke?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#AprilFoolsJoke&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/AprilFoolDay?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#AprilFoolDay&lt;/a&gt; &lt;a href=&quot;https://t.co/id0uxyYMMY&quot;&gt;pic.twitter.com/id0uxyYMMY&lt;/a&gt;&lt;/p&gt;— Josh Long (龙之春, जोश) (@starbuxman) 
+ &lt;a href=&quot;https://twitter.com/starbuxman/status/980512231816179712?ref_src=twsrc%5Etfw&quot;&gt;April 1, 2018&lt;/a&gt;
+&lt;/blockquote&gt; 
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+&lt;p&gt;Tomorrrow, I board a flight for Dallas, TX, for the &lt;a href=&quot;https://springonetour.io/2018/dallas&quot;&gt;&lt;em&gt;Spring One Tour Dallas event&lt;/em&gt;&lt;/a&gt; there starting on Tuesday. I hope you&apos;ll join me and some of my friends; it&apos;s sure to be a blast!&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Java 10</title>
       <link>http://joshlong.com/jl/blogPost/java-10.html</link>
@@ -1003,15 +1030,6 @@ shell.auth=spring
 	</description>
     </item>
     <item>
-      <title>SpringOne2GX 2013 is Coming!</title>
-      <link>http://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
-      <pubDate>Wed, 7 Aug 2013 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
-      	<description>
-	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/18738&quot; width=&quot;300&quot; style=&quot;float: left; margin-right:10px; &quot;&gt; Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;? This year&apos;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&apos;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&apos;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&apos;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&apos;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&apos;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show. Hurry the early bird rate expires this friday!&lt;/p&gt;
-	</description>
-    </item>
-    <item>
       <title>Introducing Spring Boot</title>
       <link>http://joshlong.com/jl/blogPost/introducing_spring_boot.html</link>
       <pubDate>Wed, 7 Aug 2013 00:00:00 -0700</pubDate>
@@ -1028,6 +1046,15 @@ class ThisWillActuallyRun {
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+	</description>
+    </item>
+    <item>
+      <title>SpringOne2GX 2013 is Coming!</title>
+      <link>http://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
+      <pubDate>Wed, 7 Aug 2013 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
+      	<description>
+	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/18738&quot; width=&quot;300&quot; style=&quot;float: left; margin-right:10px; &quot;&gt; Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;? This year&apos;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&apos;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&apos;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&apos;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&apos;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&apos;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show. Hurry the early bird rate expires this friday!&lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -1058,17 +1085,6 @@ class ThisWillActuallyRun {
 &lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&apos;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt; 
 &lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&apos;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&apos;m sure you&apos;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&apos;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&apos;s why they&apos;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&apos;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt; 
 &lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>Webinar Replay: Building REST APIs with Spring</title>
-      <link>http://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</guid>
-      	<description>
-	&lt;p&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; &lt;img style=&quot;float: left; margin-right :10px&quot; src=&quot;http://joshlong.com/media/18688&quot; width=&quot;300&quot;&gt;&lt;/a&gt; The video of my webinar on &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; building RESTful APIs with Spring is available online&lt;/a&gt;. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android. &lt;/p&gt; 
-&lt;p&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;. &lt;/p&gt; 
-&lt;p&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;a href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -1203,6 +1219,17 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+	</description>
+    </item>
+    <item>
+      <title>Webinar Replay: Building REST APIs with Spring</title>
+      <link>http://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</guid>
+      	<description>
+	&lt;p&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; &lt;img style=&quot;float: left; margin-right :10px&quot; src=&quot;http://joshlong.com/media/18688&quot; width=&quot;300&quot;&gt;&lt;/a&gt; The video of my webinar on &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; building RESTful APIs with Spring is available online&lt;/a&gt;. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android. &lt;/p&gt; 
+&lt;p&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;. &lt;/p&gt; 
+&lt;p&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;a href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -2206,6 +2233,15 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
 	</description>
     </item>
     <item>
+      <title>My Dear Aunt Sandra</title>
+      <link>http://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/my_dear_aunt_sandra.html</guid>
+      	<description>
+	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/18467&quot; style=&quot;margin-bottom: 10px;&quot;&gt; &lt;br&gt; My aunt Sandra passed gentle into that good night, yesterday morning, from complications of &lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/&quot; height=&quot;400&quot;&gt;ALS&lt;/a&gt;. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She&apos;s the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She&apos;d visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad&apos;s side of the family. A true family Matriarch. Sandra was the best of us, and I&apos;ll miss her with all my heart. RIP Aunt Sandra. &lt;/p&gt;
+	</description>
+    </item>
+    <item>
       <title>SpringOne2GX 2012</title>
       <link>http://joshlong.com/jl/blogPost/springone2gx_2012.html</link>
       <pubDate>Mon, 15 Oct 2012 00:00:00 -0700</pubDate>
@@ -2221,15 +2257,6 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
 &lt;a href=&quot;http://springone2gx.com/conference/washington/2012/10/speakers/josh_long&quot;&gt;giving two talks&lt;/a&gt; -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry. This year&apos;s already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more. If you&apos;re around, feel free to find me roaming the halls 
 &lt;a href=&quot;http://www.twitter.com/starbuxman&quot;&gt;or ping me on Twitter&lt;/a&gt;! 
 &lt;p&gt;&lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>My Dear Aunt Sandra</title>
-      <link>http://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/my_dear_aunt_sandra.html</guid>
-      	<description>
-	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/18467&quot; style=&quot;margin-bottom: 10px;&quot;&gt; &lt;br&gt; My aunt Sandra passed gentle into that good night, yesterday morning, from complications of &lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/&quot; height=&quot;400&quot;&gt;ALS&lt;/a&gt;. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She&apos;s the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She&apos;d visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad&apos;s side of the family. A true family Matriarch. Sandra was the best of us, and I&apos;ll miss her with all my heart. RIP Aunt Sandra. &lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -5511,15 +5538,6 @@ esley/dp/0321200683&quot;&gt;Enterprise Integration Patterns&lt;/a&gt;: this has
 	</description>
     </item>
     <item>
-      <title>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</title>
-      <link>http://joshlong.com/jl/blogPost/keith_donald_speaking_on_spring.html</link>
-      <pubDate>Sun, 10 Aug 2008 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/keith_donald_speaking_on_spring.html</guid>
-      	<description>
-	&lt;p&gt; Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.phxjug.org/&quot;&gt;Phoenix Java User Group&lt;/a&gt; talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can&apos;t wait for this one! &lt;/p&gt;
-	</description>
-    </item>
-    <item>
       <title>Subversion 1.5, IntelliJ IDEA, and you</title>
       <link>http://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
       <pubDate>Sun, 10 Aug 2008 00:00:00 -0700</pubDate>
@@ -5528,6 +5546,15 @@ esley/dp/0321200683&quot;&gt;Enterprise Integration Patterns&lt;/a&gt;: this has
 	&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &quot;dirty&quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &quot;No Changes found&quot;. I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue. &lt;/p&gt;
 &lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! &lt;/p&gt; 
 &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand... &lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</title>
+      <link>http://joshlong.com/jl/blogPost/keith_donald_speaking_on_spring.html</link>
+      <pubDate>Sun, 10 Aug 2008 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/keith_donald_speaking_on_spring.html</guid>
+      	<description>
+	&lt;p&gt; Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.phxjug.org/&quot;&gt;Phoenix Java User Group&lt;/a&gt; talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can&apos;t wait for this one! &lt;/p&gt;
 	</description>
     </item>
     <item>
