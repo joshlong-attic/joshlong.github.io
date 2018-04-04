@@ -29,6 +29,7 @@
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>index.html">Home</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about.html">About</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>abstracts.html">Abstracts</a></li>
+            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>livelessons">Livelessons</a></li>
 
             <!--
 						<li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>${config.feed_file}">Subscribe</a></li>
