@@ -90,6 +90,11 @@
 	<div class="page-header">
 		<h1>Blog</h1>
 	</div>
+  			<a href="jl/blogPost/atl-ind-CVG.html"><h1>Atlanta, Indianapolis and Cincinnati</h1></a>
+  			<p>09 April 2018</p>
+  			<p><p>I'm off to Atlanta, Indianapolis and Cincinnati this week! I'll be speaking at the <a href="https://www.meetup.com/AtlantaSpring/events/244444404/">Atlanta, GA Spring Meetup on Tuesday the 10th</a> where I'll be looking about all things new, <em>bootiful</em> and <em>cloud-native</em> including reactive programming, Spring Web Flux, Spring Cloud Finchley, Spring Cloud Function and <a href="http://ProjectRiff.io">Project Riff</a>.</p> 
+<p>Then it's off <a href="https://www.meetup.com/Indianapolis-Java-User-Group/events/248184994/">to Indianapolis where I'll be doing the same talk</a> on Thursday the 12th.</p> 
+<p>I'd love to see you! Come on out!</p></p>
   			<a href="jl/blogPost/springone-tour-2018-dallas.html"><h1>Happy... 1st of April, 2018!</h1></a>
   			<p>01 April 2018</p>
   			<p><p>Happy Easter, friends! I spent the day walking around San Francisco basking in the beautiful San Francisco Sunday sun. There's so much good stuff happening in the neighborhood that one can't help but soak it all up.</p> 
@@ -879,13 +884,6 @@ class ThisWillActuallyRun {
 <p>Anyway, e-mail on Apple devices tangent aside, I really quite like the rest of the setup: Apple <code>Reminders.app</code> works nicely, as does <code>Notes.app</code> and <code>Calendar.app</code>. Just set up the appropriate services when setting up the Google accounts and these should all work out of the box. Except when they don't. One problem I encountered when working with Calendar and Reminders is that it would some times stop syncing. In this situation, I found it helpful to go to the <em>System Preferences</em> &gt; <em>Mail, Contacts &amp; Calendars</em>. Disable the <em>Calendar &amp; Reminders</em> option, then <code>mv ~/Library/Calendars ~/some_where_else</code>. Then, doing your best Windows shutdown theme hum, reboot. Re-enable everything and it should start working again. </p> 
 <p>The other problem I've encountered is that it's easy to get duplicate notes or reminders. The easiest way to fix this is to pick on service capable of storing notes and reminders and just stick with it, disabling the rest. For me, this is my personal GMail account. So I've disabled the Reminders from iCloud, deleted all the notes and now when I add a note in one account it appaears across the other devices. </p> 
 <p>I'll chime back in as I discover more.</p></p>
-  			<a href="jl/blogPost/on_java_code_style.html"><h1>On Java Code Style</h1></a>
-  			<p>19 June 2013</p>
-  			<p><p>Many languages have a sense of "idiomatic" code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. </p> 
-<p>Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what <code>equals</code>, <code>hashCode</code> and <code>toString</code> do - there's very little to "idiomatic" Java code, except perhaps compliance with Java style. </p> 
-<p>There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. <a href="http://www.ontko.com/java/java_coding_standards.html">This directory has a good listing of several style guides</a>. I'd definitely recommend taking a look at the first two guides, in particular.</p> 
-<p>If you want <em>very</em> well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here's <a href="http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller">a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code</a> (code that, as I'm sure you're aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It's actually won awards at various conferences. This is because <a href="http://blog.springsource.org/author/juergenh/">Juergen Hoeller</a>, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. <em>ALL</em> the Spring projects follow his basic style and approach. That's why they're so easy to get started with, because they all look and feel consistent. In fact, Juergen's discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as <em>Juergenization</em>. </p> 
-<p>My colleague Oliver Gierke also has a <a href="http://www.olivergierke.de/2013/03/juergenized/">great post on this anomaly, as well as a proper definition on his blog</a>. </p></p>
   			<a href="jl/blogPost/simplified_web_configuration_with_spring.html"><h1>Simplified Web Configuration with Spring</h1></a>
   			<p>19 June 2013</p>
   			<p><p>Most people know that Spring's long supported Servlet 3 Java-based initializer classes. This facility builds on Servlet 3's <code>javax.servlet.ServletContainerInitializer</code> facility. Basically, you declare a class that implements <code>org.springframework.web.WebApplicationInitializer</code> and this class will be scanned by Spring on application startup and bootstrapped. This class has one responsibility: assemble the web application's moving parts, like you would in a <code>web.xml</code>, but in code. Here's an example: </p> 
@@ -1019,6 +1017,13 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
   			<p><p> <a href="http://www.youtube.com/watch?v=SC0FPuDKei0"> <img style="float: left; margin-right :10px" src="http://joshlong.com/media/18688" width="300"></a> The video of my webinar on <a href="http://www.youtube.com/watch?v=SC0FPuDKei0"> building RESTful APIs with Spring is available online</a>. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android. </p> 
 <p> The code is available at <a href="http://www.slideshare.net/joshlong/rest-apis-with-spring"> on my SlideShare account (vote it up if you like it!)</a> and on <a href="http://github.com/joshlong/the-spring-rest-stack">my private GitHub account (star or fork it if you like it!)</a>. </p> 
 <p> If you have questions or comments, as always, don't hesitate to reach out to me <a href="http://twitter.com/starbuxman">on Twitter</a> or <a href="http://www.joshlong.com/jl/contact.html">by email (see this page for the email)</a>. </p></p>
+  			<a href="jl/blogPost/on_java_code_style.html"><h1>On Java Code Style</h1></a>
+  			<p>19 June 2013</p>
+  			<p><p>Many languages have a sense of "idiomatic" code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. </p> 
+<p>Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what <code>equals</code>, <code>hashCode</code> and <code>toString</code> do - there's very little to "idiomatic" Java code, except perhaps compliance with Java style. </p> 
+<p>There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. <a href="http://www.ontko.com/java/java_coding_standards.html">This directory has a good listing of several style guides</a>. I'd definitely recommend taking a look at the first two guides, in particular.</p> 
+<p>If you want <em>very</em> well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here's <a href="http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller">a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code</a> (code that, as I'm sure you're aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It's actually won awards at various conferences. This is because <a href="http://blog.springsource.org/author/juergenh/">Juergen Hoeller</a>, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. <em>ALL</em> the Spring projects follow his basic style and approach. That's why they're so easy to get started with, because they all look and feel consistent. In fact, Juergen's discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as <em>Juergenization</em>. </p> 
+<p>My colleague Oliver Gierke also has a <a href="http://www.olivergierke.de/2013/03/juergenized/">great post on this anomaly, as well as a proper definition on his blog</a>. </p></p>
   			<a href="jl/blogPost/moar_hypermedia.html"><h1>MOAR HYPERMEDIA PAYPAL</h1></a>
   			<p>28 May 2013</p>
   			<p><p> Nice to see that Paypal <a href="https://developer.paypal.com/webapps/developer/docs/api/#hateoas-links">are building more HATEOAS-friendly APIs</a>. If you want to build a clean, HATEOAS-centric RESTful API, don't hesitate to <a href="https://github.com/SpringSource/spring-hateoas">check out Spring Data HATEOAS</a>. </p></p>
@@ -1174,6 +1179,65 @@ public class CrmBaseActivity extends Activity {
   			<p>24 April 2013</p>
   			<p><img src="http://joshlong.com/media/18664"> 
 <p>Hi guys, tonight I'll be speaking at the Oakland JUG on <a href="http://www.meetup.com/eastbayjug/"><em>Multi Client Development with Spring</em></a>. The talk will be geared towards developing modern web applications that are REST-centric using Spring, Spring MVC, Spring Android, and Spring Mobile. If we have time, we could go into even more detail on other technologies like Spring Security and Spring Security OAuth. I hope to see you guys there as it figures to be a fun time! On a related note, I will have my pal <a href="http://twitter.com/andypiper">Andy Piper</a> in tow. He's a <a href="http://www.cloudfoundry.com">Cloud Foundry</a> ninja, and I'm sure he'll have answers for people with questions! </p></p>
+  			<a href="jl/blogPost/java_configuration_with_spring_social.html"><h1>Java Configuration with Spring Social</h1></a>
+  			<p>14 April 2013</p>
+  			<p><p>In <a href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>, I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <code>@EnableWebMvc</code>) that turn on container-wide, and often conventions-oriented features. In the case of <code>@EnableWebMvc</code>, the annotation enables Spring MVC and turns on support for correctly exposing <code>@Controller</code>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <code>@EnableWebMvc</code> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we'll look at <a href="http://springsource.org/spring-social"> Spring Social</a>. </p> 
+<p> Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup. </p> 
+<pre><code>
+@Configuration
+@EnableJdbcConnectionRepository
+@EnableFacebook(appId = "${blog.facebook.appId}", appSecret = "${blog.facebook.appSecret}")
+public class SocialConfiguration {
+
+    @Bean
+    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
+                                               ConnectionRepository connectionRepository) {
+        return new ConnectController(connectionFactoryLocator, connectionRepository);
+    }
+
+    @Bean
+    public ProviderSignInController providerSignInController(
+            ConnectionFactoryLocator connectionFactoryLocator, 
+            UsersConnectionRepository usersConnectionRepository) {
+        
+        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
+            @Override
+            public String signIn(String userId, Connection
+  <!--?--> connection, NativeWebRequest request) {
+                return SignInUtils.signIn(userId);
+            }
+        });
+    }
+
+    @Bean
+    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
+        return new DisconnectController(usersConnectionRepository, environment.getProperty("blog.facebook.appSecret"));
+    }
+
+    @Bean
+    public UserIdSource userIdSource() {
+        return new UserIdSource() {
+            @Override
+            public String getUserId() {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (authentication == null) {
+                    throw new IllegalStateException("Unable to get a ConnectionRepository: no user signed in");
+                }
+                return authentication.getName();
+            }
+        };
+    }
+}
+</code></pre> 
+<p> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user to approve the API access and then proceed with the call. </p> 
+<pre><code>
+@Inject private Facebook facebook;
+
+@RequestMapping("/hello")
+public void showProfileInformation( Model model){ 
+  model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
+}
+</code></pre></p>
   			<a href="jl/blogPost/java_configuration_with_spring_batch.html"><h1>Java Configuration with Spring Batch</h1></a>
   			<p>14 April 2013</p>
   			<p><p>In <a href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>, I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <code>@EnableWebMvc</code>) that turn on container-wide, and often conventions-oriented features. In the case of <code>@EnableWebMvc</code>, the annotation enables Spring MVC and turns on support for correctly exposing <code>@Controller</code>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <code>@EnableWebMvc</code> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we'll look at <a href="http://springsource.org/spring-batch">Spring Batch's Java Configuration API</a> available in the upcoming 2.2 release. </p> 
@@ -1236,65 +1300,6 @@ public class BatchImporterConfiguration {
     </photoset,>
    </photoset>
   </photoset></code></pre></p>
-  			<a href="jl/blogPost/java_configuration_with_spring_social.html"><h1>Java Configuration with Spring Social</h1></a>
-  			<p>14 April 2013</p>
-  			<p><p>In <a href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>, I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <code>@EnableWebMvc</code>) that turn on container-wide, and often conventions-oriented features. In the case of <code>@EnableWebMvc</code>, the annotation enables Spring MVC and turns on support for correctly exposing <code>@Controller</code>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <code>@EnableWebMvc</code> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we'll look at <a href="http://springsource.org/spring-social"> Spring Social</a>. </p> 
-<p> Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup. </p> 
-<pre><code>
-@Configuration
-@EnableJdbcConnectionRepository
-@EnableFacebook(appId = "${blog.facebook.appId}", appSecret = "${blog.facebook.appSecret}")
-public class SocialConfiguration {
-
-    @Bean
-    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
-                                               ConnectionRepository connectionRepository) {
-        return new ConnectController(connectionFactoryLocator, connectionRepository);
-    }
-
-    @Bean
-    public ProviderSignInController providerSignInController(
-            ConnectionFactoryLocator connectionFactoryLocator, 
-            UsersConnectionRepository usersConnectionRepository) {
-        
-        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
-            @Override
-            public String signIn(String userId, Connection
-  <!--?--> connection, NativeWebRequest request) {
-                return SignInUtils.signIn(userId);
-            }
-        });
-    }
-
-    @Bean
-    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
-        return new DisconnectController(usersConnectionRepository, environment.getProperty("blog.facebook.appSecret"));
-    }
-
-    @Bean
-    public UserIdSource userIdSource() {
-        return new UserIdSource() {
-            @Override
-            public String getUserId() {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                if (authentication == null) {
-                    throw new IllegalStateException("Unable to get a ConnectionRepository: no user signed in");
-                }
-                return authentication.getName();
-            }
-        };
-    }
-}
-</code></pre> 
-<p> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user to approve the API access and then proceed with the call. </p> 
-<pre><code>
-@Inject private Facebook facebook;
-
-@RequestMapping("/hello")
-public void showProfileInformation( Model model){ 
-  model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
-}
-</code></pre></p>
   			<a href="jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html"><h1>One Big Bag of Beans</h1></a>
   			<p>13 April 2013</p>
   			<p><p>At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean's class, optionally an <code>id</code> by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc. </p> 
@@ -1485,6 +1490,9 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
   			<p>03 January 2013</p>
   			<p><p> I have been super sick these last two days. I ate some bad alcohol or food in my new year's eve celebrations and paid for it by spending the last two days in the bathroom. It has been <em>ugly</em>! </p>
 <p> On the upside, I've lost a lot of weight and I've been super productive! Submitted for 3 conferences, replied to a backlog of holiday emails, caught up on some reading, setup VPN for my Android phone and iPad thanks to boxpn.com, caught up with amazing people I haven't talked to in a while (owing in part to usual neglect of, and - as I've been sick - my sudden reinterest in) Facebook, started writing some pages on this chapter I've been working on for my next book (Manning's Cloud Foundry in Action), and more! In short: I recommend people take more sick days if they want to catch up on work. </p></p>
+  			<a href="jl/blogPost/happy_new_year_and_heres_to_2013.html"><h1>Happy New Year, and Here&apos;s to 2013</h1></a>
+  			<p>31 December 2012</p>
+  			<p><p> I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here's to 2013! This year I'll ring in the new year in Shanghai, which should be interesting! </p></p>
   			<a href="jl/blogPost/they_think_of_everything.html"><h1>They Think of Everything</h1></a>
   			<p>31 December 2012</p>
   			<p><p> Just bought some ramen at the store. I love that it comes with a serving bowl. I know you're thinking, "but, who wouldn't... have.. a bowl?" And the answer is: I didn't have a bowl! But now I do. Problem solved. The Chinese think of <em>everything</em>! </p>
@@ -1492,9 +1500,6 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
  <img src="http://joshlong.com/media/18574" width="400">
 </div> 
 <p></p></p>
-  			<a href="jl/blogPost/happy_new_year_and_heres_to_2013.html"><h1>Happy New Year, and Here&apos;s to 2013</h1></a>
-  			<p>31 December 2012</p>
-  			<p><p> I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here's to 2013! This year I'll ring in the new year in Shanghai, which should be interesting! </p></p>
   			<a href="jl/blogPost/chinese_weather.html"><h1>Chinese Weather</h1></a>
   			<p>26 December 2012</p>
   			<p><p>In related news, I woke up to rain today. it's freaking <em>cold</em> in China. Northern parts of China - like <a href="http://wikipedia.org/wiki/harbin">Harbin</a> - already cold enough that it's famous for its ice festivals in which amazing and beautiful ice structures are constructed in a true winter-wonderland fashion - have seen daytime HIGHS of -22C. Nanjing, which is an hour's train ride from Shanghai, where I am, hit -6 C for daytime lows. And, when the SpringSource team and I were in Beijing for <a href="http://springonechina.cloudfoundry.com">SpringOne Beijing 2012</a> we routinely hit temperatures of -8 or -9C. Brrr! I hope you're warmer, wherever you are. </p> 
@@ -1565,6 +1570,9 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
  <img src="http://joshlong.com/media/18534" width="800">
 </div> 
 <p></p></p>
+  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
+  			<p>25 November 2012</p>
+  			<p><p> I found <a href="https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the environment variables</a> in Cloud Foundry with the values for this particular application. </p></p>
   			<a href="jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html"><h1>Spring Data Mongo transaction synchronization does not find a bound DB</h1></a>
   			<p>25 November 2012</p>
   			<p><p> There's an issue with Spring Data Mongo when used in the context of an application with existing <code>PlatformTransactionManager</code>-based transaction management setup, where Spring's <code>TransactionSynchronizationManager</code> tries to find the bound Spring Data Mongo <code>DB</code> instance, but fails and throws an exception. </p>
@@ -1591,9 +1599,6 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
  </pre> 
 <p></p> 
 <p> Hat tip to the one and only <a href="https://twitter.com/olivergierke">Oliver Gierke</a> for helping me with this! </p></p>
-  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
-  			<p>25 November 2012</p>
-  			<p><p> I found <a href="https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the environment variables</a> in Cloud Foundry with the values for this particular application. </p></p>
   			<a href="jl/blogPost/devoxx_2012_trip_report.html"><h1>Devoxx 2012 Trip Report</h1></a>
   			<p>16 November 2012</p>
   			<p><div style="margin-bottom:10px;">
@@ -2240,13 +2245,13 @@ public class MyClass {
   			<a href="jl/blogPost/wtf_linked_lists_patented.html"><h1>WTF! Linked Lists patented</h1></a>
   			<p>27 August 2011</p>
   			<p><p> <a href="http://twitter.com/#!/timfox/status/107382409091235840">Tim Fox</a> retweeted this tweet from <a href="http://news.ycombinator.com/">Hacker News</a>'s <a href="http://twitter.com/#!/hackernewsbot">Hacker News Bot</a> that <a href="http://www.google.com/patents/?vid=Szh4AAAAEBAJ">linked lists had apparently been patented</a> and responded as aptly as I could've: <em>WTF</em>. </p></p>
+  			<a href="jl/blogPost/getting_started_with_spring_roo.html"><h1>Getting Started with Spring Roo</h1></a>
+  			<p>12 August 2011</p>
+  			<p><p> <img src="http://joshlong.com/media/17884" style=" float:left;margin-right:10px;"> Steve Mayzak and I have just finished a book for O'REILLY, <em><a href="http://oreilly.com/catalog/0636920020981">Getting Started with Spring Roo.</a></em> The book's a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for <b>Vaadin</b> - a powerful, alternative web framework, and <b>Neo4j</b> - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you're interested in Spring Roo, I hope you'll check this out. </p></p>
   			<a href="jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html"><h1>RabbitMQ is now officially available on CloudFoundry!</h1></a>
   			<p>12 August 2011</p>
   			<p><p> <img src="http://joshlong.com/media/17873" style="width:80px;float:left; margin-right:10px;"> <img style="float:left ; margin-right: 10px;width:80px;" src="http://joshlong.com/media/17874"> For you <a href="http://github.com/CloudFoundry">code lurkers</a> out there, the news that <a href="http://www.rabbitmq.com/">RabbitMQ</a> is now available in <a href="http://www.cloudfoundry.org">CloudFoundry</a> should come as no surprise. But, it's finally here! This is very exciting. One thing I've always loved about RabbitMQ is its ubiquity. It is more widely used than any other message broker on the cloud, and on Amazon Web Services in particular. The AWS tidbit's a bit more awesome when you realize that AWS already has a message broker service called SQS! ;-) Anyway, it's now available on CloudFoundry. You <a href="http://support.cloudfoundry.com/entries/20322602-getting-started-with-the-rabbitmq-service-from-a-spring-application">should definitely</a> check <a href="http://blog.cloudfoundry.com/post/8713844574/rabbitmq-cloud-foundry-cloud-messaging-that-just-works">it out.</a> The <a href="http://www.theregister.co.uk/2011/08/10/vmware_cloud_foundry_adds_rabbitmq_messaging/">news</a> overall seems good, too! Messaging middleware is <em>the</em> critical component for scale. Cloud-scale is a way of life, not just a switch to be turned on and off. Specifically, an architecure that scales is going to enjoy temporally decoupling, or <em>asynchronism,</em> and RabbitMQ is the perfect vehicle to enable that asynchronous coordination. </p> 
 <p> If you're a Spring developer, and haven't had a chance to look at CloudFoundry, then I strongly recommend you see <a href="http://blog.springsource.com/2011/04/12/cloud-foundry-for-spring-developers/">Mark Fisher's entry on the SpringSource blog</a> introducing the wide world of the cloud for Spring developers from a few months ago. There's also great content on <a href="http://www.youtube.com/SpringSourceDev">the SpringSource YouTube channel.</a> </p></p>
-  			<a href="jl/blogPost/getting_started_with_spring_roo.html"><h1>Getting Started with Spring Roo</h1></a>
-  			<p>12 August 2011</p>
-  			<p><p> <img src="http://joshlong.com/media/17884" style=" float:left;margin-right:10px;"> Steve Mayzak and I have just finished a book for O'REILLY, <em><a href="http://oreilly.com/catalog/0636920020981">Getting Started with Spring Roo.</a></em> The book's a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for <b>Vaadin</b> - a powerful, alternative web framework, and <b>Neo4j</b> - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you're interested in Spring Roo, I hope you'll check this out. </p></p>
   			<a href="jl/blogPost/speaking_at_javazone_2011.html"><h1>Speaking at JavaZone 2011</h1></a>
   			<p>07 August 2011</p>
   			<p><p> I'm excited to announce that I'll be speaking at <a href="http://jz11.java.no/">JavaZone</a> again this year. I must confess, I was a little worried that I would not be accepted this year! My talk last year - on business process management and Spring Integration - seemed to garner puzzled looks. Perhaps I just misread the <em>amazing</em> Norwegian audience? The conference (and the technical presentations, to boot) were both wonderful.</p> 

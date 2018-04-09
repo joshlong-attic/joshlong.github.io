@@ -6,9 +6,20 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 4 Apr 2018 00:08:52 -0700</pubDate>
-    <lastBuildDate>Wed, 4 Apr 2018 00:08:52 -0700</lastBuildDate>
+    <pubDate>Mon, 9 Apr 2018 01:39:27 -0700</pubDate>
+    <lastBuildDate>Mon, 9 Apr 2018 01:39:27 -0700</lastBuildDate>
 
+    <item>
+      <title>Atlanta, Indianapolis and Cincinnati</title>
+      <link>http://joshlong.com/jl/blogPost/atl-ind-CVG.html</link>
+      <pubDate>Mon, 9 Apr 2018 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/atl-ind-CVG.html</guid>
+      	<description>
+	&lt;p&gt;I&apos;m off to Atlanta, Indianapolis and Cincinnati this week! I&apos;ll be speaking at the &lt;a href=&quot;https://www.meetup.com/AtlantaSpring/events/244444404/&quot;&gt;Atlanta, GA Spring Meetup on Tuesday the 10th&lt;/a&gt; where I&apos;ll be looking about all things new, &lt;em&gt;bootiful&lt;/em&gt; and &lt;em&gt;cloud-native&lt;/em&gt; including reactive programming, Spring Web Flux, Spring Cloud Finchley, Spring Cloud Function and &lt;a href=&quot;http://ProjectRiff.io&quot;&gt;Project Riff&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Then it&apos;s off &lt;a href=&quot;https://www.meetup.com/Indianapolis-Java-User-Group/events/248184994/&quot;&gt;to Indianapolis where I&apos;ll be doing the same talk&lt;/a&gt; on Thursday the 12th.&lt;/p&gt; 
+&lt;p&gt;I&apos;d love to see you! Come on out!&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Happy... 1st of April, 2018!</title>
       <link>http://joshlong.com/jl/blogPost/springone-tour-2018-dallas.html</link>
@@ -1075,19 +1086,6 @@ class ThisWillActuallyRun {
 	</description>
     </item>
     <item>
-      <title>On Java Code Style</title>
-      <link>http://joshlong.com/jl/blogPost/on_java_code_style.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
-      	<description>
-	&lt;p&gt;Many languages have a sense of &quot;idiomatic&quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt; 
-&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&apos;s very little to &quot;idiomatic&quot; Java code, except perhaps compliance with Java style. &lt;/p&gt; 
-&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&apos;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt; 
-&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&apos;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&apos;m sure you&apos;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&apos;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&apos;s why they&apos;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&apos;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt; 
-&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
-	</description>
-    </item>
-    <item>
       <title>Simplified Web Configuration with Spring</title>
       <link>http://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</link>
       <pubDate>Wed, 19 Jun 2013 00:00:00 -0700</pubDate>
@@ -1230,6 +1228,19 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
 	&lt;p&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; &lt;img style=&quot;float: left; margin-right :10px&quot; src=&quot;http://joshlong.com/media/18688&quot; width=&quot;300&quot;&gt;&lt;/a&gt; The video of my webinar on &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; building RESTful APIs with Spring is available online&lt;/a&gt;. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android. &lt;/p&gt; 
 &lt;p&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;. &lt;/p&gt; 
 &lt;p&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;a href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>On Java Code Style</title>
+      <link>http://joshlong.com/jl/blogPost/on_java_code_style.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
+      	<description>
+	&lt;p&gt;Many languages have a sense of &quot;idiomatic&quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt; 
+&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&apos;s very little to &quot;idiomatic&quot; Java code, except perhaps compliance with Java style. &lt;/p&gt; 
+&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&apos;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt; 
+&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&apos;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&apos;m sure you&apos;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&apos;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&apos;s why they&apos;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&apos;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt; 
+&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -1406,6 +1417,71 @@ public class CrmBaseActivity extends Activity {
 	</description>
     </item>
     <item>
+      <title>Java Configuration with Spring Social</title>
+      <link>http://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</link>
+      <pubDate>Sun, 14 Apr 2013 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_social.html</guid>
+      	<description>
+	&lt;p&gt;In &lt;a href=&quot;http://www.joshlong.com/jl/blogPost/java_configuration.html&quot;&gt;the first post in this series&lt;/a&gt;, I introduced Spring&apos;s Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like &lt;code&gt;@EnableWebMvc&lt;/code&gt;) that turn on container-wide, and often conventions-oriented features. In the case of &lt;code&gt;@EnableWebMvc&lt;/code&gt;, the annotation enables Spring MVC and turns on support for correctly exposing &lt;code&gt;@Controller&lt;/code&gt;-annotated beans as HTTP endpoints. Java configuration APIs of the same style as &lt;code&gt;@EnableWebMvc&lt;/code&gt; can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we&apos;ll look at &lt;a href=&quot;http://springsource.org/spring-social&quot;&gt; Spring Social&lt;/a&gt;. &lt;/p&gt; 
+&lt;p&gt; Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here&apos;s an example setup. &lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;
+@Configuration
+@EnableJdbcConnectionRepository
+@EnableFacebook(appId = &quot;${blog.facebook.appId}&quot;, appSecret = &quot;${blog.facebook.appSecret}&quot;)
+public class SocialConfiguration {
+
+    @Bean
+    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
+                                               ConnectionRepository connectionRepository) {
+        return new ConnectController(connectionFactoryLocator, connectionRepository);
+    }
+
+    @Bean
+    public ProviderSignInController providerSignInController(
+            ConnectionFactoryLocator connectionFactoryLocator, 
+            UsersConnectionRepository usersConnectionRepository) {
+        
+        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
+            @Override
+            public String signIn(String userId, Connection
+  &lt;!--?--&gt; connection, NativeWebRequest request) {
+                return SignInUtils.signIn(userId);
+            }
+        });
+    }
+
+    @Bean
+    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
+        return new DisconnectController(usersConnectionRepository, environment.getProperty(&quot;blog.facebook.appSecret&quot;));
+    }
+
+    @Bean
+    public UserIdSource userIdSource() {
+        return new UserIdSource() {
+            @Override
+            public String getUserId() {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (authentication == null) {
+                    throw new IllegalStateException(&quot;Unable to get a ConnectionRepository: no user signed in&quot;);
+                }
+                return authentication.getName();
+            }
+        };
+    }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt; Once you&apos;ve done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user to approve the API access and then proceed with the call. &lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;
+@Inject private Facebook facebook;
+
+@RequestMapping(&quot;/hello&quot;)
+public void showProfileInformation( Model model){ 
+  model.addAttribute( &quot;name&quot;, facebook.userOperations().getUserProfile().getName() );
+}
+&lt;/code&gt;&lt;/pre&gt;
+	</description>
+    </item>
+    <item>
       <title>Java Configuration with Spring Batch</title>
       <link>http://joshlong.com/jl/blogPost/java_configuration_with_spring_batch.html</link>
       <pubDate>Sun, 14 Apr 2013 00:00:00 -0700</pubDate>
@@ -1471,71 +1547,6 @@ public class BatchImporterConfiguration {
     &lt;/photoset,&gt;
    &lt;/photoset&gt;
   &lt;/photoset&gt;&lt;/code&gt;&lt;/pre&gt;
-	</description>
-    </item>
-    <item>
-      <title>Java Configuration with Spring Social</title>
-      <link>http://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</link>
-      <pubDate>Sun, 14 Apr 2013 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_social.html</guid>
-      	<description>
-	&lt;p&gt;In &lt;a href=&quot;http://www.joshlong.com/jl/blogPost/java_configuration.html&quot;&gt;the first post in this series&lt;/a&gt;, I introduced Spring&apos;s Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like &lt;code&gt;@EnableWebMvc&lt;/code&gt;) that turn on container-wide, and often conventions-oriented features. In the case of &lt;code&gt;@EnableWebMvc&lt;/code&gt;, the annotation enables Spring MVC and turns on support for correctly exposing &lt;code&gt;@Controller&lt;/code&gt;-annotated beans as HTTP endpoints. Java configuration APIs of the same style as &lt;code&gt;@EnableWebMvc&lt;/code&gt; can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we&apos;ll look at &lt;a href=&quot;http://springsource.org/spring-social&quot;&gt; Spring Social&lt;/a&gt;. &lt;/p&gt; 
-&lt;p&gt; Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here&apos;s an example setup. &lt;/p&gt; 
-&lt;pre&gt;&lt;code&gt;
-@Configuration
-@EnableJdbcConnectionRepository
-@EnableFacebook(appId = &quot;${blog.facebook.appId}&quot;, appSecret = &quot;${blog.facebook.appSecret}&quot;)
-public class SocialConfiguration {
-
-    @Bean
-    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
-                                               ConnectionRepository connectionRepository) {
-        return new ConnectController(connectionFactoryLocator, connectionRepository);
-    }
-
-    @Bean
-    public ProviderSignInController providerSignInController(
-            ConnectionFactoryLocator connectionFactoryLocator, 
-            UsersConnectionRepository usersConnectionRepository) {
-        
-        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
-            @Override
-            public String signIn(String userId, Connection
-  &lt;!--?--&gt; connection, NativeWebRequest request) {
-                return SignInUtils.signIn(userId);
-            }
-        });
-    }
-
-    @Bean
-    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
-        return new DisconnectController(usersConnectionRepository, environment.getProperty(&quot;blog.facebook.appSecret&quot;));
-    }
-
-    @Bean
-    public UserIdSource userIdSource() {
-        return new UserIdSource() {
-            @Override
-            public String getUserId() {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                if (authentication == null) {
-                    throw new IllegalStateException(&quot;Unable to get a ConnectionRepository: no user signed in&quot;);
-                }
-                return authentication.getName();
-            }
-        };
-    }
-}
-&lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt; Once you&apos;ve done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user to approve the API access and then proceed with the call. &lt;/p&gt; 
-&lt;pre&gt;&lt;code&gt;
-@Inject private Facebook facebook;
-
-@RequestMapping(&quot;/hello&quot;)
-public void showProfileInformation( Model model){ 
-  model.addAttribute( &quot;name&quot;, facebook.userOperations().getUserProfile().getName() );
-}
-&lt;/code&gt;&lt;/pre&gt;
 	</description>
     </item>
     <item>
@@ -1837,6 +1848,15 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
 	</description>
     </item>
     <item>
+      <title>Happy New Year, and Here&apos;s to 2013</title>
+      <link>http://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
+      <pubDate>Mon, 31 Dec 2012 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
+      	<description>
+	&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
+	</description>
+    </item>
+    <item>
       <title>They Think of Everything</title>
       <link>http://joshlong.com/jl/blogPost/they_think_of_everything.html</link>
       <pubDate>Mon, 31 Dec 2012 00:00:00 -0800</pubDate>
@@ -1847,15 +1867,6 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
  &lt;img src=&quot;http://joshlong.com/media/18574&quot; width=&quot;400&quot;&gt;
 &lt;/div&gt; 
 &lt;p&gt;&lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>Happy New Year, and Here&apos;s to 2013</title>
-      <link>http://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
-      <pubDate>Mon, 31 Dec 2012 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
-      	<description>
-	&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -1989,6 +2000,15 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
 	</description>
     </item>
     <item>
+      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
+      <link>http://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
+      	<description>
+	&lt;p&gt; I found &lt;a href=&quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application. &lt;/p&gt;
+	</description>
+    </item>
+    <item>
       <title>Spring Data Mongo transaction synchronization does not find a bound DB</title>
       <link>http://joshlong.com/jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 -0800</pubDate>
@@ -2018,15 +2038,6 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
  &lt;/pre&gt; 
 &lt;p&gt;&lt;/p&gt; 
 &lt;p&gt; Hat tip to the one and only &lt;a href=&quot;https://twitter.com/olivergierke&quot;&gt;Oliver Gierke&lt;/a&gt; for helping me with this! &lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
-      <link>http://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
-      <pubDate>Sun, 25 Nov 2012 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
-      	<description>
-	&lt;p&gt; I found &lt;a href=&quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application. &lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -2922,6 +2933,15 @@ public class MyClass {
 	</description>
     </item>
     <item>
+      <title>Getting Started with Spring Roo</title>
+      <link>http://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
+      	<description>
+	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/17884&quot; style=&quot; float:left;margin-right:10px;&quot;&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;em&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/a&gt;&lt;/em&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;b&gt;Vaadin&lt;/b&gt; - a powerful, alternative web framework, and &lt;b&gt;Neo4j&lt;/b&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out. &lt;/p&gt;
+	</description>
+    </item>
+    <item>
       <title>RabbitMQ is now officially available on CloudFoundry!</title>
       <link>http://joshlong.com/jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html</link>
       <pubDate>Fri, 12 Aug 2011 00:00:00 -0700</pubDate>
@@ -2929,15 +2949,6 @@ public class MyClass {
       	<description>
 	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/17873&quot; style=&quot;width:80px;float:left; margin-right:10px;&quot;&gt; &lt;img style=&quot;float:left ; margin-right: 10px;width:80px;&quot; src=&quot;http://joshlong.com/media/17874&quot;&gt; For you &lt;a href=&quot;http://github.com/CloudFoundry&quot;&gt;code lurkers&lt;/a&gt; out there, the news that &lt;a href=&quot;http://www.rabbitmq.com/&quot;&gt;RabbitMQ&lt;/a&gt; is now available in &lt;a href=&quot;http://www.cloudfoundry.org&quot;&gt;CloudFoundry&lt;/a&gt; should come as no surprise. But, it&apos;s finally here! This is very exciting. One thing I&apos;ve always loved about RabbitMQ is its ubiquity. It is more widely used than any other message broker on the cloud, and on Amazon Web Services in particular. The AWS tidbit&apos;s a bit more awesome when you realize that AWS already has a message broker service called SQS! ;-) Anyway, it&apos;s now available on CloudFoundry. You &lt;a href=&quot;http://support.cloudfoundry.com/entries/20322602-getting-started-with-the-rabbitmq-service-from-a-spring-application&quot;&gt;should definitely&lt;/a&gt; check &lt;a href=&quot;http://blog.cloudfoundry.com/post/8713844574/rabbitmq-cloud-foundry-cloud-messaging-that-just-works&quot;&gt;it out.&lt;/a&gt; The &lt;a href=&quot;http://www.theregister.co.uk/2011/08/10/vmware_cloud_foundry_adds_rabbitmq_messaging/&quot;&gt;news&lt;/a&gt; overall seems good, too! Messaging middleware is &lt;em&gt;the&lt;/em&gt; critical component for scale. Cloud-scale is a way of life, not just a switch to be turned on and off. Specifically, an architecure that scales is going to enjoy temporally decoupling, or &lt;em&gt;asynchronism,&lt;/em&gt; and RabbitMQ is the perfect vehicle to enable that asynchronous coordination. &lt;/p&gt; 
 &lt;p&gt; If you&apos;re a Spring developer, and haven&apos;t had a chance to look at CloudFoundry, then I strongly recommend you see &lt;a href=&quot;http://blog.springsource.com/2011/04/12/cloud-foundry-for-spring-developers/&quot;&gt;Mark Fisher&apos;s entry on the SpringSource blog&lt;/a&gt; introducing the wide world of the cloud for Spring developers from a few months ago. There&apos;s also great content on &lt;a href=&quot;http://www.youtube.com/SpringSourceDev&quot;&gt;the SpringSource YouTube channel.&lt;/a&gt; &lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>Getting Started with Spring Roo</title>
-      <link>http://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
-      <pubDate>Fri, 12 Aug 2011 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
-      	<description>
-	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/17884&quot; style=&quot; float:left;margin-right:10px;&quot;&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;em&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/a&gt;&lt;/em&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;b&gt;Vaadin&lt;/b&gt; - a powerful, alternative web framework, and &lt;b&gt;Neo4j&lt;/b&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out. &lt;/p&gt;
 	</description>
     </item>
     <item>
