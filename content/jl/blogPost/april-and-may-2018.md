@@ -1,4 +1,4 @@
-title=April and May 2018
+title=A Bootiful, Reactive April and May 2018 (with apperances from Spring co-founders Rod Johnson and Juergen Hoeller!) 
 date=2018-08-16
 type=post
 tags=blog
