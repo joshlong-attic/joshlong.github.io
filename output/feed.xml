@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Thu, 19 Apr 2018 14:06:18 +0200</pubDate>
-    <lastBuildDate>Thu, 19 Apr 2018 14:06:18 +0200</lastBuildDate>
+    <pubDate>Thu, 19 Apr 2018 14:11:14 +0200</pubDate>
+    <lastBuildDate>Thu, 19 Apr 2018 14:11:14 +0200</lastBuildDate>
 
     <item>
       <title>A Bootiful, Reactive April and May 2018 (with apperances from Spring co-founders Rod Johnson and Juergen Hoeller!)</title>
@@ -17,7 +17,21 @@
       	<description>
 	&lt;p&gt;I just concluded a wonderful Devoxx FR where I was reunited with old friends and spoke to people about cloud native (reactive) Spring.&lt;/p&gt; 
 &lt;p&gt;I did two workshops (one at Devoxx FR, and another for Zenika, as a meetup, in the evening) and then co-presented with Spring co-founder and my hero (and freind) Juergen Hoeller. It was a lot of fun and I want to thank all those that turned up! It was an honor!&lt;/p&gt; 
-&lt;!-- zenika phto of the folks who remained even after 3h at 10pm  --&gt; 
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;
+ &lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;It was such a privelege to speak at &lt;a href=&quot;https://twitter.com/ZenikaIT?ref_src=twsrc%5Etfw&quot;&gt;@ZenikaIT&lt;/a&gt; last night! Look at this group still going strong at 21:45! 🙏 &lt;a href=&quot;https://t.co/BKmD5nEkbd&quot;&gt;pic.twitter.com/BKmD5nEkbd&lt;/a&gt;&lt;/p&gt;— Josh Long (龙之春, जोश) (@starbuxman) 
+ &lt;a href=&quot;https://twitter.com/starbuxman/status/986940126633832448?ref_src=twsrc%5Etfw&quot;&gt;April 19, 2018&lt;/a&gt;
+&lt;/blockquote&gt; 
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;
+ &lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Great to see old friends like &lt;a href=&quot;https://twitter.com/arungupta?ref_src=twsrc%5Etfw&quot;&gt;@arungupta&lt;/a&gt; &lt;a href=&quot;https://twitter.com/emmanuelbernard?ref_src=twsrc%5Etfw&quot;&gt;@emmanuelbernard&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/springjuergen?ref_src=twsrc%5Etfw&quot;&gt;@springjuergen&lt;/a&gt; &lt;a href=&quot;https://twitter.com/DevoxxFR?ref_src=twsrc%5Etfw&quot;&gt;@DevoxxFR&lt;/a&gt; &lt;a href=&quot;https://t.co/qzM1tAVXsb&quot;&gt;pic.twitter.com/qzM1tAVXsb&lt;/a&gt;&lt;/p&gt;— Josh Long (龙之春, जोश) (@starbuxman) 
+ &lt;a href=&quot;https://twitter.com/starbuxman/status/986940118396219392?ref_src=twsrc%5Etfw&quot;&gt;April 19, 2018&lt;/a&gt;
+&lt;/blockquote&gt; 
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;
+ &lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I had so much fun presenting with my friend (and hero) &lt;a href=&quot;https://twitter.com/springjuergen?ref_src=twsrc%5Etfw&quot;&gt;@springJuergen&lt;/a&gt; today on “Reactive Spring” &lt;a href=&quot;https://twitter.com/DevoxxFR?ref_src=twsrc%5Etfw&quot;&gt;@DevoxxFR&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/devoxxfr?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#devoxxfr&lt;/a&gt; !&lt;br&gt;&lt;br&gt;we talked about reactive &lt;a href=&quot;https://twitter.com/springframework?ref_src=twsrc%5Etfw&quot;&gt;@springframework&lt;/a&gt; 5, &lt;a href=&quot;https://twitter.com/springboot?ref_src=twsrc%5Etfw&quot;&gt;@springboot&lt;/a&gt; 2, &lt;a href=&quot;https://twitter.com/SpringData?ref_src=twsrc%5Etfw&quot;&gt;@springdata&lt;/a&gt; Kay, and &lt;a href=&quot;https://twitter.com/springcloud?ref_src=twsrc%5Etfw&quot;&gt;@springcloud&lt;/a&gt; Function and &lt;a href=&quot;https://twitter.com/projectriff?ref_src=twsrc%5Etfw&quot;&gt;@projectriff&lt;/a&gt; &lt;a href=&quot;https://twitter.com/java?ref_src=twsrc%5Etfw&quot;&gt;@java&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/kotlin?ref_src=twsrc%5Etfw&quot;&gt;@kotlin&lt;/a&gt; &lt;a href=&quot;https://t.co/G6AjRC6Chr&quot;&gt;pic.twitter.com/G6AjRC6Chr&lt;/a&gt;&lt;/p&gt;— Josh Long (龙之春, जोश) (@starbuxman) 
+ &lt;a href=&quot;https://twitter.com/starbuxman/status/986917183296081920?ref_src=twsrc%5Etfw&quot;&gt;April 19, 2018&lt;/a&gt;
+&lt;/blockquote&gt; 
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
 &lt;p&gt;Now it&apos;s off to the states for some business then I return to Europe, Sunday, &lt;a href=&quot;https://jax.de/programm/&quot;&gt;for JAX in Mainz, Germany&lt;/a&gt;. There, I&apos;ll co-present &lt;em&gt;again&lt;/em&gt; with Juergen. I speak French (so that helped in Paris) and he speaks German (that&apos;ll help in Mainz)! It&apos;s a nice symmetry. We&apos;ll even have a bit more time to articulate our ideas - an hour! I&apos;ll also be doing a &lt;em&gt;Cloud Native Java&lt;/em&gt; book signing at JAX, so don&apos;t miss that!&lt;/p&gt; 
 &lt;p&gt;They announced that JavaDays Ukraine would soon join the Devoxx franchise and family as Devoxx Ukraine and Juergen and I have already been invited to speak there. I sure hope we can! Congratulations to the team. It looks like it&apos;s going to be an exciting adventure.&lt;/p&gt; 
 &lt;p&gt;Then, it&apos;s off to Linz, Austria (where Juergen lives, no less), &lt;a href=&quot;https://devone.at/&quot;&gt;for the DevOne show&lt;/a&gt;. There, again, Juergen and I will co-present on all things Reactive Spring. If you&apos;re there, don&apos;t miss this opportunity to meet Juergen Hoeller, one of the greats!&lt;/p&gt; 
