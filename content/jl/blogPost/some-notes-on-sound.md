@@ -1,4 +1,4 @@
-title=Some Notes on Sound 
+title=Some Notes on Sound
 date=2018-07-28
 type=post
 tags=blog
