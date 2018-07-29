@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sun, 29 Jul 2018 01:42:15 -0700</pubDate>
-    <lastBuildDate>Sun, 29 Jul 2018 01:42:15 -0700</lastBuildDate>
+    <pubDate>Sun, 29 Jul 2018 01:44:27 -0700</pubDate>
+    <lastBuildDate>Sun, 29 Jul 2018 01:44:27 -0700</lastBuildDate>
 
     <item>
       <title>Some Notes on Sound</title>
@@ -2231,7 +2231,7 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
       <pubDate>Mon, 12 Nov 2012 00:00:00 -0800</pubDate>
       <guid isPermaLink="false">jl/blogPost/devoxx_2012.html</guid>
       	<description>
-	&lt;p&gt; Are you guys going to be in Antwerp, Beglium for Devoxx? If so, feel free to reach out to me. I&apos;ll be speaking on &lt;a href=&quot;http://www.devoxx.com/display/DV12/Josh+Long&quot;&gt;Spring (including a look at Spring 3.1 and 3.2)&lt;/a&gt;, Cloud Foundry, and much more. This will be my third year at Devoxx and, as usual, I&apos;d love to grab a beer (or two!) and chat with anybody and everybody about Spring, Cloud Foundry, big data, the cloud and much more. Also, feel free to ping me on &lt;a href=&quot;http://www.twitter.com/starbuxman&quot;&gt;@starbuxman on Twitter&lt;/a&gt;. &lt;/p&gt; 
+	&lt;p&gt; Are you going to be in Antwerp, Beglium for Devoxx? If so, feel free to reach out to me. I&apos;ll be speaking on &lt;a href=&quot;http://www.devoxx.com/display/DV12/Josh+Long&quot;&gt;Spring (including a look at Spring 3.1 and 3.2)&lt;/a&gt;, Cloud Foundry, and much more. This will be my third year at Devoxx and, as usual, I&apos;d love to grab a beer (or two!) and chat with anybody and everybody about Spring, Cloud Foundry, big data, the cloud and much more. Also, feel free to ping me on &lt;a href=&quot;http://www.twitter.com/starbuxman&quot;&gt;@starbuxman on Twitter&lt;/a&gt;. &lt;/p&gt; 
 &lt;p&gt; Last year was an amazing event for me. I was very sick and gave 5 talks, but still had a heck of a lot of fun. This year I expect I&apos;m feeling great (I&apos;m in Sofia, Bulgaria, at the moment and will head to Antwerp tomorrow), and I only have 3 talks, so it should be a very relaxing, entertaining trip indeed. As usual, SpringSource and Cloud Foundry will have a booth, as well. So feel free to drop by - I&apos;m sure you&apos;ll find me there, as well. &lt;/p&gt;
 	</description>
     </item>
