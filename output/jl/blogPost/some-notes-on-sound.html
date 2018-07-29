@@ -6,7 +6,7 @@
 <meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
 
     <meta charset="utf-8"/>
-    <title>A J2ME Archetype Based On Pyx4me.com&apos;s work, Antenna</title>
+    <title>Some Notes on Sound</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -88,20 +88,44 @@
     <div class="container">
 	
 	<div class="page-header">
-		<h1>A J2ME Archetype Based On Pyx4me.com&apos;s work, Antenna</h1>
+		<h1>Some Notes on Sound</h1>
 	</div>
 
-	<p><em>08 April 2007</em></p>
+	<p><em>28 July 2018</em></p>
 
-	<p><p> In recent posts, I've blogged about my ambition to get a J2ME archetype up and running, and finally, I can present the fruits of my …quest! You thought I was going to say “labor”, eh? The nice part about the world is there are so many other people better positioned to beat me (or you) to the finish line. Case in point: the <a href="http://pyx4me.com/snapshot/pyx4me/" target="_blank">pyx4me project</a> project has done an incredible job of wrapping <a href="http://antenna.sourceforge.net/" target="_self">Antenna</a>, providing a JSE-based emulator, providing framework classes and of providing a working support for different things and of providing useful examples. </p>
-<p> I've taken their examples and orchestrated an archetype for getting started quickly with J2ME.&nbsp; </p>
-<p> Put another way, they've already done the work of getting started with J2ME. It just isn't (to me, a humble J2ME developer with a cause) apparent where to begin. So I made it apparent for my own purposes. Perhaps you'll find it useful, as well.&nbsp;&nbsp; </p>
-<p> To get it up and running, simply issue:&nbsp; </p>
-<pre>mvn archetype:create -DarchetypeGroupId=com.codecafe.archetypes \<br>-DarchetypeArtifactId=j2me-simple \<br>-DremoteRepositories=http://codecafe.dev-hda.com/repository \<br>-DarchetypeVersion=1.0-SNAPSHOT -DgroupId=org.example -DartifactId=myapp</pre>
-<p> On my system, I have three system variables of importance. Here's the pseudocode for their organization:&nbsp; </p>
-<pre>WTK_HOME=installation of wireless toolkit ;<br>JAVA_HOME=installation of java development kit ;<br>PATH=WTK_HOME/bin;JAVA_HOME/bin ;</pre>
-<p> So long as all that's setup, you need only cd into your “myapp” directory and issue “mvn clean install” and then double click on the resultant .jad file to open up the emulator and preview your application.&nbsp; </p> 
-<p> Please see <a href="http://pyx4me.com/snapshot/pyx4me"> the Pyx4me project's home page</a> for the overall project,&nbsp;&nbsp; <a href="http://antenna.sourceforge.net">the antenna project</a>, and, lastly <a href="http://codecafe.dev-hda.com/sites/j2me_archetype/">my documentation</a> for information on using the archetype, getting started on an application and coverage of a few common cases I ran into. If you find anything lacking or non intuitive, please drop me a comment and I'll try to address it.</p></p>
+	<p><p>I've been studying sound and I took some notes and I'd like to be able to find these readily so I figured i'll post them there. Hope you find these notes, disjointed thought they are, even a tiny bit useful.</p> 
+<h2>Frequency</h2> 
+<ul> 
+ <li>When sound is created, it travels through a medium, usually air. Its the change in pressure of the waves that we perceive when it hits our ears.</li> 
+ <li>the timing of those waves is known as the frequency, or literally how frequently the eave fluctuates.</li> 
+ <li>the frequency is how long it takes to complete a cycle</li> 
+ <li>measured in hertz, or cycles per second.</li> 
+ <li>the more cycles per second the higher the pitch of the sound</li> 
+ <li>440 cycles per second = 440 hertz.</li> 
+ <li>anything over a thousand hertz is measured in kilohertz</li> 
+ <li>human hearing = 20 Hz to 20 kHz</li> 
+</ul> 
+<h2>Amplitude</h2> 
+<ul> 
+ <li>how much the sound wave fluctuates up ad down</li> 
+ <li>smaller fluctuates = softer; bigger = louder</li> 
+ <li>decibels = dB is how you measure amplitude</li> 
+ <li>0 dbfs (decibels for scale) = the loudest. lower = -1dB until 0dB. -12dB is louder than 0dB.</li> 
+</ul> 
+<h2>Sample Rate</h2> 
+<ul> 
+ <li>when we capture sound were not actually capturing the whole thing, were capturing snapshots at intervals</li> 
+ <li>the sample rate is measured in hertz</li> 
+ <li>CDs are sample at 44100 Hz. Video = 48 KHz.</li> 
+ <li>The general rule is that the sample rate is double the highest frequency you are going to record which is why 44.1 kHz is the lowest sample rate you'd want since human beings can reach 20khz of frequency.</li> 
+ <li>some audio engineers set it at 96 kHz for incredible quality. obviously this takes more space in the file!</li> 
+</ul> 
+<h2>Bit Depth</h2> 
+<ul> 
+ <li>the bit depth determines how much info is stored in each sample; the more bits the wider the range of volume we can store in each sample</li> 
+ <li>a low bit depth of 8 bits gives us a dynamic range fo 48dB. 16 bits is used for CDs. 48 bits is used for videos.</li> 
+ <li>the higher the bit depth the larger the file will be. Still, recommendation? Record at the highest bit depth you can (32-float).</li> 
+</ul></p>
 
 	<hr />
 	

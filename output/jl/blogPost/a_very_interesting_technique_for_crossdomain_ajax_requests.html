@@ -105,7 +105,18 @@
   &lt;link rel="stylesheet" href="styles.css" type="text/css"&gt; 
 &lt;/head&gt; 
 &lt;body&gt; 
-<b> &lt;script src="http://code.jquery.com/jquery-latest.pack.js"&gt;&lt;/script&gt; &lt;script language="javascript"&gt; function ajax( url, cb){ var yqlUrl = "http://query.yahooapis.com/v1/public/yql?"+ "q=select%20*%20from%20html%20where%20url%3D%22"+ encodeURIComponent(url)+ "%22&amp;format=xml'&amp;callback=?" ; $.getJSON( yqlUrl, cb ); } &lt;/script&gt; </b> 
+<b> 
+&lt;script src="http://code.jquery.com/jquery-latest.pack.js"&gt;&lt;/script&gt; 
+&lt;script language="javascript"&gt; 
+function ajax( url, cb){ 
+ var yqlUrl =  "http://query.yahooapis.com/v1/public/yql?"+ 
+            "q=select%20*%20from%20html%20where%20url%3D%22"+ 
+              encodeURIComponent(url)+ 
+            "%22&amp;format=xml'&amp;callback=?" ; 
+ $.getJSON( yqlUrl,  cb ); 
+} 
+&lt;/script&gt; 
+</b> 
 &lt;script language="javascript"&gt; 
 $(document).ready(function(){ 
  ajax( 'http://www.joshlong.com', function(data){ 
@@ -126,7 +137,7 @@ $(document).ready(function(){
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
       </div>
     </div>
     

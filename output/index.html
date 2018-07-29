@@ -90,6 +90,41 @@
 	<div class="page-header">
 		<h1>Blog</h1>
 	</div>
+  			<a href="jl/blogPost/some-notes-on-sound.html"><h1>Some Notes on Sound</h1></a>
+  			<p>28 July 2018</p>
+  			<p><p>I've been studying sound and I took some notes and I'd like to be able to find these readily so I figured i'll post them there. Hope you find these notes, disjointed thought they are, even a tiny bit useful.</p> 
+<h2>Frequency</h2> 
+<ul> 
+ <li>When sound is created, it travels through a medium, usually air. Its the change in pressure of the waves that we perceive when it hits our ears.</li> 
+ <li>the timing of those waves is known as the frequency, or literally how frequently the eave fluctuates.</li> 
+ <li>the frequency is how long it takes to complete a cycle</li> 
+ <li>measured in hertz, or cycles per second.</li> 
+ <li>the more cycles per second the higher the pitch of the sound</li> 
+ <li>440 cycles per second = 440 hertz.</li> 
+ <li>anything over a thousand hertz is measured in kilohertz</li> 
+ <li>human hearing = 20 Hz to 20 kHz</li> 
+</ul> 
+<h2>Amplitude</h2> 
+<ul> 
+ <li>how much the sound wave fluctuates up ad down</li> 
+ <li>smaller fluctuates = softer; bigger = louder</li> 
+ <li>decibels = dB is how you measure amplitude</li> 
+ <li>0 dbfs (decibels for scale) = the loudest. lower = -1dB until 0dB. -12dB is louder than 0dB.</li> 
+</ul> 
+<h2>Sample Rate</h2> 
+<ul> 
+ <li>when we capture sound were not actually capturing the whole thing, were capturing snapshots at intervals</li> 
+ <li>the sample rate is measured in hertz</li> 
+ <li>CDs are sample at 44100 Hz. Video = 48 KHz.</li> 
+ <li>The general rule is that the sample rate is double the highest frequency you are going to record which is why 44.1 kHz is the lowest sample rate you'd want since human beings can reach 20khz of frequency.</li> 
+ <li>some audio engineers set it at 96 kHz for incredible quality. obviously this takes more space in the file!</li> 
+</ul> 
+<h2>Bit Depth</h2> 
+<ul> 
+ <li>the bit depth determines how much info is stored in each sample; the more bits the wider the range of volume we can store in each sample</li> 
+ <li>a low bit depth of 8 bits gives us a dynamic range fo 48dB. 16 bits is used for CDs. 48 bits is used for videos.</li> 
+ <li>the higher the bit depth the larger the file will be. Still, recommendation? Record at the highest bit depth you can (32-float).</li> 
+</ul></p>
   			<a href="jl/blogPost/april-and-may-2018.html"><h1>A Bootiful, Reactive April and May 2018 (with apperances from Spring co-founders Rod Johnson and Juergen Hoeller!)</h1></a>
   			<p>20 April 2018</p>
   			<p><p>I just concluded a wonderful Devoxx FR where I was reunited with old friends and spoke to people about cloud native (reactive) Spring.</p> 
@@ -889,6 +924,9 @@ shell.auth=spring
 <p>These dependencies can be hard to find. Use the <code>mvn dependency:tree</code> command to see where things are being imported <em>transitively</em>. Spring Security, another library whose top level types we wanted on the <code>CLASSPATH</code>, also required <code>exclusion</code> elements because it drags in Spring core. </p> 
 <h2>Some Classes - like JAXB - You Just Can't Avoid</h2> 
 <p>Any class that's not in Android's JDK-class whitelist is not available on Android and thus renders code that depends on it incompatible. Some classes, like those in the JAXB module, are hard to ignore as they're pervasive. I wanted to use the Spring HATEOAS <code>Resource</code>, <code>Link</code>, types. These types are used as representations of various entities in REST responses that are sometimes rendered as XML using JAXB, they could not be loaded in Android! So, I <a href="https://github.com/joshlong/the-spring-rest-stack/tree/master/code/client/android/src/org/springframework/hateoas">had to copy those types locally</a> and mirror the package structure and remove the offending annotations. Hopefully I can clean this up going forward. </p></p>
+  			<a href="jl/blogPost/springone2gx_2013_is_coming.html"><h1>SpringOne2GX 2013 is Coming!</h1></a>
+  			<p>07 August 2013</p>
+  			<p><p> <img src="http://joshlong.com/media/18738" width="300" style="float: left; margin-right:10px; "> Have you booked your tickets for <strong><a href="http://www.springone2gx.com/conference/santa_clara/2013/09/home">SpringOne2GX</a></strong>? This year's show is a special one. In my work as the Spring Developer Advocate, I speak at <em>many</em> conferences all around the world. Ask any developer with a pulse, and they'll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today's developers, and SpringOne2GX's agenda represents in my estimation the perfect blend of content for today's developers. Check out <a href="https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule">the agenda</a>. We've just recently added talks on <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165">big data</a>, and <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425">REST service security with OAuth</a>. This will be our first show under <a href="http://gopivotal.com">Pivotal</a>, and it's the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we've just announced our Cloud Foundry conference, <a href="http://platformcf.com">Platform</a>, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show. Hurry the early bird rate expires this friday!</p></p>
   			<a href="jl/blogPost/introducing_spring_boot.html"><h1>Introducing Spring Boot</h1></a>
   			<p>07 August 2013</p>
   			<p><p> Also, have you seen the <a href="http://blog.springsource.org/2013/08/06/spring-boot-simplifying-spring-for-everyone/"> amazing news</a>? We just released <a href="https://github.com/SpringSource/spring-boot#spring-boot">Spring Boot</a>, which makes it dead simple to do application development with Spring. A working REST application (its entirety!) can fit in a single tweet! Here's a groovy-language <code>@Controller</code>: </p> 
@@ -902,9 +940,6 @@ class ThisWillActuallyRun {
     }
 }
 </code></pre></p>
-  			<a href="jl/blogPost/springone2gx_2013_is_coming.html"><h1>SpringOne2GX 2013 is Coming!</h1></a>
-  			<p>07 August 2013</p>
-  			<p><p> <img src="http://joshlong.com/media/18738" width="300" style="float: left; margin-right:10px; "> Have you booked your tickets for <strong><a href="http://www.springone2gx.com/conference/santa_clara/2013/09/home">SpringOne2GX</a></strong>? This year's show is a special one. In my work as the Spring Developer Advocate, I speak at <em>many</em> conferences all around the world. Ask any developer with a pulse, and they'll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today's developers, and SpringOne2GX's agenda represents in my estimation the perfect blend of content for today's developers. Check out <a href="https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule">the agenda</a>. We've just recently added talks on <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165">big data</a>, and <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425">REST service security with OAuth</a>. This will be our first show under <a href="http://gopivotal.com">Pivotal</a>, and it's the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we've just announced our Cloud Foundry conference, <a href="http://platformcf.com">Platform</a>, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show. Hurry the early bird rate expires this friday!</p></p>
   			<a href="jl/blogPost/icloud_part_1.html"><h1>iCloud (Part #1)</h1></a>
   			<p>01 July 2013</p>
   			<p><p>I really liked Apple's iCloud when I first started playing with it. The idea is many-pronged. </p> 
@@ -1240,7 +1275,19 @@ public class BatchInfrastructureConfiguration   {
 
         Class
   <driver>
-    classOfDs = environment.getPropertyAsClass("dataSource.driverClassName", Driver.class); SimpleDriverDataSource dataSource = new SimpleDriverDataSource(); dataSource.setPassword(pw); dataSource.setUrl(url); dataSource.setUsername(user); dataSource.setDriverClass(classOfDs); return dataSource; } } 
+    classOfDs = environment.getPropertyAsClass("dataSource.driverClassName", Driver.class);
+
+        SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
+        dataSource.setPassword(pw);
+        dataSource.setUrl(url);
+        dataSource.setUsername(user);
+        dataSource.setDriverClass(classOfDs);
+
+        return dataSource;
+    }
+}
+
+
   </driver></code></pre> 
 <p> Once you've done this, you can start describing jobs using the Spring Batch configuration DSL. Here, we define a job named <code>flickrImportJob</code> which in turn has one step, <code>step1</code>, that in turn reads data using an <code>ItemReader</code> named <code>photoAlbumItemReader</code> and writes data using an <code>ItemWriter</code> named <code>photoAlbumItemWriter</code>. </p> 
 <pre><code>
@@ -1265,11 +1312,24 @@ public class BatchImporterConfiguration {
     public Step step1(StepBuilderFactory stepBuilderFactory,
                       @Qualifier("photoAlbumItemReader") ItemReader
   <photoset>
-    ir, @Qualifier("photoAlbumItemWriter") ItemWriter
+    ir,
+                      @Qualifier("photoAlbumItemWriter") ItemWriter
    <photoset>
-     iw ) { return stepBuilderFactory.get("step1") .
+     iw
+    ) {
+        return stepBuilderFactory.get("step1")
+                .
     <photoset, photoset>
-     chunk(10) .reader(ir) .writer(iw) .build(); } // ... omitting definitions of ItemReader and ItemWriters } 
+     chunk(10)
+                .reader(ir)
+                .writer(iw)
+                .build();
+    }
+    // ... omitting definitions of ItemReader and ItemWriters 
+}
+   
+
+
     </photoset,>
    </photoset>
   </photoset></code></pre></p>
@@ -1332,12 +1392,6 @@ public void showProfileInformation( Model model){
   model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
 }
 </code></pre></p>
-  			<a href="jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html"><h1>One Big Bag of Beans</h1></a>
-  			<p>13 April 2013</p>
-  			<p><p>At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean's class, optionally an <code>id</code> by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc. </p> 
-<p>Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The <a href="http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL">Groovy Bean Builder</a>. The <a href="http://blog.springsource.org/2012/12/10/introducing-spring-scala/"> Spring Scala</a> approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces. </p>
-<p> Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the <code>@Transactional</code> annotation. Then the stereotype annotations emerged -<code>@Controller</code>, <code>@Component</code>, <code>@Service</code>, etc, that – along with component scanning and <code>@Autowired</code> – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. </p> 
-<p>Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. </p></p>
   			<a href="jl/blogPost/java_configuration.html"><h1>Java Configuration</h1></a>
   			<p>13 April 2013</p>
   			<p><p> In my last post I talked a little bit about how – at runtime – Spring beans are all just the same thing. I tried to emphasize that beans defined in any number of styles can be mixed and matched. While the XML format will always be supported, I personally like the increasingly numerous Java-configuration centric APIs and DSLs that the Spring projects are exposing. </p>
@@ -1394,6 +1448,12 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 <p> This class is too annotated with <code>@Configuration</code>. It enables Spring MVC (bean validation, file upload support, REST, etc. etc.), and scans the context for beans of well known plugin objects like <code>ViewResolver</code>s. But here we see something new: the configuration class extends a base class, or implements an interface having the word “<code>Configurer</code>” in it. Typically the framework runs these callback implementing instances and uses it to tailor how it builds itself. Here, for example, we have callback methods we can implement to provide things like <code>HttpMessageConverters</code>, validation, view controllers, etc. We use <code>@ComponentScan</code> to scan and register beans (typically beans of type <code>@Controller</code>) in or below the package that the configuration class is in. And, because we want to inject references to the services we’ve just defined, we’ve used the <code>@Import</code> annotation to import the bean definitions from the <code>ServiceConfiguration</code> class. </p> 
 <p> This was by no means an exhaustive look at Java configuration, but hopefully you see that there is a lot of convenience in this approach. You can still substitute values from external property files, you can still override and extend the frameworks, and you can still achieve a single configuration artifact – a place where you can get a bird’s eye view of the system. </p>
 <p> There are many Spring projects that provide idiomatic, Java configuration centric APIs and DSLs as Spring core does for building services using Spring and web applications using Spring MVC. </p></p>
+  			<a href="jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html"><h1>One Big Bag of Beans</h1></a>
+  			<p>13 April 2013</p>
+  			<p><p>At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean's class, optionally an <code>id</code> by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc. </p> 
+<p>Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The <a href="http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL">Groovy Bean Builder</a>. The <a href="http://blog.springsource.org/2012/12/10/introducing-spring-scala/"> Spring Scala</a> approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces. </p>
+<p> Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the <code>@Transactional</code> annotation. Then the stereotype annotations emerged -<code>@Controller</code>, <code>@Component</code>, <code>@Service</code>, etc, that – along with component scanning and <code>@Autowired</code> – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. </p> 
+<p>Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. </p></p>
   			<a href="jl/blogPost/breaking_the_1000ms_time_to_glass_mobile_barribreaking_the_1000ms_time_to_glass_mobile_barri.html"><h1>Breaking the 1000ms Time to Glass Mobile Barrier</h1></a>
   			<p>11 April 2013</p>
   			<p><p>I just found this video on reddit.com, <a href="">Breaking the 1000ms Time to Glass Mobile Barrier</a>. </p>
@@ -1408,11 +1468,6 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 <p> I also use Google+, and on Google+ my content is essentially wide open. I thus don't really need to <em>friend</em> anyone because it's wide-open and out there for people to see. The scope of content there is thus very good. </p> 
 <p> The final benefit is that - as I'm interested in the variety of content on the Facebook wall now, I've almost accidentally been able to better follow my family and friends' content, too! Small wonder, that. </p> 
 <p> C'ya on <a href="http://facebook.com/starbuxman">Facebook</a>! (or <a href="http://twitter.com/starbuxman"> Twitter</a>, or <a href="https://plus.google.com/105805020312347758498/posts">Google+</a>)</p></p>
-  			<a href="jl/blogPost/upgrading_to_jdk_7_on_osx.html"><h1>Upgrading to JDK 7 on OSX</h1></a>
-  			<p>20 March 2013</p>
-  			<p><p> <img src="http://joshlong.com/media/18642" width="400" style="float: left; margin-right : 10px;"> I just made the jump to JDK 7 on OSX. I know, I know, I'm <em>very</em> behind, but when it comes to JDK iterations, I'm always a little behind. I guess I'm just more cowardly as I age... :) Anyway, just made the jump. This is the first release of Java on OSX that Oracle - and <em>not</em> Apple - is supporitng. To make it happen, simply grab the OSX JDK from <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">the Oracle Java SE Development Kit 7 Downloads</a> page. Once it's downloaded, double click the downloaded bundle and just follow the prompt.. there might have been two prompts, but I'd be surprised if there was, it went so quickly! </p> 
-<p> When it's installed, you should just be able to confirm the upgrade by going to the shell and typing <code>java -version</code>. Interestingly, I didn't even need to reload my shell to see the new version. It all just worked! Nicely done, Oracle (for once)! </p> 
-<p><b>Update</b> if, for example, you wanted to remove JDK 7, <a href="http://reviews.cnet.com/8301-13727_7-57423014-263/how-to-install-and-uninstall-java-7-for-os-x/">this article might help</a>. </p></p>
   			<a href="jl/blogPost/repl_vs_unit_tests_misses_the_point.html"><h1>REPL vs. Unit Tests misses the Point</h1></a>
   			<p>20 March 2013</p>
   			<p><p> An interesting thread emerged on Twitter today regarding ways to explore a problem: <a href="http://wikipedia.org/wiki/REPL">REPL</a> or Unit tests? <a href="https://twitter.com/mtnygard">Michael Nygard (@mtnygard)</a> said: </p> 
@@ -1427,6 +1482,11 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 <p> This whole discussion, of course, centers around whether or not your programming language of choice supports a REPL! I work principally on the JVM, particularly in Java and Scala. As Java has no REPL, it can be useful to drop into some other shell or language and use that. Groovy is great for this as it is a full featured (more-than fully featured) language that you can interact with in a REPL and that can interface with JVM libraries. </p>
 <p> In the same vein, years ago, there was a project called <a href="http://www.beanshell.org/"> BeanShell</a>, which provided a REPL for Java. I confess I haven't heard much about it of late, probably due to the prevalence of Groovy. There was even <a href="http://jcp.org/en/jsr/detail?id=274"> a JSR (JSR 274) to advance the project</a> to a standard with the expectation that it would one day be folded into the Java platform itself. </p> 
 <p> Anyway, I'm just thinking aloud. I thought it was an interesting thread. If you've got any thoughts, I'd love to hear about it on <a href="http://twitter.com/starbuxman">Twitter</a> or <a href="https://plus.google.com/u/0/105805020312347758498/posts">Google+</a> </p></p>
+  			<a href="jl/blogPost/upgrading_to_jdk_7_on_osx.html"><h1>Upgrading to JDK 7 on OSX</h1></a>
+  			<p>20 March 2013</p>
+  			<p><p> <img src="http://joshlong.com/media/18642" width="400" style="float: left; margin-right : 10px;"> I just made the jump to JDK 7 on OSX. I know, I know, I'm <em>very</em> behind, but when it comes to JDK iterations, I'm always a little behind. I guess I'm just more cowardly as I age... :) Anyway, just made the jump. This is the first release of Java on OSX that Oracle - and <em>not</em> Apple - is supporitng. To make it happen, simply grab the OSX JDK from <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">the Oracle Java SE Development Kit 7 Downloads</a> page. Once it's downloaded, double click the downloaded bundle and just follow the prompt.. there might have been two prompts, but I'd be surprised if there was, it went so quickly! </p> 
+<p> When it's installed, you should just be able to confirm the upgrade by going to the shell and typing <code>java -version</code>. Interestingly, I didn't even need to reload my shell to see the new version. It all just worked! Nicely done, Oracle (for once)! </p> 
+<p><b>Update</b> if, for example, you wanted to remove JDK 7, <a href="http://reviews.cnet.com/8301-13727_7-57423014-263/how-to-install-and-uninstall-java-7-for-os-x/">this article might help</a>. </p></p>
   			<a href="jl/blogPost/springsource_bag_o_swag.html"><h1>SpringSource Bag &apos;o Swag</h1></a>
   			<p>19 March 2013</p>
   			<p><p> We're giving away bags 'o swag! To get some, just follow the instructions on <a href="http://springbagoswag.cloudfoundry.com/">the SpringSource Bag o' Swag website</a>! Oh, did I mention that you could also win a <a href="http://springone2gx.com/conference/santa_clara/2013/09/home">free ticket to SpringOne2GX 2013</a>? Don't delay, act now! We've given away a <em>lot</em> of cool stuff, already! </p> 
@@ -1522,9 +1582,6 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
   			<p>03 January 2013</p>
   			<p><p> I have been super sick these last two days. I ate some bad alcohol or food in my new year's eve celebrations and paid for it by spending the last two days in the bathroom. It has been <em>ugly</em>! </p>
 <p> On the upside, I've lost a lot of weight and I've been super productive! Submitted for 3 conferences, replied to a backlog of holiday emails, caught up on some reading, setup VPN for my Android phone and iPad thanks to boxpn.com, caught up with amazing people I haven't talked to in a while (owing in part to usual neglect of, and - as I've been sick - my sudden reinterest in) Facebook, started writing some pages on this chapter I've been working on for my next book (Manning's Cloud Foundry in Action), and more! In short: I recommend people take more sick days if they want to catch up on work. </p></p>
-  			<a href="jl/blogPost/happy_new_year_and_heres_to_2013.html"><h1>Happy New Year, and Here&apos;s to 2013</h1></a>
-  			<p>31 December 2012</p>
-  			<p><p> I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here's to 2013! This year I'll ring in the new year in Shanghai, which should be interesting! </p></p>
   			<a href="jl/blogPost/they_think_of_everything.html"><h1>They Think of Everything</h1></a>
   			<p>31 December 2012</p>
   			<p><p> Just bought some ramen at the store. I love that it comes with a serving bowl. I know you're thinking, "but, who wouldn't... have.. a bowl?" And the answer is: I didn't have a bowl! But now I do. Problem solved. The Chinese think of <em>everything</em>! </p>
@@ -1532,16 +1589,19 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
  <img src="http://joshlong.com/media/18574" width="400">
 </div> 
 <p></p></p>
-  			<a href="jl/blogPost/christmas_in_shanghai.html"><h1>Christmas in Shanghai</h1></a>
-  			<p>26 December 2012</p>
-  			<p><p> Merry Christmas! Feliz Navidad! Joyeux Noel! Feliz natal! </p> 
-<p> It's already <a href="http://en.wikipedia.org/wiki/Boxing_day">Boxing day</a>, or - as we call it in Shanghai, "Wednesday" (I translated that from the original Mandarin for you).</p> 
-<p> Christmas was such a trip here in China. It's celebrated like people in the west celebrate St. Patty's day: a chance to shop at discount sales, drink and hang out with friends, and potentially take the day off. And, shop they do. China's economy's growing, while the economies in the US and Europe have slowed. Last year, in 2011, the average affluent Chinese spent the holiday abroad and - in England, for example, spent 1300 pounds for the holiday (avergage). (By comparison, the average wealthy Englishman spent 1200 or so pounds). What an amazing phenomenon. One thing that was a big seller, the 'Christmas Apple', which - as I understand it - sounds in the Chinese language like the words for 'Christmas Eve.' What salesmanship. That said, I've never had a Christmas apple, and I think I should like to try one. I wonder if they'll have after-Christmas sales? </p></p>
+  			<a href="jl/blogPost/happy_new_year_and_heres_to_2013.html"><h1>Happy New Year, and Here&apos;s to 2013</h1></a>
+  			<p>31 December 2012</p>
+  			<p><p> I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here's to 2013! This year I'll ring in the new year in Shanghai, which should be interesting! </p></p>
   			<a href="jl/blogPost/chinese_weather.html"><h1>Chinese Weather</h1></a>
   			<p>26 December 2012</p>
   			<p><p>In related news, I woke up to rain today. it's freaking <em>cold</em> in China. Northern parts of China - like <a href="http://wikipedia.org/wiki/harbin">Harbin</a> - already cold enough that it's famous for its ice festivals in which amazing and beautiful ice structures are constructed in a true winter-wonderland fashion - have seen daytime HIGHS of -22C. Nanjing, which is an hour's train ride from Shanghai, where I am, hit -6 C for daytime lows. And, when the SpringSource team and I were in Beijing for <a href="http://springonechina.cloudfoundry.com">SpringOne Beijing 2012</a> we routinely hit temperatures of -8 or -9C. Brrr! I hope you're warmer, wherever you are. </p> 
 <p> I'm originally from Los Angeles, and sometimes gets, and while I'm now in rainy San Francisco, I'm not used to this kind of cold. I much prefer the cold to the hot mugginess of a humid summer, however, so I suppose this will just have to do. </p> 
 <p> As you can imagine, slingshotting from Beijing, China (at -8C) to Hyderabad and Bangalore in India, where it's a warm 30 C or so, has not been easy on the immune system. I've got a cold. Oh well.. </p></p>
+  			<a href="jl/blogPost/christmas_in_shanghai.html"><h1>Christmas in Shanghai</h1></a>
+  			<p>26 December 2012</p>
+  			<p><p> Merry Christmas! Feliz Navidad! Joyeux Noel! Feliz natal! </p> 
+<p> It's already <a href="http://en.wikipedia.org/wiki/Boxing_day">Boxing day</a>, or - as we call it in Shanghai, "Wednesday" (I translated that from the original Mandarin for you).</p> 
+<p> Christmas was such a trip here in China. It's celebrated like people in the west celebrate St. Patty's day: a chance to shop at discount sales, drink and hang out with friends, and potentially take the day off. And, shop they do. China's economy's growing, while the economies in the US and Europe have slowed. Last year, in 2011, the average affluent Chinese spent the holiday abroad and - in England, for example, spent 1300 pounds for the holiday (avergage). (By comparison, the average wealthy Englishman spent 1200 or so pounds). What an amazing phenomenon. One thing that was a big seller, the 'Christmas Apple', which - as I understand it - sounds in the Chinese language like the words for 'Christmas Eve.' What salesmanship. That said, I've never had a Christmas apple, and I think I should like to try one. I wonder if they'll have after-Christmas sales? </p></p>
   			<a href="jl/blogPost/peppeduporg.html"><h1>PeppedUp.org</h1></a>
   			<p>21 December 2012</p>
   			<p><p> I hope you guys will permit me some time on the ol' soapbox. My life is amazing, and I'm <em> very</em> fortunate. I haven't really done enough charity this year, though, if I'm honest. It's not like I can't afford a few charitable donations, and my parents always taught me to give to those who need it or aren't so fortunate. I think we all agree that charity is OK. The tension comes when we try to qualify for whom charity is appropriate. But.. kids with cancer? I'm pretty sure we can all agree that's a pretty rough rap. So, when I discovered a former colleague - Ron Haberle (himself a cancer survivor) - had started <a href="http://www.peppedup.org">a charity to support and help kids with cancer</a>, I donated and - since no amount I could possibly donate would be enough - I ask you to consider donating, to this or something else. 'Tis the season, after all, and even if you're not feeling particularly charitable, I'm pretty sure donations are tax deductible, but you have to get them done before the end of the year! </p> 
@@ -1555,6 +1615,17 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
   			<p>16 December 2012</p>
   			<p><p> <a href="http://blog.booking.com/efficient-css-compression-in-perl.html">Booking.com has announced that they've re-written the Java-based YUI Compressor using Perl</a>. I'm used to seeing people talking about rewriting systems written in Java into other languages like Python, C, C#, Haskell, Erlang, Scala, Groovy, etc. If I'm honest I just haven't seen many new Perl programs except buried in people's system administration logic and, of course, <a href="http://puppetlabs.com/">Puppet</a>. </p> 
 <p> The results are impressive though, so this is very cool. And, I expect that this will make the tool more approachable to developers as Perl's still far easier and more pervasive than Java virtual machines on machines of developers who are not Java developers. So... cool! </p></p>
+  			<a href="jl/blogPost/rest_in_peace_ravi_shankar.html"><h1>Rest in Peace Ravi Shankar</h1></a>
+  			<p>12 December 2012</p>
+  			<p><table style="margin-bottom: 10px;" cellpadding="0" cellspacing="0" border="0">
+ <tbody>
+  <tr>
+   <td valign="top" width="200"> <img src="http://joshlong.com/media/18554" width="200"> </td>
+   <td width="10"></td>
+   <td valign="top"> <p> I'm in India (Bangalore and Hyderabad) and the news today is of the passing of Ravi Shankar, the <em>sitar virtuoso</em> who's music influenced the <em>Beatles</em> in the 60s and changed the genre in some ways. The first introduction to him that I had was through the music of his daughters on <em><a href="http://en.wikipedia.org/wiki/Concert_for_George">Concert for George</a></em> (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the <em>Beatles</em> and really have a lot of respect for the man. He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP <a href="http://en.wikipedia.org/wiki/Ravi_Shankar">Ravi Shankar</a>. </p></td>
+  </tr>
+ </tbody>
+</table></p>
   			<a href="jl/blogPost/springone_beijing_and_india_trip_report.html"><h1>SpringOne Beijing and India Trip Report</h1></a>
   			<p>12 December 2012</p>
   			<p><p> I just finished <a href="http://springonechina.cloudfoundry.com">SpringOne China</a> over the weekend. The show was absolutely amazing and the attendees were, as usual, the highlight of the show. It was such an honor to meet so many wonderful people. We <a href="http://springonechina.cloudfoundry.com">finished SpringOne China</a> over the weekend and are today at the first of two events for <a href="http://springoneindia.cloudfoundry.com">SpringOne India in Bangalore and SpringOne in Hyderabad</a>. The shows have been really amazing! In particular, I've enjoyed the food, the sites and the <em>amazing</em> community that have turned up in droves! </p> 
@@ -1569,17 +1640,6 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
    <td width="300" valign="bottom"><img src="http://joshlong.com/media/18551" alt="" width="300"> <br> I gave a talk in Bangalore and people deluged the stage with questions and greetings. I asked the last wave of people to take a photo with me. </td> 
    <td width="300" valign="bottom"><img src="http://joshlong.com/media/18550" alt="" width="300" height="199"><br> Left to Right: Gary Russel, Josh Long, Jennifer Hickey, Jeremy Grelle, Oliver Gierke, Chris Richardson -- the whole SpringOne India lineup</td> 
   </tr> 
- </tbody>
-</table></p>
-  			<a href="jl/blogPost/rest_in_peace_ravi_shankar.html"><h1>Rest in Peace Ravi Shankar</h1></a>
-  			<p>12 December 2012</p>
-  			<p><table style="margin-bottom: 10px;" cellpadding="0" cellspacing="0" border="0">
- <tbody>
-  <tr>
-   <td valign="top" width="200"> <img src="http://joshlong.com/media/18554" width="200"> </td>
-   <td width="10"></td>
-   <td valign="top"> <p> I'm in India (Bangalore and Hyderabad) and the news today is of the passing of Ravi Shankar, the <em>sitar virtuoso</em> who's music influenced the <em>Beatles</em> in the 60s and changed the genre in some ways. The first introduction to him that I had was through the music of his daughters on <em><a href="http://en.wikipedia.org/wiki/Concert_for_George">Concert for George</a></em> (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the <em>Beatles</em> and really have a lot of respect for the man. He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP <a href="http://en.wikipedia.org/wiki/Ravi_Shankar">Ravi Shankar</a>. </p></td>
-  </tr>
  </tbody>
 </table></p>
   			<a href="jl/blogPost/shanghai_december_4th.html"><h1>Shanghai, December 4th</h1></a>
@@ -1602,6 +1662,9 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
  <img src="http://joshlong.com/media/18534" width="800">
 </div> 
 <p></p></p>
+  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
+  			<p>25 November 2012</p>
+  			<p><p> I found <a href="https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the environment variables</a> in Cloud Foundry with the values for this particular application. </p></p>
   			<a href="jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html"><h1>Spring Data Mongo transaction synchronization does not find a bound DB</h1></a>
   			<p>25 November 2012</p>
   			<p><p> There's an issue with Spring Data Mongo when used in the context of an application with existing <code>PlatformTransactionManager</code>-based transaction management setup, where Spring's <code>TransactionSynchronizationManager</code> tries to find the bound Spring Data Mongo <code>DB</code> instance, but fails and throws an exception. </p>
@@ -1628,9 +1691,6 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
  </pre> 
 <p></p> 
 <p> Hat tip to the one and only <a href="https://twitter.com/olivergierke">Oliver Gierke</a> for helping me with this! </p></p>
-  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
-  			<p>25 November 2012</p>
-  			<p><p> I found <a href="https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the environment variables</a> in Cloud Foundry with the values for this particular application. </p></p>
   			<a href="jl/blogPost/devoxx_2012_trip_report.html"><h1>Devoxx 2012 Trip Report</h1></a>
   			<p>16 November 2012</p>
   			<p><div style="margin-bottom:10px;">
@@ -1726,14 +1786,6 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
   			<a href="jl/blogPost/java2days_2012.html"><h1>Java2Days 2012</h1></a>
   			<p>23 October 2012</p>
   			<p><p> Again this year ill return to my favorite conference in eastern Europe, the <a href="http://2012.java2days.com/">Java2Days</a> conference in Sofia, Bulgaria, where I'll give my talks on multi client development with Spring MVC and on getting started with Cloud Foundry, the open source PaaS from VMware. If you're in the region (Turkey, Greece, Armenia, Bulgaria, etc.), then join <a href="http://www.twitter.com/starbuxman">me</a> and we'll talk Spring and Cloud Foundry over<em> rakija</em>! </p></p>
-  			<a href="jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html"><h1>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</h1></a>
-  			<p>19 October 2012</p>
-  			<p><p> My talk from <a href="http://www.javazone.no"> JavaZone</a> is now available online. I co-presented with <a href="http://www.twitter.com/z_oleg">Oleg Zhurakousky</a>, colleague and co-committer on <a href="http://springsource.org/spring-integration">Spring Integration</a>. If you'd like a quick look, <a href="http://vimeo.com/49477307">check it - and all the other great videos on the JavaZone Vimeo page - out</a>! </p>
-<div> 
- <iframe src="http://player.vimeo.com/video/49477307" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
- <p><a href="http://vimeo.com/49477307">Enterprise Integration and Batch Processing on Cloud Foundry</a> from <a href="http://vimeo.com/javazone">JavaZone</a> on <a href="http://vimeo.com">Vimeo</a>.</p> 
-</div> 
-<p></p></p>
   			<a href="jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html"><h1>Arlington, VA Cloud Foundry Dev Day</h1></a>
   			<p>19 October 2012</p>
   			<p><p> Fresh from SpringOne2GX, I'm in Arlington, VA, working with developers who want to get started with Cloud Foundry. This is a hands on event, and many of my colleagues and I are here to help developers get started. </p>
@@ -1745,6 +1797,14 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
  <a href="http://twitter.com/ebottard">Eric Bottard</a> and 
  <a href="http://twitter.com/andypiper">Andy Piper</a> co-leading a developer hands-on session.  
 </div></p>
+  			<a href="jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html"><h1>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</h1></a>
+  			<p>19 October 2012</p>
+  			<p><p> My talk from <a href="http://www.javazone.no"> JavaZone</a> is now available online. I co-presented with <a href="http://www.twitter.com/z_oleg">Oleg Zhurakousky</a>, colleague and co-committer on <a href="http://springsource.org/spring-integration">Spring Integration</a>. If you'd like a quick look, <a href="http://vimeo.com/49477307">check it - and all the other great videos on the JavaZone Vimeo page - out</a>! </p>
+<div> 
+ <iframe src="http://player.vimeo.com/video/49477307" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+ <p><a href="http://vimeo.com/49477307">Enterprise Integration and Batch Processing on Cloud Foundry</a> from <a href="http://vimeo.com/javazone">JavaZone</a> on <a href="http://vimeo.com">Vimeo</a>.</p> 
+</div> 
+<p></p></p>
   			<a href="jl/blogPost/springone2gx_2012_trip_report.html"><h1>SpringOne2GX 2012 Trip Report</h1></a>
   			<p>18 October 2012</p>
   			<p><p> </p>
@@ -2277,13 +2337,13 @@ public class MyClass {
   			<a href="jl/blogPost/wtf_linked_lists_patented.html"><h1>WTF! Linked Lists patented</h1></a>
   			<p>27 August 2011</p>
   			<p><p> <a href="http://twitter.com/#!/timfox/status/107382409091235840">Tim Fox</a> retweeted this tweet from <a href="http://news.ycombinator.com/">Hacker News</a>'s <a href="http://twitter.com/#!/hackernewsbot">Hacker News Bot</a> that <a href="http://www.google.com/patents/?vid=Szh4AAAAEBAJ">linked lists had apparently been patented</a> and responded as aptly as I could've: <em>WTF</em>. </p></p>
-  			<a href="jl/blogPost/getting_started_with_spring_roo.html"><h1>Getting Started with Spring Roo</h1></a>
-  			<p>12 August 2011</p>
-  			<p><p> <img src="http://joshlong.com/media/17884" style=" float:left;margin-right:10px;"> Steve Mayzak and I have just finished a book for O'REILLY, <em><a href="http://oreilly.com/catalog/0636920020981">Getting Started with Spring Roo.</a></em> The book's a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for <b>Vaadin</b> - a powerful, alternative web framework, and <b>Neo4j</b> - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you're interested in Spring Roo, I hope you'll check this out. </p></p>
   			<a href="jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html"><h1>RabbitMQ is now officially available on CloudFoundry!</h1></a>
   			<p>12 August 2011</p>
   			<p><p> <img src="http://joshlong.com/media/17873" style="width:80px;float:left; margin-right:10px;"> <img style="float:left ; margin-right: 10px;width:80px;" src="http://joshlong.com/media/17874"> For you <a href="http://github.com/CloudFoundry">code lurkers</a> out there, the news that <a href="http://www.rabbitmq.com/">RabbitMQ</a> is now available in <a href="http://www.cloudfoundry.org">CloudFoundry</a> should come as no surprise. But, it's finally here! This is very exciting. One thing I've always loved about RabbitMQ is its ubiquity. It is more widely used than any other message broker on the cloud, and on Amazon Web Services in particular. The AWS tidbit's a bit more awesome when you realize that AWS already has a message broker service called SQS! ;-) Anyway, it's now available on CloudFoundry. You <a href="http://support.cloudfoundry.com/entries/20322602-getting-started-with-the-rabbitmq-service-from-a-spring-application">should definitely</a> check <a href="http://blog.cloudfoundry.com/post/8713844574/rabbitmq-cloud-foundry-cloud-messaging-that-just-works">it out.</a> The <a href="http://www.theregister.co.uk/2011/08/10/vmware_cloud_foundry_adds_rabbitmq_messaging/">news</a> overall seems good, too! Messaging middleware is <em>the</em> critical component for scale. Cloud-scale is a way of life, not just a switch to be turned on and off. Specifically, an architecure that scales is going to enjoy temporally decoupling, or <em>asynchronism,</em> and RabbitMQ is the perfect vehicle to enable that asynchronous coordination. </p> 
 <p> If you're a Spring developer, and haven't had a chance to look at CloudFoundry, then I strongly recommend you see <a href="http://blog.springsource.com/2011/04/12/cloud-foundry-for-spring-developers/">Mark Fisher's entry on the SpringSource blog</a> introducing the wide world of the cloud for Spring developers from a few months ago. There's also great content on <a href="http://www.youtube.com/SpringSourceDev">the SpringSource YouTube channel.</a> </p></p>
+  			<a href="jl/blogPost/getting_started_with_spring_roo.html"><h1>Getting Started with Spring Roo</h1></a>
+  			<p>12 August 2011</p>
+  			<p><p> <img src="http://joshlong.com/media/17884" style=" float:left;margin-right:10px;"> Steve Mayzak and I have just finished a book for O'REILLY, <em><a href="http://oreilly.com/catalog/0636920020981">Getting Started with Spring Roo.</a></em> The book's a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for <b>Vaadin</b> - a powerful, alternative web framework, and <b>Neo4j</b> - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you're interested in Spring Roo, I hope you'll check this out. </p></p>
   			<a href="jl/blogPost/speaking_at_javazone_2011.html"><h1>Speaking at JavaZone 2011</h1></a>
   			<p>07 August 2011</p>
   			<p><p> I'm excited to announce that I'll be speaking at <a href="http://jz11.java.no/">JavaZone</a> again this year. I must confess, I was a little worried that I would not be accepted this year! My talk last year - on business process management and Spring Integration - seemed to garner puzzled looks. Perhaps I just misread the <em>amazing</em> Norwegian audience? The conference (and the technical presentations, to boot) were both wonderful.</p> 
@@ -2583,7 +2643,34 @@ RSP=0x00007ffc7fd671e0
 RSI=0x00007ffc85a840d0
 0x00007ffc85a840d0: 
   <offset 0x99d0d0>
-    in /usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64/server/libjvm.so at 0x00007ffc850e7000 ... R9 =0x0000000040534d90 0x0000000040534d90 is a global jni handle R10=0x00000000404f5790 0x00000000404f5790 is pointing to unknown location ... R15=0x0000000000000001 0x0000000000000001 is pointing to unknown location Top of Stack: (sp=0x00007ffc7fd671e0) 0x00007ffc7fd671e0: 0000000000000005 000000004080b200 ... Instructions: (pc=0x00007ffc8537f61e) 0x00007ffc8537f60e: 48 89 fe 0f 84 2e 01 00 00 4c 8b 05 8a 13 83 00 0x00007ffc8537f61e: 8b 53 08 41 8b 48 08 48 d3 e2 49 03 10 8b 4a 18 Stack: [0x00007ffc7fc69000,0x00007ffc7fd6a000], sp=0x00007ffc7fd671e0, free space=1016k Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code) V [libjvm.so+0x29861e] V [libjvm.so+0x296c0b] ... Current CompileTask: C2:1110 org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDeclarator.postAccept( Lorg/eclipse/cdt/core/dom/ast/ASTVisitor;)Z (97 bytes) --------------- P R O C E S S --------------- Java Threads: ( =&gt; current thread ) 0x000000004129e000 JavaThread "Worker-9" [_thread_blocked, id=781, stack(0x00007ffc623e6000,0x00007ffc624e7000)] ... 0x00007ffc79ad8000 JavaThread 
+    in /usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64/server/libjvm.so at 0x00007ffc850e7000
+...
+R9 =0x0000000040534d90
+0x0000000040534d90 is a global jni handle
+R10=0x00000000404f5790
+0x00000000404f5790 is pointing to unknown location
+...
+R15=0x0000000000000001
+0x0000000000000001 is pointing to unknown location
+Top of Stack: (sp=0x00007ffc7fd671e0)
+0x00007ffc7fd671e0:   0000000000000005 000000004080b200
+...
+Instructions: (pc=0x00007ffc8537f61e)
+0x00007ffc8537f60e:   48 89 fe 0f 84 2e 01 00 00 4c 8b 05 8a 13 83 00
+0x00007ffc8537f61e:   8b 53 08 41 8b 48 08 48 d3 e2 49 03 10 8b 4a 18 
+Stack: [0x00007ffc7fc69000,0x00007ffc7fd6a000],  sp=0x00007ffc7fd671e0,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x29861e]
+V  [libjvm.so+0x296c0b]
+...
+Current CompileTask:
+C2:1110      org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDeclarator.postAccept(
+ Lorg/eclipse/cdt/core/dom/ast/ASTVisitor;)Z (97 bytes)
+---------------  P R O C E S S  ---------------
+Java Threads: ( =&gt; current thread )
+  0x000000004129e000 JavaThread "Worker-9" [_thread_blocked, id=781, stack(0x00007ffc623e6000,0x00007ffc624e7000)]
+  ...
+  0x00007ffc79ad8000 JavaThread 
    <b>"org.eclipse.cdt.internal.ui.text.CReconciler"</b> daemon [_thread_blocked, id=760, stac
   </offset></code></pre> 
 <p> My many years of experience have helped me in these situations - they inform my professionalism and abiity to react decisevly and appropriately. It is imperative that one keep is cool when things don't work out as planned. </p> 
@@ -2708,6 +2795,9 @@ RSI=0x00007ffc85a840d0
 <a href="http://www.activiti.org">Activiti</a> (simialar to the talk I gave at 
 <a href="http://jz10.java.no/">JavaZone</a> recently). Java2Days is the only conference of its kind in the Balkans and I sincerely hope to see you there! 
 <p></p></p>
+  			<a href="jl/blogPost/spring_for_forcecom_developers.html"><h1>Spring for Force.com Developers</h1></a>
+  			<p>03 September 2010</p>
+  			<p><p> <img src="http://joshlong.com/media/17869" style="float:left; margin-right:10px;"> I did a webinar with <a href="http://www.twitter.com/cloudcoder">Quinton Wall</a>, the Developer Evangelist for <a href="http://www.salesforce.com">Salesforce.com</a> and specifically on the <a href="http://www.vmforce.com">VMforce</a> collaboration. The talk went very well (thanks for all the questions and good feedback, guys!) and we have the recorded webinar, code and slides up <a href="http://www.springsource.org/node/2836">here</a>. This first webinar was more about introducing developers to the Spring framework, and establishing basic skills to enable developers to use <a href="http://www.vmforce.com">VMforce.com</a>. Stay tuned for the <a href="http://www.developerforce.com/events/getstart_vmforce_techtalk/registration.php?d=70130000000FK2U">next webinar,</a> coming Sept 9, that will expand on the details of VMForce.com as an opportunity for Spring developers. </p></p>
   			<a href="jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html"><h1>Spring and the Activiti BPMN2 engine  at JavaZone 2010</h1></a>
   			<p>03 September 2010</p>
   			<p><p> <img src="http://joshlong.com/media/17868" style="float:left; padding-right:10px; "> I'll be speaking at <a href="http://jz10.java.no/">JavaZone</a> in <a href="http://jz10.java.no/about.html#The_Venue">Oslo, Norway</a> on using <a href="http://javazone.no/incogito10/events/JavaZone%202010/sessions#76db7d95-1ca5-4288-bc45-b71210a62b70">Spring and Activiti</a> together. If you want to learn a bit about <a href="http://en.wikipedia.org/wiki/Business_process_management">Business Process Management</a> using <a href="http://www.activiti.org">Activiti</a> in conjunction with the <a href="http://www.springsource.org">Spring framework,</a> then this talk is for you! We'll explore using Spring from Activiti's BPMN 2 engine, and we'll explore connecting your business processes to other interesting systems and offloading work using <a href="http://www.springsource.org/spring-integration">Spring Integration,</a> SpringSource's framework for building event driven applications and connecting your applications to your data and services. </p> We'll talk a little bit about Spring Integration, but you won't want to miss Spring Integration lead 
@@ -2715,9 +2805,6 @@ RSI=0x00007ffc85a840d0
 <a href="http://javazone.no/incogito10/events/JavaZone%202010/sessions#d1f50946-9c72-441c-b30b-70af5b21633c">Spring 3 Java Config.</a>
 <p></p> 
 <p> People may know about JavaZone from their excellent <a href="http://jz10.java.no/java-4-ever-trailer.html">Java 4-Ever</a> trailer or their <a href="http://jz10.java.no/ladyjava-music-video.html">Lady Java</a> video. If you haven't seen these, then check them out! </p></p>
-  			<a href="jl/blogPost/spring_for_forcecom_developers.html"><h1>Spring for Force.com Developers</h1></a>
-  			<p>03 September 2010</p>
-  			<p><p> <img src="http://joshlong.com/media/17869" style="float:left; margin-right:10px;"> I did a webinar with <a href="http://www.twitter.com/cloudcoder">Quinton Wall</a>, the Developer Evangelist for <a href="http://www.salesforce.com">Salesforce.com</a> and specifically on the <a href="http://www.vmforce.com">VMforce</a> collaboration. The talk went very well (thanks for all the questions and good feedback, guys!) and we have the recorded webinar, code and slides up <a href="http://www.springsource.org/node/2836">here</a>. This first webinar was more about introducing developers to the Spring framework, and establishing basic skills to enable developers to use <a href="http://www.vmforce.com">VMforce.com</a>. Stay tuned for the <a href="http://www.developerforce.com/events/getstart_vmforce_techtalk/registration.php?d=70130000000FK2U">next webinar,</a> coming Sept 9, that will expand on the details of VMForce.com as an opportunity for Spring developers. </p></p>
   			<a href="jl/blogPost/secure_file_transfer_the_only_way_to_fly_err_copy.html"><h1>(Secure) File Transfer, the Only Way to Fly... err Copy</h1></a>
   			<p>24 August 2010</p>
   			<p><p> I've recently posted a piece on using the file-transfer adapters in <a href="http://www.springsource.org/spring-integration">Spring Integration 2.0</a> on the <a href="http://blog.springsource.com/2010/08/23/secure-file-transfer-the-only-way-to-fly/">SpringSource blog</a>. Check it out and leave a comment! </p></p>
@@ -2779,7 +2866,8 @@ RSI=0x00007ffc85a840d0
 this.jmsTemplate.send(this.destination, new MessageCreator() { 
     public Message createMessage(final Session session) throws JMSException { 
         TextMessage textMessage = session.createTextMessage( ... ); 
-       <b> textMessage.setStringProperty("_HQ_LVQ_NAME", someUniqueStringThatYouSpecify); </b> 
+       <b> textMessage.setStringProperty("_HQ_LVQ_NAME", 
+someUniqueStringThatYouSpecify); </b> 
         return textMessage; 
     } 
 }); 
@@ -2827,7 +2915,18 @@ this.jmsTemplate.send(this.destination, new MessageCreator() {
   &lt;link rel="stylesheet" href="styles.css" type="text/css"&gt; 
 &lt;/head&gt; 
 &lt;body&gt; 
-<b> &lt;script src="http://code.jquery.com/jquery-latest.pack.js"&gt;&lt;/script&gt; &lt;script language="javascript"&gt; function ajax( url, cb){ var yqlUrl = "http://query.yahooapis.com/v1/public/yql?"+ "q=select%20*%20from%20html%20where%20url%3D%22"+ encodeURIComponent(url)+ "%22&amp;format=xml'&amp;callback=?" ; $.getJSON( yqlUrl, cb ); } &lt;/script&gt; </b> 
+<b> 
+&lt;script src="http://code.jquery.com/jquery-latest.pack.js"&gt;&lt;/script&gt; 
+&lt;script language="javascript"&gt; 
+function ajax( url, cb){ 
+ var yqlUrl =  "http://query.yahooapis.com/v1/public/yql?"+ 
+            "q=select%20*%20from%20html%20where%20url%3D%22"+ 
+              encodeURIComponent(url)+ 
+            "%22&amp;format=xml'&amp;callback=?" ; 
+ $.getJSON( yqlUrl,  cb ); 
+} 
+&lt;/script&gt; 
+</b> 
 &lt;script language="javascript"&gt; 
 $(document).ready(function(){ 
  ajax( 'http://www.joshlong.com', function(data){ 
@@ -2862,7 +2961,10 @@ $(document).ready(function(){
   			<p><p>I use <a href="http://www.postgresql.org/">PostgreSQL</a> 8.3 - highly recommended by the way - and I just updated an application to 8.4. The application is built principally using Spring, Hibernate, and JMS. Naturally, some level of cooperation among transactions is required, so I use an XA provider - <a href="http://docs.codehaus.org/display/BTM/Home">Bitronix.</a> Everything was working swimmingly with PostgreSQL 8.3, but the application buckled on startup with errors when I upgrade PostgreSQL to 8.4: </p>
 <pre><code>Dec 30, 2009 11:25:50 PM 
 bitronix.tm.twopc.AbstractPhaseEngine logFailedResources 
-<b>SEVERE: resource xasql failed on a Bitronix XID [737072696E672D62746D2D- 73656E64657200000125E3A04B9900000038 : 737072696E672D62746D2D73656E6465720- 0000125E3A04BA40000003A] org.postgresql.xa.PGXAException: Error preparing transaction</b> 
+<b>SEVERE: resource xasql failed on a Bitronix XID [737072696E672D62746D2D- 
+73656E64657200000125E3A04B9900000038 : 737072696E672D62746D2D73656E6465720- 
+0000125E3A04BA40000003A] 
+org.postgresql.xa.PGXAException: Error preparing transaction</b> 
 at org.postgresql.xa.PGXAConnection.prepare(PGXAConnection.java:254) 
 at bitronix.tm.twopc.Preparer$PrepareJob.run(Preparer.java:134) 
 at bitronix.tm.twopc.executor.SyncExecutor.submit(SyncExecutor.java:12) 
@@ -2881,7 +2983,8 @@ at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(Expose
 at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172) 
 at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:202) 
 ... 
-<b>Caused by: org.postgresql.util.PSQLException: ERROR: prepared transactions are disabled</b> 
+<b>Caused by: org.postgresql.util.PSQLException: ERROR: prepared 
+transactions are disabled</b> 
 at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:1592) 
 at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1327) 
 at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:192) 
@@ -2944,11 +3047,16 @@ Date()) ) ;
        http://www.springframework.org/schema/lang/spring-lang-3.0.xsd 
        http://www.springframework.org/schema/context 
        http://www.springframework.org/schema/context/spring-context-3.0.xsd 
-       <b>http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd</b>"&gt; 
+       <b>http://www.springframework.org/schema/task 
+       http://www.springframework.org/schema/task/spring-task-3.0.xsd</b>"&gt; 
  &lt;context:annotation-config/&gt; 
  &lt;context:component-scan annotation-config="true" 
        base-package="com.yourbasepackage.scheduling" /&gt; 
-<b> &lt;task:scheduler id="scheduler" pool-size="10"/&gt; &lt;task:executor id="executor" pool-size="10"/&gt; &lt;task:annotation-driven scheduler="scheduler" executor = "executor" /&gt; </b> 
+<b> 
+ &lt;task:scheduler id="scheduler" pool-size="10"/&gt; 
+ &lt;task:executor id="executor" pool-size="10"/&gt; 
+ &lt;task:annotation-driven scheduler="scheduler" executor = "executor" /&gt; 
+</b> 
 &lt;/beans&gt; 
 </code></pre>
 <p></p> 
@@ -3057,7 +3165,15 @@ ref="resourceSuffixCreator"/&gt;
         &lt;beans:property name="saveState" value="true"/&gt; 
         &lt;beans:property name="itemCountLimitPerResource" value="50000"/&gt; 
         &lt;beans:property name="<b>delegate</b>"&gt; 
-<b> &lt;beans:bean class="org.springframework.batch.item.file.FlatFileItemWriter"&gt; &lt;beans:property name="encoding" value="UTF-8"/&gt; &lt;beans:property name="shouldDeleteIfExists" value="true"/&gt; &lt;beans:property name="lineAggregator" ref="siteMapLineAggregator"/&gt; &lt;/beans:bean&gt; </b> 
+<b> 
+            &lt;beans:bean 
+class="org.springframework.batch.item.file.FlatFileItemWriter"&gt; 
+                &lt;beans:property name="encoding" value="UTF-8"/&gt; 
+                &lt;beans:property name="shouldDeleteIfExists" value="true"/&gt; 
+                &lt;beans:property name="lineAggregator" 
+ref="siteMapLineAggregator"/&gt; 
+            &lt;/beans:bean&gt; 
+</b> 
         &lt;/beans:property&gt; 
     &lt;/beans:bean&gt; 
     &lt;beans:bean id="siteMapUrlRowMapper" 
@@ -3933,6 +4049,16 @@ mvn jetty:run ;
   			<a href="jl/blogPost/my_other_blog_on_artima.html"><h1>My other blog on Artima.com, and my first post, &quot;The New Old&quot;</h1></a>
   			<p>18 December 2008</p>
   			<p><p><a href="http://www.artima.com/weblogs/viewpost.jsp?thread=245528">The New Old</a>, my first post on Artima.com. Check it out. Let's talk. </p></p>
+  			<a href="jl/blogPost/anyone_else_noticing_the_extreme.html"><h1>Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10?</h1></a>
+  			<p>17 December 2008</p>
+  			<p><p> Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10? I upgraded and was expecting that the seminal Java 6u10 (strike that!<b> 11! </b>) would do better than this. </p> 
+<p> I was expecting draggable applets and for the performance of my Java applications to not deteriorate. I was disappointed on both fronts. If you're having issues with IntelliJ crawling, a lot of people have downgraded to 8.04 Ubuntu. </p></p>
+  			<a href="jl/blogPost/apple_news_mobile_and_otherwise.html"><h1>Apple News, Mobile and Otherwise</h1></a>
+  			<p>17 December 2008</p>
+  			<p><p><img STYLE="float:left; padding-right:10px;" width="100" src="http://joshlong.com/media/17842"> <a href="http://livelabs.com/seadragon-mobile/" target="_blank">SeaDragon</a>, an application from Microsoft that extracts the "Deep Zoom" component from Silver Light and enables it on an iPhone, has been released to the Apple Application Store (Wonders never cease!) because the Apple iPhone has a fantastic GPU. </p> 
+<p>What's very interesting to me about this feature is not the mobile component, but <a href="http://livelabs.com/seadragon-ajax/" target="_blank">the ajax one</a>. </p>
+<p> <a href="http://www.internetnews.com/bus-news/article.php/3791651/MacPainful+Apple+Bows+Out+of+Macworld+Expo.htm" target="_blank">Apple, Steve Jobs, bow out of MacWorld Expo.</a> This fuels the usual debate on Steve Jobs' health, as usual, and rumors run rampant. What do you think? Sick? Disincentivized? </p> 
+<p> PLUS: My new favorite iPhone Application: <a href="http://www.techcrunch.com/2008/12/16/taxi-magic-hail-a-cab-from-your-iphone-at-the-push-of-a-button/">Taxi Magic</a>. Seriously -- how slick is that? When do you usually need a Taxi? When you're most impaired, likely, say perhaps after drinking? One button. Finally, technology for fun and profit. </p></p>
   			<a href="jl/blogPost/a_journey_of_a_thousand.html"><h1>A journey of a thousand miles begins with a single step: “Programming Collective Intelligence”, by O&apos;Reilly</h1></a>
   			<p>17 December 2008</p>
   			<p><p> Working through my reading list. You might infer that I'm a bit behind because this review is about a book published in September of 2007.</p> 
@@ -3940,10 +4066,6 @@ mvn jetty:run ;
 <p>"Programming Collective Intelligence" is astonishingly clear and concise in the examples, and a brilliant introduction to the foundations of a lot of fields of study. A well presented discussion on many of the key items in the AI/algorithm world. Why is this so worth repeating? Because these concepts – genetic algorithms/ AI / optimization, etc, are NOT common nor are they simple. Anybody who manages to make them appear so is worth of praise. The examples are further interesting because they're written in Python, which is as simple as a language can get. (Digression: Python 3.0's out! How come I didn't see a flurry of news? How come there was no ball drop in Times Square? I'm excited, and proportionately confused by some people's reactions, <a href="http://www.mooseyard.com/Jens/2008/12/python-30-whats-the-point/">like this one</a>. Get your <a href="http://python.org/download/releases/3.0">copy while it's hot!</a> </p>
 <p> The book is sort of the first rung of knowledge on a whole gamut of complex topics, but that's OK because these topics become approachable only once you've gotten the introductory tour. Finding that "tour", the source for the inevitable epiphany, is what's so hard about these concepts. It's even further difficult because it's not like there's a lot of mainstream thinking going on here and these concepts just represent a slight tangent on what you're already dealing with. Anything but. People who know why they want to use something like JBoss Rules already knew it. You'll notice there's no good "sales" rhetoric on the JBoss website. It's the chicken and egg problem. Understanding the concepts in this book is key to caring about, and eventually understanding, things like JBoss Rules. </p> 
 <p> All in all, a very worthy read. If nothing else, it's a good refresher. </p></p>
-  			<a href="jl/blogPost/anyone_else_noticing_the_extreme.html"><h1>Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10?</h1></a>
-  			<p>17 December 2008</p>
-  			<p><p> Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10? I upgraded and was expecting that the seminal Java 6u10 (strike that!<b> 11! </b>) would do better than this. </p> 
-<p> I was expecting draggable applets and for the performance of my Java applications to not deteriorate. I was disappointed on both fronts. If you're having issues with IntelliJ crawling, a lot of people have downgraded to 8.04 Ubuntu. </p></p>
   			<a href="jl/blogPost/a_quick_guide_to_posting.html"><h1>A Quick Guide to Posting To (A Few) Blogs with Java</h1></a>
   			<p>17 December 2008</p>
   			<p>First, How to Post to Any API that supports the (admittedly) outdated MetaWeblog API. 
@@ -3972,7 +4094,20 @@ pass, String blogID, String title, String content) throws IOException
   <string, object>
     m = new HashMap
    <string, object>
-    (); m.put("title", title); m.put("description", content); m.put("dateCreated", new Date()); m.put("category", "Java"); Object[] params = new Object[]{blogID, user, pass, m, true}; ret = (String) client.execute("metaWeblog.newPost", params); } catch (Throwable th) { System.out.println( "blam!") ; } return ret; // a unique ID generated by Roller } 
+    ();
+            m.put("title", title);
+            m.put("description", content);
+            m.put("dateCreated", new Date());
+            m.put("category", "Java");
+            Object[] params = new Object[]{blogID, user, pass, m, true};
+            ret = (String) client.execute("metaWeblog.newPost", params);
+        } catch (Throwable th) {
+            System.out.println( "blam!") ;
+        }
+        return ret;   // a unique ID generated by Roller
+    }
+
+
    </string,>
   </string,></code></pre> 
 <p></p> 
@@ -3993,12 +4128,6 @@ Person(StringUtils.defaultString(authorName), null, null);
 </code></pre> 
 <p></p> 
 <p> The Google Data stuff was using the Java Google Data APIs. The XMLRPC library is quite formidable. I'd not recommend using Apache XMLRPC 3.1.1 from Maven, as it didn't seem to be a valid artifact. </p></p>
-  			<a href="jl/blogPost/apple_news_mobile_and_otherwise.html"><h1>Apple News, Mobile and Otherwise</h1></a>
-  			<p>17 December 2008</p>
-  			<p><p><img STYLE="float:left; padding-right:10px;" width="100" src="http://joshlong.com/media/17842"> <a href="http://livelabs.com/seadragon-mobile/" target="_blank">SeaDragon</a>, an application from Microsoft that extracts the "Deep Zoom" component from Silver Light and enables it on an iPhone, has been released to the Apple Application Store (Wonders never cease!) because the Apple iPhone has a fantastic GPU. </p> 
-<p>What's very interesting to me about this feature is not the mobile component, but <a href="http://livelabs.com/seadragon-ajax/" target="_blank">the ajax one</a>. </p>
-<p> <a href="http://www.internetnews.com/bus-news/article.php/3791651/MacPainful+Apple+Bows+Out+of+Macworld+Expo.htm" target="_blank">Apple, Steve Jobs, bow out of MacWorld Expo.</a> This fuels the usual debate on Steve Jobs' health, as usual, and rumors run rampant. What do you think? Sick? Disincentivized? </p> 
-<p> PLUS: My new favorite iPhone Application: <a href="http://www.techcrunch.com/2008/12/16/taxi-magic-hail-a-cab-from-your-iphone-at-the-push-of-a-button/">Taxi Magic</a>. Seriously -- how slick is that? When do you usually need a Taxi? When you're most impaired, likely, say perhaps after drinking? One button. Finally, technology for fun and profit. </p></p>
   			<a href="jl/blogPost/how_to_ride_spring_integration.html"><h1>How to Ride Spring Integration Head</h1></a>
   			<p>13 December 2008</p>
   			<p><p>How to build Spring Integration (for Maven) locally... Posting this for my own reference as much as anyone else.</p> 
@@ -4116,7 +4245,10 @@ esley/dp/0321200683">Enterprise Integration Patterns</a>: this has the boon of m
     my_title = arr.join('.')
     end
 
-    <b># this will run each time. The first time it runs # it will cause Flickr to display a screen prompting you # to give permission to the application, which you will do. </b>
+    <b># this will run each time. The first time it runs
+        # it will cause Flickr to display a screen prompting you
+        # to give permission to the application, which you will do.
+    </b>
     def auth_rflickr(api, secret)
     unless $flickr.auth.token
     $flickr.clear_cache
@@ -4134,7 +4266,8 @@ esley/dp/0321200683">Enterprise Integration Patterns</a>: this has the boon of m
     dir_for_output =Dir.new( FileUtils.mkdir_p("../output"))
     dir_for_input = Dir.new "/home/yourUser/Desktop/photos/"
 
-    <b># here we run through the input folder and examine #the contents, building up the array of files to upload.</b>
+    <b># here we run through the input folder and examine
+        #the contents, building up the array of files to upload.</b>
     files= []
     Find.find(dir_for_input.path) do |path|
     if !FileTest.directory?(path)
@@ -4189,7 +4322,8 @@ esley/dp/0321200683">Enterprise Integration Patterns</a>: this has the boon of m
     after = before.normalize
     after.write( ofile )
     exif_out = MiniExiftool.new ofile
-    <b> # open the file with MiniExiftool, which wraps exif #tool, and perform operations on the exif metadata.</b>
+    <b> # open the file with MiniExiftool, which wraps exif
+        #tool, and perform operations on the exif metadata.</b>
     exif_in = MiniExiftool.new ifile.path
     exif_out['Orientation'] = exif_in ['Orientation']
     puts 'couldnt save exif data!' if !exif_out.save
@@ -4299,14 +4433,14 @@ esley/dp/0321200683">Enterprise Integration Patterns</a>: this has the boon of m
   			<p>14 August 2008</p>
   			<p>Did you know that 
 <code>mvn archetype:generate</code>, by itself, on the command line, yeilds a listing of all the archetypes you have available? I just stumbled upon this today - great trick!</p>
+  			<a href="jl/blogPost/keith_donald_speaking_on_spring.html"><h1>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</h1></a>
+  			<p>10 August 2008</p>
+  			<p><p> Keith Donald's going to be at this week's <a href="http://www.phxjug.org/">Phoenix Java User Group</a> talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can't wait for this one! </p></p>
   			<a href="jl/blogPost/subversion_1_5_intellij_idea.html"><h1>Subversion 1.5, IntelliJ IDEA, and you</h1></a>
   			<p>10 August 2008</p>
   			<p><p> I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ's Subversion support to lose its mind. It would paint the files blue as though it realized the file was "dirty" but then when I hit ctrl + k to submit the changes to Subversion, it would respond, "No Changes found". I did some sleuthing: <a href="http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP">IntelliJ IDEA build 7938</a> fixes the issue. </p>
 <p>I installed the new version and opened up a project and everything was in error. It was almost as thought it didn't have a JDK set, so I tried to point it at a JDK but that didn't work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (<code>/home/jlong/.IntelliJIdea70</code>). <b>That</b> worked! </p> 
 <p> In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn't genuine user error!) has delayed me... now, Eclipse on the other hand... </p></p>
-  			<a href="jl/blogPost/keith_donald_speaking_on_spring.html"><h1>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</h1></a>
-  			<p>10 August 2008</p>
-  			<p><p> Keith Donald's going to be at this week's <a href="http://www.phxjug.org/">Phoenix Java User Group</a> talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can't wait for this one! </p></p>
   			<a href="jl/blogPost/installng_postgis_and_the_tiger.html"><h1>Installng PostGIS and the TIGER Geocoder</h1></a>
   			<p>13 July 2008</p>
   			<p><p>Note this is an incomplete document. I have yet to confirm that this works 100%, but here are the things I noted while installing PostGIS' TIGER Geocoder. First and foremost, the source code is available via <code>svn co http://svn.refractions.net/postgis/trunk/extras/tiger_geocoder</code>. A lot of this information is an incomplete copy of what's available from : <a href="http://postgis.refractions.net/support/wiki/index.php?PostgisOnUbuntu">http://postgis.refractions.net/support/wiki/index.php?PostgisOnUbuntu</a> </p>
@@ -4731,7 +4865,7 @@ esley/dp/0321200683">Enterprise Integration Patterns</a>: this has the boon of m
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
       </div>
     </div>
     

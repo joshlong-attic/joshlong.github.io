@@ -120,7 +120,19 @@ public class BatchInfrastructureConfiguration   {
 
         Class
   <driver>
-    classOfDs = environment.getPropertyAsClass("dataSource.driverClassName", Driver.class); SimpleDriverDataSource dataSource = new SimpleDriverDataSource(); dataSource.setPassword(pw); dataSource.setUrl(url); dataSource.setUsername(user); dataSource.setDriverClass(classOfDs); return dataSource; } } 
+    classOfDs = environment.getPropertyAsClass("dataSource.driverClassName", Driver.class);
+
+        SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
+        dataSource.setPassword(pw);
+        dataSource.setUrl(url);
+        dataSource.setUsername(user);
+        dataSource.setDriverClass(classOfDs);
+
+        return dataSource;
+    }
+}
+
+
   </driver></code></pre> 
 <p> Once you've done this, you can start describing jobs using the Spring Batch configuration DSL. Here, we define a job named <code>flickrImportJob</code> which in turn has one step, <code>step1</code>, that in turn reads data using an <code>ItemReader</code> named <code>photoAlbumItemReader</code> and writes data using an <code>ItemWriter</code> named <code>photoAlbumItemWriter</code>. </p> 
 <pre><code>
@@ -145,11 +157,24 @@ public class BatchImporterConfiguration {
     public Step step1(StepBuilderFactory stepBuilderFactory,
                       @Qualifier("photoAlbumItemReader") ItemReader
   <photoset>
-    ir, @Qualifier("photoAlbumItemWriter") ItemWriter
+    ir,
+                      @Qualifier("photoAlbumItemWriter") ItemWriter
    <photoset>
-     iw ) { return stepBuilderFactory.get("step1") .
+     iw
+    ) {
+        return stepBuilderFactory.get("step1")
+                .
     <photoset, photoset>
-     chunk(10) .reader(ir) .writer(iw) .build(); } // ... omitting definitions of ItemReader and ItemWriters } 
+     chunk(10)
+                .reader(ir)
+                .writer(iw)
+                .build();
+    }
+    // ... omitting definitions of ItemReader and ItemWriters 
+}
+   
+
+
     </photoset,>
    </photoset>
   </photoset></code></pre></p>
@@ -162,7 +187,7 @@ public class BatchImporterConfiguration {
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
       </div>
     </div>
     

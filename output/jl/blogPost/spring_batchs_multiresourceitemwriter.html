@@ -138,7 +138,15 @@ ref="resourceSuffixCreator"/&gt;
         &lt;beans:property name="saveState" value="true"/&gt; 
         &lt;beans:property name="itemCountLimitPerResource" value="50000"/&gt; 
         &lt;beans:property name="<b>delegate</b>"&gt; 
-<b> &lt;beans:bean class="org.springframework.batch.item.file.FlatFileItemWriter"&gt; &lt;beans:property name="encoding" value="UTF-8"/&gt; &lt;beans:property name="shouldDeleteIfExists" value="true"/&gt; &lt;beans:property name="lineAggregator" ref="siteMapLineAggregator"/&gt; &lt;/beans:bean&gt; </b> 
+<b> 
+            &lt;beans:bean 
+class="org.springframework.batch.item.file.FlatFileItemWriter"&gt; 
+                &lt;beans:property name="encoding" value="UTF-8"/&gt; 
+                &lt;beans:property name="shouldDeleteIfExists" value="true"/&gt; 
+                &lt;beans:property name="lineAggregator" 
+ref="siteMapLineAggregator"/&gt; 
+            &lt;/beans:bean&gt; 
+</b> 
         &lt;/beans:property&gt; 
     &lt;/beans:bean&gt; 
     &lt;beans:bean id="siteMapUrlRowMapper" 
@@ -155,7 +163,7 @@ class="com...sitemapscreator.SiteMapUrlRowMapper"/&gt;
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
       </div>
     </div>
     

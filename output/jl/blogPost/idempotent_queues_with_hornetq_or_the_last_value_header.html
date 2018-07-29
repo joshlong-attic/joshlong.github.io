@@ -102,7 +102,8 @@
 this.jmsTemplate.send(this.destination, new MessageCreator() { 
     public Message createMessage(final Session session) throws JMSException { 
         TextMessage textMessage = session.createTextMessage( ... ); 
-       <b> textMessage.setStringProperty("_HQ_LVQ_NAME", someUniqueStringThatYouSpecify); </b> 
+       <b> textMessage.setStringProperty("_HQ_LVQ_NAME", 
+someUniqueStringThatYouSpecify); </b> 
         return textMessage; 
     } 
 }); 
@@ -134,7 +135,7 @@ this.jmsTemplate.send(this.destination, new MessageCreator() {
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
       </div>
     </div>
     

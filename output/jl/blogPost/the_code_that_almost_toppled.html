@@ -144,7 +144,10 @@
     my_title = arr.join('.')
     end
 
-    <b># this will run each time. The first time it runs # it will cause Flickr to display a screen prompting you # to give permission to the application, which you will do. </b>
+    <b># this will run each time. The first time it runs
+        # it will cause Flickr to display a screen prompting you
+        # to give permission to the application, which you will do.
+    </b>
     def auth_rflickr(api, secret)
     unless $flickr.auth.token
     $flickr.clear_cache
@@ -162,7 +165,8 @@
     dir_for_output =Dir.new( FileUtils.mkdir_p("../output"))
     dir_for_input = Dir.new "/home/yourUser/Desktop/photos/"
 
-    <b># here we run through the input folder and examine #the contents, building up the array of files to upload.</b>
+    <b># here we run through the input folder and examine
+        #the contents, building up the array of files to upload.</b>
     files= []
     Find.find(dir_for_input.path) do |path|
     if !FileTest.directory?(path)
@@ -217,7 +221,8 @@
     after = before.normalize
     after.write( ofile )
     exif_out = MiniExiftool.new ofile
-    <b> # open the file with MiniExiftool, which wraps exif #tool, and perform operations on the exif metadata.</b>
+    <b> # open the file with MiniExiftool, which wraps exif
+        #tool, and perform operations on the exif metadata.</b>
     exif_in = MiniExiftool.new ifile.path
     exif_out['Orientation'] = exif_in ['Orientation']
     puts 'couldnt save exif data!' if !exif_out.save
@@ -270,7 +275,7 @@
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
       </div>
     </div>
     

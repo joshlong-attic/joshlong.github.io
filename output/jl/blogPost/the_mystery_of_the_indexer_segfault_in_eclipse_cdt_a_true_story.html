@@ -129,7 +129,34 @@ RSP=0x00007ffc7fd671e0
 RSI=0x00007ffc85a840d0
 0x00007ffc85a840d0: 
   <offset 0x99d0d0>
-    in /usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64/server/libjvm.so at 0x00007ffc850e7000 ... R9 =0x0000000040534d90 0x0000000040534d90 is a global jni handle R10=0x00000000404f5790 0x00000000404f5790 is pointing to unknown location ... R15=0x0000000000000001 0x0000000000000001 is pointing to unknown location Top of Stack: (sp=0x00007ffc7fd671e0) 0x00007ffc7fd671e0: 0000000000000005 000000004080b200 ... Instructions: (pc=0x00007ffc8537f61e) 0x00007ffc8537f60e: 48 89 fe 0f 84 2e 01 00 00 4c 8b 05 8a 13 83 00 0x00007ffc8537f61e: 8b 53 08 41 8b 48 08 48 d3 e2 49 03 10 8b 4a 18 Stack: [0x00007ffc7fc69000,0x00007ffc7fd6a000], sp=0x00007ffc7fd671e0, free space=1016k Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code) V [libjvm.so+0x29861e] V [libjvm.so+0x296c0b] ... Current CompileTask: C2:1110 org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDeclarator.postAccept( Lorg/eclipse/cdt/core/dom/ast/ASTVisitor;)Z (97 bytes) --------------- P R O C E S S --------------- Java Threads: ( =&gt; current thread ) 0x000000004129e000 JavaThread "Worker-9" [_thread_blocked, id=781, stack(0x00007ffc623e6000,0x00007ffc624e7000)] ... 0x00007ffc79ad8000 JavaThread 
+    in /usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64/server/libjvm.so at 0x00007ffc850e7000
+...
+R9 =0x0000000040534d90
+0x0000000040534d90 is a global jni handle
+R10=0x00000000404f5790
+0x00000000404f5790 is pointing to unknown location
+...
+R15=0x0000000000000001
+0x0000000000000001 is pointing to unknown location
+Top of Stack: (sp=0x00007ffc7fd671e0)
+0x00007ffc7fd671e0:   0000000000000005 000000004080b200
+...
+Instructions: (pc=0x00007ffc8537f61e)
+0x00007ffc8537f60e:   48 89 fe 0f 84 2e 01 00 00 4c 8b 05 8a 13 83 00
+0x00007ffc8537f61e:   8b 53 08 41 8b 48 08 48 d3 e2 49 03 10 8b 4a 18 
+Stack: [0x00007ffc7fc69000,0x00007ffc7fd6a000],  sp=0x00007ffc7fd671e0,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x29861e]
+V  [libjvm.so+0x296c0b]
+...
+Current CompileTask:
+C2:1110      org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDeclarator.postAccept(
+ Lorg/eclipse/cdt/core/dom/ast/ASTVisitor;)Z (97 bytes)
+---------------  P R O C E S S  ---------------
+Java Threads: ( =&gt; current thread )
+  0x000000004129e000 JavaThread "Worker-9" [_thread_blocked, id=781, stack(0x00007ffc623e6000,0x00007ffc624e7000)]
+  ...
+  0x00007ffc79ad8000 JavaThread 
    <b>"org.eclipse.cdt.internal.ui.text.CReconciler"</b> daemon [_thread_blocked, id=760, stac
   </offset></code></pre> 
 <p> My many years of experience have helped me in these situations - they inform my professionalism and abiity to react decisevly and appropriately. It is imperative that one keep is cool when things don't work out as planned. </p> 
@@ -147,7 +174,7 @@ RSI=0x00007ffc85a840d0
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.0</a></p>
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
       </div>
     </div>
     
