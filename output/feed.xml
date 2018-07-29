@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sun, 29 Jul 2018 01:44:27 -0700</pubDate>
-    <lastBuildDate>Sun, 29 Jul 2018 01:44:27 -0700</lastBuildDate>
+    <pubDate>Sun, 29 Jul 2018 01:46:22 -0700</pubDate>
+    <lastBuildDate>Sun, 29 Jul 2018 01:46:22 -0700</lastBuildDate>
 
     <item>
       <title>Some Notes on Sound</title>
@@ -16,7 +16,7 @@
       <guid isPermaLink="false">jl/blogPost/some-notes-on-sound.html</guid>
       	<description>
 	&lt;p&gt;I&apos;ve been studying sound and I took some notes and I&apos;d like to be able to find these readily so I figured i&apos;ll post them there. Hope you find these notes, disjointed thought they are, even a tiny bit useful.&lt;/p&gt; 
-&lt;h2&gt;Frequency&lt;/h2&gt; 
+&lt;h3&gt;Frequency&lt;/h3&gt; 
 &lt;ul&gt; 
  &lt;li&gt;When sound is created, it travels through a medium, usually air. Its the change in pressure of the waves that we perceive when it hits our ears.&lt;/li&gt; 
  &lt;li&gt;the timing of those waves is known as the frequency, or literally how frequently the eave fluctuates.&lt;/li&gt; 
@@ -27,14 +27,14 @@
  &lt;li&gt;anything over a thousand hertz is measured in kilohertz&lt;/li&gt; 
  &lt;li&gt;human hearing = 20 Hz to 20 kHz&lt;/li&gt; 
 &lt;/ul&gt; 
-&lt;h2&gt;Amplitude&lt;/h2&gt; 
+&lt;h3&gt;Amplitude&lt;/h3&gt; 
 &lt;ul&gt; 
  &lt;li&gt;how much the sound wave fluctuates up ad down&lt;/li&gt; 
  &lt;li&gt;smaller fluctuates = softer; bigger = louder&lt;/li&gt; 
  &lt;li&gt;decibels = dB is how you measure amplitude&lt;/li&gt; 
  &lt;li&gt;0 dbfs (decibels for scale) = the loudest. lower = -1dB until 0dB. -12dB is louder than 0dB.&lt;/li&gt; 
 &lt;/ul&gt; 
-&lt;h2&gt;Sample Rate&lt;/h2&gt; 
+&lt;h3&gt;Sample Rate&lt;/h3&gt; 
 &lt;ul&gt; 
  &lt;li&gt;when we capture sound were not actually capturing the whole thing, were capturing snapshots at intervals&lt;/li&gt; 
  &lt;li&gt;the sample rate is measured in hertz&lt;/li&gt; 
@@ -42,7 +42,7 @@
  &lt;li&gt;The general rule is that the sample rate is double the highest frequency you are going to record which is why 44.1 kHz is the lowest sample rate you&apos;d want since human beings can reach 20khz of frequency.&lt;/li&gt; 
  &lt;li&gt;some audio engineers set it at 96 kHz for incredible quality. obviously this takes more space in the file!&lt;/li&gt; 
 &lt;/ul&gt; 
-&lt;h2&gt;Bit Depth&lt;/h2&gt; 
+&lt;h3&gt;Bit Depth&lt;/h3&gt; 
 &lt;ul&gt; 
  &lt;li&gt;the bit depth determines how much info is stored in each sample; the more bits the wider the range of volume we can store in each sample&lt;/li&gt; 
  &lt;li&gt;a low bit depth of 8 bits gives us a dynamic range fo 48dB. 16 bits is used for CDs. 48 bits is used for videos.&lt;/li&gt; 
