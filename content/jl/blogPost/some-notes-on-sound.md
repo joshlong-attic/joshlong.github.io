@@ -7,7 +7,7 @@ status=published
 
 I've been studying sound and I took some notes and I'd like to be able to find these readily so I figured i'll post them there.  Hope you find these notes, disjointed thought they are, even a tiny bit useful.
 
-###     Frequency
+### Frequency
 * When sound is created, it travels through a medium, usually air. Its the change in pressure of the waves that we perceive when it hits our ears.
 * the timing of those waves is known as the frequency, or literally how frequently the eave fluctuates.
 * the frequency is how long it takes to complete a cycle
