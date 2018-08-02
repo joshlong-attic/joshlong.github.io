@@ -6,8 +6,8 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 1 Aug 2018 22:47:41 -0700</pubDate>
-    <lastBuildDate>Wed, 1 Aug 2018 22:47:41 -0700</lastBuildDate>
+    <pubDate>Thu, 2 Aug 2018 00:09:55 -0700</pubDate>
+    <lastBuildDate>Thu, 2 Aug 2018 00:09:55 -0700</lastBuildDate>
 
     <item>
       <title>Sane Defaults for Navigating Between Words on iTerm on macOS</title>
@@ -576,6 +576,29 @@ public class JythonApplication {
 	</description>
     </item>
     <item>
+      <title>Eight (8!) Years on the Spring Team</title>
+      <link>http://joshlong.com/jl/blogPost/8-years-on-the-spring-team.html</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/8-years-on-the-spring-team.html</guid>
+      	<description>
+	&lt;p&gt;I&apos;ll never forget it. I was sat at my desk at the offices of Shopzilla in Santa Monica, Los Angeles, California talking to then Spring Integration lead (he now runs &lt;a href=&quot;http://ProjectRiff.io&quot;&gt;the Riff project&lt;/a&gt;) Mark Fisher about some code I&apos;d contributed. I&apos;d been working with, and for, him for a while on Spring Integration since I was enamored with enterprise application integration and, it seemed to me, Spring Integration was the technology to learn and invest in. A propos to nothing, he volunteered that there was this new job opening for a &quot;developer advocate,&quot; and suggested that I should perhaps apply. Now, I&apos;d only ever known James Ward in this role and it seemed to me that I could never do what James Ward did. His wisdom and patience were matched only by his charisma. The guy&apos;s a rockstar!&lt;/p&gt; 
+&lt;p&gt;By this point, I was already a pretty outspoke Spring fan. I&apos;d spoken at different conferences (almost entirely on my own time and dime.). I&apos;d already written two books on Spring. I was, clearly, a big ol fan of Spring. It&apos;d helped me deliver better software for the better part of a decade, at startups and in the enterprise, and I couldn&apos;t be happier to see its expansion from the core Spring Framework around 2005 to extension projects like Spring Security, Spring Batch and Spring Integration. But still. Me? Be like James Ward? NO WAY NO SIR NO HOW! That sorta thing wasn&apos;t for me! Thanks anyway! I knew my limits. So, I thanked Mark Fisher profusely and walked away from my desk (for what reason I don&apos;t remember? Lunch? Coffee break?) and got all of ten paces before it hit me: WHAT AM I DOING?? OF COURSE I WANTED TO WORK WITH THE SPRING TEAM!?? I ran back to my desk and said &quot;I&apos;ll take it! I&apos;ll do it! Sign me up!&quot;&lt;/p&gt; 
+&lt;p&gt;So the interviews began. I talked to the hiring manager, a gentleman named &lt;a href=&quot;https://twitter.com/DevrelChap&quot;&gt;Adam Fitzgerald&lt;/a&gt;, a SpringSource co-founder, &lt;a href=&quot;https://twitter.com/kdonald&quot;&gt;Keith Donald&lt;/a&gt;, and of course &lt;a href=&quot;https://twitter.com/M_F_&quot;&gt;Mark himself&lt;/a&gt;. I&apos;d tricked them all! They seemed to like me. Or at least, not hate me. I felt pretty confident about the opportunity. I just knew the phone was going to ring any day now. I&apos;d be their guy! So I waited. And I waited. During this time Craig Wall, who was and is infinitely more qualified, joined the Spring team. I was gutted. That was the dream job I&apos;d wanted! He was going to be the Spring developer advocate! Well, tis better to have applied and lost than to have never applied at all, or something, I told myself. But then Craig tweeted about his daily work. He&apos;d joined as an engineer. Not as a developer advocate. I think since he was already a famous public speaker they figured they&apos;d just let Craig do his own thing &lt;em&gt;and&lt;/em&gt; leverage him as an engineer. Smart! So, why hadn&apos;t I gotten the job? What happened? I could have understood Craig Walls getting the role. He&apos;s a freaking legend! I&apos;d even sheepishly asked if I could be his friend on Facebook a year earlier. I didn&apos;t, and don&apos;t, even use Facebook!&lt;/p&gt; 
+&lt;p&gt;So, &lt;em&gt;what&lt;/em&gt; happened?&lt;/p&gt; 
+&lt;p&gt;I reached out to Adam who explained that everyone liked me and that the job was everything but mine because there&apos;d been a hiring freeze! I can deal with a hiring freeze. I wasn&apos;t looking for a new job. I loved my old job. I loved the team and the company and it had waaay better benefits than the job to which I was applying. But this was the Spring team darnit! I loved the Spring team! They were heroes, not just employers. Inspirations, even. If they would have me, I&apos;d love to work with them. Just think of all the things I could learn! So I waited.&lt;/p&gt; 
+&lt;p&gt;July came and I got the email of a lifetime. The opportunity was open, and the job was mine if I wanted it! I practically flipped out of my chair. I was super sad and super happy at the same time. Shopzilla was the best job I&apos;d ever had. Some of the best people I&apos;d ever had the privilege of working with were there. I&apos;m &lt;em&gt;still&lt;/em&gt; friends with a ton of them. And the folks that worked there ended up in the Los Angeles tech disapora and continue to dominate the direction even to this day. I was sad to have to leave a great thing, but I wouldn&apos;t be able to sleep if I passed this opportunity up. So I gave three weeks notice. (which is a week longer than is normal in the US. I did it as a courtesy). My teammates even helped me. My friend Rob Rolland helped me configure the new MacBook Pro VMWare (where Spring lived at the time) had sent me! Truly, it was bittersweet. Then the big day. My first day on the job.&lt;/p&gt; 
+&lt;p&gt;I started August 2nd, 2010. Today is the eighth anniversary of my working (officially) with the Spring team.&lt;/p&gt; 
+&lt;p&gt;When I joined I was the first (and only) Spring Developer Advocate. The epic &lt;a href=&quot;http://twitter.com/Pledbrook&quot;&gt;Mr. Peter Ledbrook&lt;/a&gt; was the Grails Developer Advocate. A year later we reworked the team a bit. &lt;a href=&quot;http://twitter.com/Chanezon&quot;&gt;Patrick Chanezon&lt;/a&gt; came in and helped us grow the team, with a focus on Cloud Foundry. Beyond Peter and me, there were specialists focusing on Rails, Node.js, PHP, RabbitMQ and more. It was an exciting team and and even more exciting time!&lt;/p&gt; 
+&lt;p&gt;Poor Adam. He did the best with what he was given. I knew &lt;em&gt;nothing&lt;/em&gt;! (I&apos;m not much better now..) He mentored me. Guided me. Spell-checked me, for Pete&apos;s sake! The man was one of the busiest, most in-demand human beings I&apos;ve ever met but he always took time to try to guide me. Adam&apos;s a consummate professional. He helped me see that developer advocacy was more than just &quot;drinking and knowing things,&quot; as one internet meme about advocates jokes. He&apos;s since moved on to lead developer advocacy worldwide for a small up-and-coming company in Seattle called &quot;Amazon&quot; who, as far as I can tell, sell books. He keeps saying they&apos;re going to be big one day :) I think about Adam once a week at least. Every time I step on soil in some other corner of the planet, connect with some soul making their way to production with tools I love, or see a smile-inducing Tweet, I think about the risk he took in hiring me, in giving me the opportunity to work for him. Thank you Adam.&lt;/p&gt; 
+&lt;p&gt;Patrick has since moved on to Microsoft (in a leadership role for developer advocacy) and now Docker (guiding strategy). Whenever I go to India, where Patrick, Chris Richardson, Rajdeep Dua and I had the privilege of spending a &lt;em&gt;lot&lt;/em&gt; of time, I think of Patrick. Thank you Patrick.&lt;/p&gt; 
+&lt;p&gt;When we spun out and created Pivotal, there were some organizational changes and I ended up reporting to Brian Dussault, the engineering manager for the Spring team. Brian didn&apos;t owe me a thing, but he took me in and assured me that he&apos;d try to find funds in his engineering org for me in this new, scrappy Pivotal world. Brian, you&apos;re a live safer my friend. Thank you Brian.&lt;/p&gt; 
+&lt;p&gt;Then came &lt;a href=&quot;http://twitter.com/LittleIdea&quot;&gt;Andrew Clay Shafer&lt;/a&gt;. Andrew deserved better! But he got me. And he built a team with Pivotal&apos;s nascent marketing budget and community at his back. Andrew is a wonderful and strange cat. He built up a team and let us loose. He&apos;s been there to help, unfailingly, whenever we had questions or concerns. He is sometimes shockingly authentic. It&apos;s easy to be authentic when your manager is so forthcoming. Good, bad, or ugly, Andrew prioritizes the truth and expects nothing less from us. Andrew in turn hired Tasha Isenberg, our events manager who is sort of like air-traffic control. I work with Tasha almost daily. She&apos;s the most valuable person at Pivotal for me. I could not do what I do without her. It is entirely thanks to her that I am able to sardine pack hundreds of distinct talks, cities and meetings per year into the schedule. Andrew and Tasha make it so that I can do more while simultaneously wasting less time. I have more time off while getting more work done. Thank you Andrew and Tasha.&lt;/p&gt; 
+&lt;p&gt;The Spring team are my friends. I&apos;ve been through a divorce and a some health issues over the years and the Spring team always looked after me. We started a new company together, Pivotal, which you may have heard IPO&apos;d in April of 2018 (earlier this year). I bought my first home in 2014, and my second in 2017, all thanks to the stability of working with the Spring team. In short, they&apos;ve helped me grow and exceed my ambitions. I tend to richochet between cities and countries in my never ending quest to bring Spring to the world, to meet developers where they are literally and metaphorically. This means I get confused about things at &lt;em&gt;the oddest&lt;/em&gt; hours and days relative to most of the team, but they always try to help. When I occasionally fail, it&apos;s entirely my fault. When I succeed, it&apos;s a shared privilege and effort. The Spring team are the real heroes here. They deliver boss-sauce software and I, the messenger, collect the hugs. I have grown with the Spring team, as a part of the Spring team, and I look forward to continuing to do so.&lt;/p&gt; 
+&lt;p&gt;And of course, my work is pointless if I&apos;m just speaking into a vaacuum. It&apos;s only thanks to you, the ever indulgent community, that I&apos;ve gotten any traction at all. Thanks for making this work the thing that I feel privileged to do, day in and day out. Thank you.&lt;/p&gt; 
+&lt;p&gt;I can&apos;t believe it&apos;s been eight years! Time sure flies when you&apos;re having fun..&lt;/p&gt;
+	</description>
+    </item>
+    <item>
       <title>The Version Controlled Operating System</title>
       <link>http://joshlong.com/jl/blogPost/the-version-controlled-os.html</link>
       <pubDate>Sat, 15 Oct 2016 00:00:00 -0700</pubDate>
@@ -1131,15 +1154,6 @@ shell.auth=spring
 	</description>
     </item>
     <item>
-      <title>SpringOne2GX 2013 is Coming!</title>
-      <link>http://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
-      <pubDate>Wed, 7 Aug 2013 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
-      	<description>
-	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/18738&quot; width=&quot;300&quot; style=&quot;float: left; margin-right:10px; &quot;&gt; Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;? This year&apos;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&apos;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&apos;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&apos;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&apos;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&apos;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show. Hurry the early bird rate expires this friday!&lt;/p&gt;
-	</description>
-    </item>
-    <item>
       <title>Introducing Spring Boot</title>
       <link>http://joshlong.com/jl/blogPost/introducing_spring_boot.html</link>
       <pubDate>Wed, 7 Aug 2013 00:00:00 -0700</pubDate>
@@ -1156,6 +1170,15 @@ class ThisWillActuallyRun {
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+	</description>
+    </item>
+    <item>
+      <title>SpringOne2GX 2013 is Coming!</title>
+      <link>http://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
+      <pubDate>Wed, 7 Aug 2013 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
+      	<description>
+	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/18738&quot; width=&quot;300&quot; style=&quot;float: left; margin-right:10px; &quot;&gt; Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;? This year&apos;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&apos;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&apos;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&apos;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&apos;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&apos;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show. Hurry the early bird rate expires this friday!&lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -2287,6 +2310,20 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
 	</description>
     </item>
     <item>
+      <title>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</title>
+      <link>http://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</link>
+      <pubDate>Fri, 19 Oct 2012 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</guid>
+      	<description>
+	&lt;p&gt; My talk from &lt;a href=&quot;http://www.javazone.no&quot;&gt; JavaZone&lt;/a&gt; is now available online. I co-presented with &lt;a href=&quot;http://www.twitter.com/z_oleg&quot;&gt;Oleg Zhurakousky&lt;/a&gt;, colleague and co-committer on &lt;a href=&quot;http://springsource.org/spring-integration&quot;&gt;Spring Integration&lt;/a&gt;. If you&apos;d like a quick look, &lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;check it - and all the other great videos on the JavaZone Vimeo page - out&lt;/a&gt;! &lt;/p&gt;
+&lt;div&gt; 
+ &lt;iframe src=&quot;http://player.vimeo.com/video/49477307&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt; 
+ &lt;p&gt;&lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;Enterprise Integration and Batch Processing on Cloud Foundry&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/javazone&quot;&gt;JavaZone&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;/p&gt;
+	</description>
+    </item>
+    <item>
       <title>Arlington, VA Cloud Foundry Dev Day</title>
       <link>http://joshlong.com/jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html</link>
       <pubDate>Fri, 19 Oct 2012 00:00:00 -0700</pubDate>
@@ -2301,20 +2338,6 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
  &lt;a href=&quot;http://twitter.com/ebottard&quot;&gt;Eric Bottard&lt;/a&gt; and 
  &lt;a href=&quot;http://twitter.com/andypiper&quot;&gt;Andy Piper&lt;/a&gt; co-leading a developer hands-on session.  
 &lt;/div&gt;
-	</description>
-    </item>
-    <item>
-      <title>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</title>
-      <link>http://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</link>
-      <pubDate>Fri, 19 Oct 2012 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</guid>
-      	<description>
-	&lt;p&gt; My talk from &lt;a href=&quot;http://www.javazone.no&quot;&gt; JavaZone&lt;/a&gt; is now available online. I co-presented with &lt;a href=&quot;http://www.twitter.com/z_oleg&quot;&gt;Oleg Zhurakousky&lt;/a&gt;, colleague and co-committer on &lt;a href=&quot;http://springsource.org/spring-integration&quot;&gt;Spring Integration&lt;/a&gt;. If you&apos;d like a quick look, &lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;check it - and all the other great videos on the JavaZone Vimeo page - out&lt;/a&gt;! &lt;/p&gt;
-&lt;div&gt; 
- &lt;iframe src=&quot;http://player.vimeo.com/video/49477307&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt; 
- &lt;p&gt;&lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;Enterprise Integration and Batch Processing on Cloud Foundry&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/javazone&quot;&gt;JavaZone&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt; 
-&lt;/div&gt; 
-&lt;p&gt;&lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -3569,16 +3592,6 @@ Java Threads: ( =&amp;gt; current thread )
 	</description>
     </item>
     <item>
-      <title>Devoxx 2010</title>
-      <link>http://joshlong.com/jl/blogPost/devoxx_2010.html</link>
-      <pubDate>Tue, 23 Nov 2010 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
-      	<description>
-	&lt;p&gt; I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt; 
-&lt;p&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;http://www.salesforce.com/Dreamforce&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
-	</description>
-    </item>
-    <item>
       <title>The H2 Embedded Database</title>
       <link>http://joshlong.com/jl/blogPost/the_h2_embedded_database.html</link>
       <pubDate>Tue, 23 Nov 2010 00:00:00 -0800</pubDate>
@@ -3596,6 +3609,16 @@ Java Threads: ( =&amp;gt; current thread )
 &lt;p&gt; The reason I use it is because I tend to do a lot of things in the interest of exhibition, and nothing beats a readily available, easily installed database. With H2, you simply download it, unzip it, &lt;code&gt;cd bin&lt;/code&gt;, and then run &lt;code&gt;h2.sh&lt;/code&gt;. Boom, up pops a browser which prompts you to login and off you go! You can introspect your schemas, run queries (the query editor has auto complete and is &lt;em&gt;ridiculously&lt;/em&gt; intuitive, and keyboard friendly!) and do basic administrative tasks all from your browser. &lt;/p&gt; 
 &lt;p&gt;So, what&apos;s my point? I didn&apos;t know much about this handy little database until a year ago and now, increasingly, I find myself reaching for it all the time! Give it a go if you have a moment, as that&apos;s all you need. As I&apos;ve never sat down and done a comparison against my RDBMS-of-choice, &lt;a href=&quot;http://www.postgresql.org&quot;&gt;PostgreSQL&lt;/a&gt;, I don&apos;t really know where H2 stands as an alternative, but my cursory sort of uses thus far give me the impression that it&apos;d handily give MySQL a run for its money. &lt;/p&gt; 
 &lt;p&gt;&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Devoxx 2010</title>
+      <link>http://joshlong.com/jl/blogPost/devoxx_2010.html</link>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
+      	<description>
+	&lt;p&gt; I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt; 
+&lt;p&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;http://www.salesforce.com/Dreamforce&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -5234,41 +5257,6 @@ mvn jetty:run ;
 	</description>
     </item>
     <item>
-      <title>Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10?</title>
-      <link>http://joshlong.com/jl/blogPost/anyone_else_noticing_the_extreme.html</link>
-      <pubDate>Wed, 17 Dec 2008 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/anyone_else_noticing_the_extreme.html</guid>
-      	<description>
-	&lt;p&gt; Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10? I upgraded and was expecting that the seminal Java 6u10 (strike that!&lt;b&gt; 11! &lt;/b&gt;) would do better than this. &lt;/p&gt; 
-&lt;p&gt; I was expecting draggable applets and for the performance of my Java applications to not deteriorate. I was disappointed on both fronts. If you&apos;re having issues with IntelliJ crawling, a lot of people have downgraded to 8.04 Ubuntu. &lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>Apple News, Mobile and Otherwise</title>
-      <link>http://joshlong.com/jl/blogPost/apple_news_mobile_and_otherwise.html</link>
-      <pubDate>Wed, 17 Dec 2008 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/apple_news_mobile_and_otherwise.html</guid>
-      	<description>
-	&lt;p&gt;&lt;img STYLE=&quot;float:left; padding-right:10px;&quot; width=&quot;100&quot; src=&quot;http://joshlong.com/media/17842&quot;&gt; &lt;a href=&quot;http://livelabs.com/seadragon-mobile/&quot; target=&quot;_blank&quot;&gt;SeaDragon&lt;/a&gt;, an application from Microsoft that extracts the &quot;Deep Zoom&quot; component from Silver Light and enables it on an iPhone, has been released to the Apple Application Store (Wonders never cease!) because the Apple iPhone has a fantastic GPU. &lt;/p&gt; 
-&lt;p&gt;What&apos;s very interesting to me about this feature is not the mobile component, but &lt;a href=&quot;http://livelabs.com/seadragon-ajax/&quot; target=&quot;_blank&quot;&gt;the ajax one&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;http://www.internetnews.com/bus-news/article.php/3791651/MacPainful+Apple+Bows+Out+of+Macworld+Expo.htm&quot; target=&quot;_blank&quot;&gt;Apple, Steve Jobs, bow out of MacWorld Expo.&lt;/a&gt; This fuels the usual debate on Steve Jobs&apos; health, as usual, and rumors run rampant. What do you think? Sick? Disincentivized? &lt;/p&gt; 
-&lt;p&gt; PLUS: My new favorite iPhone Application: &lt;a href=&quot;http://www.techcrunch.com/2008/12/16/taxi-magic-hail-a-cab-from-your-iphone-at-the-push-of-a-button/&quot;&gt;Taxi Magic&lt;/a&gt;. Seriously -- how slick is that? When do you usually need a Taxi? When you&apos;re most impaired, likely, say perhaps after drinking? One button. Finally, technology for fun and profit. &lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>A journey of a thousand miles begins with a single step: “Programming Collective Intelligence”, by O&apos;Reilly</title>
-      <link>http://joshlong.com/jl/blogPost/a_journey_of_a_thousand.html</link>
-      <pubDate>Wed, 17 Dec 2008 00:00:00 -0800</pubDate>
-      <guid isPermaLink="false">jl/blogPost/a_journey_of_a_thousand.html</guid>
-      	<description>
-	&lt;p&gt; Working through my reading list. You might infer that I&apos;m a bit behind because this review is about a book published in September of 2007.&lt;/p&gt; 
-&lt;p&gt;You&apos;d be correct.&lt;/p&gt; 
-&lt;p&gt;&quot;Programming Collective Intelligence&quot; is astonishingly clear and concise in the examples, and a brilliant introduction to the foundations of a lot of fields of study. A well presented discussion on many of the key items in the AI/algorithm world. Why is this so worth repeating? Because these concepts – genetic algorithms/ AI / optimization, etc, are NOT common nor are they simple. Anybody who manages to make them appear so is worth of praise. The examples are further interesting because they&apos;re written in Python, which is as simple as a language can get. (Digression: Python 3.0&apos;s out! How come I didn&apos;t see a flurry of news? How come there was no ball drop in Times Square? I&apos;m excited, and proportionately confused by some people&apos;s reactions, &lt;a href=&quot;http://www.mooseyard.com/Jens/2008/12/python-30-whats-the-point/&quot;&gt;like this one&lt;/a&gt;. Get your &lt;a href=&quot;http://python.org/download/releases/3.0&quot;&gt;copy while it&apos;s hot!&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt; The book is sort of the first rung of knowledge on a whole gamut of complex topics, but that&apos;s OK because these topics become approachable only once you&apos;ve gotten the introductory tour. Finding that &quot;tour&quot;, the source for the inevitable epiphany, is what&apos;s so hard about these concepts. It&apos;s even further difficult because it&apos;s not like there&apos;s a lot of mainstream thinking going on here and these concepts just represent a slight tangent on what you&apos;re already dealing with. Anything but. People who know why they want to use something like JBoss Rules already knew it. You&apos;ll notice there&apos;s no good &quot;sales&quot; rhetoric on the JBoss website. It&apos;s the chicken and egg problem. Understanding the concepts in this book is key to caring about, and eventually understanding, things like JBoss Rules. &lt;/p&gt; 
-&lt;p&gt; All in all, a very worthy read. If nothing else, it&apos;s a good refresher. &lt;/p&gt;
-	</description>
-    </item>
-    <item>
       <title>A Quick Guide to Posting To (A Few) Blogs with Java</title>
       <link>http://joshlong.com/jl/blogPost/a_quick_guide_to_posting.html</link>
       <pubDate>Wed, 17 Dec 2008 00:00:00 -0800</pubDate>
@@ -5334,6 +5322,41 @@ Person(StringUtils.defaultString(authorName), null, null);
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;p&gt;&lt;/p&gt; 
 &lt;p&gt; The Google Data stuff was using the Java Google Data APIs. The XMLRPC library is quite formidable. I&apos;d not recommend using Apache XMLRPC 3.1.1 from Maven, as it didn&apos;t seem to be a valid artifact. &lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10?</title>
+      <link>http://joshlong.com/jl/blogPost/anyone_else_noticing_the_extreme.html</link>
+      <pubDate>Wed, 17 Dec 2008 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/anyone_else_noticing_the_extreme.html</guid>
+      	<description>
+	&lt;p&gt; Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10? I upgraded and was expecting that the seminal Java 6u10 (strike that!&lt;b&gt; 11! &lt;/b&gt;) would do better than this. &lt;/p&gt; 
+&lt;p&gt; I was expecting draggable applets and for the performance of my Java applications to not deteriorate. I was disappointed on both fronts. If you&apos;re having issues with IntelliJ crawling, a lot of people have downgraded to 8.04 Ubuntu. &lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Apple News, Mobile and Otherwise</title>
+      <link>http://joshlong.com/jl/blogPost/apple_news_mobile_and_otherwise.html</link>
+      <pubDate>Wed, 17 Dec 2008 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/apple_news_mobile_and_otherwise.html</guid>
+      	<description>
+	&lt;p&gt;&lt;img STYLE=&quot;float:left; padding-right:10px;&quot; width=&quot;100&quot; src=&quot;http://joshlong.com/media/17842&quot;&gt; &lt;a href=&quot;http://livelabs.com/seadragon-mobile/&quot; target=&quot;_blank&quot;&gt;SeaDragon&lt;/a&gt;, an application from Microsoft that extracts the &quot;Deep Zoom&quot; component from Silver Light and enables it on an iPhone, has been released to the Apple Application Store (Wonders never cease!) because the Apple iPhone has a fantastic GPU. &lt;/p&gt; 
+&lt;p&gt;What&apos;s very interesting to me about this feature is not the mobile component, but &lt;a href=&quot;http://livelabs.com/seadragon-ajax/&quot; target=&quot;_blank&quot;&gt;the ajax one&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;http://www.internetnews.com/bus-news/article.php/3791651/MacPainful+Apple+Bows+Out+of+Macworld+Expo.htm&quot; target=&quot;_blank&quot;&gt;Apple, Steve Jobs, bow out of MacWorld Expo.&lt;/a&gt; This fuels the usual debate on Steve Jobs&apos; health, as usual, and rumors run rampant. What do you think? Sick? Disincentivized? &lt;/p&gt; 
+&lt;p&gt; PLUS: My new favorite iPhone Application: &lt;a href=&quot;http://www.techcrunch.com/2008/12/16/taxi-magic-hail-a-cab-from-your-iphone-at-the-push-of-a-button/&quot;&gt;Taxi Magic&lt;/a&gt;. Seriously -- how slick is that? When do you usually need a Taxi? When you&apos;re most impaired, likely, say perhaps after drinking? One button. Finally, technology for fun and profit. &lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>A journey of a thousand miles begins with a single step: “Programming Collective Intelligence”, by O&apos;Reilly</title>
+      <link>http://joshlong.com/jl/blogPost/a_journey_of_a_thousand.html</link>
+      <pubDate>Wed, 17 Dec 2008 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/a_journey_of_a_thousand.html</guid>
+      	<description>
+	&lt;p&gt; Working through my reading list. You might infer that I&apos;m a bit behind because this review is about a book published in September of 2007.&lt;/p&gt; 
+&lt;p&gt;You&apos;d be correct.&lt;/p&gt; 
+&lt;p&gt;&quot;Programming Collective Intelligence&quot; is astonishingly clear and concise in the examples, and a brilliant introduction to the foundations of a lot of fields of study. A well presented discussion on many of the key items in the AI/algorithm world. Why is this so worth repeating? Because these concepts – genetic algorithms/ AI / optimization, etc, are NOT common nor are they simple. Anybody who manages to make them appear so is worth of praise. The examples are further interesting because they&apos;re written in Python, which is as simple as a language can get. (Digression: Python 3.0&apos;s out! How come I didn&apos;t see a flurry of news? How come there was no ball drop in Times Square? I&apos;m excited, and proportionately confused by some people&apos;s reactions, &lt;a href=&quot;http://www.mooseyard.com/Jens/2008/12/python-30-whats-the-point/&quot;&gt;like this one&lt;/a&gt;. Get your &lt;a href=&quot;http://python.org/download/releases/3.0&quot;&gt;copy while it&apos;s hot!&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; The book is sort of the first rung of knowledge on a whole gamut of complex topics, but that&apos;s OK because these topics become approachable only once you&apos;ve gotten the introductory tour. Finding that &quot;tour&quot;, the source for the inevitable epiphany, is what&apos;s so hard about these concepts. It&apos;s even further difficult because it&apos;s not like there&apos;s a lot of mainstream thinking going on here and these concepts just represent a slight tangent on what you&apos;re already dealing with. Anything but. People who know why they want to use something like JBoss Rules already knew it. You&apos;ll notice there&apos;s no good &quot;sales&quot; rhetoric on the JBoss website. It&apos;s the chicken and egg problem. Understanding the concepts in this book is key to caring about, and eventually understanding, things like JBoss Rules. &lt;/p&gt; 
+&lt;p&gt; All in all, a very worthy read. If nothing else, it&apos;s a good refresher. &lt;/p&gt;
 	</description>
     </item>
     <item>

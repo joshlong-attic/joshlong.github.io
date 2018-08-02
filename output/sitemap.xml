@@ -113,6 +113,10 @@
         <lastmod>2016-12-20</lastmod>
     </url>
     <url>
+        <loc>http://joshlong.com/jl/blogPost/8-years-on-the-spring-team.html</loc>
+        <lastmod>2016-10-15</lastmod>
+    </url>
+    <url>
         <loc>http://joshlong.com/jl/blogPost/the-version-controlled-os.html</loc>
         <lastmod>2016-10-15</lastmod>
     </url>
@@ -201,11 +205,11 @@
         <lastmod>2013-09-17</lastmod>
     </url>
     <url>
-        <loc>http://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</loc>
+        <loc>http://joshlong.com/jl/blogPost/introducing_spring_boot.html</loc>
         <lastmod>2013-08-07</lastmod>
     </url>
     <url>
-        <loc>http://joshlong.com/jl/blogPost/introducing_spring_boot.html</loc>
+        <loc>http://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</loc>
         <lastmod>2013-08-07</lastmod>
     </url>
     <url>
@@ -397,11 +401,11 @@
         <lastmod>2012-10-23</lastmod>
     </url>
     <url>
-        <loc>http://joshlong.com/jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html</loc>
+        <loc>http://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</loc>
         <lastmod>2012-10-19</lastmod>
     </url>
     <url>
-        <loc>http://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</loc>
+        <loc>http://joshlong.com/jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html</loc>
         <lastmod>2012-10-19</lastmod>
     </url>
     <url>
@@ -609,11 +613,11 @@
         <lastmod>2011-01-02</lastmod>
     </url>
     <url>
-        <loc>http://joshlong.com/jl/blogPost/devoxx_2010.html</loc>
+        <loc>http://joshlong.com/jl/blogPost/the_h2_embedded_database.html</loc>
         <lastmod>2010-11-23</lastmod>
     </url>
     <url>
-        <loc>http://joshlong.com/jl/blogPost/the_h2_embedded_database.html</loc>
+        <loc>http://joshlong.com/jl/blogPost/devoxx_2010.html</loc>
         <lastmod>2010-11-23</lastmod>
     </url>
     <url>
@@ -853,6 +857,10 @@
         <lastmod>2008-12-18</lastmod>
     </url>
     <url>
+        <loc>http://joshlong.com/jl/blogPost/a_quick_guide_to_posting.html</loc>
+        <lastmod>2008-12-17</lastmod>
+    </url>
+    <url>
         <loc>http://joshlong.com/jl/blogPost/anyone_else_noticing_the_extreme.html</loc>
         <lastmod>2008-12-17</lastmod>
     </url>
@@ -862,10 +870,6 @@
     </url>
     <url>
         <loc>http://joshlong.com/jl/blogPost/a_journey_of_a_thousand.html</loc>
-        <lastmod>2008-12-17</lastmod>
-    </url>
-    <url>
-        <loc>http://joshlong.com/jl/blogPost/a_quick_guide_to_posting.html</loc>
         <lastmod>2008-12-17</lastmod>
     </url>
     <url>
