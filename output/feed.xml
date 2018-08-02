@@ -6,9 +6,20 @@
     <atom:link href="http://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sun, 29 Jul 2018 01:46:22 -0700</pubDate>
-    <lastBuildDate>Sun, 29 Jul 2018 01:46:22 -0700</lastBuildDate>
+    <pubDate>Wed, 1 Aug 2018 22:47:41 -0700</pubDate>
+    <lastBuildDate>Wed, 1 Aug 2018 22:47:41 -0700</lastBuildDate>
 
+    <item>
+      <title>Sane Defaults for Navigating Between Words on iTerm on macOS</title>
+      <link>http://joshlong.com/jl/blogPost/iterm-defaults-on-osx.html</link>
+      <pubDate>Wed, 1 Aug 2018 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/iterm-defaults-on-osx.html</guid>
+      	<description>
+	&lt;p&gt;I&apos;m slowly getting used to iTerm and macOS, again. One of the first things I had to do, after installing Homebrew and iTerm, was figure out how to get normal navigation between words on the shell in iTerm. Turns out there&apos;s a sane default now. Open up iTerm preferences and choose &quot;Natural Text Editing&quot; in the Profiles -&amp;gt; Keys -&amp;gt; Key Mappings preferences.&lt;/p&gt; 
+&lt;p&gt;Why isn&apos;t this a default?&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/media/Djkm0FMU4AEub-I.jpg&quot;&gt;&lt;/p&gt;
+	</description>
+    </item>
     <item>
       <title>Some Notes on Sound</title>
       <link>http://joshlong.com/jl/blogPost/some-notes-on-sound.html</link>
@@ -3037,6 +3048,15 @@ public class MyClass {
 	</description>
     </item>
     <item>
+      <title>Getting Started with Spring Roo</title>
+      <link>http://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
+      	<description>
+	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/17884&quot; style=&quot; float:left;margin-right:10px;&quot;&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;em&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/a&gt;&lt;/em&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;b&gt;Vaadin&lt;/b&gt; - a powerful, alternative web framework, and &lt;b&gt;Neo4j&lt;/b&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out. &lt;/p&gt;
+	</description>
+    </item>
+    <item>
       <title>RabbitMQ is now officially available on CloudFoundry!</title>
       <link>http://joshlong.com/jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html</link>
       <pubDate>Fri, 12 Aug 2011 00:00:00 -0700</pubDate>
@@ -3044,15 +3064,6 @@ public class MyClass {
       	<description>
 	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/17873&quot; style=&quot;width:80px;float:left; margin-right:10px;&quot;&gt; &lt;img style=&quot;float:left ; margin-right: 10px;width:80px;&quot; src=&quot;http://joshlong.com/media/17874&quot;&gt; For you &lt;a href=&quot;http://github.com/CloudFoundry&quot;&gt;code lurkers&lt;/a&gt; out there, the news that &lt;a href=&quot;http://www.rabbitmq.com/&quot;&gt;RabbitMQ&lt;/a&gt; is now available in &lt;a href=&quot;http://www.cloudfoundry.org&quot;&gt;CloudFoundry&lt;/a&gt; should come as no surprise. But, it&apos;s finally here! This is very exciting. One thing I&apos;ve always loved about RabbitMQ is its ubiquity. It is more widely used than any other message broker on the cloud, and on Amazon Web Services in particular. The AWS tidbit&apos;s a bit more awesome when you realize that AWS already has a message broker service called SQS! ;-) Anyway, it&apos;s now available on CloudFoundry. You &lt;a href=&quot;http://support.cloudfoundry.com/entries/20322602-getting-started-with-the-rabbitmq-service-from-a-spring-application&quot;&gt;should definitely&lt;/a&gt; check &lt;a href=&quot;http://blog.cloudfoundry.com/post/8713844574/rabbitmq-cloud-foundry-cloud-messaging-that-just-works&quot;&gt;it out.&lt;/a&gt; The &lt;a href=&quot;http://www.theregister.co.uk/2011/08/10/vmware_cloud_foundry_adds_rabbitmq_messaging/&quot;&gt;news&lt;/a&gt; overall seems good, too! Messaging middleware is &lt;em&gt;the&lt;/em&gt; critical component for scale. Cloud-scale is a way of life, not just a switch to be turned on and off. Specifically, an architecure that scales is going to enjoy temporally decoupling, or &lt;em&gt;asynchronism,&lt;/em&gt; and RabbitMQ is the perfect vehicle to enable that asynchronous coordination. &lt;/p&gt; 
 &lt;p&gt; If you&apos;re a Spring developer, and haven&apos;t had a chance to look at CloudFoundry, then I strongly recommend you see &lt;a href=&quot;http://blog.springsource.com/2011/04/12/cloud-foundry-for-spring-developers/&quot;&gt;Mark Fisher&apos;s entry on the SpringSource blog&lt;/a&gt; introducing the wide world of the cloud for Spring developers from a few months ago. There&apos;s also great content on &lt;a href=&quot;http://www.youtube.com/SpringSourceDev&quot;&gt;the SpringSource YouTube channel.&lt;/a&gt; &lt;/p&gt;
-	</description>
-    </item>
-    <item>
-      <title>Getting Started with Spring Roo</title>
-      <link>http://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
-      <pubDate>Fri, 12 Aug 2011 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
-      	<description>
-	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/17884&quot; style=&quot; float:left;margin-right:10px;&quot;&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;em&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/a&gt;&lt;/em&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;b&gt;Vaadin&lt;/b&gt; - a powerful, alternative web framework, and &lt;b&gt;Neo4j&lt;/b&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out. &lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -3639,15 +3650,6 @@ Java Threads: ( =&amp;gt; current thread )
 	</description>
     </item>
     <item>
-      <title>Spring for Force.com Developers</title>
-      <link>http://joshlong.com/jl/blogPost/spring_for_forcecom_developers.html</link>
-      <pubDate>Fri, 3 Sep 2010 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_for_forcecom_developers.html</guid>
-      	<description>
-	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/17869&quot; style=&quot;float:left; margin-right:10px;&quot;&gt; I did a webinar with &lt;a href=&quot;http://www.twitter.com/cloudcoder&quot;&gt;Quinton Wall&lt;/a&gt;, the Developer Evangelist for &lt;a href=&quot;http://www.salesforce.com&quot;&gt;Salesforce.com&lt;/a&gt; and specifically on the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; collaboration. The talk went very well (thanks for all the questions and good feedback, guys!) and we have the recorded webinar, code and slides up &lt;a href=&quot;http://www.springsource.org/node/2836&quot;&gt;here&lt;/a&gt;. This first webinar was more about introducing developers to the Spring framework, and establishing basic skills to enable developers to use &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce.com&lt;/a&gt;. Stay tuned for the &lt;a href=&quot;http://www.developerforce.com/events/getstart_vmforce_techtalk/registration.php?d=70130000000FK2U&quot;&gt;next webinar,&lt;/a&gt; coming Sept 9, that will expand on the details of VMForce.com as an opportunity for Spring developers. &lt;/p&gt;
-	</description>
-    </item>
-    <item>
       <title>Spring and the Activiti BPMN2 engine  at JavaZone 2010</title>
       <link>http://joshlong.com/jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html</link>
       <pubDate>Fri, 3 Sep 2010 00:00:00 -0700</pubDate>
@@ -3658,6 +3660,15 @@ Java Threads: ( =&amp;gt; current thread )
 &lt;a href=&quot;http://javazone.no/incogito10/events/JavaZone%202010/sessions#d1f50946-9c72-441c-b30b-70af5b21633c&quot;&gt;Spring 3 Java Config.&lt;/a&gt;
 &lt;p&gt;&lt;/p&gt; 
 &lt;p&gt; People may know about JavaZone from their excellent &lt;a href=&quot;http://jz10.java.no/java-4-ever-trailer.html&quot;&gt;Java 4-Ever&lt;/a&gt; trailer or their &lt;a href=&quot;http://jz10.java.no/ladyjava-music-video.html&quot;&gt;Lady Java&lt;/a&gt; video. If you haven&apos;t seen these, then check them out! &lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Spring for Force.com Developers</title>
+      <link>http://joshlong.com/jl/blogPost/spring_for_forcecom_developers.html</link>
+      <pubDate>Fri, 3 Sep 2010 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_for_forcecom_developers.html</guid>
+      	<description>
+	&lt;p&gt; &lt;img src=&quot;http://joshlong.com/media/17869&quot; style=&quot;float:left; margin-right:10px;&quot;&gt; I did a webinar with &lt;a href=&quot;http://www.twitter.com/cloudcoder&quot;&gt;Quinton Wall&lt;/a&gt;, the Developer Evangelist for &lt;a href=&quot;http://www.salesforce.com&quot;&gt;Salesforce.com&lt;/a&gt; and specifically on the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; collaboration. The talk went very well (thanks for all the questions and good feedback, guys!) and we have the recorded webinar, code and slides up &lt;a href=&quot;http://www.springsource.org/node/2836&quot;&gt;here&lt;/a&gt;. This first webinar was more about introducing developers to the Spring framework, and establishing basic skills to enable developers to use &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce.com&lt;/a&gt;. Stay tuned for the &lt;a href=&quot;http://www.developerforce.com/events/getstart_vmforce_techtalk/registration.php?d=70130000000FK2U&quot;&gt;next webinar,&lt;/a&gt; coming Sept 9, that will expand on the details of VMForce.com as an opportunity for Spring developers. &lt;/p&gt;
 	</description>
     </item>
     <item>
@@ -5636,15 +5647,6 @@ esley/dp/0321200683&quot;&gt;Enterprise Integration Patterns&lt;/a&gt;: this has
 	</description>
     </item>
     <item>
-      <title>J2ME and Android consitancy</title>
-      <link>http://joshlong.com/jl/blogPost/j2me_and_android_consitancy.html</link>
-      <pubDate>Thu, 2 Oct 2008 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/j2me_and_android_consitancy.html</guid>
-      	<description>
-	Why is it that the basic &apos;optional&apos; components on J2ME are pretty much the optional components on Android? What am I missing here? If you get a relatively new phone you&apos;re likely to get the same minimum requirements that you&apos;ll get from an Android phone – the things that are really interesting and attractive are optional, just as they&apos;re optional on J2ME. This applies, for example, to the GPS support, the ability to play MP3s, access the camera, etc. One thing I expect is that, because it&apos;s Google, that once you develop for Android and the phone &quot;supports&quot; the feature, then it won&apos;t be that hard to go from emulator to deployment on the handset with the same features. In the J2ME world, it&apos;s not easy to get an application that works identically once deployed without multi-hundred dollar certificates and so on. And of course, you still are better are programming to a common denominator if you want the application work across a lot of phones. Additionally, there are features that some phone supported that aren&apos;t supported in any one emulator, which means that testing j2ME is fine using the Wireless Toolkit but difficult if you&apos;re trying to access features from a Samsung A900 without then using Sprint&apos;s SDK. The Gphone is almost here, perhaps we&apos;ll start to get a feel for what that entails.
-	</description>
-    </item>
-    <item>
       <title>http://code.google.com/p/java-libcdrip/</title>
       <link>http://joshlong.com/jl/blogPost/http_code_google_com_p.html</link>
       <pubDate>Thu, 2 Oct 2008 00:00:00 -0700</pubDate>
@@ -5665,6 +5667,15 @@ esley/dp/0321200683&quot;&gt;Enterprise Integration Patterns&lt;/a&gt;: this has
 &lt;p&gt; On Linux, I&apos;m using &lt;code&gt;grip&lt;/code&gt;, &lt;code&gt;cdio&lt;/code&gt;, and more, not to mention the GNU toolchain. On Windows, I&apos;m using &lt;code&gt;&lt;a href=&quot;http://cdexos.sourceforge.net/&quot;&gt;CDex&lt;/a&gt;&lt;/code&gt;. &lt;/p&gt; 
 &lt;p&gt; Since the layer of code that is actually mine is very thin (just enough to normalize the two APIs so that I could get them to conform the JNI-vended header files), it would not be very much use working on this project (unless you &lt;strong&gt;REALLY&lt;/strong&gt; want to&lt;strong&gt;!&lt;/strong&gt;) Instead, support those projects directly. &lt;/p&gt; 
 &lt;p&gt;Any feedback on the project is helpful. The C/C++ code is sort of slapdash and isn&apos;t necessarily the easiest to build unless you&apos;ve had time with &lt;a href=&quot;http://www.eclipse.org/cdt/&quot;&gt;Eclipse CDT&lt;/a&gt; or Visual Studio .NET 2008, which is why there are prebuilt binaries in the &lt;code&gt;lib&lt;/code&gt; directory in subversion. &lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>J2ME and Android consitancy</title>
+      <link>http://joshlong.com/jl/blogPost/j2me_and_android_consitancy.html</link>
+      <pubDate>Thu, 2 Oct 2008 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/j2me_and_android_consitancy.html</guid>
+      	<description>
+	Why is it that the basic &apos;optional&apos; components on J2ME are pretty much the optional components on Android? What am I missing here? If you get a relatively new phone you&apos;re likely to get the same minimum requirements that you&apos;ll get from an Android phone – the things that are really interesting and attractive are optional, just as they&apos;re optional on J2ME. This applies, for example, to the GPS support, the ability to play MP3s, access the camera, etc. One thing I expect is that, because it&apos;s Google, that once you develop for Android and the phone &quot;supports&quot; the feature, then it won&apos;t be that hard to go from emulator to deployment on the handset with the same features. In the J2ME world, it&apos;s not easy to get an application that works identically once deployed without multi-hundred dollar certificates and so on. And of course, you still are better are programming to a common denominator if you want the application work across a lot of phones. Additionally, there are features that some phone supported that aren&apos;t supported in any one emulator, which means that testing j2ME is fine using the Wireless Toolkit but difficult if you&apos;re trying to access features from a Samsung A900 without then using Sprint&apos;s SDK. The Gphone is almost here, perhaps we&apos;ll start to get a feel for what that entails.
 	</description>
     </item>
     <item>
@@ -5727,15 +5738,6 @@ esley/dp/0321200683&quot;&gt;Enterprise Integration Patterns&lt;/a&gt;: this has
 	</description>
     </item>
     <item>
-      <title>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</title>
-      <link>http://joshlong.com/jl/blogPost/keith_donald_speaking_on_spring.html</link>
-      <pubDate>Sun, 10 Aug 2008 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/keith_donald_speaking_on_spring.html</guid>
-      	<description>
-	&lt;p&gt; Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.phxjug.org/&quot;&gt;Phoenix Java User Group&lt;/a&gt; talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can&apos;t wait for this one! &lt;/p&gt;
-	</description>
-    </item>
-    <item>
       <title>Subversion 1.5, IntelliJ IDEA, and you</title>
       <link>http://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
       <pubDate>Sun, 10 Aug 2008 00:00:00 -0700</pubDate>
@@ -5744,6 +5746,15 @@ esley/dp/0321200683&quot;&gt;Enterprise Integration Patterns&lt;/a&gt;: this has
 	&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &quot;dirty&quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &quot;No Changes found&quot;. I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue. &lt;/p&gt;
 &lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! &lt;/p&gt; 
 &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand... &lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</title>
+      <link>http://joshlong.com/jl/blogPost/keith_donald_speaking_on_spring.html</link>
+      <pubDate>Sun, 10 Aug 2008 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/keith_donald_speaking_on_spring.html</guid>
+      	<description>
+	&lt;p&gt; Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.phxjug.org/&quot;&gt;Phoenix Java User Group&lt;/a&gt; talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can&apos;t wait for this one! &lt;/p&gt;
 	</description>
     </item>
     <item>
