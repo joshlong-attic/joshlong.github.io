@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JBake</title>
+    <title> Josh Long's  Bootiful Blog  </title>
     <link>https://joshlong.com</link>
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
-    <description>JBake Bootstrap Template</description>
+    <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Fri, 3 Aug 2018 12:17:39 -0700</pubDate>
-    <lastBuildDate>Fri, 3 Aug 2018 12:17:39 -0700</lastBuildDate>
+    <pubDate>Fri, 3 Aug 2018 12:36:13 -0700</pubDate>
+    <lastBuildDate>Fri, 3 Aug 2018 12:36:13 -0700</lastBuildDate>
 
     <item>
       <title>Eight (8!) Years on the Spring Team</title>
@@ -6379,5 +6379,5 @@ esley/dp/0321200683&quot;&gt;Enterprise Integration Patterns&lt;/a&gt;: this has
 	</description>
     </item>
 
-  </channel> 
+  </channel>
 </rss>
