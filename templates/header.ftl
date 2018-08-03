@@ -12,7 +12,9 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="generator" content="JBake">
-
+    <link rel="alternate" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml" />
+    <link rel="alternate feed" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml">
+ 
     <!-- Le styles -->
     <link href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>css/bootstrap.min.css" rel="stylesheet">
     <link href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>css/asciidoctor.css" rel="stylesheet">
@@ -33,4 +35,3 @@
   </head>
   <body onload="prettyPrint()">
     <div id="wrap">
-   

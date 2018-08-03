@@ -19,8 +19,7 @@
             <span class="icon-bar"></span>
           </button>
 <a class="navbar-brand" href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>">
-	<!-- <img alt="JoshLong.com" height = "30" src="<#if (content.rootpath)??>${content.rootpath}<#else></#if>joshlong-logo.jpg" />-->
-	<span style="font-size:larger;font-weight :bold;">
+ 	<span style="font-size:larger;font-weight :bold;">
 	Josh Long's Blog
 	</span> </a>
         </div>
@@ -30,23 +29,10 @@
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about.html">About</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>abstracts.html">Abstracts</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>livelessons.html">Livelessons</a></li>
+            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
 
-            <!--
-						<li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>${config.feed_file}">Subscribe</a></li>
-						<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>-->
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </div>
     <div class="container">
