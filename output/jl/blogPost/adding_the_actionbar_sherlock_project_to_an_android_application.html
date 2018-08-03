@@ -84,7 +84,7 @@
 	<p><p><a href="http://twitter.com/royclarkson">Roy Clarkson (@royclarkson)</a> and I gave a talk at <a href="http://SpringOne2GX.com/">SpringOne2GX 2013</a> in which we talked about building REST services with an eye towards consuming those services on mobile platforms like Android and iOS. This talk demonstrates the progressive evolution of an application using Spring MVC, Spring HATEOAS, Spring Data REST, Spring Security, Spring Security OAuth, and Spring Android. The code's benefited from a lot of help from Rob Winch.</p> 
 <p>I am pulling this blog together to introduce how we used the <a href="http://actionbarsherlock.com/">ActionBar Sherlock project</a> in the sample application. There is nothing here related to Spring, but I thought the whole process was hard enough that some notes might help someone else. </p> 
 <h2>What is an ActionBar?</h2> 
-<p><img src="http://joshlong.com/media/18751" width="300"></p> 
+<p><img src="https://joshlong.com/media/18751" width="300"></p> 
 <p>From the <a href="http://developer.android.com/guide/topics/ui/actionbar.html">documentation</a>, the <code>ActionBar</code>:</p> 
 <blockquote> 
  <ol> 
@@ -109,7 +109,7 @@
  <li>search for records </li> 
  <li>update the user profile photo</li> 
 </ul> 
-<p><img src="http://joshlong.com/media/18752"></p> 
+<p><img src="https://joshlong.com/media/18752"></p> 
 <h2>Using ActionBar Sherlock</h2> 
 <p>The sample application uses Android <code>Fragment</code>s to make the layout more dynamic inside of a single <code>Activity</code>, so in practice there is only <em>one</em> <code>Activity</code> that needs to extend the <code>SherlockFragmentActivity</code> class. </p> 
 <p>To use the ActionBar, an <code>Activity</code> should extend one of the ActionBar Sherlock-provided <code>Activity</code> instances. This way, you get a reference to the ActionBar via the <code>getActionBar()</code> method. Conveniently, you won't really need that reference, though.</p> 
