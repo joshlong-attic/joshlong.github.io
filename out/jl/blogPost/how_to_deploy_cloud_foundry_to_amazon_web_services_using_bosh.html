@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>How to Deploy Cloud Foundry to Amazon Web Services using BOSH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for JoshLong.com" href="feed.xml" />
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+<style type="text/css">
+/* .navbar-brand img {
+ height : 80px ;
+ border: 1px solid grey ;
+ padding :10px;
+ background-color: white ;
+}*/
+
+
+</style>
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+ 	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+            <li><a href="../../livelessons.html">Livelessons</a></li>
+            <li><a href="../../feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>How to Deploy Cloud Foundry to Amazon Web Services using BOSH</h1>
+	</div>
+
+	<p><em>28 February 2013</em></p>
+
+	<p><p> Today I was fortunate enough to learn from <a href="http://www.twitter.com/drnic"> Dr. Nic</a> as he introduced his open source utility, <a href="https://github.com/StarkAndWayne/bosh-bootstrap"><code>bosh-boostrap</code></a>, which makes shortwork of the chores of setting up and deploying BOSH and Cloud Foundry on AWS. Largely, the steps are reproduced and available on his tutorial <a href="https://github.com/StarkAndWayne/bosh-cloudfoundry/#zero-to-cloud-foundry-in-a-few-hours">which he's put online</a> online. </p> 
+<p> BOSH is the orchestration manager for the underlying IaaS component - vSphere, Amazon Web Services or Open Stack. </p>
+<p> BOSH in turn knows about <em>releases</em>, the makeup of some distributed systems, like Cloud Foundry. Cloud Foundry in turn has lots of moving parts and components, like PostgreSQL, and NATS - the Cloud Foundry message queue. </p>
+<p> Since BOSH deploys its own packages of components like PostgreSQL, there is a lot of compiling. This process takes a few hours with Dr. Nic's excellent utility. Most of that, happily, is just wait time as you wait for things to compile and upload or download. If you weren't using the <code>bosh-bootstrap</code> utility, however, you'd spend a <em>lot</em> more time setting things up and configuring things. BOSH is very flexible, and overwhelming. <code>bosh-bootstrap</code> is opinionated, concise, and surfaces only the things it couldn't possibly devine by itself. </p> 
+<p> Anyway, feel free to ping <a href="http://twitter.com/drnic">Dr. Nic</a> or <a href="http://www.twitter.com/starbuxman"> me</a> on Twitter if you have questions. It was <em>really</em> cool to see it all startup and then be able to deploy applications to it. </p>
+<h2> A few words of caution and advance notice: </h2> 
+<p> You'll need an Amazon Web Services account. The utility will leave you with 5 very expensive nodes on Amazon Web Services as well as a <em>lot</em> of configured storage. You should <b>stop</b> the instances and storage or just outright delete them when you're done if you don't intend to keep it running. </p> 
+<p> Also, you'll need to have a domain you can point to this. During this process you'll be given an IP, and you'll need to create an A-name record (for <code>*</code>) in your DNS configuration for your hostname and point it to that IP. </p> 
+<p> I got the application presented here on <a href="http://preshavedyak.com/2012/12/09/barebones-cloud-foundry-youtube-post-2-5-ruby/">this Pre Shaved Yak blog post</a> up and running at starbuxman.org, and a colleague got it working on his private instance as well. </p>
+<div style=" border:1px solid black ; margin-top: 10px; margin-bottom: 10px; "> 
+ <img src="http://joshlong.com/media/18608" width="700"> 
+</div> 
+<p></p></p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

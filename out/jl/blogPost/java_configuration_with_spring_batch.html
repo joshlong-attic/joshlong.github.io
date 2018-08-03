@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>Java Configuration with Spring Batch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for JoshLong.com" href="feed.xml" />
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+<style type="text/css">
+/* .navbar-brand img {
+ height : 80px ;
+ border: 1px solid grey ;
+ padding :10px;
+ background-color: white ;
+}*/
+
+
+</style>
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+ 	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+            <li><a href="../../livelessons.html">Livelessons</a></li>
+            <li><a href="../../feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>Java Configuration with Spring Batch</h1>
+	</div>
+
+	<p><em>14 April 2013</em></p>
+
+	<p><p>In <a href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>, I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <code>@EnableWebMvc</code>) that turn on container-wide, and often conventions-oriented features. In the case of <code>@EnableWebMvc</code>, the annotation enables Spring MVC and turns on support for correctly exposing <code>@Controller</code>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <code>@EnableWebMvc</code> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we'll look at <a href="http://springsource.org/spring-batch">Spring Batch's Java Configuration API</a> available in the upcoming 2.2 release. </p> 
+<p> Spring Batch provides a solution for batch processing. It lets you describe jobs, which themselves have steps, which read input from some source system (a large RDBMS dataset, a large CSV file or XML document, etc.), optionally process the input, and then write the output to a destination system like an RDBMS, a file, or a message queue. </p> 
+<pre><code>
+@Configuration
+@EnableBatchProcessing
+public class BatchInfrastructureConfiguration   {
+
+    @Bean
+    public TaskScheduler taskScheduler() {
+        return new ConcurrentTaskScheduler();
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager(DataSource ds) {
+        return new DataSourceTransactionManager(ds);
+    }
+
+
+    @Bean
+    public DataSource dataSource(Environment environment) {
+
+        String pw = environment.getProperty("dataSource.password"),
+                user = environment.getProperty("dataSource.user"),
+                url = environment.getProperty("dataSource.url");
+
+        Class
+  <driver>
+    classOfDs = environment.getPropertyAsClass("dataSource.driverClassName", Driver.class);
+
+        SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
+        dataSource.setPassword(pw);
+        dataSource.setUrl(url);
+        dataSource.setUsername(user);
+        dataSource.setDriverClass(classOfDs);
+
+        return dataSource;
+    }
+}
+
+
+  </driver></code></pre> 
+<p> Once you've done this, you can start describing jobs using the Spring Batch configuration DSL. Here, we define a job named <code>flickrImportJob</code> which in turn has one step, <code>step1</code>, that in turn reads data using an <code>ItemReader</code> named <code>photoAlbumItemReader</code> and writes data using an <code>ItemWriter</code> named <code>photoAlbumItemWriter</code>. </p> 
+<pre><code>
+@Configuration
+@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Import(BatchInfrastructureConfiguration.class)
+public class BatchImporterConfiguration {
+
+    @Bean(name = "flickrImportJob")
+    public Job flickrImportJob(
+            JobBuilderFactory jobs,
+            @Qualifier("step1") Step s1 
+    ) {
+        return jobs.get("flickrImportJob")
+                .flow(s1)            
+                .end()
+                .build();
+    }
+
+
+    @Bean(name = "step1")
+    public Step step1(StepBuilderFactory stepBuilderFactory,
+                      @Qualifier("photoAlbumItemReader") ItemReader
+  <photoset>
+    ir,
+                      @Qualifier("photoAlbumItemWriter") ItemWriter
+   <photoset>
+     iw
+    ) {
+        return stepBuilderFactory.get("step1")
+                .
+    <photoset, photoset>
+     chunk(10)
+                .reader(ir)
+                .writer(iw)
+                .build();
+    }
+    // ... omitting definitions of ItemReader and ItemWriters 
+}
+   
+
+
+    </photoset,>
+   </photoset>
+  </photoset></code></pre></p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>

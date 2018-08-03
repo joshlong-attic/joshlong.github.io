@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>Functional Reactive Web Endpoints in Spring Framework 5.0 and Spring Boot 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for JoshLong.com" href="feed.xml" />
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+<style type="text/css">
+/* .navbar-brand img {
+ height : 80px ;
+ border: 1px solid grey ;
+ padding :10px;
+ background-color: white ;
+}*/
+
+
+</style>
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+ 	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+            <li><a href="../../livelessons.html">Livelessons</a></li>
+            <li><a href="../../feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>Functional Reactive Web Endpoints in Spring Framework 5.0 and Spring Boot 2.0</h1>
+	</div>
+
+	<p><em>18 February 2018</em></p>
+
+	<p><p>Want to get started with Spring Framework 5's functional reactive web endpoints? Read on..</p> 
+<p>Spring Framework 5 introduced a new way to build HTTP endpoints that's similar to the handler model in Express.js in the Node.js world, or Sinatra in the Ruby world, or Ratpack in the Groovy world, or Spark Java in the Java world. The idea is simple: contribute a predicate that matches incoming requests and provide a callback or handler that produces the response when the predicate matches an incoming request. This is a particularly compelling approach in the world of lambdas, in Java 8 or later, or in more sophisticated languages like Groovy, Kotlin, or Scala.</p> 
+<p>Go to <a href="http://start.spring.io">the Spring Initializr</a>, choose the latest version of Spring Boot (version 2.0.RC1, as of this writing) in the dropdown menu on the top right, and then type 'Reactive Web' in the 'Search for Dependencies' text input field. You'll be given a default Maven project (though you could have selected Gradle). Open the Maven project in your iDE. IntellIJ will let you File &gt; Open &gt; select <code>pom.xml</code>. In Eclipse you can go to File &gt; Import &gt; Maven and then select the <code>pom.xml</code>. You'll be given a single class with a <code>public static void main</code> method in it and the <code>@SpringBootApplication</code> annotation on the Java class. Edit it, adding a single method, to make it look like this:</p> 
+<pre><code>package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.reactive.function.server.RouterFunction;
+import org.springframework.web.reactive.function.server.RouterFunctions;
+import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Flux;
+
+import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
+
+@SpringBootApplication
+public class DemoApplication {
+
+	@Bean
+	RouterFunction&lt;ServerResponse&gt; routes() {
+		return RouterFunctions
+				.route(GET("/hi"), request -&gt; ServerResponse.ok().body(Flux.just("Hi, world"), String.class))
+				.andRoute(GET("/hello"), request -&gt; ServerResponse.ok().body(Flux.just("Hello, world"), String.class));
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+}
+</code></pre> 
+<p>Run the Java program and open the browser at <code>/hi</code> and you'll see <code>Hello, world</code>.</p> 
+<p>Congratulations on building your first functional reactive endpoint with Spring Framework 5 (and Spring Boot 2.0).</p></p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>
