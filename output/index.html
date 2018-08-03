@@ -681,7 +681,7 @@ mp4_to_gif dogs.mp4 dogs.gif
 <p>If you're using our open-source Eclipse distribution <a href="https://spring.io/tools/sts">Spring Tool Suite (STS)</a>, there are many ways to get started. We base STS on the latest-and-greatest cut of the Eclipse Java EE distribution, so it represents a stable, well-integrated distibution of Eclipse. The Spring Tool Suite provides extra tools and niceties. One such nicety is a dialog within the IDE that acts as a front for the Spring Initializr. It's nice skipping the download, unzip, and import steps!</p> 
 <p>The <a href="http://spring,io/guides">spring.io guides</a> provide easy-to-digest introductions to using Spring (or Spring ecosystem technologies). Each guide is backed by a Github repository that demonstrates the finished project as well as provides a base template that you can fill out when completing the guide. There's a nice feature in STS that lets you import a <em>Getting Started</em> guide directly from the IDE, by going to <code>File</code> -&gt; <code>New</code> -&gt; <code>Import Spring Getting Started Content</code>. This saves you the <code>git clone</code>, and IDE-import.</p> 
 <p>I've <a href="//www.youtube.com/embed/p8AdyMlpmPk">put together a video that shows what it looks like to use the tools in Spring Tool Suite (STS)</a>,</p> 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/p8AdyMlpmPk" frameborder="0" allowfullscreen></iframe></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p8AdyMlpmPk" frameborder="0" allowfullscreen></iframe></p>
   			<a href="jl/blogPost/spring_integration_adapters_gateways_and_channels.html"><h1>Spring Integration Adapters, Gateways, and Channels</h1></a>
   			<p>06 June 2014</p>
   			<p><p>A community member was a little unclear on the role of Spring Integration adapters, gateways, and channels. I put together a response and thought I'd share it here, too. Here's my response:</p> 
@@ -737,20 +737,20 @@ mp4_to_gif dogs.mp4 dogs.gif
   			<a href="jl/blogPost/spring_boot_m6s_new_security_featur.html"><h1>Spring Boot M6&apos;s new Security features</h1></a>
   			<p>12 November 2013</p>
   			<p><p> <a href="http://spring.io/projects/spring-boot"> Spring Boot </a> is a super impressive way to get started. Check out the various <a href="http://spring.io/guides/"><em>Getting Started</em> guides </a> for more on Spring Boot itself. Spring Boot exposes great metadata about the application from HTTP when you depend on the <code>spring-boot-starter-actuator</code>. Now, with M6, you can access that same information (and more!) from SSH! Here's a screencast I created demonstrating the feature. To enable it, you must also add the <code>spring-boot-starter-shell-remote</code> and <code>spring-boot-starter-security</code>. </p> 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/3R1Yt2QKs38" frameborder="0" allowfullscreen></iframe> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3R1Yt2QKs38" frameborder="0" allowfullscreen></iframe> 
 <p> Here's the code for the Groovy class that you can run by using the <code>spring</code> command line tool incantation: <code>spring run foo.groovy</code>:</p> 
 <pre><code>
 @Grab("spring-boot-starter-shell-remote")
 @Grab("spring-boot-starter-security")
 @Grab("spring-boot-starter-actuator")
-@RestController 
+@RestController
 class RemoteShellFriendlyController {
 
   @RequestMapping("/users/{id}")
 	Object someData( @PathVariable int id){
         [ someId : id ]
 	}
-	
+
 }
 </code></pre> 
 <p> In the screencast, I just use the default user and password. If you want use the same user and password from both SSH and HTTP, create a file <code>application.properties</code> and put it in the same directory as the Groovy script and put the following properties inside it: </p> 
@@ -1791,8 +1791,8 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
   			<p>19 October 2012</p>
   			<p><p> My talk from <a href="http://www.javazone.no"> JavaZone</a> is now available online. I co-presented with <a href="http://www.twitter.com/z_oleg">Oleg Zhurakousky</a>, colleague and co-committer on <a href="http://springsource.org/spring-integration">Spring Integration</a>. If you'd like a quick look, <a href="http://vimeo.com/49477307">check it - and all the other great videos on the JavaZone Vimeo page - out</a>! </p>
 <div> 
- <iframe src="http://player.vimeo.com/video/49477307" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
- <p><a href="http://vimeo.com/49477307">Enterprise Integration and Batch Processing on Cloud Foundry</a> from <a href="http://vimeo.com/javazone">JavaZone</a> on <a href="http://vimeo.com">Vimeo</a>.</p> 
+ <iframe src="//player.vimeo.com/video/49477307" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+ <p><a href="https://vimeo.com/49477307">Enterprise Integration and Batch Processing on Cloud Foundry</a> from <a href="http://vimeo.com/javazone">JavaZone</a> on <a href="http://vimeo.com">Vimeo</a>.</p> 
 </div> 
 <p></p></p>
   			<a href="jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html"><h1>Arlington, VA Cloud Foundry Dev Day</h1></a>
