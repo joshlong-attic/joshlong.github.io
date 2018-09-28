@@ -69,6 +69,13 @@
 	<div class="page-header">
 		<h1>Blog</h1>
 	</div>
+  			<a href="jl/blogPost/how-to-install-a-fully-souped-up-ffmpeg-on-osx.html"><h1>How to Install FFMPEG with _ALL_ the Options using Homebrew on macOS</h1></a>
+  			<p>28 September 2018</p>
+  			<p><p>I needed <code>libtheora</code> support in my macOS / OSX install of <code>ffmpeg</code>. I installed <code>ffmpeg</code> using <a href="http://homebrew.io">Homebrew</a> but needed to add theora support.</p> 
+<p>I found this handy recipe which gives me an <code>ffmpeg</code> that supports <em>tons</em> of options!</p> 
+<pre><code class="language-sh">brew install ffmpeg $(brew options ffmpeg | grep -vE '\s' | grep -- '--with-' | tr '\n' ' ')
+</code></pre> 
+<p>If you already have <code>ffmpeg</code> installed you can remove it or just change the above command to be <code>brew reinstall ...</code>.</p></p>
   			<a href="jl/blogPost/8-years-on-the-spring-team.html"><h1>Eight (8!) Years on the Spring Team</h1></a>
   			<p>02 August 2018</p>
   			<p><p>I'll never forget it. I was sat at my desk at the offices of Shopzilla in Santa Monica, Los Angeles, California talking to then Spring Integration lead (he now runs <a href="http://ProjectRiff.io">the Riff project</a>) Mark Fisher about some code I'd contributed. I'd been working with, and for, him for a while on Spring Integration since I was enamored with enterprise application integration and, it seemed to me, Spring Integration was the technology to learn and invest in. A propos to nothing, he volunteered that there was this new job opening for a "developer advocate," and suggested that I should perhaps apply. Now, I'd only ever known James Ward in this role and it seemed to me that I could never do what James Ward did. His wisdom and patience were matched only by his charisma. The guy's a rockstar!</p> 
@@ -1247,6 +1254,65 @@ public class CrmBaseActivity extends Activity {
   			<p>24 April 2013</p>
   			<p><img src="https://joshlong.com/media/18664"> 
 <p>Hi guys, tonight I'll be speaking at the Oakland JUG on <a href="http://www.meetup.com/eastbayjug/"><em>Multi Client Development with Spring</em></a>. The talk will be geared towards developing modern web applications that are REST-centric using Spring, Spring MVC, Spring Android, and Spring Mobile. If we have time, we could go into even more detail on other technologies like Spring Security and Spring Security OAuth. I hope to see you guys there as it figures to be a fun time! On a related note, I will have my pal <a href="http://twitter.com/andypiper">Andy Piper</a> in tow. He's a <a href="http://www.cloudfoundry.com">Cloud Foundry</a> ninja, and I'm sure he'll have answers for people with questions! </p></p>
+  			<a href="jl/blogPost/java_configuration_with_spring_social.html"><h1>Java Configuration with Spring Social</h1></a>
+  			<p>14 April 2013</p>
+  			<p><p>In <a href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>, I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <code>@EnableWebMvc</code>) that turn on container-wide, and often conventions-oriented features. In the case of <code>@EnableWebMvc</code>, the annotation enables Spring MVC and turns on support for correctly exposing <code>@Controller</code>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <code>@EnableWebMvc</code> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we'll look at <a href="http://springsource.org/spring-social"> Spring Social</a>. </p> 
+<p> Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup. </p> 
+<pre><code>
+@Configuration
+@EnableJdbcConnectionRepository
+@EnableFacebook(appId = "${blog.facebook.appId}", appSecret = "${blog.facebook.appSecret}")
+public class SocialConfiguration {
+
+    @Bean
+    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
+                                               ConnectionRepository connectionRepository) {
+        return new ConnectController(connectionFactoryLocator, connectionRepository);
+    }
+
+    @Bean
+    public ProviderSignInController providerSignInController(
+            ConnectionFactoryLocator connectionFactoryLocator, 
+            UsersConnectionRepository usersConnectionRepository) {
+        
+        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
+            @Override
+            public String signIn(String userId, Connection
+  <!--?--> connection, NativeWebRequest request) {
+                return SignInUtils.signIn(userId);
+            }
+        });
+    }
+
+    @Bean
+    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
+        return new DisconnectController(usersConnectionRepository, environment.getProperty("blog.facebook.appSecret"));
+    }
+
+    @Bean
+    public UserIdSource userIdSource() {
+        return new UserIdSource() {
+            @Override
+            public String getUserId() {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (authentication == null) {
+                    throw new IllegalStateException("Unable to get a ConnectionRepository: no user signed in");
+                }
+                return authentication.getName();
+            }
+        };
+    }
+}
+</code></pre> 
+<p> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user to approve the API access and then proceed with the call. </p> 
+<pre><code>
+@Inject private Facebook facebook;
+
+@RequestMapping("/hello")
+public void showProfileInformation( Model model){ 
+  model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
+}
+</code></pre></p>
   			<a href="jl/blogPost/java_configuration_with_spring_batch.html"><h1>Java Configuration with Spring Batch</h1></a>
   			<p>14 April 2013</p>
   			<p><p>In <a href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>, I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <code>@EnableWebMvc</code>) that turn on container-wide, and often conventions-oriented features. In the case of <code>@EnableWebMvc</code>, the annotation enables Spring MVC and turns on support for correctly exposing <code>@Controller</code>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <code>@EnableWebMvc</code> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we'll look at <a href="http://springsource.org/spring-batch">Spring Batch's Java Configuration API</a> available in the upcoming 2.2 release. </p> 
@@ -1334,65 +1400,12 @@ public class BatchImporterConfiguration {
     </photoset,>
    </photoset>
   </photoset></code></pre></p>
-  			<a href="jl/blogPost/java_configuration_with_spring_social.html"><h1>Java Configuration with Spring Social</h1></a>
-  			<p>14 April 2013</p>
-  			<p><p>In <a href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>, I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <code>@EnableWebMvc</code>) that turn on container-wide, and often conventions-oriented features. In the case of <code>@EnableWebMvc</code>, the annotation enables Spring MVC and turns on support for correctly exposing <code>@Controller</code>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <code>@EnableWebMvc</code> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we'll look at <a href="http://springsource.org/spring-social"> Spring Social</a>. </p> 
-<p> Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup. </p> 
-<pre><code>
-@Configuration
-@EnableJdbcConnectionRepository
-@EnableFacebook(appId = "${blog.facebook.appId}", appSecret = "${blog.facebook.appSecret}")
-public class SocialConfiguration {
-
-    @Bean
-    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
-                                               ConnectionRepository connectionRepository) {
-        return new ConnectController(connectionFactoryLocator, connectionRepository);
-    }
-
-    @Bean
-    public ProviderSignInController providerSignInController(
-            ConnectionFactoryLocator connectionFactoryLocator, 
-            UsersConnectionRepository usersConnectionRepository) {
-        
-        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
-            @Override
-            public String signIn(String userId, Connection
-  <!--?--> connection, NativeWebRequest request) {
-                return SignInUtils.signIn(userId);
-            }
-        });
-    }
-
-    @Bean
-    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
-        return new DisconnectController(usersConnectionRepository, environment.getProperty("blog.facebook.appSecret"));
-    }
-
-    @Bean
-    public UserIdSource userIdSource() {
-        return new UserIdSource() {
-            @Override
-            public String getUserId() {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                if (authentication == null) {
-                    throw new IllegalStateException("Unable to get a ConnectionRepository: no user signed in");
-                }
-                return authentication.getName();
-            }
-        };
-    }
-}
-</code></pre> 
-<p> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user to approve the API access and then proceed with the call. </p> 
-<pre><code>
-@Inject private Facebook facebook;
-
-@RequestMapping("/hello")
-public void showProfileInformation( Model model){ 
-  model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
-}
-</code></pre></p>
+  			<a href="jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html"><h1>One Big Bag of Beans</h1></a>
+  			<p>13 April 2013</p>
+  			<p><p>At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean's class, optionally an <code>id</code> by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc. </p> 
+<p>Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The <a href="http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL">Groovy Bean Builder</a>. The <a href="http://blog.springsource.org/2012/12/10/introducing-spring-scala/"> Spring Scala</a> approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces. </p>
+<p> Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the <code>@Transactional</code> annotation. Then the stereotype annotations emerged -<code>@Controller</code>, <code>@Component</code>, <code>@Service</code>, etc, that – along with component scanning and <code>@Autowired</code> – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. </p> 
+<p>Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. </p></p>
   			<a href="jl/blogPost/java_configuration.html"><h1>Java Configuration</h1></a>
   			<p>13 April 2013</p>
   			<p><p> In my last post I talked a little bit about how – at runtime – Spring beans are all just the same thing. I tried to emphasize that beans defined in any number of styles can be mixed and matched. While the XML format will always be supported, I personally like the increasingly numerous Java-configuration centric APIs and DSLs that the Spring projects are exposing. </p>
@@ -1449,12 +1462,6 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 <p> This class is too annotated with <code>@Configuration</code>. It enables Spring MVC (bean validation, file upload support, REST, etc. etc.), and scans the context for beans of well known plugin objects like <code>ViewResolver</code>s. But here we see something new: the configuration class extends a base class, or implements an interface having the word “<code>Configurer</code>” in it. Typically the framework runs these callback implementing instances and uses it to tailor how it builds itself. Here, for example, we have callback methods we can implement to provide things like <code>HttpMessageConverters</code>, validation, view controllers, etc. We use <code>@ComponentScan</code> to scan and register beans (typically beans of type <code>@Controller</code>) in or below the package that the configuration class is in. And, because we want to inject references to the services we’ve just defined, we’ve used the <code>@Import</code> annotation to import the bean definitions from the <code>ServiceConfiguration</code> class. </p> 
 <p> This was by no means an exhaustive look at Java configuration, but hopefully you see that there is a lot of convenience in this approach. You can still substitute values from external property files, you can still override and extend the frameworks, and you can still achieve a single configuration artifact – a place where you can get a bird’s eye view of the system. </p>
 <p> There are many Spring projects that provide idiomatic, Java configuration centric APIs and DSLs as Spring core does for building services using Spring and web applications using Spring MVC. </p></p>
-  			<a href="jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html"><h1>One Big Bag of Beans</h1></a>
-  			<p>13 April 2013</p>
-  			<p><p>At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean's class, optionally an <code>id</code> by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc. </p> 
-<p>Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The <a href="http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL">Groovy Bean Builder</a>. The <a href="http://blog.springsource.org/2012/12/10/introducing-spring-scala/"> Spring Scala</a> approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces. </p>
-<p> Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the <code>@Transactional</code> annotation. Then the stereotype annotations emerged -<code>@Controller</code>, <code>@Component</code>, <code>@Service</code>, etc, that – along with component scanning and <code>@Autowired</code> – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. </p> 
-<p>Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. </p></p>
   			<a href="jl/blogPost/breaking_the_1000ms_time_to_glass_mobile_barribreaking_the_1000ms_time_to_glass_mobile_barri.html"><h1>Breaking the 1000ms Time to Glass Mobile Barrier</h1></a>
   			<p>11 April 2013</p>
   			<p><p>I just found this video on reddit.com, <a href="">Breaking the 1000ms Time to Glass Mobile Barrier</a>. </p>
@@ -1551,6 +1558,12 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
   			<a href="jl/blogPost/bubble_wrap.html"><h1>Bubble Wrap</h1></a>
   			<p>20 February 2013</p>
   			<p><p> This whole conversation just struck me as being really funny. So, I shall shamelessly re-post it here. <br> <img src="https://joshlong.com/media/18600" width="600"> </p></p>
+  			<a href="jl/blogPost/coffee_drinks_in_china.html"><h1>Coffee Drinks in China</h1></a>
+  			<p>19 January 2013</p>
+  			<p><p> My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must wind down my time here. As part of that, I need to finish my <em>amazing</em> stash 'o iced coffee drinks that I've only found here in China. I don't know if you know this about me, but I <em>love</em> coffee. And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@ </p> 
+<div style="padding-bottom: 10px; "> 
+ <img src="https://joshlong.com/media/18596" width="500">
+</div></p>
   			<a href="jl/blogPost/on_damien_katz_the_unreasonable_effectiveness_of_c.html"><h1>On Damien Katz&apos; &quot;The Unreasonable Effectiveness of C&quot;</h1></a>
   			<p>19 January 2013</p>
   			<p><p> I loved <a href="http://damienkatz.net/2013/01/the_unreasonable_effectiveness_of_c.html"> Damien Katz' blog on <em>The Unreasonable Effectivenes of C</em>. </a></p> 
@@ -1560,12 +1573,6 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
 <p> Mark makes a great point about how to integrate C libraries and modules. He suggests JNI sucks, and to use messaging. I am a big fan of messaging. Fundamentally, successful use of messaging and successful use of JNI both require the same thing: you need to simplify the exported API drastically. </p>
 <p> When using JNI, I try to never 'leak' any complex C types into my java API and vice versa, always communicating through numeric types and <code>char*</code> -&gt; <code>jstrings</code>. Even if the native code I'm exposing is C++, I'll still use the C-flavor of JNI (not C++) because it forces this canonicalization that's favorable to interop. If you keep the surface area of the C API very light, and try to avoid threading, it's easy to make it work as a native extension via Java JNI or CPYthon or MRI Ruby, etc. </p>
 <p> Once you've gone through this process, then exposing the C API via messaging is easier because the message payloads between two systems can't, by definition, be much more complicated than the surface area of the C library. Of course, if you're using messaging, that means either writing messaging code in C, or exposing the C library to some higher level language and doing the messaging there. The nice part about messaging is that insulates your higher-level language code from your C code which - let's be honest - might be flakier than your Java code. I still won't link code written against the imagemagick C APIs directly to my application! There is some black magic in that library...! If the C code dies, the messaging system absorbs the requests until another node running the C code can pick up the slack. On the other hand, if you really are using C for performance, then messaging introduces at least a network hop, not to mention another component in the system, and you might lose any gains you made by writing it in C. In this case, it is possible to use write stable, well-behaved JNI or native extensions, but this again requires keeping the surface area small and understanding the pre-conditions nad post-conditions. No threads. Don't pass around pointers to complex objects between C and Java. Make sure you understand who's supposed to clean up memory, and when. </p></p>
-  			<a href="jl/blogPost/coffee_drinks_in_china.html"><h1>Coffee Drinks in China</h1></a>
-  			<p>19 January 2013</p>
-  			<p><p> My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must wind down my time here. As part of that, I need to finish my <em>amazing</em> stash 'o iced coffee drinks that I've only found here in China. I don't know if you know this about me, but I <em>love</em> coffee. And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@ </p> 
-<div style="padding-bottom: 10px; "> 
- <img src="https://joshlong.com/media/18596" width="500">
-</div></p>
   			<a href="jl/blogPost/programmer_pet_peeves.html"><h1>Programmer Pet Peeves #242942: Sheraton</h1></a>
   			<p>14 January 2013</p>
   			<p><p> Sheraton's website's got some issues that drive me, a programmer, nuts. </p>
@@ -1616,17 +1623,6 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
   			<p>16 December 2012</p>
   			<p><p> <a href="http://blog.booking.com/efficient-css-compression-in-perl.html">Booking.com has announced that they've re-written the Java-based YUI Compressor using Perl</a>. I'm used to seeing people talking about rewriting systems written in Java into other languages like Python, C, C#, Haskell, Erlang, Scala, Groovy, etc. If I'm honest I just haven't seen many new Perl programs except buried in people's system administration logic and, of course, <a href="http://puppetlabs.com/">Puppet</a>. </p> 
 <p> The results are impressive though, so this is very cool. And, I expect that this will make the tool more approachable to developers as Perl's still far easier and more pervasive than Java virtual machines on machines of developers who are not Java developers. So... cool! </p></p>
-  			<a href="jl/blogPost/rest_in_peace_ravi_shankar.html"><h1>Rest in Peace Ravi Shankar</h1></a>
-  			<p>12 December 2012</p>
-  			<p><table style="margin-bottom: 10px;" cellpadding="0" cellspacing="0" border="0">
- <tbody>
-  <tr>
-   <td valign="top" width="200"> <img src="https://joshlong.com/media/18554" width="200"> </td>
-   <td width="10"></td>
-   <td valign="top"> <p> I'm in India (Bangalore and Hyderabad) and the news today is of the passing of Ravi Shankar, the <em>sitar virtuoso</em> who's music influenced the <em>Beatles</em> in the 60s and changed the genre in some ways. The first introduction to him that I had was through the music of his daughters on <em><a href="http://en.wikipedia.org/wiki/Concert_for_George">Concert for George</a></em> (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the <em>Beatles</em> and really have a lot of respect for the man. He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP <a href="http://en.wikipedia.org/wiki/Ravi_Shankar">Ravi Shankar</a>. </p></td>
-  </tr>
- </tbody>
-</table></p>
   			<a href="jl/blogPost/springone_beijing_and_india_trip_report.html"><h1>SpringOne Beijing and India Trip Report</h1></a>
   			<p>12 December 2012</p>
   			<p><p> I just finished <a href="http://springonechina.cloudfoundry.com">SpringOne China</a> over the weekend. The show was absolutely amazing and the attendees were, as usual, the highlight of the show. It was such an honor to meet so many wonderful people. We <a href="http://springonechina.cloudfoundry.com">finished SpringOne China</a> over the weekend and are today at the first of two events for <a href="http://springoneindia.cloudfoundry.com">SpringOne India in Bangalore and SpringOne in Hyderabad</a>. The shows have been really amazing! In particular, I've enjoyed the food, the sites and the <em>amazing</em> community that have turned up in droves! </p> 
@@ -1641,6 +1637,17 @@ public String signin(@ModelAttribute @Valid SignInAttempt signInAttempt, @Reques
    <td width="300" valign="bottom"><img src="https://joshlong.com/media/18551" alt="" width="300"> <br> I gave a talk in Bangalore and people deluged the stage with questions and greetings. I asked the last wave of people to take a photo with me. </td> 
    <td width="300" valign="bottom"><img src="https://joshlong.com/media/18550" alt="" width="300" height="199"><br> Left to Right: Gary Russel, Josh Long, Jennifer Hickey, Jeremy Grelle, Oliver Gierke, Chris Richardson -- the whole SpringOne India lineup</td> 
   </tr> 
+ </tbody>
+</table></p>
+  			<a href="jl/blogPost/rest_in_peace_ravi_shankar.html"><h1>Rest in Peace Ravi Shankar</h1></a>
+  			<p>12 December 2012</p>
+  			<p><table style="margin-bottom: 10px;" cellpadding="0" cellspacing="0" border="0">
+ <tbody>
+  <tr>
+   <td valign="top" width="200"> <img src="https://joshlong.com/media/18554" width="200"> </td>
+   <td width="10"></td>
+   <td valign="top"> <p> I'm in India (Bangalore and Hyderabad) and the news today is of the passing of Ravi Shankar, the <em>sitar virtuoso</em> who's music influenced the <em>Beatles</em> in the 60s and changed the genre in some ways. The first introduction to him that I had was through the music of his daughters on <em><a href="http://en.wikipedia.org/wiki/Concert_for_George">Concert for George</a></em> (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the <em>Beatles</em> and really have a lot of respect for the man. He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP <a href="http://en.wikipedia.org/wiki/Ravi_Shankar">Ravi Shankar</a>. </p></td>
+  </tr>
  </tbody>
 </table></p>
   			<a href="jl/blogPost/shanghai_december_4th.html"><h1>Shanghai, December 4th</h1></a>
