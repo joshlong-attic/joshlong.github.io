@@ -72,11 +72,12 @@
 
 	<p><em>28 September 2018</em></p>
 
-	<p><p>I needed <code>libtheora</code> support in my macOS / OSX install of <code>ffmpeg</code>. I installed <code>ffmpeg</code> using <a href="http://homebrew.io">Homebrew</a> but needed to add theora support.</p> 
-<p>I found this handy recipe which gives me an <code>ffmpeg</code> that supports <em>tons</em> of options!</p> 
+	<p><p>I needed <code>libtheora</code> support in my macOS / OSX install of <code>ffmpeg</code>. I installed <code>ffmpeg</code> using <a href="http://homebrew.io">Homebrew</a> but needed to add theora support.</p>
+<p>I found this handy recipe which gives me an <code>ffmpeg</code> that supports <em>tons</em> of options!</p>
 <pre><code class="language-sh">brew install ffmpeg $(brew options ffmpeg | grep -vE '\s' | grep -- '--with-' | tr '\n' ' ')
-</code></pre> 
-<p>If you already have <code>ffmpeg</code> installed you can remove it or just change the above command to be <code>brew reinstall ...</code>.</p></p>
+</code></pre>
+<p>If you already have <code>ffmpeg</code> installed you can remove it or just change the above command to be <code>brew reinstall ...</code>.</p>
+</p>
 
 	<hr />
 	

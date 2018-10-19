@@ -72,9 +72,14 @@
 
 	<p><em>14 April 2013</em></p>
 
-	<p><p>In <a href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>, I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <code>@EnableWebMvc</code>) that turn on container-wide, and often conventions-oriented features. In the case of <code>@EnableWebMvc</code>, the annotation enables Spring MVC and turns on support for correctly exposing <code>@Controller</code>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <code>@EnableWebMvc</code> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner. In this post, we'll look at <a href="http://springsource.org/spring-social"> Spring Social</a>. </p> 
-<p> Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup. </p> 
-<pre><code>
+	<p>
+<P>In <A href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>,  I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <CODE>@EnableWebMvc</CODE>) that turn on container-wide, and often conventions-oriented features. In the case of <CODE>@EnableWebMvc</Code>, the annotation enables Spring MVC and turns on support for correctly exposing <CODE>@Controller</CODE>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <CODE>@EnableWebMvc</CODE> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
+In this post, we'll look at <A href="http://springsource.org/spring-social"> Spring Social</a>.
+</P>
+ <p>
+Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup.
+</p>
+<pre><CODE>
 @Configuration
 @EnableJdbcConnectionRepository
 @EnableFacebook(appId = "${blog.facebook.appId}", appSecret = "${blog.facebook.appSecret}")
@@ -93,8 +98,7 @@ public class SocialConfiguration {
         
         return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
             @Override
-            public String signIn(String userId, Connection
-  <!--?--> connection, NativeWebRequest request) {
+            public String signIn(String userId, Connection<?> connection, NativeWebRequest request) {
                 return SignInUtils.signIn(userId);
             }
         });
@@ -119,16 +123,20 @@ public class SocialConfiguration {
         };
     }
 }
-</code></pre> 
-<p> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user to approve the API access and then proceed with the call. </p> 
-<pre><code>
+</CODE></PRE> 
+
+<P> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
+to approve the API access and then proceed with the call.
+</P>
+<PRE><CODE>
 @Inject private Facebook facebook;
 
 @RequestMapping("/hello")
 public void showProfileInformation( Model model){ 
   model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
 }
-</code></pre></p>
+</CODE></PRE>
+</p>
 
 	<hr />
 	

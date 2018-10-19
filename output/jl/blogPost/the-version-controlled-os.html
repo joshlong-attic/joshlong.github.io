@@ -72,7 +72,7 @@
 
 	<p><em>15 October 2016</em></p>
 
-	<p><p>I hate having to remember which packages on each new operating system install. I keep a small script called josh-env.sh in a private Github repository (remember, Github now has unlimited private repositories!) that I then make sure is present in my home directory. The script does two things: it contributes important environment variables (typically the environment variables I use to run builds, as I might on the CI server) that are themselves version controlled, and it records the contents of my Homebrew and Homebrew Cask installations into text files and then <code>git commit</code> and <code>git push</code> those files if the contents have changed.</p> 
+	<p><p>I hate having to remember which packages on each new operating system install. I keep a small script called josh-env.sh in a private Github repository (remember, Github now has unlimited private repositories!) that I then make sure is present in my home directory. The script does two things: it contributes important environment variables (typically the environment variables I use to run builds, as I might on the CI server) that are themselves version controlled, and it records the contents of my Homebrew and Homebrew Cask installations into text files and then <code>git commit</code> and <code>git push</code> those files if the contents have changed.</p>
 <pre><code>#!/bin/bash
 
 c=`pwd`
@@ -100,31 +100,32 @@ cd $d
 n=`date`
 git add $B
 git add $BC
-git commit -a -m "updated brew manifest $n."
+git commit -a -m &quot;updated brew manifest $n.&quot;
 
 last_commit_status=$?
 
 if [ $last_commit_status -eq 0 ]; then
-  echo "changes detected on $n. running git push."
+  echo &quot;changes detected on $n. running git push.&quot;
   git push;
 fi
 
 cd $c
-</code></pre> 
-<p>Naturally, this script needs to be run at somepoint. It's a cheap operation so I run it on every new user shell, inside <code>$HOME/.zshrc</code>:</p> 
+</code></pre>
+<p>Naturally, this script needs to be run at somepoint. It's a cheap operation so I run it on every new user shell, inside  <code>$HOME/.zshrc</code>:</p>
 <pre><code>...
 source $HOME/josh-env/josh-env.sh
 ...
-</code></pre> 
-<p>This way, if for any reason I need to restore a system tomorrow, I can <code>git clone</code> the private project on a new machine and restore everything. It might be as simple as:</p> 
+</code></pre>
+<p>This way, if for any reason I need to restore a system tomorrow, I can <code>git clone</code> the private project on a new machine and restore everything. It might be as simple as:</p>
 <pre><code>#!/bin/bash
 
 cat brew.txt | while read l ; do brew install $l ; done
 
 cat brew-cask.txt | while read l ; do brew cask install $l ; done
 
-</code></pre> 
-<p>I keep everything <em>heavy</em> weight inside of Dropbox, so that restores naturally. I keep all code inside Github, and those restore naturally. This ensures that the remaining personalizations to my environment are recorded and restored as well.</p></p>
+</code></pre>
+<p>I keep everything <em>heavy</em> weight inside of Dropbox, so that restores naturally. I keep all code inside Github, and those restore naturally. This ensures that the remaining personalizations to my environment are recorded and restored as well.</p>
+</p>
 
 	<hr />
 	
