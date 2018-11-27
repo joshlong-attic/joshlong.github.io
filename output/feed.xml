@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Tue, 27 Nov 2018 13:30:04 +0000</pubDate>
-    <lastBuildDate>Tue, 27 Nov 2018 13:30:04 +0000</lastBuildDate>
+    <pubDate>Tue, 27 Nov 2018 13:30:40 +0000</pubDate>
+    <lastBuildDate>Tue, 27 Nov 2018 13:30:40 +0000</lastBuildDate>
 
     <item>
       <title>How to Install FFMPEG with _ALL_ the Options using Homebrew on macOS</title>
