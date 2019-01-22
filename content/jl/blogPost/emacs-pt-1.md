@@ -99,5 +99,5 @@ There are two things you can do about this warning:
 
 This is fresh getting everything working. Nothing else installed like `markdown-mode+` or any of the other packages I had installed. 
 
-So, thanks again to Mario Gray for helping me get all the bugs ironed out to get this abomination working so smoothly! Now if we could only figure out why the lights in the room flicker every time I open `emacs`...
+Thanks again to [Mario Gray](http://Twitter.com/MarioGray)) for helping me get all the bugs ironed out to get this abomination working so smoothly! Now if we could only figure out why the lights in the room flicker every time I open `emacs`...
 

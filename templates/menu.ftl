@@ -18,9 +18,11 @@
           <ul class="nav navbar-nav">
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>index.html">Home</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about.html">About</a></li>
-            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>abstracts.html">Abstracts</a></li>
+          <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>abstracts.html">Abstracts</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>livelessons.html">Livelessons</a></li>
-            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>books.html">Books</a></li> 
+            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>books.html">Books</a></li>
+	    <li><a href="https://soundcloud.com/a-bootiful-podcast">A Bootiful Podcast </a></li>
+	    <li><a href="https://bit.ly/spring-tips-playlist">The Spring Tips Videos </a></li>	   
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
 
           </ul>
