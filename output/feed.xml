@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Mon, 21 Jan 2019 23:34:05 -0800</pubDate>
-    <lastBuildDate>Mon, 21 Jan 2019 23:34:05 -0800</lastBuildDate>
+    <pubDate>Mon, 21 Jan 2019 23:39:01 -0800</pubDate>
+    <lastBuildDate>Mon, 21 Jan 2019 23:39:01 -0800</lastBuildDate>
 
     <item>
       <title>Getting Emacs Ready for Writin&apos;, Part 1</title>
@@ -90,7 +90,7 @@ There are two things you can do about this warning:
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is fresh getting everything working. Nothing else installed like &lt;code&gt;markdown-mode+&lt;/code&gt; or any of the other packages I had installed.&lt;/p&gt;
-&lt;p&gt;So, thanks again to Mario Gray for helping me get all the bugs ironed out to get this abomination working so smoothly! Now if we could only figure out why the lights in the room flicker every time I open &lt;code&gt;emacs&lt;/code&gt;...&lt;/p&gt;
+&lt;p&gt;Thanks again to &lt;a href=&quot;http://Twitter.com/MarioGray&quot;&gt;Mario Gray&lt;/a&gt;) for helping me get all the bugs ironed out to get this abomination working so smoothly! Now if we could only figure out why the lights in the room flicker every time I open &lt;code&gt;emacs&lt;/code&gt;...&lt;/p&gt;
 
 	</description>
     </item>
