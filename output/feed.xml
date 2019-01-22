@@ -6,9 +6,94 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Mon, 21 Jan 2019 20:05:27 -0800</pubDate>
-    <lastBuildDate>Mon, 21 Jan 2019 20:05:27 -0800</lastBuildDate>
+    <pubDate>Mon, 21 Jan 2019 23:34:05 -0800</pubDate>
+    <lastBuildDate>Mon, 21 Jan 2019 23:34:05 -0800</lastBuildDate>
 
+    <item>
+      <title>Getting Emacs Ready for Writin&apos;, Part 1</title>
+      <link>https://joshlong.com/jl/blogPost/emacs-pt-1.html</link>
+      <pubDate>Mon, 21 Jan 2019 00:00:00 -0800</pubDate>
+      <guid isPermaLink="false">jl/blogPost/emacs-pt-1.html</guid>
+      	<description>
+	&lt;p&gt;I&apos;m working on a new book, &lt;a href=&quot;http://ReactiveSpring.io&quot;&gt;&lt;em&gt;Reactive Spring&lt;/em&gt;&lt;/a&gt;, and in the process I&apos;m trying to level up my &lt;code&gt;emacs&lt;/code&gt;-fu. I wrote most of my last book with my buddy &lt;a href=&quot;http://Twitter.com/KennyBastani&quot;&gt;Kenny Bastani&lt;/a&gt;, &lt;a href=&quot;http://CloudNativeJava.io&quot;&gt;&lt;em&gt;Cloud Native Java&lt;/em&gt;&lt;/a&gt;, in &lt;code&gt;emacs&lt;/code&gt; and really enjoyed the process, especially having come from four other published books before that where the work was done largely in Microsoft Word, running inside a Windows Virtual Machine, running on my workhorse Linux desktop machine, a decade ago.&lt;/p&gt;
+&lt;p&gt;This time I wanted go further than just using &lt;code&gt;emacs&lt;/code&gt; as a text editor with no plugins. I wanted to use some of the famed flexibility in Emacs. Today I spent a little time my with my friend &lt;a href=&quot;http://Twitter.com/MarioGray&quot;&gt;Mario Gray&lt;/a&gt; tweaking &lt;code&gt;emacs&lt;/code&gt; then I threw everything we did away and tried to get the meaningful stuff setup again, from scratch, avoiding all the mistakes made in the first run, so that I could explain them all here.&lt;/p&gt;
+&lt;p&gt;The pre-requisite is that you&apos;re going to need to &lt;a href=&quot;https://melpa.org/#/getting-started&quot;&gt;install Melpa&lt;/a&gt;, a repository for the Elpa package manager. That&apos;s easy. Copy-and-paste the configuration shown in that file to your &lt;code&gt;~/.emacs&lt;/code&gt; file. You might have to create that file.&lt;/p&gt;
+&lt;p&gt;Once that&apos;s installed the rest is easy. You can use &lt;code&gt;M-x package-list-packages&lt;/code&gt; to see all the possible packages. You should be able to find &lt;a href=&quot;https://github.com/sensorflo/adoc-mode/wiki&quot;&gt;&lt;code&gt;adoc-mode&lt;/code&gt;&lt;/a&gt;. You can install it by issuing &lt;code&gt;M-X package-install&lt;/code&gt; and then specifying &lt;code&gt;adoc-mode&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now you can open up any file with Asciidoctor in it, issue &lt;code&gt;M-X adoc-mode&lt;/code&gt; and it&apos;ll give you decent syntax highlighting.&lt;/p&gt;
+&lt;p&gt;Next, and hear me out. I want to use &lt;code&gt;emacs&lt;/code&gt; for Asciidoctor editing and I want to use it to do light refactoring of Java code. Perfectly normal. It&apos;s a natu... I SAID HEAR ME OUT! I know. But it&apos;s normal. Java code is text, last I checked. &lt;code&gt;emacs&lt;/code&gt; is great with text. So, I&apos;ll let that sink in. I want to edit Java code. In &lt;code&gt;emacs&lt;/code&gt;. :whistles:&lt;/p&gt;
+&lt;p&gt;Still there? My book has tons of code and I need to be able to look at the code, especially when annotating it. I don&apos;t want to have to load a whole IDE just to annotate the code for use in the book as includes in that book. &lt;code&gt;emacs&lt;/code&gt; is crazy fast and purpose-built for this sort of editing so it figures I&apos;d do that in here. But i&apos;m not the good &lt;a href=&quot;http://twitter.com/VenkatS&quot;&gt;Dr. Venkat Subramaniam&lt;/a&gt;. I don&apos;t write Java code without an IDE and hope to get away with it! I need the soft landing of syntax highlighting and in-editor compilation and feedback. Autocompletion would be nice too.&lt;/p&gt;
+&lt;p&gt;Now, keep in mind I&apos;m not planning on using &lt;code&gt;emacs&lt;/code&gt; for some of the things you might think I&apos;d use an IDE.&lt;/p&gt;
+&lt;p&gt;I&apos;m &lt;em&gt;not&lt;/em&gt; using the IDE to format the code. That&apos;s done by the glorious &lt;a href=&quot;https://github.com/spring-io/spring-javaformat&quot;&gt;Spring Boot Java Format&lt;/a&gt; Maven plugin which I&apos;ve configured in all my Maven projects. I  run &lt;code&gt;mvn spring-javaformat:apply&lt;/code&gt; at the root of my project and it formats all my code consistently. If I &lt;em&gt;don&apos;t&lt;/em&gt; run that command, it fails the build! So I don&apos;t need to worry about tidying up in &lt;code&gt;emacs&lt;/code&gt; versus Eclipse versus IntelliJ. There&apos;s only one way to get code past the CI build and that&apos;s not in &lt;code&gt;emacs&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I&apos;m &lt;em&gt;not&lt;/em&gt; planning on using &lt;code&gt;emacs&lt;/code&gt; to do large scale refactorings (though, this &lt;code&gt;emacs&lt;/code&gt; plugin does apparently support some of that. Which is nice.&lt;/p&gt;
+&lt;p&gt;All I want is syntax highlighting and the usual feedback. Tell me if something won&apos;t compile. Give me autocompletion as I type. The usual.&lt;/p&gt;
+&lt;p&gt;This is all quite elegantly acheived with a plugin called &lt;a href=&quot;https://github.com/mopemope/meghanada-emacs&quot;&gt;Meghanada&lt;/a&gt;. You can install it from your Elpa package manager as well. You&apos;ll need to copy-and-paste the configuration from the linked website into your &lt;code&gt;~/.emacs&lt;/code&gt; file as well.&lt;/p&gt;
+&lt;p&gt;Once it&apos;s installed, just point &lt;code&gt;emac&lt;/code&gt; to a &lt;code&gt;.java&lt;/code&gt; file. It&apos;ll automatically syntax highlight it and even offer auto-completion for types as you type. The first time it&apos;s used on a &lt;code&gt;.java&lt;/code&gt; file it&apos;ll download a server - what I imagine to be something like, if not exactly like, a Visual Studio Code Language Server, that it uses to index Maven and Java projects. Truly, what a time to be alive!&lt;/p&gt;
+&lt;p&gt;&lt;img src = &quot;https://pbs.twimg.com/media/Dxf6gYMUcAEl-UX.png:large&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Here&apos;s my finished, working &lt;code&gt;~/.emacs&lt;/code&gt; file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;
+(require &apos;package)
+(let* ((no-ssl (and (memq system-type &apos;(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl &amp;quot;http&amp;quot; &amp;quot;https&amp;quot;)))
+  (when no-ssl
+    (warn &amp;quot;\
+Your version of Emacs does not support SSL connections,
+which is unsafe because it allows man-in-the-middle attacks.
+There are two things you can do about this warning:
+1. Install an Emacs version that does support SSL and be safe.
+2. Remove this warning from your init file so you won&apos;t see it again.&amp;quot;))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list &apos;package-archives (cons &amp;quot;melpa&amp;quot; (concat proto &amp;quot;://melpa.org/packages/&amp;quot;)) t)
+  ;;(add-to-list &apos;package-archives (cons &amp;quot;melpa-stable&amp;quot; (concat proto &amp;quot;://stable.melpa.org/packages/&amp;quot;)) t)
+  (when (&amp;lt; emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list &apos;package-archives (cons &amp;quot;gnu&amp;quot; (concat proto &amp;quot;://elpa.gnu.org/packages/&amp;quot;)))))
+
+
+
+(package-initialize)
+
+
+(require &apos;meghanada)
+(add-hook &apos;java-mode-hook
+          (lambda ()
+            ;; meghanada-mode on
+            (meghanada-mode t)
+            (flycheck-mode +1)
+            (setq c-basic-offset 2)
+            ;; use code format
+            (add-hook &apos;before-save-hook &apos;meghanada-code-beautify-before-save)))
+(cond
+   ((eq system-type &apos;windows-nt)
+    (setq meghanada-java-path (expand-file-name &amp;quot;bin/java.exe&amp;quot; (getenv &amp;quot;JAVA_HOME&amp;quot;)))
+    (setq meghanada-maven-path &amp;quot;mvn.cmd&amp;quot;))
+   (t
+    (setq meghanada-java-path &amp;quot;java&amp;quot;)
+    (setq meghanada-maven-path &amp;quot;mvn&amp;quot;)))
+
+
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won&apos;t work right.
+ &apos;(package-selected-packages (quote (## adoc-mode meghanada))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won&apos;t work right.
+ )
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is fresh getting everything working. Nothing else installed like &lt;code&gt;markdown-mode+&lt;/code&gt; or any of the other packages I had installed.&lt;/p&gt;
+&lt;p&gt;So, thanks again to Mario Gray for helping me get all the bugs ironed out to get this abomination working so smoothly! Now if we could only figure out why the lights in the room flicker every time I open &lt;code&gt;emacs&lt;/code&gt;...&lt;/p&gt;
+
+	</description>
+    </item>
     <item>
       <title>How to Install FFMPEG with _ALL_ the Options using Homebrew on macOS</title>
       <link>https://joshlong.com/jl/blogPost/how-to-install-a-fully-souped-up-ffmpeg-on-osx.html</link>
@@ -1252,6 +1337,19 @@ shell.auth=spring
 	</description>
     </item>
     <item>
+      <title>SpringOne2GX 2013 is Coming!</title>
+      <link>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
+      <pubDate>Wed, 7 Aug 2013 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
+      	<description>
+	
+&lt;p&gt; 
+ &lt;IMG src = &quot;/media/18738&quot; width =&quot;300&quot;  style = &quot;float: left; margin-right:10px; &quot;/&gt;
+Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;?  This year&amp;#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&amp;#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&amp;#39;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&amp;#39;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&amp;#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&amp;#39;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Introducing Spring Boot</title>
       <link>https://joshlong.com/jl/blogPost/introducing_spring_boot.html</link>
       <pubDate>Wed, 7 Aug 2013 00:00:00 -0700</pubDate>
@@ -1273,19 +1371,6 @@ class ThisWillActuallyRun {
     }
 }
 &lt;/CODE&gt;&lt;/PRE&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>SpringOne2GX 2013 is Coming!</title>
-      <link>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
-      <pubDate>Wed, 7 Aug 2013 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
-      	<description>
-	
-&lt;p&gt; 
- &lt;IMG src = &quot;/media/18738&quot; width =&quot;300&quot;  style = &quot;float: left; margin-right:10px; &quot;/&gt;
-Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;?  This year&amp;#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&amp;#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&amp;#39;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&amp;#39;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&amp;#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&amp;#39;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!&lt;/p&gt;
 
 	</description>
     </item>
@@ -1313,6 +1398,25 @@ Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.sprin
 &lt;p&gt;The other problem I&apos;ve encountered is that it&apos;s easy to get duplicate notes or reminders. The easiest way to fix this is to pick on service capable of storing notes and reminders and just stick with it, disabling the rest. For me, this is my personal GMail account. So I&apos;ve disabled the Reminders from iCloud, deleted all the notes and now when I add a note in one account it appaears across the other devices. &lt;/p&gt;
 
 &lt;p&gt;I&apos;ll chime back in as I discover more.&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>On Java Code Style</title>
+      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
+      	<description>
+	
+&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
+
+&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
+
+&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
+
+&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -1475,25 +1579,6 @@ The video of my webinar on
 &lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
 &lt;/p&gt; 
 &lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>On Java Code Style</title>
-      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
-      	<description>
-	
-&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
-
-&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
-
-&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
-
-&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
-
-&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -1710,79 +1795,6 @@ public class CrmBaseActivity extends Activity {
 	</description>
     </item>
     <item>
-      <title>Java Configuration with Spring Social</title>
-      <link>https://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</link>
-      <pubDate>Sun, 14 Apr 2013 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_social.html</guid>
-      	<description>
-	
-&lt;P&gt;In &lt;A href=&quot;http://www.joshlong.com/jl/blogPost/java_configuration.html&quot;&gt;the first post in this series&lt;/a&gt;,  I introduced Spring&apos;s Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt;) that turn on container-wide, and often conventions-oriented features. In the case of &lt;CODE&gt;@EnableWebMvc&lt;/Code&gt;, the annotation enables Spring MVC and turns on support for correctly exposing &lt;CODE&gt;@Controller&lt;/CODE&gt;-annotated beans as HTTP endpoints. Java configuration APIs of the same style as &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt; can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
-In this post, we&apos;ll look at &lt;A href=&quot;http://springsource.org/spring-social&quot;&gt; Spring Social&lt;/a&gt;.
-&lt;/P&gt;
- &lt;p&gt;
-Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here&apos;s an example setup.
-&lt;/p&gt;
-&lt;pre&gt;&lt;CODE&gt;
-@Configuration
-@EnableJdbcConnectionRepository
-@EnableFacebook(appId = &quot;${blog.facebook.appId}&quot;, appSecret = &quot;${blog.facebook.appSecret}&quot;)
-public class SocialConfiguration {
-
-    @Bean
-    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
-                                               ConnectionRepository connectionRepository) {
-        return new ConnectController(connectionFactoryLocator, connectionRepository);
-    }
-
-    @Bean
-    public ProviderSignInController providerSignInController(
-            ConnectionFactoryLocator connectionFactoryLocator, 
-            UsersConnectionRepository usersConnectionRepository) {
-        
-        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
-            @Override
-            public String signIn(String userId, Connection&lt;?&gt; connection, NativeWebRequest request) {
-                return SignInUtils.signIn(userId);
-            }
-        });
-    }
-
-    @Bean
-    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
-        return new DisconnectController(usersConnectionRepository, environment.getProperty(&quot;blog.facebook.appSecret&quot;));
-    }
-
-    @Bean
-    public UserIdSource userIdSource() {
-        return new UserIdSource() {
-            @Override
-            public String getUserId() {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                if (authentication == null) {
-                    throw new IllegalStateException(&quot;Unable to get a ConnectionRepository: no user signed in&quot;);
-                }
-                return authentication.getName();
-            }
-        };
-    }
-}
-&lt;/CODE&gt;&lt;/PRE&gt; 
-
-&lt;P&gt; Once you&apos;ve done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
-to approve the API access and then proceed with the call.
-&lt;/P&gt;
-&lt;PRE&gt;&lt;CODE&gt;
-@Inject private Facebook facebook;
-
-@RequestMapping(&quot;/hello&quot;)
-public void showProfileInformation( Model model){ 
-  model.addAttribute( &quot;name&quot;, facebook.userOperations().getUserProfile().getName() );
-}
-&lt;/CODE&gt;&lt;/PRE&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Java Configuration with Spring Batch</title>
       <link>https://joshlong.com/jl/blogPost/java_configuration_with_spring_batch.html</link>
       <pubDate>Sun, 14 Apr 2013 00:00:00 -0700</pubDate>
@@ -1867,6 +1879,79 @@ public class BatchImporterConfiguration {
 }
    
 
+&lt;/CODE&gt;&lt;/PRE&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Java Configuration with Spring Social</title>
+      <link>https://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</link>
+      <pubDate>Sun, 14 Apr 2013 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_social.html</guid>
+      	<description>
+	
+&lt;P&gt;In &lt;A href=&quot;http://www.joshlong.com/jl/blogPost/java_configuration.html&quot;&gt;the first post in this series&lt;/a&gt;,  I introduced Spring&apos;s Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt;) that turn on container-wide, and often conventions-oriented features. In the case of &lt;CODE&gt;@EnableWebMvc&lt;/Code&gt;, the annotation enables Spring MVC and turns on support for correctly exposing &lt;CODE&gt;@Controller&lt;/CODE&gt;-annotated beans as HTTP endpoints. Java configuration APIs of the same style as &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt; can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
+In this post, we&apos;ll look at &lt;A href=&quot;http://springsource.org/spring-social&quot;&gt; Spring Social&lt;/a&gt;.
+&lt;/P&gt;
+ &lt;p&gt;
+Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here&apos;s an example setup.
+&lt;/p&gt;
+&lt;pre&gt;&lt;CODE&gt;
+@Configuration
+@EnableJdbcConnectionRepository
+@EnableFacebook(appId = &quot;${blog.facebook.appId}&quot;, appSecret = &quot;${blog.facebook.appSecret}&quot;)
+public class SocialConfiguration {
+
+    @Bean
+    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
+                                               ConnectionRepository connectionRepository) {
+        return new ConnectController(connectionFactoryLocator, connectionRepository);
+    }
+
+    @Bean
+    public ProviderSignInController providerSignInController(
+            ConnectionFactoryLocator connectionFactoryLocator, 
+            UsersConnectionRepository usersConnectionRepository) {
+        
+        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
+            @Override
+            public String signIn(String userId, Connection&lt;?&gt; connection, NativeWebRequest request) {
+                return SignInUtils.signIn(userId);
+            }
+        });
+    }
+
+    @Bean
+    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
+        return new DisconnectController(usersConnectionRepository, environment.getProperty(&quot;blog.facebook.appSecret&quot;));
+    }
+
+    @Bean
+    public UserIdSource userIdSource() {
+        return new UserIdSource() {
+            @Override
+            public String getUserId() {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (authentication == null) {
+                    throw new IllegalStateException(&quot;Unable to get a ConnectionRepository: no user signed in&quot;);
+                }
+                return authentication.getName();
+            }
+        };
+    }
+}
+&lt;/CODE&gt;&lt;/PRE&gt; 
+
+&lt;P&gt; Once you&apos;ve done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
+to approve the API access and then proceed with the call.
+&lt;/P&gt;
+&lt;PRE&gt;&lt;CODE&gt;
+@Inject private Facebook facebook;
+
+@RequestMapping(&quot;/hello&quot;)
+public void showProfileInformation( Model model){ 
+  model.addAttribute( &quot;name&quot;, facebook.userOperations().getUserProfile().getName() );
+}
 &lt;/CODE&gt;&lt;/PRE&gt;
 
 	</description>
@@ -2989,6 +3074,17 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
 	</description>
     </item>
     <item>
+      <title>Speaking at the Aarhus, Denmark Java User Group</title>
+      <link>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</link>
+      <pubDate>Mon, 1 Oct 2012 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</guid>
+      	<description>
+	
+&lt;P&gt; I&apos;ll be speaking at &lt;a href=&quot;https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609&quot;&gt;the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00&lt;/A&gt;. I&apos;ll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Lanyrd</title>
       <link>https://joshlong.com/jl/blogPost/lanyrd.html</link>
       <pubDate>Mon, 1 Oct 2012 00:00:00 -0700</pubDate>
@@ -2998,17 +3094,6 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
 &lt;P&gt; If you guys want to know when and where I&apos;ll be speaking next, feel free to check out my &lt;A href =&quot;http://lanyrd.com/profile/starbuxman/&quot;&gt;Lanyrd.com&lt;/a&gt; page, which usually has information about which shows I&apos;ll be at and where. In fact, some times &lt;EM&gt;I&lt;/EM&gt; check it out and learn of my obligations before I&apos;ve been told!  &lt;br/&gt; &lt;img  width = &quot;800&quot; style = &quot;margin-top:10px;&quot; src = &quot;/media/18436&quot;/&gt;
 
  &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Speaking at the Aarhus, Denmark Java User Group</title>
-      <link>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</link>
-      <pubDate>Mon, 1 Oct 2012 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</guid>
-      	<description>
-	
-&lt;P&gt; I&apos;ll be speaking at &lt;a href=&quot;https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609&quot;&gt;the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00&lt;/A&gt;. I&apos;ll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! &lt;/P&gt;
 
 	</description>
     </item>
@@ -3068,17 +3153,6 @@ In addition to looking at source code and looking at design patterns, you should
 	</description>
     </item>
     <item>
-      <title>WTF</title>
-      <link>https://joshlong.com/jl/blogPost/huh.html</link>
-      <pubDate>Sun, 16 Sep 2012 00:00:00 -0700</pubDate>
-      <guid isPermaLink="false">jl/blogPost/huh.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;img src = &quot;/media/18420&quot; width = &quot;500&quot; /&gt; &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Cloud Foundry System Integrators Tour in India, ArchSummit, OSChina in China, August 2012</title>
       <link>https://joshlong.com/jl/blogPost/cloud_foundry_system_integrators_tour_india_archsummit_and_oschina_in_india_and_china_august_2012.html</link>
       <pubDate>Sun, 16 Sep 2012 00:00:00 -0700</pubDate>
@@ -3124,6 +3198,17 @@ In addition to looking at source code and looking at design patterns, you should
     &lt;td&gt;&lt;img src=&quot;/media/18413&quot; width=&quot;300&quot; /&gt;&lt;/td&gt; 
   &lt;/tr&gt;
 &lt;/table&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>WTF</title>
+      <link>https://joshlong.com/jl/blogPost/huh.html</link>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 -0700</pubDate>
+      <guid isPermaLink="false">jl/blogPost/huh.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;img src = &quot;/media/18420&quot; width = &quot;500&quot; /&gt; &lt;/P&gt;
 
 	</description>
     </item>

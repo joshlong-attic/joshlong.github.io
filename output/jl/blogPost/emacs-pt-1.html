@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>Getting Emacs Ready for Writin&apos;, Part 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+    <link rel="alternate" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml" />
+    <link rel="alternate feed" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml">
+ 
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+ 
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+ 	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+            <li><a href="../../livelessons.html">Livelessons</a></li>
+            <li><a href="../../books.html">Books</a></li> 
+            <li><a href="../../feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>Getting Emacs Ready for Writin&apos;, Part 1</h1>
+	</div>
+
+	<p><em>21 January 2019</em></p>
+
+	<p><p>I'm working on a new book, <a href="http://ReactiveSpring.io"><em>Reactive Spring</em></a>, and in the process I'm trying to level up my <code>emacs</code>-fu. I wrote most of my last book with my buddy <a href="http://Twitter.com/KennyBastani">Kenny Bastani</a>, <a href="http://CloudNativeJava.io"><em>Cloud Native Java</em></a>, in <code>emacs</code> and really enjoyed the process, especially having come from four other published books before that where the work was done largely in Microsoft Word, running inside a Windows Virtual Machine, running on my workhorse Linux desktop machine, a decade ago.</p>
+<p>This time I wanted go further than just using <code>emacs</code> as a text editor with no plugins. I wanted to use some of the famed flexibility in Emacs. Today I spent a little time my with my friend <a href="http://Twitter.com/MarioGray">Mario Gray</a> tweaking <code>emacs</code> then I threw everything we did away and tried to get the meaningful stuff setup again, from scratch, avoiding all the mistakes made in the first run, so that I could explain them all here.</p>
+<p>The pre-requisite is that you're going to need to <a href="https://melpa.org/#/getting-started">install Melpa</a>, a repository for the Elpa package manager. That's easy. Copy-and-paste the configuration shown in that file to your <code>~/.emacs</code> file. You might have to create that file.</p>
+<p>Once that's installed the rest is easy. You can use <code>M-x package-list-packages</code> to see all the possible packages. You should be able to find <a href="https://github.com/sensorflo/adoc-mode/wiki"><code>adoc-mode</code></a>. You can install it by issuing <code>M-X package-install</code> and then specifying <code>adoc-mode</code>.</p>
+<p>Now you can open up any file with Asciidoctor in it, issue <code>M-X adoc-mode</code> and it'll give you decent syntax highlighting.</p>
+<p>Next, and hear me out. I want to use <code>emacs</code> for Asciidoctor editing and I want to use it to do light refactoring of Java code. Perfectly normal. It's a natu... I SAID HEAR ME OUT! I know. But it's normal. Java code is text, last I checked. <code>emacs</code> is great with text. So, I'll let that sink in. I want to edit Java code. In <code>emacs</code>. :whistles:</p>
+<p>Still there? My book has tons of code and I need to be able to look at the code, especially when annotating it. I don't want to have to load a whole IDE just to annotate the code for use in the book as includes in that book. <code>emacs</code> is crazy fast and purpose-built for this sort of editing so it figures I'd do that in here. But i'm not the good <a href="http://twitter.com/VenkatS">Dr. Venkat Subramaniam</a>. I don't write Java code without an IDE and hope to get away with it! I need the soft landing of syntax highlighting and in-editor compilation and feedback. Autocompletion would be nice too.</p>
+<p>Now, keep in mind I'm not planning on using <code>emacs</code> for some of the things you might think I'd use an IDE.</p>
+<p>I'm <em>not</em> using the IDE to format the code. That's done by the glorious <a href="https://github.com/spring-io/spring-javaformat">Spring Boot Java Format</a> Maven plugin which I've configured in all my Maven projects. I  run <code>mvn spring-javaformat:apply</code> at the root of my project and it formats all my code consistently. If I <em>don't</em> run that command, it fails the build! So I don't need to worry about tidying up in <code>emacs</code> versus Eclipse versus IntelliJ. There's only one way to get code past the CI build and that's not in <code>emacs</code>.</p>
+<p>I'm <em>not</em> planning on using <code>emacs</code> to do large scale refactorings (though, this <code>emacs</code> plugin does apparently support some of that. Which is nice.</p>
+<p>All I want is syntax highlighting and the usual feedback. Tell me if something won't compile. Give me autocompletion as I type. The usual.</p>
+<p>This is all quite elegantly acheived with a plugin called <a href="https://github.com/mopemope/meghanada-emacs">Meghanada</a>. You can install it from your Elpa package manager as well. You'll need to copy-and-paste the configuration from the linked website into your <code>~/.emacs</code> file as well.</p>
+<p>Once it's installed, just point <code>emac</code> to a <code>.java</code> file. It'll automatically syntax highlight it and even offer auto-completion for types as you type. The first time it's used on a <code>.java</code> file it'll download a server - what I imagine to be something like, if not exactly like, a Visual Studio Code Language Server, that it uses to index Maven and Java projects. Truly, what a time to be alive!</p>
+<p><img src = "https://pbs.twimg.com/media/Dxf6gYMUcAEl-UX.png:large" /></p>
+<p>Here's my finished, working <code>~/.emacs</code> file.</p>
+<pre><code class="language-text">
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl &quot;http&quot; &quot;https&quot;)))
+  (when no-ssl
+    (warn &quot;\
+Your version of Emacs does not support SSL connections,
+which is unsafe because it allows man-in-the-middle attacks.
+There are two things you can do about this warning:
+1. Install an Emacs version that does support SSL and be safe.
+2. Remove this warning from your init file so you won't see it again.&quot;))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons &quot;melpa&quot; (concat proto &quot;://melpa.org/packages/&quot;)) t)
+  ;;(add-to-list 'package-archives (cons &quot;melpa-stable&quot; (concat proto &quot;://stable.melpa.org/packages/&quot;)) t)
+  (when (&lt; emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives (cons &quot;gnu&quot; (concat proto &quot;://elpa.gnu.org/packages/&quot;)))))
+
+
+
+(package-initialize)
+
+
+(require 'meghanada)
+(add-hook 'java-mode-hook
+          (lambda ()
+            ;; meghanada-mode on
+            (meghanada-mode t)
+            (flycheck-mode +1)
+            (setq c-basic-offset 2)
+            ;; use code format
+            (add-hook 'before-save-hook 'meghanada-code-beautify-before-save)))
+(cond
+   ((eq system-type 'windows-nt)
+    (setq meghanada-java-path (expand-file-name &quot;bin/java.exe&quot; (getenv &quot;JAVA_HOME&quot;)))
+    (setq meghanada-maven-path &quot;mvn.cmd&quot;))
+   (t
+    (setq meghanada-java-path &quot;java&quot;)
+    (setq meghanada-maven-path &quot;mvn&quot;)))
+
+
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (## adoc-mode meghanada))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
+</code></pre>
+<p>This is fresh getting everything working. Nothing else installed like <code>markdown-mode+</code> or any of the other packages I had installed.</p>
+<p>So, thanks again to Mario Gray for helping me get all the bugs ironed out to get this abomination working so smoothly! Now if we could only figure out why the lights in the room flicker every time I open <code>emacs</code>...</p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2018 JoshLong.com </p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

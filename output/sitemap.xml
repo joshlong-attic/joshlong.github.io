@@ -17,6 +17,10 @@
         <lastmod>2013-04-02</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/emacs-pt-1.html</loc>
+        <lastmod>2019-01-21</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/how-to-install-a-fully-souped-up-ffmpeg-on-osx.html</loc>
         <lastmod>2018-09-28</lastmod>
     </url>
@@ -213,11 +217,11 @@
         <lastmod>2013-09-17</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/introducing_spring_boot.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</loc>
         <lastmod>2013-08-07</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/introducing_spring_boot.html</loc>
         <lastmod>2013-08-07</lastmod>
     </url>
     <url>
@@ -225,15 +229,15 @@
         <lastmod>2013-07-01</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/on_java_code_style.html</loc>
+        <lastmod>2013-06-19</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</loc>
         <lastmod>2013-06-19</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</loc>
-        <lastmod>2013-06-19</lastmod>
-    </url>
-    <url>
-        <loc>https://joshlong.com/jl/blogPost/on_java_code_style.html</loc>
         <lastmod>2013-06-19</lastmod>
     </url>
     <url>
@@ -249,11 +253,11 @@
         <lastmod>2013-04-24</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/java_configuration_with_spring_batch.html</loc>
         <lastmod>2013-04-14</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/java_configuration_with_spring_batch.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</loc>
         <lastmod>2013-04-14</lastmod>
     </url>
     <url>
@@ -445,11 +449,11 @@
         <lastmod>2012-10-09</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/lanyrd.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</loc>
         <lastmod>2012-10-01</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/lanyrd.html</loc>
         <lastmod>2012-10-01</lastmod>
     </url>
     <url>
@@ -465,11 +469,11 @@
         <lastmod>2012-09-18</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/huh.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/cloud_foundry_system_integrators_tour_india_archsummit_and_oschina_in_india_and_china_august_2012.html</loc>
         <lastmod>2012-09-16</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/cloud_foundry_system_integrators_tour_india_archsummit_and_oschina_in_india_and_china_august_2012.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/huh.html</loc>
         <lastmod>2012-09-16</lastmod>
     </url>
     <url>
