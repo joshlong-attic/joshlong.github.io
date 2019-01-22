@@ -117,3 +117,21 @@ In this workshop we'll cover:
 - *Service Registration and Discovery* - In this section we'll look at how to register and discover services dynamically with a service registry like Netflix Eureka or Hashicorp Consul. (Spring Cloud)
 
 - *Functions-as-a-service* - In this section we'll look at how to build serverless-style applications (Spring Cloud Function)
+
+
+## The Reactive Revolution (SpringOne Tour 2019 Talk)
+
+
+The reactive revolution continues. For as much as we've been talking about reactive programming in Spring for the last few years the journey has only just begun. Join me, Spring Developer Advocate Josh Long (@starbuxman), and we'll take our reactive applications further, looking at how to build microservices for cloud platforms like Pivotal Application Service (Cloud Foundry) and PKS (Kubernetes). 
+
+Some of the things we may cover include: 
+
+* reactive NoSQL data access 
+* reactive SQL data access with R2DBC 
+* orchestration and reliability patterns like client-side loadbalancing, circuit breakers, and hedging 
+* messaging and service integration with Apache Kafka or RSocket 
+* API gateways with Spring Cloud Gateway and patterns like rate limiting and 
+* API adapters 
+* serverless programming with Spring Cloud Function and project Riff 
+* reactive authentication and authorization with Spring Security 
+
