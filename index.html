@@ -1124,13 +1124,6 @@ shell.auth=spring
 
 <p>Any class that&#39;s not in Android&#39;s JDK-class whitelist is not available on Android and thus renders code that depends on it incompatible. Some classes, like those in the JAXB module, are hard to ignore as they&#39;re pervasive. I wanted to use the Spring HATEOAS <code>Resource</code>, <code>Link</code>, types. These types are used as representations of various entities in REST responses that are sometimes rendered as XML using JAXB, they could not be loaded in Android! So, I <a href="https://github.com/joshlong/the-spring-rest-stack/tree/master/code/client/android/src/org/springframework/hateoas">had to copy those types locally</a> and mirror the package structure and remove the offending annotations. Hopefully I can clean this up going forward. </p>
 </p>
-  			<a href="jl/blogPost/springone2gx_2013_is_coming.html"><h1>SpringOne2GX 2013 is Coming!</h1></a>
-  			<p>07 August 2013</p>
-  			<p>
-<p> 
- <IMG src = "/media/18738" width ="300"  style = "float: left; margin-right:10px; "/>
-Have you booked your tickets for <strong><a href="http://www.springone2gx.com/conference/santa_clara/2013/09/home">SpringOne2GX</a></strong>?  This year&#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at <em>many</em> conferences all around the world. Ask any developer with a pulse, and they&#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today's developers, and SpringOne2GX's agenda represents in my estimation the perfect blend of content for today&#39;s developers. Check out <a href="https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule">the agenda</a>. We&#39;ve just recently added talks on <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165">big data</a>, and <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425">REST service security with OAuth</a>. This will be our first show under <a href="http://gopivotal.com">Pivotal</a>, and it&#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&#39;ve just announced our Cloud Foundry conference, <a href="http://platformcf.com">Platform</a>, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!</p>
-</p>
   			<a href="jl/blogPost/introducing_spring_boot.html"><h1>Introducing Spring Boot</h1></a>
   			<p>07 August 2013</p>
   			<p>
@@ -1149,6 +1142,13 @@ class ThisWillActuallyRun {
     }
 }
 </CODE></PRE>
+</p>
+  			<a href="jl/blogPost/springone2gx_2013_is_coming.html"><h1>SpringOne2GX 2013 is Coming!</h1></a>
+  			<p>07 August 2013</p>
+  			<p>
+<p> 
+ <IMG src = "/media/18738" width ="300"  style = "float: left; margin-right:10px; "/>
+Have you booked your tickets for <strong><a href="http://www.springone2gx.com/conference/santa_clara/2013/09/home">SpringOne2GX</a></strong>?  This year&#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at <em>many</em> conferences all around the world. Ask any developer with a pulse, and they&#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today's developers, and SpringOne2GX's agenda represents in my estimation the perfect blend of content for today&#39;s developers. Check out <a href="https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule">the agenda</a>. We&#39;ve just recently added talks on <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165">big data</a>, and <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425">REST service security with OAuth</a>. This will be our first show under <a href="http://gopivotal.com">Pivotal</a>, and it&#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&#39;ve just announced our Cloud Foundry conference, <a href="http://platformcf.com">Platform</a>, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!</p>
 </p>
   			<a href="jl/blogPost/icloud_part_1.html"><h1>iCloud (Part #1)</h1></a>
   			<p>01 July 2013</p>
@@ -1308,19 +1308,6 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
 }
 </code></pre>
 </p>
-  			<a href="jl/blogPost/webinar_replay_building_rest_apis_with_spring.html"><h1>Webinar Replay: Building REST APIs with Spring</h1></a>
-  			<p>19 June 2013</p>
-  			<p>
-<p> <a href="http://www.youtube.com/watch?v=SC0FPuDKei0">
- <img  style = "float: left; margin-right :10px" src = "/media/18688" width = "300" /></a>
-
-The video of my webinar on
-<a href= "http://www.youtube.com/watch?v=SC0FPuDKei0"> building RESTful APIs with Spring is available online</a>. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
-</p>  
-<P> The code is available at <a href="http://www.slideshare.net/joshlong/rest-apis-with-spring"> on my SlideShare account (vote it up if you like it!)</a> and on <a href="http://github.com/joshlong/the-spring-rest-stack">my private GitHub account (star or fork it if you like it!)</a>.  
-</p> 
-<P> If you have questions or comments, as always, don't hesitate to reach out to me <a href="http://twitter.com/starbuxman">on Twitter</a> or <A href="http://www.joshlong.com/jl/contact.html">by email (see this page for the email)</a>. </p>
-</p>
   			<a href="jl/blogPost/on_java_code_style.html"><h1>On Java Code Style</h1></a>
   			<p>19 June 2013</p>
   			<p>
@@ -1333,6 +1320,19 @@ The video of my webinar on
 <p>If you want <em>very</em> well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&#39;s <a href="http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller">a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code</a> (code that, as I&#39;m sure you&#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&#39;s actually won awards at various conferences. This is because <a href="http://blog.springsource.org/author/juergenh/">Juergen Hoeller</a>, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. <em>ALL</em> the Spring projects follow his basic style and approach. That&#39;s why they&#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as <em>Juergenization</em>. </p>
 
 <p>My colleague Oliver Gierke also has a <a href="http://www.olivergierke.de/2013/03/juergenized/">great post on this anomaly, as well as a proper definition on his blog</a>. </p>
+</p>
+  			<a href="jl/blogPost/webinar_replay_building_rest_apis_with_spring.html"><h1>Webinar Replay: Building REST APIs with Spring</h1></a>
+  			<p>19 June 2013</p>
+  			<p>
+<p> <a href="http://www.youtube.com/watch?v=SC0FPuDKei0">
+ <img  style = "float: left; margin-right :10px" src = "/media/18688" width = "300" /></a>
+
+The video of my webinar on
+<a href= "http://www.youtube.com/watch?v=SC0FPuDKei0"> building RESTful APIs with Spring is available online</a>. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
+</p>  
+<P> The code is available at <a href="http://www.slideshare.net/joshlong/rest-apis-with-spring"> on my SlideShare account (vote it up if you like it!)</a> and on <a href="http://github.com/joshlong/the-spring-rest-stack">my private GitHub account (star or fork it if you like it!)</a>.  
+</p> 
+<P> If you have questions or comments, as always, don't hesitate to reach out to me <a href="http://twitter.com/starbuxman">on Twitter</a> or <A href="http://www.joshlong.com/jl/contact.html">by email (see this page for the email)</a>. </p>
 </p>
   			<a href="jl/blogPost/moar_hypermedia.html"><h1>MOAR HYPERMEDIA PAYPAL</h1></a>
   			<p>28 May 2013</p>
@@ -1528,6 +1528,73 @@ public class CrmBaseActivity extends Activity {
  On a related note, I will have my pal <A href="http://twitter.com/andypiper">Andy Piper</a> in tow.  He's a <A href="http://www.cloudfoundry.com">Cloud Foundry</a> ninja, and I'm sure he'll have answers for people with questions!
 </P>
 </p>
+  			<a href="jl/blogPost/java_configuration_with_spring_social.html"><h1>Java Configuration with Spring Social</h1></a>
+  			<p>14 April 2013</p>
+  			<p>
+<P>In <A href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>,  I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <CODE>@EnableWebMvc</CODE>) that turn on container-wide, and often conventions-oriented features. In the case of <CODE>@EnableWebMvc</Code>, the annotation enables Spring MVC and turns on support for correctly exposing <CODE>@Controller</CODE>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <CODE>@EnableWebMvc</CODE> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
+In this post, we'll look at <A href="http://springsource.org/spring-social"> Spring Social</a>.
+</P>
+ <p>
+Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup.
+</p>
+<pre><CODE>
+@Configuration
+@EnableJdbcConnectionRepository
+@EnableFacebook(appId = "${blog.facebook.appId}", appSecret = "${blog.facebook.appSecret}")
+public class SocialConfiguration {
+
+    @Bean
+    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
+                                               ConnectionRepository connectionRepository) {
+        return new ConnectController(connectionFactoryLocator, connectionRepository);
+    }
+
+    @Bean
+    public ProviderSignInController providerSignInController(
+            ConnectionFactoryLocator connectionFactoryLocator, 
+            UsersConnectionRepository usersConnectionRepository) {
+        
+        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
+            @Override
+            public String signIn(String userId, Connection<?> connection, NativeWebRequest request) {
+                return SignInUtils.signIn(userId);
+            }
+        });
+    }
+
+    @Bean
+    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
+        return new DisconnectController(usersConnectionRepository, environment.getProperty("blog.facebook.appSecret"));
+    }
+
+    @Bean
+    public UserIdSource userIdSource() {
+        return new UserIdSource() {
+            @Override
+            public String getUserId() {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (authentication == null) {
+                    throw new IllegalStateException("Unable to get a ConnectionRepository: no user signed in");
+                }
+                return authentication.getName();
+            }
+        };
+    }
+}
+</CODE></PRE> 
+
+<P> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
+to approve the API access and then proceed with the call.
+</P>
+<PRE><CODE>
+@Inject private Facebook facebook;
+
+@RequestMapping("/hello")
+public void showProfileInformation( Model model){ 
+  model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
+}
+</CODE></PRE>
+</p>
   			<a href="jl/blogPost/java_configuration_with_spring_batch.html"><h1>Java Configuration with Spring Batch</h1></a>
   			<p>14 April 2013</p>
   			<p>
@@ -1609,73 +1676,6 @@ public class BatchImporterConfiguration {
 }
    
 
-</CODE></PRE>
-</p>
-  			<a href="jl/blogPost/java_configuration_with_spring_social.html"><h1>Java Configuration with Spring Social</h1></a>
-  			<p>14 April 2013</p>
-  			<p>
-<P>In <A href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>,  I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <CODE>@EnableWebMvc</CODE>) that turn on container-wide, and often conventions-oriented features. In the case of <CODE>@EnableWebMvc</Code>, the annotation enables Spring MVC and turns on support for correctly exposing <CODE>@Controller</CODE>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <CODE>@EnableWebMvc</CODE> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
-In this post, we'll look at <A href="http://springsource.org/spring-social"> Spring Social</a>.
-</P>
- <p>
-Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup.
-</p>
-<pre><CODE>
-@Configuration
-@EnableJdbcConnectionRepository
-@EnableFacebook(appId = "${blog.facebook.appId}", appSecret = "${blog.facebook.appSecret}")
-public class SocialConfiguration {
-
-    @Bean
-    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
-                                               ConnectionRepository connectionRepository) {
-        return new ConnectController(connectionFactoryLocator, connectionRepository);
-    }
-
-    @Bean
-    public ProviderSignInController providerSignInController(
-            ConnectionFactoryLocator connectionFactoryLocator, 
-            UsersConnectionRepository usersConnectionRepository) {
-        
-        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
-            @Override
-            public String signIn(String userId, Connection<?> connection, NativeWebRequest request) {
-                return SignInUtils.signIn(userId);
-            }
-        });
-    }
-
-    @Bean
-    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
-        return new DisconnectController(usersConnectionRepository, environment.getProperty("blog.facebook.appSecret"));
-    }
-
-    @Bean
-    public UserIdSource userIdSource() {
-        return new UserIdSource() {
-            @Override
-            public String getUserId() {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                if (authentication == null) {
-                    throw new IllegalStateException("Unable to get a ConnectionRepository: no user signed in");
-                }
-                return authentication.getName();
-            }
-        };
-    }
-}
-</CODE></PRE> 
-
-<P> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
-to approve the API access and then proceed with the call.
-</P>
-<PRE><CODE>
-@Inject private Facebook facebook;
-
-@RequestMapping("/hello")
-public void showProfileInformation( Model model){ 
-  model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
-}
 </CODE></PRE>
 </p>
   			<a href="jl/blogPost/java_configuration.html"><h1>Java Configuration</h1></a>
@@ -1797,21 +1797,6 @@ The final benefit is that - as I'm interested in the variety of content on the F
 </p> 
 <P> C'ya on <A href="http://facebook.com/starbuxman">Facebook</a>! (or <A href="http://twitter.com/starbuxman"> Twitter</a>, or <a href="https://plus.google.com/105805020312347758498/posts">Google+</a>)</P>
 </p>
-  			<a href="jl/blogPost/upgrading_to_jdk_7_on_osx.html"><h1>Upgrading to JDK 7 on OSX</h1></a>
-  			<p>20 March 2013</p>
-  			<p>
-<p>
- <img src = "/media/18642" width ="400" style = "float: left; margin-right : 10px;"/>
- I just made the jump to JDK 7 on OSX. I know, I know, I'm <EM>very</EM> behind, but when it comes to JDK iterations, I'm always a little behind. I guess I'm just more cowardly as I age... :)
- Anyway, just made the jump. This is the first release of Java on OSX that Oracle - and <EM>not</EM> Apple - is supporitng.  To make it happen, simply grab the OSX JDK from <A href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">the Oracle Java SE Development Kit 7 Downloads</a> page.  
-  Once it's downloaded, double click the downloaded bundle and just follow the prompt.. there might have been two prompts, but I'd be surprised if there was, it went so quickly! 
- </p>
- <P> When it's installed, you should just be able to confirm the upgrade by going to the shell and typing <CODE>java -version</CODE>. Interestingly, I didn't even need to reload my shell to see the new version. It all just worked! Nicely done, Oracle (for once)!
- </p>
-<P><b>Update</b> if, for example, you wanted to remove JDK 7, <a href="http://reviews.cnet.com/8301-13727_7-57423014-263/how-to-install-and-uninstall-java-7-for-os-x/">this article might help</a>.
-  
- </p>
-</p>
   			<a href="jl/blogPost/repl_vs_unit_tests_misses_the_point.html"><h1>REPL vs. Unit Tests misses the Point</h1></a>
   			<p>20 March 2013</p>
   			<p>
@@ -1850,6 +1835,21 @@ In the same vein, years ago, there was a project called <A href="http://www.bean
    <P> 
  Anyway, I'm just thinking aloud. I thought it was an interesting thread. If you've got any thoughts, I'd love to hear about it on <A href="http://twitter.com/starbuxman">Twitter</a> or <a href="https://plus.google.com/u/0/105805020312347758498/posts">Google+</a>
    </p>
+</p>
+  			<a href="jl/blogPost/upgrading_to_jdk_7_on_osx.html"><h1>Upgrading to JDK 7 on OSX</h1></a>
+  			<p>20 March 2013</p>
+  			<p>
+<p>
+ <img src = "/media/18642" width ="400" style = "float: left; margin-right : 10px;"/>
+ I just made the jump to JDK 7 on OSX. I know, I know, I'm <EM>very</EM> behind, but when it comes to JDK iterations, I'm always a little behind. I guess I'm just more cowardly as I age... :)
+ Anyway, just made the jump. This is the first release of Java on OSX that Oracle - and <EM>not</EM> Apple - is supporitng.  To make it happen, simply grab the OSX JDK from <A href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">the Oracle Java SE Development Kit 7 Downloads</a> page.  
+  Once it's downloaded, double click the downloaded bundle and just follow the prompt.. there might have been two prompts, but I'd be surprised if there was, it went so quickly! 
+ </p>
+ <P> When it's installed, you should just be able to confirm the upgrade by going to the shell and typing <CODE>java -version</CODE>. Interestingly, I didn't even need to reload my shell to see the new version. It all just worked! Nicely done, Oracle (for once)!
+ </p>
+<P><b>Update</b> if, for example, you wanted to remove JDK 7, <a href="http://reviews.cnet.com/8301-13727_7-57423014-263/how-to-install-and-uninstall-java-7-for-os-x/">this article might help</a>.
+  
+ </p>
 </p>
   			<a href="jl/blogPost/springsource_bag_o_swag.html"><h1>SpringSource Bag &apos;o Swag</h1></a>
   			<p>19 March 2013</p>
@@ -1973,17 +1973,6 @@ Also,  you'll need to have a domain you can point to this. During this process  
 
 <img src = "/media/18600" width = "600"/> </p>
 </p>
-  			<a href="jl/blogPost/coffee_drinks_in_china.html"><h1>Coffee Drinks in China</h1></a>
-  			<p>19 January 2013</p>
-  			<p>
-<P> 
- My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must  wind down my time here. As part of that, I need to finish my <EM>amazing</EM> stash 
-'o iced coffee drinks that I've only found here in China. I don't know if you know this about me, but I <EM>love</EM> coffee. 
- And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@
-
-</P>
-<Div style   ="padding-bottom: 10px; ">  <img src   ="/media/18596"  width = "500" /></div>
-</p>
   			<a href="jl/blogPost/on_damien_katz_the_unreasonable_effectiveness_of_c.html"><h1>On Damien Katz&apos; &quot;The Unreasonable Effectiveness of C&quot;</h1></a>
   			<p>19 January 2013</p>
   			<p>
@@ -2002,6 +1991,17 @@ When using JNI, I try to never 'leak' any complex C types into my java API and v
  </p><P>
 Once you've gone through this process, then exposing the C API via messaging is easier because the message payloads between two systems can't, by definition, be much more complicated than the surface area of the C library. Of course, if you're using messaging, that means either writing messaging code in C, or exposing the C library to some higher level language and doing the messaging there. The nice part about messaging is that insulates your higher-level language code from your C code which - let's be honest - might be flakier than your Java code. I still won't link code written against the imagemagick C APIs directly to my application! There is some black magic in that library...! If the C code dies, the messaging system absorbs the requests until another node running the C code can pick up the slack. On the other hand, if you really are using C for performance, then messaging introduces at least a network hop, not to mention another component in the system, and you might lose any gains you made by writing it in C. In this case, it is possible to use write stable, well-behaved JNI or native extensions, but this again requires keeping the surface area small and understanding the pre-conditions nad post-conditions. No threads. Don't pass around pointers to complex objects between C and Java. Make sure you understand who's supposed to clean up memory, and when. 
 </p>
+</p>
+  			<a href="jl/blogPost/coffee_drinks_in_china.html"><h1>Coffee Drinks in China</h1></a>
+  			<p>19 January 2013</p>
+  			<p>
+<P> 
+ My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must  wind down my time here. As part of that, I need to finish my <EM>amazing</EM> stash 
+'o iced coffee drinks that I've only found here in China. I don't know if you know this about me, but I <EM>love</EM> coffee. 
+ And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@
+
+</P>
+<Div style   ="padding-bottom: 10px; ">  <img src   ="/media/18596"  width = "500" /></div>
 </p>
   			<a href="jl/blogPost/programmer_pet_peeves.html"><h1>Programmer Pet Peeves #242942: Sheraton</h1></a>
   			<p>14 January 2013</p>
@@ -2028,6 +2028,11 @@ Sometimes I wonder if people test things before they release it :/
  In short: I recommend people take more sick days if they want to catch up on work.
  </P>
 </p>
+  			<a href="jl/blogPost/happy_new_year_and_heres_to_2013.html"><h1>Happy New Year, and Here&apos;s to 2013</h1></a>
+  			<p>31 December 2012</p>
+  			<p>
+<p> I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here's to 2013! This year I'll ring in the new year in Shanghai, which should be interesting! </p>
+</p>
   			<a href="jl/blogPost/they_think_of_everything.html"><h1>They Think of Everything</h1></a>
   			<p>31 December 2012</p>
   			<p>
@@ -2036,10 +2041,14 @@ Sometimes I wonder if people test things before they release it :/
 <div> <img src = "/media/18574" width = "400" /></div>
 </p>
 </p>
-  			<a href="jl/blogPost/happy_new_year_and_heres_to_2013.html"><h1>Happy New Year, and Here&apos;s to 2013</h1></a>
-  			<p>31 December 2012</p>
+  			<a href="jl/blogPost/christmas_in_shanghai.html"><h1>Christmas in Shanghai</h1></a>
+  			<p>26 December 2012</p>
   			<p>
-<p> I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here's to 2013! This year I'll ring in the new year in Shanghai, which should be interesting! </p>
+<P> Merry Christmas! Feliz Navidad! Joyeux Noel! Feliz natal! 
+ </P>
+<p> It's already <a href="http://en.wikipedia.org/wiki/Boxing_day">Boxing day</a>, or - as we call it   in Shanghai, "Wednesday" (I translated that from the original Mandarin for you).</p> 
+<p> Christmas was such a trip here in China. It's celebrated like people in the west celebrate St. Patty's day: a chance to shop at discount sales, drink and hang out with friends, and potentially take the day off. And, shop they do. China's economy's growing, while the economies in the US and Europe have slowed. Last year, in 2011, the average affluent Chinese spent the holiday abroad and - in England, for example, spent 1300 pounds for the holiday (avergage). (By comparison, the average wealthy Englishman spent 1200 or so pounds). What an amazing phenomenon. One thing that was a big seller, the 'Christmas Apple', which - as I understand it - sounds in the Chinese language like the words for 'Christmas Eve.' What salesmanship. That said, I've never had a Christmas apple, and I think I should like to try one. I wonder if they'll have after-Christmas sales?
+</P>
 </p>
   			<a href="jl/blogPost/chinese_weather.html"><h1>Chinese Weather</h1></a>
   			<p>26 December 2012</p>
@@ -2051,15 +2060,6 @@ it's freaking <EM>cold</EM> in China. Northern parts of China - like <a href="ht
 <p> I'm originally from Los Angeles, and sometimes gets, and while I'm now in rainy San Francisco, I'm not used to this kind of cold.  I much prefer the cold to the hot mugginess of a humid summer, however, so I suppose this will just have to do.  
 </p>
 <p> As you can imagine, slingshotting from Beijing, China (at -8C) to Hyderabad and Bangalore in India, where it's a warm 30 C or so, has not been easy on the immune system. I've got a cold. Oh well..   </p>
-</p>
-  			<a href="jl/blogPost/christmas_in_shanghai.html"><h1>Christmas in Shanghai</h1></a>
-  			<p>26 December 2012</p>
-  			<p>
-<P> Merry Christmas! Feliz Navidad! Joyeux Noel! Feliz natal! 
- </P>
-<p> It's already <a href="http://en.wikipedia.org/wiki/Boxing_day">Boxing day</a>, or - as we call it   in Shanghai, "Wednesday" (I translated that from the original Mandarin for you).</p> 
-<p> Christmas was such a trip here in China. It's celebrated like people in the west celebrate St. Patty's day: a chance to shop at discount sales, drink and hang out with friends, and potentially take the day off. And, shop they do. China's economy's growing, while the economies in the US and Europe have slowed. Last year, in 2011, the average affluent Chinese spent the holiday abroad and - in England, for example, spent 1300 pounds for the holiday (avergage). (By comparison, the average wealthy Englishman spent 1200 or so pounds). What an amazing phenomenon. One thing that was a big seller, the 'Christmas Apple', which - as I understand it - sounds in the Chinese language like the words for 'Christmas Eve.' What salesmanship. That said, I've never had a Christmas apple, and I think I should like to try one. I wonder if they'll have after-Christmas sales?
-</P>
 </p>
   			<a href="jl/blogPost/peppeduporg.html"><h1>PeppedUp.org</h1></a>
   			<p>21 December 2012</p>
@@ -2097,6 +2097,19 @@ Then I started thinking about it. Since I arrived in China  on  December 2, <EM>
 <p> The results are impressive though, so this is very cool. And, I expect that this will make the tool more approachable to developers as Perl's still far easier and more pervasive than Java virtual machines on machines of developers who are not Java developers. So... cool!  
 </p>
 </p>
+  			<a href="jl/blogPost/rest_in_peace_ravi_shankar.html"><h1>Rest in Peace Ravi Shankar</h1></a>
+  			<p>12 December 2012</p>
+  			<p>
+<table style   ="margin-bottom: 10px;" cellpadding="0" cellspacing ="0" border="0"><tr><td  valign = "top" width = "200">
+<img src = "/media/18554"  width = "200"/>
+</td><td width = "10"></td><td   valign = "top">
+<P>   I'm in India (Bangalore and Hyderabad) and the news today is of the passing  of   Ravi Shankar, the <em>sitar virtuoso</EM> who's music influenced the <EM>Beatles</EM> in the 60s and changed the genre in some ways. 
+ The first introduction to him that I had was  through the music of his daughters on   <EM><A href= "http://en.wikipedia.org/wiki/Concert_for_George">Concert for George</A></EM> (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the <EM>Beatles</EM> and really have a lot of respect for the man.  
+
+He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP <A href="http://en.wikipedia.org/wiki/Ravi_Shankar">Ravi Shankar</a>. 
+
+</p></td></tr></table>
+</p>
   			<a href="jl/blogPost/springone_beijing_and_india_trip_report.html"><h1>SpringOne Beijing and India Trip Report</h1></a>
   			<p>12 December 2012</p>
   			<p>
@@ -2120,19 +2133,6 @@ We <a href= "http://springonechina.cloudfoundry.com">finished SpringOne China</a
     <td  width = "300"  valign = "bottom"><img src="/media/18550" alt="" width="300" height="199" /><br/> Left to Right: Gary Russel, Josh Long, Jennifer Hickey, Jeremy  Grelle, Oliver Gierke, Chris Richardson -- the whole SpringOne India lineup</td>
   </tr>
 </table>
-</p>
-  			<a href="jl/blogPost/rest_in_peace_ravi_shankar.html"><h1>Rest in Peace Ravi Shankar</h1></a>
-  			<p>12 December 2012</p>
-  			<p>
-<table style   ="margin-bottom: 10px;" cellpadding="0" cellspacing ="0" border="0"><tr><td  valign = "top" width = "200">
-<img src = "/media/18554"  width = "200"/>
-</td><td width = "10"></td><td   valign = "top">
-<P>   I'm in India (Bangalore and Hyderabad) and the news today is of the passing  of   Ravi Shankar, the <em>sitar virtuoso</EM> who's music influenced the <EM>Beatles</EM> in the 60s and changed the genre in some ways. 
- The first introduction to him that I had was  through the music of his daughters on   <EM><A href= "http://en.wikipedia.org/wiki/Concert_for_George">Concert for George</A></EM> (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the <EM>Beatles</EM> and really have a lot of respect for the man.  
-
-He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP <A href="http://en.wikipedia.org/wiki/Ravi_Shankar">Ravi Shankar</a>. 
-
-</p></td></tr></table>
 </p>
   			<a href="jl/blogPost/shanghai_december_4th.html"><h1>Shanghai, December 4th</h1></a>
   			<p>05 December 2012</p>
@@ -2459,6 +2459,12 @@ And so concludes <A href ="http://www.springone2gx.com">SpringOne2GX 2012</A>!
   This is the premier event for JVM developers, featuring <a href = "http://springone2gx.com/conference/washington/2012/10/schedule">great speakers from VMWare, SpringSource, TypeSafe, Neo4j, and many others</a> speaking on all manner of topics.  I thoroughly enjoyed giving my talks on <A href= "http://www.slideshare.net/joshlong/the-cloud-foundry-bootcamp-talk-from-springone-on-the-road-europe">Cloud Foundry</a>, <A href= "http://www.slideshare.net/joshlong/integration-and-batch-processing-on-cloud-foundry">Spring Integration and Spring Batch, and RabbitMQ</a>.  
 		</p>
 </p>
+  			<a href="jl/blogPost/my_dear_aunt_sandra.html"><h1>My Dear Aunt Sandra</h1></a>
+  			<p>15 October 2012</p>
+  			<p>
+<p> <img src  = "/media/18467" style = "margin-bottom: 10px;"   /> <br/> My aunt Sandra passed gentle into that good night, yesterday morning, from complications of <a href ="http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/" height = "400">ALS</a>. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She's the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She'd visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad's side of the family. A true family Matriarch. Sandra was the best of us, and I'll miss her with all my heart. RIP Aunt Sandra.
+ </P>
+</p>
   			<a href="jl/blogPost/springone2gx_2012.html"><h1>SpringOne2GX 2012</h1></a>
   			<p>15 October 2012</p>
   			<p>
@@ -2466,12 +2472,6 @@ And so concludes <A href ="http://www.springone2gx.com">SpringOne2GX 2012</A>!
  <img src = "/media/18460"/> <img src = "/media/18462"/> <img src = "/media/18459"/>
  <img src = "/media/18461"/> </div>It's my favorite time of year! SpringOne2GX kicks off tomorrow. I'll be <A href="http://springone2gx.com/conference/washington/2012/10/speakers/josh_long">giving two talks</a> -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry.  This year's already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more.  If you're around, feel free to find me roaming the halls <a href="http://www.twitter.com/starbuxman">or ping me on Twitter</a>!   
   
- </P>
-</p>
-  			<a href="jl/blogPost/my_dear_aunt_sandra.html"><h1>My Dear Aunt Sandra</h1></a>
-  			<p>15 October 2012</p>
-  			<p>
-<p> <img src  = "/media/18467" style = "margin-bottom: 10px;"   /> <br/> My aunt Sandra passed gentle into that good night, yesterday morning, from complications of <a href ="http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/" height = "400">ALS</a>. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She's the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She'd visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad's side of the family. A true family Matriarch. Sandra was the best of us, and I'll miss her with all my heart. RIP Aunt Sandra.
  </P>
 </p>
   			<a href="jl/blogPost/anders_hejlsberg_introducing_typescript.html"><h1>Anders Hejlsberg Introducing TypeScript</h1></a>
@@ -2496,14 +2496,6 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
  I'm not sure what's more impressive: the single algorithm that generated the noise, or the company whose monitoring algorithm saw the aberration..
 </p>
 </p>
-  			<a href="jl/blogPost/spanner_the_goldilocks_database.html"><h1>Spanner, the Goldilocks database</h1></a>
-  			<p>09 October 2012</p>
-  			<p>
-<P> The other N.*?SQL shoe has dropped. Google seems to have discovered the  Goldilocks database: it's fast, <EM>and</EM> transactional.  In short, it's <EM>juuuust</EM> right.  I haven't had the time to read the paper, but it seems <em>very</EM> interesting!  
-
- Check out the <a href="http://highscalability.com/blog/2012/9/24/google-spanners-most-surprising-revelation-nosql-is-out-and.html">High Scalability</A> post for more.
-</P>
-</p>
   			<a href="jl/blogPost/san_francisco.html"><h1>San Francisco</h1></a>
   			<p>09 October 2012</p>
   			<p>
@@ -2512,6 +2504,14 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
  Life is <EM>so</EM> good sometimes.
  
 </p>
+</p>
+  			<a href="jl/blogPost/spanner_the_goldilocks_database.html"><h1>Spanner, the Goldilocks database</h1></a>
+  			<p>09 October 2012</p>
+  			<p>
+<P> The other N.*?SQL shoe has dropped. Google seems to have discovered the  Goldilocks database: it's fast, <EM>and</EM> transactional.  In short, it's <EM>juuuust</EM> right.  I haven't had the time to read the paper, but it seems <em>very</EM> interesting!  
+
+ Check out the <a href="http://highscalability.com/blog/2012/9/24/google-spanners-most-surprising-revelation-nosql-is-out-and.html">High Scalability</A> post for more.
+</P>
 </p>
   			<a href="jl/blogPost/lanyrd.html"><h1>Lanyrd</h1></a>
   			<p>01 October 2012</p>
@@ -2605,11 +2605,6 @@ In addition to looking at source code and looking at design patterns, you should
   </tr>
 </table>
 </p>
-  			<a href="jl/blogPost/huh.html"><h1>WTF</h1></a>
-  			<p>16 September 2012</p>
-  			<p>
-<p> <img src = "/media/18420" width = "500" /> </P>
-</p>
   			<a href="jl/blogPost/cloudfoundry_opentour_india_2012_pune_and_bangalore.html"><h1>The Cloud Foundry Open Tour 2012 in Pune and Bangalore, India</h1></a>
   			<p>16 September 2012</p>
   			<p>
@@ -2623,6 +2618,11 @@ The show had the same format in each of two cities:  for the first several hours
 </td> <td width = "10"></td>
  <td valign = "top"> <img  width = "300" src   = "/media/18405"/>  
 </td></tr></table>
+</p>
+  			<a href="jl/blogPost/huh.html"><h1>WTF</h1></a>
+  			<p>16 September 2012</p>
+  			<p>
+<p> <img src = "/media/18420" width = "500" /> </P>
 </p>
   			<a href="jl/blogPost/a_walking_tour_of_spring_31.html"><h1>A Walking Tour of Spring 3.1</h1></a>
   			<p>08 March 2012</p>
@@ -6772,6 +6772,34 @@ fronts.
 If you're having issues with IntelliJ crawling, a lot of people have
 downgraded to 8.04 Ubuntu. </p>
 </p>
+  			<a href="jl/blogPost/apple_news_mobile_and_otherwise.html"><h1>Apple News, Mobile and Otherwise</h1></a>
+  			<p>17 December 2008</p>
+  			<p>
+<P><img STYLE = "float:left; padding-right:10px;" width = "100"
+src="/media/17842"/>
+ <a href="http://livelabs.com/seadragon-mobile/" target =
+"_blank">SeaDragon</a>, an application from Microsoft that extracts
+the "Deep Zoom" component from Silver Light and enables it on an
+iPhone, has been released to the Apple Application Store (Wonders
+never cease!) because the Apple iPhone has a fantastic GPU.
+ </p> <p>What's very interesting to me about this feature is not the
+mobile component, but <a href="http://livelabs.com/seadragon-ajax/"
+target = "_blank">the ajax one</a>.
+
+
+ <p> <a href="http://www.internetnews.com/bus-news/article.php/3791651/MacPainful+Apple+Bows+Out+of+Macworld+Expo.htm"
+target="_blank">Apple, Steve Jobs, bow out of MacWorld Expo.</a>
+ This fuels the usual debate on Steve Jobs' health, as usual, and
+rumors run rampant. What do you think? Sick? Disincentivized?
+ </p>
+<p>
+       PLUS: My new favorite iPhone Application: <a
+href="http://www.techcrunch.com/2008/12/16/taxi-magic-hail-a-cab-from-your-iphone-at-the-push-of-a-button/">Taxi
+Magic</a>. Seriously -- how slick is that? When do you usually need a
+Taxi? When you're most impaired, likely, say perhaps after drinking?
+One button. Finally, technology for fun and profit.
+</p>
+</p>
   			<a href="jl/blogPost/a_quick_guide_to_posting.html"><h1>A Quick Guide to Posting To (A Few) Blogs with Java</h1></a>
   			<p>17 December 2008</p>
   			<p>
@@ -6843,34 +6871,6 @@ Person(StringUtils.defaultString(authorName), null, null);
 <p> The Google Data stuff was using the Java Google Data APIs. The
 XMLRPC library is quite formidable. I'd not recommend using Apache XMLRPC
 3.1.1 from Maven, as it didn't seem to be a valid artifact. </p>
-</p>
-  			<a href="jl/blogPost/apple_news_mobile_and_otherwise.html"><h1>Apple News, Mobile and Otherwise</h1></a>
-  			<p>17 December 2008</p>
-  			<p>
-<P><img STYLE = "float:left; padding-right:10px;" width = "100"
-src="/media/17842"/>
- <a href="http://livelabs.com/seadragon-mobile/" target =
-"_blank">SeaDragon</a>, an application from Microsoft that extracts
-the "Deep Zoom" component from Silver Light and enables it on an
-iPhone, has been released to the Apple Application Store (Wonders
-never cease!) because the Apple iPhone has a fantastic GPU.
- </p> <p>What's very interesting to me about this feature is not the
-mobile component, but <a href="http://livelabs.com/seadragon-ajax/"
-target = "_blank">the ajax one</a>.
-
-
- <p> <a href="http://www.internetnews.com/bus-news/article.php/3791651/MacPainful+Apple+Bows+Out+of+Macworld+Expo.htm"
-target="_blank">Apple, Steve Jobs, bow out of MacWorld Expo.</a>
- This fuels the usual debate on Steve Jobs' health, as usual, and
-rumors run rampant. What do you think? Sick? Disincentivized?
- </p>
-<p>
-       PLUS: My new favorite iPhone Application: <a
-href="http://www.techcrunch.com/2008/12/16/taxi-magic-hail-a-cab-from-your-iphone-at-the-push-of-a-button/">Taxi
-Magic</a>. Seriously -- how slick is that? When do you usually need a
-Taxi? When you're most impaired, likely, say perhaps after drinking?
-One button. Finally, technology for fun and profit.
-</p>
 </p>
   			<a href="jl/blogPost/how_to_ride_spring_integration.html"><h1>How to Ride Spring Integration Head</h1></a>
   			<p>13 December 2008</p>
@@ -7263,13 +7263,6 @@ I write this down now so I have something to mind map tomorrow when I'm more luc
   			<p>
 Did you know that <code>mvn archetype:generate</code>, by itself, on the command line, yeilds a listing of all the archetypes you have available? I just stumbled upon this today - great trick!
 </p>
-  			<a href="jl/blogPost/subversion_1_5_intellij_idea.html"><h1>Subversion 1.5, IntelliJ IDEA, and you</h1></a>
-  			<p>10 August 2008</p>
-  			<p>
-<p> I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ's Subversion support to lose its mind. It would paint the files blue as though it realized the file was &quot;dirty&quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &quot;No Changes found&quot;.  I did some sleuthing: <a href="http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP">IntelliJ IDEA build 7938</a> fixes the issue.
-</p><p>I installed the new version and opened up a project and everything was in error. It was almost as thought it didn't have a JDK set, so I tried to point it at a JDK but that didn't work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (<code>/home/jlong/.IntelliJIdea70</code>). <b>That</b> worked! 
-</p> <p> In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn't genuine user error!) has delayed me... now, Eclipse on the other hand...  </p>
-</p>
   			<a href="jl/blogPost/keith_donald_speaking_on_spring.html"><h1>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</h1></a>
   			<p>10 August 2008</p>
   			<p>
@@ -7277,6 +7270,13 @@ Did you know that <code>mvn archetype:generate</code>, by itself, on the command
 Keith Donald's going to be at this week's <a href="http://www.phxjug.org/">Phoenix Java User Group</a> talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can't wait for this one! 
 
 </p>
+</p>
+  			<a href="jl/blogPost/subversion_1_5_intellij_idea.html"><h1>Subversion 1.5, IntelliJ IDEA, and you</h1></a>
+  			<p>10 August 2008</p>
+  			<p>
+<p> I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ's Subversion support to lose its mind. It would paint the files blue as though it realized the file was &quot;dirty&quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &quot;No Changes found&quot;.  I did some sleuthing: <a href="http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP">IntelliJ IDEA build 7938</a> fixes the issue.
+</p><p>I installed the new version and opened up a project and everything was in error. It was almost as thought it didn't have a JDK set, so I tried to point it at a JDK but that didn't work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (<code>/home/jlong/.IntelliJIdea70</code>). <b>That</b> worked! 
+</p> <p> In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn't genuine user error!) has delayed me... now, Eclipse on the other hand...  </p>
 </p>
   			<a href="jl/blogPost/installng_postgis_and_the_tiger.html"><h1>Installng PostGIS and the TIGER Geocoder</h1></a>
   			<p>13 July 2008</p>
@@ -7418,15 +7418,15 @@ I love working with Tapestry 4, but I figure that it's because it's already conf
 -DremoteRepositories=http://codecafe.dev-hda.com/repository
 -DarchetypeVersion=4.1.2-SNAPSHOT -DgroupId=c.b -DartifactId=view</code><br><br>
 </p>
-  			<a href="jl/blogPost/20070224.html"><h1>Playing with Swing, JSR 296</h1></a>
-  			<p>24 February 2007</p>
-  			<p>
-I just started playing with <a href="http://jcp.org/en/jsr/detail?id=296" target="_blank">JSR 296</a> as I've recently started building an application that's Swing based (albeit, as an applet, which I'd like to make Java Webstart-able). It's phenomenal! As it stands right now, you can easily databind, internationalize, easily layout GUIs, and build on a useful Action abstraction if you're willing (and able! And what rocket scientist isn't?? Oh, you're <span style="font-style: italic;">not </span>a rocket scientist… well…. I see… Go sit in the corner.) to coordinate the tapestry of solutions out there. <br><br>JSR 296 seeks to bring a lot of that flexibility to the developer right off the bat. With it you get internationalization, an action model, application lifecycle, persistence, etc. Pretty cool. Still missing is databinding and IOC and a layout mechanism. Fortunately, <a href="http://spring-rich-c.sourceforge.net/index.html" target="_blank">SpringRich</a>, and <a href="https://jgoodies.dev.java.net/" target="_blank">JGoodies</a> help alleviate those pain points, so I'm pretty stoked about the possibilities. <br><br>Maybe one day we'll have a framework for the desktop user and it'll endeavor to bring "web-style programming" to the desktop.<br><br>Which reminds me: all those frameworks endeavoring to bring Swing-style programming to the web (Wicket, JSF, Tapestry, Echo, whatever else I missed: this means you!) should change their attitude a little. It's telling that all of the things this framework brings to the table have been de rigueur in web frameworks for half a decade.<br><br>Check out <a href="https://appframework.dev.java.net/intro/index.html" target="_blank">the Swing Application Framework</a> for more.<br><br>I wonder what this will mean for so much of the way an application is built currently. Will I have to become very good at securing SOAP services again? Will an easy, useful desktop programming paradigm reverse the transition from Web Services to JSON? I deployed a custom XML-based (not XML-RPC, or SOAP, but my own protocol) service specifically to be able to achieve modest portability/thoroughput on a prototype J2ME application I built a year or so ago. This was so because the XML parsers are sketchy enough. SOAP stacks (while available, even as a standard) weren't prevalent enough.&nbsp; I can see Spring earning it's keep here, again. Imagine what could be done with a useful databingn mechanism and a convenient way of exposing services (à la Spring). Desktop applications could become the rich client king again. Maybe. <br><br>Meanwhile Bruce Eckel <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=193593" target="_blank">seems to think rich clients are where it's at</a>, as well. Of course, he's pitching Flash, and not Swing. <br><br>Can't wait to see what's next. Windows Vista (Aero, WPF) is poised to make the rich client desktop commonplace. Maybe it'll heat up the landscape enough to drive a resurgence for the desktop developer.&nbsp; Any one use any of these tools? Anything I should know?
-</p>
   			<a href="jl/blogPost/200702241.html"><h1>IntelliJ 6.0 and JDK 6.0 upgrade</h1></a>
   			<p>24 February 2007</p>
   			<p>
 I'm about to upgrade to JDK6 on my Windows XP machine. I'm running IntelliJ 6, which I understand works well on the new JDK. Confusing is the lackluster availability of the JRE. I expect Java.com to yeld a JRE 6 build, but instead it's still pushing the old JRE 5, which is also still being bundled with various PC vendors by default. Why is this? At what point does Sun certify a release as being "good enough" for the developers AND the rest of the world? &nbsp;<br><br>The consensus seems to be that Java SE 6.0 offers the best out-of-the-box performance boost yet, by far.<br><br>After a bit of searching, I finally got to <a href="http://support.jetbrains.com/kb/entry.jspa?externalID=222&amp;categoryID=4">this thread</a>&nbsp; which has the whole process spelled out for you. I went with the second choice enumerated on the page (deleting the jre, and replacing it with JDK1.6's JRE as I didn't want to have to use idea.bat. Using idea.bat causes the DOS console to stay open while you're in IntelliJ. I created a second .bat file whose job it was to load the first one (idea.bat) like so: start idea.bat, however, the trouble is that didn't seem to work. I didn't want to give it much more thought and simply pursued the second option. <br><br>I wholely recommend the upgrade it's very quick. Loading IntellIJ would be one kind of speed increase, but loading a very big project quite another, and they both dramatically improved, to the point that IntelliJ no longer shows me "Tip Of The Day" when I'm doing these actions because it doesn't have to keep me entertained. <br>&nbsp;<br>Completely worth it!&nbsp;
+</p>
+  			<a href="jl/blogPost/20070224.html"><h1>Playing with Swing, JSR 296</h1></a>
+  			<p>24 February 2007</p>
+  			<p>
+I just started playing with <a href="http://jcp.org/en/jsr/detail?id=296" target="_blank">JSR 296</a> as I've recently started building an application that's Swing based (albeit, as an applet, which I'd like to make Java Webstart-able). It's phenomenal! As it stands right now, you can easily databind, internationalize, easily layout GUIs, and build on a useful Action abstraction if you're willing (and able! And what rocket scientist isn't?? Oh, you're <span style="font-style: italic;">not </span>a rocket scientist… well…. I see… Go sit in the corner.) to coordinate the tapestry of solutions out there. <br><br>JSR 296 seeks to bring a lot of that flexibility to the developer right off the bat. With it you get internationalization, an action model, application lifecycle, persistence, etc. Pretty cool. Still missing is databinding and IOC and a layout mechanism. Fortunately, <a href="http://spring-rich-c.sourceforge.net/index.html" target="_blank">SpringRich</a>, and <a href="https://jgoodies.dev.java.net/" target="_blank">JGoodies</a> help alleviate those pain points, so I'm pretty stoked about the possibilities. <br><br>Maybe one day we'll have a framework for the desktop user and it'll endeavor to bring "web-style programming" to the desktop.<br><br>Which reminds me: all those frameworks endeavoring to bring Swing-style programming to the web (Wicket, JSF, Tapestry, Echo, whatever else I missed: this means you!) should change their attitude a little. It's telling that all of the things this framework brings to the table have been de rigueur in web frameworks for half a decade.<br><br>Check out <a href="https://appframework.dev.java.net/intro/index.html" target="_blank">the Swing Application Framework</a> for more.<br><br>I wonder what this will mean for so much of the way an application is built currently. Will I have to become very good at securing SOAP services again? Will an easy, useful desktop programming paradigm reverse the transition from Web Services to JSON? I deployed a custom XML-based (not XML-RPC, or SOAP, but my own protocol) service specifically to be able to achieve modest portability/thoroughput on a prototype J2ME application I built a year or so ago. This was so because the XML parsers are sketchy enough. SOAP stacks (while available, even as a standard) weren't prevalent enough.&nbsp; I can see Spring earning it's keep here, again. Imagine what could be done with a useful databingn mechanism and a convenient way of exposing services (à la Spring). Desktop applications could become the rich client king again. Maybe. <br><br>Meanwhile Bruce Eckel <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=193593" target="_blank">seems to think rich clients are where it's at</a>, as well. Of course, he's pitching Flash, and not Swing. <br><br>Can't wait to see what's next. Windows Vista (Aero, WPF) is poised to make the rich client desktop commonplace. Maybe it'll heat up the landscape enough to drive a resurgence for the desktop developer.&nbsp; Any one use any of these tools? Anything I should know?
 </p>
   			<a href="jl/blogPost/20070212.html"><h1>Sun Java Wireless Toolkit 2.5 for CLDC (Formerly, &amp;#8220;WTK&amp;#8221;) (finally)</h1></a>
   			<p>12 February 2007</p>
