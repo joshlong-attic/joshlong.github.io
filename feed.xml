@@ -6,9 +6,90 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Wed, 19 Feb 2020 20:16:07 +0000</pubDate>
-    <lastBuildDate>Wed, 19 Feb 2020 20:16:07 +0000</lastBuildDate>
+    <pubDate>Tue, 31 Mar 2020 07:20:52 +0000</pubDate>
+    <lastBuildDate>Tue, 31 Mar 2020 07:20:52 +0000</lastBuildDate>
 
+    <item>
+      <title>My First Github Action Deployment</title>
+      <link>https://joshlong.com/jl/blogPost/my-first-github-action.html</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/my-first-github-action.html</guid>
+      	<description>
+	&lt;p&gt;There was a time when I would&apos;ve defended Travis CI to anybody in a bar. It was a venerable piece of software that was free for open Github repositories and had reasonable integrations. I first learned about it in a tech talk being done at the Pivotal Labs San Francisco office at least five years ago.&lt;/p&gt;
+&lt;p&gt;But there were issues. Slowly they settled in. First, the synchronization between Github and Travis CI started getting wonky. If I created a GH repository and then synchronized it with Travis, that would work, but I could also end up with an orphaned Travis CI repository if I change the GH repository&apos;s name, or delete it. There&apos;s no easy way to get rid of thee orphaned repositories. My Travis dashboards are littered with the ghosts of repositories past that I just can&apos;t seem to shake.&lt;/p&gt;
+&lt;p&gt;There&apos;s also now the schism between &lt;a href=&quot;http://Travis-CI.org&quot;&gt;http://Travis-CI.org&lt;/a&gt; and &lt;a href=&quot;http://Travis-CI.com&quot;&gt;http://Travis-CI.com&lt;/a&gt;. I signed up for &lt;a href=&quot;http://Travis-CI.com&quot;&gt;http://Travis-CI.com&lt;/a&gt; (the new hotness), but there&apos;s another fly in the ointment. I&apos;m in the precarious situation where only the &lt;code&gt;.com&lt;/code&gt; experience sees and synchronizes the new repository and the &lt;code&gt;.org&lt;/code&gt; doesn&apos;t. Worse: the &lt;code&gt;.com&lt;/code&gt; experience doesn&apos;t bring over the repositories from &lt;code&gt;.org&lt;/code&gt;! SO, now I need two dashboards to see all the builds.&lt;/p&gt;
+&lt;p&gt;Then there&apos;s the limited integrations. It&apos;s been possible to use Docker in Travis for a while, and that largely obviates the need for integrations. I can use the &lt;em&gt;excellent&lt;/em&gt; &lt;a href=&quot;http://testcontainers.org&quot;&gt;TestContainers&lt;/a&gt; project to spin up darn near anything I need in my test pipeline. That said, it&apos;s a sort of bimodal world. Either you&apos;re using the default services and integrations out of the box, or you&apos;re plugging in a Docker image. It doesn&apos;t feel coherent. I like not having to spin up Docker containers. Getting my CI up and running is hard enough, and I don&apos;t particularly want to throw containers into the mix.&lt;/p&gt;
+&lt;p&gt;I was thinking about going back to Jenkins. But, I&apos;m a miser and I&apos;m lazy. I didn&apos;t want to run my own installation to get access to the flexibility of a in-full-control installation, and I definitely didn&apos;t want to pay someone else to give that!&lt;/p&gt;
+&lt;p&gt;Enter &lt;a href=&quot;http://github.com/actions&quot;&gt;Github Actions&lt;/a&gt;. It&apos;s a general purpose workflow system that happens to be perfect for Continuous Integration use cases. Github Actions have a domain model sort of like Spring Batch&apos;s, actually. A workflow has jobs. Jobs have steps. Steps can be handled by various actions. Now, remember when I said I didn&apos;t want to deal with containers? I was wrong! Github Actions are container-centric. You can&apos;t help but bring containers into it. Each step usually has one, some, or all of the following elements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;code&gt;name&lt;/code&gt; that identifies the step.&lt;/li&gt;
+&lt;li&gt;a &lt;code&gt;uses&lt;/code&gt; element that specifies a container that.... &lt;em&gt;contains&lt;/em&gt; an action to execute.&lt;/li&gt;
+&lt;li&gt;a &lt;code&gt;run&lt;/code&gt; element clause that executes arbitrary commands against a shell environment (like &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;PowerShell&lt;/code&gt;, &lt;code&gt;cmd.exe&lt;/code&gt; and &lt;code&gt;Python&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;a &lt;code&gt;with&lt;/code&gt; element that defines input parameters that are passed into the action.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Environment variables can be securely specified in the Github workspace &lt;code&gt;Settings&lt;/code&gt; screen. Or, they can be specified inline in your Github Action file. Or some combination thereof. You can scope the environment variables to the whole workflow, to any of the subordinate jobs, or to any of their subordinate steps. You can cascade the environment variables too, so that more granular-scoped environment variables have priority over more global environment variables.&lt;/p&gt;
+&lt;p&gt;You can decide what triggers the jobs; a push to a Github repository, a pull-request opened, a ticket filed, or even a CRON expression. Yep; you read that right: want to update your static-site every half an hour? Github pages can run the workflow to run the site-generation, and then host your website, entirely for free! How convenient! &lt;em&gt;Thanks&lt;/em&gt; Github!&lt;/p&gt;
+&lt;p&gt;Now, let&apos;s talk about those actions. This is where the magic is. There are a &lt;em&gt;lot&lt;/em&gt; of actions out there provided not least of all &lt;a href=&quot;https://github.com/actions&quot;&gt;by Github&lt;/a&gt; but also &lt;a href=&quot;https://github.com/marketplace?type=actions&quot;&gt;the community&lt;/a&gt;! Their use is trivial and they do all sorts of things.&lt;/p&gt;
+&lt;p&gt;Want to publish a &lt;a href=&quot;https://github.com/marketplace/actions/actions-for-discord&quot;&gt;notification to Discord&lt;/a&gt;? There&apos;s an action for that. Want to run &lt;a href=&quot;https://github.com/marketplace/actions/snyk&quot;&gt;the Snyk CLI to do security audits on the code&lt;/a&gt;? There&apos;s an action for that. Want to &lt;a href=&quot;https://github.com/marketplace/actions/cache&quot;&gt;cache build artifacts&lt;/a&gt; such as the artifacts downloaded into &lt;code&gt;~/.m2/repository&lt;/code&gt;? There&apos;s an action for that. Want to build your code with Apache Maven, Pipenv, Composer, Rust, Gradle, YARN, etc.? If the relevant CLIs aren&apos;t already installed on the operating system of the container that&apos;s running your application, then, of course, there are actions for that! Want to build your static site using Hugo or Jekyll? There are actions for that. Create an event using Micorosft Graph? Want to run Helm? Run Rubocop, PHP Lint, ESLint, Pyflakes, etc. There are actions for that. Integrate DataDog monitoring? There&apos;s an action for that. Notify Slack or Telegram users?  There... well, you &lt;em&gt;get the idea&lt;/em&gt;, surely.&lt;/p&gt;
+&lt;p&gt;The number of easy-to-integrate integrations are positively &lt;em&gt;mouth-watering&lt;/em&gt;! So, I was sold. I&apos;ve got a &lt;em&gt;lot&lt;/em&gt; of code that I update rarely, and &lt;em&gt;really&lt;/em&gt; need automated and reliable deployment pipelines.&lt;/p&gt;
+&lt;p&gt;So, I took one project and tried to establish a Github Action. It&apos;s a bit more verbse than the equivalent Travis CI build, but approachable and repeatable.&lt;/p&gt;
+&lt;p&gt;Here&apos;s &lt;a href=&quot;https://github.com/this-week-in/twitter-pinboard-cleanup-job/blob/master/.github/workflows/blank.yml&quot;&gt;the original file&lt;/a&gt; in its Githubb-y glory. And here is is reprinted in its entirety.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-yml&quot;&gt;# Build the Twitter Pinboard Cleanup Job
+# https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
+
+name: CI
+
+env:
+  TWITTER_TWI_CLIENT_KEY: ${{ secrets.TWITTER_TWI_CLIENT_KEY }}
+  TWITTER_TWI_CLIENT_KEY_SECRET: ${{ secrets.TWITTER_TWI_CLIENT_KEY_SECRET }}
+  PINBOARD_TOKEN: ${{ secrets.PINBOARD_TOKEN }}
+  CF_USER: ${{ secrets.CF_USER }}
+  CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
+  CF_SPACE: ${{ secrets.CF_SPACE }}
+  CF_API: ${{ secrets.CF_API }}
+  CF_ORG: ${{ secrets.CF_ORG  }}
+  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME  }}
+  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD  }}
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Set up JDK 13
+        uses: actions/setup-java@v1
+        with:
+          java-version: 13
+
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: Build with Maven
+        run: mvn -B deploy --file pom.xml
+
+      - name: Deploy to Cloud Foundry
+        run: |
+          cd $GITHUB_WORKSPACE
+          ./deploy/cf.sh
+          ./deploy/deploy.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I don&apos;t purport to have understood everything about Github Actions, but I&apos;m already a lot further along the path to being able to move dozens of builds over tomorrow fairly quickly. I miss Travis CI. It got me through a &lt;em&gt;lot&lt;/em&gt; of builds, and I couldn&apos;t be more grateful for that. Thanks Travis CI. I am spoilt to still not have to figure out how to build applications. Thanks, Github.&lt;/p&gt;
+
+	</description>
+    </item>
     <item>
       <title>Josh&apos;s 2019 in Review</title>
       <link>https://joshlong.com/jl/blogPost/2019_year_in_review.html</link>
@@ -1367,6 +1448,19 @@ shell.auth=spring
 	</description>
     </item>
     <item>
+      <title>SpringOne2GX 2013 is Coming!</title>
+      <link>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
+      <pubDate>Wed, 7 Aug 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
+      	<description>
+	
+&lt;p&gt; 
+ &lt;IMG src = &quot;/media/18738&quot; width =&quot;300&quot;  style = &quot;float: left; margin-right:10px; &quot;/&gt;
+Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;?  This year&amp;#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&amp;#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&amp;#39;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&amp;#39;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&amp;#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&amp;#39;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Introducing Spring Boot</title>
       <link>https://joshlong.com/jl/blogPost/introducing_spring_boot.html</link>
       <pubDate>Wed, 7 Aug 2013 00:00:00 +0000</pubDate>
@@ -1388,19 +1482,6 @@ class ThisWillActuallyRun {
     }
 }
 &lt;/CODE&gt;&lt;/PRE&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>SpringOne2GX 2013 is Coming!</title>
-      <link>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
-      <pubDate>Wed, 7 Aug 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
-      	<description>
-	
-&lt;p&gt; 
- &lt;IMG src = &quot;/media/18738&quot; width =&quot;300&quot;  style = &quot;float: left; margin-right:10px; &quot;/&gt;
-Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;?  This year&amp;#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&amp;#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&amp;#39;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&amp;#39;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&amp;#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&amp;#39;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!&lt;/p&gt;
 
 	</description>
     </item>
@@ -1428,6 +1509,44 @@ Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.sprin
 &lt;p&gt;The other problem I&apos;ve encountered is that it&apos;s easy to get duplicate notes or reminders. The easiest way to fix this is to pick on service capable of storing notes and reminders and just stick with it, disabling the rest. For me, this is my personal GMail account. So I&apos;ve disabled the Reminders from iCloud, deleted all the notes and now when I add a note in one account it appaears across the other devices. &lt;/p&gt;
 
 &lt;p&gt;I&apos;ll chime back in as I discover more.&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>On Java Code Style</title>
+      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
+      	<description>
+	
+&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
+
+&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
+
+&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
+
+&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Webinar Replay: Building REST APIs with Spring</title>
+      <link>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt;
+ &lt;img  style = &quot;float: left; margin-right :10px&quot; src = &quot;/media/18688&quot; width = &quot;300&quot; /&gt;&lt;/a&gt;
+
+The video of my webinar on
+&lt;a href= &quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; building RESTful APIs with Spring is available online&lt;/a&gt;. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
+&lt;/p&gt;  
+&lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
+&lt;/p&gt; 
+&lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -1571,44 +1690,6 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>On Java Code Style</title>
-      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
-      	<description>
-	
-&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
-
-&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
-
-&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
-
-&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
-
-&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Webinar Replay: Building REST APIs with Spring</title>
-      <link>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt;
- &lt;img  style = &quot;float: left; margin-right :10px&quot; src = &quot;/media/18688&quot; width = &quot;300&quot; /&gt;&lt;/a&gt;
-
-The video of my webinar on
-&lt;a href= &quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; building RESTful APIs with Spring is available online&lt;/a&gt;. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
-&lt;/p&gt;  
-&lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
-&lt;/p&gt; 
-&lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -2366,6 +2447,23 @@ Also,  you&apos;ll need to have a domain you can point to this. During this proc
 	</description>
     </item>
     <item>
+      <title>Coffee Drinks in China</title>
+      <link>https://joshlong.com/jl/blogPost/coffee_drinks_in_china.html</link>
+      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/coffee_drinks_in_china.html</guid>
+      	<description>
+	
+&lt;P&gt; 
+ My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must  wind down my time here. As part of that, I need to finish my &lt;EM&gt;amazing&lt;/EM&gt; stash 
+&apos;o iced coffee drinks that I&apos;ve only found here in China. I don&apos;t know if you know this about me, but I &lt;EM&gt;love&lt;/EM&gt; coffee. 
+ And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@
+
+&lt;/P&gt;
+&lt;Div style   =&quot;padding-bottom: 10px; &quot;&gt;  &lt;img src   =&quot;/media/18596&quot;  width = &quot;500&quot; /&gt;&lt;/div&gt;
+
+	</description>
+    </item>
+    <item>
       <title>On Damien Katz&apos; &quot;The Unreasonable Effectiveness of C&quot;</title>
       <link>https://joshlong.com/jl/blogPost/on_damien_katz_the_unreasonable_effectiveness_of_c.html</link>
       <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
@@ -2387,23 +2485,6 @@ When using JNI, I try to never &apos;leak&apos; any complex C types into my java
  &lt;/p&gt;&lt;P&gt;
 Once you&apos;ve gone through this process, then exposing the C API via messaging is easier because the message payloads between two systems can&apos;t, by definition, be much more complicated than the surface area of the C library. Of course, if you&apos;re using messaging, that means either writing messaging code in C, or exposing the C library to some higher level language and doing the messaging there. The nice part about messaging is that insulates your higher-level language code from your C code which - let&apos;s be honest - might be flakier than your Java code. I still won&apos;t link code written against the imagemagick C APIs directly to my application! There is some black magic in that library...! If the C code dies, the messaging system absorbs the requests until another node running the C code can pick up the slack. On the other hand, if you really are using C for performance, then messaging introduces at least a network hop, not to mention another component in the system, and you might lose any gains you made by writing it in C. In this case, it is possible to use write stable, well-behaved JNI or native extensions, but this again requires keeping the surface area small and understanding the pre-conditions nad post-conditions. No threads. Don&apos;t pass around pointers to complex objects between C and Java. Make sure you understand who&apos;s supposed to clean up memory, and when. 
 &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Coffee Drinks in China</title>
-      <link>https://joshlong.com/jl/blogPost/coffee_drinks_in_china.html</link>
-      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/coffee_drinks_in_china.html</guid>
-      	<description>
-	
-&lt;P&gt; 
- My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must  wind down my time here. As part of that, I need to finish my &lt;EM&gt;amazing&lt;/EM&gt; stash 
-&apos;o iced coffee drinks that I&apos;ve only found here in China. I don&apos;t know if you know this about me, but I &lt;EM&gt;love&lt;/EM&gt; coffee. 
- And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@
-
-&lt;/P&gt;
-&lt;Div style   =&quot;padding-bottom: 10px; &quot;&gt;  &lt;img src   =&quot;/media/18596&quot;  width = &quot;500&quot; /&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -3014,6 +3095,21 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
 	</description>
     </item>
     <item>
+      <title>SpringOne2GX 2012</title>
+      <link>https://joshlong.com/jl/blogPost/springone2gx_2012.html</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/springone2gx_2012.html</guid>
+      	<description>
+	
+&lt;p&gt;  &lt;div style = &quot;float:left;margin-right:10px;&quot;&gt;
+ &lt;img src = &quot;/media/18460&quot;/&gt; &lt;img src = &quot;/media/18462&quot;/&gt; &lt;img src = &quot;/media/18459&quot;/&gt;
+ &lt;img src = &quot;/media/18461&quot;/&gt; &lt;/div&gt;It&apos;s my favorite time of year! SpringOne2GX kicks off tomorrow. I&apos;ll be &lt;A href=&quot;http://springone2gx.com/conference/washington/2012/10/speakers/josh_long&quot;&gt;giving two talks&lt;/a&gt; -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry.  This year&apos;s already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more.  If you&apos;re around, feel free to find me roaming the halls &lt;a href=&quot;http://www.twitter.com/starbuxman&quot;&gt;or ping me on Twitter&lt;/a&gt;!   
+  
+ &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>My Dear Aunt Sandra</title>
       <link>https://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
       <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
@@ -3026,17 +3122,18 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
 	</description>
     </item>
     <item>
-      <title>SpringOne2GX 2012</title>
-      <link>https://joshlong.com/jl/blogPost/springone2gx_2012.html</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/springone2gx_2012.html</guid>
+      <title>Mysterious Algorithm Responsible for 4 Percent of All Trading Activity Last Week</title>
+      <link>https://joshlong.com/jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</link>
+      <pubDate>Wed, 10 Oct 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</guid>
       	<description>
 	
-&lt;p&gt;  &lt;div style = &quot;float:left;margin-right:10px;&quot;&gt;
- &lt;img src = &quot;/media/18460&quot;/&gt; &lt;img src = &quot;/media/18462&quot;/&gt; &lt;img src = &quot;/media/18459&quot;/&gt;
- &lt;img src = &quot;/media/18461&quot;/&gt; &lt;/div&gt;It&apos;s my favorite time of year! SpringOne2GX kicks off tomorrow. I&apos;ll be &lt;A href=&quot;http://springone2gx.com/conference/washington/2012/10/speakers/josh_long&quot;&gt;giving two talks&lt;/a&gt; -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry.  This year&apos;s already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more.  If you&apos;re around, feel free to find me roaming the halls &lt;a href=&quot;http://www.twitter.com/starbuxman&quot;&gt;or ping me on Twitter&lt;/a&gt;!   
-  
- &lt;/P&gt;
+&lt;p&gt;
+ &lt;img src = &quot;/media/18451&quot; style = &quot;float:left; margin-right :10px;&quot;/&gt; 
+ &lt;a href =&quot;http://www.cnbc.com/id/49333454&quot;&gt;According to CNBC, a mysterious algorithm was responsible for 4% of trading activity last week&lt;/a&gt;.  
+
+ I&apos;m not sure what&apos;s more impressive: the single algorithm that generated the noise, or the company whose monitoring algorithm saw the aberration..
+&lt;/p&gt;
 
 	</description>
     </item>
@@ -3054,22 +3151,6 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
 
  TypeScript is not the first technology to  &lt;em&gt;solve&lt;/EM&gt; the static-language-to-JavaScript problem, following the most recent introduction into the  market, &lt;A href=&quot;http://en.wikipedia.org/wiki/Dart_(programming_language)&quot;&gt;Google&apos;s Dart&lt;/A&gt;. Before that, of course, we had CoffeeScript, ScriptSharp, GWT, etc. I could actually see myself using this one, though.  My one twinge of discord is that I think a lot of the complaints he identifies as inhibiting large application development (such as the  lack of strong  types) are less of a problem with a good organizational framework in place. An MVC framework like &lt;a href=&quot;http://backbonejs.org/&quot;&gt;backbone.js&lt;/a&gt; or &lt;A href=&quot;http://angularjs.org/&quot;&gt;Angular.js&lt;/a&gt; let you plugin the missing pieces which means that no single component is going to be so big that it might see substantial benefit by having a stronger type system, and coordination between the components is handled by the more rigorously tested framework.  
 
-&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Mysterious Algorithm Responsible for 4 Percent of All Trading Activity Last Week</title>
-      <link>https://joshlong.com/jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</link>
-      <pubDate>Wed, 10 Oct 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</guid>
-      	<description>
-	
-&lt;p&gt;
- &lt;img src = &quot;/media/18451&quot; style = &quot;float:left; margin-right :10px;&quot;/&gt; 
- &lt;a href =&quot;http://www.cnbc.com/id/49333454&quot;&gt;According to CNBC, a mysterious algorithm was responsible for 4% of trading activity last week&lt;/a&gt;.  
-
- I&apos;m not sure what&apos;s more impressive: the single algorithm that generated the noise, or the company whose monitoring algorithm saw the aberration..
 &lt;/p&gt;
 
 	</description>
@@ -3104,6 +3185,17 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
 	</description>
     </item>
     <item>
+      <title>Speaking at the Aarhus, Denmark Java User Group</title>
+      <link>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</link>
+      <pubDate>Mon, 1 Oct 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</guid>
+      	<description>
+	
+&lt;P&gt; I&apos;ll be speaking at &lt;a href=&quot;https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609&quot;&gt;the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00&lt;/A&gt;. I&apos;ll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Lanyrd</title>
       <link>https://joshlong.com/jl/blogPost/lanyrd.html</link>
       <pubDate>Mon, 1 Oct 2012 00:00:00 +0000</pubDate>
@@ -3113,17 +3205,6 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
 &lt;P&gt; If you guys want to know when and where I&apos;ll be speaking next, feel free to check out my &lt;A href =&quot;http://lanyrd.com/profile/starbuxman/&quot;&gt;Lanyrd.com&lt;/a&gt; page, which usually has information about which shows I&apos;ll be at and where. In fact, some times &lt;EM&gt;I&lt;/EM&gt; check it out and learn of my obligations before I&apos;ve been told!  &lt;br/&gt; &lt;img  width = &quot;800&quot; style = &quot;margin-top:10px;&quot; src = &quot;/media/18436&quot;/&gt;
 
  &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Speaking at the Aarhus, Denmark Java User Group</title>
-      <link>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</link>
-      <pubDate>Mon, 1 Oct 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</guid>
-      	<description>
-	
-&lt;P&gt; I&apos;ll be speaking at &lt;a href=&quot;https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609&quot;&gt;the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00&lt;/A&gt;. I&apos;ll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! &lt;/P&gt;
 
 	</description>
     </item>
@@ -3335,6 +3416,22 @@ This was my first time in Madrid, Spain, for the &lt;a href = &quot;http://www.s
 	</description>
     </item>
     <item>
+      <title>Spring IO 2012</title>
+      <link>https://joshlong.com/jl/blogPost/spring_io_2012.html</link>
+      <pubDate>Fri, 17 Feb 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_io_2012.html</guid>
+      	<description>
+	
+&lt;P&gt; 
+ &lt;img src = &quot;/media/17885&quot; style = &quot;margin-right:10px;float:left;&quot; width  = &quot;300&quot;/&gt;
+Looking forward to presenting my talk on  &lt;a href =&quot;http://www.springio.net/agenda&quot;&gt;Integration and Batch Processing with Cloud Foundry&lt;/A&gt; tomorrow at Spring IO 2012.  
+	
+	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I&apos;ll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, &lt;a href = &quot;http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry&quot;&gt;it&apos;s available here&lt;/a&gt;.
+&lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>JFokus and Vaadin 2012</title>
       <link>https://joshlong.com/jl/blogPost/jfokus_and_vaadin_2012.html</link>
       <pubDate>Fri, 17 Feb 2012 00:00:00 +0000</pubDate>
@@ -3349,22 +3446,6 @@ This was my first time in Madrid, Spain, for the &lt;a href = &quot;http://www.s
  
  If you&apos;re in Helsinki, might I recommend  &lt;a href = &quot;https://vaadin.com/meetup/jfokus-2012&quot;&gt;the JFokus with Vaadin&lt;/A&gt; cruise which leaves from Helsinki aboard the &lt;a href = &quot;http://en.wikipedia.org/wiki/MS_Silja_Symphony&quot;&gt;MS Silja Symphony&lt;/A&gt; at 17:00 EET, and then works it way to Stockholm, where of course you&apos;re then free to attend JFokus. I&apos;ll be there, giving a talk on getting to production quicker with technologies like &lt;a href = &quot;http://www.cloudfoundry.org&quot;&gt;Cloud Foundry&lt;/A&gt;, &lt;A href = &quot;http://www.springframework.org&quot;&gt;Spring&lt;/A&gt; and &lt;A href = &quot;http://www.vaadin.com&quot;&gt;Vaadin&lt;/A&gt;. The deck from the  &lt;a href = &quot;http://www.slideshare.net/joshlong/cf-vaadin&quot;&gt;talk from the Vaadin dev meetup on Spring, Roo and Vaadin  is available&lt;/A&gt;, and so is the  deck from the &lt;a href= &quot;http://www.slideshare.net/joshlong/a-running-tour-of-cloud-foundry&quot;&gt;JFokus Cloud Foundry quickie is available here&lt;/a&gt;.
 	&lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Spring IO 2012</title>
-      <link>https://joshlong.com/jl/blogPost/spring_io_2012.html</link>
-      <pubDate>Fri, 17 Feb 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_io_2012.html</guid>
-      	<description>
-	
-&lt;P&gt; 
- &lt;img src = &quot;/media/17885&quot; style = &quot;margin-right:10px;float:left;&quot; width  = &quot;300&quot;/&gt;
-Looking forward to presenting my talk on  &lt;a href =&quot;http://www.springio.net/agenda&quot;&gt;Integration and Batch Processing with Cloud Foundry&lt;/A&gt; tomorrow at Spring IO 2012.  
-	
-	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I&apos;ll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, &lt;a href = &quot;http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry&quot;&gt;it&apos;s available here&lt;/a&gt;.
-&lt;/P&gt;
 
 	</description>
     </item>
@@ -5013,17 +5094,6 @@ As you might expect from a good conference, there were plenty of great hallway c
 	</description>
     </item>
     <item>
-      <title>Java2Days 2010</title>
-      <link>https://joshlong.com/jl/blogPost/java2days_2010.html</link>
-      <pubDate>Mon, 4 Oct 2010 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/java2days_2010.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;div style = &quot;float:left; margin-bottom:10px;  margin-right:10px; padding: 10px; background-color: black; width:220px &quot;&gt; &lt;img width =&quot;200&quot;  src = &quot;/media/17872&quot;/&gt;  &lt;/div&gt; I&apos;ll be speaking (again) in Sofia, Bulgaria at &lt;a href=&quot;http://2010.java2days.com/&quot;&gt;the Java2Days conference&lt;/a&gt; on the 7th and 8th of October. I was there last year and quite enjoyed the conference. What a wonderful group! I&apos;ll be copresenting two talks with Oleg Zhurakousky (we&apos;ll be talking about &lt;a href=&quot;http://www.springsource.org/spring-integration&quot;&gt;Spring Integration 2&lt;/a&gt; as well as RabbitMQ and AMQP), and another with &lt;a href=&quot;http://www.jamesward.com/&quot;&gt;James Ward&lt;/a&gt; (we&apos;ll be talking about Spring BlazeDS and Flex, naturally). Finally, I&apos;ll be giving another presentation  on using Spring and the Apache 2 licensed BPMN 2 solution &lt;a href=&quot;http://www.activiti.org&quot;&gt;Activiti&lt;/a&gt; (simialar to the talk I gave at  &lt;a href=&quot;http://jz10.java.no/&quot;&gt;JavaZone&lt;/a&gt; recently).  Java2Days is the only conference of its kind in the Balkans and I sincerely hope to see you there!  &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Ubuntu 10.10 (Maverick Meerkat) on a MacBook Pro</title>
       <link>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</link>
       <pubDate>Mon, 4 Oct 2010 00:00:00 +0000</pubDate>
@@ -5031,6 +5101,17 @@ As you might expect from a good conference, there were plenty of great hallway c
       	<description>
 	
 &lt;p&gt; I have long used &lt;a href=&quot;http://refit.sourceforge.net/&quot;&gt;rEFIt&lt;/a&gt; to install Ubuntu on a MacBook Pro. Simply install rEFIt as instructed on the site and then install Ubuntu on the newly created partition. No weirdness. Depending on your hardware, you may need to make sure that the Ubuntu installer program uses &lt;i&gt;nomemset&lt;/i&gt;. This wasn&apos;t the case for me. &lt;/p&gt;&lt;p&gt;This setup lets me have my favorite operating system on (admittedly) fairly nice (albeit overpriced) Intel x86 machines.  However, the latest generation of MacBook Pros &lt;a href=&quot;https://bugs.launchpad.net/linux/+bug/576601&quot;&gt;have caused me no end of grief with Ubuntu 10.04.&lt;/a&gt; Ubuntu 10.10, Maverick Meerkat, remies everthing and I&apos;m happy to report I&apos;m running the release candidate of Ubuntu 10.10 on my Macbook Pro as I type this. &lt;/p&gt;&lt;p&gt;Everything seems to be working fairly well. I put this post out to confirm it can work for you on a Mac, and to also point people &lt;a href=&quot;http://www.pagondel.org/how-to-instalar-vmware-en-ubuntu-10-10-64-bits/&quot;&gt;to this&lt;/a&gt; page if they&apos;re having trouble getting &lt;a href=&quot;http://www.vmware.com/products/player/&quot;&gt;VMware&apos;s excellent VMware Player&lt;/a&gt; product working on 10.10. &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Java2Days 2010</title>
+      <link>https://joshlong.com/jl/blogPost/java2days_2010.html</link>
+      <pubDate>Mon, 4 Oct 2010 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/java2days_2010.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;div style = &quot;float:left; margin-bottom:10px;  margin-right:10px; padding: 10px; background-color: black; width:220px &quot;&gt; &lt;img width =&quot;200&quot;  src = &quot;/media/17872&quot;/&gt;  &lt;/div&gt; I&apos;ll be speaking (again) in Sofia, Bulgaria at &lt;a href=&quot;http://2010.java2days.com/&quot;&gt;the Java2Days conference&lt;/a&gt; on the 7th and 8th of October. I was there last year and quite enjoyed the conference. What a wonderful group! I&apos;ll be copresenting two talks with Oleg Zhurakousky (we&apos;ll be talking about &lt;a href=&quot;http://www.springsource.org/spring-integration&quot;&gt;Spring Integration 2&lt;/a&gt; as well as RabbitMQ and AMQP), and another with &lt;a href=&quot;http://www.jamesward.com/&quot;&gt;James Ward&lt;/a&gt; (we&apos;ll be talking about Spring BlazeDS and Flex, naturally). Finally, I&apos;ll be giving another presentation  on using Spring and the Apache 2 licensed BPMN 2 solution &lt;a href=&quot;http://www.activiti.org&quot;&gt;Activiti&lt;/a&gt; (simialar to the talk I gave at  &lt;a href=&quot;http://jz10.java.no/&quot;&gt;JavaZone&lt;/a&gt; recently).  Java2Days is the only conference of its kind in the Balkans and I sincerely hope to see you there!  &lt;/p&gt;
 
 	</description>
     </item>
