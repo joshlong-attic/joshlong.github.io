@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Tue, 31 Mar 2020 07:24:31 +0000</pubDate>
-    <lastBuildDate>Tue, 31 Mar 2020 07:24:31 +0000</lastBuildDate>
+    <pubDate>Thu, 2 Apr 2020 03:28:04 +0000</pubDate>
+    <lastBuildDate>Thu, 2 Apr 2020 03:28:04 +0000</lastBuildDate>
 
     <item>
       <title>My First Github Action Deployment</title>
