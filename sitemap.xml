@@ -17,6 +17,10 @@
         <lastmod>2013-04-02</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/tired_of_winning.html</loc>
+        <lastmod>2020-05-28</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/my-first-github-action.html</loc>
         <lastmod>2020-03-30</lastmod>
     </url>
@@ -241,11 +245,11 @@
         <lastmod>2013-06-19</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</loc>
         <lastmod>2013-06-19</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</loc>
         <lastmod>2013-06-19</lastmod>
     </url>
     <url>
@@ -649,11 +653,11 @@
         <lastmod>2010-10-18</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/java2days_2010.html</loc>
         <lastmod>2010-10-04</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/java2days_2010.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</loc>
         <lastmod>2010-10-04</lastmod>
     </url>
     <url>
