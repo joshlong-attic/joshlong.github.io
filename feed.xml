@@ -6,11 +6,11 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Fri, 12 Jun 2020 12:20:00 +0000</pubDate>
-    <lastBuildDate>Fri, 12 Jun 2020 12:20:00 +0000</lastBuildDate>
+    <pubDate>Fri, 12 Jun 2020 12:23:04 +0000</pubDate>
+    <lastBuildDate>Fri, 12 Jun 2020 12:23:04 +0000</lastBuildDate>
 
     <item>
-      <title>Creating Datbases with the New H2 Database Server</title>
+      <title>Creating Databases with the New H2 Database Server</title>
       <link>https://joshlong.com/jl/blogPost/running-h2-and-creating-new-databases.html</link>
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/running-h2-and-creating-new-databases.html</guid>
