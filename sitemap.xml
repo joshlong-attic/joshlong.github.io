@@ -17,6 +17,10 @@
         <lastmod>2013-04-02</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/running-h2-and-creating-new-databases.html</loc>
+        <lastmod>2020-06-12</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/tired_of_winning.html</loc>
         <lastmod>2020-05-28</lastmod>
     </url>
@@ -229,11 +233,11 @@
         <lastmod>2013-09-17</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/introducing_spring_boot.html</loc>
         <lastmod>2013-08-07</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/introducing_spring_boot.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</loc>
         <lastmod>2013-08-07</lastmod>
     </url>
     <url>
@@ -305,11 +309,11 @@
         <lastmod>2013-03-08</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/performance_and_the_restful_web.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</loc>
         <lastmod>2013-03-07</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/performance_and_the_restful_web.html</loc>
         <lastmod>2013-03-07</lastmod>
     </url>
     <url>
@@ -373,11 +377,11 @@
         <lastmod>2012-12-16</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/rest_in_peace_ravi_shankar.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/springone_beijing_and_india_trip_report.html</loc>
         <lastmod>2012-12-12</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/springone_beijing_and_india_trip_report.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/rest_in_peace_ravi_shankar.html</loc>
         <lastmod>2012-12-12</lastmod>
     </url>
     <url>
@@ -393,11 +397,11 @@
         <lastmod>2012-11-27</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</loc>
         <lastmod>2012-11-25</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</loc>
         <lastmod>2012-11-25</lastmod>
     </url>
     <url>
@@ -437,11 +441,11 @@
         <lastmod>2012-10-18</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/springone2gx_2012.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</loc>
         <lastmod>2012-10-15</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/springone2gx_2012.html</loc>
         <lastmod>2012-10-15</lastmod>
     </url>
     <url>
@@ -461,11 +465,11 @@
         <lastmod>2012-10-09</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/lanyrd.html</loc>
         <lastmod>2012-10-01</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/lanyrd.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</loc>
         <lastmod>2012-10-01</lastmod>
     </url>
     <url>
@@ -501,11 +505,11 @@
         <lastmod>2012-02-21</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/spring_io_2012.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/jfokus_and_vaadin_2012.html</loc>
         <lastmod>2012-02-17</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/jfokus_and_vaadin_2012.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/spring_io_2012.html</loc>
         <lastmod>2012-02-17</lastmod>
     </url>
     <url>
@@ -653,11 +657,11 @@
         <lastmod>2010-10-18</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/java2days_2010.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</loc>
         <lastmod>2010-10-04</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/java2days_2010.html</loc>
         <lastmod>2010-10-04</lastmod>
     </url>
     <url>

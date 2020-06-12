@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>Creating Datbases with the New H2 Database Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+    <link rel="alternate" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml" />
+    <link rel="alternate feed" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml">
+ 
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+ 
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+ 	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+            <li><a href="../../livelessons.html">Livelessons</a></li>
+            <li><a href="../../books.html">Books</a></li>
+	          <li><a href="https://soundcloud.com/a-bootiful-podcast">A Bootiful Podcast </a></li>
+	          <li><a href="https://bit.ly/spring-tips-playlist">The Spring Tips Videos </a></li>	   
+            <li><a href="https://patreon.com/joshlong">Patreon</a></li>     
+            <li><a href="../../feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>Creating Datbases with the New H2 Database Server</h1>
+	</div>
+
+	<p><em>12 June 2020</em></p>
+
+	<p><p>You know what's super frustrating? The new default configuration <a href="http://www.h2database.com/html/tutorial.html">for H2 database</a>. I love H2 - it's a fast, convenient database. The latest version, however, will no longer automatically create a new database for you on your first attempt to connect and - even worse - it doesn't document particularly clearl what's required to create the database. I understand why they did this - it's better security - but I spent hours trying to get around it so I could use the darn thing at all.</p>
+<p>I use H2 from <a href="https://brew.sh/">Homebrew</a>: <code>brew install h2</code>. Disable this for now, if you have it: <code>brew services stop h2</code>.</p>
+<p>Then, download a distribution from the website. I'm using <code>h2-2019-10-14.zip</code>. Unzip it and then cd into the <code>bin</code> directory and run the following:</p>
+<pre><code>  java -cp h2*.jar org.h2.tools.Server -ifNotExists
+</code></pre>
+<p>This will allow you to run the database, create new Server-centric databases, etc. Then you can kill the instance and restart the Homebrew installed instance. You can point the H2 console to the existing H2 databasees that you created while you were running with <code>-ifNotExists</code>. That's the ticket.</p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2018 JoshLong.com </p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

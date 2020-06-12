@@ -73,6 +73,15 @@
 	<div class="page-header">
 		<h1>Blog</h1>
 	</div>
+  			<a href="jl/blogPost/running-h2-and-creating-new-databases.html"><h1>Creating Datbases with the New H2 Database Server</h1></a>
+  			<p>12 June 2020</p>
+  			<p><p>You know what's super frustrating? The new default configuration <a href="http://www.h2database.com/html/tutorial.html">for H2 database</a>. I love H2 - it's a fast, convenient database. The latest version, however, will no longer automatically create a new database for you on your first attempt to connect and - even worse - it doesn't document particularly clearl what's required to create the database. I understand why they did this - it's better security - but I spent hours trying to get around it so I could use the darn thing at all.</p>
+<p>I use H2 from <a href="https://brew.sh/">Homebrew</a>: <code>brew install h2</code>. Disable this for now, if you have it: <code>brew services stop h2</code>.</p>
+<p>Then, download a distribution from the website. I'm using <code>h2-2019-10-14.zip</code>. Unzip it and then cd into the <code>bin</code> directory and run the following:</p>
+<pre><code>  java -cp h2*.jar org.h2.tools.Server -ifNotExists
+</code></pre>
+<p>This will allow you to run the database, create new Server-centric databases, etc. Then you can kill the instance and restart the Homebrew installed instance. You can point the H2 console to the existing H2 databasees that you created while you were running with <code>-ifNotExists</code>. That's the ticket.</p>
+</p>
   			<a href="jl/blogPost/tired_of_winning.html"><h1>I&apos;m so tired of winning</h1></a>
   			<p>28 May 2020</p>
   			<p><p>I'm so tired of all this <em>winning</em>.</p>
@@ -1218,13 +1227,6 @@ shell.auth=spring
 
 <p>Any class that&#39;s not in Android&#39;s JDK-class whitelist is not available on Android and thus renders code that depends on it incompatible. Some classes, like those in the JAXB module, are hard to ignore as they&#39;re pervasive. I wanted to use the Spring HATEOAS <code>Resource</code>, <code>Link</code>, types. These types are used as representations of various entities in REST responses that are sometimes rendered as XML using JAXB, they could not be loaded in Android! So, I <a href="https://github.com/joshlong/the-spring-rest-stack/tree/master/code/client/android/src/org/springframework/hateoas">had to copy those types locally</a> and mirror the package structure and remove the offending annotations. Hopefully I can clean this up going forward. </p>
 </p>
-  			<a href="jl/blogPost/springone2gx_2013_is_coming.html"><h1>SpringOne2GX 2013 is Coming!</h1></a>
-  			<p>07 August 2013</p>
-  			<p>
-<p> 
- <IMG src = "/media/18738" width ="300"  style = "float: left; margin-right:10px; "/>
-Have you booked your tickets for <strong><a href="http://www.springone2gx.com/conference/santa_clara/2013/09/home">SpringOne2GX</a></strong>?  This year&#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at <em>many</em> conferences all around the world. Ask any developer with a pulse, and they&#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today's developers, and SpringOne2GX's agenda represents in my estimation the perfect blend of content for today&#39;s developers. Check out <a href="https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule">the agenda</a>. We&#39;ve just recently added talks on <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165">big data</a>, and <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425">REST service security with OAuth</a>. This will be our first show under <a href="http://gopivotal.com">Pivotal</a>, and it&#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&#39;ve just announced our Cloud Foundry conference, <a href="http://platformcf.com">Platform</a>, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!</p>
-</p>
   			<a href="jl/blogPost/introducing_spring_boot.html"><h1>Introducing Spring Boot</h1></a>
   			<p>07 August 2013</p>
   			<p>
@@ -1243,6 +1245,13 @@ class ThisWillActuallyRun {
     }
 }
 </CODE></PRE>
+</p>
+  			<a href="jl/blogPost/springone2gx_2013_is_coming.html"><h1>SpringOne2GX 2013 is Coming!</h1></a>
+  			<p>07 August 2013</p>
+  			<p>
+<p> 
+ <IMG src = "/media/18738" width ="300"  style = "float: left; margin-right:10px; "/>
+Have you booked your tickets for <strong><a href="http://www.springone2gx.com/conference/santa_clara/2013/09/home">SpringOne2GX</a></strong>?  This year&#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at <em>many</em> conferences all around the world. Ask any developer with a pulse, and they&#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today's developers, and SpringOne2GX's agenda represents in my estimation the perfect blend of content for today&#39;s developers. Check out <a href="https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule">the agenda</a>. We&#39;ve just recently added talks on <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165">big data</a>, and <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425">REST service security with OAuth</a>. This will be our first show under <a href="http://gopivotal.com">Pivotal</a>, and it&#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&#39;ve just announced our Cloud Foundry conference, <a href="http://platformcf.com">Platform</a>, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!</p>
 </p>
   			<a href="jl/blogPost/icloud_part_1.html"><h1>iCloud (Part #1)</h1></a>
   			<p>01 July 2013</p>
@@ -1967,6 +1976,17 @@ In the same vein, years ago, there was a project called <A href="http://www.bean
  <A target="_blank" href="http://datameer2.datameer.com/blog/wp-content/uploads/2012/06/hadoop_ecosystem_d3_photoshop.jpg"> <img  width = "600" src = "/media/18627" /> </a>
 </div>
 </p>
+  			<a href="jl/blogPost/spring_mvc_performance_ftw.html"><h1>Spring MVC Performance FTW</h1></a>
+  			<p>07 March 2013</p>
+  			<p>
+<P> We've all seen 
+ <A href="http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5"> Matt Raible's awesome talk</a>
+ comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
+</p> 
+<P> 
+ For a very detailed dissection of performance, you might check out this talk <a href="http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/">comparing web framework performance</a>. Matt's talk builds on the data amassed from that talk. 
+</p>
+</p>
   			<a href="jl/blogPost/performance_and_the_restful_web.html"><h1>Multi Client Development with Spring Webinar on March 14, 2013</h1></a>
   			<p>07 March 2013</p>
   			<p>
@@ -1979,17 +1999,6 @@ Once we've introduced Spring's REST support, we'll look at how to take  your app
 <P> Be sure to register now and bring questions, ideas, etc.  I look forward to seeing you at there, and we'll look at some of the amazing support  
  Spring offers for building best-of-breed web-centric, RESTful applications.
 </P>
-</p>
-  			<a href="jl/blogPost/spring_mvc_performance_ftw.html"><h1>Spring MVC Performance FTW</h1></a>
-  			<p>07 March 2013</p>
-  			<p>
-<P> We've all seen 
- <A href="http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5"> Matt Raible's awesome talk</a>
- comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
-</p> 
-<P> 
- For a very detailed dissection of performance, you might check out this talk <a href="http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/">comparing web framework performance</a>. Matt's talk builds on the data amassed from that talk. 
-</p>
 </p>
   			<a href="jl/blogPost/my_post_on_spring_at_china_scale.html"><h1>My Post on Spring at China Scale</h1></a>
   			<p>06 March 2013</p>
@@ -2191,19 +2200,6 @@ Then I started thinking about it. Since I arrived in China  on  December 2, <EM>
 <p> The results are impressive though, so this is very cool. And, I expect that this will make the tool more approachable to developers as Perl's still far easier and more pervasive than Java virtual machines on machines of developers who are not Java developers. So... cool!  
 </p>
 </p>
-  			<a href="jl/blogPost/rest_in_peace_ravi_shankar.html"><h1>Rest in Peace Ravi Shankar</h1></a>
-  			<p>12 December 2012</p>
-  			<p>
-<table style   ="margin-bottom: 10px;" cellpadding="0" cellspacing ="0" border="0"><tr><td  valign = "top" width = "200">
-<img src = "/media/18554"  width = "200"/>
-</td><td width = "10"></td><td   valign = "top">
-<P>   I'm in India (Bangalore and Hyderabad) and the news today is of the passing  of   Ravi Shankar, the <em>sitar virtuoso</EM> who's music influenced the <EM>Beatles</EM> in the 60s and changed the genre in some ways. 
- The first introduction to him that I had was  through the music of his daughters on   <EM><A href= "http://en.wikipedia.org/wiki/Concert_for_George">Concert for George</A></EM> (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the <EM>Beatles</EM> and really have a lot of respect for the man.  
-
-He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP <A href="http://en.wikipedia.org/wiki/Ravi_Shankar">Ravi Shankar</a>. 
-
-</p></td></tr></table>
-</p>
   			<a href="jl/blogPost/springone_beijing_and_india_trip_report.html"><h1>SpringOne Beijing and India Trip Report</h1></a>
   			<p>12 December 2012</p>
   			<p>
@@ -2227,6 +2223,19 @@ We <a href= "http://springonechina.cloudfoundry.com">finished SpringOne China</a
     <td  width = "300"  valign = "bottom"><img src="/media/18550" alt="" width="300" height="199" /><br/> Left to Right: Gary Russel, Josh Long, Jennifer Hickey, Jeremy  Grelle, Oliver Gierke, Chris Richardson -- the whole SpringOne India lineup</td>
   </tr>
 </table>
+</p>
+  			<a href="jl/blogPost/rest_in_peace_ravi_shankar.html"><h1>Rest in Peace Ravi Shankar</h1></a>
+  			<p>12 December 2012</p>
+  			<p>
+<table style   ="margin-bottom: 10px;" cellpadding="0" cellspacing ="0" border="0"><tr><td  valign = "top" width = "200">
+<img src = "/media/18554"  width = "200"/>
+</td><td width = "10"></td><td   valign = "top">
+<P>   I'm in India (Bangalore and Hyderabad) and the news today is of the passing  of   Ravi Shankar, the <em>sitar virtuoso</EM> who's music influenced the <EM>Beatles</EM> in the 60s and changed the genre in some ways. 
+ The first introduction to him that I had was  through the music of his daughters on   <EM><A href= "http://en.wikipedia.org/wiki/Concert_for_George">Concert for George</A></EM> (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the <EM>Beatles</EM> and really have a lot of respect for the man.  
+
+He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP <A href="http://en.wikipedia.org/wiki/Ravi_Shankar">Ravi Shankar</a>. 
+
+</p></td></tr></table>
 </p>
   			<a href="jl/blogPost/shanghai_december_4th.html"><h1>Shanghai, December 4th</h1></a>
   			<p>05 December 2012</p>
@@ -2265,13 +2274,6 @@ Wish me luck!
   <img  src = "/media/18534" width = "800" /></DIV>
 </p>
 </p>
-  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
-  			<p>25 November 2012</p>
-  			<p>
-<P> I found <a href= "https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the  
-         environment variables</a> in Cloud Foundry with the values for this particular application.  
- </p>
-</p>
   			<a href="jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html"><h1>Spring Data Mongo transaction synchronization does not find a bound DB</h1></a>
   			<p>25 November 2012</p>
   			<p>
@@ -2302,6 +2304,13 @@ at org.springframework.transaction.support.AbstractPlatformTransactionManager.co
 at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:393) [spring-tx-3.1.1.RELEASE.jar:3.1.1.RELEASE]
  </pre>
 </p> <p> Hat tip to the one and only  <a href= "https://twitter.com/olivergierke">Oliver Gierke</a> for helping me with this! </P>
+</p>
+  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
+  			<p>25 November 2012</p>
+  			<p>
+<P> I found <a href= "https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the  
+         environment variables</a> in Cloud Foundry with the values for this particular application.  
+ </p>
 </p>
   			<a href="jl/blogPost/getting_started_with_cloud_foundry_for_java_and_spring_developers.html"><h1>Getting Started with Cloud Foundry for Java and Spring Developers</h1></a>
   			<p>16 November 2012</p>
@@ -2553,6 +2562,12 @@ And so concludes <A href ="http://www.springone2gx.com">SpringOne2GX 2012</A>!
   This is the premier event for JVM developers, featuring <a href = "http://springone2gx.com/conference/washington/2012/10/schedule">great speakers from VMWare, SpringSource, TypeSafe, Neo4j, and many others</a> speaking on all manner of topics.  I thoroughly enjoyed giving my talks on <A href= "http://www.slideshare.net/joshlong/the-cloud-foundry-bootcamp-talk-from-springone-on-the-road-europe">Cloud Foundry</a>, <A href= "http://www.slideshare.net/joshlong/integration-and-batch-processing-on-cloud-foundry">Spring Integration and Spring Batch, and RabbitMQ</a>.  
 		</p>
 </p>
+  			<a href="jl/blogPost/my_dear_aunt_sandra.html"><h1>My Dear Aunt Sandra</h1></a>
+  			<p>15 October 2012</p>
+  			<p>
+<p> <img src  = "/media/18467" style = "margin-bottom: 10px;"   /> <br/> My aunt Sandra passed gentle into that good night, yesterday morning, from complications of <a href ="http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/" height = "400">ALS</a>. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She's the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She'd visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad's side of the family. A true family Matriarch. Sandra was the best of us, and I'll miss her with all my heart. RIP Aunt Sandra.
+ </P>
+</p>
   			<a href="jl/blogPost/springone2gx_2012.html"><h1>SpringOne2GX 2012</h1></a>
   			<p>15 October 2012</p>
   			<p>
@@ -2560,12 +2575,6 @@ And so concludes <A href ="http://www.springone2gx.com">SpringOne2GX 2012</A>!
  <img src = "/media/18460"/> <img src = "/media/18462"/> <img src = "/media/18459"/>
  <img src = "/media/18461"/> </div>It's my favorite time of year! SpringOne2GX kicks off tomorrow. I'll be <A href="http://springone2gx.com/conference/washington/2012/10/speakers/josh_long">giving two talks</a> -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry.  This year's already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more.  If you're around, feel free to find me roaming the halls <a href="http://www.twitter.com/starbuxman">or ping me on Twitter</a>!   
   
- </P>
-</p>
-  			<a href="jl/blogPost/my_dear_aunt_sandra.html"><h1>My Dear Aunt Sandra</h1></a>
-  			<p>15 October 2012</p>
-  			<p>
-<p> <img src  = "/media/18467" style = "margin-bottom: 10px;"   /> <br/> My aunt Sandra passed gentle into that good night, yesterday morning, from complications of <a href ="http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/" height = "400">ALS</a>. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She's the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She'd visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad's side of the family. A true family Matriarch. Sandra was the best of us, and I'll miss her with all my heart. RIP Aunt Sandra.
  </P>
 </p>
   			<a href="jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html"><h1>Mysterious Algorithm Responsible for 4 Percent of All Trading Activity Last Week</h1></a>
@@ -2607,17 +2616,17 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
  Check out the <a href="http://highscalability.com/blog/2012/9/24/google-spanners-most-surprising-revelation-nosql-is-out-and.html">High Scalability</A> post for more.
 </P>
 </p>
-  			<a href="jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html"><h1>Speaking at the Aarhus, Denmark Java User Group</h1></a>
-  			<p>01 October 2012</p>
-  			<p>
-<P> I'll be speaking at <a href="https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609">the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00</A>. I'll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! </P>
-</p>
   			<a href="jl/blogPost/lanyrd.html"><h1>Lanyrd</h1></a>
   			<p>01 October 2012</p>
   			<p>
 <P> If you guys want to know when and where I'll be speaking next, feel free to check out my <A href ="http://lanyrd.com/profile/starbuxman/">Lanyrd.com</a> page, which usually has information about which shows I'll be at and where. In fact, some times <EM>I</EM> check it out and learn of my obligations before I've been told!  <br/> <img  width = "800" style = "margin-top:10px;" src = "/media/18436"/>
 
  </P>
+</p>
+  			<a href="jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html"><h1>Speaking at the Aarhus, Denmark Java User Group</h1></a>
+  			<p>01 October 2012</p>
+  			<p>
+<P> I'll be speaking at <a href="https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609">the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00</A>. I'll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! </P>
 </p>
   			<a href="jl/blogPost/goto_conference_in_aarhus_denmark_2012.html"><h1>GOTO conference in Aarhus, Denmark, 2012</h1></a>
   			<p>27 September 2012</p>
@@ -2778,16 +2787,6 @@ This was my first time in Madrid, Spain, for the <a href = "http://www.springio.
     <P>I really enjoyed JFokus, the Vaadin Dev Days, and finally Spring IO both because they were great events with enthusiastic developers, but also because I got to go with my dad, who got to experience Europe for the first time with me. We learned a lot. I'll be back in Europe next month for <a href = "http://2012.33degree.org/">33rd Degree</a>, and I'll be in Sweden, <EM>again</EM>(!), and in numerous other countries in April for <a href = "http://www.scandevconf.se/">ScanDevConf</a> and the <a href="http://opentour.cloudfoundry.com/">Cloud Foundry Open Tour</a> (which we'll talk about a bit later), respectively, and I'll be sure to approach those trips in the same  way as my dad did: full of a (renewed) curiousity. 
 </P>
 </p>
-  			<a href="jl/blogPost/spring_io_2012.html"><h1>Spring IO 2012</h1></a>
-  			<p>17 February 2012</p>
-  			<p>
-<P> 
- <img src = "/media/17885" style = "margin-right:10px;float:left;" width  = "300"/>
-Looking forward to presenting my talk on  <a href ="http://www.springio.net/agenda">Integration and Batch Processing with Cloud Foundry</A> tomorrow at Spring IO 2012.  
-	
-	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I'll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, <a href = "http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry">it's available here</a>.
-</P>
-</p>
   			<a href="jl/blogPost/jfokus_and_vaadin_2012.html"><h1>JFokus and Vaadin 2012</h1></a>
   			<p>17 February 2012</p>
   			<p>
@@ -2799,6 +2798,16 @@ Looking forward to presenting my talk on  <a href ="http://www.springio.net/agen
  
  If you're in Helsinki, might I recommend  <a href = "https://vaadin.com/meetup/jfokus-2012">the JFokus with Vaadin</A> cruise which leaves from Helsinki aboard the <a href = "http://en.wikipedia.org/wiki/MS_Silja_Symphony">MS Silja Symphony</A> at 17:00 EET, and then works it way to Stockholm, where of course you're then free to attend JFokus. I'll be there, giving a talk on getting to production quicker with technologies like <a href = "http://www.cloudfoundry.org">Cloud Foundry</A>, <A href = "http://www.springframework.org">Spring</A> and <A href = "http://www.vaadin.com">Vaadin</A>. The deck from the  <a href = "http://www.slideshare.net/joshlong/cf-vaadin">talk from the Vaadin dev meetup on Spring, Roo and Vaadin  is available</A>, and so is the  deck from the <a href= "http://www.slideshare.net/joshlong/a-running-tour-of-cloud-foundry">JFokus Cloud Foundry quickie is available here</a>.
 	</P>
+</p>
+  			<a href="jl/blogPost/spring_io_2012.html"><h1>Spring IO 2012</h1></a>
+  			<p>17 February 2012</p>
+  			<p>
+<P> 
+ <img src = "/media/17885" style = "margin-right:10px;float:left;" width  = "300"/>
+Looking forward to presenting my talk on  <a href ="http://www.springio.net/agenda">Integration and Batch Processing with Cloud Foundry</A> tomorrow at Spring IO 2012.  
+	
+	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I'll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, <a href = "http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry">it's available here</a>.
+</P>
 </p>
   			<a href="jl/blogPost/a_google_music_api_please.html"><h1>A Google Music API, Please?</h1></a>
   			<p>26 January 2012</p>
@@ -4228,15 +4237,15 @@ As you might expect from a good conference, there were plenty of great hallway c
   			<p>
 <p><a href="http://www.springone2gx.com/" border="0"> <img src = "/media/17878" style  = "float:left; margin-right:10px; " /></a>  I'll be speaking at <a href="http://www.springone2gx.com/">SpringOne2GX</a> this week along with a raft of supremely awesome speakers from the Spring and Grails communities.   I'll be delivering a talk about building custom components (mostly, custom adapters) for <a href="http://www.springsource.com/spring-integration">Spring Integration.</a>  There are other talks happening concurrently that, if I weren't giving a talk, I'd want to attend. :-) This year is poised to continue last year's agressive growth in attendance. Besides my talk, I'll be there  taking in the talks and chatting with people in the hallways.  I hope to see you there! </p>
 </p>
-  			<a href="jl/blogPost/java2days_2010.html"><h1>Java2Days 2010</h1></a>
-  			<p>04 October 2010</p>
-  			<p>
-<p> <div style = "float:left; margin-bottom:10px;  margin-right:10px; padding: 10px; background-color: black; width:220px "> <img width ="200"  src = "/media/17872"/>  </div> I'll be speaking (again) in Sofia, Bulgaria at <a href="http://2010.java2days.com/">the Java2Days conference</a> on the 7th and 8th of October. I was there last year and quite enjoyed the conference. What a wonderful group! I'll be copresenting two talks with Oleg Zhurakousky (we'll be talking about <a href="http://www.springsource.org/spring-integration">Spring Integration 2</a> as well as RabbitMQ and AMQP), and another with <a href="http://www.jamesward.com/">James Ward</a> (we'll be talking about Spring BlazeDS and Flex, naturally). Finally, I'll be giving another presentation  on using Spring and the Apache 2 licensed BPMN 2 solution <a href="http://www.activiti.org">Activiti</a> (simialar to the talk I gave at  <a href="http://jz10.java.no/">JavaZone</a> recently).  Java2Days is the only conference of its kind in the Balkans and I sincerely hope to see you there!  </p>
-</p>
   			<a href="jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html"><h1>Ubuntu 10.10 (Maverick Meerkat) on a MacBook Pro</h1></a>
   			<p>04 October 2010</p>
   			<p>
 <p> I have long used <a href="http://refit.sourceforge.net/">rEFIt</a> to install Ubuntu on a MacBook Pro. Simply install rEFIt as instructed on the site and then install Ubuntu on the newly created partition. No weirdness. Depending on your hardware, you may need to make sure that the Ubuntu installer program uses <i>nomemset</i>. This wasn't the case for me. </p><p>This setup lets me have my favorite operating system on (admittedly) fairly nice (albeit overpriced) Intel x86 machines.  However, the latest generation of MacBook Pros <a href="https://bugs.launchpad.net/linux/+bug/576601">have caused me no end of grief with Ubuntu 10.04.</a> Ubuntu 10.10, Maverick Meerkat, remies everthing and I'm happy to report I'm running the release candidate of Ubuntu 10.10 on my Macbook Pro as I type this. </p><p>Everything seems to be working fairly well. I put this post out to confirm it can work for you on a Mac, and to also point people <a href="http://www.pagondel.org/how-to-instalar-vmware-en-ubuntu-10-10-64-bits/">to this</a> page if they're having trouble getting <a href="http://www.vmware.com/products/player/">VMware's excellent VMware Player</a> product working on 10.10. </p>
+</p>
+  			<a href="jl/blogPost/java2days_2010.html"><h1>Java2Days 2010</h1></a>
+  			<p>04 October 2010</p>
+  			<p>
+<p> <div style = "float:left; margin-bottom:10px;  margin-right:10px; padding: 10px; background-color: black; width:220px "> <img width ="200"  src = "/media/17872"/>  </div> I'll be speaking (again) in Sofia, Bulgaria at <a href="http://2010.java2days.com/">the Java2Days conference</a> on the 7th and 8th of October. I was there last year and quite enjoyed the conference. What a wonderful group! I'll be copresenting two talks with Oleg Zhurakousky (we'll be talking about <a href="http://www.springsource.org/spring-integration">Spring Integration 2</a> as well as RabbitMQ and AMQP), and another with <a href="http://www.jamesward.com/">James Ward</a> (we'll be talking about Spring BlazeDS and Flex, naturally). Finally, I'll be giving another presentation  on using Spring and the Apache 2 licensed BPMN 2 solution <a href="http://www.activiti.org">Activiti</a> (simialar to the talk I gave at  <a href="http://jz10.java.no/">JavaZone</a> recently).  Java2Days is the only conference of its kind in the Balkans and I sincerely hope to see you there!  </p>
 </p>
   			<a href="jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html"><h1>Spring and the Activiti BPMN2 engine  at JavaZone 2010</h1></a>
   			<p>03 September 2010</p>
