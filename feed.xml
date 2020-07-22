@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Tue, 21 Jul 2020 02:18:22 +0000</pubDate>
-    <lastBuildDate>Tue, 21 Jul 2020 02:18:22 +0000</lastBuildDate>
+    <pubDate>Wed, 22 Jul 2020 02:17:47 +0000</pubDate>
+    <lastBuildDate>Wed, 22 Jul 2020 02:17:47 +0000</lastBuildDate>
 
     <item>
       <title>Creating Databases with the New H2 Database Server</title>
