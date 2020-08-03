@@ -6,9 +6,23 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Mon, 3 Aug 2020 02:22:15 +0000</pubDate>
-    <lastBuildDate>Mon, 3 Aug 2020 02:22:15 +0000</lastBuildDate>
+    <pubDate>Mon, 3 Aug 2020 05:11:33 +0000</pubDate>
+    <lastBuildDate>Mon, 3 Aug 2020 05:11:33 +0000</lastBuildDate>
 
+    <item>
+      <title>10 Years on the Spring Team!</title>
+      <link>https://joshlong.com/jl/blogPost/10-years-on-the-spring-team.html</link>
+      <pubDate>Sun, 2 Aug 2020 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/10-years-on-the-spring-team.html</guid>
+      	<description>
+	&lt;p&gt;I already published a retrospective that covers most of the &lt;a href=&quot;http://joshlong.com/jl/blogPost/8-years-on-the-spring-team.html&quot;&gt;story so far in 2018&lt;/a&gt;, eight years into my time on the Spring team. I won&apos;t get into all of that again, except to update you on what&apos;s happened since 2018.&lt;/p&gt;
+&lt;p&gt;First, and foremost, we at Pivotal were accquired by VMware and in 2020 are now reunited with our VMware family. I started my time as the first Spring Developer Advocate in 2010 at VMware and it&apos;s nice to return to that organization!&lt;/p&gt;
+&lt;p&gt;You may see quite a bit of mention of VMware Tanzu, which is essentially the cloud native division of VMware, teaming up the amazing people from Heptio, Pivotal, and other divisions on one mission: helping organizations build cloud native software and services. I, and the larger Spring team, live under the Vmware Tanzu division, and this is where the future is. The Spring team is thriving like never before under the Tanzu division. Cloud native &lt;a href=&quot;http://twitter.com/wattersjames&quot;&gt;James Watters (@wattersjames)&lt;/a&gt; tweeted it best just &lt;a href=&quot;https://twitter.com/wattersjames/status/1288957297817874432?s=20&quot;&gt;the other day&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Second, the COVID-19 crisis hit and I&apos;ve done vastly less travel this year than in any year since I joined the Spring team.  I don&apos;t need to remind you all of what the COVID-19 crisis is - it&apos;s worldwide and has affected you too.&lt;/p&gt;
+&lt;p&gt;I really appreciate &lt;a href=&quot;https://twitter.com/starbuxman/status/1289826281660362752&quot;&gt;all&lt;/a&gt; the &lt;a href=&quot;https://twitter.com/starbuxman/status/1289818502199537672&quot;&gt;kind&lt;/a&gt; tweet &lt;a href=&quot;https://twitter.com/starbuxman/status/1289826281660362752&quot;&gt;replies&lt;/a&gt; I &lt;a href=&quot;https://twitter.com/starbuxman/status/1289830310557843456&quot;&gt;got&lt;/a&gt; today, my friends. I appreciate &lt;a href=&quot;https://spring.io/team/jlong&quot;&gt;the opportunity to serve&lt;/a&gt; and look forward to next ten years and beyond!&lt;/p&gt;
+
+	</description>
+    </item>
     <item>
       <title>Creating Databases with the New H2 Database Server</title>
       <link>https://joshlong.com/jl/blogPost/running-h2-and-creating-new-databases.html</link>
@@ -1946,79 +1960,6 @@ public class CrmBaseActivity extends Activity {
 	</description>
     </item>
     <item>
-      <title>Java Configuration with Spring Social</title>
-      <link>https://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</link>
-      <pubDate>Sun, 14 Apr 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_social.html</guid>
-      	<description>
-	
-&lt;P&gt;In &lt;A href=&quot;http://www.joshlong.com/jl/blogPost/java_configuration.html&quot;&gt;the first post in this series&lt;/a&gt;,  I introduced Spring&apos;s Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt;) that turn on container-wide, and often conventions-oriented features. In the case of &lt;CODE&gt;@EnableWebMvc&lt;/Code&gt;, the annotation enables Spring MVC and turns on support for correctly exposing &lt;CODE&gt;@Controller&lt;/CODE&gt;-annotated beans as HTTP endpoints. Java configuration APIs of the same style as &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt; can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
-In this post, we&apos;ll look at &lt;A href=&quot;http://springsource.org/spring-social&quot;&gt; Spring Social&lt;/a&gt;.
-&lt;/P&gt;
- &lt;p&gt;
-Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here&apos;s an example setup.
-&lt;/p&gt;
-&lt;pre&gt;&lt;CODE&gt;
-@Configuration
-@EnableJdbcConnectionRepository
-@EnableFacebook(appId = &quot;${blog.facebook.appId}&quot;, appSecret = &quot;${blog.facebook.appSecret}&quot;)
-public class SocialConfiguration {
-
-    @Bean
-    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
-                                               ConnectionRepository connectionRepository) {
-        return new ConnectController(connectionFactoryLocator, connectionRepository);
-    }
-
-    @Bean
-    public ProviderSignInController providerSignInController(
-            ConnectionFactoryLocator connectionFactoryLocator, 
-            UsersConnectionRepository usersConnectionRepository) {
-        
-        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
-            @Override
-            public String signIn(String userId, Connection&lt;?&gt; connection, NativeWebRequest request) {
-                return SignInUtils.signIn(userId);
-            }
-        });
-    }
-
-    @Bean
-    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
-        return new DisconnectController(usersConnectionRepository, environment.getProperty(&quot;blog.facebook.appSecret&quot;));
-    }
-
-    @Bean
-    public UserIdSource userIdSource() {
-        return new UserIdSource() {
-            @Override
-            public String getUserId() {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                if (authentication == null) {
-                    throw new IllegalStateException(&quot;Unable to get a ConnectionRepository: no user signed in&quot;);
-                }
-                return authentication.getName();
-            }
-        };
-    }
-}
-&lt;/CODE&gt;&lt;/PRE&gt; 
-
-&lt;P&gt; Once you&apos;ve done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
-to approve the API access and then proceed with the call.
-&lt;/P&gt;
-&lt;PRE&gt;&lt;CODE&gt;
-@Inject private Facebook facebook;
-
-@RequestMapping(&quot;/hello&quot;)
-public void showProfileInformation( Model model){ 
-  model.addAttribute( &quot;name&quot;, facebook.userOperations().getUserProfile().getName() );
-}
-&lt;/CODE&gt;&lt;/PRE&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Java Configuration with Spring Batch</title>
       <link>https://joshlong.com/jl/blogPost/java_configuration_with_spring_batch.html</link>
       <pubDate>Sun, 14 Apr 2013 00:00:00 +0000</pubDate>
@@ -2108,6 +2049,97 @@ public class BatchImporterConfiguration {
 	</description>
     </item>
     <item>
+      <title>Java Configuration with Spring Social</title>
+      <link>https://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</link>
+      <pubDate>Sun, 14 Apr 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_social.html</guid>
+      	<description>
+	
+&lt;P&gt;In &lt;A href=&quot;http://www.joshlong.com/jl/blogPost/java_configuration.html&quot;&gt;the first post in this series&lt;/a&gt;,  I introduced Spring&apos;s Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt;) that turn on container-wide, and often conventions-oriented features. In the case of &lt;CODE&gt;@EnableWebMvc&lt;/Code&gt;, the annotation enables Spring MVC and turns on support for correctly exposing &lt;CODE&gt;@Controller&lt;/CODE&gt;-annotated beans as HTTP endpoints. Java configuration APIs of the same style as &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt; can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
+In this post, we&apos;ll look at &lt;A href=&quot;http://springsource.org/spring-social&quot;&gt; Spring Social&lt;/a&gt;.
+&lt;/P&gt;
+ &lt;p&gt;
+Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here&apos;s an example setup.
+&lt;/p&gt;
+&lt;pre&gt;&lt;CODE&gt;
+@Configuration
+@EnableJdbcConnectionRepository
+@EnableFacebook(appId = &quot;${blog.facebook.appId}&quot;, appSecret = &quot;${blog.facebook.appSecret}&quot;)
+public class SocialConfiguration {
+
+    @Bean
+    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
+                                               ConnectionRepository connectionRepository) {
+        return new ConnectController(connectionFactoryLocator, connectionRepository);
+    }
+
+    @Bean
+    public ProviderSignInController providerSignInController(
+            ConnectionFactoryLocator connectionFactoryLocator, 
+            UsersConnectionRepository usersConnectionRepository) {
+        
+        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
+            @Override
+            public String signIn(String userId, Connection&lt;?&gt; connection, NativeWebRequest request) {
+                return SignInUtils.signIn(userId);
+            }
+        });
+    }
+
+    @Bean
+    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
+        return new DisconnectController(usersConnectionRepository, environment.getProperty(&quot;blog.facebook.appSecret&quot;));
+    }
+
+    @Bean
+    public UserIdSource userIdSource() {
+        return new UserIdSource() {
+            @Override
+            public String getUserId() {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (authentication == null) {
+                    throw new IllegalStateException(&quot;Unable to get a ConnectionRepository: no user signed in&quot;);
+                }
+                return authentication.getName();
+            }
+        };
+    }
+}
+&lt;/CODE&gt;&lt;/PRE&gt; 
+
+&lt;P&gt; Once you&apos;ve done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
+to approve the API access and then proceed with the call.
+&lt;/P&gt;
+&lt;PRE&gt;&lt;CODE&gt;
+@Inject private Facebook facebook;
+
+@RequestMapping(&quot;/hello&quot;)
+public void showProfileInformation( Model model){ 
+  model.addAttribute( &quot;name&quot;, facebook.userOperations().getUserProfile().getName() );
+}
+&lt;/CODE&gt;&lt;/PRE&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>One Big Bag of Beans</title>
+      <link>https://joshlong.com/jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</link>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</guid>
+      	<description>
+	
+&lt;P&gt;At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean&apos;s class, optionally an &lt;CODE&gt;id&lt;/CODE&gt; by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc.
+&lt;/P&gt;
+&lt;P&gt;Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The &lt;A href=&quot;http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL&quot;&gt;Groovy Bean Builder&lt;/a&gt;. The &lt;A href=&quot;http://blog.springsource.org/2012/12/10/introducing-spring-scala/&quot;&gt; Spring Scala&lt;/a&gt; approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces.
+&lt;/P&gt;&lt;P&gt;
+Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the &lt;CODE&gt;@Transactional&lt;/CODE&gt; annotation. Then the stereotype annotations emerged -&lt;CODE&gt;@Controller&lt;/CODE&gt;, &lt;CODE&gt;@Component&lt;/CODE&gt;, &lt;CODE&gt;@Service&lt;/CODE&gt;, etc, that – along with component scanning and &lt;CODE&gt;@Autowired&lt;/CODE&gt; – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. &lt;/p&gt;
+
+&lt;P&gt;Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. 
+&lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Java Configuration</title>
       <link>https://joshlong.com/jl/blogPost/java_configuration.html</link>
       <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
@@ -2177,24 +2209,6 @@ This class is too annotated with &lt;Code&gt;@Configuration&lt;/CODE&gt;. It ena
 This was by no means an exhaustive look at Java configuration, but hopefully you see that there is a lot of  convenience in this approach. You can still substitute values from external property files, you can still override and extend the frameworks, and you can still achieve a single configuration artifact – a place where you can get a bird’s eye view of the system. 
 &lt;/p&gt;&lt;P&gt;
  There are many Spring projects that provide idiomatic, Java configuration centric APIs and DSLs as Spring core does for building services using Spring and web applications using Spring MVC.
-&lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>One Big Bag of Beans</title>
-      <link>https://joshlong.com/jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</link>
-      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</guid>
-      	<description>
-	
-&lt;P&gt;At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean&apos;s class, optionally an &lt;CODE&gt;id&lt;/CODE&gt; by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc.
-&lt;/P&gt;
-&lt;P&gt;Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The &lt;A href=&quot;http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL&quot;&gt;Groovy Bean Builder&lt;/a&gt;. The &lt;A href=&quot;http://blog.springsource.org/2012/12/10/introducing-spring-scala/&quot;&gt; Spring Scala&lt;/a&gt; approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces.
-&lt;/P&gt;&lt;P&gt;
-Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the &lt;CODE&gt;@Transactional&lt;/CODE&gt; annotation. Then the stereotype annotations emerged -&lt;CODE&gt;@Controller&lt;/CODE&gt;, &lt;CODE&gt;@Component&lt;/CODE&gt;, &lt;CODE&gt;@Service&lt;/CODE&gt;, etc, that – along with component scanning and &lt;CODE&gt;@Autowired&lt;/CODE&gt; – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. &lt;/p&gt;
-
-&lt;P&gt;Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. 
 &lt;/P&gt;
 
 	</description>
@@ -2351,23 +2365,6 @@ In the same vein, years ago, there was a project called &lt;A href=&quot;http://
 	</description>
     </item>
     <item>
-      <title>Spring MVC Performance FTW</title>
-      <link>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</link>
-      <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_mvc_performance_ftw.html</guid>
-      	<description>
-	
-&lt;P&gt; We&apos;ve all seen 
- &lt;A href=&quot;http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5&quot;&gt; Matt Raible&apos;s awesome talk&lt;/a&gt;
- comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
-&lt;/p&gt; 
-&lt;P&gt; 
- For a very detailed dissection of performance, you might check out this talk &lt;a href=&quot;http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/&quot;&gt;comparing web framework performance&lt;/a&gt;. Matt&apos;s talk builds on the data amassed from that talk. 
-&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Multi Client Development with Spring Webinar on March 14, 2013</title>
       <link>https://joshlong.com/jl/blogPost/performance_and_the_restful_web.html</link>
       <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
@@ -2383,6 +2380,23 @@ Once we&apos;ve introduced Spring&apos;s REST support, we&apos;ll look at how to
 &lt;P&gt; Be sure to register now and bring questions, ideas, etc.  I look forward to seeing you at there, and we&apos;ll look at some of the amazing support  
  Spring offers for building best-of-breed web-centric, RESTful applications.
 &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring MVC Performance FTW</title>
+      <link>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</link>
+      <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_mvc_performance_ftw.html</guid>
+      	<description>
+	
+&lt;P&gt; We&apos;ve all seen 
+ &lt;A href=&quot;http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5&quot;&gt; Matt Raible&apos;s awesome talk&lt;/a&gt;
+ comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
+&lt;/p&gt; 
+&lt;P&gt; 
+ For a very detailed dissection of performance, you might check out this talk &lt;a href=&quot;http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/&quot;&gt;comparing web framework performance&lt;/a&gt;. Matt&apos;s talk builds on the data amassed from that talk. 
+&lt;/p&gt;
 
 	</description>
     </item>
@@ -2566,17 +2580,6 @@ Sometimes I wonder if people test things before they release it :/
 	</description>
     </item>
     <item>
-      <title>Happy New Year, and Here&apos;s to 2013</title>
-      <link>https://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
-      <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
-      	<description>
-	
-&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>They Think of Everything</title>
       <link>https://joshlong.com/jl/blogPost/they_think_of_everything.html</link>
       <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
@@ -2591,17 +2594,13 @@ Sometimes I wonder if people test things before they release it :/
 	</description>
     </item>
     <item>
-      <title>Christmas in Shanghai</title>
-      <link>https://joshlong.com/jl/blogPost/christmas_in_shanghai.html</link>
-      <pubDate>Wed, 26 Dec 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/christmas_in_shanghai.html</guid>
+      <title>Happy New Year, and Here&apos;s to 2013</title>
+      <link>https://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
+      <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
       	<description>
 	
-&lt;P&gt; Merry Christmas! Feliz Navidad! Joyeux Noel! Feliz natal! 
- &lt;/P&gt;
-&lt;p&gt; It&apos;s already &lt;a href=&quot;http://en.wikipedia.org/wiki/Boxing_day&quot;&gt;Boxing day&lt;/a&gt;, or - as we call it   in Shanghai, &quot;Wednesday&quot; (I translated that from the original Mandarin for you).&lt;/p&gt; 
-&lt;p&gt; Christmas was such a trip here in China. It&apos;s celebrated like people in the west celebrate St. Patty&apos;s day: a chance to shop at discount sales, drink and hang out with friends, and potentially take the day off. And, shop they do. China&apos;s economy&apos;s growing, while the economies in the US and Europe have slowed. Last year, in 2011, the average affluent Chinese spent the holiday abroad and - in England, for example, spent 1300 pounds for the holiday (avergage). (By comparison, the average wealthy Englishman spent 1200 or so pounds). What an amazing phenomenon. One thing that was a big seller, the &apos;Christmas Apple&apos;, which - as I understand it - sounds in the Chinese language like the words for &apos;Christmas Eve.&apos; What salesmanship. That said, I&apos;ve never had a Christmas apple, and I think I should like to try one. I wonder if they&apos;ll have after-Christmas sales?
-&lt;/P&gt;
+&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
 
 	</description>
     </item>
@@ -2619,6 +2618,21 @@ it&apos;s freaking &lt;EM&gt;cold&lt;/EM&gt; in China. Northern parts of China -
 &lt;p&gt; I&apos;m originally from Los Angeles, and sometimes gets, and while I&apos;m now in rainy San Francisco, I&apos;m not used to this kind of cold.  I much prefer the cold to the hot mugginess of a humid summer, however, so I suppose this will just have to do.  
 &lt;/p&gt;
 &lt;p&gt; As you can imagine, slingshotting from Beijing, China (at -8C) to Hyderabad and Bangalore in India, where it&apos;s a warm 30 C or so, has not been easy on the immune system. I&apos;ve got a cold. Oh well..   &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Christmas in Shanghai</title>
+      <link>https://joshlong.com/jl/blogPost/christmas_in_shanghai.html</link>
+      <pubDate>Wed, 26 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/christmas_in_shanghai.html</guid>
+      	<description>
+	
+&lt;P&gt; Merry Christmas! Feliz Navidad! Joyeux Noel! Feliz natal! 
+ &lt;/P&gt;
+&lt;p&gt; It&apos;s already &lt;a href=&quot;http://en.wikipedia.org/wiki/Boxing_day&quot;&gt;Boxing day&lt;/a&gt;, or - as we call it   in Shanghai, &quot;Wednesday&quot; (I translated that from the original Mandarin for you).&lt;/p&gt; 
+&lt;p&gt; Christmas was such a trip here in China. It&apos;s celebrated like people in the west celebrate St. Patty&apos;s day: a chance to shop at discount sales, drink and hang out with friends, and potentially take the day off. And, shop they do. China&apos;s economy&apos;s growing, while the economies in the US and Europe have slowed. Last year, in 2011, the average affluent Chinese spent the holiday abroad and - in England, for example, spent 1300 pounds for the holiday (avergage). (By comparison, the average wealthy Englishman spent 1200 or so pounds). What an amazing phenomenon. One thing that was a big seller, the &apos;Christmas Apple&apos;, which - as I understand it - sounds in the Chinese language like the words for &apos;Christmas Eve.&apos; What salesmanship. That said, I&apos;ve never had a Christmas apple, and I think I should like to try one. I wonder if they&apos;ll have after-Christmas sales?
+&lt;/P&gt;
 
 	</description>
     </item>
@@ -2677,6 +2691,25 @@ Then I started thinking about it. Since I arrived in China  on  December 2, &lt;
 	</description>
     </item>
     <item>
+      <title>Rest in Peace Ravi Shankar</title>
+      <link>https://joshlong.com/jl/blogPost/rest_in_peace_ravi_shankar.html</link>
+      <pubDate>Wed, 12 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/rest_in_peace_ravi_shankar.html</guid>
+      	<description>
+	
+&lt;table style   =&quot;margin-bottom: 10px;&quot; cellpadding=&quot;0&quot; cellspacing =&quot;0&quot; border=&quot;0&quot;&gt;&lt;tr&gt;&lt;td  valign = &quot;top&quot; width = &quot;200&quot;&gt;
+&lt;img src = &quot;/media/18554&quot;  width = &quot;200&quot;/&gt;
+&lt;/td&gt;&lt;td width = &quot;10&quot;&gt;&lt;/td&gt;&lt;td   valign = &quot;top&quot;&gt;
+&lt;P&gt;   I&apos;m in India (Bangalore and Hyderabad) and the news today is of the passing  of   Ravi Shankar, the &lt;em&gt;sitar virtuoso&lt;/EM&gt; who&apos;s music influenced the &lt;EM&gt;Beatles&lt;/EM&gt; in the 60s and changed the genre in some ways. 
+ The first introduction to him that I had was  through the music of his daughters on   &lt;EM&gt;&lt;A href= &quot;http://en.wikipedia.org/wiki/Concert_for_George&quot;&gt;Concert for George&lt;/A&gt;&lt;/EM&gt; (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the &lt;EM&gt;Beatles&lt;/EM&gt; and really have a lot of respect for the man.  
+
+He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP &lt;A href=&quot;http://en.wikipedia.org/wiki/Ravi_Shankar&quot;&gt;Ravi Shankar&lt;/a&gt;. 
+
+&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+	</description>
+    </item>
+    <item>
       <title>SpringOne Beijing and India Trip Report</title>
       <link>https://joshlong.com/jl/blogPost/springone_beijing_and_india_trip_report.html</link>
       <pubDate>Wed, 12 Dec 2012 00:00:00 +0000</pubDate>
@@ -2703,25 +2736,6 @@ We &lt;a href= &quot;http://springonechina.cloudfoundry.com&quot;&gt;finished Sp
     &lt;td  width = &quot;300&quot;  valign = &quot;bottom&quot;&gt;&lt;img src=&quot;/media/18550&quot; alt=&quot;&quot; width=&quot;300&quot; height=&quot;199&quot; /&gt;&lt;br/&gt; Left to Right: Gary Russel, Josh Long, Jennifer Hickey, Jeremy  Grelle, Oliver Gierke, Chris Richardson -- the whole SpringOne India lineup&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Rest in Peace Ravi Shankar</title>
-      <link>https://joshlong.com/jl/blogPost/rest_in_peace_ravi_shankar.html</link>
-      <pubDate>Wed, 12 Dec 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/rest_in_peace_ravi_shankar.html</guid>
-      	<description>
-	
-&lt;table style   =&quot;margin-bottom: 10px;&quot; cellpadding=&quot;0&quot; cellspacing =&quot;0&quot; border=&quot;0&quot;&gt;&lt;tr&gt;&lt;td  valign = &quot;top&quot; width = &quot;200&quot;&gt;
-&lt;img src = &quot;/media/18554&quot;  width = &quot;200&quot;/&gt;
-&lt;/td&gt;&lt;td width = &quot;10&quot;&gt;&lt;/td&gt;&lt;td   valign = &quot;top&quot;&gt;
-&lt;P&gt;   I&apos;m in India (Bangalore and Hyderabad) and the news today is of the passing  of   Ravi Shankar, the &lt;em&gt;sitar virtuoso&lt;/EM&gt; who&apos;s music influenced the &lt;EM&gt;Beatles&lt;/EM&gt; in the 60s and changed the genre in some ways. 
- The first introduction to him that I had was  through the music of his daughters on   &lt;EM&gt;&lt;A href= &quot;http://en.wikipedia.org/wiki/Concert_for_George&quot;&gt;Concert for George&lt;/A&gt;&lt;/EM&gt; (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the &lt;EM&gt;Beatles&lt;/EM&gt; and really have a lot of respect for the man.  
-
-He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP &lt;A href=&quot;http://en.wikipedia.org/wiki/Ravi_Shankar&quot;&gt;Ravi Shankar&lt;/a&gt;. 
-
-&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 	</description>
     </item>
@@ -2781,6 +2795,19 @@ Wish me luck!
 	</description>
     </item>
     <item>
+      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
+      <link>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
+      	<description>
+	
+&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
+         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
+ &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Spring Data Mongo transaction synchronization does not find a bound DB</title>
       <link>https://joshlong.com/jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
@@ -2818,15 +2845,27 @@ at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTr
 	</description>
     </item>
     <item>
-      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
-      <link>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
-      <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
+      <title>Devoxx 2012 Trip Report</title>
+      <link>https://joshlong.com/jl/blogPost/devoxx_2012_trip_report.html</link>
+      <pubDate>Fri, 16 Nov 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/devoxx_2012_trip_report.html</guid>
       	<description>
 	
-&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
-         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
- &lt;/p&gt;
+&lt;div style = &quot;margin-bottom:10px;&quot;&gt;&lt;table cellpadding = &quot;0&quot;  cellspacing =&quot;0&quot; border=&quot;0&quot;&gt;&lt;tr&gt;&lt;td  width =&quot;400&quot;&gt;&lt;img  src = &quot;/media/18507&quot; /&gt;  
+&lt;/td&gt;&lt;td style = &quot;padding-left:10px;&quot; valign = &quot;top&quot;&gt;&lt;p&gt;
+ 
+I had a really good - (if exhausting!) - time  at &lt;A href= &quot;http://devoxx.com/display/DV12/Home&quot;&gt;Devoxx&lt;/a&gt; this year. 
+ &lt;/p&gt;&lt;P&gt;
+The show was bigger and better than ever, and - of course - I&apos;m happy to find that Devoxx will be again returning to Paris, but also - this time - to London! 
+ I helped man the &lt;A href = &quot;http://www.springsource.org&quot;&gt; SpringSource&lt;/a&gt; / &lt;a href =&quot;http://www.cloudfoundry.org&quot;&gt;Cloud Foundry&lt;/a&gt; booths, and then gave a 15 minute talk on Cloud Foundry, and another talk on the Spring framework.
+
+&lt;/p&gt;&lt;P&gt; I also enjoyed running the Spring BOF, though I wish it had been held a little earlier in the evening! 
+
+ That said, I&apos;m glad it wasn&apos;t! The trip from Sofia, Bulgaria - where I was a speaker in the Cloud Foundry Open Tour event in Sofia, Bulgaria - was harrowing, to say the least! I left Sofia, flew to Frankfurt, then took my connection to Brussels, which meant I still had a 40 minute train ride into Antwerp. From there, I ran to the hotel, found a cab then raced to get to Devoxx in time to run the Spring BOF. Just made it! And that&apos;s how Devoxx &lt;em&gt;started&lt;/EM&gt; for me!   It only got crazier as the week rolled on. 
+&lt;/P&gt; &lt;P&gt; This show is also one of the best on earth to connect with friends  and users of the Spring framework from all around the world.  We were so busy on the SpringSource and Cloud Foundry teams that  I - at least - had only a few wonderful Belgian beers this time!  I&apos;ll try to fix that before I go! 
+I can&apos;t wait until next year.   Although, I&apos;m not sure if I&apos;ll be recovered by then... &lt;/p&gt;  
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -2962,31 +3001,6 @@ application on Cloud Foundry!
 	</description>
     </item>
     <item>
-      <title>Devoxx 2012 Trip Report</title>
-      <link>https://joshlong.com/jl/blogPost/devoxx_2012_trip_report.html</link>
-      <pubDate>Fri, 16 Nov 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/devoxx_2012_trip_report.html</guid>
-      	<description>
-	
-&lt;div style = &quot;margin-bottom:10px;&quot;&gt;&lt;table cellpadding = &quot;0&quot;  cellspacing =&quot;0&quot; border=&quot;0&quot;&gt;&lt;tr&gt;&lt;td  width =&quot;400&quot;&gt;&lt;img  src = &quot;/media/18507&quot; /&gt;  
-&lt;/td&gt;&lt;td style = &quot;padding-left:10px;&quot; valign = &quot;top&quot;&gt;&lt;p&gt;
- 
-I had a really good - (if exhausting!) - time  at &lt;A href= &quot;http://devoxx.com/display/DV12/Home&quot;&gt;Devoxx&lt;/a&gt; this year. 
- &lt;/p&gt;&lt;P&gt;
-The show was bigger and better than ever, and - of course - I&apos;m happy to find that Devoxx will be again returning to Paris, but also - this time - to London! 
- I helped man the &lt;A href = &quot;http://www.springsource.org&quot;&gt; SpringSource&lt;/a&gt; / &lt;a href =&quot;http://www.cloudfoundry.org&quot;&gt;Cloud Foundry&lt;/a&gt; booths, and then gave a 15 minute talk on Cloud Foundry, and another talk on the Spring framework.
-
-&lt;/p&gt;&lt;P&gt; I also enjoyed running the Spring BOF, though I wish it had been held a little earlier in the evening! 
-
- That said, I&apos;m glad it wasn&apos;t! The trip from Sofia, Bulgaria - where I was a speaker in the Cloud Foundry Open Tour event in Sofia, Bulgaria - was harrowing, to say the least! I left Sofia, flew to Frankfurt, then took my connection to Brussels, which meant I still had a 40 minute train ride into Antwerp. From there, I ran to the hotel, found a cab then raced to get to Devoxx in time to run the Spring BOF. Just made it! And that&apos;s how Devoxx &lt;em&gt;started&lt;/EM&gt; for me!   It only got crazier as the week rolled on. 
-&lt;/P&gt; &lt;P&gt; This show is also one of the best on earth to connect with friends  and users of the Spring framework from all around the world.  We were so busy on the SpringSource and Cloud Foundry teams that  I - at least - had only a few wonderful Belgian beers this time!  I&apos;ll try to fix that before I go! 
-I can&apos;t wait until next year.   Although, I&apos;m not sure if I&apos;ll be recovered by then... &lt;/p&gt;  
-
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Devoxx 2012</title>
       <link>https://joshlong.com/jl/blogPost/devoxx_2012.html</link>
       <pubDate>Mon, 12 Nov 2012 00:00:00 +0000</pubDate>
@@ -3066,6 +3080,20 @@ Twitter follower &lt;A href = &quot;http://twitter.com/ivelina&quot;&gt;@Ivelina
 	</description>
     </item>
     <item>
+      <title>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</title>
+      <link>https://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</link>
+      <pubDate>Fri, 19 Oct 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</guid>
+      	<description>
+	
+&lt;p&gt; My talk from &lt;A href =&quot;http://www.javazone.no&quot;&gt; JavaZone&lt;/A&gt;  is now available online. I co-presented with &lt;a href=&quot;http://www.twitter.com/z_oleg&quot;&gt;Oleg Zhurakousky&lt;/A&gt;, colleague and co-committer on  &lt;a href=&quot;http://springsource.org/spring-integration&quot;&gt;Spring Integration&lt;/A&gt;. If you&apos;d like a quick look, &lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;check it - and all the other great videos on the JavaZone Vimeo page - out&lt;/A&gt;!
+
+ &lt;DIV&gt; &lt;iframe src=&quot;//player.vimeo.com/video/49477307&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&quot;https://vimeo.com/49477307&quot;&gt;Enterprise Integration and Batch Processing on Cloud Foundry&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/javazone&quot;&gt;JavaZone&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt; &lt;/DIV&gt;
+&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Arlington, VA Cloud Foundry Dev Day</title>
       <link>https://joshlong.com/jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html</link>
       <pubDate>Fri, 19 Oct 2012 00:00:00 +0000</pubDate>
@@ -3083,20 +3111,6 @@ There are two tracks -- one track focusing on application development using Clou
 &lt;div &gt; &lt;caption&gt;
   My colleagues &lt;A href = &quot;http://twitter.com/ebottard&quot;&gt;Eric Bottard&lt;/A&gt; and &lt;A href = &quot;http://twitter.com/andypiper&quot;&gt;Andy Piper&lt;/A&gt; co-leading a developer hands-on session.  &lt;/caption&gt;
 &lt;/div&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</title>
-      <link>https://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</link>
-      <pubDate>Fri, 19 Oct 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</guid>
-      	<description>
-	
-&lt;p&gt; My talk from &lt;A href =&quot;http://www.javazone.no&quot;&gt; JavaZone&lt;/A&gt;  is now available online. I co-presented with &lt;a href=&quot;http://www.twitter.com/z_oleg&quot;&gt;Oleg Zhurakousky&lt;/A&gt;, colleague and co-committer on  &lt;a href=&quot;http://springsource.org/spring-integration&quot;&gt;Spring Integration&lt;/A&gt;. If you&apos;d like a quick look, &lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;check it - and all the other great videos on the JavaZone Vimeo page - out&lt;/A&gt;!
-
- &lt;DIV&gt; &lt;iframe src=&quot;//player.vimeo.com/video/49477307&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&quot;https://vimeo.com/49477307&quot;&gt;Enterprise Integration and Batch Processing on Cloud Foundry&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/javazone&quot;&gt;JavaZone&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt; &lt;/DIV&gt;
-&lt;/p&gt;
 
 	</description>
     </item>
@@ -3162,22 +3176,6 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
 	</description>
     </item>
     <item>
-      <title>Mysterious Algorithm Responsible for 4 Percent of All Trading Activity Last Week</title>
-      <link>https://joshlong.com/jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</link>
-      <pubDate>Wed, 10 Oct 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</guid>
-      	<description>
-	
-&lt;p&gt;
- &lt;img src = &quot;/media/18451&quot; style = &quot;float:left; margin-right :10px;&quot;/&gt; 
- &lt;a href =&quot;http://www.cnbc.com/id/49333454&quot;&gt;According to CNBC, a mysterious algorithm was responsible for 4% of trading activity last week&lt;/a&gt;.  
-
- I&apos;m not sure what&apos;s more impressive: the single algorithm that generated the noise, or the company whose monitoring algorithm saw the aberration..
-&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Anders Hejlsberg Introducing TypeScript</title>
       <link>https://joshlong.com/jl/blogPost/anders_hejlsberg_introducing_typescript.html</link>
       <pubDate>Wed, 10 Oct 2012 00:00:00 +0000</pubDate>
@@ -3191,6 +3189,22 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
 
  TypeScript is not the first technology to  &lt;em&gt;solve&lt;/EM&gt; the static-language-to-JavaScript problem, following the most recent introduction into the  market, &lt;A href=&quot;http://en.wikipedia.org/wiki/Dart_(programming_language)&quot;&gt;Google&apos;s Dart&lt;/A&gt;. Before that, of course, we had CoffeeScript, ScriptSharp, GWT, etc. I could actually see myself using this one, though.  My one twinge of discord is that I think a lot of the complaints he identifies as inhibiting large application development (such as the  lack of strong  types) are less of a problem with a good organizational framework in place. An MVC framework like &lt;a href=&quot;http://backbonejs.org/&quot;&gt;backbone.js&lt;/a&gt; or &lt;A href=&quot;http://angularjs.org/&quot;&gt;Angular.js&lt;/a&gt; let you plugin the missing pieces which means that no single component is going to be so big that it might see substantial benefit by having a stronger type system, and coordination between the components is handled by the more rigorously tested framework.  
 
+&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Mysterious Algorithm Responsible for 4 Percent of All Trading Activity Last Week</title>
+      <link>https://joshlong.com/jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</link>
+      <pubDate>Wed, 10 Oct 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/mysterious_algorithm_responsible_for_4_percent_of_all_trading_activity_last_week.html</guid>
+      	<description>
+	
+&lt;p&gt;
+ &lt;img src = &quot;/media/18451&quot; style = &quot;float:left; margin-right :10px;&quot;/&gt; 
+ &lt;a href =&quot;http://www.cnbc.com/id/49333454&quot;&gt;According to CNBC, a mysterious algorithm was responsible for 4% of trading activity last week&lt;/a&gt;.  
+
+ I&apos;m not sure what&apos;s more impressive: the single algorithm that generated the noise, or the company whose monitoring algorithm saw the aberration..
 &lt;/p&gt;
 
 	</description>
@@ -5055,20 +5069,6 @@ fantastic new year, and a new decade.
 	</description>
     </item>
     <item>
-      <title>Devoxx 2010</title>
-      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
-      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
-      	<description>
-	
-&lt;p&gt;  
- I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
-&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;http://www.salesforce.com/Dreamforce&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
- The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>The H2 Embedded Database</title>
       <link>https://joshlong.com/jl/blogPost/the_h2_embedded_database.html</link>
       <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
@@ -5105,6 +5105,20 @@ featured exclusive support   for persisting process state in H2, and H2 alone. A
 	</description>
     </item>
     <item>
+      <title>Devoxx 2010</title>
+      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
+      	<description>
+	
+&lt;p&gt;  
+ I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
+&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;http://www.salesforce.com/Dreamforce&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
+ The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Adobe MAX 2010</title>
       <link>https://joshlong.com/jl/blogPost/adobe_max_2010.html</link>
       <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
@@ -5134,17 +5148,6 @@ As you might expect from a good conference, there were plenty of great hallway c
 	</description>
     </item>
     <item>
-      <title>Ubuntu 10.10 (Maverick Meerkat) on a MacBook Pro</title>
-      <link>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</link>
-      <pubDate>Mon, 4 Oct 2010 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</guid>
-      	<description>
-	
-&lt;p&gt; I have long used &lt;a href=&quot;http://refit.sourceforge.net/&quot;&gt;rEFIt&lt;/a&gt; to install Ubuntu on a MacBook Pro. Simply install rEFIt as instructed on the site and then install Ubuntu on the newly created partition. No weirdness. Depending on your hardware, you may need to make sure that the Ubuntu installer program uses &lt;i&gt;nomemset&lt;/i&gt;. This wasn&apos;t the case for me. &lt;/p&gt;&lt;p&gt;This setup lets me have my favorite operating system on (admittedly) fairly nice (albeit overpriced) Intel x86 machines.  However, the latest generation of MacBook Pros &lt;a href=&quot;https://bugs.launchpad.net/linux/+bug/576601&quot;&gt;have caused me no end of grief with Ubuntu 10.04.&lt;/a&gt; Ubuntu 10.10, Maverick Meerkat, remies everthing and I&apos;m happy to report I&apos;m running the release candidate of Ubuntu 10.10 on my Macbook Pro as I type this. &lt;/p&gt;&lt;p&gt;Everything seems to be working fairly well. I put this post out to confirm it can work for you on a Mac, and to also point people &lt;a href=&quot;http://www.pagondel.org/how-to-instalar-vmware-en-ubuntu-10-10-64-bits/&quot;&gt;to this&lt;/a&gt; page if they&apos;re having trouble getting &lt;a href=&quot;http://www.vmware.com/products/player/&quot;&gt;VMware&apos;s excellent VMware Player&lt;/a&gt; product working on 10.10. &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Java2Days 2010</title>
       <link>https://joshlong.com/jl/blogPost/java2days_2010.html</link>
       <pubDate>Mon, 4 Oct 2010 00:00:00 +0000</pubDate>
@@ -5152,6 +5155,17 @@ As you might expect from a good conference, there were plenty of great hallway c
       	<description>
 	
 &lt;p&gt; &lt;div style = &quot;float:left; margin-bottom:10px;  margin-right:10px; padding: 10px; background-color: black; width:220px &quot;&gt; &lt;img width =&quot;200&quot;  src = &quot;/media/17872&quot;/&gt;  &lt;/div&gt; I&apos;ll be speaking (again) in Sofia, Bulgaria at &lt;a href=&quot;http://2010.java2days.com/&quot;&gt;the Java2Days conference&lt;/a&gt; on the 7th and 8th of October. I was there last year and quite enjoyed the conference. What a wonderful group! I&apos;ll be copresenting two talks with Oleg Zhurakousky (we&apos;ll be talking about &lt;a href=&quot;http://www.springsource.org/spring-integration&quot;&gt;Spring Integration 2&lt;/a&gt; as well as RabbitMQ and AMQP), and another with &lt;a href=&quot;http://www.jamesward.com/&quot;&gt;James Ward&lt;/a&gt; (we&apos;ll be talking about Spring BlazeDS and Flex, naturally). Finally, I&apos;ll be giving another presentation  on using Spring and the Apache 2 licensed BPMN 2 solution &lt;a href=&quot;http://www.activiti.org&quot;&gt;Activiti&lt;/a&gt; (simialar to the talk I gave at  &lt;a href=&quot;http://jz10.java.no/&quot;&gt;JavaZone&lt;/a&gt; recently).  Java2Days is the only conference of its kind in the Balkans and I sincerely hope to see you there!  &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Ubuntu 10.10 (Maverick Meerkat) on a MacBook Pro</title>
+      <link>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</link>
+      <pubDate>Mon, 4 Oct 2010 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</guid>
+      	<description>
+	
+&lt;p&gt; I have long used &lt;a href=&quot;http://refit.sourceforge.net/&quot;&gt;rEFIt&lt;/a&gt; to install Ubuntu on a MacBook Pro. Simply install rEFIt as instructed on the site and then install Ubuntu on the newly created partition. No weirdness. Depending on your hardware, you may need to make sure that the Ubuntu installer program uses &lt;i&gt;nomemset&lt;/i&gt;. This wasn&apos;t the case for me. &lt;/p&gt;&lt;p&gt;This setup lets me have my favorite operating system on (admittedly) fairly nice (albeit overpriced) Intel x86 machines.  However, the latest generation of MacBook Pros &lt;a href=&quot;https://bugs.launchpad.net/linux/+bug/576601&quot;&gt;have caused me no end of grief with Ubuntu 10.04.&lt;/a&gt; Ubuntu 10.10, Maverick Meerkat, remies everthing and I&apos;m happy to report I&apos;m running the release candidate of Ubuntu 10.10 on my Macbook Pro as I type this. &lt;/p&gt;&lt;p&gt;Everything seems to be working fairly well. I put this post out to confirm it can work for you on a Mac, and to also point people &lt;a href=&quot;http://www.pagondel.org/how-to-instalar-vmware-en-ubuntu-10-10-64-bits/&quot;&gt;to this&lt;/a&gt; page if they&apos;re having trouble getting &lt;a href=&quot;http://www.vmware.com/products/player/&quot;&gt;VMware&apos;s excellent VMware Player&lt;/a&gt; product working on 10.10. &lt;/p&gt;
 
 	</description>
     </item>
@@ -8060,6 +8074,84 @@ talk.
 	</description>
     </item>
     <item>
+      <title>A Quick Guide to Posting To (A Few) Blogs with Java</title>
+      <link>https://joshlong.com/jl/blogPost/a_quick_guide_to_posting.html</link>
+      <pubDate>Wed, 17 Dec 2008 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/a_quick_guide_to_posting.html</guid>
+      	<description>
+	
+First, How to Post to Any API that supports the (admittedly) outdated
+MetaWeblog API.
+&lt;p&gt;
+&lt;b&gt;How to Publish A Blog Entry For Roller 4.0 Software&lt;/b&gt;
+
+I found very little in the way of a solid API in Java on top of this
+XMLRPC API. However, I did find quite a bit using just good old Apache
+XMLRPC 3.0. Here&apos;s how that solution looks:
+
+&lt;pre&gt;&lt;code&gt;
+ /**
+ * @param serverUrl if youve unpacked a stock Roller 4.0 url, it&apos;s
+likely going to be http://www.YOURHOST.com/roller-services/xmlrpc
+ * @param user the user you have configured on Roller itself
+ * @param the password for the user name
+ * @param blogId the id of the blog. When you log into the Admin
+screen most pages will mention it.
+ * @param title the title of the post
+ * @param content the content of the post (can be in HTML)
+*/
+  public String createPost( String serverUrl, String user, String
+pass, String blogID, String title, String content) throws IOException
+{
+        String ret = null;
+        try {
+            XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
+            config.setServerURL(new URL(serverUrl));
+            XmlRpcClient client = new XmlRpcClient();
+            client.setConfig(config);
+            Map&lt;String, Object&gt; m = new HashMap&lt;String, Object&gt;();
+            m.put(&quot;title&quot;, title);
+            m.put(&quot;description&quot;, content);
+            m.put(&quot;dateCreated&quot;, new Date());
+            m.put(&quot;category&quot;, &quot;Java&quot;);
+            Object[] params = new Object[]{blogID, user, pass, m, true};
+            ret = (String) client.execute(&quot;metaWeblog.newPost&quot;, params);
+        } catch (Throwable th) {
+            System.out.println( &quot;blam!&quot;) ;
+        }
+        return ret;   // a unique ID generated by Roller
+    }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/p&gt;
+
+
+&lt;P&gt;
+&lt;b&gt;How to do the same thing with Blogger Usign Google&apos;s GData.&lt;/b&gt;
+ &lt;pre&gt;&lt;code&gt;
+ GoogleService service = new GoogleService(&quot;blogger&quot;, &quot;&quot;);
+        service.setUserCredentials(user, pass);
+        Entry myEntry = new Entry();
+        myEntry.setTitle(new PlainTextConstruct(title));
+        myEntry.setContent(new PlainTextConstruct(content));
+        Person author = new
+Person(StringUtils.defaultString(authorName), null, null);
+        if (!StringUtils.isEmpty(authorName)) myEntry.getAuthors().add(author);
+
+        URL postUrl = new URL(&quot;http://www.blogger.com/feeds/&quot; + blogID
++ &quot;/posts/default&quot;);
+        return service.insert(postUrl, myEntry);
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/P&gt;
+
+&lt;p&gt; The Google Data stuff was using the Java Google Data APIs. The
+XMLRPC library is quite formidable. I&apos;d not recommend using Apache XMLRPC
+3.1.1 from Maven, as it didn&apos;t seem to be a valid artifact. &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>A journey of a thousand miles begins with a single step: “Programming Collective Intelligence”, by O&apos;Reilly</title>
       <link>https://joshlong.com/jl/blogPost/a_journey_of_a_thousand.html</link>
       <pubDate>Wed, 17 Dec 2008 00:00:00 +0000</pubDate>
@@ -8156,84 +8248,6 @@ Magic&lt;/a&gt;. Seriously -- how slick is that? When do you usually need a
 Taxi? When you&apos;re most impaired, likely, say perhaps after drinking?
 One button. Finally, technology for fun and profit.
 &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>A Quick Guide to Posting To (A Few) Blogs with Java</title>
-      <link>https://joshlong.com/jl/blogPost/a_quick_guide_to_posting.html</link>
-      <pubDate>Wed, 17 Dec 2008 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/a_quick_guide_to_posting.html</guid>
-      	<description>
-	
-First, How to Post to Any API that supports the (admittedly) outdated
-MetaWeblog API.
-&lt;p&gt;
-&lt;b&gt;How to Publish A Blog Entry For Roller 4.0 Software&lt;/b&gt;
-
-I found very little in the way of a solid API in Java on top of this
-XMLRPC API. However, I did find quite a bit using just good old Apache
-XMLRPC 3.0. Here&apos;s how that solution looks:
-
-&lt;pre&gt;&lt;code&gt;
- /**
- * @param serverUrl if youve unpacked a stock Roller 4.0 url, it&apos;s
-likely going to be http://www.YOURHOST.com/roller-services/xmlrpc
- * @param user the user you have configured on Roller itself
- * @param the password for the user name
- * @param blogId the id of the blog. When you log into the Admin
-screen most pages will mention it.
- * @param title the title of the post
- * @param content the content of the post (can be in HTML)
-*/
-  public String createPost( String serverUrl, String user, String
-pass, String blogID, String title, String content) throws IOException
-{
-        String ret = null;
-        try {
-            XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-            config.setServerURL(new URL(serverUrl));
-            XmlRpcClient client = new XmlRpcClient();
-            client.setConfig(config);
-            Map&lt;String, Object&gt; m = new HashMap&lt;String, Object&gt;();
-            m.put(&quot;title&quot;, title);
-            m.put(&quot;description&quot;, content);
-            m.put(&quot;dateCreated&quot;, new Date());
-            m.put(&quot;category&quot;, &quot;Java&quot;);
-            Object[] params = new Object[]{blogID, user, pass, m, true};
-            ret = (String) client.execute(&quot;metaWeblog.newPost&quot;, params);
-        } catch (Throwable th) {
-            System.out.println( &quot;blam!&quot;) ;
-        }
-        return ret;   // a unique ID generated by Roller
-    }
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/p&gt;
-
-
-&lt;P&gt;
-&lt;b&gt;How to do the same thing with Blogger Usign Google&apos;s GData.&lt;/b&gt;
- &lt;pre&gt;&lt;code&gt;
- GoogleService service = new GoogleService(&quot;blogger&quot;, &quot;&quot;);
-        service.setUserCredentials(user, pass);
-        Entry myEntry = new Entry();
-        myEntry.setTitle(new PlainTextConstruct(title));
-        myEntry.setContent(new PlainTextConstruct(content));
-        Person author = new
-Person(StringUtils.defaultString(authorName), null, null);
-        if (!StringUtils.isEmpty(authorName)) myEntry.getAuthors().add(author);
-
-        URL postUrl = new URL(&quot;http://www.blogger.com/feeds/&quot; + blogID
-+ &quot;/posts/default&quot;);
-        return service.insert(postUrl, myEntry);
-&lt;/code&gt;&lt;/pre&gt;
- &lt;/P&gt;
-
-&lt;p&gt; The Google Data stuff was using the Java Google Data APIs. The
-XMLRPC library is quite formidable. I&apos;d not recommend using Apache XMLRPC
-3.1.1 from Maven, as it didn&apos;t seem to be a valid artifact. &lt;/p&gt;
 
 	</description>
     </item>
@@ -8824,17 +8838,6 @@ Webmonkey.com is back! I just noticed this -- it&apos;s laid dormant for years a
 	</description>
     </item>
     <item>
-      <title>JAWR: a JavaScript compression library</title>
-      <link>https://joshlong.com/jl/blogPost/20080412.html</link>
-      <pubDate>Sat, 12 Apr 2008 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/20080412.html</guid>
-      	<description>
-	
-&lt;p&gt;With rich internet applications being all the buzz these days people are finding themselves pouring more and more interactivity onto their pages. Typically, this is if nothing else through a slew of external third party libraries, or as with Dojo and Scriptaculous and YUI, entire frameworks! Taken one at a time these various scripts – used sparingly and perhaps compressed – don&apos;t cause too much a burden on your server or the client during download. Right... &amp;nbsp;&lt;/p&gt;&lt;p&gt;So say you build up a complex layout / widget set for your site. Say that you&apos;re also consistently using prototype.js and rico.js and a few of the scriptaculous libraries and that you&apos;ve also got a few other &apos;commodity&apos; scripts that are used everywhere (company libraries, a widget built on prototype, etc, etc).&amp;nbsp; Anything. Now you&apos;ve got 6 different .js files to include on every page, and you haven&apos;t even STARTED loading your code – you remember that code, right? The code that actually does the line of business you set out to help with this application in the first place? All these HTTP requests are bad for the server, but they&apos;re also really bad for the client. Load enough scripts and eventually things to start to deteriorate, even crash, on the client. &lt;/p&gt;&lt;p&gt;So now you see the problem. Different half-solutions exist. The Dojo framework has done extensive work to provide a compressor that runs as an ant task and that even obfuscates your code. One version – thanks to a donation by AOL - even does dead code path elimination! However this is a Dojo-only solution and, frankly, I found it a little fragile if you do anything cute in your JavaScript.&amp;nbsp; Another solution is the GWT route from Google. GWT takes lava code and &amp;quot;compiles&amp;quot; into JavaScript. The advantage of this is that the JavaScript is super-lean / optimized to work across browsers and mechanically, and utterly concise. The disadvantage of it is that – like the Dojo solutions – is inextricably tied to the GWT framework. &lt;/p&gt;&lt;p&gt;There are JavaScript compressors. http://www.brainjar.com/js/crunch/ has been around for the better part of a decade! There are others- - and the idea is the same: take JavaScript and regex your way into a more compact JavaScript file. Some of these solutions become unusable if you neglect to terminate your statements with a semicolon as they blindly wrap all the lines together, yielding non-runnable JavaScript code. Two other problems with this solution – as with the others previously mentioned-- is that it&apos;s not automated. Each time you update your code, you need to re run it all through that program on the site. Similarly, it&apos;s only compressing the code itself, not the format in which its delivered to the client. G-Zip compression works great for JavaScript content, so long as it it&apos;s not served to browsers that don&apos;t support it. &lt;/p&gt;&lt;p&gt;My definition of an ideal solution would be something that knew how to combine multiple libraries into one, compact that code except where the resulting source code would be made un runnable – and that conditionally served gzip content. &lt;/p&gt;&lt;p&gt;Enter JAWR, a library freely available from https://jawr.dev.java.net/ that does all of the above. It even can work its magic on .css files! It provides tag libraries (accessible from both JSP and now –with the 2.0 release – from Facelets). I&apos;m sure if you were so inclined you could reverse engineer the tag library handlers and wrap it in a Tapestry component or a Wicket widget. &lt;/p&gt;&lt;p&gt;Below, I walk through setting up a simple example: &lt;/p&gt;&lt;p&gt;For my example, I&apos;m using JSF and Maven. Set up the web application however you like. If you&apos;re using Maven, here is the dependency I&apos;m using: &lt;/p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;code&gt;&amp;lt;dependency&amp;gt;&lt;br /&gt;&amp;lt;groupId&amp;gt;net.jawr&amp;lt;/groupId&amp;gt;&lt;br /&gt;&amp;lt;artifactId&amp;gt;jawr&amp;lt;/artifactId&amp;gt;&lt;br /&gt;&amp;lt;version&amp;gt;[1.4,]&amp;lt;/version&amp;gt;&lt;br /&gt;&amp;lt;/dependency&amp;gt;&lt;/code&gt;&lt;p&gt;Ensure that you have the following repository added to Maven: &lt;/p&gt;&lt;code&gt;&amp;nbsp;&amp;lt;repository&amp;gt;&lt;br /&gt;&amp;lt;id&amp;gt;maven2-repository.dev.java.net&amp;lt;/id&amp;gt;&lt;br /&gt;&amp;lt;name&amp;gt;Java.net Repository for Maven&amp;lt;/name&amp;gt;&lt;br /&gt;&amp;lt;url&amp;gt;http://download.java.net/maven/2/&amp;lt;/url&amp;gt;&lt;br /&gt;&amp;lt;layout&amp;gt;default&amp;lt;/layout&amp;gt;&lt;br /&gt;&amp;lt;/repository&amp;gt;&lt;/code&gt;&lt;p&gt;I configured the JAWR servlet to handle my JavaScript files in my web.xml as follows:&lt;/p&gt;&lt;code&gt;&amp;lt;servlet&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;servlet-name&amp;gt;JavascriptServlet&amp;lt;/servlet-name&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;servlet-class&amp;gt;net.jawr.web.servlet.JawrServlet&amp;lt;/servlet-class&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;init-param&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;param-name&amp;gt;type&amp;lt;/param-name&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;param-value&amp;gt;js&amp;lt;/param-value&amp;gt; &amp;lt;!-- this could be css --&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;/init-param&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;!-- Location in classpath of the config file --&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;init-param&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;param-name&amp;gt;configLocation&amp;lt;/param-name&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;param-value&amp;gt;jawr.properties&amp;lt;/param-value&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;/init-param&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;/servlet&amp;gt; &amp;nbsp;&amp;lt;servlet-mapping&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;servlet-name&amp;gt;JavascriptServlet&amp;lt;/servlet-name&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;url-pattern&amp;gt;*.js&amp;lt;/url-pattern&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;/servlet-mapping&amp;gt;&lt;br /&gt;&lt;/code&gt;&lt;p&gt;The above configuration requires the presence of a file named jawr.properties on the classpath. &lt;/p&gt;&lt;p&gt;Here&apos;s my &lt;code&gt;jawr.properties&lt;/code&gt;. &lt;/p&gt;&lt;code&gt; #https://jawr.dev.java.net/docs/descriptor_syntax.html&lt;br /&gt;# Common properties&lt;br /&gt;jawr.debug.on=false&lt;br /&gt;jawr.gzip.on=true&lt;br /&gt;jawr.gzip.ie6.on=false&lt;br /&gt;jawr.charset.name=UTF-8 # Javascript properties and mappings&lt;br /&gt;jawr.js.bundle.basedir=/lib/js&lt;br /&gt;jawr.js.commonURLPrefix=003&lt;br /&gt;jawr.js.bundle.names=appcore,railsjs# All files within /js/lib will be together in a bundle.&lt;br /&gt;# The remaining scripts will be served sepparately.jawr.js.bundle.effects.id=/bundles/effects.js&lt;br /&gt;jawr.js.bundle.effects.global=true&lt;br /&gt;jawr.js.bundle.effects.mappings=/lib/js/scriptaculous/**&lt;br /&gt;jawr.js.bundle.effects.prefix=effects&lt;/code&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;jawr.js.bundle.appcore.id=/bundles/appcore.js&lt;br /&gt;jawr.js.bundle.appcore.global=true&lt;br /&gt;jawr.js.bundle.appcore.mappings=/lib/js/appcore/**&lt;br /&gt;jawr.js.bundle.appcore.prefix=appcore &amp;nbsp;&amp;nbsp;&lt;p&gt;The configuration format is somewhat akin to editing a log4j.properties property file.&lt;/p&gt;&lt;p&gt;In the example above, I&apos;m creating two &amp;quot;bundles&amp;quot; of JavaScript files. All JS in a set is compressed together and made available as one file. It also condenses the JavaScript within the file, condensing new lines. However, if you have JavaScript on two lines and didn&apos;t use a semi-colon to terminate the first one, it will leave the second line of JavaScript on a new line. &lt;/p&gt;&lt;code&gt;var a = 1&amp;nbsp; &lt;br /&gt;var b = 2&amp;nbsp; ; &lt;br /&gt;window.alert( &apos;a = &apos; + a + &apos; &amp;amp; b = &apos; + b ) ; &lt;br /&gt;&lt;/code&gt;&lt;p&gt;roughly becomes: &lt;/p&gt;&lt;code&gt;var a = 1&amp;nbsp; &lt;br /&gt;var b = 2&amp;nbsp; ; window.alert( &apos;a = &apos; + a + &apos; &amp;amp; b = &apos; + b ) ;&amp;nbsp; &lt;br /&gt;&lt;/code&gt;&lt;p&gt;Pretty cool, eh? &lt;/p&gt;&lt;p&gt;So, in the example above, I tell JAWR to create two &amp;quot;bundles&amp;quot;: &lt;/p&gt;&lt;p&gt;One bundle called &amp;quot;effects&amp;quot; takes together all the JavaScript files in the /lib/js folder and yields one single compressed JavaScript file. Accessing the JavaScript file is simple thanks to the tag libraries shipped with the framework. It&apos;s also smart: if you&apos;ve enabled gzip compression and the client support its, an appropriate URL will be rendered, otherwise a non GZIP&apos;ed but still &amp;quot;minified&amp;quot; JavaScript URL will be rendered. Nice!&lt;/p&gt;&lt;p&gt;Compiling the files at these URLs is time intensive, so by default when your application starts up JAWR caches the permutations of the files it&apos;ll deliver, so theres no overhead in request processing except for the tag library to render. If you are debugging in, say, Jetty and would like to make changes to your JavaScript and still benefit from immediate changes, you can enable debug mode and you can enable a periodic &amp;quot;refresh&amp;quot; of the cached bundles. This way, JAWR will write out the individual JavaScrpt files in the same way you were doing before the switch to JAWR. Flip the debug flag off and now it&apos;ll render the URL for the single cached / compressed JavaScript file.&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Adobe Media Player</title>
       <link>https://joshlong.com/jl/blogPost/200804121.html</link>
       <pubDate>Sat, 12 Apr 2008 00:00:00 +0000</pubDate>
@@ -8842,6 +8845,17 @@ Webmonkey.com is back! I just noticed this -- it&apos;s laid dormant for years a
       	<description>
 	
 &lt;p&gt; Adobe&apos;s Finally Released Their Much Rumored Media Player: &quot;Adobe Media Player&quot;It&apos;s sweet. Built on AIR, it&apos;s a stand-alone &quot;installable&quot; Flash program that allows you to manage, search out, and watch FLV / H264 content inside of Flash. It&apos;s beautiful to use but my big gripe is that because it runs on AIR, there&apos;s no Linux version.They seem to have lined up some pretty big content-producers, which should make the deployment easier. I wonder if they&apos;re fixing to be to digitial video / flash video what iTunes is to music. A one-stop video content shop / hub.. Absolutely stunning UI - and it&apos;s consistent with some of their more recent stuff, including Colour and Adobe Photoshop Express. I wonder where they&apos;ll take this - I wonder if there&apos;s a way to share video playlists etc? Integration with Youtube.com just like Apple TV did?&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>JAWR: a JavaScript compression library</title>
+      <link>https://joshlong.com/jl/blogPost/20080412.html</link>
+      <pubDate>Sat, 12 Apr 2008 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/20080412.html</guid>
+      	<description>
+	
+&lt;p&gt;With rich internet applications being all the buzz these days people are finding themselves pouring more and more interactivity onto their pages. Typically, this is if nothing else through a slew of external third party libraries, or as with Dojo and Scriptaculous and YUI, entire frameworks! Taken one at a time these various scripts – used sparingly and perhaps compressed – don&apos;t cause too much a burden on your server or the client during download. Right... &amp;nbsp;&lt;/p&gt;&lt;p&gt;So say you build up a complex layout / widget set for your site. Say that you&apos;re also consistently using prototype.js and rico.js and a few of the scriptaculous libraries and that you&apos;ve also got a few other &apos;commodity&apos; scripts that are used everywhere (company libraries, a widget built on prototype, etc, etc).&amp;nbsp; Anything. Now you&apos;ve got 6 different .js files to include on every page, and you haven&apos;t even STARTED loading your code – you remember that code, right? The code that actually does the line of business you set out to help with this application in the first place? All these HTTP requests are bad for the server, but they&apos;re also really bad for the client. Load enough scripts and eventually things to start to deteriorate, even crash, on the client. &lt;/p&gt;&lt;p&gt;So now you see the problem. Different half-solutions exist. The Dojo framework has done extensive work to provide a compressor that runs as an ant task and that even obfuscates your code. One version – thanks to a donation by AOL - even does dead code path elimination! However this is a Dojo-only solution and, frankly, I found it a little fragile if you do anything cute in your JavaScript.&amp;nbsp; Another solution is the GWT route from Google. GWT takes lava code and &amp;quot;compiles&amp;quot; into JavaScript. The advantage of this is that the JavaScript is super-lean / optimized to work across browsers and mechanically, and utterly concise. The disadvantage of it is that – like the Dojo solutions – is inextricably tied to the GWT framework. &lt;/p&gt;&lt;p&gt;There are JavaScript compressors. http://www.brainjar.com/js/crunch/ has been around for the better part of a decade! There are others- - and the idea is the same: take JavaScript and regex your way into a more compact JavaScript file. Some of these solutions become unusable if you neglect to terminate your statements with a semicolon as they blindly wrap all the lines together, yielding non-runnable JavaScript code. Two other problems with this solution – as with the others previously mentioned-- is that it&apos;s not automated. Each time you update your code, you need to re run it all through that program on the site. Similarly, it&apos;s only compressing the code itself, not the format in which its delivered to the client. G-Zip compression works great for JavaScript content, so long as it it&apos;s not served to browsers that don&apos;t support it. &lt;/p&gt;&lt;p&gt;My definition of an ideal solution would be something that knew how to combine multiple libraries into one, compact that code except where the resulting source code would be made un runnable – and that conditionally served gzip content. &lt;/p&gt;&lt;p&gt;Enter JAWR, a library freely available from https://jawr.dev.java.net/ that does all of the above. It even can work its magic on .css files! It provides tag libraries (accessible from both JSP and now –with the 2.0 release – from Facelets). I&apos;m sure if you were so inclined you could reverse engineer the tag library handlers and wrap it in a Tapestry component or a Wicket widget. &lt;/p&gt;&lt;p&gt;Below, I walk through setting up a simple example: &lt;/p&gt;&lt;p&gt;For my example, I&apos;m using JSF and Maven. Set up the web application however you like. If you&apos;re using Maven, here is the dependency I&apos;m using: &lt;/p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;code&gt;&amp;lt;dependency&amp;gt;&lt;br /&gt;&amp;lt;groupId&amp;gt;net.jawr&amp;lt;/groupId&amp;gt;&lt;br /&gt;&amp;lt;artifactId&amp;gt;jawr&amp;lt;/artifactId&amp;gt;&lt;br /&gt;&amp;lt;version&amp;gt;[1.4,]&amp;lt;/version&amp;gt;&lt;br /&gt;&amp;lt;/dependency&amp;gt;&lt;/code&gt;&lt;p&gt;Ensure that you have the following repository added to Maven: &lt;/p&gt;&lt;code&gt;&amp;nbsp;&amp;lt;repository&amp;gt;&lt;br /&gt;&amp;lt;id&amp;gt;maven2-repository.dev.java.net&amp;lt;/id&amp;gt;&lt;br /&gt;&amp;lt;name&amp;gt;Java.net Repository for Maven&amp;lt;/name&amp;gt;&lt;br /&gt;&amp;lt;url&amp;gt;http://download.java.net/maven/2/&amp;lt;/url&amp;gt;&lt;br /&gt;&amp;lt;layout&amp;gt;default&amp;lt;/layout&amp;gt;&lt;br /&gt;&amp;lt;/repository&amp;gt;&lt;/code&gt;&lt;p&gt;I configured the JAWR servlet to handle my JavaScript files in my web.xml as follows:&lt;/p&gt;&lt;code&gt;&amp;lt;servlet&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;servlet-name&amp;gt;JavascriptServlet&amp;lt;/servlet-name&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;servlet-class&amp;gt;net.jawr.web.servlet.JawrServlet&amp;lt;/servlet-class&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;init-param&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;param-name&amp;gt;type&amp;lt;/param-name&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;param-value&amp;gt;js&amp;lt;/param-value&amp;gt; &amp;lt;!-- this could be css --&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;/init-param&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;!-- Location in classpath of the config file --&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;init-param&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;param-name&amp;gt;configLocation&amp;lt;/param-name&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;param-value&amp;gt;jawr.properties&amp;lt;/param-value&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;/init-param&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;/servlet&amp;gt; &amp;nbsp;&amp;lt;servlet-mapping&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;servlet-name&amp;gt;JavascriptServlet&amp;lt;/servlet-name&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;url-pattern&amp;gt;*.js&amp;lt;/url-pattern&amp;gt;&lt;br /&gt;&amp;nbsp; &amp;lt;/servlet-mapping&amp;gt;&lt;br /&gt;&lt;/code&gt;&lt;p&gt;The above configuration requires the presence of a file named jawr.properties on the classpath. &lt;/p&gt;&lt;p&gt;Here&apos;s my &lt;code&gt;jawr.properties&lt;/code&gt;. &lt;/p&gt;&lt;code&gt; #https://jawr.dev.java.net/docs/descriptor_syntax.html&lt;br /&gt;# Common properties&lt;br /&gt;jawr.debug.on=false&lt;br /&gt;jawr.gzip.on=true&lt;br /&gt;jawr.gzip.ie6.on=false&lt;br /&gt;jawr.charset.name=UTF-8 # Javascript properties and mappings&lt;br /&gt;jawr.js.bundle.basedir=/lib/js&lt;br /&gt;jawr.js.commonURLPrefix=003&lt;br /&gt;jawr.js.bundle.names=appcore,railsjs# All files within /js/lib will be together in a bundle.&lt;br /&gt;# The remaining scripts will be served sepparately.jawr.js.bundle.effects.id=/bundles/effects.js&lt;br /&gt;jawr.js.bundle.effects.global=true&lt;br /&gt;jawr.js.bundle.effects.mappings=/lib/js/scriptaculous/**&lt;br /&gt;jawr.js.bundle.effects.prefix=effects&lt;/code&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;jawr.js.bundle.appcore.id=/bundles/appcore.js&lt;br /&gt;jawr.js.bundle.appcore.global=true&lt;br /&gt;jawr.js.bundle.appcore.mappings=/lib/js/appcore/**&lt;br /&gt;jawr.js.bundle.appcore.prefix=appcore &amp;nbsp;&amp;nbsp;&lt;p&gt;The configuration format is somewhat akin to editing a log4j.properties property file.&lt;/p&gt;&lt;p&gt;In the example above, I&apos;m creating two &amp;quot;bundles&amp;quot; of JavaScript files. All JS in a set is compressed together and made available as one file. It also condenses the JavaScript within the file, condensing new lines. However, if you have JavaScript on two lines and didn&apos;t use a semi-colon to terminate the first one, it will leave the second line of JavaScript on a new line. &lt;/p&gt;&lt;code&gt;var a = 1&amp;nbsp; &lt;br /&gt;var b = 2&amp;nbsp; ; &lt;br /&gt;window.alert( &apos;a = &apos; + a + &apos; &amp;amp; b = &apos; + b ) ; &lt;br /&gt;&lt;/code&gt;&lt;p&gt;roughly becomes: &lt;/p&gt;&lt;code&gt;var a = 1&amp;nbsp; &lt;br /&gt;var b = 2&amp;nbsp; ; window.alert( &apos;a = &apos; + a + &apos; &amp;amp; b = &apos; + b ) ;&amp;nbsp; &lt;br /&gt;&lt;/code&gt;&lt;p&gt;Pretty cool, eh? &lt;/p&gt;&lt;p&gt;So, in the example above, I tell JAWR to create two &amp;quot;bundles&amp;quot;: &lt;/p&gt;&lt;p&gt;One bundle called &amp;quot;effects&amp;quot; takes together all the JavaScript files in the /lib/js folder and yields one single compressed JavaScript file. Accessing the JavaScript file is simple thanks to the tag libraries shipped with the framework. It&apos;s also smart: if you&apos;ve enabled gzip compression and the client support its, an appropriate URL will be rendered, otherwise a non GZIP&apos;ed but still &amp;quot;minified&amp;quot; JavaScript URL will be rendered. Nice!&lt;/p&gt;&lt;p&gt;Compiling the files at these URLs is time intensive, so by default when your application starts up JAWR caches the permutations of the files it&apos;ll deliver, so theres no overhead in request processing except for the tag library to render. If you are debugging in, say, Jetty and would like to make changes to your JavaScript and still benefit from immediate changes, you can enable debug mode and you can enable a periodic &amp;quot;refresh&amp;quot; of the cached bundles. This way, JAWR will write out the individual JavaScrpt files in the same way you were doing before the switch to JAWR. Flip the debug flag off and now it&apos;ll render the URL for the single cached / compressed JavaScript file.&lt;/p&gt;
 
 	</description>
     </item>
@@ -9042,17 +9056,6 @@ I love working with Tapestry 4, but I figure that it&apos;s because it&apos;s al
 	</description>
     </item>
     <item>
-      <title>IntelliJ 6.0 and JDK 6.0 upgrade</title>
-      <link>https://joshlong.com/jl/blogPost/200702241.html</link>
-      <pubDate>Sat, 24 Feb 2007 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/200702241.html</guid>
-      	<description>
-	
-I&apos;m about to upgrade to JDK6 on my Windows XP machine. I&apos;m running IntelliJ 6, which I understand works well on the new JDK. Confusing is the lackluster availability of the JRE. I expect Java.com to yeld a JRE 6 build, but instead it&apos;s still pushing the old JRE 5, which is also still being bundled with various PC vendors by default. Why is this? At what point does Sun certify a release as being &quot;good enough&quot; for the developers AND the rest of the world? &amp;nbsp;&lt;br&gt;&lt;br&gt;The consensus seems to be that Java SE 6.0 offers the best out-of-the-box performance boost yet, by far.&lt;br&gt;&lt;br&gt;After a bit of searching, I finally got to &lt;a href=&quot;http://support.jetbrains.com/kb/entry.jspa?externalID=222&amp;amp;categoryID=4&quot;&gt;this thread&lt;/a&gt;&amp;nbsp; which has the whole process spelled out for you. I went with the second choice enumerated on the page (deleting the jre, and replacing it with JDK1.6&apos;s JRE as I didn&apos;t want to have to use idea.bat. Using idea.bat causes the DOS console to stay open while you&apos;re in IntelliJ. I created a second .bat file whose job it was to load the first one (idea.bat) like so: start idea.bat, however, the trouble is that didn&apos;t seem to work. I didn&apos;t want to give it much more thought and simply pursued the second option. &lt;br&gt;&lt;br&gt;I wholely recommend the upgrade it&apos;s very quick. Loading IntellIJ would be one kind of speed increase, but loading a very big project quite another, and they both dramatically improved, to the point that IntelliJ no longer shows me &quot;Tip Of The Day&quot; when I&apos;m doing these actions because it doesn&apos;t have to keep me entertained. &lt;br&gt;&amp;nbsp;&lt;br&gt;Completely worth it!&amp;nbsp;
-
-	</description>
-    </item>
-    <item>
       <title>Playing with Swing, JSR 296</title>
       <link>https://joshlong.com/jl/blogPost/20070224.html</link>
       <pubDate>Sat, 24 Feb 2007 00:00:00 +0000</pubDate>
@@ -9060,6 +9063,17 @@ I&apos;m about to upgrade to JDK6 on my Windows XP machine. I&apos;m running Int
       	<description>
 	
 I just started playing with &lt;a href=&quot;http://jcp.org/en/jsr/detail?id=296&quot; target=&quot;_blank&quot;&gt;JSR 296&lt;/a&gt; as I&apos;ve recently started building an application that&apos;s Swing based (albeit, as an applet, which I&apos;d like to make Java Webstart-able). It&apos;s phenomenal! As it stands right now, you can easily databind, internationalize, easily layout GUIs, and build on a useful Action abstraction if you&apos;re willing (and able! And what rocket scientist isn&apos;t?? Oh, you&apos;re &lt;span style=&quot;font-style: italic;&quot;&gt;not &lt;/span&gt;a rocket scientist… well…. I see… Go sit in the corner.) to coordinate the tapestry of solutions out there. &lt;br&gt;&lt;br&gt;JSR 296 seeks to bring a lot of that flexibility to the developer right off the bat. With it you get internationalization, an action model, application lifecycle, persistence, etc. Pretty cool. Still missing is databinding and IOC and a layout mechanism. Fortunately, &lt;a href=&quot;http://spring-rich-c.sourceforge.net/index.html&quot; target=&quot;_blank&quot;&gt;SpringRich&lt;/a&gt;, and &lt;a href=&quot;https://jgoodies.dev.java.net/&quot; target=&quot;_blank&quot;&gt;JGoodies&lt;/a&gt; help alleviate those pain points, so I&apos;m pretty stoked about the possibilities. &lt;br&gt;&lt;br&gt;Maybe one day we&apos;ll have a framework for the desktop user and it&apos;ll endeavor to bring &quot;web-style programming&quot; to the desktop.&lt;br&gt;&lt;br&gt;Which reminds me: all those frameworks endeavoring to bring Swing-style programming to the web (Wicket, JSF, Tapestry, Echo, whatever else I missed: this means you!) should change their attitude a little. It&apos;s telling that all of the things this framework brings to the table have been de rigueur in web frameworks for half a decade.&lt;br&gt;&lt;br&gt;Check out &lt;a href=&quot;https://appframework.dev.java.net/intro/index.html&quot; target=&quot;_blank&quot;&gt;the Swing Application Framework&lt;/a&gt; for more.&lt;br&gt;&lt;br&gt;I wonder what this will mean for so much of the way an application is built currently. Will I have to become very good at securing SOAP services again? Will an easy, useful desktop programming paradigm reverse the transition from Web Services to JSON? I deployed a custom XML-based (not XML-RPC, or SOAP, but my own protocol) service specifically to be able to achieve modest portability/thoroughput on a prototype J2ME application I built a year or so ago. This was so because the XML parsers are sketchy enough. SOAP stacks (while available, even as a standard) weren&apos;t prevalent enough.&amp;nbsp; I can see Spring earning it&apos;s keep here, again. Imagine what could be done with a useful databingn mechanism and a convenient way of exposing services (à la Spring). Desktop applications could become the rich client king again. Maybe. &lt;br&gt;&lt;br&gt;Meanwhile Bruce Eckel &lt;a href=&quot;http://www.artima.com/weblogs/viewpost.jsp?thread=193593&quot; target=&quot;_blank&quot;&gt;seems to think rich clients are where it&apos;s at&lt;/a&gt;, as well. Of course, he&apos;s pitching Flash, and not Swing. &lt;br&gt;&lt;br&gt;Can&apos;t wait to see what&apos;s next. Windows Vista (Aero, WPF) is poised to make the rich client desktop commonplace. Maybe it&apos;ll heat up the landscape enough to drive a resurgence for the desktop developer.&amp;nbsp; Any one use any of these tools? Anything I should know?
+
+	</description>
+    </item>
+    <item>
+      <title>IntelliJ 6.0 and JDK 6.0 upgrade</title>
+      <link>https://joshlong.com/jl/blogPost/200702241.html</link>
+      <pubDate>Sat, 24 Feb 2007 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/200702241.html</guid>
+      	<description>
+	
+I&apos;m about to upgrade to JDK6 on my Windows XP machine. I&apos;m running IntelliJ 6, which I understand works well on the new JDK. Confusing is the lackluster availability of the JRE. I expect Java.com to yeld a JRE 6 build, but instead it&apos;s still pushing the old JRE 5, which is also still being bundled with various PC vendors by default. Why is this? At what point does Sun certify a release as being &quot;good enough&quot; for the developers AND the rest of the world? &amp;nbsp;&lt;br&gt;&lt;br&gt;The consensus seems to be that Java SE 6.0 offers the best out-of-the-box performance boost yet, by far.&lt;br&gt;&lt;br&gt;After a bit of searching, I finally got to &lt;a href=&quot;http://support.jetbrains.com/kb/entry.jspa?externalID=222&amp;amp;categoryID=4&quot;&gt;this thread&lt;/a&gt;&amp;nbsp; which has the whole process spelled out for you. I went with the second choice enumerated on the page (deleting the jre, and replacing it with JDK1.6&apos;s JRE as I didn&apos;t want to have to use idea.bat. Using idea.bat causes the DOS console to stay open while you&apos;re in IntelliJ. I created a second .bat file whose job it was to load the first one (idea.bat) like so: start idea.bat, however, the trouble is that didn&apos;t seem to work. I didn&apos;t want to give it much more thought and simply pursued the second option. &lt;br&gt;&lt;br&gt;I wholely recommend the upgrade it&apos;s very quick. Loading IntellIJ would be one kind of speed increase, but loading a very big project quite another, and they both dramatically improved, to the point that IntelliJ no longer shows me &quot;Tip Of The Day&quot; when I&apos;m doing these actions because it doesn&apos;t have to keep me entertained. &lt;br&gt;&amp;nbsp;&lt;br&gt;Completely worth it!&amp;nbsp;
 
 	</description>
     </item>
