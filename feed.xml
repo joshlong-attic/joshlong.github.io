@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Fri, 20 Nov 2020 06:09:12 +0000</pubDate>
-    <lastBuildDate>Fri, 20 Nov 2020 06:09:12 +0000</lastBuildDate>
+    <pubDate>Fri, 20 Nov 2020 06:20:11 +0000</pubDate>
+    <lastBuildDate>Fri, 20 Nov 2020 06:20:11 +0000</lastBuildDate>
 
     <item>
       <title>10 Years on the Spring Team!</title>
@@ -5113,7 +5113,7 @@ featured exclusive support   for persisting process state in H2, and H2 alone. A
 	
 &lt;p&gt;  
  I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
-&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;http://www.salesforce.com/Dreamforce&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
+&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;https://www.salesforce.com/dreamforce/&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
  The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
 
 	</description>
