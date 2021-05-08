@@ -6,9 +6,30 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Wed, 5 May 2021 04:00:54 +0000</pubDate>
-    <lastBuildDate>Wed, 5 May 2021 04:00:54 +0000</lastBuildDate>
+    <pubDate>Sat, 8 May 2021 07:51:31 +0000</pubDate>
+    <lastBuildDate>Sat, 8 May 2021 07:51:31 +0000</lastBuildDate>
 
+    <item>
+      <title>How to Stop That Annoying macOS Prompt Asking If I&apos;d Like to Allow Incoming Connections for RabbitMQ</title>
+      <link>https://joshlong.com/jl/blogPost/rabbitmq-accepting-incoming-connections-on-macosx.html</link>
+      <pubDate>Sat, 8 May 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/rabbitmq-accepting-incoming-connections-on-macosx.html</guid>
+      	<description>
+	&lt;p&gt;If you install RabbitMQ on macOS using Homebrew, you&apos;ll ocassionally get a well-intentioned prompt from the system firewall asking if you&apos;d like to accept incoming connections. You will click &lt;code&gt;Accept&lt;/code&gt; and go on your merry way, thinking that - like other times you&apos;ve done this - that that will be the last time you&apos;ll have to do that for RabbitMQ. But it won&apos;t be. You&apos;ll be prompted again, and again, and again. RabbitMQ occasionally changes the socket it uses so you&apos;ll get seemingly endless prompts. The &lt;a href=&quot;https://www.rabbitmq.com/networking.html#firewalls-mac-os&quot;&gt;documentation spells out the fix&lt;/a&gt;. Based on that, here&apos;s what I did to make it work on my machine.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;#!/usr/bin/env bash 
+V=23.2.6
+E=/usr/local/Cellar/erlang/$V/lib/erlang/bin
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add $E/erl
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/erl
+
+E=/usr/local/Cellar/erlang/$V/lib/erlang/erts-11.1.8/bin
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add $E/beam.smp
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
+
+&lt;/code&gt;&lt;/pre&gt;
+
+	</description>
+    </item>
     <item>
       <title>10 Years on the Spring Team!</title>
       <link>https://joshlong.com/jl/blogPost/10-years-on-the-spring-team.html</link>
@@ -1567,25 +1588,6 @@ Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.sprin
 	</description>
     </item>
     <item>
-      <title>On Java Code Style</title>
-      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
-      	<description>
-	
-&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
-
-&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
-
-&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
-
-&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
-
-&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Simplified Web Configuration with Spring</title>
       <link>https://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</link>
       <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
@@ -1744,6 +1746,25 @@ The video of my webinar on
 &lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
 &lt;/p&gt; 
 &lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>On Java Code Style</title>
+      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
+      	<description>
+	
+&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
+
+&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
+
+&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
+
+&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -2580,6 +2601,17 @@ Sometimes I wonder if people test things before they release it :/
 	</description>
     </item>
     <item>
+      <title>Happy New Year, and Here&apos;s to 2013</title>
+      <link>https://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
+      <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
+      	<description>
+	
+&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>They Think of Everything</title>
       <link>https://joshlong.com/jl/blogPost/they_think_of_everything.html</link>
       <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
@@ -2590,17 +2622,6 @@ Sometimes I wonder if people test things before they release it :/
   Just bought some ramen at the store.  I love that it comes with a serving bowl. I know you&apos;re thinking, &quot;but, who wouldn&apos;t... have.. a bowl?&quot; And the answer is: I didn&apos;t have a bowl! But now I do. Problem solved.  The Chinese think of &lt;EM&gt;everything&lt;/EM&gt;! 
 &lt;div&gt; &lt;img src = &quot;/media/18574&quot; width = &quot;400&quot; /&gt;&lt;/div&gt;
 &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Happy New Year, and Here&apos;s to 2013</title>
-      <link>https://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
-      <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
-      	<description>
-	
-&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
 
 	</description>
     </item>
@@ -2691,25 +2712,6 @@ Then I started thinking about it. Since I arrived in China  on  December 2, &lt;
 	</description>
     </item>
     <item>
-      <title>Rest in Peace Ravi Shankar</title>
-      <link>https://joshlong.com/jl/blogPost/rest_in_peace_ravi_shankar.html</link>
-      <pubDate>Wed, 12 Dec 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/rest_in_peace_ravi_shankar.html</guid>
-      	<description>
-	
-&lt;table style   =&quot;margin-bottom: 10px;&quot; cellpadding=&quot;0&quot; cellspacing =&quot;0&quot; border=&quot;0&quot;&gt;&lt;tr&gt;&lt;td  valign = &quot;top&quot; width = &quot;200&quot;&gt;
-&lt;img src = &quot;/media/18554&quot;  width = &quot;200&quot;/&gt;
-&lt;/td&gt;&lt;td width = &quot;10&quot;&gt;&lt;/td&gt;&lt;td   valign = &quot;top&quot;&gt;
-&lt;P&gt;   I&apos;m in India (Bangalore and Hyderabad) and the news today is of the passing  of   Ravi Shankar, the &lt;em&gt;sitar virtuoso&lt;/EM&gt; who&apos;s music influenced the &lt;EM&gt;Beatles&lt;/EM&gt; in the 60s and changed the genre in some ways. 
- The first introduction to him that I had was  through the music of his daughters on   &lt;EM&gt;&lt;A href= &quot;http://en.wikipedia.org/wiki/Concert_for_George&quot;&gt;Concert for George&lt;/A&gt;&lt;/EM&gt; (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the &lt;EM&gt;Beatles&lt;/EM&gt; and really have a lot of respect for the man.  
-
-He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP &lt;A href=&quot;http://en.wikipedia.org/wiki/Ravi_Shankar&quot;&gt;Ravi Shankar&lt;/a&gt;. 
-
-&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-	</description>
-    </item>
-    <item>
       <title>SpringOne Beijing and India Trip Report</title>
       <link>https://joshlong.com/jl/blogPost/springone_beijing_and_india_trip_report.html</link>
       <pubDate>Wed, 12 Dec 2012 00:00:00 +0000</pubDate>
@@ -2736,6 +2738,25 @@ We &lt;a href= &quot;http://springonechina.cloudfoundry.com&quot;&gt;finished Sp
     &lt;td  width = &quot;300&quot;  valign = &quot;bottom&quot;&gt;&lt;img src=&quot;/media/18550&quot; alt=&quot;&quot; width=&quot;300&quot; height=&quot;199&quot; /&gt;&lt;br/&gt; Left to Right: Gary Russel, Josh Long, Jennifer Hickey, Jeremy  Grelle, Oliver Gierke, Chris Richardson -- the whole SpringOne India lineup&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Rest in Peace Ravi Shankar</title>
+      <link>https://joshlong.com/jl/blogPost/rest_in_peace_ravi_shankar.html</link>
+      <pubDate>Wed, 12 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/rest_in_peace_ravi_shankar.html</guid>
+      	<description>
+	
+&lt;table style   =&quot;margin-bottom: 10px;&quot; cellpadding=&quot;0&quot; cellspacing =&quot;0&quot; border=&quot;0&quot;&gt;&lt;tr&gt;&lt;td  valign = &quot;top&quot; width = &quot;200&quot;&gt;
+&lt;img src = &quot;/media/18554&quot;  width = &quot;200&quot;/&gt;
+&lt;/td&gt;&lt;td width = &quot;10&quot;&gt;&lt;/td&gt;&lt;td   valign = &quot;top&quot;&gt;
+&lt;P&gt;   I&apos;m in India (Bangalore and Hyderabad) and the news today is of the passing  of   Ravi Shankar, the &lt;em&gt;sitar virtuoso&lt;/EM&gt; who&apos;s music influenced the &lt;EM&gt;Beatles&lt;/EM&gt; in the 60s and changed the genre in some ways. 
+ The first introduction to him that I had was  through the music of his daughters on   &lt;EM&gt;&lt;A href= &quot;http://en.wikipedia.org/wiki/Concert_for_George&quot;&gt;Concert for George&lt;/A&gt;&lt;/EM&gt; (Harrison), a tribute concert to honor the late Beatle. From there, I explored his other music and in particular his influence on the &lt;EM&gt;Beatles&lt;/EM&gt; and really have a lot of respect for the man.  
+
+He was an amazingly talented musician, and all walks of music owe him a debt of gratitude. RIP &lt;A href=&quot;http://en.wikipedia.org/wiki/Ravi_Shankar&quot;&gt;Ravi Shankar&lt;/a&gt;. 
+
+&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 	</description>
     </item>
@@ -3080,20 +3101,6 @@ Twitter follower &lt;A href = &quot;http://twitter.com/ivelina&quot;&gt;@Ivelina
 	</description>
     </item>
     <item>
-      <title>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</title>
-      <link>https://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</link>
-      <pubDate>Fri, 19 Oct 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</guid>
-      	<description>
-	
-&lt;p&gt; My talk from &lt;A href =&quot;http://www.javazone.no&quot;&gt; JavaZone&lt;/A&gt;  is now available online. I co-presented with &lt;a href=&quot;http://www.twitter.com/z_oleg&quot;&gt;Oleg Zhurakousky&lt;/A&gt;, colleague and co-committer on  &lt;a href=&quot;http://springsource.org/spring-integration&quot;&gt;Spring Integration&lt;/A&gt;. If you&apos;d like a quick look, &lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;check it - and all the other great videos on the JavaZone Vimeo page - out&lt;/A&gt;!
-
- &lt;DIV&gt; &lt;iframe src=&quot;//player.vimeo.com/video/49477307&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&quot;https://vimeo.com/49477307&quot;&gt;Enterprise Integration and Batch Processing on Cloud Foundry&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/javazone&quot;&gt;JavaZone&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt; &lt;/DIV&gt;
-&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Arlington, VA Cloud Foundry Dev Day</title>
       <link>https://joshlong.com/jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html</link>
       <pubDate>Fri, 19 Oct 2012 00:00:00 +0000</pubDate>
@@ -3111,6 +3118,20 @@ There are two tracks -- one track focusing on application development using Clou
 &lt;div &gt; &lt;caption&gt;
   My colleagues &lt;A href = &quot;http://twitter.com/ebottard&quot;&gt;Eric Bottard&lt;/A&gt; and &lt;A href = &quot;http://twitter.com/andypiper&quot;&gt;Andy Piper&lt;/A&gt; co-leading a developer hands-on session.  &lt;/caption&gt;
 &lt;/div&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</title>
+      <link>https://joshlong.com/jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</link>
+      <pubDate>Fri, 19 Oct 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html</guid>
+      	<description>
+	
+&lt;p&gt; My talk from &lt;A href =&quot;http://www.javazone.no&quot;&gt; JavaZone&lt;/A&gt;  is now available online. I co-presented with &lt;a href=&quot;http://www.twitter.com/z_oleg&quot;&gt;Oleg Zhurakousky&lt;/A&gt;, colleague and co-committer on  &lt;a href=&quot;http://springsource.org/spring-integration&quot;&gt;Spring Integration&lt;/A&gt;. If you&apos;d like a quick look, &lt;a href=&quot;http://vimeo.com/49477307&quot;&gt;check it - and all the other great videos on the JavaZone Vimeo page - out&lt;/A&gt;!
+
+ &lt;DIV&gt; &lt;iframe src=&quot;//player.vimeo.com/video/49477307&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&quot;https://vimeo.com/49477307&quot;&gt;Enterprise Integration and Batch Processing on Cloud Foundry&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/javazone&quot;&gt;JavaZone&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt; &lt;/DIV&gt;
+&lt;/p&gt;
 
 	</description>
     </item>
@@ -4141,18 +4162,6 @@ Exposing your frameworks and common abstractions in terms of these well known, i
 	</description>
     </item>
     <item>
-      <title>Getting Started with Spring Roo</title>
-      <link>https://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
-      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
-      	<description>
-	
-&lt;P&gt;  &lt;IMG src = &quot;/media/17884&quot; style = &quot; float:left;margin-right:10px;&quot; /&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;EM&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/A&gt;&lt;/EM&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;B&gt;Vaadin&lt;/B&gt; - a powerful, alternative web framework, and &lt;B&gt;Neo4j&lt;/B&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out.
- &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
       <title>RabbitMQ is now officially available on CloudFoundry!</title>
       <link>https://joshlong.com/jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html</link>
       <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
@@ -4167,6 +4176,18 @@ For you &lt;a href=&quot;http://github.com/CloudFoundry&quot;&gt;code lurkers&lt
                any other message broker on the cloud, and on Amazon Web Services in particular. The AWS tidbit&apos;s a bit more awesome when you realize that AWS already has a message broker service called SQS!  ;-)    Anyway, it&apos;s now available on CloudFoundry. You &lt;a href=&quot;http://support.cloudfoundry.com/entries/20322602-getting-started-with-the-rabbitmq-service-from-a-spring-application&quot;&gt;should definitely&lt;/a&gt; check &lt;a href=&quot;http://blog.cloudfoundry.com/post/8713844574/rabbitmq-cloud-foundry-cloud-messaging-that-just-works&quot;&gt;it out.&lt;/a&gt; The &lt;a href=&quot;http://www.theregister.co.uk/2011/08/10/vmware_cloud_foundry_adds_rabbitmq_messaging/&quot;&gt;news&lt;/a&gt;  overall seems good, too! Messaging middleware is &lt;EM&gt;the&lt;/EM&gt; critical component for scale. Cloud-scale is a way of life, not just a switch to be turned on and off. Specifically, an architecure that scales is going to enjoy temporally decoupling, or &lt;EM&gt;asynchronism,&lt;/EM&gt; and RabbitMQ is the perfect vehicle to enable that asynchronous coordination. 
 &lt;/p&gt; &lt;P&gt;  If you&apos;re a Spring developer, and haven&apos;t had a chance to look at CloudFoundry, then I strongly recommend you see  &lt;a href=&quot;http://blog.springsource.com/2011/04/12/cloud-foundry-for-spring-developers/&quot;&gt;Mark Fisher&apos;s entry  on the SpringSource blog&lt;/a&gt; introducing the wide world of the cloud for Spring developers from a few months ago. There&apos;s also great content on &lt;A href=&quot;http://www.youtube.com/SpringSourceDev&quot;&gt;the SpringSource YouTube channel.&lt;/a&gt;
 		
+ &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Getting Started with Spring Roo</title>
+      <link>https://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
+      	<description>
+	
+&lt;P&gt;  &lt;IMG src = &quot;/media/17884&quot; style = &quot; float:left;margin-right:10px;&quot; /&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;EM&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/A&gt;&lt;/EM&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;B&gt;Vaadin&lt;/B&gt; - a powerful, alternative web framework, and &lt;B&gt;Neo4j&lt;/B&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out.
  &lt;/P&gt;
 
 	</description>
@@ -5069,6 +5090,20 @@ fantastic new year, and a new decade.
 	</description>
     </item>
     <item>
+      <title>Devoxx 2010</title>
+      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
+      	<description>
+	
+&lt;p&gt;  
+ I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
+&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;https://www.salesforce.com/dreamforce/&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
+ The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>The H2 Embedded Database</title>
       <link>https://joshlong.com/jl/blogPost/the_h2_embedded_database.html</link>
       <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
@@ -5101,20 +5136,6 @@ featured exclusive support   for persisting process state in H2, and H2 alone. A
 &lt;p&gt;So, what&apos;s my point? I didn&apos;t know much about this handy little database until a year ago and now, increasingly, I find myself reaching for it all the time! Give it a go if you have a moment, as that&apos;s all you need.  
  As I&apos;ve never sat down and done a comparison against my  RDBMS-of-choice, &lt;a href=&quot;http://www.postgresql.org&quot;&gt;PostgreSQL&lt;/a&gt;, I don&apos;t really know where H2 stands as an alternative, but my cursory sort of uses thus far give me the impression that it&apos;d handily give MySQL a run for its money. &lt;/p&gt; 
 &lt;/p&gt; 
-
-	</description>
-    </item>
-    <item>
-      <title>Devoxx 2010</title>
-      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
-      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
-      	<description>
-	
-&lt;p&gt;  
- I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
-&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;https://www.salesforce.com/dreamforce/&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
- The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
 
 	</description>
     </item>
@@ -7718,31 +7739,6 @@ Hope this helps somebody else looking for information on how to get started. Thi
 	</description>
     </item>
     <item>
-      <title>Dust</title>
-      <link>https://joshlong.com/jl/blogPost/dust.html</link>
-      <pubDate>Wed, 4 Feb 2009 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/dust.html</guid>
-      	<description>
-	
-&lt;p&gt;Sometimes people tell me, &quot;Josh, you&apos;re an idiot!&quot; Then I have myself a good cry and walk it off.
-&lt;/p&gt; &lt;p&gt;
- Then people ask me about the 7-node grid I keep in my home office. &lt;/p&gt; &lt;p&gt;They wonder why I would keep that many computers in so small a space. They wonder, &quot;why?&quot;
- Besides providing something of an electric heater (the room&apos;s consistently 10F warmer than the rest of the place!), the computers let me test algorithms/concepts in scale. Frameworks like &lt;a href=&quot;http://terracotta.org/&quot;&gt;Teracotta&lt;/a&gt; don&apos;t test very consistently on a single node, after all. And, of course, there&apos;s nothing like having 2TB of space exposed as one giant mount.
-&lt;/p&gt;
-&lt;p&gt;Finally, people ask me if there are any disadvantages. They ask if the electric bill&apos;s high. It isn&apos;t, but that&apos;s a side effect of living in Arizona, where my air conditioner&apos;s on 24/7 and so an extra few computers doesn&apos;t really make a difference.
-
- They ask if I spend my time maintaining them.I tell them I run &lt;a href=&quot;http://en.wikipedia.org/wiki/Ubuntu&quot;&gt;Ubuntu&lt;/a&gt;, so I never get viruses. If a PC malfunctions then I simply repair it and reimage the node.
-
- They press me. Surely there&apos;s &lt;i&gt;something&lt;/i&gt; disadvantageous to running so many computers. I tell them the honest truth. It&apos;s the &lt;a href=&quot;http://en.wikipedia.org/wiki/Dust&quot;&gt;dust&lt;/a&gt;. The dust alone is the reason I want to just invest in EC2. And of course, I&apos;m an asthmatic &lt;b&gt;and&lt;/b&gt; a green fiend. So I can&apos;t use the aerosol canisters to dispel the dust. Nor can I use the Ozone-friendly canisters -- they both trigger my asthma or offend my green sensibilities. So, I have to clean them with a rag on occasion (once every couple of weeks).
-
-&lt;/p&gt;
-
-&lt;p&gt;Next time I get a home office, I&apos;m going to get it with tile. Remember, if you&apos;re going to setup a grid, the biggest challenge you face may not be technical.
-&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Revised Spring Integration Maven &lt;code&gt;pom.xml&lt;/code&gt; Example</title>
       <link>https://joshlong.com/jl/blogPost/revised_spring_integration_maven_codepomxmlcode_example.html</link>
       <pubDate>Wed, 4 Feb 2009 00:00:00 +0000</pubDate>
@@ -7849,6 +7845,31 @@ A bug was &lt;a href=&quot;http://jira.springframework.org/browse/INT-245&quot;&
  			&amp;lt;/dependency&amp;gt;
         &amp;lt;/dependencies&amp;gt;
         &lt;/pre&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Dust</title>
+      <link>https://joshlong.com/jl/blogPost/dust.html</link>
+      <pubDate>Wed, 4 Feb 2009 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/dust.html</guid>
+      	<description>
+	
+&lt;p&gt;Sometimes people tell me, &quot;Josh, you&apos;re an idiot!&quot; Then I have myself a good cry and walk it off.
+&lt;/p&gt; &lt;p&gt;
+ Then people ask me about the 7-node grid I keep in my home office. &lt;/p&gt; &lt;p&gt;They wonder why I would keep that many computers in so small a space. They wonder, &quot;why?&quot;
+ Besides providing something of an electric heater (the room&apos;s consistently 10F warmer than the rest of the place!), the computers let me test algorithms/concepts in scale. Frameworks like &lt;a href=&quot;http://terracotta.org/&quot;&gt;Teracotta&lt;/a&gt; don&apos;t test very consistently on a single node, after all. And, of course, there&apos;s nothing like having 2TB of space exposed as one giant mount.
+&lt;/p&gt;
+&lt;p&gt;Finally, people ask me if there are any disadvantages. They ask if the electric bill&apos;s high. It isn&apos;t, but that&apos;s a side effect of living in Arizona, where my air conditioner&apos;s on 24/7 and so an extra few computers doesn&apos;t really make a difference.
+
+ They ask if I spend my time maintaining them.I tell them I run &lt;a href=&quot;http://en.wikipedia.org/wiki/Ubuntu&quot;&gt;Ubuntu&lt;/a&gt;, so I never get viruses. If a PC malfunctions then I simply repair it and reimage the node.
+
+ They press me. Surely there&apos;s &lt;i&gt;something&lt;/i&gt; disadvantageous to running so many computers. I tell them the honest truth. It&apos;s the &lt;a href=&quot;http://en.wikipedia.org/wiki/Dust&quot;&gt;dust&lt;/a&gt;. The dust alone is the reason I want to just invest in EC2. And of course, I&apos;m an asthmatic &lt;b&gt;and&lt;/b&gt; a green fiend. So I can&apos;t use the aerosol canisters to dispel the dust. Nor can I use the Ozone-friendly canisters -- they both trigger my asthma or offend my green sensibilities. So, I have to clean them with a rag on occasion (once every couple of weeks).
+
+&lt;/p&gt;
+
+&lt;p&gt;Next time I get a home office, I&apos;m going to get it with tile. Remember, if you&apos;re going to setup a grid, the biggest challenge you face may not be technical.
+&lt;/p&gt;
 
 	</description>
     </item>
@@ -8739,6 +8760,19 @@ Did you know that &lt;code&gt;mvn archetype:generate&lt;/code&gt;, by itself, on
 	</description>
     </item>
     <item>
+      <title>Subversion 1.5, IntelliJ IDEA, and you</title>
+      <link>https://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
+      <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/subversion_1_5_intellij_idea.html</guid>
+      	<description>
+	
+&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &amp;quot;dirty&amp;quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &amp;quot;No Changes found&amp;quot;.  I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue.
+&lt;/p&gt;&lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! 
+&lt;/p&gt; &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand...  &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</title>
       <link>https://joshlong.com/jl/blogPost/keith_donald_speaking_on_spring.html</link>
       <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
@@ -8749,19 +8783,6 @@ Did you know that &lt;code&gt;mvn archetype:generate&lt;/code&gt;, by itself, on
 Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.phxjug.org/&quot;&gt;Phoenix Java User Group&lt;/a&gt; talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can&apos;t wait for this one! 
 
 &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Subversion 1.5, IntelliJ IDEA, and you</title>
-      <link>https://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
-      <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/subversion_1_5_intellij_idea.html</guid>
-      	<description>
-	
-&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &amp;quot;dirty&amp;quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &amp;quot;No Changes found&amp;quot;.  I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue.
-&lt;/p&gt;&lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! 
-&lt;/p&gt; &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand...  &lt;/p&gt;
 
 	</description>
     </item>
