@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 22 Aug 2021 21:55:29 +0000</pubDate>
-    <lastBuildDate>Sun, 22 Aug 2021 21:55:29 +0000</lastBuildDate>
+    <pubDate>Sun, 22 Aug 2021 21:58:31 +0000</pubDate>
+    <lastBuildDate>Sun, 22 Aug 2021 21:58:31 +0000</lastBuildDate>
 
     <item>
       <title>Structuring Spring Boot Applications</title>
@@ -15,7 +15,7 @@
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/structuring_spring_beans.html</guid>
       	<description>
-	&lt;p&gt;It&apos;s hard to think about structuring applications. Three&apos;s a lot to think about at the higher level -  is it a batch job, a web application, a messaging application, etc. The frameworks - Spring Batch, Spring Webflux, Spring Integration, respectively - will guide those decisions.&lt;/p&gt;
+	&lt;p&gt;It&apos;s hard to think about structuring applications. There&apos;s a lot to think about at the higher level -  is it a batch job, a web application, a messaging application, etc. The frameworks - Spring Batch, Spring Webflux, Spring Integration, respectively - will guide those decisions.&lt;/p&gt;
 &lt;p&gt;It is easier to talk about how to structure your Java objects to work well in an IoC container like Spring. Remember, at the end of the day, Spring is a big bag of objects. It needs to know how you want to arrange your objects - how they wire up and how they relate to each other - to provide services to them. For example, it can begin and commit transactions when a method starts and stops. It can create HTTP endpoints that invoke your Spring controller handler methods when a request arrives. It can invoke your message listener objects in response to new messages coming from an Apache Kafka broker or AWS SQS or RabbitMQ or whatever. The list of things Spring can do goes on and on, but it all assumes that you&apos;ve registered the objects with Spring, first.&lt;/p&gt;
 &lt;p&gt;Spring has a metamodel of your objects - it&apos;s sort of like the Java reflection API. It knows which classes have annotations. It knows which objects have constructors. It knows on which dependencies, which beans and which type,  a given object depends. Your job is to help it build up this metamodel to manage all your objects for you. For example, if it can control the creation of your objects, then it can also change the creation of your objects before they get created.&lt;/p&gt;
 &lt;p&gt;Spring can only provide all those services for you if it knows how the objects are wired together. So the idea is that you give Spring plain &apos;ol Java objects (POJOs), and it&apos;ll detect annotations on them and use those annotations to wire up the behavior for your services. But, of course, it can&apos;t do that unless it controls the creation of your Java objects.&lt;/p&gt;
