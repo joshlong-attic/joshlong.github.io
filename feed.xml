@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sat, 8 May 2021 07:51:31 +0000</pubDate>
-    <lastBuildDate>Sat, 8 May 2021 07:51:31 +0000</lastBuildDate>
+    <pubDate>Sun, 22 Aug 2021 01:22:09 +0000</pubDate>
+    <lastBuildDate>Sun, 22 Aug 2021 01:22:09 +0000</lastBuildDate>
 
     <item>
       <title>How to Stop That Annoying macOS Prompt Asking If I&apos;d Like to Allow Incoming Connections for RabbitMQ</title>
