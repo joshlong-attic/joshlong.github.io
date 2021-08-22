@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>Structuring Spring Boot Applications</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+    <link rel="alternate" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml" />
+    <link rel="alternate feed" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml">
+ 
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+ 
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+ 	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+	    <li><a href="../../feed.html">Activity</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+            <li><a href="../../livelessons.html">Livelessons</a></li>
+            <li><a href="../../books.html">Books</a></li>
+	          <li><a href="http://bootifulpodcast.fm">A Bootiful Podcast </a></li>
+	          <li><a href="https://bit.ly/spring-tips-playlist">The Spring Tips Videos </a></li>	   
+            <li><a href="https://twitch.tv/javajoshlong">I stream on Twitch</a></li>   
+             <li><a href="https://patreon.com/joshlong">Patreon</a></li>       
+            <li><a href="../../feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>Structuring Spring Boot Applications</h1>
+	</div>
+
+	<p><em>22 August 2021</em></p>
+
+	<p><p>Its hard to think about structuring applications. Three's a lot to think aout at the higher level -  is it a batch job, a web application, a messaging application, etc., The frameworks - Spring Batch, Spring Webflux, Spring Integration, respectively - will guide those decisions.</p>
+<p>It is easier to talk about how to structure your Java objects so that they work well in an IoC conainer like Spring. Remember, at the end of the day, Spring is a big bag of objects. It needs to know how your objects are arranged - how they wire up and how they relate to each other - so that it can provide services to them. It can begin and commit transactions when a method starts and stops. It can create HTTP endpoints that invoke your Spring controller handler methods when a request arrives. It can invoke your message listener objects in response to new messages arriving from an Apache Kafka broker or AWS SQS or RabbitMQ or whatever. The list of things Spring can do goes on and on, but it all assumes that you've registered the objects with Spring, first.</p>
+<p>Spring has a metamodel of your objects - it's sort of like the Java reflection API. It knows which classes have annotations. It knows which objects have consturctors. It knows which dependencies - which beans of which type - a given object depends on. Your job is to help it build up this metamodel sot hat it can manage all your objecets for you. If it can control the creation of your objects, then it can also change the creation of your objects before they get created.</p>
+<p>This is impiortant if Spring is to be able to provide all those services for you. The idea is that you give Spring plain 'ol Java objects (POJOs) and it'll detect annotations on them and use those annotations to wire up the behavior for your services. It can't do that unless it controls the creatino of your Java objects.</p>
+<p>Behind the scenes, it does this by either creating a Java InvocationHandler (a JDK proxy) <em>or</em>, more commonly, by using something like CGLIB to create a new class that extends your Java class. This class is a subclass of your class. So, imagine you have a class like this:</p>
+<pre><code class="language-java">
+class CustomerService  {
+
+	private final JdbcTemplate template; 
+
+	CustomerService (JdbcTemplate jt) {
+		this.JdbcTemplate = jt;
+	}
+
+    @Transactional 
+	public void updateCustomer ( long customerId, String name){
+       // .. .
+	}
+}
+
+</code></pre>
+<p>You want Spring to automatically start and stop a transaction each time that method is invoked. In order for this to work, Spring needs to insert itself before and after your method is called. Behind the scenes, it does smething like this:</p>
+<pre><code class="language-java">class SpringEnhancedCustomerService extends CustomerService {
+
+    // Spring provides a reference from the applicationContext of type JdbcTemplate
+	SpringEnhancedCustomerService (JdbcTemplate jt) {
+		 super(JdbcTemplate ) ;
+	}
+
+
+	@Override 
+	public void updateCustomer (long customerId, String name) {
+		// call Java code to start a JDBC transaction 
+		super.updateCustomer(customerId, name);
+		// call Java code to stop a JDBC transaction
+	}
+}
+
+</code></pre>
+<p>In your code, you can then inject a reference to <code>CustomerService</code>. You'll stil get one, but not theone you created. You'll get the subclass. It's this magic trick - of you asking for a hat and getting a hat with a rabbit in it instead - that makes Spring so powerful.</p>
+<p>So, it's very important that Spring knows about your objects. There are many ways to do this.</p>
+<p>One, is you can be very explicit. Before Spring Boot, you had two common options: XML and Java configuration. That was 2013 and earlier, however. Nowadays, we don't encourag ethe use of XML, so you're left with Java configuration. Here's an example:</p>
+<pre><code class="language-java">@Configuration 
+class ServiceConfiguration {
+
+ @Bean DataSource h2DataSource (){
+ 	return ... ;
+ }
+
+ @Bean JdbcTemplate JdbcTemplate (DataSource ds) {
+ 	return new JdbcTemplate(ds);
+ }
+
+  @Bean CustomerService customerService (JdbcTemplate jdbcTemplate) {
+  	return new CustomerService (jdbcTemplate);
+  }
+}
+
+
+</code></pre>
+<p>Here, you're creating three objects and explicitly wiring things together. When Spring starts up it finds the <code>@Configuration</code> classes, invokes all the methods annotated with <code>@Bean</code>, stores all the reutn values in the application context, and makes them available for injection. If it sees that the method takes parameters, it looks to find any other method that returns a value of that type and invokes it first. This value is then <em>injected</em> into the method as a parameter. If it's already invoked the method for some other injection, then it just reusees the already created instance.</p>
+<p>This approach has the benefit of being explicit - all the information about how your ojbects are wired up is in one place - the configuration classes. But, for classes that you created, it means that you have information in two different places: the class itself, and the configuration class.</p>
+<p>So, there's another, more implicit, approach you can use: component-scanning. In this approach, Spring looks for classes on the classpath that have <em>stereotype</em> annotations, like <code>@Component</code> or <code>@Controller</code>. All stereotype annotations are ultimately annotated with <code>@Component</code>. <code>@Component</code> is the lowest, most undifferentiated annotation. If you look at <code>@Controller</code>, it is anotated with <code>@Component</code>. If you look at <code>@RestController</code>, it is annotated with <code>@Controller</code>. So there are 3 bits of indirection, but the class annotated with <code>@RestController</code> is still treated, at a minimum, like a class annotated ith <code>@Component</code>. The specialized annontations add on specialized treatment, but they're still specializations of <code>@Component</code>, not alternatives to it.</p>
+<p>So, we might decide that it's annoying to have to define <code>CustomerService</code> in the configuration class. After all, if Spring only knew about the class, it could figure out the rest of the relationships by itself, surely? It could look at the constructor and see that, in order to construct an instance of <code>CustomerService</code>, it would need a reference to <code>JdbcTemplate</code>, which has already been defined elsewhere.</p>
+<p>So, that's what component scanning does. You can add <code>@Service</code>, another stereotype annotation that's annotated with <code>@Component</code>, to the class and then remove the <code>@Bean</code> method in the configuration class. Spring wil automatically create the service, it'll provide the required dependencies. It'll also subclass the class to provide those services.</p>
+<p>We're making progress, removing ever more boilerplate. But what about the <code>DataSource</code> and the <code>JdbcTemplate</code>? You need them, but surely you shouldn't have to recreate them each time? This is the insight of Spring Boot. It uses <code>@Condition</code> annotations to decorate classes annotated with <code>@Component</code> or <code>@Configuration</code> to evaluate a test before creating the class or invoking the <code>@Bean</code> method. These tests can look for clues in the environment. Let's suppose you have H2 - an embedded, SQL database on the classpath. And you have the <code>spring-jdbc</code> library on teh classpath. That jar contains <code>JdbcTemplate</code>. It can use a test to test for the presence of those classes on the classpath and infer that you want an embedded SQL DataSource and that you want a <code>JdbcTemplate</code>. It has its own configuration to provide those beans for you. So now you can drop the <code>@Configuration</code> class completely! Spring Boot provided two of the beans and implied the other one based on the stereotype annotations.</p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2018 JoshLong.com </p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

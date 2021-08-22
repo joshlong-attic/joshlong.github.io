@@ -6,9 +6,84 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 22 Aug 2021 01:22:09 +0000</pubDate>
-    <lastBuildDate>Sun, 22 Aug 2021 01:22:09 +0000</lastBuildDate>
+    <pubDate>Sun, 22 Aug 2021 21:16:02 +0000</pubDate>
+    <lastBuildDate>Sun, 22 Aug 2021 21:16:02 +0000</lastBuildDate>
 
+    <item>
+      <title>Structuring Spring Boot Applications</title>
+      <link>https://joshlong.com/jl/blogPost/structuring_spring_beans.html</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/structuring_spring_beans.html</guid>
+      	<description>
+	&lt;p&gt;Its hard to think about structuring applications. Three&apos;s a lot to think aout at the higher level -  is it a batch job, a web application, a messaging application, etc., The frameworks - Spring Batch, Spring Webflux, Spring Integration, respectively - will guide those decisions.&lt;/p&gt;
+&lt;p&gt;It is easier to talk about how to structure your Java objects so that they work well in an IoC conainer like Spring. Remember, at the end of the day, Spring is a big bag of objects. It needs to know how your objects are arranged - how they wire up and how they relate to each other - so that it can provide services to them. It can begin and commit transactions when a method starts and stops. It can create HTTP endpoints that invoke your Spring controller handler methods when a request arrives. It can invoke your message listener objects in response to new messages arriving from an Apache Kafka broker or AWS SQS or RabbitMQ or whatever. The list of things Spring can do goes on and on, but it all assumes that you&apos;ve registered the objects with Spring, first.&lt;/p&gt;
+&lt;p&gt;Spring has a metamodel of your objects - it&apos;s sort of like the Java reflection API. It knows which classes have annotations. It knows which objects have consturctors. It knows which dependencies - which beans of which type - a given object depends on. Your job is to help it build up this metamodel sot hat it can manage all your objecets for you. If it can control the creation of your objects, then it can also change the creation of your objects before they get created.&lt;/p&gt;
+&lt;p&gt;This is impiortant if Spring is to be able to provide all those services for you. The idea is that you give Spring plain &apos;ol Java objects (POJOs) and it&apos;ll detect annotations on them and use those annotations to wire up the behavior for your services. It can&apos;t do that unless it controls the creatino of your Java objects.&lt;/p&gt;
+&lt;p&gt;Behind the scenes, it does this by either creating a Java InvocationHandler (a JDK proxy) &lt;em&gt;or&lt;/em&gt;, more commonly, by using something like CGLIB to create a new class that extends your Java class. This class is a subclass of your class. So, imagine you have a class like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class CustomerService  {
+
+	private final JdbcTemplate template; 
+
+	CustomerService (JdbcTemplate jt) {
+		this.JdbcTemplate = jt;
+	}
+
+    @Transactional 
+	public void updateCustomer ( long customerId, String name){
+       // .. .
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You want Spring to automatically start and stop a transaction each time that method is invoked. In order for this to work, Spring needs to insert itself before and after your method is called. Behind the scenes, it does smething like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;class SpringEnhancedCustomerService extends CustomerService {
+
+    // Spring provides a reference from the applicationContext of type JdbcTemplate
+	SpringEnhancedCustomerService (JdbcTemplate jt) {
+		 super(JdbcTemplate ) ;
+	}
+
+
+	@Override 
+	public void updateCustomer (long customerId, String name) {
+		// call Java code to start a JDBC transaction 
+		super.updateCustomer(customerId, name);
+		// call Java code to stop a JDBC transaction
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In your code, you can then inject a reference to &lt;code&gt;CustomerService&lt;/code&gt;. You&apos;ll stil get one, but not theone you created. You&apos;ll get the subclass. It&apos;s this magic trick - of you asking for a hat and getting a hat with a rabbit in it instead - that makes Spring so powerful.&lt;/p&gt;
+&lt;p&gt;So, it&apos;s very important that Spring knows about your objects. There are many ways to do this.&lt;/p&gt;
+&lt;p&gt;One, is you can be very explicit. Before Spring Boot, you had two common options: XML and Java configuration. That was 2013 and earlier, however. Nowadays, we don&apos;t encourag ethe use of XML, so you&apos;re left with Java configuration. Here&apos;s an example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Configuration 
+class ServiceConfiguration {
+
+ @Bean DataSource h2DataSource (){
+ 	return ... ;
+ }
+
+ @Bean JdbcTemplate JdbcTemplate (DataSource ds) {
+ 	return new JdbcTemplate(ds);
+ }
+
+  @Bean CustomerService customerService (JdbcTemplate jdbcTemplate) {
+  	return new CustomerService (jdbcTemplate);
+  }
+}
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, you&apos;re creating three objects and explicitly wiring things together. When Spring starts up it finds the &lt;code&gt;@Configuration&lt;/code&gt; classes, invokes all the methods annotated with &lt;code&gt;@Bean&lt;/code&gt;, stores all the reutn values in the application context, and makes them available for injection. If it sees that the method takes parameters, it looks to find any other method that returns a value of that type and invokes it first. This value is then &lt;em&gt;injected&lt;/em&gt; into the method as a parameter. If it&apos;s already invoked the method for some other injection, then it just reusees the already created instance.&lt;/p&gt;
+&lt;p&gt;This approach has the benefit of being explicit - all the information about how your ojbects are wired up is in one place - the configuration classes. But, for classes that you created, it means that you have information in two different places: the class itself, and the configuration class.&lt;/p&gt;
+&lt;p&gt;So, there&apos;s another, more implicit, approach you can use: component-scanning. In this approach, Spring looks for classes on the classpath that have &lt;em&gt;stereotype&lt;/em&gt; annotations, like &lt;code&gt;@Component&lt;/code&gt; or &lt;code&gt;@Controller&lt;/code&gt;. All stereotype annotations are ultimately annotated with &lt;code&gt;@Component&lt;/code&gt;. &lt;code&gt;@Component&lt;/code&gt; is the lowest, most undifferentiated annotation. If you look at &lt;code&gt;@Controller&lt;/code&gt;, it is anotated with &lt;code&gt;@Component&lt;/code&gt;. If you look at &lt;code&gt;@RestController&lt;/code&gt;, it is annotated with &lt;code&gt;@Controller&lt;/code&gt;. So there are 3 bits of indirection, but the class annotated with &lt;code&gt;@RestController&lt;/code&gt; is still treated, at a minimum, like a class annotated ith &lt;code&gt;@Component&lt;/code&gt;. The specialized annontations add on specialized treatment, but they&apos;re still specializations of &lt;code&gt;@Component&lt;/code&gt;, not alternatives to it.&lt;/p&gt;
+&lt;p&gt;So, we might decide that it&apos;s annoying to have to define &lt;code&gt;CustomerService&lt;/code&gt; in the configuration class. After all, if Spring only knew about the class, it could figure out the rest of the relationships by itself, surely? It could look at the constructor and see that, in order to construct an instance of &lt;code&gt;CustomerService&lt;/code&gt;, it would need a reference to &lt;code&gt;JdbcTemplate&lt;/code&gt;, which has already been defined elsewhere.&lt;/p&gt;
+&lt;p&gt;So, that&apos;s what component scanning does. You can add &lt;code&gt;@Service&lt;/code&gt;, another stereotype annotation that&apos;s annotated with &lt;code&gt;@Component&lt;/code&gt;, to the class and then remove the &lt;code&gt;@Bean&lt;/code&gt; method in the configuration class. Spring wil automatically create the service, it&apos;ll provide the required dependencies. It&apos;ll also subclass the class to provide those services.&lt;/p&gt;
+&lt;p&gt;We&apos;re making progress, removing ever more boilerplate. But what about the &lt;code&gt;DataSource&lt;/code&gt; and the &lt;code&gt;JdbcTemplate&lt;/code&gt;? You need them, but surely you shouldn&apos;t have to recreate them each time? This is the insight of Spring Boot. It uses &lt;code&gt;@Condition&lt;/code&gt; annotations to decorate classes annotated with &lt;code&gt;@Component&lt;/code&gt; or &lt;code&gt;@Configuration&lt;/code&gt; to evaluate a test before creating the class or invoking the &lt;code&gt;@Bean&lt;/code&gt; method. These tests can look for clues in the environment. Let&apos;s suppose you have H2 - an embedded, SQL database on the classpath. And you have the &lt;code&gt;spring-jdbc&lt;/code&gt; library on teh classpath. That jar contains &lt;code&gt;JdbcTemplate&lt;/code&gt;. It can use a test to test for the presence of those classes on the classpath and infer that you want an embedded SQL DataSource and that you want a &lt;code&gt;JdbcTemplate&lt;/code&gt;. It has its own configuration to provide those beans for you. So now you can drop the &lt;code&gt;@Configuration&lt;/code&gt; class completely! Spring Boot provided two of the beans and implied the other one based on the stereotype annotations.&lt;/p&gt;
+
+	</description>
+    </item>
     <item>
       <title>How to Stop That Annoying macOS Prompt Asking If I&apos;d Like to Allow Incoming Connections for RabbitMQ</title>
       <link>https://joshlong.com/jl/blogPost/rabbitmq-accepting-incoming-connections-on-macosx.html</link>
@@ -1731,25 +1806,6 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
 	</description>
     </item>
     <item>
-      <title>Webinar Replay: Building REST APIs with Spring</title>
-      <link>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt;
- &lt;img  style = &quot;float: left; margin-right :10px&quot; src = &quot;/media/18688&quot; width = &quot;300&quot; /&gt;&lt;/a&gt;
-
-The video of my webinar on
-&lt;a href= &quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; building RESTful APIs with Spring is available online&lt;/a&gt;. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
-&lt;/p&gt;  
-&lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
-&lt;/p&gt; 
-&lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>On Java Code Style</title>
       <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
       <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
@@ -1765,6 +1821,25 @@ The video of my webinar on
 &lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
 
 &lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Webinar Replay: Building REST APIs with Spring</title>
+      <link>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt;
+ &lt;img  style = &quot;float: left; margin-right :10px&quot; src = &quot;/media/18688&quot; width = &quot;300&quot; /&gt;&lt;/a&gt;
+
+The video of my webinar on
+&lt;a href= &quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; building RESTful APIs with Spring is available online&lt;/a&gt;. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
+&lt;/p&gt;  
+&lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
+&lt;/p&gt; 
+&lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -2601,17 +2676,6 @@ Sometimes I wonder if people test things before they release it :/
 	</description>
     </item>
     <item>
-      <title>Happy New Year, and Here&apos;s to 2013</title>
-      <link>https://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
-      <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
-      	<description>
-	
-&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>They Think of Everything</title>
       <link>https://joshlong.com/jl/blogPost/they_think_of_everything.html</link>
       <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
@@ -2622,6 +2686,17 @@ Sometimes I wonder if people test things before they release it :/
   Just bought some ramen at the store.  I love that it comes with a serving bowl. I know you&apos;re thinking, &quot;but, who wouldn&apos;t... have.. a bowl?&quot; And the answer is: I didn&apos;t have a bowl! But now I do. Problem solved.  The Chinese think of &lt;EM&gt;everything&lt;/EM&gt;! 
 &lt;div&gt; &lt;img src = &quot;/media/18574&quot; width = &quot;400&quot; /&gt;&lt;/div&gt;
 &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Happy New Year, and Here&apos;s to 2013</title>
+      <link>https://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
+      <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
+      	<description>
+	
+&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
 
 	</description>
     </item>
@@ -5090,20 +5165,6 @@ fantastic new year, and a new decade.
 	</description>
     </item>
     <item>
-      <title>Devoxx 2010</title>
-      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
-      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
-      	<description>
-	
-&lt;p&gt;  
- I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
-&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;https://www.salesforce.com/dreamforce/&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
- The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>The H2 Embedded Database</title>
       <link>https://joshlong.com/jl/blogPost/the_h2_embedded_database.html</link>
       <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
@@ -5136,6 +5197,20 @@ featured exclusive support   for persisting process state in H2, and H2 alone. A
 &lt;p&gt;So, what&apos;s my point? I didn&apos;t know much about this handy little database until a year ago and now, increasingly, I find myself reaching for it all the time! Give it a go if you have a moment, as that&apos;s all you need.  
  As I&apos;ve never sat down and done a comparison against my  RDBMS-of-choice, &lt;a href=&quot;http://www.postgresql.org&quot;&gt;PostgreSQL&lt;/a&gt;, I don&apos;t really know where H2 stands as an alternative, but my cursory sort of uses thus far give me the impression that it&apos;d handily give MySQL a run for its money. &lt;/p&gt; 
 &lt;/p&gt; 
+
+	</description>
+    </item>
+    <item>
+      <title>Devoxx 2010</title>
+      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
+      	<description>
+	
+&lt;p&gt;  
+ I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
+&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;https://www.salesforce.com/dreamforce/&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
+ The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
 
 	</description>
     </item>
@@ -8760,19 +8835,6 @@ Did you know that &lt;code&gt;mvn archetype:generate&lt;/code&gt;, by itself, on
 	</description>
     </item>
     <item>
-      <title>Subversion 1.5, IntelliJ IDEA, and you</title>
-      <link>https://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
-      <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/subversion_1_5_intellij_idea.html</guid>
-      	<description>
-	
-&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &amp;quot;dirty&amp;quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &amp;quot;No Changes found&amp;quot;.  I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue.
-&lt;/p&gt;&lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! 
-&lt;/p&gt; &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand...  &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</title>
       <link>https://joshlong.com/jl/blogPost/keith_donald_speaking_on_spring.html</link>
       <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
@@ -8783,6 +8845,19 @@ Did you know that &lt;code&gt;mvn archetype:generate&lt;/code&gt;, by itself, on
 Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.phxjug.org/&quot;&gt;Phoenix Java User Group&lt;/a&gt; talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can&apos;t wait for this one! 
 
 &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Subversion 1.5, IntelliJ IDEA, and you</title>
+      <link>https://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
+      <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/subversion_1_5_intellij_idea.html</guid>
+      	<description>
+	
+&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &amp;quot;dirty&amp;quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &amp;quot;No Changes found&amp;quot;.  I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue.
+&lt;/p&gt;&lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! 
+&lt;/p&gt; &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand...  &lt;/p&gt;
 
 	</description>
     </item>
