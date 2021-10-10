@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 10 Oct 2021 22:53:54 +0000</pubDate>
-    <lastBuildDate>Sun, 10 Oct 2021 22:53:54 +0000</lastBuildDate>
+    <pubDate>Sun, 10 Oct 2021 22:57:21 +0000</pubDate>
+    <lastBuildDate>Sun, 10 Oct 2021 22:57:21 +0000</lastBuildDate>
 
     <item>
       <title>Upcoming Appearance: SnykLive session about the state of Java (JVM report)</title>
@@ -55,7 +55,7 @@
       <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-12-snyklive_session_about_the_state_of_java_report.html</guid>
       	<description>
-	&lt;p&gt;&lt;em&gt;2021-10-12&lt;/em&gt; -&lt;/p&gt;
+	&lt;p&gt;&lt;em&gt;2021-10-12&lt;/em&gt; - I&apos;ll be on SnykLive doing a session about the state of Java Report&lt;/p&gt;
 
 	</description>
     </item>
