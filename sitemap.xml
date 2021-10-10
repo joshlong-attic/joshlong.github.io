@@ -21,36 +21,880 @@
         <lastmod>2013-04-02</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-22-voxxed_days_romania_need_dial_in.html</loc>
+        <lastmod>2021-10-10</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk_prerecorded_with_mark.html</loc>
+        <lastmod>2021-10-10</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy_t.html</loc>
+        <lastmod>2021-10-10</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-10-07-heiko_scherrer_on_openwms_spring_spring_boot_spring_data_workflow_w.html</loc>
+        <lastmod>2021-10-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-10-07-spring_graphql.html</loc>
+        <lastmod>2021-10-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-06-j4kio_speaker_session.html</loc>
+        <lastmod>2021-10-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-09-30-spring_data_engineer_christoph_strobl_on_mongodb_redis_graphql_and_.html</loc>
+        <lastmod>2021-09-30</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-09-29-bootiful_edge_services.html</loc>
+        <lastmod>2021-09-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-09-24-spring_web_legend_rossen_stoyanchev_on_rsocket_graphql_and_more.html</loc>
+        <lastmod>2021-09-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-09-17-the_good_dr_mark_pollack_on_springnet_physics_spring_data_spring_xd.html</loc>
+        <lastmod>2021-09-17</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-09-15-springone_2021_recap.html</loc>
+        <lastmod>2021-09-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-09-14-japan_java_user_group.html</loc>
+        <lastmod>2021-09-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-09-09-spring_security_engineer_josh_cummings.html</loc>
+        <lastmod>2021-09-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-09-02-springone_2021_and_tatu_saloranta.html</loc>
+        <lastmod>2021-09-02</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-08-26-richard_north_and_sergei_egorov_on_testcontainers_their_new_company.html</loc>
+        <lastmod>2021-08-26</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/structuring_spring_beans.html</loc>
         <lastmod>2021-08-22</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-08-19-microsoft_azure_engineering_manager_rome_li_on_his_work_supporting_.html</loc>
+        <lastmod>2021-08-19</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-08-12-neo4j_ceo_and_spring_data_cofounder_emil_eifrem_on_graphs_neo4j_and.html</loc>
+        <lastmod>2021-08-12</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-08-06-microsofts_sean_li_on_azure_spring_boot_azure_spring_cloud_spring_i.html</loc>
+        <lastmod>2021-08-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-08-04-better_datadriven_applications_with_redis.html</loc>
+        <lastmod>2021-08-04</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-07-29-microsofts_asir_v_selvasingh_on_spring_boot_spring_cloud_microsoft_.html</loc>
+        <lastmod>2021-07-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-07-22-industry_analyst_fascinating_person_strategist_and_storyteller_mich.html</loc>
+        <lastmod>2021-07-22</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-07-15-visualizing_software_architecture_with_the_c4_model_with_architect_.html</loc>
+        <lastmod>2021-07-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-07-14-the_spring_integration_zip_module_and_native_images.html</loc>
+        <lastmod>2021-07-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-07-08-matt_raible.html</loc>
+        <lastmod>2021-07-08</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-07-07-spring_cloud_square.html</loc>
+        <lastmod>2021-07-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-07-01-benjamin_wilms_founder_of_the_chaos_monkey_for_spring_boot_and_stea.html</loc>
+        <lastmod>2021-07-01</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-06-30-spring_retrosocket.html</loc>
+        <lastmod>2021-06-30</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-06-25-jlove_conference.html</loc>
+        <lastmod>2021-06-25</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-06-24-webassembly_iot_datascience_and_java_guru_brian_sletten.html</loc>
+        <lastmod>2021-06-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-06-23-kubernetes_native_java.html</loc>
+        <lastmod>2021-06-23</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-06-22-oktadev_twitch_stream.html</loc>
+        <lastmod>2021-06-22</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-06-17-azure_developer_advocate_rory_preddy_on_spring_java_and_azure_sprin.html</loc>
+        <lastmod>2021-06-17</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-06-14-spring_native_0100.html</loc>
+        <lastmod>2021-06-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-06-11-redgate_technical_lead_for_the_flyway_team_mikiel_agutu_on_database.html</loc>
+        <lastmod>2021-06-11</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-06-03-jhipster_creator_and_microsoft_java_developer_advocacy_manager_juli.html</loc>
+        <lastmod>2021-06-03</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-06-02-craft_2021.html</loc>
+        <lastmod>2021-06-02</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-05-28-presentation_on_xgeeks_youtube_channel.html</loc>
+        <lastmod>2021-05-28</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-05-27-micrometer_project_lead_and_observability_guru_tommy_ludwig.html</loc>
+        <lastmod>2021-05-27</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-05-25-java_day_istanbul_2021.html</loc>
+        <lastmod>2021-05-25</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-05-20-james_ward.html</loc>
+        <lastmod>2021-05-20</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-05-13-axon_framework_founder_allard_buijze_on_cqrs.html</loc>
+        <lastmod>2021-05-13</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/rabbitmq-accepting-incoming-connections-on-macosx.html</loc>
         <lastmod>2021-05-08</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-05-06-friend_fellow_spring_developer_advocate_kotlin_google_developer_exp.html</loc>
+        <lastmod>2021-05-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-04-29-oracles_dilip_krishnan_on_springfox_the_oracle_cloud_lift_team_and_.html</loc>
+        <lastmod>2021-04-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-04-23-reliably_ceo_russ_miles.html</loc>
+        <lastmod>2021-04-23</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-04-16-biden_campaign_cto_spinnaker_cofounder_target_distinguished_enginee.html</loc>
+        <lastmod>2021-04-16</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-04-09-ambassador_labs_devrel_director_infoq_contributor_lifelong_learner_.html</loc>
+        <lastmod>2021-04-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-04-06-live_oreilly_training_on_spring_boot_and_kotlin_register_your_se.html</loc>
+        <lastmod>2021-04-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-04-01-springfox_creator_marty_pitt_on_swagger_vyne_and_taxi_lang_and_much.html</loc>
+        <lastmod>2021-04-01</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-03-26-cloud_builders_conference.html</loc>
+        <lastmod>2021-03-26</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-03-25-shigeru_urushibara_president_and_ceo_at_ul_systems_inc_and_japanese.html</loc>
+        <lastmod>2021-03-25</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-03-18-bootiful_cassandra_with_datastaxs_patrick_mcfadin.html</loc>
+        <lastmod>2021-03-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-03-18-fellow_java_champion_and_legend_angie_jones.html</loc>
+        <lastmod>2021-03-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-03-17-meet_up_java_in_the_cloud_native_world.html</loc>
+        <lastmod>2021-03-17</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-03-11-springone_tour.html</loc>
+        <lastmod>2021-03-11</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-03-11-ff4j_project_creator_and_datastax_astra_sdk_engineer_cedrick_lunven.html</loc>
+        <lastmod>2021-03-11</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-03-09-talk_for_java_user_group_passau_reactive_spring__45_minute_talk_.html</loc>
+        <lastmod>2021-03-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-03-04-spring_cloud_gateway_for_kubernetes_lead_chris_sterling_on_api_gate.html</loc>
+        <lastmod>2021-03-04</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-02-26-spring_legend_greg_turnquist_on_spring_data_rest_hateoas_continuous.html</loc>
+        <lastmod>2021-02-26</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-02-24-panelist_invite__how_to_prevent_debugging_from_becoming_a_produc.html</loc>
+        <lastmod>2021-02-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-02-24-code_on_twitch.html</loc>
+        <lastmod>2021-02-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2021-02-23-spring_cloud_gateway_redux.html</loc>
+        <lastmod>2021-02-23</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-02-19-gitlabs_reshmi_krishna_on_the_developer_lifecycle.html</loc>
+        <lastmod>2021-02-19</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-02-18-javadaylviv_2021.html</loc>
+        <lastmod>2021-02-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-02-12-doordash_tech_lead_manager_zohaib_sibte_hassan_on_spring_boot_kotli.html</loc>
+        <lastmod>2021-02-12</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-appearances-2021-02-09-oop_german_conference.html</loc>
+        <lastmod>2021-02-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-02-05-rsocket_legend_and_new_reactor_team_member_oleh_dokuka.html</loc>
+        <lastmod>2021-02-05</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-01-29-hypertrace_java_agent_creator_pavol_loffay.html</loc>
+        <lastmod>2021-01-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-01-22-spring_tools_lead_martin_lippert_on_sustainable_software.html</loc>
+        <lastmod>2021-01-22</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-01-15-spring_cloud_stream_lead_oleg_zhurakousky.html</loc>
+        <lastmod>2021-01-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-01-08-netty_and_armeria_founder_trustin_lee.html</loc>
+        <lastmod>2021-01-08</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-12-31-googles_daniel_zou_on_spring_cloud_gcp_graalvm_and_more.html</loc>
+        <lastmod>2020-12-31</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-12-24-alibabas_sanhong_li_on_tuning_openjdk_for_alibaba_scale.html</loc>
+        <lastmod>2020-12-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-12-18-cloud_foundry_developer_advocate_shedrack_akintayo.html</loc>
+        <lastmod>2020-12-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-12-15-open_web_legend_dion_almaer.html</loc>
+        <lastmod>2020-12-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-12-15-spring_batch_colead_mahmoud_ben_hassine.html</loc>
+        <lastmod>2020-12-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-12-03-dr_heinz_kabutz.html</loc>
+        <lastmod>2020-12-03</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-11-26-swarn_podila_on_cloud_foundry_hashicorp_and_more.html</loc>
+        <lastmod>2020-11-26</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-11-20-programmer_agile_coach_technologist_and_troublemaker_dan_north.html</loc>
+        <lastmod>2020-11-20</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-11-12-spring_boot_24_and_then_living_legend_cto_and_friend_john_davies.html</loc>
+        <lastmod>2020-11-12</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-11-05-spring_legend_thomas_risberg_on_jdbc_spring_cloud_data_flow_kuberne.html</loc>
+        <lastmod>2020-11-05</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-10-29-spring_test_framework_lead_sam_brannen.html</loc>
+        <lastmod>2020-10-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-10-22-optic_ceo_aidan_cunniffe_on_openapi_contract_testing_and_so_much_mo.html</loc>
+        <lastmod>2020-10-22</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-10-15-datastaxs_patrick_mcfadin_on_datastax_astra_cassandra_cassandra_dat.html</loc>
+        <lastmod>2020-10-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-10-08-reactor_team_engineer_fellow_java_champion_and_conference_organizer.html</loc>
+        <lastmod>2020-10-08</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-10-02-longtime_spring_framework_engineer__arjen_poutsma_on_springs_web_su.html</loc>
+        <lastmod>2020-10-02</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-09-24-sentry_cto_david_cramer_on_automated_error_capture_and_analysis.html</loc>
+        <lastmod>2020-09-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-09-17-lightbend_cto_jonas_bon%C3%A9r_on_his_epic_aspectoriented_distributed_re.html</loc>
+        <lastmod>2020-09-17</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-09-10-legendary_spring_contributor_rossen_stoyanchev_on_all_things_web_re.html</loc>
+        <lastmod>2020-09-10</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-09-04-springone_2020_azure_spring_cloud_and_fellow_java_champion_and_micr.html</loc>
+        <lastmod>2020-09-04</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-08-27-soby_chacko_and_dave_turanski_on_messaging_in_spring_spring_cloud_s.html</loc>
+        <lastmod>2020-08-27</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-08-21-google_clouds_elena_felder_on_google_cloud_spanner_and_reactorbased.html</loc>
+        <lastmod>2020-08-21</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-08-14-rsocket_everywhere_and_spring_luminary_maciej_walkowiak_on_spring_c.html</loc>
+        <lastmod>2020-08-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-08-07-10_years_on_the_spring_team_and_jfrogs_baruch_sag.html</loc>
+        <lastmod>2020-08-07</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/10-years-on-the-spring-team.html</loc>
         <lastmod>2020-08-02</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-07-30-josh_lock_on_supply_chain_security_docker_trust_tuf_and_more.html</loc>
+        <lastmod>2020-07-30</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-07-24-spring_data_lead_mark_paluch.html</loc>
+        <lastmod>2020-07-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-07-17-intuits_katie_levy_on_spring_boot_kotlin_android_and_more.html</loc>
+        <lastmod>2020-07-17</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-07-10-spring_data_jdbc_cofounder_on_jdbc_jpa_and_domain_driven_design.html</loc>
+        <lastmod>2020-07-10</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-07-03-dr_yordan_karadzhov_on_instrumenting_and_visualizing_the_linux_kern.html</loc>
+        <lastmod>2020-07-03</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-06-25-vmware_principal_engineer_and_tanzu_wavefront_cofounder_clement_pan.html</loc>
+        <lastmod>2020-06-25</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-06-19-nisha_kumar_and_rose_judge_on_the_linux_foundations_tern.html</loc>
+        <lastmod>2020-06-19</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/running-h2-and-creating-new-databases.html</loc>
         <lastmod>2020-06-12</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-06-11-kubernetes_guru_paul_czarkowski.html</loc>
+        <lastmod>2020-06-11</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-06-06-spring_native_images_pt_2.html</loc>
+        <lastmod>2020-06-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-06-05-kubernetes_contributor_and_kubernetes_release_sig_chair_tim_pepper.html</loc>
+        <lastmod>2020-06-05</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-05-28-a_bootiful_podcast_dr_malini_bhandaru_on_edgex_and_the_opportunitie.html</loc>
+        <lastmod>2020-05-28</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/tired_of_winning.html</loc>
         <lastmod>2020-05-28</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-05-21-jenkins_founder_and_launchable_founder_kohsuke_kawaguchi.html</loc>
+        <lastmod>2020-05-21</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-05-14-vmware_coo_sanjay_poonen.html</loc>
+        <lastmod>2020-05-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-05-07-spring_and_java_community_member_edd%C3%BA_mel%C3%A9ndez_about_working_in_ope.html</loc>
+        <lastmod>2020-05-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-05-01-adrian_cole_founder_or_cofounder_of_feign_jclouds_and_spring_cloud_.html</loc>
+        <lastmod>2020-05-01</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-04-29-wavefront.html</loc>
+        <lastmod>2020-04-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-04-24-linux_kernel_hacker_and_real_time_patch_founder_steve_rostedt_on_ho.html</loc>
+        <lastmod>2020-04-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-04-23-configuration.html</loc>
+        <lastmod>2020-04-23</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-04-17-jetbrains_developer_advocacy_head_and_kotlin_rockstar_hadi_hariri.html</loc>
+        <lastmod>2020-04-17</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-04-16-spring_graal_feature.html</loc>
+        <lastmod>2020-04-16</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-04-10-microsofts_kushagra_thapar_on_spring_data_cosmosdb.html</loc>
+        <lastmod>2020-04-10</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-04-07-the_spring_integration_kotlin_dsl.html</loc>
+        <lastmod>2020-04-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-04-03-kubernetes_cocreator_joe_beda.html</loc>
+        <lastmod>2020-04-03</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-04-01-the_spring_cloud_cloud_foundry_java_autoconfiguration.html</loc>
+        <lastmod>2020-04-01</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/my-first-github-action.html</loc>
         <lastmod>2020-03-30</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-03-27-apache_groovy_testcontainers_and_reactor_committer_sergei_egorov.html</loc>
+        <lastmod>2020-03-27</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-03-25-spring_cloud_loadbalancer.html</loc>
+        <lastmod>2020-03-25</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-03-20-the_smileinducing_and_brilliant_glenn_renfro.html</loc>
+        <lastmod>2020-03-20</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-03-18-remote_file_system_integrations_with_spring_integration.html</loc>
+        <lastmod>2020-03-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-03-12-john_hawley_on_oss_at_vmware_python_security_and_more_plus_announci.html</loc>
+        <lastmod>2020-03-12</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-03-11-java_14_can_your_java_do_this.html</loc>
+        <lastmod>2020-03-11</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-03-06-spring_io_organizer_and_spring_trainer_extraordinairre_sergi_almar.html</loc>
+        <lastmod>2020-03-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-03-04-kotlin_and_spring_security.html</loc>
+        <lastmod>2020-03-04</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-02-28-spring_cloud_contract_lead_marcin_grzejszczak_on_spring_cloud_contr.html</loc>
+        <lastmod>2020-02-28</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-02-26-apache_rocketmq.html</loc>
+        <lastmod>2020-02-26</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-02-21-building_china_scale_infrastructure_at_alibaba_with_spring_cloud_rs.html</loc>
+        <lastmod>2020-02-21</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2020-02-18-rsocket_and_spring_security.html</loc>
+        <lastmod>2020-02-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-02-13-vedran_pavic_on_spring_session_croatia_and_so_much_more.html</loc>
+        <lastmod>2020-02-13</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-02-07-oleg_%C5%A1elajev_on_zeroturnaround_graalvm_the_vjug_and_so_much_more.html</loc>
+        <lastmod>2020-02-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-01-30-the_phoenix_project_author_gene_kim.html</loc>
+        <lastmod>2020-01-30</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-01-23-neo4js_mad_scientist_michael_hunger_on_graphs_databases_and_relatio.html</loc>
+        <lastmod>2020-01-23</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-01-16-spring_cloud_services_teammate_bella_yuxin_bai.html</loc>
+        <lastmod>2020-01-16</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-01-09-pivotal_labs_sydney_director_david_julia.html</loc>
+        <lastmod>2020-01-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-01-03-the_good_dr_dave_syer.html</loc>
+        <lastmod>2020-01-03</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/2019_year_in_review.html</loc>
         <lastmod>2019-12-31</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-12-26-microsofts_jialin_dai_on_spring_for_azure.html</loc>
+        <lastmod>2019-12-26</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-12-20-reactor_team_simon_basl%C3%A9.html</loc>
+        <lastmod>2019-12-20</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-12-12-i_need_to_talk_about_my_father_clark_bud_long_who_just_passed_away.html</loc>
+        <lastmod>2019-12-12</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-12-05-pivotals_katrina_bakas_on_pivotal_healthwatch_kubernetes_cloud_foun.html</loc>
+        <lastmod>2019-12-05</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-11-28-spring_tools_lead_martin_lippert.html</loc>
+        <lastmod>2019-11-28</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-11-21-spring_security_engineer_ria_stein.html</loc>
+        <lastmod>2019-11-21</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-11-15-redhat__ibms_s%C3%A9bastien_blanc_on_oauth_keycloak_the_french_riviera_a.html</loc>
+        <lastmod>2019-11-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-11-07-michael_simons_on_spring_boot_reactive_spring_data_neo4j_and_more.html</loc>
+        <lastmod>2019-11-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-10-31-hibernate_community_legend_vlad_mihalcea_on_the_project_hibernate_d.html</loc>
+        <lastmod>2019-10-31</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-10-24-apache_tomcat_netty_and_spring_framework_contributor_violeta_georgi.html</loc>
+        <lastmod>2019-10-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-10-18-bytebuddy_and_mockito_maestro_rafael_winterhalter.html</loc>
+        <lastmod>2019-10-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-10-10-spring_mad_scientist_andy_clement_on_aspectj_spel_eclipse_graal_and.html</loc>
+        <lastmod>2019-10-10</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-10-04-oracles_geertjan_wielenga_on_his_new_book_developer_advocate.html</loc>
+        <lastmod>2019-10-04</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-09-26-java_champion_and_jetbrains_developer_advocate_mala_gupta.html</loc>
+        <lastmod>2019-09-26</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-09-19-nicolai_parlog_on_java_modularity.html</loc>
+        <lastmod>2019-09-19</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-09-12-spring_framework_cofounder_and_lead_juergen_hoeller_on_spring_frame.html</loc>
+        <lastmod>2019-09-12</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-09-06-spring_integration_lead_gary_russell_on_apache_kafka_rabbitmq_sprin.html</loc>
+        <lastmod>2019-09-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-08-29-spring_cloud_data_flow_legend_ilayaperumal_gopinathan.html</loc>
+        <lastmod>2019-08-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-08-23-james_ward_matt_raible_and_ryan_knight.html</loc>
+        <lastmod>2019-08-23</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-08-15-spring_teammate_brian_clozel_on_new_features_in_spring_52_and_sprin.html</loc>
+        <lastmod>2019-08-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-08-08-devops_luminary_and_all_around_great_guy_john_willis.html</loc>
+        <lastmod>2019-08-08</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-08-01-gradle_developer_advocate_jenn_strater.html</loc>
+        <lastmod>2019-08-01</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-07-26-spring_team_legend_oliver_drotbohm_on_spring_data_hateoas_hypermedi.html</loc>
+        <lastmod>2019-07-26</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-07-19-azul_cto_gil_tene_on_jvms_garbage_collection_performance_and_so_muc.html</loc>
+        <lastmod>2019-07-19</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-07-12-mr_rest_mike_amundsen_on_apis_microservices_http_and_more.html</loc>
+        <lastmod>2019-07-12</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-07-04-dr_venkat_subramaniam_on_kotlin_java_spring_opensource_being_produc.html</loc>
+        <lastmod>2019-07-04</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-06-27-datadogs_jason_yee_on_observability_operations_metrics_kubernetes_l.html</loc>
+        <lastmod>2019-06-27</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-06-21-ibms_pratik_patel_on_functionasaservice_spring_cloud_function_sprin.html</loc>
+        <lastmod>2019-06-21</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-06-19-distributed_locks_with_spring_integration.html</loc>
+        <lastmod>2019-06-19</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-06-13-pivotal_svp_ian_andrews_on_our_customers_new_announcements_kubernet.html</loc>
+        <lastmod>2019-06-13</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-06-12-springs_support_for_kotlin_coroutines.html</loc>
+        <lastmod>2019-06-12</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-06-06-spring_cloud_lead_spencer_gibb.html</loc>
+        <lastmod>2019-06-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-06-05-organizational_consistency_in_your_spring_boot_applications.html</loc>
+        <lastmod>2019-06-05</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-05-30-golang_and_kubernetes_legend_ver%C3%B3nica_lopez.html</loc>
+        <lastmod>2019-05-30</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-05-29-debuggng_reactive_transactions.html</loc>
+        <lastmod>2019-05-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-05-24-twitters_chris_thalinger_on_java_graal_jvms_jits_sao_paolo_hawaii_a.html</loc>
+        <lastmod>2019-05-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-05-22-reactive_transactions.html</loc>
+        <lastmod>2019-05-22</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-05-16-nicolas_frankel_on_application_security_integration_testing_kotlin_.html</loc>
+        <lastmod>2019-05-16</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-05-15-spring_batch_and_apache_kafka.html</loc>
+        <lastmod>2019-05-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-05-09-kotlin_team_engineer_roman_elisarov.html</loc>
+        <lastmod>2019-05-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-05-08-reactive_web_views.html</loc>
+        <lastmod>2019-05-08</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-05-03-spring_cloud_engineer_olga_maciaszeksharma.html</loc>
+        <lastmod>2019-05-03</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-04-25-spring_batch_and_spring_cloud_task_lead_michael_minella.html</loc>
+        <lastmod>2019-04-25</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-04-24-spring_cloud_circuit_breaker.html</loc>
+        <lastmod>2019-04-24</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-04-18-pivotal_field_cto_and_og_cloud_native_matt_stine_on_architecture.html</loc>
+        <lastmod>2019-04-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-04-15-rsocket_messaging_in_spring_boot_22.html</loc>
+        <lastmod>2019-04-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-04-11-rabobanks_roy_braam.html</loc>
+        <lastmod>2019-04-11</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-04-04-kylie_liang_and_theresa_nguyen_on_microsofts_java_and_spring_integr.html</loc>
+        <lastmod>2019-04-04</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-04-03-webmvcfn__the_functional_dsl_for_spring_mvc.html</loc>
+        <lastmod>2019-04-03</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-03-28-josh_mckenty__better_josh__on_data_sovereignty_python_the_cloud_piv.html</loc>
+        <lastmod>2019-03-28</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-03-21-cqrs_with_axoniqs_steven_van_beelen_and_pivotals_ben_wilcock.html</loc>
+        <lastmod>2019-03-21</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-03-20-reactive_mysql_support_with_jasync_sql_and_r2dbc.html</loc>
+        <lastmod>2019-03-20</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-03-14-be_lazy_and_fast_with_spring_boot_22m1.html</loc>
+        <lastmod>2019-03-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-03-14-joe_grandja_on_spring_security_5s_oauth_support.html</loc>
+        <lastmod>2019-03-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-03-07-matt_raible_and_james_ward_at_devnexus_2019.html</loc>
+        <lastmod>2019-03-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-02-28-reactor_project_lead_st%C3%A9phane_maldini.html</loc>
+        <lastmod>2019-02-28</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-02-21-pivotal_application_platform_security_senior_manager_sree_tummidi.html</loc>
+        <lastmod>2019-02-21</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-02-14-spring_contributor_and_learning_spring_boot_20_author_greg_turnquis.html</loc>
+        <lastmod>2019-02-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-02-13-apache_geode.html</loc>
+        <lastmod>2019-02-13</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-02-07-codotas_dror_weiss.html</loc>
+        <lastmod>2019-02-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-02-06-testing_reactive_code.html</loc>
+        <lastmod>2019-02-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-01-31-spring_cloud_stream_lead_oleg_zhurakousky.html</loc>
+        <lastmod>2019-01-31</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-01-30-the_reactor_context.html</loc>
+        <lastmod>2019-01-30</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-01-25-spring_boot_engineer_madhura_bhave.html</loc>
+        <lastmod>2019-01-25</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-01-23-reactively_hedging_client_requests_with_a_service_registry.html</loc>
+        <lastmod>2019-01-23</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/emacs-pt-1.html</loc>
         <lastmod>2019-01-21</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-01-16-google_developer_advocate_ray_tsang.html</loc>
+        <lastmod>2019-01-16</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-01-16-javafx.html</loc>
+        <lastmod>2019-01-16</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-01-09-flowable.html</loc>
+        <lastmod>2019-01-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2019-01-02-rsocket.html</loc>
+        <lastmod>2019-01-02</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-12-26-alibaba.html</loc>
+        <lastmod>2018-12-26</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2018-12-20-jon_schneider_on_his_project_metrics_collection_facade_micrometer.html</loc>
+        <lastmod>2018-12-20</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-12-19-reactive_sql_data_access_with_spring_data_r2dbc.html</loc>
+        <lastmod>2018-12-19</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-12-12-google_cloud_platform.html</loc>
+        <lastmod>2018-12-12</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-12-05-microsoft_azure.html</loc>
+        <lastmod>2018-12-05</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-podcasts-2018-10-10-pivotals_senior_director_of_technology_cornelia_davis.html</loc>
+        <lastmod>2018-10-10</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/how-to-install-a-fully-souped-up-ffmpeg-on-osx.html</loc>
@@ -69,12 +913,56 @@
         <lastmod>2018-07-28</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-06-13-spring_fu.html</loc>
+        <lastmod>2018-06-13</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-06-06-jpa.html</loc>
+        <lastmod>2018-06-06</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-05-30-jdbc.html</loc>
+        <lastmod>2018-05-30</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-05-23-apache_camel.html</loc>
+        <lastmod>2018-05-23</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-05-16-project_riff_and_spring_cloud_function.html</loc>
+        <lastmod>2018-05-16</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-05-09-spring_security_5_oauth_clients.html</loc>
+        <lastmod>2018-05-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-05-02-metrics_collection_in_spring_boot_2_with_micrometer.html</loc>
+        <lastmod>2018-05-02</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-04-25-spring_statemachine.html</loc>
+        <lastmod>2018-04-25</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/april-and-may-2018.html</loc>
         <lastmod>2018-04-20</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-04-18-redis.html</loc>
+        <lastmod>2018-04-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-04-11-the_cloud_foundry_java_client.html</loc>
+        <lastmod>2018-04-11</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/atl-ind-CVG.html</loc>
         <lastmod>2018-04-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2018-04-04-spring_cloud_stream_kafka_streams.html</loc>
+        <lastmod>2018-04-04</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/springone-tour-2018-dallas.html</loc>
@@ -137,6 +1025,50 @@
         <lastmod>2018-01-13</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-12-15-bootiful_banners.html</loc>
+        <lastmod>2017-12-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-12-04-spring_tool_suite_4.html</loc>
+        <lastmod>2017-12-04</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-11-29-spring_cloud_gateway.html</loc>
+        <lastmod>2017-11-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-11-22-bootiful_testing.html</loc>
+        <lastmod>2017-11-22</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-11-15-spring_boot_build_plugin.html</loc>
+        <lastmod>2017-11-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-11-08-bootiful_kotlin_redux.html</loc>
+        <lastmod>2017-11-08</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-11-01-spring_shell.html</loc>
+        <lastmod>2017-11-01</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-10-25-spring_cloud_contract_http.html</loc>
+        <lastmod>2017-10-25</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-10-18-bootiful_jaxrs.html</loc>
+        <lastmod>2017-10-18</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-10-11-bootiful_reactive_scala.html</loc>
+        <lastmod>2017-10-11</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-09-27-reactive_websockets_with_spring_framework_5.html</loc>
+        <lastmod>2017-09-27</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/scallops.html</loc>
         <lastmod>2017-09-10</lastmod>
     </url>
@@ -153,12 +1085,92 @@
         <lastmod>2017-08-28</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-04-05-creating_a_spring_security_oauth_auth_service.html</loc>
+        <lastmod>2017-04-05</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-03-29-the_spring_framework_utils_classes.html</loc>
+        <lastmod>2017-03-29</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-03-22-servlet_container_deployment_options.html</loc>
+        <lastmod>2017-03-22</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/functionally_processing_a_string_in_java.html</loc>
         <lastmod>2017-03-18</lastmod>
     </url>
     <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-03-15-the_spring_web_flux_reactive_client.html</loc>
+        <lastmod>2017-03-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-03-08-server_sent_events_sse.html</loc>
+        <lastmod>2017-03-08</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-03-01-programmatic_bean_registration_in_spring_framework_5.html</loc>
+        <lastmod>2017-03-01</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-02-22-mybatis.html</loc>
+        <lastmod>2017-02-22</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-02-15-jooq.html</loc>
+        <lastmod>2017-02-15</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-02-08-distributed_tracing_with_zipkin.html</loc>
+        <lastmod>2017-02-08</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-02-01-spring_batch.html</loc>
+        <lastmod>2017-02-01</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2017-01-26-couchbase.html</loc>
+        <lastmod>2017-01-26</lastmod>
+    </url>
+    <url>
         <loc>https://joshlong.com/jl/blogPost/travel_is_fatal_to_prejudice.html</loc>
         <lastmod>2016-12-20</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-12-14-demystifying_bootiful_magic.html</loc>
+        <lastmod>2016-12-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-12-07-bootiful_dashboards.html</loc>
+        <lastmod>2016-12-07</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-11-30-jta.html</loc>
+        <lastmod>2016-11-30</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-11-23-cloud_foundry.html</loc>
+        <lastmod>2016-11-23</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-11-16-spring_cloud_data_flow.html</loc>
+        <lastmod>2016-11-16</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-11-09-spring_cloud_stream.html</loc>
+        <lastmod>2016-11-09</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-11-02-spring_aware_beans.html</loc>
+        <lastmod>2016-11-02</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-10-27-circuit_breakers.html</loc>
+        <lastmod>2016-10-27</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-10-19-the_kotlin_programming_language.html</loc>
+        <lastmod>2016-10-19</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/the-version-controlled-os.html</loc>
@@ -167,6 +1179,14 @@
     <url>
         <loc>https://joshlong.com/jl/blogPost/converting_mp4s_to_gifs.html</loc>
         <lastmod>2016-10-14</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-10-13-spring_integration.html</loc>
+        <lastmod>2016-10-13</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/announcement-videos-2016-10-05-functional_reactive_endpoints_with_spring_framework_50.html</loc>
+        <lastmod>2016-10-05</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/alternatives-to-dropbox.html</loc>
@@ -249,11 +1269,11 @@
         <lastmod>2013-09-17</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/introducing_spring_boot.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</loc>
         <lastmod>2013-08-07</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/introducing_spring_boot.html</loc>
         <lastmod>2013-08-07</lastmod>
     </url>
     <url>
@@ -261,15 +1281,15 @@
         <lastmod>2013-07-01</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</loc>
-        <lastmod>2013-06-19</lastmod>
-    </url>
-    <url>
         <loc>https://joshlong.com/jl/blogPost/on_java_code_style.html</loc>
         <lastmod>2013-06-19</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</loc>
+        <lastmod>2013-06-19</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</loc>
         <lastmod>2013-06-19</lastmod>
     </url>
     <url>
@@ -285,19 +1305,19 @@
         <lastmod>2013-04-24</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/java_configuration_with_spring_batch.html</loc>
-        <lastmod>2013-04-14</lastmod>
-    </url>
-    <url>
         <loc>https://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</loc>
         <lastmod>2013-04-14</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</loc>
-        <lastmod>2013-04-13</lastmod>
+        <loc>https://joshlong.com/jl/blogPost/java_configuration_with_spring_batch.html</loc>
+        <lastmod>2013-04-14</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/java_configuration.html</loc>
+        <lastmod>2013-04-13</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</loc>
         <lastmod>2013-04-13</lastmod>
     </url>
     <url>
@@ -309,11 +1329,11 @@
         <lastmod>2013-03-31</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/repl_vs_unit_tests_misses_the_point.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/upgrading_to_jdk_7_on_osx.html</loc>
         <lastmod>2013-03-20</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/upgrading_to_jdk_7_on_osx.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/repl_vs_unit_tests_misses_the_point.html</loc>
         <lastmod>2013-03-20</lastmod>
     </url>
     <url>
@@ -365,19 +1385,19 @@
         <lastmod>2013-01-03</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/they_think_of_everything.html</loc>
-        <lastmod>2012-12-31</lastmod>
-    </url>
-    <url>
         <loc>https://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</loc>
         <lastmod>2012-12-31</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/chinese_weather.html</loc>
-        <lastmod>2012-12-26</lastmod>
+        <loc>https://joshlong.com/jl/blogPost/they_think_of_everything.html</loc>
+        <lastmod>2012-12-31</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/christmas_in_shanghai.html</loc>
+        <lastmod>2012-12-26</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/chinese_weather.html</loc>
         <lastmod>2012-12-26</lastmod>
     </url>
     <url>
@@ -393,11 +1413,11 @@
         <lastmod>2012-12-16</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/springone_beijing_and_india_trip_report.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/rest_in_peace_ravi_shankar.html</loc>
         <lastmod>2012-12-12</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/rest_in_peace_ravi_shankar.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/springone_beijing_and_india_trip_report.html</loc>
         <lastmod>2012-12-12</lastmod>
     </url>
     <url>
@@ -421,11 +1441,11 @@
         <lastmod>2012-11-25</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/devoxx_2012_trip_report.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/getting_started_with_cloud_foundry_for_java_and_spring_developers.html</loc>
         <lastmod>2012-11-16</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/getting_started_with_cloud_foundry_for_java_and_spring_developers.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/devoxx_2012_trip_report.html</loc>
         <lastmod>2012-11-16</lastmod>
     </url>
     <url>
@@ -457,11 +1477,11 @@
         <lastmod>2012-10-18</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/springone2gx_2012.html</loc>
         <lastmod>2012-10-15</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/springone2gx_2012.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</loc>
         <lastmod>2012-10-15</lastmod>
     </url>
     <url>
@@ -481,11 +1501,11 @@
         <lastmod>2012-10-09</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/lanyrd.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</loc>
         <lastmod>2012-10-01</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/lanyrd.html</loc>
         <lastmod>2012-10-01</lastmod>
     </url>
     <url>
@@ -521,11 +1541,11 @@
         <lastmod>2012-02-21</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/jfokus_and_vaadin_2012.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/spring_io_2012.html</loc>
         <lastmod>2012-02-17</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/spring_io_2012.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/jfokus_and_vaadin_2012.html</loc>
         <lastmod>2012-02-17</lastmod>
     </url>
     <url>
@@ -585,11 +1605,11 @@
         <lastmod>2011-08-27</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</loc>
         <lastmod>2011-08-12</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html</loc>
         <lastmod>2011-08-12</lastmod>
     </url>
     <url>
@@ -657,11 +1677,11 @@
         <lastmod>2011-01-02</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/the_h2_embedded_database.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/devoxx_2010.html</loc>
         <lastmod>2010-11-23</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/devoxx_2010.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/the_h2_embedded_database.html</loc>
         <lastmod>2010-11-23</lastmod>
     </url>
     <url>
@@ -673,11 +1693,11 @@
         <lastmod>2010-10-18</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/java2days_2010.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</loc>
         <lastmod>2010-10-04</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/java2days_2010.html</loc>
         <lastmod>2010-10-04</lastmod>
     </url>
     <url>
@@ -857,11 +1877,11 @@
         <lastmod>2009-02-14</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/revised_spring_integration_maven_codepomxmlcode_example.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/dust.html</loc>
         <lastmod>2009-02-04</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/dust.html</loc>
+        <loc>https://joshlong.com/jl/blogPost/revised_spring_integration_maven_codepomxmlcode_example.html</loc>
         <lastmod>2009-02-04</lastmod>
     </url>
     <url>
@@ -905,15 +1925,15 @@
         <lastmod>2008-12-17</lastmod>
     </url>
     <url>
-        <loc>https://joshlong.com/jl/blogPost/a_journey_of_a_thousand.html</loc>
-        <lastmod>2008-12-17</lastmod>
-    </url>
-    <url>
         <loc>https://joshlong.com/jl/blogPost/anyone_else_noticing_the_extreme.html</loc>
         <lastmod>2008-12-17</lastmod>
     </url>
     <url>
         <loc>https://joshlong.com/jl/blogPost/apple_news_mobile_and_otherwise.html</loc>
+        <lastmod>2008-12-17</lastmod>
+    </url>
+    <url>
+        <loc>https://joshlong.com/jl/blogPost/a_journey_of_a_thousand.html</loc>
         <lastmod>2008-12-17</lastmod>
     </url>
     <url>
