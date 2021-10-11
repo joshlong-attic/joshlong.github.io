@@ -6,23 +6,13 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 10 Oct 2021 22:57:21 +0000</pubDate>
-    <lastBuildDate>Sun, 10 Oct 2021 22:57:21 +0000</lastBuildDate>
+    <pubDate>Mon, 11 Oct 2021 02:22:09 +0000</pubDate>
+    <lastBuildDate>Mon, 11 Oct 2021 02:22:09 +0000</lastBuildDate>
 
-    <item>
-      <title>Upcoming Appearance: SnykLive session about the state of Java (JVM report)</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-12-snyklive_session_about_the_state_of_java_jvm_report.html</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-12-snyklive_session_about_the_state_of_java_jvm_report.html</guid>
-      	<description>
-	&lt;p&gt;&lt;em&gt;2021-10-12&lt;/em&gt; -&lt;/p&gt;
-
-	</description>
-    </item>
     <item>
       <title>Upcoming Appearance: Code on https://twitch.tv/VmwareTanzu</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-13-code_on_httpstwitchtvvmwaretanzu.html</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-13-code_on_httpstwitchtvvmwaretanzu.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-13&lt;/em&gt; - Come join me and we&apos;ll look at an assortment of Spring Tips in this installment of &amp;quot;Code&amp;quot;&lt;/p&gt;
@@ -32,7 +22,7 @@
     <item>
       <title>Upcoming Appearance: Voxxed Days Romania</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-22-voxxed_days_romania.html</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-22-voxxed_days_romania.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-22&lt;/em&gt; - I&apos;ll be speaking at Voxxed Days Romania about building edge services with reactive programming, GraphQL, and Spring Cloud Gateway&lt;/p&gt;
@@ -42,7 +32,7 @@
     <item>
       <title>Upcoming Appearance: Masterclass + Taster Masterclass with GOTO Academy</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy.html</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-27&lt;/em&gt; - I&apos;ll be doing a &apos;Masterclass Taster&apos; talk with GOTO Academy on all things Spring, Kubernetes and Microservices...&lt;/p&gt;
@@ -52,7 +42,7 @@
     <item>
       <title>Upcoming Appearance: SnykLive session about the state of Java Report</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-12-snyklive_session_about_the_state_of_java_report.html</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-12-snyklive_session_about_the_state_of_java_report.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-12&lt;/em&gt; - I&apos;ll be on SnykLive doing a session about the state of Java Report&lt;/p&gt;
@@ -62,7 +52,7 @@
     <item>
       <title>Upcoming Appearance: KubeCon</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-14-kubecon.html</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-14-kubecon.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-14&lt;/em&gt; - I&apos;m not presenting, but I&apos;ll be there virtually and happy to chat if you see me trawling the various tracks and chats!&lt;/p&gt;
@@ -72,7 +62,7 @@
     <item>
       <title>Upcoming Appearance: Joker Conference</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-26&lt;/em&gt; - I&apos;ll be doing a virtual talk on Sprign GraphQL for the epic Joker conference in St. Petersburg, Russia&lt;/p&gt;
@@ -82,10 +72,20 @@
     <item>
       <title>Upcoming Appearance: Devoxx UK</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-11-01&lt;/em&gt; - I&apos;ll be doing a 3h workshop at Devoxx UK that you should not miss! Join me and we&apos;ll look at what building microservices at scale looks like in this workshop, &apos;Cloud Native Java.&apos;&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Upcoming Appearance: SnykLive session about the state of Java (JVM report)</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-12-snyklive_session_about_the_state_of_java_jvm_report.html</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-12-snyklive_session_about_the_state_of_java_jvm_report.html</guid>
+      	<description>
+	&lt;p&gt;&lt;em&gt;2021-10-12&lt;/em&gt; -&lt;/p&gt;
 
 	</description>
     </item>
