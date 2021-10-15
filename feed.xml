@@ -6,13 +6,13 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Thu, 14 Oct 2021 22:38:08 +0000</pubDate>
-    <lastBuildDate>Thu, 14 Oct 2021 22:38:08 +0000</lastBuildDate>
+    <pubDate>Fri, 15 Oct 2021 02:20:47 +0000</pubDate>
+    <lastBuildDate>Fri, 15 Oct 2021 02:20:47 +0000</lastBuildDate>
 
     <item>
       <title>Upcoming Appearance: Voxxed Days Romania</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-22-voxxed_days_romania.html</link>
-      <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-22-voxxed_days_romania.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-22&lt;/em&gt; - I&apos;ll be speaking at Voxxed Days Romania about building edge services with reactive programming, GraphQL, and Spring Cloud Gateway&lt;/p&gt;
@@ -22,10 +22,40 @@
     <item>
       <title>Upcoming Appearance: Masterclass + Taster Masterclass with GOTO Academy</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy.html</link>
-      <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-27&lt;/em&gt; - I&apos;ll be doing a &apos;Masterclass Taster&apos; talk with GOTO Academy on all things Spring, Kubernetes and Microservices...&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Bootiful Podcast: .NET legend Layla Porter on Azure Spring Cloud, Steeltoe.NET, and more</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-10-15-net_legend_layla_porter_on_azure_spring_cloud_steeltoenet_and_more.html</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2021-10-15-net_legend_layla_porter_on_azure_spring_cloud_steeltoenet_and_more.html</guid>
+      	<description>
+	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/941c07ee-1362-41fe-b9a0-a123dcb4405d/produced-audio&quot;&gt;(2021-10-15) .NET legend Layla Porter on Azure Spring Cloud, Steeltoe.NET, and more&lt;/a&gt;&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Upcoming Appearance: Joker Conference</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</guid>
+      	<description>
+	&lt;p&gt;&lt;em&gt;2021-10-26&lt;/em&gt; - I&apos;ll be doing a virtual talk on Sprign GraphQL for the epic Joker conference in St. Petersburg, Russia&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Upcoming Appearance: Devoxx UK</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</guid>
+      	<description>
+	&lt;p&gt;&lt;em&gt;2021-11-01&lt;/em&gt; - I&apos;ll be doing a 3h workshop at Devoxx UK that you should not miss! Join me and we&apos;ll look at what building microservices at scale looks like in this workshop, &apos;Cloud Native Java.&apos;&lt;/p&gt;
 
 	</description>
     </item>
@@ -40,32 +70,22 @@
 	</description>
     </item>
     <item>
-      <title>Upcoming Appearance: Joker Conference</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</link>
-      <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</guid>
-      	<description>
-	&lt;p&gt;&lt;em&gt;2021-10-26&lt;/em&gt; - I&apos;ll be doing a virtual talk on Sprign GraphQL for the epic Joker conference in St. Petersburg, Russia&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Upcoming Appearance: Devoxx UK</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</link>
-      <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</guid>
-      	<description>
-	&lt;p&gt;&lt;em&gt;2021-11-01&lt;/em&gt; - I&apos;ll be doing a 3h workshop at Devoxx UK that you should not miss! Join me and we&apos;ll look at what building microservices at scale looks like in this workshop, &apos;Cloud Native Java.&apos;&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Upcoming Appearance: Code on https://twitch.tv/VmwareTanzu</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-13-code_on_httpstwitchtvvmwaretanzu.html</link>
       <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-13-code_on_httpstwitchtvvmwaretanzu.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-13&lt;/em&gt; - Come join me and we&apos;ll look at an assortment of Spring Tips in this installment of Code&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring Tips: Spring Plugin</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-videos-2021-10-13-spring_plugin.html</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-videos-2021-10-13-spring_plugin.html</guid>
+      	<description>
+	&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=GlV5sXdXPu4&quot;&gt;(2021-10-13) Spring Plugin&lt;/a&gt;&lt;/p&gt;
 
 	</description>
     </item>
@@ -90,22 +110,22 @@
 	</description>
     </item>
     <item>
-      <title>Spring Tips: Spring GraphQL</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-videos-2021-10-07-spring_graphql.html</link>
-      <pubDate>Thu, 7 Oct 2021 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-videos-2021-10-07-spring_graphql.html</guid>
-      	<description>
-	&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=kVSYVhmvNCI&quot;&gt;(2021-10-07) Spring GraphQL&lt;/a&gt;&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Bootiful Podcast: Heiko Scherrer on OpenWMS, Spring, Spring Boot, Spring Data, workflow with Activiti and more</title>
       <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-10-07-heiko_scherrer_on_openwms_spring_spring_boot_spring_data_workflow_w.html</link>
       <pubDate>Thu, 7 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2021-10-07-heiko_scherrer_on_openwms_spring_spring_boot_spring_data_workflow_w.html</guid>
       	<description>
 	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/b8388222-4439-479c-9726-432838e34162/produced-audio&quot;&gt;(2021-10-07) Heiko Scherrer on OpenWMS, Spring, Spring Boot, Spring Data, workflow with Activiti and more  &lt;/a&gt;&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring Tips: Spring GraphQL</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-videos-2021-10-07-spring_graphql.html</link>
+      <pubDate>Thu, 7 Oct 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-videos-2021-10-07-spring_graphql.html</guid>
+      	<description>
+	&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=kVSYVhmvNCI&quot;&gt;(2021-10-07) Spring GraphQL&lt;/a&gt;&lt;/p&gt;
 
 	</description>
     </item>
