@@ -6,23 +6,13 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Tue, 26 Oct 2021 02:36:22 +0000</pubDate>
-    <lastBuildDate>Tue, 26 Oct 2021 02:36:22 +0000</lastBuildDate>
+    <pubDate>Wed, 27 Oct 2021 02:36:35 +0000</pubDate>
+    <lastBuildDate>Wed, 27 Oct 2021 02:36:35 +0000</lastBuildDate>
 
-    <item>
-      <title>Upcoming Appearance: Joker Conference</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</guid>
-      	<description>
-	&lt;p&gt;&lt;em&gt;2021-10-26&lt;/em&gt; - I&apos;ll be doing a virtual talk on Sprign GraphQL for the epic Joker conference in St. Petersburg, Russia&lt;/p&gt;
-
-	</description>
-    </item>
     <item>
       <title>Upcoming Appearance: Devoxx UK</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-11-01&lt;/em&gt; - I&apos;ll be doing a 3h workshop at Devoxx UK that you should not miss! Join me and we&apos;ll look at what building microservices at scale looks like in this workshop, &apos;Cloud Native Java.&apos;&lt;/p&gt;
@@ -32,10 +22,20 @@
     <item>
       <title>Upcoming Appearance: Masterclass + Taster Masterclass with GOTO Academy</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy.html</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-10-27&lt;/em&gt; - I&apos;ll be doing a &apos;Masterclass Taster&apos; talk with GOTO Academy on all things Spring, Kubernetes and Microservices...&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Upcoming Appearance: Joker Conference</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</guid>
+      	<description>
+	&lt;p&gt;&lt;em&gt;2021-10-26&lt;/em&gt; - I&apos;ll be doing a virtual talk on Sprign GraphQL for the epic Joker conference in St. Petersburg, Russia&lt;/p&gt;
 
 	</description>
     </item>
