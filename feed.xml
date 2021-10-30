@@ -6,13 +6,13 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Fri, 29 Oct 2021 02:36:40 +0000</pubDate>
-    <lastBuildDate>Fri, 29 Oct 2021 02:36:40 +0000</lastBuildDate>
+    <pubDate>Sat, 30 Oct 2021 02:37:21 +0000</pubDate>
+    <lastBuildDate>Sat, 30 Oct 2021 02:37:21 +0000</lastBuildDate>
 
     <item>
       <title>Upcoming Appearance: Devoxx UK</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</link>
-      <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</guid>
       	<description>
 	&lt;p&gt;&lt;em&gt;2021-11-01&lt;/em&gt; - I&apos;ll be doing a 3h workshop at Devoxx UK that you should not miss! Join me and we&apos;ll look at what building microservices at scale looks like in this workshop, &apos;Cloud Native Java.&apos;&lt;/p&gt;
