@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Mon, 22 Nov 2021 09:03:05 +0000</pubDate>
-    <lastBuildDate>Mon, 22 Nov 2021 09:03:05 +0000</lastBuildDate>
+    <pubDate>Mon, 22 Nov 2021 09:13:39 +0000</pubDate>
+    <lastBuildDate>Mon, 22 Nov 2021 09:13:39 +0000</lastBuildDate>
 
     <item>
       <title>Bootiful Podcast: Fellow Java Champion Kate Stanley on Kubernetes and Apache Kafka</title>
@@ -45,7 +45,7 @@
       <pubDate>Mon, 1 Nov 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-11-01-devoxx_uk.html</guid>
       	<description>
-	&lt;p&gt;[(2021-11-01) Devoxx UK](I&apos;ll be doing a 3h workshop at Devoxx UK that you should not miss! Join me and we&apos;ll look at what building microservices at scale looks like in this workshop, &apos;Cloud Native Java.&apos;)&lt;/p&gt;
+	&lt;p&gt;(2021-11-01) Devoxx UK&lt;/p&gt;
 
 	</description>
     </item>
@@ -75,7 +75,7 @@
       <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy.html</guid>
       	<description>
-	&lt;p&gt;[(2021-10-27) Masterclass + Taster Masterclass with GOTO Academy](I&apos;ll be doing a &apos;Masterclass Taster&apos; talk with GOTO Academy on all things Spring, Kubernetes and Microservices...)&lt;/p&gt;
+	&lt;p&gt;(2021-10-27) Masterclass + Taster Masterclass with GOTO Academy&lt;/p&gt;
 
 	</description>
     </item>
@@ -85,7 +85,7 @@
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-26-joker_conference.html</guid>
       	<description>
-	&lt;p&gt;[(2021-10-26) Joker Conference ](I&apos;ll be doing a virtual talk on Sprign GraphQL for the epic Joker conference in St. Petersburg, Russia)&lt;/p&gt;
+	&lt;p&gt;(2021-10-26) Joker Conference&lt;/p&gt;
 
 	</description>
     </item>
@@ -95,7 +95,7 @@
       <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-22-voxxed_days_romania.html</guid>
       	<description>
-	&lt;p&gt;[(2021-10-22) Voxxed Days Romania](I&apos;ll be speaking at Voxxed Days Romania about building edge services with reactive programming, GraphQL, and Spring Cloud Gateway)&lt;/p&gt;
+	&lt;p&gt;(2021-10-22) Voxxed Days Romania&lt;/p&gt;
 
 	</description>
     </item>
@@ -115,7 +115,7 @@
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-20-keynote__techtalks_online.html</guid>
       	<description>
-	&lt;p&gt;[(2021-10-20) Keynote @ TechTalks Online ](I&apos;ll be doing my talk &amp;quot;Kubernetes Native Java&amp;quot; for the Romanian show &lt;a href=&quot;https://www.hipo.ro/locuri-de-munca/locuri_de_munca/168033&quot;&gt;Tech Talks Online&lt;/a&gt; at 5am PDT - it&apos;ll be a lot of fun and I hope you&apos;ll join me! )&lt;/p&gt;
+	&lt;p&gt;(2021-10-20) Keynote @ TechTalks Online&lt;/p&gt;
 
 	</description>
     </item>
@@ -145,7 +145,7 @@
       <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-14-kubecon.html</guid>
       	<description>
-	&lt;p&gt;[(2021-10-14) KubeCon](I&apos;m not presenting, but I&apos;ll be there virtually and happy to chat if you see me trawling the various tracks and chats!)&lt;/p&gt;
+	&lt;p&gt;(2021-10-14) KubeCon&lt;/p&gt;
 
 	</description>
     </item>
@@ -155,7 +155,7 @@
       <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-13-code_on_httpstwitchtvvmwaretanzu.html</guid>
       	<description>
-	&lt;p&gt;[(2021-10-13) Code on https://twitch.tv/VmwareTanzu](Come join me and we&apos;ll look at an assortment of Spring Tips in this installment of Code)&lt;/p&gt;
+	&lt;p&gt;(2021-10-13) Code on &lt;a href=&quot;https://twitch.tv/VmwareTanzu&quot;&gt;https://twitch.tv/VmwareTanzu&lt;/a&gt;&lt;/p&gt;
 
 	</description>
     </item>
@@ -175,7 +175,7 @@
       <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-12-snyklive_session_about_the_state_of_java_report.html</guid>
       	<description>
-	&lt;p&gt;[(2021-10-12) SnykLive session about the state of Java Report ](I&apos;ll be on SnykLive doing a session about the state of Java Report )&lt;/p&gt;
+	&lt;p&gt;(2021-10-12) SnykLive session about the state of Java Report&lt;/p&gt;
 
 	</description>
     </item>
@@ -215,7 +215,7 @@
       <pubDate>Wed, 6 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-06-j4kio_speaker_session.html</guid>
       	<description>
-	&lt;p&gt;[(2021-10-06) J4K.io speaker session ](I&apos;ll be presenting &amp;quot;Bootiful Edge Services&amp;quot; at J4K.io, and I&apos;ll be there to answer any and all questions. )&lt;/p&gt;
+	&lt;p&gt;(2021-10-06) J4K.io speaker session&lt;/p&gt;
 
 	</description>
     </item>
@@ -275,7 +275,7 @@
       <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-09-14-japan_java_user_group.html</guid>
       	<description>
-	&lt;p&gt;[(2021-09-14) Japan Java User Group ](I&apos;ll be speaking at the Japanese Java User Group on the topic of &amp;quot;Kubernetes Native Java&amp;quot; - I hope you&apos;ll join us for this online event.)&lt;/p&gt;
+	&lt;p&gt;(2021-09-14) Japan Java User Group&lt;/p&gt;
 
 	</description>
     </item>
@@ -512,7 +512,7 @@ class ServiceConfiguration {
       <pubDate>Fri, 25 Jun 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-06-25-jlove_conference.html</guid>
       	<description>
-	&lt;p&gt;[(2021-06-25) jLove Conference ](I&apos;ll be returning to the JLove conference again, this time to talk about Kubernetes Native Java. I hope you&apos;ll join me!)&lt;/p&gt;
+	&lt;p&gt;(2021-06-25) jLove Conference&lt;/p&gt;
 
 	</description>
     </item>
@@ -542,7 +542,7 @@ class ServiceConfiguration {
       <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-06-22-oktadev_twitch_stream.html</guid>
       	<description>
-	&lt;p&gt;[(2021-06-22) OktaDev Twitch stream ](I&apos;ll be the Okta Dev Twitch Stream with Matt Raible and Brian Demers - don&apos;t miss this! We&apos;ll be working on Spring Native and the Okta Spring Boot starter.)&lt;/p&gt;
+	&lt;p&gt;(2021-06-22) OktaDev Twitch stream&lt;/p&gt;
 
 	</description>
     </item>
@@ -592,7 +592,7 @@ class ServiceConfiguration {
       <pubDate>Wed, 2 Jun 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-06-02-craft_2021.html</guid>
       	<description>
-	&lt;p&gt;[(2021-06-02) Craft 2021 ](Join me for Craft 2021 - where I&apos;ll be presenting &apos;Cloud Native Java&apos;)&lt;/p&gt;
+	&lt;p&gt;(2021-06-02) Craft 2021&lt;/p&gt;
 
 	</description>
     </item>
@@ -602,7 +602,7 @@ class ServiceConfiguration {
       <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-05-28-presentation_on_xgeeks_youtube_channel.html</guid>
       	<description>
-	&lt;p&gt;[(2021-05-28) Presentation on Xgeeks youtube channel ](I&apos;ll be on the XGeeks Youtube channel answering questions. I look forward to seeing you there.)&lt;/p&gt;
+	&lt;p&gt;(2021-05-28) Presentation on Xgeeks youtube channel&lt;/p&gt;
 
 	</description>
     </item>
@@ -622,7 +622,7 @@ class ServiceConfiguration {
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-05-25-java_day_istanbul_2021.html</guid>
       	<description>
-	&lt;p&gt;[(2021-05-25) Java Day Istanbul 2021 ](I&apos;m looking forward to presenting Cloud Native Java at &amp;quot;Java Day Istanbul 2021&amp;quot;! )&lt;/p&gt;
+	&lt;p&gt;(2021-05-25) Java Day Istanbul 2021&lt;/p&gt;
 
 	</description>
     </item>
@@ -723,7 +723,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Tue, 6 Apr 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-04-06-live_oreilly_training_on_spring_boot_and_kotlin_register_your_se.html</guid>
       	<description>
-	&lt;p&gt;[(2021-04-06) Live O&apos;Reilly training on Spring Boot and Kotlin. Register your seat now!](I&apos;ll be doing a live training for O&apos;Reilly on Spring Boot and Kotlin. I hope you&apos;ll join me here from 11am to 2pm on the 6th of April: &lt;a href=&quot;https://www.oreilly.com/live-training/courses/spring-boot-and-kotlin/0636920053993/&quot;&gt;https://www.oreilly.com/live-training/courses/spring-boot-and-kotlin/0636920053993/&lt;/a&gt;)&lt;/p&gt;
+	&lt;p&gt;(2021-04-06) Live O&apos;Reilly training on Spring Boot and Kotlin. Register your seat now!&lt;/p&gt;
 
 	</description>
     </item>
@@ -743,7 +743,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-03-26-cloud_builders_conference.html</guid>
       	<description>
-	&lt;p&gt;[(2021-03-26) Cloud Builders Conference ](Cloud Builders Conference )&lt;/p&gt;
+	&lt;p&gt;(2021-03-26) Cloud Builders Conference&lt;/p&gt;
 
 	</description>
     </item>
@@ -763,7 +763,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-03-18-bootiful_cassandra_with_datastaxs_patrick_mcfadin.html</guid>
       	<description>
-	&lt;p&gt;[(2021-03-18) Bootiful Cassandra with DataStax&apos;s Patrick McFadin ](Bootiful Cassandra with DataStax&apos;s Patrick McFadin )&lt;/p&gt;
+	&lt;p&gt;(2021-03-18) Bootiful Cassandra with DataStax&apos;s Patrick McFadin&lt;/p&gt;
 
 	</description>
     </item>
@@ -783,7 +783,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-03-17-meet_up_java_in_the_cloud_native_world.html</guid>
       	<description>
-	&lt;p&gt;[(2021-03-17) Meet up Java in the Cloud Native World](Meet up Java in the Cloud Native World)&lt;/p&gt;
+	&lt;p&gt;(2021-03-17) Meet up Java in the Cloud Native World&lt;/p&gt;
 
 	</description>
     </item>
@@ -793,7 +793,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-03-11-springone_tour.html</guid>
       	<description>
-	&lt;p&gt;[(2021-03-11) SpringOne Tour](Spring time is here! This year&apos;s SpringOne Tour event is going to be &lt;em&gt;amazing&lt;/em&gt;! Do not miss it. I&apos;ll be doing a presentation with Mark Heckler, Nate Schutta, Cora Iberkleid, Paul Czarkowski, and Tiffany Jernigan. It&apos;ll be a production-centric adventure.)&lt;/p&gt;
+	&lt;p&gt;(2021-03-11) SpringOne Tour&lt;/p&gt;
 
 	</description>
     </item>
@@ -813,7 +813,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Tue, 9 Mar 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-03-09-talk_for_java_user_group_passau_reactive_spring__45_minute_talk_.html</guid>
       	<description>
-	&lt;p&gt;[(2021-03-09) Talk for Java User Group Passau- Reactive Spring - 45 minute talk and 15 Q&amp;amp;A](I&apos;ll be doing a talk for the Java User Group Passau on Reactive Spring)&lt;/p&gt;
+	&lt;p&gt;(2021-03-09) Talk for Java User Group Passau- Reactive Spring - 45 minute talk and 15 Q&amp;amp;A&lt;/p&gt;
 
 	</description>
     </item>
@@ -843,7 +843,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-02-24-panelist_invite__how_to_prevent_debugging_from_becoming_a_produc.html</guid>
       	<description>
-	&lt;p&gt;[(2021-02-24) Panelist Invite - How to prevent debugging from becoming a productivity &amp;amp; delivery killer other panel members: Daniel Bryant  (Ambassador Labs), Mary Grygleski (IBM), Jonathan Harris (Undo)](I&apos;ll be on a panel for Undo software along with others like Mary Grygleski, Jonathan Harris, Daniel Bryant and Angie Jones. Do Not Miss This! )&lt;/p&gt;
+	&lt;p&gt;(2021-02-24) Panelist Invite - How to prevent debugging from becoming a productivity &amp;amp; delivery killer other panel members: Daniel Bryant  (Ambassador Labs), Mary Grygleski (IBM), Jonathan Harris (Undo)&lt;/p&gt;
 
 	</description>
     </item>
@@ -853,7 +853,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-02-24-code_on_twitch.html</guid>
       	<description>
-	&lt;p&gt;[(2021-02-24) Code on Twitch](Join me on Tanzu TV - twitch.tv/vmwaretanzu - and we&apos;ll look at Spring Cloud Gateway)&lt;/p&gt;
+	&lt;p&gt;(2021-02-24) Code on Twitch&lt;/p&gt;
 
 	</description>
     </item>
@@ -883,7 +883,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-02-18-javadaylviv_2021.html</guid>
       	<description>
-	&lt;p&gt;[(2021-02-18) JavaDayLviv 2021](I&apos;ll be speaking at JavaDayLviv and I hope to see you there!)&lt;/p&gt;
+	&lt;p&gt;(2021-02-18) JavaDayLviv 2021&lt;/p&gt;
 
 	</description>
     </item>
@@ -903,7 +903,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
       <pubDate>Tue, 9 Feb 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-02-09-oop_german_conference.html</guid>
       	<description>
-	&lt;p&gt;[(2021-02-09) OOP German Conference](Join me for the epic OOP Java conference where I&apos;ll be talking about Cloud Native Java)&lt;/p&gt;
+	&lt;p&gt;(2021-02-09) OOP German Conference&lt;/p&gt;
 
 	</description>
     </item>
