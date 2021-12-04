@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Fri, 3 Dec 2021 02:40:15 +0000</pubDate>
-    <lastBuildDate>Fri, 3 Dec 2021 02:40:15 +0000</lastBuildDate>
+    <pubDate>Sat, 4 Dec 2021 02:42:14 +0000</pubDate>
+    <lastBuildDate>Sat, 4 Dec 2021 02:42:14 +0000</lastBuildDate>
 
     <item>
       <title>Bootiful Podcast: DataStax&apos;s Christopher Bradford on the Apache Cassandra operator for Kubernetes, K8ssandra</title>
