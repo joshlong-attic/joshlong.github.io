@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>MyBatis and Spring Native 0.11.x</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+    <link rel="alternate" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml" />
+    <link rel="alternate feed" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml">
+ 
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+ 
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+ 	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+	    <li><a href="../../feed.html">Activity</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+            <li><a href="../../livelessons.html">Livelessons</a></li>
+            <li><a href="../../books.html">Books</a></li>
+	          <li><a href="http://bootifulpodcast.fm">A Bootiful Podcast </a></li>
+	          <li><a href="https://bit.ly/spring-tips-playlist">The Spring Tips Videos </a></li>	   
+            <li><a href="https://twitch.tv/javajoshlong">I stream on Twitch</a></li>   
+             <li><a href="https://patreon.com/joshlong">Patreon</a></li>       
+            <li><a href="../../feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>MyBatis and Spring Native 0.11.x</h1>
+	</div>
+
+	<p><em>18 December 2021</em></p>
+
+	<p><p>Hi, Spring fans! I've been working on getting various projects working with the <a href="https://spring.io/blog/2021/12/09/new-aot-engine-brings-spring-native-to-the-next-level">latest-and-greatest Spring Native release</a>. Spring Native is a framework that helps derive the hints for your Spring Boot application so  that they work correctly in a GraalVM natively compiled context. I did an extensive Spring Tips video on the topic just a week ago, and you should definitely check that out for the skinny on <a href="https://www.youtube.com/watch?v=DVo5vmk5Cuw&amp;list=PLgGXSWYM2FpPw8rV0tZoMiJYSCiLhPnOc&amp;index=3">what's new and nice in Spring Native 0.11.x</a>. Most Spring Boot applications doing typical bean creation and injection should work out of the box. The tricky bits are when you're trying to work with frameworks that leverage some of the JVM's more dynamic capabilities, like reflection and proxies. So, I've been looking at some of those more interesting use cases and seeing what it'd take to make them work with Spring Native.</p>
+<p>As part of that, I've been working on making <a href="https://github.com/spring-projects-experimental/spring-retrosocket">Spring Retrosocket work with Spring Native (tl;dr: it does!)</a>. I've been working with <a href="https://twitter.com/mraible">Matt Rabile</a> on <a href="https://www.linkedin.com/pulse/jhipster-works-spring-native-part-2-matt-raible/">making JHipster work with Spring Native (tl;dr: it <em>mostly</em> does!)</a>.</p>
+<p>And now I'm looking at what's required to make MyBatis work with Spring Native. So far, I've managed to make the core MyBatis Spring module work with Spring Native. I haven't yet tried the MyBatis Spring Boot Starter. Here's what's needed to make <a href="https://mybatis.org">MyBatis Spring</a> work.</p>
+<p>I went to the <a href="https://start.spring.io">Spring Initializr</a> and generated  a new project with <code>MyBatis</code>, the embedded SQL Database <code>H2</code>,<code>Lombok</code>, and <code>Spring Native</code> selected. I'm using Java 17. (Tangent: it appears that MyBatis doesn't yet support Java <code>record</code> types: boo! I wouldn't need <code>Lombok</code> if it did...).</p>
+<p>In a typical Spring Native integration, there are two parts: the parts that are common to all the users of a library, and the parts that are unique to a particular user of a library. Let's look at the example, <em>in toto</em>, and then we'll look  at what we had to add to make it work as a native application.</p>
+<p>MyBatis is a SQL mapper framework that's been around in some incarnation or another for almost as long as Spring has been. It works well and is widely used. I noticed that a ton of orgs and random users in China were also leveraging it, for example.</p>
+<p>A MyBatis application has a few typical components. A <em>mapper</em> is a Java <code>interface</code> that defines queries, sort of like a Spring Data repository.</p>
+<p>Here's my trivial mapper:</p>
+<pre><code class="language-java">package com.example.mybatisnative;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.Collection;
+
+@Mapper
+public interface CityMapper {
+
+	@Insert(&quot;INSERT INTO city (name, state, country) VALUES(#{name}, #{state}, #{country})&quot;)
+	@Options(useGeneratedKeys = true, keyProperty = &quot;id&quot;)
+	void insert(City city);
+
+	@Select(&quot;SELECT id, name, state, country FROM city &quot;)
+	Collection&lt;City&gt; findAll();
+
+}
+</code></pre>
+<p>This in turn maps SQL data from  my <code>city</code> table into Java objects of type <code>City</code>.</p>
+<pre><code class="language-java">@Data
+@NoArgsConstructor
+@AllArgsConstructor
+class City {
+	private Integer id;
+	private String name, state, country;
+}
+</code></pre>
+<p>In the following example, we setup a few objects that are responsible for factorying the mapper interface into a usable object.</p>
+<pre><code class="language-java">@SpringBootApplication(exclude = {
+	MybatisLanguageDriverAutoConfiguration.class,
+	MybatisAutoConfiguration.class
+})
+public class MybatisNativeApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MybatisNativeApplication.class, args);
+	}
+
+	@Bean
+	SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+		return new SqlSessionTemplate(sqlSessionFactory);
+	}
+
+	@Bean
+	CityMapper cityMapper(SqlSessionTemplate sqlSessionTemplate) {
+		return sqlSessionTemplate.getMapper(CityMapper.class);
+	}
+
+	@Bean
+	SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) throws Exception {
+		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
+		factoryBean.setDataSource(dataSource);
+		Configuration configuration = new Configuration();
+		configuration.addMapper(CityMapper.class);
+		factoryBean.setConfiguration(configuration);
+		return factoryBean;
+	}
+
+	@Bean
+	ApplicationRunner runner(CityMapper cityMapper) {
+		return args -&gt; {
+
+			for (var c : cityMapper.getClass().getInterfaces())
+				System.out.println(&quot;class: &quot; + c.getName());
+
+			cityMapper.insert(new City(null, &quot;NYC&quot;, &quot;NY&quot;, &quot;USA&quot;));
+			cityMapper.findAll().forEach(System.out::println);
+		};
+	}
+}
+
+
+</code></pre>
+<p>Since we used the Spring Initializr to setup the application, it brought in the Spring Boot starter and its autoconfiguration, not just the core MyBatis Spring integration. If you're trying to make something work with Spring Native, always reduce the surface area of the integration. Get one small thing to work at a time and then scale up. So, in the example above, you'll note that I've <em>excluded</em> the autoconfiguration from the Spring Boot autoconfiguration.</p>
+<p>That looks to be most of the application. I'm using H2 however, which is an embedded SQL database, so I need to initialize the schema with a file, <code>src/main/resources/schema.sql</code>:</p>
+<pre><code class="language-sql">
+CREATE TABLE city
+(
+  id      INT PRIMARY KEY auto_increment,
+  name    VARCHAR,
+  state   VARCHAR,
+  country VARCHAR
+);
+</code></pre>
+<p>I also installed some sample data, with a file <code>src/main/resources/data.sql</code>:</p>
+<pre><code class="language-sql">insert into city(name, state, country) values( 'San Francisco' , 'CA', 'USA') ;
+insert into city(name, state, country) values( 'Boston' , 'MA', 'USA') ;
+insert into city(name, state, country) values( 'Portland' , 'OR', 'USA') ;
+</code></pre>
+<p>Run the program on the JRE and you should see some output and everything should be fine.</p>
+<p>If you compile it to a native application, however, you'll run into trouble:</p>
+<pre><code class="language-shell">mvn -DskipTests=true -Pnative clean package
+</code></pre>
+<p>You're going to need to tell Spring Native about your mapper (<code>CityMapper</code>) and the entity, <code>City</code>, so that it knows you're going to create proxies from a given type and that you're going to reflect on that type. Add the following to the top of your application's <code>@SpringBootApplication</code>-annotated type.</p>
+<pre><code class="language-java">import org.springframework.nativex.hint.JdkProxyHint;
+import org.springframework.nativex.hint.TypeHint;
+import static org.springframework.nativex.hint.TypeAccess.*;
+
+
+@TypeHint(
+	types = {City.class, CityMapper.class},
+	access = {
+		PUBLIC_CONSTRUCTORS,
+		PUBLIC_CLASSES,
+		PUBLIC_FIELDS,
+		PUBLIC_METHODS,
+		DECLARED_CLASSES,
+		DECLARED_CONSTRUCTORS,
+		DECLARED_FIELDS,
+		DECLARED_METHODS
+	}
+)
+@JdkProxyHint(types = CityMapper.class)
+
+``
+
+
+This handles your unique incompatabilities, but doesn't help with the tons of reflection and proxy-work that MyBatis does behind the scenes. I've extracted all of that into a reusable, standalone `NativeConfiguration` class.
+
+
+```java
+package org.mybatis.spring.nativex;
+
+
+import org.apache.ibatis.javassist.util.proxy.ProxyFactory;
+import org.apache.ibatis.javassist.util.proxy.RuntimeSupport;
+import org.apache.ibatis.logging.Log;
+import org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl;
+import org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl;
+import org.apache.ibatis.logging.log4j.Log4jImpl;
+import org.apache.ibatis.logging.log4j2.Log4j2Impl;
+import org.apache.ibatis.logging.nologging.NoLoggingImpl;
+import org.apache.ibatis.logging.slf4j.Slf4jImpl;
+import org.apache.ibatis.logging.stdout.StdOutImpl;
+import org.apache.ibatis.scripting.defaults.RawLanguageDriver;
+import org.apache.ibatis.scripting.xmltags.XMLLanguageDriver;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.springframework.nativex.hint.InitializationHint;
+import org.springframework.nativex.hint.InitializationTime;
+import org.springframework.nativex.hint.NativeHint;
+import org.springframework.nativex.hint.TypeHint;
+import org.springframework.nativex.type.NativeConfiguration;
+
+import static org.springframework.nativex.hint.TypeAccess.*;
+
+
+/**
+	* Registers hints to make a MyBatis Mapper work in a Spring Native context
+	*
+	* @author Josh Long
+	*/
+@NativeHint(
+	initialization = {
+		@InitializationHint(initTime = InitializationTime.BUILD, types = org.apache.ibatis.type.JdbcType.class)
+	},
+	options = {&quot;--initialize-at-build-time=org.apache.ibatis.type.JdbcType&quot;}
+)
+@TypeHint(
+	types = {
+		RawLanguageDriver.class,
+		XMLLanguageDriver.class,
+		RuntimeSupport.class,
+		ProxyFactory.class,
+		Slf4jImpl.class,
+		Log.class,
+		JakartaCommonsLoggingImpl.class,
+		Log4jImpl.class,
+		Log4j2Impl.class,
+		Jdk14LoggingImpl.class,
+		StdOutImpl.class,
+		NoLoggingImpl.class,
+		SqlSessionFactory.class, SqlSessionFactoryBean.class,
+	}, //
+	access = {
+		PUBLIC_CONSTRUCTORS,
+		PUBLIC_CLASSES,
+		PUBLIC_FIELDS,
+		PUBLIC_METHODS,
+		DECLARED_CLASSES,
+		DECLARED_CONSTRUCTORS,
+		DECLARED_FIELDS,
+		DECLARED_METHODS
+	})
+
+public class MyBatisNativeConfiguration
+	implements NativeConfiguration {
+
+}
+
+</code></pre>
+<p>Spring Native won't invovle this <code>NativeConfiguration</code> implementation in the build unless you register it in the <code>src/main/resources/META-INF/spring.factories</code> service loader.</p>
+<pre><code class="language-properties">org.springframework.nativex.type.NativeConfiguration =org.mybatis.spring.nativex.MyBatisNativeConfiguration
+</code></pre>
+<p>With all that in place, re-run the build and you should get output like the following:</p>
+<pre><code>11:07:40.651 [main] INFO org.springframework.boot.SpringApplication - AOT mode enabled
+2021-12-18 11:07:40.669  INFO 6857 --- [           main] o.s.nativex.NativeListener               : This application is bootstrapped with code generated with Spring AOT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.1)
+
+2021-12-18 11:07:40.670  INFO 6857 --- [           main] c.e.m.MybatisNativeApplication           : Starting MybatisNativeApplication v0.0.1-SNAPSHOT using Java 17.0.1 on mbp2019.local with PID 6857 (/Users/jlong/Downloads/mybatis-native/target/mybatis-native started by jlong in /Users/jlong/Downloads/mybatis-native)
+2021-12-18 11:07:40.670  INFO 6857 --- [           main] c.e.m.MybatisNativeApplication           : No active profile set, falling back to default profiles: default
+2021-12-18 11:07:40.696  INFO 6857 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-18 11:07:40.698  INFO 6857 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-18 11:07:40.702  INFO 6857 --- [           main] c.e.m.MybatisNativeApplication           : Started MybatisNativeApplication in 0.051 seconds (JVM running for 0.052)
+class: com.example.mybatisnative.CityMapper
+City(id=1, name=San Francisco, state=CA, country=USA)
+City(id=2, name=Boston, state=MA, country=USA)
+City(id=3, name=Portland, state=OR, country=USA)
+City(id=4, name=NYC, state=NY, country=USA)
+2021-12-18 11:07:40.704  INFO 6857 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-18 11:07:40.704  INFO 6857 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+</code></pre>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2018 JoshLong.com </p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>
