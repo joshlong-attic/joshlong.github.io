@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sat, 18 Dec 2021 19:39:23 +0000</pubDate>
-    <lastBuildDate>Sat, 18 Dec 2021 19:39:23 +0000</lastBuildDate>
+    <pubDate>Sat, 18 Dec 2021 19:56:46 +0000</pubDate>
+    <lastBuildDate>Sat, 18 Dec 2021 19:56:46 +0000</lastBuildDate>
 
     <item>
       <title>MyBatis and Spring Native 0.11.x</title>
@@ -245,6 +245,7 @@ City(id=4, name=NYC, state=NY, country=USA)
 2021-12-18 11:07:40.704  INFO 6857 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-12-18 11:07:40.704  INFO 6857 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I&apos;ve preserved all the code for this in the &lt;code&gt;mybatis-spring&lt;/code&gt; &lt;a href=&quot;https://github.com/joshlong/mybatis-spring-native/tree/mybatis-spring&quot;&gt;branch in this Git repository&lt;/a&gt;.&lt;/p&gt;
 
 	</description>
     </item>
