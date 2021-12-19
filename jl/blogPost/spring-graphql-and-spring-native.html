@@ -78,7 +78,8 @@
 
 	<p><em>18 December 2021</em></p>
 
-	<p><p>I wanted to make Spring GraphQL and Spring Native work well together. It's pretty easy to get the absolute basic application working. Go to the Spring Initializr and generate a new application usign Spring Webflux an Spring Native. Spring GraphQL works with both the Servlet API (and something like Apache Tomcat) and the reactive, non-blocking Spring Webflux webstack. I obviously quite prefer anything reactive, so I chose that.</p>
+	<p><p>The sample code that I'm reproducing here can be <a href="https://github.com/joshlong/graphql-spring-native">found in this Github Repository</a>.</p>
+<p>I wanted to make Spring GraphQL and Spring Native work well together. It's pretty easy to get the absolute basic application working. Go to the Spring Initializr and generate a new application usign Spring Webflux an Spring Native. Spring GraphQL works with both the Servlet API (and something like Apache Tomcat) and the reactive, non-blocking Spring Webflux webstack. I obviously quite prefer anything reactive, so I chose that.</p>
 <p>The next bit's not so easy: you need to add the dependency to the build for Spring GraphQL itself. The project's not yet on the Spring Initializr as of the time of this writing. You'll have to do things the old fashioned way.</p>
 <p>Add the dependency proper:</p>
 <pre><code class="language-xml">&lt;dependency&gt;
