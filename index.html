@@ -75,6 +75,224 @@
 	<div class="page-header">
 		<h1>Blog</h1>
 	</div>
+  			<a href="jl/blogPost/fabric8-and-spring-native.html"><h1>The Fabric8 Java Client, Spring Native and Spring Boot</h1></a>
+  			<p>22 December 2021</p>
+  			<p><p>Earlier, I wrote an example on how to <a href="https://joshlong.com/jl/blogPost/kubernetes-java-client-and-spring-native-and-graalvm.html">get Spring Native and the official Kubernetes Native Java client</a> working with the newly released <a href="https://www.youtube.com/watch?v=DVo5vmk5Cuw&amp;t=2288s">Spring Native 0.11</a>. I mentioned that I had to write <a href="https://github.com/kubernetes-native-java/spring-native-kubernetes/blob/main/src/main/java/io/kubernetes/nativex/KubernetesApiNativeConfiguration.java">a trivial configuration class</a> to register the types that were used reflectively in the Spring Boot application, something that GraalVM frowns upon.</p>
+<p>Then, <a href="https://twitter.com/MarcNuri">Marc Nuri</a> - who works on the Fabric8 project (the excellent Red Hat-driven client for Kubernetes) - took my trivial example, some of which I in turn took from the good <a href="https://twitter.com/david_syer">Dr. Dave Syer</a>, and turned into an example written in terms of Faric8. The Fabric8 project looks really good, and I wanted an excuse to get around to making that work at some point sooner rather than later, too! Now I had a great reason. Good news: it was even easier to get this working with Spring Boot and Spring Native. There's no Spring Boot autoconfiguration, <em>per se</em>, and there's no existing integration with Spring Nativem so I had to write that myself, but it was about as easy as the integration I wrote for the official Kubernetes Java client. This has to do mainly I think with the fact that there were fewer things in the project that I had to explicitly register. I could see patterns and then register everything that fit that pattern, and it <em>just worked</em>. (Three cheers for consistency!) It's so much more tedious to write GraalVM and Spring Native hints (configurations, basically) when you're sort of discovering the places that need those hints by surprise, one at a time. The cycle time is of course very slow for GraalVM compiles, so I was very happy to get something working so quickly: great job, Fabric8!</p>
+<p>Here's the code for that integration:</p>
+<pre><code class="language-java">package com.example.fabric8native.nativex;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.fabric8.kubernetes.api.model.KubernetesResource;
+import io.fabric8.kubernetes.api.model.NamedCluster;
+import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
+import org.reflections.Reflections;
+import org.springframework.aot.context.bootstrap.generator.infrastructure.nativex.NativeConfigurationRegistry;
+import org.springframework.nativex.AotOptions;
+import org.springframework.nativex.hint.NativeHint;
+import org.springframework.nativex.hint.TypeAccess;
+import org.springframework.nativex.type.NativeConfiguration;
+import org.springframework.util.ReflectionUtils;
+
+import java.lang.annotation.Annotation;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+/**
+ * Spring Native support for excellent Fabric8 Kubernetes client from Red Hat (thanks, Red Hat!)
+ *
+ * @author Josh Long
+ */
+@Slf4j
+@NativeHint(options = {&quot;-H:+AddAllCharsets&quot;, &quot;--enable-https&quot;, &quot;--enable-url-protocols=https&quot;})
+public class Fabric8NativeConfiguration implements NativeConfiguration {
+
+	private final Class&lt;?&gt; clazz = NamedCluster.class;
+	private final Reflections reflections = new Reflections(clazz.getPackageName(), clazz);
+
+	@Override
+	public void computeHints(NativeConfigurationRegistry registry, AotOptions aotOptions) {
+		var subtypesOfKubernetesResource = reflections.getSubTypesOf(KubernetesResource.class);
+		var othersToAddForReflection = List.of(
+			io.fabric8.kubernetes.internal.KubernetesDeserializer.class
+		);
+		var combined = new HashSet&lt;Class&lt;?&gt;&gt;();
+		combined.addAll(subtypesOfKubernetesResource);
+		combined.addAll(othersToAddForReflection);
+		combined.addAll(resolveSerializationClasses(JsonSerialize.class));
+		combined.addAll(resolveSerializationClasses(JsonDeserialize.class));
+		combined
+			.stream()
+			.filter(Objects::nonNull)
+			.forEach(c -&gt; {
+				if (log.isDebugEnabled()) {
+					log.debug(&quot;trying to register &quot; + c.getName() + &quot; for reflection&quot;);
+				}
+				registry.reflection().forType(c).withAccess(TypeAccess.values()).build();
+			});
+	}
+
+	@SneakyThrows
+	private &lt;R extends Annotation&gt; Set&lt;Class&lt;?&gt;&gt; resolveSerializationClasses(Class&lt;R&gt; annotationClazz) {
+		var method = annotationClazz.getMethod(&quot;using&quot;);
+		var classes = this.reflections.getTypesAnnotatedWith(annotationClazz);
+		return classes.stream().map(clazzWithAnnotation -&gt; {
+
+			if (log.isDebugEnabled()) {
+				log.debug(&quot;found &quot; + clazzWithAnnotation.getName() + &quot; : &quot; + annotationClazz.getName());
+			}
+
+			var annotation = clazzWithAnnotation.getAnnotation(annotationClazz);
+			try {
+				if (annotation != null) {
+					return (Class&lt;?&gt;) method.invoke(annotation);
+				}
+			}
+			catch (Exception e) {
+				ReflectionUtils.rethrowRuntimeException(e);
+			}
+			return null;
+		})
+			.collect(Collectors.toSet());
+	}
+
+}
+</code></pre>
+<p>You'll need to add that your <code>META-INF/spring.factories</code> file, like this:</p>
+<pre><code class="language-properties">org.springframework.nativex.type.NativeConfiguration=com.example.fabric8native.nativex.Fabric8NativeConfiguration
+</code></pre>
+<p>Now you just need an example that uses the Fabric8 API. I was able to sort of figure it out by looking at the blog post. The result looks fairly similar to my original example, so that helped, too. Here's the example:</p>
+<pre><code class="language-java">package com.example.fabric8native;
+
+import io.fabric8.kubernetes.api.model.*;
+import io.fabric8.kubernetes.client.DefaultKubernetesClient;
+import io.fabric8.kubernetes.client.KubernetesClient;
+import io.fabric8.kubernetes.client.informers.ResourceEventHandler;
+import io.fabric8.kubernetes.client.informers.SharedIndexInformer;
+import io.fabric8.kubernetes.client.informers.SharedInformerFactory;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.ContextStoppedEvent;
+
+import java.util.Objects;
+
+/**
+	* This example uses &lt;a href=&quot;https://developers.redhat.com/blog/2020/05/20/getting-started-with-the-fabric8-kubernetes-java-client#using_fabric8_with_kubernetes&quot;&gt;
+	* the Red Hat Fabric8 Kubernetes client&lt;/a&gt;.
+	* &lt;p&gt;
+	* The example is inspired by &lt;a href=&quot;https://blog.marcnuri.com/fabric8-kubernetes-java-client-and-quarkus-and-graalvm&quot;&gt;this blog&lt;/a&gt;,
+	* which in turn was inspired by a blog I did.
+	*
+	* @author Josh Long
+	*/
+
+@Slf4j
+@SpringBootApplication
+public class Fabric8NativeApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Fabric8NativeApplication.class, args);
+	}
+
+	@Bean
+	KubernetesClient kubernetesClient() {
+		return new DefaultKubernetesClient();
+	}
+
+	@Bean
+	ApplicationListener&lt;ApplicationReadyEvent&gt; start(KubernetesClient client,
+																																																		SharedInformerFactory sharedInformerFactory,
+																																																		ResourceEventHandler&lt;Node&gt; nodeEventHandler) {
+		return args -&gt; {
+			client.nodes().list(new ListOptionsBuilder().withLimit(1L).build());
+			sharedInformerFactory.startAllRegisteredInformers();
+			var nodeHandler = sharedInformerFactory.getExistingSharedIndexInformer(Node.class);
+			nodeHandler.addEventHandler(nodeEventHandler);
+		};
+	}
+
+	@Bean
+	ApplicationListener&lt;ContextStoppedEvent&gt; stop(SharedInformerFactory sharedInformerFactory) {
+		return event -&gt; sharedInformerFactory.stopAllRegisteredInformers(true);
+	}
+
+	@Bean
+	SharedInformerFactory sharedInformerFactory(KubernetesClient client) {
+		return client.informers();
+	}
+
+	@Bean
+	SharedIndexInformer&lt;Node&gt; nodeInformer(SharedInformerFactory factory) {
+		return factory.sharedIndexInformerFor(Node.class, NodeList.class, 0);
+	}
+
+	@Bean
+	SharedIndexInformer&lt;Pod&gt; podInformer(SharedInformerFactory factory) {
+		return factory.sharedIndexInformerFor(Pod.class, PodList.class, 0);
+	}
+
+	@Bean
+	ResourceEventHandler&lt;Node&gt; nodeReconciler(SharedIndexInformer&lt;Pod&gt; podInformer) {
+		return new ResourceEventHandler&lt;&gt;() {
+
+			@Override
+			public void onAdd(Node node) {
+				log.info(&quot;node: &quot; + Objects.requireNonNull(node.getMetadata()).getName());
+				podInformer.getIndexer().list().stream()
+					.map(pod -&gt; Objects.requireNonNull(pod.getMetadata()).getName())
+					.forEach(podName -&gt; log.info(&quot;pod name:&quot; + podName));
+			}
+
+			@Override
+			public void onUpdate(Node oldObj, Node newObj) {
+			}
+
+			@Override
+			public void onDelete(Node node, boolean deletedFinalStateUnknown) {
+			}
+		};
+	}
+}
+</code></pre>
+<p>Compile that using <code>mvn -DskipTests=true -Pnative clean package</code> and then run it: <code>./target/fabric8-native</code>. I get the following output.</p>
+<pre><code>
+❯ ./target/fabric8-native
+2021-12-22 17:31:13.069  INFO 34762 --- [           main] o.s.nativex.NativeListener               : AOT mode enabled
+
+.   ____          _            __ _ _
+/\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+\\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+'  |____| .__|_| |_|_| |_\__, | / / / /
+=========|_|==============|___/=/_/_/_/
+:: Spring Boot ::                (v2.6.2)
+
+2021-12-22 17:31:13.071  INFO 34762 --- [           main] c.e.f.Fabric8NativeApplication           : Starting Fabric8NativeApplication v0.0.1-SNAPSHOT using Java 17.0.1 on mbp2019.local with PID 34762 (/Users/jlong/Downloads/fabric8-native/target/fabric8-native started by jlong in /Users/jlong/Downloads/fabric8-native)
+2021-12-22 17:31:13.071  INFO 34762 --- [           main] c.e.f.Fabric8NativeApplication           : No active profile set, falling back to default profiles: default
+2021-12-22 17:31:13.083  INFO 34762 --- [           main] c.e.f.Fabric8NativeApplication           : Started Fabric8NativeApplication in 0.029 seconds (JVM running for 0.03)
+2021-12-22 17:31:13.665  INFO 34762 --- [-controller-Pod] i.f.k.client.informers.cache.Controller  : informer#Controller: ready to run resync and reflector runnable
+2021-12-22 17:31:13.665  INFO 34762 --- [controller-Node] i.f.k.client.informers.cache.Controller  : informer#Controller: ready to run resync and reflector runnable
+2021-12-22 17:31:13.665  INFO 34762 --- [-controller-Pod] i.f.k.client.informers.cache.Controller  : informer#Controller: resync skipped due to 0 full resync period
+2021-12-22 17:31:13.665  INFO 34762 --- [controller-Node] i.f.k.client.informers.cache.Controller  : informer#Controller: resync skipped due to 0 full resync period
+2021-12-22 17:31:13.665  INFO 34762 --- [-controller-Pod] i.f.k.client.informers.cache.Reflector   : Started ReflectorRunnable watch for class io.fabric8.kubernetes.api.model.Pod
+2021-12-22 17:31:13.666  INFO 34762 --- [controller-Node] i.f.k.client.informers.cache.Reflector   : Started ReflectorRunnable watch for class io.fabric8.kubernetes.api.model.Node
+2021-12-22 17:31:14.254  INFO 34762 --- [pool-2-thread-1] c.e.f.Fabric8NativeApplication           : node: gke-knj-demos-default-pool-8fdf2ef6-55q9
+2021-12-22 17:31:14.254  INFO 34762 --- [pool-2-thread-1] c.e.f.Fabric8NativeApplication           : node: gke-knj-demos-default-pool-8fdf2ef6-p3kz
+2021-12-22 17:31:14.254  INFO 34762 --- [pool-2-thread-1] c.e.f.Fabric8NativeApplication           : node: gke-knj-demos-default-pool-8fdf2ef6-xh08
+
+</code></pre>
+<p>That's 29 thousandths of a second. And, best part: the resulting application takes up a meager 68M of RAM.</p>
+<p>Not bad! I'm so looking forward to seeing what's possible with improvements to both my little integratio for Fabric8 and the Spring Native AOT engine, which finds new and interesting ways to improve my Spring Boot application in a GraalVM native image context with each new release.</p>
+</p>
   			<a href="jl/blogPost/kubernetes-java-client-and-spring-native-and-graalvm.html"><h1>The Kubernetes Java Client and GraalVM support with Spring Native 0.11.x</h1></a>
   			<p>18 December 2021</p>
   			<p><p>You know, I love Spring Native. I've been working on making as much of the Java ecosystem work with Spring Native as I can. Spring Native works all but perfectly for most Spring configuration classes. You don't need to do much <em>unless</em> your objects do something tricky that might anger the GraalVM native image compiler deity, like reflection, loading resources from the CLASSPATH, JDK or AOT(ByteBuddy, CGLib) proxies, serialization, etc. Then, you need to feed the beast some extra information about what went wrong and why.</p>
@@ -3335,6 +3553,19 @@ Have you booked your tickets for <strong><a href="http://www.springone2gx.com/co
 
 <p>I'll chime back in as I discover more.</p>
 </p>
+  			<a href="jl/blogPost/on_java_code_style.html"><h1>On Java Code Style</h1></a>
+  			<p>19 June 2013</p>
+  			<p>
+<p>Many languages have a sense of &quot;idiomatic&quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. </p>
+
+<p>Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what <code>equals</code>, <code>hashCode</code> and <code>toString</code> do - there&#39;s very little to &quot;idiomatic&quot; Java code, except perhaps compliance with Java style. </p>
+
+<p>There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. <a href="http://www.ontko.com/java/java_coding_standards.html">This directory has a good listing of several style guides</a>. I&#39;d definitely recommend taking a look at the first two guides, in particular.</p>
+
+<p>If you want <em>very</em> well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&#39;s <a href="http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller">a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code</a> (code that, as I&#39;m sure you&#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&#39;s actually won awards at various conferences. This is because <a href="http://blog.springsource.org/author/juergenh/">Juergen Hoeller</a>, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. <em>ALL</em> the Spring projects follow his basic style and approach. That&#39;s why they&#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as <em>Juergenization</em>. </p>
+
+<p>My colleague Oliver Gierke also has a <a href="http://www.olivergierke.de/2013/03/juergenized/">great post on this anomaly, as well as a proper definition on his blog</a>. </p>
+</p>
   			<a href="jl/blogPost/simplified_web_configuration_with_spring.html"><h1>Simplified Web Configuration with Spring</h1></a>
   			<p>19 June 2013</p>
   			<p>
@@ -3484,19 +3715,6 @@ The video of my webinar on
 <P> The code is available at <a href="http://www.slideshare.net/joshlong/rest-apis-with-spring"> on my SlideShare account (vote it up if you like it!)</a> and on <a href="http://github.com/joshlong/the-spring-rest-stack">my private GitHub account (star or fork it if you like it!)</a>.  
 </p> 
 <P> If you have questions or comments, as always, don't hesitate to reach out to me <a href="http://twitter.com/starbuxman">on Twitter</a> or <A href="http://www.joshlong.com/jl/contact.html">by email (see this page for the email)</a>. </p>
-</p>
-  			<a href="jl/blogPost/on_java_code_style.html"><h1>On Java Code Style</h1></a>
-  			<p>19 June 2013</p>
-  			<p>
-<p>Many languages have a sense of &quot;idiomatic&quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. </p>
-
-<p>Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what <code>equals</code>, <code>hashCode</code> and <code>toString</code> do - there&#39;s very little to &quot;idiomatic&quot; Java code, except perhaps compliance with Java style. </p>
-
-<p>There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. <a href="http://www.ontko.com/java/java_coding_standards.html">This directory has a good listing of several style guides</a>. I&#39;d definitely recommend taking a look at the first two guides, in particular.</p>
-
-<p>If you want <em>very</em> well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&#39;s <a href="http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller">a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code</a> (code that, as I&#39;m sure you&#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&#39;s actually won awards at various conferences. This is because <a href="http://blog.springsource.org/author/juergenh/">Juergen Hoeller</a>, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. <em>ALL</em> the Spring projects follow his basic style and approach. That&#39;s why they&#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as <em>Juergenization</em>. </p>
-
-<p>My colleague Oliver Gierke also has a <a href="http://www.olivergierke.de/2013/03/juergenized/">great post on this anomaly, as well as a proper definition on his blog</a>. </p>
 </p>
   			<a href="jl/blogPost/moar_hypermedia.html"><h1>MOAR HYPERMEDIA PAYPAL</h1></a>
   			<p>28 May 2013</p>
@@ -3692,6 +3910,73 @@ public class CrmBaseActivity extends Activity {
  On a related note, I will have my pal <A href="http://twitter.com/andypiper">Andy Piper</a> in tow.  He's a <A href="http://www.cloudfoundry.com">Cloud Foundry</a> ninja, and I'm sure he'll have answers for people with questions!
 </P>
 </p>
+  			<a href="jl/blogPost/java_configuration_with_spring_social.html"><h1>Java Configuration with Spring Social</h1></a>
+  			<p>14 April 2013</p>
+  			<p>
+<P>In <A href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>,  I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <CODE>@EnableWebMvc</CODE>) that turn on container-wide, and often conventions-oriented features. In the case of <CODE>@EnableWebMvc</Code>, the annotation enables Spring MVC and turns on support for correctly exposing <CODE>@Controller</CODE>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <CODE>@EnableWebMvc</CODE> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
+In this post, we'll look at <A href="http://springsource.org/spring-social"> Spring Social</a>.
+</P>
+ <p>
+Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup.
+</p>
+<pre><CODE>
+@Configuration
+@EnableJdbcConnectionRepository
+@EnableFacebook(appId = "${blog.facebook.appId}", appSecret = "${blog.facebook.appSecret}")
+public class SocialConfiguration {
+
+    @Bean
+    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
+                                               ConnectionRepository connectionRepository) {
+        return new ConnectController(connectionFactoryLocator, connectionRepository);
+    }
+
+    @Bean
+    public ProviderSignInController providerSignInController(
+            ConnectionFactoryLocator connectionFactoryLocator, 
+            UsersConnectionRepository usersConnectionRepository) {
+        
+        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
+            @Override
+            public String signIn(String userId, Connection<?> connection, NativeWebRequest request) {
+                return SignInUtils.signIn(userId);
+            }
+        });
+    }
+
+    @Bean
+    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
+        return new DisconnectController(usersConnectionRepository, environment.getProperty("blog.facebook.appSecret"));
+    }
+
+    @Bean
+    public UserIdSource userIdSource() {
+        return new UserIdSource() {
+            @Override
+            public String getUserId() {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (authentication == null) {
+                    throw new IllegalStateException("Unable to get a ConnectionRepository: no user signed in");
+                }
+                return authentication.getName();
+            }
+        };
+    }
+}
+</CODE></PRE> 
+
+<P> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
+to approve the API access and then proceed with the call.
+</P>
+<PRE><CODE>
+@Inject private Facebook facebook;
+
+@RequestMapping("/hello")
+public void showProfileInformation( Model model){ 
+  model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
+}
+</CODE></PRE>
+</p>
   			<a href="jl/blogPost/java_configuration_with_spring_batch.html"><h1>Java Configuration with Spring Batch</h1></a>
   			<p>14 April 2013</p>
   			<p>
@@ -3775,85 +4060,6 @@ public class BatchImporterConfiguration {
 
 </CODE></PRE>
 </p>
-  			<a href="jl/blogPost/java_configuration_with_spring_social.html"><h1>Java Configuration with Spring Social</h1></a>
-  			<p>14 April 2013</p>
-  			<p>
-<P>In <A href="http://www.joshlong.com/jl/blogPost/java_configuration.html">the first post in this series</a>,  I introduced Spring's Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like <CODE>@EnableWebMvc</CODE>) that turn on container-wide, and often conventions-oriented features. In the case of <CODE>@EnableWebMvc</Code>, the annotation enables Spring MVC and turns on support for correctly exposing <CODE>@Controller</CODE>-annotated beans as HTTP endpoints. Java configuration APIs of the same style as <CODE>@EnableWebMvc</CODE> can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
-In this post, we'll look at <A href="http://springsource.org/spring-social"> Spring Social</a>.
-</P>
- <p>
-Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here's an example setup.
-</p>
-<pre><CODE>
-@Configuration
-@EnableJdbcConnectionRepository
-@EnableFacebook(appId = "${blog.facebook.appId}", appSecret = "${blog.facebook.appSecret}")
-public class SocialConfiguration {
-
-    @Bean
-    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
-                                               ConnectionRepository connectionRepository) {
-        return new ConnectController(connectionFactoryLocator, connectionRepository);
-    }
-
-    @Bean
-    public ProviderSignInController providerSignInController(
-            ConnectionFactoryLocator connectionFactoryLocator, 
-            UsersConnectionRepository usersConnectionRepository) {
-        
-        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
-            @Override
-            public String signIn(String userId, Connection<?> connection, NativeWebRequest request) {
-                return SignInUtils.signIn(userId);
-            }
-        });
-    }
-
-    @Bean
-    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
-        return new DisconnectController(usersConnectionRepository, environment.getProperty("blog.facebook.appSecret"));
-    }
-
-    @Bean
-    public UserIdSource userIdSource() {
-        return new UserIdSource() {
-            @Override
-            public String getUserId() {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                if (authentication == null) {
-                    throw new IllegalStateException("Unable to get a ConnectionRepository: no user signed in");
-                }
-                return authentication.getName();
-            }
-        };
-    }
-}
-</CODE></PRE> 
-
-<P> Once you've done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
-to approve the API access and then proceed with the call.
-</P>
-<PRE><CODE>
-@Inject private Facebook facebook;
-
-@RequestMapping("/hello")
-public void showProfileInformation( Model model){ 
-  model.addAttribute( "name", facebook.userOperations().getUserProfile().getName() );
-}
-</CODE></PRE>
-</p>
-  			<a href="jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html"><h1>One Big Bag of Beans</h1></a>
-  			<p>13 April 2013</p>
-  			<p>
-<P>At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean's class, optionally an <CODE>id</CODE> by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc.
-</P>
-<P>Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The <A href="http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL">Groovy Bean Builder</a>. The <A href="http://blog.springsource.org/2012/12/10/introducing-spring-scala/"> Spring Scala</a> approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces.
-</P><P>
-Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the <CODE>@Transactional</CODE> annotation. Then the stereotype annotations emerged -<CODE>@Controller</CODE>, <CODE>@Component</CODE>, <CODE>@Service</CODE>, etc, that – along with component scanning and <CODE>@Autowired</CODE> – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. </p>
-
-<P>Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. 
-</P>
-</p>
   			<a href="jl/blogPost/java_configuration.html"><h1>Java Configuration</h1></a>
   			<p>13 April 2013</p>
   			<p>
@@ -3920,6 +4126,18 @@ This class is too annotated with <Code>@Configuration</CODE>. It enables Spring 
 This was by no means an exhaustive look at Java configuration, but hopefully you see that there is a lot of  convenience in this approach. You can still substitute values from external property files, you can still override and extend the frameworks, and you can still achieve a single configuration artifact – a place where you can get a bird’s eye view of the system. 
 </p><P>
  There are many Spring projects that provide idiomatic, Java configuration centric APIs and DSLs as Spring core does for building services using Spring and web applications using Spring MVC.
+</P>
+</p>
+  			<a href="jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html"><h1>One Big Bag of Beans</h1></a>
+  			<p>13 April 2013</p>
+  			<p>
+<P>At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean's class, optionally an <CODE>id</CODE> by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc.
+</P>
+<P>Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The <A href="http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL">Groovy Bean Builder</a>. The <A href="http://blog.springsource.org/2012/12/10/introducing-spring-scala/"> Spring Scala</a> approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces.
+</P><P>
+Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the <CODE>@Transactional</CODE> annotation. Then the stereotype annotations emerged -<CODE>@Controller</CODE>, <CODE>@Component</CODE>, <CODE>@Service</CODE>, etc, that – along with component scanning and <CODE>@Autowired</CODE> – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. </p>
+
+<P>Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. 
 </P>
 </p>
   			<a href="jl/blogPost/breaking_the_1000ms_time_to_glass_mobile_barribreaking_the_1000ms_time_to_glass_mobile_barri.html"><h1>Breaking the 1000ms Time to Glass Mobile Barrier</h1></a>
@@ -4037,6 +4255,17 @@ In the same vein, years ago, there was a project called <A href="http://www.bean
  <A target="_blank" href="http://datameer2.datameer.com/blog/wp-content/uploads/2012/06/hadoop_ecosystem_d3_photoshop.jpg"> <img  width = "600" src = "/media/18627" /> </a>
 </div>
 </p>
+  			<a href="jl/blogPost/spring_mvc_performance_ftw.html"><h1>Spring MVC Performance FTW</h1></a>
+  			<p>07 March 2013</p>
+  			<p>
+<P> We've all seen 
+ <A href="http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5"> Matt Raible's awesome talk</a>
+ comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
+</p> 
+<P> 
+ For a very detailed dissection of performance, you might check out this talk <a href="http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/">comparing web framework performance</a>. Matt's talk builds on the data amassed from that talk. 
+</p>
+</p>
   			<a href="jl/blogPost/performance_and_the_restful_web.html"><h1>Multi Client Development with Spring Webinar on March 14, 2013</h1></a>
   			<p>07 March 2013</p>
   			<p>
@@ -4049,17 +4278,6 @@ Once we've introduced Spring's REST support, we'll look at how to take  your app
 <P> Be sure to register now and bring questions, ideas, etc.  I look forward to seeing you at there, and we'll look at some of the amazing support  
  Spring offers for building best-of-breed web-centric, RESTful applications.
 </P>
-</p>
-  			<a href="jl/blogPost/spring_mvc_performance_ftw.html"><h1>Spring MVC Performance FTW</h1></a>
-  			<p>07 March 2013</p>
-  			<p>
-<P> We've all seen 
- <A href="http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5"> Matt Raible's awesome talk</a>
- comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
-</p> 
-<P> 
- For a very detailed dissection of performance, you might check out this talk <a href="http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/">comparing web framework performance</a>. Matt's talk builds on the data amassed from that talk. 
-</p>
 </p>
   			<a href="jl/blogPost/my_post_on_spring_at_china_scale.html"><h1>My Post on Spring at China Scale</h1></a>
   			<p>06 March 2013</p>
@@ -4335,13 +4553,6 @@ Wish me luck!
   <img  src = "/media/18534" width = "800" /></DIV>
 </p>
 </p>
-  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
-  			<p>25 November 2012</p>
-  			<p>
-<P> I found <a href= "https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the  
-         environment variables</a> in Cloud Foundry with the values for this particular application.  
- </p>
-</p>
   			<a href="jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html"><h1>Spring Data Mongo transaction synchronization does not find a bound DB</h1></a>
   			<p>25 November 2012</p>
   			<p>
@@ -4372,6 +4583,13 @@ at org.springframework.transaction.support.AbstractPlatformTransactionManager.co
 at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:393) [spring-tx-3.1.1.RELEASE.jar:3.1.1.RELEASE]
  </pre>
 </p> <p> Hat tip to the one and only  <a href= "https://twitter.com/olivergierke">Oliver Gierke</a> for helping me with this! </P>
+</p>
+  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
+  			<p>25 November 2012</p>
+  			<p>
+<P> I found <a href= "https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the  
+         environment variables</a> in Cloud Foundry with the values for this particular application.  
+ </p>
 </p>
   			<a href="jl/blogPost/devoxx_2012_trip_report.html"><h1>Devoxx 2012 Trip Report</h1></a>
   			<p>16 November 2012</p>
@@ -4572,14 +4790,6 @@ Twitter follower <A href = "http://twitter.com/ivelina">@Ivelina</a> took this s
 
 <A href="http://www.twitter.com/starbuxman">me</a> and we'll talk Spring and Cloud Foundry over<em> rakija</em></a>!
 </p>
-  			<a href="jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html"><h1>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</h1></a>
-  			<p>19 October 2012</p>
-  			<p>
-<p> My talk from <A href ="http://www.javazone.no"> JavaZone</A>  is now available online. I co-presented with <a href="http://www.twitter.com/z_oleg">Oleg Zhurakousky</A>, colleague and co-committer on  <a href="http://springsource.org/spring-integration">Spring Integration</A>. If you'd like a quick look, <a href="http://vimeo.com/49477307">check it - and all the other great videos on the JavaZone Vimeo page - out</A>!
-
- <DIV> <iframe src="//player.vimeo.com/video/49477307" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="https://vimeo.com/49477307">Enterprise Integration and Batch Processing on Cloud Foundry</a> from <a href="http://vimeo.com/javazone">JavaZone</a> on <a href="http://vimeo.com">Vimeo</a>.</p> </DIV>
-</p>
-</p>
   			<a href="jl/blogPost/arlington_va_cloud_foundry_dev_day_2012.html"><h1>Arlington, VA Cloud Foundry Dev Day</h1></a>
   			<p>19 October 2012</p>
   			<p>
@@ -4594,6 +4804,14 @@ There are two tracks -- one track focusing on application development using Clou
 <div > <caption>
   My colleagues <A href = "http://twitter.com/ebottard">Eric Bottard</A> and <A href = "http://twitter.com/andypiper">Andy Piper</A> co-leading a developer hands-on session.  </caption>
 </div>
+</p>
+  			<a href="jl/blogPost/spring_integration_and_spring_batch_on_cloudfoundry_talk_from_javazone_2012.html"><h1>Spring Integration and Spring Batch on CloudFoundry talk from JavaZone 2012</h1></a>
+  			<p>19 October 2012</p>
+  			<p>
+<p> My talk from <A href ="http://www.javazone.no"> JavaZone</A>  is now available online. I co-presented with <a href="http://www.twitter.com/z_oleg">Oleg Zhurakousky</A>, colleague and co-committer on  <a href="http://springsource.org/spring-integration">Spring Integration</A>. If you'd like a quick look, <a href="http://vimeo.com/49477307">check it - and all the other great videos on the JavaZone Vimeo page - out</A>!
+
+ <DIV> <iframe src="//player.vimeo.com/video/49477307" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="https://vimeo.com/49477307">Enterprise Integration and Batch Processing on Cloud Foundry</a> from <a href="http://vimeo.com/javazone">JavaZone</a> on <a href="http://vimeo.com">Vimeo</a>.</p> </DIV>
+</p>
 </p>
   			<a href="jl/blogPost/springone2gx_2012_trip_report.html"><h1>SpringOne2GX 2012 Trip Report</h1></a>
   			<p>18 October 2012</p>
@@ -4623,6 +4841,12 @@ And so concludes <A href ="http://www.springone2gx.com">SpringOne2GX 2012</A>!
   This is the premier event for JVM developers, featuring <a href = "http://springone2gx.com/conference/washington/2012/10/schedule">great speakers from VMWare, SpringSource, TypeSafe, Neo4j, and many others</a> speaking on all manner of topics.  I thoroughly enjoyed giving my talks on <A href= "http://www.slideshare.net/joshlong/the-cloud-foundry-bootcamp-talk-from-springone-on-the-road-europe">Cloud Foundry</a>, <A href= "http://www.slideshare.net/joshlong/integration-and-batch-processing-on-cloud-foundry">Spring Integration and Spring Batch, and RabbitMQ</a>.  
 		</p>
 </p>
+  			<a href="jl/blogPost/my_dear_aunt_sandra.html"><h1>My Dear Aunt Sandra</h1></a>
+  			<p>15 October 2012</p>
+  			<p>
+<p> <img src  = "/media/18467" style = "margin-bottom: 10px;"   /> <br/> My aunt Sandra passed gentle into that good night, yesterday morning, from complications of <a href ="http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/" height = "400">ALS</a>. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She's the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She'd visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad's side of the family. A true family Matriarch. Sandra was the best of us, and I'll miss her with all my heart. RIP Aunt Sandra.
+ </P>
+</p>
   			<a href="jl/blogPost/springone2gx_2012.html"><h1>SpringOne2GX 2012</h1></a>
   			<p>15 October 2012</p>
   			<p>
@@ -4630,12 +4854,6 @@ And so concludes <A href ="http://www.springone2gx.com">SpringOne2GX 2012</A>!
  <img src = "/media/18460"/> <img src = "/media/18462"/> <img src = "/media/18459"/>
  <img src = "/media/18461"/> </div>It's my favorite time of year! SpringOne2GX kicks off tomorrow. I'll be <A href="http://springone2gx.com/conference/washington/2012/10/speakers/josh_long">giving two talks</a> -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry.  This year's already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more.  If you're around, feel free to find me roaming the halls <a href="http://www.twitter.com/starbuxman">or ping me on Twitter</a>!   
   
- </P>
-</p>
-  			<a href="jl/blogPost/my_dear_aunt_sandra.html"><h1>My Dear Aunt Sandra</h1></a>
-  			<p>15 October 2012</p>
-  			<p>
-<p> <img src  = "/media/18467" style = "margin-bottom: 10px;"   /> <br/> My aunt Sandra passed gentle into that good night, yesterday morning, from complications of <a href ="http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/" height = "400">ALS</a>. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She's the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She'd visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad's side of the family. A true family Matriarch. Sandra was the best of us, and I'll miss her with all my heart. RIP Aunt Sandra.
  </P>
 </p>
   			<a href="jl/blogPost/anders_hejlsberg_introducing_typescript.html"><h1>Anders Hejlsberg Introducing TypeScript</h1></a>
@@ -4726,6 +4944,11 @@ I was asked recently how I might suggest going about learning a framework (like 
 In addition to looking at source code and looking at design patterns, you should always ask questions. If you have a chance, go to the Java User Groups in your area. Ask questions on <a href ="http://forums.springsource.org">the SpringSource forums</A> or Stack Overflow. And, of course, i am always happy to help answer questions, too ;-)  
 </blockquote>
 </p>
+  			<a href="jl/blogPost/huh.html"><h1>WTF</h1></a>
+  			<p>16 September 2012</p>
+  			<p>
+<p> <img src = "/media/18420" width = "500" /> </P>
+</p>
   			<a href="jl/blogPost/cloud_foundry_system_integrators_tour_india_archsummit_and_oschina_in_india_and_china_august_2012.html"><h1>Cloud Foundry System Integrators Tour in India, ArchSummit, OSChina in China, August 2012</h1></a>
   			<p>16 September 2012</p>
   			<p>
@@ -4782,11 +5005,6 @@ The show had the same format in each of two cities:  for the first several hours
 </td> <td width = "10"></td>
  <td valign = "top"> <img  width = "300" src   = "/media/18405"/>  
 </td></tr></table>
-</p>
-  			<a href="jl/blogPost/huh.html"><h1>WTF</h1></a>
-  			<p>16 September 2012</p>
-  			<p>
-<p> <img src = "/media/18420" width = "500" /> </P>
 </p>
   			<a href="jl/blogPost/a_walking_tour_of_spring_31.html"><h1>A Walking Tour of Spring 3.1</h1></a>
   			<p>08 March 2012</p>
@@ -5423,6 +5641,12 @@ Exposing your frameworks and common abstractions in terms of these well known, i
 </P>
   
 </p>
+  			<a href="jl/blogPost/getting_started_with_spring_roo.html"><h1>Getting Started with Spring Roo</h1></a>
+  			<p>12 August 2011</p>
+  			<p>
+<P>  <IMG src = "/media/17884" style = " float:left;margin-right:10px;" /> Steve Mayzak and I have just finished a book for O'REILLY, <EM><a href="http://oreilly.com/catalog/0636920020981">Getting Started with Spring Roo.</A></EM> The book's a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for <B>Vaadin</B> - a powerful, alternative web framework, and <B>Neo4j</B> - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you're interested in Spring Roo, I hope you'll check this out.
+ </P>
+</p>
   			<a href="jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html"><h1>RabbitMQ is now officially available on CloudFoundry!</h1></a>
   			<p>12 August 2011</p>
   			<p>
@@ -5434,12 +5658,6 @@ For you <a href="http://github.com/CloudFoundry">code lurkers</a> out there, the
                any other message broker on the cloud, and on Amazon Web Services in particular. The AWS tidbit's a bit more awesome when you realize that AWS already has a message broker service called SQS!  ;-)    Anyway, it's now available on CloudFoundry. You <a href="http://support.cloudfoundry.com/entries/20322602-getting-started-with-the-rabbitmq-service-from-a-spring-application">should definitely</a> check <a href="http://blog.cloudfoundry.com/post/8713844574/rabbitmq-cloud-foundry-cloud-messaging-that-just-works">it out.</a> The <a href="http://www.theregister.co.uk/2011/08/10/vmware_cloud_foundry_adds_rabbitmq_messaging/">news</a>  overall seems good, too! Messaging middleware is <EM>the</EM> critical component for scale. Cloud-scale is a way of life, not just a switch to be turned on and off. Specifically, an architecure that scales is going to enjoy temporally decoupling, or <EM>asynchronism,</EM> and RabbitMQ is the perfect vehicle to enable that asynchronous coordination. 
 </p> <P>  If you're a Spring developer, and haven't had a chance to look at CloudFoundry, then I strongly recommend you see  <a href="http://blog.springsource.com/2011/04/12/cloud-foundry-for-spring-developers/">Mark Fisher's entry  on the SpringSource blog</a> introducing the wide world of the cloud for Spring developers from a few months ago. There's also great content on <A href="http://www.youtube.com/SpringSourceDev">the SpringSource YouTube channel.</a>
 		
- </P>
-</p>
-  			<a href="jl/blogPost/getting_started_with_spring_roo.html"><h1>Getting Started with Spring Roo</h1></a>
-  			<p>12 August 2011</p>
-  			<p>
-<P>  <IMG src = "/media/17884" style = " float:left;margin-right:10px;" /> Steve Mayzak and I have just finished a book for O'REILLY, <EM><a href="http://oreilly.com/catalog/0636920020981">Getting Started with Spring Roo.</A></EM> The book's a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for <B>Vaadin</B> - a powerful, alternative web framework, and <B>Neo4j</B> - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you're interested in Spring Roo, I hope you'll check this out.
  </P>
 </p>
   			<a href="jl/blogPost/speaking_at_javazone_2011.html"><h1>Speaking at JavaZone 2011</h1></a>
@@ -6243,14 +6461,6 @@ and I can't wait to see what comes next.
 fantastic new year, and a new decade. 
 </P>
 </p>
-  			<a href="jl/blogPost/devoxx_2010.html"><h1>Devoxx 2010</h1></a>
-  			<p>23 November 2010</p>
-  			<p>
-<p>  
- I've just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I'm glad to be home! There's a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!</p>
-<P>Then, I'm off to speak at the Salesforce.com <a href="https://www.salesforce.com/dreamforce/">Dreamforce conference</a>. I'll be giving an intro to <a href="http://www.springsource.org/about">Spring</a> for the busy Force.com developer with my friend <a href="http://twitter.com/quintonwall">Quinton Wall,</a> the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the <a href="http://www.vmforce.com">VMforce</a> cloud, coming from a Force.com background. 
- The event looks to be <em>very</em> interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton's giving a keynote, and Stevie Wonder's the musical talent... not too shabby!), so don't miss it!</p>
-</p>
   			<a href="jl/blogPost/the_h2_embedded_database.html"><h1>The H2 Embedded Database</h1></a>
   			<p>23 November 2010</p>
   			<p>
@@ -6280,6 +6490,14 @@ featured exclusive support   for persisting process state in H2, and H2 alone. A
 <p>So, what's my point? I didn't know much about this handy little database until a year ago and now, increasingly, I find myself reaching for it all the time! Give it a go if you have a moment, as that's all you need.  
  As I've never sat down and done a comparison against my  RDBMS-of-choice, <a href="http://www.postgresql.org">PostgreSQL</a>, I don't really know where H2 stands as an alternative, but my cursory sort of uses thus far give me the impression that it'd handily give MySQL a run for its money. </p> 
 </p> 
+</p>
+  			<a href="jl/blogPost/devoxx_2010.html"><h1>Devoxx 2010</h1></a>
+  			<p>23 November 2010</p>
+  			<p>
+<p>  
+ I've just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I'm glad to be home! There's a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!</p>
+<P>Then, I'm off to speak at the Salesforce.com <a href="https://www.salesforce.com/dreamforce/">Dreamforce conference</a>. I'll be giving an intro to <a href="http://www.springsource.org/about">Spring</a> for the busy Force.com developer with my friend <a href="http://twitter.com/quintonwall">Quinton Wall,</a> the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the <a href="http://www.vmforce.com">VMforce</a> cloud, coming from a Force.com background. 
+ The event looks to be <em>very</em> interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton's giving a keynote, and Stevie Wonder's the musical talent... not too shabby!), so don't miss it!</p>
 </p>
   			<a href="jl/blogPost/adobe_max_2010.html"><h1>Adobe MAX 2010</h1></a>
   			<p>30 October 2010</p>
@@ -8592,6 +8810,25 @@ So the next piece is to ensure you give Spring a chance to react to the new clas
 Hope this helps somebody else looking for information on how to get started. This is really quite powerful.
 </p>
 </p>
+  			<a href="jl/blogPost/dust.html"><h1>Dust</h1></a>
+  			<p>04 February 2009</p>
+  			<p>
+<p>Sometimes people tell me, "Josh, you're an idiot!" Then I have myself a good cry and walk it off.
+</p> <p>
+ Then people ask me about the 7-node grid I keep in my home office. </p> <p>They wonder why I would keep that many computers in so small a space. They wonder, "why?"
+ Besides providing something of an electric heater (the room's consistently 10F warmer than the rest of the place!), the computers let me test algorithms/concepts in scale. Frameworks like <a href="http://terracotta.org/">Teracotta</a> don't test very consistently on a single node, after all. And, of course, there's nothing like having 2TB of space exposed as one giant mount.
+</p>
+<p>Finally, people ask me if there are any disadvantages. They ask if the electric bill's high. It isn't, but that's a side effect of living in Arizona, where my air conditioner's on 24/7 and so an extra few computers doesn't really make a difference.
+
+ They ask if I spend my time maintaining them.I tell them I run <a href="http://en.wikipedia.org/wiki/Ubuntu">Ubuntu</a>, so I never get viruses. If a PC malfunctions then I simply repair it and reimage the node.
+
+ They press me. Surely there's <i>something</i> disadvantageous to running so many computers. I tell them the honest truth. It's the <a href="http://en.wikipedia.org/wiki/Dust">dust</a>. The dust alone is the reason I want to just invest in EC2. And of course, I'm an asthmatic <b>and</b> a green fiend. So I can't use the aerosol canisters to dispel the dust. Nor can I use the Ozone-friendly canisters -- they both trigger my asthma or offend my green sensibilities. So, I have to clean them with a rag on occasion (once every couple of weeks).
+
+</p>
+
+<p>Next time I get a home office, I'm going to get it with tile. Remember, if you're going to setup a grid, the biggest challenge you face may not be technical.
+</p>
+</p>
   			<a href="jl/blogPost/revised_spring_integration_maven_codepomxmlcode_example.html"><h1>Revised Spring Integration Maven &lt;code&gt;pom.xml&lt;/code&gt; Example</h1></a>
   			<p>04 February 2009</p>
   			<p>
@@ -8695,25 +8932,6 @@ A bug was <a href="http://jira.springframework.org/browse/INT-245">filed</a>. Fi
  			&lt;/dependency&gt;
         &lt;/dependencies&gt;
         </pre>
-</p>
-  			<a href="jl/blogPost/dust.html"><h1>Dust</h1></a>
-  			<p>04 February 2009</p>
-  			<p>
-<p>Sometimes people tell me, "Josh, you're an idiot!" Then I have myself a good cry and walk it off.
-</p> <p>
- Then people ask me about the 7-node grid I keep in my home office. </p> <p>They wonder why I would keep that many computers in so small a space. They wonder, "why?"
- Besides providing something of an electric heater (the room's consistently 10F warmer than the rest of the place!), the computers let me test algorithms/concepts in scale. Frameworks like <a href="http://terracotta.org/">Teracotta</a> don't test very consistently on a single node, after all. And, of course, there's nothing like having 2TB of space exposed as one giant mount.
-</p>
-<p>Finally, people ask me if there are any disadvantages. They ask if the electric bill's high. It isn't, but that's a side effect of living in Arizona, where my air conditioner's on 24/7 and so an extra few computers doesn't really make a difference.
-
- They ask if I spend my time maintaining them.I tell them I run <a href="http://en.wikipedia.org/wiki/Ubuntu">Ubuntu</a>, so I never get viruses. If a PC malfunctions then I simply repair it and reimage the node.
-
- They press me. Surely there's <i>something</i> disadvantageous to running so many computers. I tell them the honest truth. It's the <a href="http://en.wikipedia.org/wiki/Dust">dust</a>. The dust alone is the reason I want to just invest in EC2. And of course, I'm an asthmatic <b>and</b> a green fiend. So I can't use the aerosol canisters to dispel the dust. Nor can I use the Ozone-friendly canisters -- they both trigger my asthma or offend my green sensibilities. So, I have to clean them with a rag on occasion (once every couple of weeks).
-
-</p>
-
-<p>Next time I get a home office, I'm going to get it with tile. Remember, if you're going to setup a grid, the biggest challenge you face may not be technical.
-</p>
 </p>
   			<a href="jl/blogPost/scalability_is_not_an_architectural_capabity_anymore_on_artimacom.html"><h1>&quot;Scalability Is Not An Architectural &quot;Capabity&quot; Anymore,&quot; on Artima.com</h1></a>
   			<p>02 February 2009</p>
@@ -9427,13 +9645,6 @@ I write this down now so I have something to mind map tomorrow when I'm more luc
   			<p>
 Did you know that <code>mvn archetype:generate</code>, by itself, on the command line, yeilds a listing of all the archetypes you have available? I just stumbled upon this today - great trick!
 </p>
-  			<a href="jl/blogPost/subversion_1_5_intellij_idea.html"><h1>Subversion 1.5, IntelliJ IDEA, and you</h1></a>
-  			<p>10 August 2008</p>
-  			<p>
-<p> I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ's Subversion support to lose its mind. It would paint the files blue as though it realized the file was &quot;dirty&quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &quot;No Changes found&quot;.  I did some sleuthing: <a href="http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP">IntelliJ IDEA build 7938</a> fixes the issue.
-</p><p>I installed the new version and opened up a project and everything was in error. It was almost as thought it didn't have a JDK set, so I tried to point it at a JDK but that didn't work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (<code>/home/jlong/.IntelliJIdea70</code>). <b>That</b> worked! 
-</p> <p> In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn't genuine user error!) has delayed me... now, Eclipse on the other hand...  </p>
-</p>
   			<a href="jl/blogPost/keith_donald_speaking_on_spring.html"><h1>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</h1></a>
   			<p>10 August 2008</p>
   			<p>
@@ -9441,6 +9652,13 @@ Did you know that <code>mvn archetype:generate</code>, by itself, on the command
 Keith Donald's going to be at this week's <a href="http://www.phxjug.org/">Phoenix Java User Group</a> talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can't wait for this one! 
 
 </p>
+</p>
+  			<a href="jl/blogPost/subversion_1_5_intellij_idea.html"><h1>Subversion 1.5, IntelliJ IDEA, and you</h1></a>
+  			<p>10 August 2008</p>
+  			<p>
+<p> I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ's Subversion support to lose its mind. It would paint the files blue as though it realized the file was &quot;dirty&quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &quot;No Changes found&quot;.  I did some sleuthing: <a href="http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP">IntelliJ IDEA build 7938</a> fixes the issue.
+</p><p>I installed the new version and opened up a project and everything was in error. It was almost as thought it didn't have a JDK set, so I tried to point it at a JDK but that didn't work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (<code>/home/jlong/.IntelliJIdea70</code>). <b>That</b> worked! 
+</p> <p> In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn't genuine user error!) has delayed me... now, Eclipse on the other hand...  </p>
 </p>
   			<a href="jl/blogPost/installng_postgis_and_the_tiger.html"><h1>Installng PostGIS and the TIGER Geocoder</h1></a>
   			<p>13 July 2008</p>

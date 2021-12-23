@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+<meta name="google-site-verification" content="HJPICnDuSD1SEs3EspTr7FdQIAOWIoI7E8nW-C5GSHk" />
+
+    <meta charset="utf-8"/>
+    <title>The Fabric8 Java Client, Spring Native and Spring Boot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+    <link rel="alternate" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml" />
+    <link rel="alternate feed" type="application/rss+xml" title="Feed for JoshLong.com" href="feed.xml">
+ 
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+ 
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<a class="navbar-brand" href="../../">
+ 	<span style="font-size:larger;font-weight :bold;">
+	Josh Long's Blog
+	</span> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+	    <li><a href="../../feed.html">Activity</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../abstracts.html">Abstracts</a></li>
+            <li><a href="../../livelessons.html">Livelessons</a></li>
+            <li><a href="../../books.html">Books</a></li>
+	          <li><a href="http://bootifulpodcast.fm">A Bootiful Podcast </a></li>
+	          <li><a href="https://bit.ly/spring-tips-playlist">The Spring Tips Videos </a></li>	   
+            <li><a href="https://twitch.tv/javajoshlong">I stream on Twitch</a></li>   
+             <li><a href="https://patreon.com/joshlong">Patreon</a></li>       
+            <li><a href="../../feed.xml"><img src="https://www.w3schools.com/xml/pic_rss.gif" width="36" height="14"></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	
+	<div class="page-header">
+		<h1>The Fabric8 Java Client, Spring Native and Spring Boot</h1>
+	</div>
+
+	<p><em>22 December 2021</em></p>
+
+	<p><p>Earlier, I wrote an example on how to <a href="https://joshlong.com/jl/blogPost/kubernetes-java-client-and-spring-native-and-graalvm.html">get Spring Native and the official Kubernetes Native Java client</a> working with the newly released <a href="https://www.youtube.com/watch?v=DVo5vmk5Cuw&amp;t=2288s">Spring Native 0.11</a>. I mentioned that I had to write <a href="https://github.com/kubernetes-native-java/spring-native-kubernetes/blob/main/src/main/java/io/kubernetes/nativex/KubernetesApiNativeConfiguration.java">a trivial configuration class</a> to register the types that were used reflectively in the Spring Boot application, something that GraalVM frowns upon.</p>
+<p>Then, <a href="https://twitter.com/MarcNuri">Marc Nuri</a> - who works on the Fabric8 project (the excellent Red Hat-driven client for Kubernetes) - took my trivial example, some of which I in turn took from the good <a href="https://twitter.com/david_syer">Dr. Dave Syer</a>, and turned into an example written in terms of Faric8. The Fabric8 project looks really good, and I wanted an excuse to get around to making that work at some point sooner rather than later, too! Now I had a great reason. Good news: it was even easier to get this working with Spring Boot and Spring Native. There's no Spring Boot autoconfiguration, <em>per se</em>, and there's no existing integration with Spring Nativem so I had to write that myself, but it was about as easy as the integration I wrote for the official Kubernetes Java client. This has to do mainly I think with the fact that there were fewer things in the project that I had to explicitly register. I could see patterns and then register everything that fit that pattern, and it <em>just worked</em>. (Three cheers for consistency!) It's so much more tedious to write GraalVM and Spring Native hints (configurations, basically) when you're sort of discovering the places that need those hints by surprise, one at a time. The cycle time is of course very slow for GraalVM compiles, so I was very happy to get something working so quickly: great job, Fabric8!</p>
+<p>Here's the code for that integration:</p>
+<pre><code class="language-java">package com.example.fabric8native.nativex;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.fabric8.kubernetes.api.model.KubernetesResource;
+import io.fabric8.kubernetes.api.model.NamedCluster;
+import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
+import org.reflections.Reflections;
+import org.springframework.aot.context.bootstrap.generator.infrastructure.nativex.NativeConfigurationRegistry;
+import org.springframework.nativex.AotOptions;
+import org.springframework.nativex.hint.NativeHint;
+import org.springframework.nativex.hint.TypeAccess;
+import org.springframework.nativex.type.NativeConfiguration;
+import org.springframework.util.ReflectionUtils;
+
+import java.lang.annotation.Annotation;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+/**
+ * Spring Native support for excellent Fabric8 Kubernetes client from Red Hat (thanks, Red Hat!)
+ *
+ * @author Josh Long
+ */
+@Slf4j
+@NativeHint(options = {&quot;-H:+AddAllCharsets&quot;, &quot;--enable-https&quot;, &quot;--enable-url-protocols=https&quot;})
+public class Fabric8NativeConfiguration implements NativeConfiguration {
+
+	private final Class&lt;?&gt; clazz = NamedCluster.class;
+	private final Reflections reflections = new Reflections(clazz.getPackageName(), clazz);
+
+	@Override
+	public void computeHints(NativeConfigurationRegistry registry, AotOptions aotOptions) {
+		var subtypesOfKubernetesResource = reflections.getSubTypesOf(KubernetesResource.class);
+		var othersToAddForReflection = List.of(
+			io.fabric8.kubernetes.internal.KubernetesDeserializer.class
+		);
+		var combined = new HashSet&lt;Class&lt;?&gt;&gt;();
+		combined.addAll(subtypesOfKubernetesResource);
+		combined.addAll(othersToAddForReflection);
+		combined.addAll(resolveSerializationClasses(JsonSerialize.class));
+		combined.addAll(resolveSerializationClasses(JsonDeserialize.class));
+		combined
+			.stream()
+			.filter(Objects::nonNull)
+			.forEach(c -&gt; {
+				if (log.isDebugEnabled()) {
+					log.debug(&quot;trying to register &quot; + c.getName() + &quot; for reflection&quot;);
+				}
+				registry.reflection().forType(c).withAccess(TypeAccess.values()).build();
+			});
+	}
+
+	@SneakyThrows
+	private &lt;R extends Annotation&gt; Set&lt;Class&lt;?&gt;&gt; resolveSerializationClasses(Class&lt;R&gt; annotationClazz) {
+		var method = annotationClazz.getMethod(&quot;using&quot;);
+		var classes = this.reflections.getTypesAnnotatedWith(annotationClazz);
+		return classes.stream().map(clazzWithAnnotation -&gt; {
+
+			if (log.isDebugEnabled()) {
+				log.debug(&quot;found &quot; + clazzWithAnnotation.getName() + &quot; : &quot; + annotationClazz.getName());
+			}
+
+			var annotation = clazzWithAnnotation.getAnnotation(annotationClazz);
+			try {
+				if (annotation != null) {
+					return (Class&lt;?&gt;) method.invoke(annotation);
+				}
+			}
+			catch (Exception e) {
+				ReflectionUtils.rethrowRuntimeException(e);
+			}
+			return null;
+		})
+			.collect(Collectors.toSet());
+	}
+
+}
+</code></pre>
+<p>You'll need to add that your <code>META-INF/spring.factories</code> file, like this:</p>
+<pre><code class="language-properties">org.springframework.nativex.type.NativeConfiguration=com.example.fabric8native.nativex.Fabric8NativeConfiguration
+</code></pre>
+<p>Now you just need an example that uses the Fabric8 API. I was able to sort of figure it out by looking at the blog post. The result looks fairly similar to my original example, so that helped, too. Here's the example:</p>
+<pre><code class="language-java">package com.example.fabric8native;
+
+import io.fabric8.kubernetes.api.model.*;
+import io.fabric8.kubernetes.client.DefaultKubernetesClient;
+import io.fabric8.kubernetes.client.KubernetesClient;
+import io.fabric8.kubernetes.client.informers.ResourceEventHandler;
+import io.fabric8.kubernetes.client.informers.SharedIndexInformer;
+import io.fabric8.kubernetes.client.informers.SharedInformerFactory;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.ContextStoppedEvent;
+
+import java.util.Objects;
+
+/**
+	* This example uses &lt;a href=&quot;https://developers.redhat.com/blog/2020/05/20/getting-started-with-the-fabric8-kubernetes-java-client#using_fabric8_with_kubernetes&quot;&gt;
+	* the Red Hat Fabric8 Kubernetes client&lt;/a&gt;.
+	* &lt;p&gt;
+	* The example is inspired by &lt;a href=&quot;https://blog.marcnuri.com/fabric8-kubernetes-java-client-and-quarkus-and-graalvm&quot;&gt;this blog&lt;/a&gt;,
+	* which in turn was inspired by a blog I did.
+	*
+	* @author Josh Long
+	*/
+
+@Slf4j
+@SpringBootApplication
+public class Fabric8NativeApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Fabric8NativeApplication.class, args);
+	}
+
+	@Bean
+	KubernetesClient kubernetesClient() {
+		return new DefaultKubernetesClient();
+	}
+
+	@Bean
+	ApplicationListener&lt;ApplicationReadyEvent&gt; start(KubernetesClient client,
+																																																		SharedInformerFactory sharedInformerFactory,
+																																																		ResourceEventHandler&lt;Node&gt; nodeEventHandler) {
+		return args -&gt; {
+			client.nodes().list(new ListOptionsBuilder().withLimit(1L).build());
+			sharedInformerFactory.startAllRegisteredInformers();
+			var nodeHandler = sharedInformerFactory.getExistingSharedIndexInformer(Node.class);
+			nodeHandler.addEventHandler(nodeEventHandler);
+		};
+	}
+
+	@Bean
+	ApplicationListener&lt;ContextStoppedEvent&gt; stop(SharedInformerFactory sharedInformerFactory) {
+		return event -&gt; sharedInformerFactory.stopAllRegisteredInformers(true);
+	}
+
+	@Bean
+	SharedInformerFactory sharedInformerFactory(KubernetesClient client) {
+		return client.informers();
+	}
+
+	@Bean
+	SharedIndexInformer&lt;Node&gt; nodeInformer(SharedInformerFactory factory) {
+		return factory.sharedIndexInformerFor(Node.class, NodeList.class, 0);
+	}
+
+	@Bean
+	SharedIndexInformer&lt;Pod&gt; podInformer(SharedInformerFactory factory) {
+		return factory.sharedIndexInformerFor(Pod.class, PodList.class, 0);
+	}
+
+	@Bean
+	ResourceEventHandler&lt;Node&gt; nodeReconciler(SharedIndexInformer&lt;Pod&gt; podInformer) {
+		return new ResourceEventHandler&lt;&gt;() {
+
+			@Override
+			public void onAdd(Node node) {
+				log.info(&quot;node: &quot; + Objects.requireNonNull(node.getMetadata()).getName());
+				podInformer.getIndexer().list().stream()
+					.map(pod -&gt; Objects.requireNonNull(pod.getMetadata()).getName())
+					.forEach(podName -&gt; log.info(&quot;pod name:&quot; + podName));
+			}
+
+			@Override
+			public void onUpdate(Node oldObj, Node newObj) {
+			}
+
+			@Override
+			public void onDelete(Node node, boolean deletedFinalStateUnknown) {
+			}
+		};
+	}
+}
+</code></pre>
+<p>Compile that using <code>mvn -DskipTests=true -Pnative clean package</code> and then run it: <code>./target/fabric8-native</code>. I get the following output.</p>
+<pre><code>
+❯ ./target/fabric8-native
+2021-12-22 17:31:13.069  INFO 34762 --- [           main] o.s.nativex.NativeListener               : AOT mode enabled
+
+.   ____          _            __ _ _
+/\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+\\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+'  |____| .__|_| |_|_| |_\__, | / / / /
+=========|_|==============|___/=/_/_/_/
+:: Spring Boot ::                (v2.6.2)
+
+2021-12-22 17:31:13.071  INFO 34762 --- [           main] c.e.f.Fabric8NativeApplication           : Starting Fabric8NativeApplication v0.0.1-SNAPSHOT using Java 17.0.1 on mbp2019.local with PID 34762 (/Users/jlong/Downloads/fabric8-native/target/fabric8-native started by jlong in /Users/jlong/Downloads/fabric8-native)
+2021-12-22 17:31:13.071  INFO 34762 --- [           main] c.e.f.Fabric8NativeApplication           : No active profile set, falling back to default profiles: default
+2021-12-22 17:31:13.083  INFO 34762 --- [           main] c.e.f.Fabric8NativeApplication           : Started Fabric8NativeApplication in 0.029 seconds (JVM running for 0.03)
+2021-12-22 17:31:13.665  INFO 34762 --- [-controller-Pod] i.f.k.client.informers.cache.Controller  : informer#Controller: ready to run resync and reflector runnable
+2021-12-22 17:31:13.665  INFO 34762 --- [controller-Node] i.f.k.client.informers.cache.Controller  : informer#Controller: ready to run resync and reflector runnable
+2021-12-22 17:31:13.665  INFO 34762 --- [-controller-Pod] i.f.k.client.informers.cache.Controller  : informer#Controller: resync skipped due to 0 full resync period
+2021-12-22 17:31:13.665  INFO 34762 --- [controller-Node] i.f.k.client.informers.cache.Controller  : informer#Controller: resync skipped due to 0 full resync period
+2021-12-22 17:31:13.665  INFO 34762 --- [-controller-Pod] i.f.k.client.informers.cache.Reflector   : Started ReflectorRunnable watch for class io.fabric8.kubernetes.api.model.Pod
+2021-12-22 17:31:13.666  INFO 34762 --- [controller-Node] i.f.k.client.informers.cache.Reflector   : Started ReflectorRunnable watch for class io.fabric8.kubernetes.api.model.Node
+2021-12-22 17:31:14.254  INFO 34762 --- [pool-2-thread-1] c.e.f.Fabric8NativeApplication           : node: gke-knj-demos-default-pool-8fdf2ef6-55q9
+2021-12-22 17:31:14.254  INFO 34762 --- [pool-2-thread-1] c.e.f.Fabric8NativeApplication           : node: gke-knj-demos-default-pool-8fdf2ef6-p3kz
+2021-12-22 17:31:14.254  INFO 34762 --- [pool-2-thread-1] c.e.f.Fabric8NativeApplication           : node: gke-knj-demos-default-pool-8fdf2ef6-xh08
+
+</code></pre>
+<p>That's 29 thousandths of a second. And, best part: the resulting application takes up a meager 68M of RAM.</p>
+<p>Not bad! I'm so looking forward to seeing what's possible with improvements to both my little integratio for Fabric8 and the Spring Native AOT engine, which finds new and interesting ways to improve my Spring Boot application in a GraalVM native image context with each new release.</p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2018 JoshLong.com </p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>
