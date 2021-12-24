@@ -6,9 +6,19 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Thu, 23 Dec 2021 04:05:50 +0000</pubDate>
-    <lastBuildDate>Thu, 23 Dec 2021 04:05:50 +0000</lastBuildDate>
+    <pubDate>Fri, 24 Dec 2021 02:44:09 +0000</pubDate>
+    <lastBuildDate>Fri, 24 Dec 2021 02:44:09 +0000</lastBuildDate>
 
+    <item>
+      <title>Bootiful Podcast: Yugabyte CEO Karthik Ranganathan</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-12-23-yugabyte_ceo_karthik_ranganathan.html</link>
+      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2021-12-23-yugabyte_ceo_karthik_ranganathan.html</guid>
+      	<description>
+	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/76d8c335-16b8-4cae-84ba-b11d6d5cbeaf/produced-audio&quot;&gt;(2021-12-23) Yugabyte CEO Karthik Ranganathan&lt;/a&gt;&lt;/p&gt;
+
+	</description>
+    </item>
     <item>
       <title>The Fabric8 Java Client, Spring Native and Spring Boot</title>
       <link>https://joshlong.com/jl/blogPost/fabric8-and-spring-native.html</link>
@@ -1211,22 +1221,22 @@ mvn -DskipTests=true -Pnative clean package &amp;amp;&amp;amp; ./target/graphql-
 	</description>
     </item>
     <item>
-      <title>Spring Tips: @Controllers: The &quot;C&quot; in Model 2 MVC</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-videos-2021-10-27-controllers_the_c_in_model_2_mvc.html</link>
-      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-videos-2021-10-27-controllers_the_c_in_model_2_mvc.html</guid>
-      	<description>
-	&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=hUBrFekxn0Y&quot;&gt;(2021-10-27) @Controllers: The &amp;quot;C&amp;quot; in Model 2 MVC&lt;/a&gt;&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Upcoming Appearance: Masterclass + Taster Masterclass with GOTO Academy</title>
       <link>https://joshlong.com/jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy.html</link>
       <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-appearances-2021-10-27-masterclass__taster_masterclass_with_goto_academy.html</guid>
       	<description>
 	&lt;p&gt;(2021-10-27) &lt;strong&gt;Masterclass + Taster Masterclass with GOTO Academy&lt;/strong&gt;: I&apos;ll be doing a &apos;Masterclass Taster&apos; talk with GOTO Academy on all things Spring, Kubernetes and Microservices...&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring Tips: @Controllers: The &quot;C&quot; in Model 2 MVC</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-videos-2021-10-27-controllers_the_c_in_model_2_mvc.html</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-videos-2021-10-27-controllers_the_c_in_model_2_mvc.html</guid>
+      	<description>
+	&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=hUBrFekxn0Y&quot;&gt;(2021-10-27) @Controllers: The &amp;quot;C&amp;quot; in Model 2 MVC&lt;/a&gt;&lt;/p&gt;
 
 	</description>
     </item>
@@ -3455,22 +3465,22 @@ jobs:
 	</description>
     </item>
     <item>
-      <title>Spring Tips: Be Lazy and Fast with Spring Boot 2.2.M1</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-videos-2019-03-14-be_lazy_and_fast_with_spring_boot_22m1.html</link>
-      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-videos-2019-03-14-be_lazy_and_fast_with_spring_boot_22m1.html</guid>
-      	<description>
-	&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=_m4xpHUf55E&quot;&gt;(2019-03-14) Be Lazy and Fast with Spring Boot 2.2.M1&lt;/a&gt;&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Bootiful Podcast: Joe Grandja on Spring Security 5&apos;s OAuth Support</title>
       <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-03-14-joe_grandja_on_spring_security_5s_oauth_support.html</link>
       <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2019-03-14-joe_grandja_on_spring_security_5s_oauth_support.html</guid>
       	<description>
 	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/13d87c27-cba4-46b4-b978-9b472353992c/produced-audio&quot;&gt;(2019-03-14) Joe Grandja on Spring Security 5&apos;s OAuth Support&lt;/a&gt;&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring Tips: Be Lazy and Fast with Spring Boot 2.2.M1</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-videos-2019-03-14-be_lazy_and_fast_with_spring_boot_22m1.html</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-videos-2019-03-14-be_lazy_and_fast_with_spring_boot_22m1.html</guid>
+      	<description>
+	&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=_m4xpHUf55E&quot;&gt;(2019-03-14) Be Lazy and Fast with Spring Boot 2.2.M1&lt;/a&gt;&lt;/p&gt;
 
 	</description>
     </item>
@@ -3670,22 +3680,22 @@ There are two things you can do about this warning:
 	</description>
     </item>
     <item>
-      <title>Bootiful Podcast: Google Developer Advocate Ray Tsang</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-01-16-google_developer_advocate_ray_tsang.html</link>
-      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2019-01-16-google_developer_advocate_ray_tsang.html</guid>
-      	<description>
-	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/15a96291-9267-476d-b743-60d1cab2f6c6/produced-audio&quot;&gt;(2019-01-16) Google Developer Advocate Ray Tsang&lt;/a&gt;&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Spring Tips: JavaFX</title>
       <link>https://joshlong.com/jl/blogPost/announcement-videos-2019-01-16-javafx.html</link>
       <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/announcement-videos-2019-01-16-javafx.html</guid>
       	<description>
 	&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=lPy9mc_O_gU&quot;&gt;(2019-01-16) JavaFX&lt;/a&gt;&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Bootiful Podcast: Google Developer Advocate Ray Tsang</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2019-01-16-google_developer_advocate_ray_tsang.html</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2019-01-16-google_developer_advocate_ray_tsang.html</guid>
+      	<description>
+	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/15a96291-9267-476d-b743-60d1cab2f6c6/produced-audio&quot;&gt;(2019-01-16) Google Developer Advocate Ray Tsang&lt;/a&gt;&lt;/p&gt;
 
 	</description>
     </item>
@@ -5516,25 +5526,6 @@ Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.sprin
 	</description>
     </item>
     <item>
-      <title>On Java Code Style</title>
-      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
-      	<description>
-	
-&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
-
-&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
-
-&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
-
-&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
-
-&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Simplified Web Configuration with Spring</title>
       <link>https://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</link>
       <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
@@ -5693,6 +5684,25 @@ The video of my webinar on
 &lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
 &lt;/p&gt; 
 &lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>On Java Code Style</title>
+      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
+      	<description>
+	
+&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
+
+&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
+
+&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
+
+&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -5909,79 +5919,6 @@ public class CrmBaseActivity extends Activity {
 	</description>
     </item>
     <item>
-      <title>Java Configuration with Spring Social</title>
-      <link>https://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</link>
-      <pubDate>Sun, 14 Apr 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_social.html</guid>
-      	<description>
-	
-&lt;P&gt;In &lt;A href=&quot;http://www.joshlong.com/jl/blogPost/java_configuration.html&quot;&gt;the first post in this series&lt;/a&gt;,  I introduced Spring&apos;s Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt;) that turn on container-wide, and often conventions-oriented features. In the case of &lt;CODE&gt;@EnableWebMvc&lt;/Code&gt;, the annotation enables Spring MVC and turns on support for correctly exposing &lt;CODE&gt;@Controller&lt;/CODE&gt;-annotated beans as HTTP endpoints. Java configuration APIs of the same style as &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt; can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
-In this post, we&apos;ll look at &lt;A href=&quot;http://springsource.org/spring-social&quot;&gt; Spring Social&lt;/a&gt;.
-&lt;/P&gt;
- &lt;p&gt;
-Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here&apos;s an example setup.
-&lt;/p&gt;
-&lt;pre&gt;&lt;CODE&gt;
-@Configuration
-@EnableJdbcConnectionRepository
-@EnableFacebook(appId = &quot;${blog.facebook.appId}&quot;, appSecret = &quot;${blog.facebook.appSecret}&quot;)
-public class SocialConfiguration {
-
-    @Bean
-    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
-                                               ConnectionRepository connectionRepository) {
-        return new ConnectController(connectionFactoryLocator, connectionRepository);
-    }
-
-    @Bean
-    public ProviderSignInController providerSignInController(
-            ConnectionFactoryLocator connectionFactoryLocator, 
-            UsersConnectionRepository usersConnectionRepository) {
-        
-        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
-            @Override
-            public String signIn(String userId, Connection&lt;?&gt; connection, NativeWebRequest request) {
-                return SignInUtils.signIn(userId);
-            }
-        });
-    }
-
-    @Bean
-    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
-        return new DisconnectController(usersConnectionRepository, environment.getProperty(&quot;blog.facebook.appSecret&quot;));
-    }
-
-    @Bean
-    public UserIdSource userIdSource() {
-        return new UserIdSource() {
-            @Override
-            public String getUserId() {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                if (authentication == null) {
-                    throw new IllegalStateException(&quot;Unable to get a ConnectionRepository: no user signed in&quot;);
-                }
-                return authentication.getName();
-            }
-        };
-    }
-}
-&lt;/CODE&gt;&lt;/PRE&gt; 
-
-&lt;P&gt; Once you&apos;ve done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
-to approve the API access and then proceed with the call.
-&lt;/P&gt;
-&lt;PRE&gt;&lt;CODE&gt;
-@Inject private Facebook facebook;
-
-@RequestMapping(&quot;/hello&quot;)
-public void showProfileInformation( Model model){ 
-  model.addAttribute( &quot;name&quot;, facebook.userOperations().getUserProfile().getName() );
-}
-&lt;/CODE&gt;&lt;/PRE&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Java Configuration with Spring Batch</title>
       <link>https://joshlong.com/jl/blogPost/java_configuration_with_spring_batch.html</link>
       <pubDate>Sun, 14 Apr 2013 00:00:00 +0000</pubDate>
@@ -6071,6 +6008,97 @@ public class BatchImporterConfiguration {
 	</description>
     </item>
     <item>
+      <title>Java Configuration with Spring Social</title>
+      <link>https://joshlong.com/jl/blogPost/java_configuration_with_spring_social.html</link>
+      <pubDate>Sun, 14 Apr 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/java_configuration_with_spring_social.html</guid>
+      	<description>
+	
+&lt;P&gt;In &lt;A href=&quot;http://www.joshlong.com/jl/blogPost/java_configuration.html&quot;&gt;the first post in this series&lt;/a&gt;,  I introduced Spring&apos;s Java configuration mechanism. There is the base configuration style, and - as we saw - there are annotations (like &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt;) that turn on container-wide, and often conventions-oriented features. In the case of &lt;CODE&gt;@EnableWebMvc&lt;/Code&gt;, the annotation enables Spring MVC and turns on support for correctly exposing &lt;CODE&gt;@Controller&lt;/CODE&gt;-annotated beans as HTTP endpoints. Java configuration APIs of the same style as &lt;CODE&gt;@EnableWebMvc&lt;/CODE&gt; can often optionally implement interfaces that are used to contribute, change, or otherwise tailor the API. Most Spring projects today offer beta-or-better APIs that work in this same manner.  
+In this post, we&apos;ll look at &lt;A href=&quot;http://springsource.org/spring-social&quot;&gt; Spring Social&lt;/a&gt;.
+&lt;/P&gt;
+ &lt;p&gt;
+Spring Social a OAuth 1.0, 1.0.a and 2.0-compliant REST-services client and builds on top of this strongly typed Java bindings. Here&apos;s an example setup.
+&lt;/p&gt;
+&lt;pre&gt;&lt;CODE&gt;
+@Configuration
+@EnableJdbcConnectionRepository
+@EnableFacebook(appId = &quot;${blog.facebook.appId}&quot;, appSecret = &quot;${blog.facebook.appSecret}&quot;)
+public class SocialConfiguration {
+
+    @Bean
+    public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, 
+                                               ConnectionRepository connectionRepository) {
+        return new ConnectController(connectionFactoryLocator, connectionRepository);
+    }
+
+    @Bean
+    public ProviderSignInController providerSignInController(
+            ConnectionFactoryLocator connectionFactoryLocator, 
+            UsersConnectionRepository usersConnectionRepository) {
+        
+        return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, new SignInAdapter() {
+            @Override
+            public String signIn(String userId, Connection&lt;?&gt; connection, NativeWebRequest request) {
+                return SignInUtils.signIn(userId);
+            }
+        });
+    }
+
+    @Bean
+    public DisconnectController disconnectController(Environment environment, UsersConnectionRepository usersConnectionRepository) {
+        return new DisconnectController(usersConnectionRepository, environment.getProperty(&quot;blog.facebook.appSecret&quot;));
+    }
+
+    @Bean
+    public UserIdSource userIdSource() {
+        return new UserIdSource() {
+            @Override
+            public String getUserId() {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (authentication == null) {
+                    throw new IllegalStateException(&quot;Unable to get a ConnectionRepository: no user signed in&quot;);
+                }
+                return authentication.getName();
+            }
+        };
+    }
+}
+&lt;/CODE&gt;&lt;/PRE&gt; 
+
+&lt;P&gt; Once you&apos;ve done this, you can simply inject instances of the Facebook API binding and make calls against it. Spring Social will attempt to make the call if there is an authenticated user, and if not will prompt the user 
+to approve the API access and then proceed with the call.
+&lt;/P&gt;
+&lt;PRE&gt;&lt;CODE&gt;
+@Inject private Facebook facebook;
+
+@RequestMapping(&quot;/hello&quot;)
+public void showProfileInformation( Model model){ 
+  model.addAttribute( &quot;name&quot;, facebook.userOperations().getUserProfile().getName() );
+}
+&lt;/CODE&gt;&lt;/PRE&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>One Big Bag of Beans</title>
+      <link>https://joshlong.com/jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</link>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</guid>
+      	<description>
+	
+&lt;P&gt;At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean&apos;s class, optionally an &lt;CODE&gt;id&lt;/CODE&gt; by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc.
+&lt;/P&gt;
+&lt;P&gt;Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The &lt;A href=&quot;http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL&quot;&gt;Groovy Bean Builder&lt;/a&gt;. The &lt;A href=&quot;http://blog.springsource.org/2012/12/10/introducing-spring-scala/&quot;&gt; Spring Scala&lt;/a&gt; approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces.
+&lt;/P&gt;&lt;P&gt;
+Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the &lt;CODE&gt;@Transactional&lt;/CODE&gt; annotation. Then the stereotype annotations emerged -&lt;CODE&gt;@Controller&lt;/CODE&gt;, &lt;CODE&gt;@Component&lt;/CODE&gt;, &lt;CODE&gt;@Service&lt;/CODE&gt;, etc, that – along with component scanning and &lt;CODE&gt;@Autowired&lt;/CODE&gt; – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. &lt;/p&gt;
+
+&lt;P&gt;Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. 
+&lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Java Configuration</title>
       <link>https://joshlong.com/jl/blogPost/java_configuration.html</link>
       <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
@@ -6140,24 +6168,6 @@ This class is too annotated with &lt;Code&gt;@Configuration&lt;/CODE&gt;. It ena
 This was by no means an exhaustive look at Java configuration, but hopefully you see that there is a lot of  convenience in this approach. You can still substitute values from external property files, you can still override and extend the frameworks, and you can still achieve a single configuration artifact – a place where you can get a bird’s eye view of the system. 
 &lt;/p&gt;&lt;P&gt;
  There are many Spring projects that provide idiomatic, Java configuration centric APIs and DSLs as Spring core does for building services using Spring and web applications using Spring MVC.
-&lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>One Big Bag of Beans</title>
-      <link>https://joshlong.com/jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</link>
-      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</guid>
-      	<description>
-	
-&lt;P&gt;At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean&apos;s class, optionally an &lt;CODE&gt;id&lt;/CODE&gt; by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc.
-&lt;/P&gt;
-&lt;P&gt;Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The &lt;A href=&quot;http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL&quot;&gt;Groovy Bean Builder&lt;/a&gt;. The &lt;A href=&quot;http://blog.springsource.org/2012/12/10/introducing-spring-scala/&quot;&gt; Spring Scala&lt;/a&gt; approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces.
-&lt;/P&gt;&lt;P&gt;
-Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the &lt;CODE&gt;@Transactional&lt;/CODE&gt; annotation. Then the stereotype annotations emerged -&lt;CODE&gt;@Controller&lt;/CODE&gt;, &lt;CODE&gt;@Component&lt;/CODE&gt;, &lt;CODE&gt;@Service&lt;/CODE&gt;, etc, that – along with component scanning and &lt;CODE&gt;@Autowired&lt;/CODE&gt; – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. &lt;/p&gt;
-
-&lt;P&gt;Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. 
 &lt;/P&gt;
 
 	</description>
@@ -6314,23 +6324,6 @@ In the same vein, years ago, there was a project called &lt;A href=&quot;http://
 	</description>
     </item>
     <item>
-      <title>Spring MVC Performance FTW</title>
-      <link>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</link>
-      <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_mvc_performance_ftw.html</guid>
-      	<description>
-	
-&lt;P&gt; We&apos;ve all seen 
- &lt;A href=&quot;http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5&quot;&gt; Matt Raible&apos;s awesome talk&lt;/a&gt;
- comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
-&lt;/p&gt; 
-&lt;P&gt; 
- For a very detailed dissection of performance, you might check out this talk &lt;a href=&quot;http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/&quot;&gt;comparing web framework performance&lt;/a&gt;. Matt&apos;s talk builds on the data amassed from that talk. 
-&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Multi Client Development with Spring Webinar on March 14, 2013</title>
       <link>https://joshlong.com/jl/blogPost/performance_and_the_restful_web.html</link>
       <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
@@ -6346,6 +6339,23 @@ Once we&apos;ve introduced Spring&apos;s REST support, we&apos;ll look at how to
 &lt;P&gt; Be sure to register now and bring questions, ideas, etc.  I look forward to seeing you at there, and we&apos;ll look at some of the amazing support  
  Spring offers for building best-of-breed web-centric, RESTful applications.
 &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring MVC Performance FTW</title>
+      <link>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</link>
+      <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_mvc_performance_ftw.html</guid>
+      	<description>
+	
+&lt;P&gt; We&apos;ve all seen 
+ &lt;A href=&quot;http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5&quot;&gt; Matt Raible&apos;s awesome talk&lt;/a&gt;
+ comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
+&lt;/p&gt; 
+&lt;P&gt; 
+ For a very detailed dissection of performance, you might check out this talk &lt;a href=&quot;http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/&quot;&gt;comparing web framework performance&lt;/a&gt;. Matt&apos;s talk builds on the data amassed from that talk. 
+&lt;/p&gt;
 
 	</description>
     </item>
@@ -6450,23 +6460,6 @@ Also,  you&apos;ll need to have a domain you can point to this. During this proc
 	</description>
     </item>
     <item>
-      <title>Coffee Drinks in China</title>
-      <link>https://joshlong.com/jl/blogPost/coffee_drinks_in_china.html</link>
-      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/coffee_drinks_in_china.html</guid>
-      	<description>
-	
-&lt;P&gt; 
- My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must  wind down my time here. As part of that, I need to finish my &lt;EM&gt;amazing&lt;/EM&gt; stash 
-&apos;o iced coffee drinks that I&apos;ve only found here in China. I don&apos;t know if you know this about me, but I &lt;EM&gt;love&lt;/EM&gt; coffee. 
- And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@
-
-&lt;/P&gt;
-&lt;Div style   =&quot;padding-bottom: 10px; &quot;&gt;  &lt;img src   =&quot;/media/18596&quot;  width = &quot;500&quot; /&gt;&lt;/div&gt;
-
-	</description>
-    </item>
-    <item>
       <title>On Damien Katz&apos; &quot;The Unreasonable Effectiveness of C&quot;</title>
       <link>https://joshlong.com/jl/blogPost/on_damien_katz_the_unreasonable_effectiveness_of_c.html</link>
       <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
@@ -6488,6 +6481,23 @@ When using JNI, I try to never &apos;leak&apos; any complex C types into my java
  &lt;/p&gt;&lt;P&gt;
 Once you&apos;ve gone through this process, then exposing the C API via messaging is easier because the message payloads between two systems can&apos;t, by definition, be much more complicated than the surface area of the C library. Of course, if you&apos;re using messaging, that means either writing messaging code in C, or exposing the C library to some higher level language and doing the messaging there. The nice part about messaging is that insulates your higher-level language code from your C code which - let&apos;s be honest - might be flakier than your Java code. I still won&apos;t link code written against the imagemagick C APIs directly to my application! There is some black magic in that library...! If the C code dies, the messaging system absorbs the requests until another node running the C code can pick up the slack. On the other hand, if you really are using C for performance, then messaging introduces at least a network hop, not to mention another component in the system, and you might lose any gains you made by writing it in C. In this case, it is possible to use write stable, well-behaved JNI or native extensions, but this again requires keeping the surface area small and understanding the pre-conditions nad post-conditions. No threads. Don&apos;t pass around pointers to complex objects between C and Java. Make sure you understand who&apos;s supposed to clean up memory, and when. 
 &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Coffee Drinks in China</title>
+      <link>https://joshlong.com/jl/blogPost/coffee_drinks_in_china.html</link>
+      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/coffee_drinks_in_china.html</guid>
+      	<description>
+	
+&lt;P&gt; 
+ My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must  wind down my time here. As part of that, I need to finish my &lt;EM&gt;amazing&lt;/EM&gt; stash 
+&apos;o iced coffee drinks that I&apos;ve only found here in China. I don&apos;t know if you know this about me, but I &lt;EM&gt;love&lt;/EM&gt; coffee. 
+ And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@
+
+&lt;/P&gt;
+&lt;Div style   =&quot;padding-bottom: 10px; &quot;&gt;  &lt;img src   =&quot;/media/18596&quot;  width = &quot;500&quot; /&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -6554,6 +6564,21 @@ Sometimes I wonder if people test things before they release it :/
 	</description>
     </item>
     <item>
+      <title>Christmas in Shanghai</title>
+      <link>https://joshlong.com/jl/blogPost/christmas_in_shanghai.html</link>
+      <pubDate>Wed, 26 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/christmas_in_shanghai.html</guid>
+      	<description>
+	
+&lt;P&gt; Merry Christmas! Feliz Navidad! Joyeux Noel! Feliz natal! 
+ &lt;/P&gt;
+&lt;p&gt; It&apos;s already &lt;a href=&quot;http://en.wikipedia.org/wiki/Boxing_day&quot;&gt;Boxing day&lt;/a&gt;, or - as we call it   in Shanghai, &quot;Wednesday&quot; (I translated that from the original Mandarin for you).&lt;/p&gt; 
+&lt;p&gt; Christmas was such a trip here in China. It&apos;s celebrated like people in the west celebrate St. Patty&apos;s day: a chance to shop at discount sales, drink and hang out with friends, and potentially take the day off. And, shop they do. China&apos;s economy&apos;s growing, while the economies in the US and Europe have slowed. Last year, in 2011, the average affluent Chinese spent the holiday abroad and - in England, for example, spent 1300 pounds for the holiday (avergage). (By comparison, the average wealthy Englishman spent 1200 or so pounds). What an amazing phenomenon. One thing that was a big seller, the &apos;Christmas Apple&apos;, which - as I understand it - sounds in the Chinese language like the words for &apos;Christmas Eve.&apos; What salesmanship. That said, I&apos;ve never had a Christmas apple, and I think I should like to try one. I wonder if they&apos;ll have after-Christmas sales?
+&lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Chinese Weather</title>
       <link>https://joshlong.com/jl/blogPost/chinese_weather.html</link>
       <pubDate>Wed, 26 Dec 2012 00:00:00 +0000</pubDate>
@@ -6567,21 +6592,6 @@ it&apos;s freaking &lt;EM&gt;cold&lt;/EM&gt; in China. Northern parts of China -
 &lt;p&gt; I&apos;m originally from Los Angeles, and sometimes gets, and while I&apos;m now in rainy San Francisco, I&apos;m not used to this kind of cold.  I much prefer the cold to the hot mugginess of a humid summer, however, so I suppose this will just have to do.  
 &lt;/p&gt;
 &lt;p&gt; As you can imagine, slingshotting from Beijing, China (at -8C) to Hyderabad and Bangalore in India, where it&apos;s a warm 30 C or so, has not been easy on the immune system. I&apos;ve got a cold. Oh well..   &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Christmas in Shanghai</title>
-      <link>https://joshlong.com/jl/blogPost/christmas_in_shanghai.html</link>
-      <pubDate>Wed, 26 Dec 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/christmas_in_shanghai.html</guid>
-      	<description>
-	
-&lt;P&gt; Merry Christmas! Feliz Navidad! Joyeux Noel! Feliz natal! 
- &lt;/P&gt;
-&lt;p&gt; It&apos;s already &lt;a href=&quot;http://en.wikipedia.org/wiki/Boxing_day&quot;&gt;Boxing day&lt;/a&gt;, or - as we call it   in Shanghai, &quot;Wednesday&quot; (I translated that from the original Mandarin for you).&lt;/p&gt; 
-&lt;p&gt; Christmas was such a trip here in China. It&apos;s celebrated like people in the west celebrate St. Patty&apos;s day: a chance to shop at discount sales, drink and hang out with friends, and potentially take the day off. And, shop they do. China&apos;s economy&apos;s growing, while the economies in the US and Europe have slowed. Last year, in 2011, the average affluent Chinese spent the holiday abroad and - in England, for example, spent 1300 pounds for the holiday (avergage). (By comparison, the average wealthy Englishman spent 1200 or so pounds). What an amazing phenomenon. One thing that was a big seller, the &apos;Christmas Apple&apos;, which - as I understand it - sounds in the Chinese language like the words for &apos;Christmas Eve.&apos; What salesmanship. That said, I&apos;ve never had a Christmas apple, and I think I should like to try one. I wonder if they&apos;ll have after-Christmas sales?
-&lt;/P&gt;
 
 	</description>
     </item>
@@ -6744,6 +6754,19 @@ Wish me luck!
 	</description>
     </item>
     <item>
+      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
+      <link>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
+      	<description>
+	
+&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
+         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
+ &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Spring Data Mongo transaction synchronization does not find a bound DB</title>
       <link>https://joshlong.com/jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
@@ -6777,19 +6800,6 @@ at org.springframework.transaction.support.AbstractPlatformTransactionManager.co
 at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:393) [spring-tx-3.1.1.RELEASE.jar:3.1.1.RELEASE]
  &lt;/pre&gt;
 &lt;/p&gt; &lt;p&gt; Hat tip to the one and only  &lt;a href= &quot;https://twitter.com/olivergierke&quot;&gt;Oliver Gierke&lt;/a&gt; for helping me with this! &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
-      <link>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
-      <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
-      	<description>
-	
-&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
-         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
- &lt;/p&gt;
 
 	</description>
     </item>
@@ -7098,18 +7108,6 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
 	</description>
     </item>
     <item>
-      <title>My Dear Aunt Sandra</title>
-      <link>https://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/my_dear_aunt_sandra.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;img src  = &quot;/media/18467&quot; style = &quot;margin-bottom: 10px;&quot;   /&gt; &lt;br/&gt; My aunt Sandra passed gentle into that good night, yesterday morning, from complications of &lt;a href =&quot;http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/&quot; height = &quot;400&quot;&gt;ALS&lt;/a&gt;. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She&apos;s the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She&apos;d visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad&apos;s side of the family. A true family Matriarch. Sandra was the best of us, and I&apos;ll miss her with all my heart. RIP Aunt Sandra.
- &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
       <title>SpringOne2GX 2012</title>
       <link>https://joshlong.com/jl/blogPost/springone2gx_2012.html</link>
       <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
@@ -7120,6 +7118,18 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
  &lt;img src = &quot;/media/18460&quot;/&gt; &lt;img src = &quot;/media/18462&quot;/&gt; &lt;img src = &quot;/media/18459&quot;/&gt;
  &lt;img src = &quot;/media/18461&quot;/&gt; &lt;/div&gt;It&apos;s my favorite time of year! SpringOne2GX kicks off tomorrow. I&apos;ll be &lt;A href=&quot;http://springone2gx.com/conference/washington/2012/10/speakers/josh_long&quot;&gt;giving two talks&lt;/a&gt; -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry.  This year&apos;s already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more.  If you&apos;re around, feel free to find me roaming the halls &lt;a href=&quot;http://www.twitter.com/starbuxman&quot;&gt;or ping me on Twitter&lt;/a&gt;!   
   
+ &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>My Dear Aunt Sandra</title>
+      <link>https://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/my_dear_aunt_sandra.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;img src  = &quot;/media/18467&quot; style = &quot;margin-bottom: 10px;&quot;   /&gt; &lt;br/&gt; My aunt Sandra passed gentle into that good night, yesterday morning, from complications of &lt;a href =&quot;http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/&quot; height = &quot;400&quot;&gt;ALS&lt;/a&gt;. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She&apos;s the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She&apos;d visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad&apos;s side of the family. A true family Matriarch. Sandra was the best of us, and I&apos;ll miss her with all my heart. RIP Aunt Sandra.
  &lt;/P&gt;
 
 	</description>
@@ -7267,17 +7277,6 @@ In addition to looking at source code and looking at design patterns, you should
 	</description>
     </item>
     <item>
-      <title>WTF</title>
-      <link>https://joshlong.com/jl/blogPost/huh.html</link>
-      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/huh.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;img src = &quot;/media/18420&quot; width = &quot;500&quot; /&gt; &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Cloud Foundry System Integrators Tour in India, ArchSummit, OSChina in China, August 2012</title>
       <link>https://joshlong.com/jl/blogPost/cloud_foundry_system_integrators_tour_india_archsummit_and_oschina_in_india_and_china_august_2012.html</link>
       <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
@@ -7343,6 +7342,17 @@ The show had the same format in each of two cities:  for the first several hours
 &lt;/td&gt; &lt;td width = &quot;10&quot;&gt;&lt;/td&gt;
  &lt;td valign = &quot;top&quot;&gt; &lt;img  width = &quot;300&quot; src   = &quot;/media/18405&quot;/&gt;  
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>WTF</title>
+      <link>https://joshlong.com/jl/blogPost/huh.html</link>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/huh.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;img src = &quot;/media/18420&quot; width = &quot;500&quot; /&gt; &lt;/P&gt;
 
 	</description>
     </item>
@@ -8090,18 +8100,6 @@ Exposing your frameworks and common abstractions in terms of these well known, i
 	</description>
     </item>
     <item>
-      <title>Getting Started with Spring Roo</title>
-      <link>https://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
-      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
-      	<description>
-	
-&lt;P&gt;  &lt;IMG src = &quot;/media/17884&quot; style = &quot; float:left;margin-right:10px;&quot; /&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;EM&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/A&gt;&lt;/EM&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;B&gt;Vaadin&lt;/B&gt; - a powerful, alternative web framework, and &lt;B&gt;Neo4j&lt;/B&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out.
- &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
       <title>RabbitMQ is now officially available on CloudFoundry!</title>
       <link>https://joshlong.com/jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html</link>
       <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
@@ -8116,6 +8114,18 @@ For you &lt;a href=&quot;http://github.com/CloudFoundry&quot;&gt;code lurkers&lt
                any other message broker on the cloud, and on Amazon Web Services in particular. The AWS tidbit&apos;s a bit more awesome when you realize that AWS already has a message broker service called SQS!  ;-)    Anyway, it&apos;s now available on CloudFoundry. You &lt;a href=&quot;http://support.cloudfoundry.com/entries/20322602-getting-started-with-the-rabbitmq-service-from-a-spring-application&quot;&gt;should definitely&lt;/a&gt; check &lt;a href=&quot;http://blog.cloudfoundry.com/post/8713844574/rabbitmq-cloud-foundry-cloud-messaging-that-just-works&quot;&gt;it out.&lt;/a&gt; The &lt;a href=&quot;http://www.theregister.co.uk/2011/08/10/vmware_cloud_foundry_adds_rabbitmq_messaging/&quot;&gt;news&lt;/a&gt;  overall seems good, too! Messaging middleware is &lt;EM&gt;the&lt;/EM&gt; critical component for scale. Cloud-scale is a way of life, not just a switch to be turned on and off. Specifically, an architecure that scales is going to enjoy temporally decoupling, or &lt;EM&gt;asynchronism,&lt;/EM&gt; and RabbitMQ is the perfect vehicle to enable that asynchronous coordination. 
 &lt;/p&gt; &lt;P&gt;  If you&apos;re a Spring developer, and haven&apos;t had a chance to look at CloudFoundry, then I strongly recommend you see  &lt;a href=&quot;http://blog.springsource.com/2011/04/12/cloud-foundry-for-spring-developers/&quot;&gt;Mark Fisher&apos;s entry  on the SpringSource blog&lt;/a&gt; introducing the wide world of the cloud for Spring developers from a few months ago. There&apos;s also great content on &lt;A href=&quot;http://www.youtube.com/SpringSourceDev&quot;&gt;the SpringSource YouTube channel.&lt;/a&gt;
 		
+ &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Getting Started with Spring Roo</title>
+      <link>https://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
+      	<description>
+	
+&lt;P&gt;  &lt;IMG src = &quot;/media/17884&quot; style = &quot; float:left;margin-right:10px;&quot; /&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;EM&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/A&gt;&lt;/EM&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;B&gt;Vaadin&lt;/B&gt; - a powerful, alternative web framework, and &lt;B&gt;Neo4j&lt;/B&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out.
  &lt;/P&gt;
 
 	</description>
@@ -9018,6 +9028,20 @@ fantastic new year, and a new decade.
 	</description>
     </item>
     <item>
+      <title>Devoxx 2010</title>
+      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
+      	<description>
+	
+&lt;p&gt;  
+ I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
+&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;https://www.salesforce.com/dreamforce/&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
+ The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>The H2 Embedded Database</title>
       <link>https://joshlong.com/jl/blogPost/the_h2_embedded_database.html</link>
       <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
@@ -9050,20 +9074,6 @@ featured exclusive support   for persisting process state in H2, and H2 alone. A
 &lt;p&gt;So, what&apos;s my point? I didn&apos;t know much about this handy little database until a year ago and now, increasingly, I find myself reaching for it all the time! Give it a go if you have a moment, as that&apos;s all you need.  
  As I&apos;ve never sat down and done a comparison against my  RDBMS-of-choice, &lt;a href=&quot;http://www.postgresql.org&quot;&gt;PostgreSQL&lt;/a&gt;, I don&apos;t really know where H2 stands as an alternative, but my cursory sort of uses thus far give me the impression that it&apos;d handily give MySQL a run for its money. &lt;/p&gt; 
 &lt;/p&gt; 
-
-	</description>
-    </item>
-    <item>
-      <title>Devoxx 2010</title>
-      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
-      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
-      	<description>
-	
-&lt;p&gt;  
- I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
-&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;https://www.salesforce.com/dreamforce/&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
- The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
 
 	</description>
     </item>
@@ -12101,52 +12111,6 @@ XMLRPC library is quite formidable. I&apos;d not recommend using Apache XMLRPC
 	</description>
     </item>
     <item>
-      <title>A journey of a thousand miles begins with a single step: “Programming Collective Intelligence”, by O&apos;Reilly</title>
-      <link>https://joshlong.com/jl/blogPost/a_journey_of_a_thousand.html</link>
-      <pubDate>Wed, 17 Dec 2008 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/a_journey_of_a_thousand.html</guid>
-      	<description>
-	
-&lt;p&gt; Working through my reading list. You might infer that I&apos;m a bit
-behind because this review is about a book published in September of
-2007.&lt;/p&gt;
-&lt;p&gt;You&apos;d be correct.&lt;/p&gt;
-
-&lt;p&gt;&quot;Programming Collective Intelligence&quot; is astonishingly clear and
-concise in the examples, and a brilliant introduction to the
-foundations of a lot of fields of study. A well presented discussion
-on many of the key items in the AI/algorithm world. Why is this so
-worth repeating? Because these concepts – genetic algorithms/ AI /
-optimization, etc, are NOT common nor are they simple. Anybody who
-manages to make them appear so is worth of praise. The examples are
-further interesting because they&apos;re written in Python, which is as
-simple as a language can get. (Digression: Python 3.0&apos;s out! How come
-I didn&apos;t see a flurry of news? How come there was no ball drop in
-Times Square? I&apos;m excited, and proportionately confused by some
-people&apos;s reactions, &lt;a href=
-&quot;http://www.mooseyard.com/Jens/2008/12/python-30-whats-the-point/&quot;&gt;like
-this one&lt;/a&gt;. Get your &lt;a
-href=&quot;http://python.org/download/releases/3.0&quot;&gt;copy while it&apos;s
-hot!&lt;/a&gt;
-&lt;/p&gt;&lt;p&gt;
-The book is sort of the first rung of knowledge on a whole gamut of
-complex topics, but that&apos;s OK because these topics become approachable
-only once you&apos;ve gotten the introductory tour. Finding that &quot;tour&quot;,
-the source for the inevitable epiphany, is what&apos;s so hard about these
-concepts. It&apos;s even further difficult because it&apos;s not like there&apos;s a
-lot of mainstream thinking going on here and these concepts just
-represent a slight tangent on what you&apos;re already dealing with.
-Anything but. People who know why they want to use something like
-JBoss Rules already knew it. You&apos;ll notice there&apos;s no good &quot;sales&quot;
-rhetoric on the JBoss website. It&apos;s the chicken and egg problem.
-Understanding the concepts in this book is key to caring about, and
-eventually understanding, things like JBoss Rules.
-&lt;/p&gt; &lt;p&gt; All in all, a very worthy read. If nothing else, it&apos;s a good
-refresher.   &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Anyone else noticing the extreme slowness of Java applications on Ubuntu 8.10?</title>
       <link>https://joshlong.com/jl/blogPost/anyone_else_noticing_the_extreme.html</link>
       <pubDate>Wed, 17 Dec 2008 00:00:00 +0000</pubDate>
@@ -12197,6 +12161,52 @@ Magic&lt;/a&gt;. Seriously -- how slick is that? When do you usually need a
 Taxi? When you&apos;re most impaired, likely, say perhaps after drinking?
 One button. Finally, technology for fun and profit.
 &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>A journey of a thousand miles begins with a single step: “Programming Collective Intelligence”, by O&apos;Reilly</title>
+      <link>https://joshlong.com/jl/blogPost/a_journey_of_a_thousand.html</link>
+      <pubDate>Wed, 17 Dec 2008 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/a_journey_of_a_thousand.html</guid>
+      	<description>
+	
+&lt;p&gt; Working through my reading list. You might infer that I&apos;m a bit
+behind because this review is about a book published in September of
+2007.&lt;/p&gt;
+&lt;p&gt;You&apos;d be correct.&lt;/p&gt;
+
+&lt;p&gt;&quot;Programming Collective Intelligence&quot; is astonishingly clear and
+concise in the examples, and a brilliant introduction to the
+foundations of a lot of fields of study. A well presented discussion
+on many of the key items in the AI/algorithm world. Why is this so
+worth repeating? Because these concepts – genetic algorithms/ AI /
+optimization, etc, are NOT common nor are they simple. Anybody who
+manages to make them appear so is worth of praise. The examples are
+further interesting because they&apos;re written in Python, which is as
+simple as a language can get. (Digression: Python 3.0&apos;s out! How come
+I didn&apos;t see a flurry of news? How come there was no ball drop in
+Times Square? I&apos;m excited, and proportionately confused by some
+people&apos;s reactions, &lt;a href=
+&quot;http://www.mooseyard.com/Jens/2008/12/python-30-whats-the-point/&quot;&gt;like
+this one&lt;/a&gt;. Get your &lt;a
+href=&quot;http://python.org/download/releases/3.0&quot;&gt;copy while it&apos;s
+hot!&lt;/a&gt;
+&lt;/p&gt;&lt;p&gt;
+The book is sort of the first rung of knowledge on a whole gamut of
+complex topics, but that&apos;s OK because these topics become approachable
+only once you&apos;ve gotten the introductory tour. Finding that &quot;tour&quot;,
+the source for the inevitable epiphany, is what&apos;s so hard about these
+concepts. It&apos;s even further difficult because it&apos;s not like there&apos;s a
+lot of mainstream thinking going on here and these concepts just
+represent a slight tangent on what you&apos;re already dealing with.
+Anything but. People who know why they want to use something like
+JBoss Rules already knew it. You&apos;ll notice there&apos;s no good &quot;sales&quot;
+rhetoric on the JBoss website. It&apos;s the chicken and egg problem.
+Understanding the concepts in this book is key to caring about, and
+eventually understanding, things like JBoss Rules.
+&lt;/p&gt; &lt;p&gt; All in all, a very worthy read. If nothing else, it&apos;s a good
+refresher.   &lt;/p&gt;
 
 	</description>
     </item>
@@ -12688,6 +12698,19 @@ Did you know that &lt;code&gt;mvn archetype:generate&lt;/code&gt;, by itself, on
 	</description>
     </item>
     <item>
+      <title>Subversion 1.5, IntelliJ IDEA, and you</title>
+      <link>https://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
+      <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/subversion_1_5_intellij_idea.html</guid>
+      	<description>
+	
+&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &amp;quot;dirty&amp;quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &amp;quot;No Changes found&amp;quot;.  I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue.
+&lt;/p&gt;&lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! 
+&lt;/p&gt; &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand...  &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</title>
       <link>https://joshlong.com/jl/blogPost/keith_donald_speaking_on_spring.html</link>
       <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
@@ -12698,19 +12721,6 @@ Did you know that &lt;code&gt;mvn archetype:generate&lt;/code&gt;, by itself, on
 Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.phxjug.org/&quot;&gt;Phoenix Java User Group&lt;/a&gt; talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can&apos;t wait for this one! 
 
 &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Subversion 1.5, IntelliJ IDEA, and you</title>
-      <link>https://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
-      <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/subversion_1_5_intellij_idea.html</guid>
-      	<description>
-	
-&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &amp;quot;dirty&amp;quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &amp;quot;No Changes found&amp;quot;.  I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue.
-&lt;/p&gt;&lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! 
-&lt;/p&gt; &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand...  &lt;/p&gt;
 
 	</description>
     </item>
