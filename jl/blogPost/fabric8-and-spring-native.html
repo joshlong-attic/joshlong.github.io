@@ -79,12 +79,14 @@
 	<p><em>22 December 2021</em></p>
 
 	<p><p>Earlier, I wrote an example on how to <a href="https://joshlong.com/jl/blogPost/kubernetes-java-client-and-spring-native-and-graalvm.html">get Spring Native and the official Kubernetes Native Java client</a> working with the newly released <a href="https://www.youtube.com/watch?v=DVo5vmk5Cuw&amp;t=2288s">Spring Native 0.11</a>. I mentioned that I had to write <a href="https://github.com/kubernetes-native-java/spring-native-kubernetes/blob/main/src/main/java/io/kubernetes/nativex/KubernetesApiNativeConfiguration.java">a trivial configuration class</a> to register the types that were used reflectively in the Spring Boot application, something that GraalVM frowns upon.</p>
-<p>Then, <a href="https://twitter.com/MarcNuri">Marc Nuri</a> - who works on the Fabric8 project (the excellent Red Hat-driven client for Kubernetes) - took my trivial example, some of which I in turn took from the good <a href="https://twitter.com/david_syer">Dr. Dave Syer</a>, and turned into an example written in terms of Faric8. The Fabric8 project looks really good, and I wanted an excuse to get around to making that work at some point sooner rather than later, too! Now I had a great reason. Good news: it was even easier to get this working with Spring Boot and Spring Native. There's no Spring Boot autoconfiguration, <em>per se</em>, and there's no existing integration with Spring Nativem so I had to write that myself, but it was about as easy as the integration I wrote for the official Kubernetes Java client. This has to do mainly I think with the fact that there were fewer things in the project that I had to explicitly register. I could see patterns and then register everything that fit that pattern, and it <em>just worked</em>. (Three cheers for consistency!) It's so much more tedious to write GraalVM and Spring Native hints (configurations, basically) when you're sort of discovering the places that need those hints by surprise, one at a time. The cycle time is of course very slow for GraalVM compiles, so I was very happy to get something working so quickly: great job, Fabric8!</p>
+<p>Then, <a href="https://twitter.com/MarcNuri">Marc Nuri</a> - who works on the Fabric8 project (the excellent Red Hat-driven client for Kubernetes) - took my trivial example, some of which I in turn took from the good <a href="https://twitter.com/david_syer">Dr. Dave Syer</a>, and turned into an example written in terms of Faric8. The Fabric8 project looks really good, and I wanted an excuse to get around to making that work at some point sooner rather than later, too! Now I had a great reason.</p>
+<p>Good news: <a href="https://github.com/joshlong/fabric8-spring-native">it was even easier to get this working with Spring Boot and Spring Native</a>. There's no Spring Boot autoconfiguration, <em>per se</em>, and there's no existing integration with Spring Nativem so I had to write that myself, but it was about as easy as the integration I wrote for the official Kubernetes Java client. This has to do mainly I think with the fact that there were fewer things in the project that I had to explicitly register. I could see patterns and then register everything that fit that pattern, and it <em>just worked</em>. (Three cheers for consistency!) It's so much more tedious to write GraalVM and Spring Native hints (configurations, basically) when you're sort of discovering the places that need those hints by surprise, one at a time. The cycle time is of course very slow for GraalVM compiles, so I was very happy to get something working so quickly: great job, Fabric8!</p>
 <p>Here's the code for that integration:</p>
 <pre><code class="language-java">package com.example.fabric8native.nativex;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.fabric8.kubernetes.api.model.Doneable;
 import io.fabric8.kubernetes.api.model.KubernetesResource;
 import io.fabric8.kubernetes.api.model.NamedCluster;
 import lombok.SneakyThrows;
@@ -105,9 +107,11 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Spring Native support for excellent Fabric8 Kubernetes client from Red Hat (thanks, Red Hat!)
+ * 
+ * Spring Native support for excellent Fabric8 Kubernetes client.
  *
  * @author Josh Long
+ * 
  */
 @Slf4j
 @NativeHint(options = {&quot;-H:+AddAllCharsets&quot;, &quot;--enable-https&quot;, &quot;--enable-url-protocols=https&quot;})
@@ -125,6 +129,7 @@ public class Fabric8NativeConfiguration implements NativeConfiguration {
 		var combined = new HashSet&lt;Class&lt;?&gt;&gt;();
 		combined.addAll(subtypesOfKubernetesResource);
 		combined.addAll(othersToAddForReflection);
+		combined.addAll(reflections.getSubTypesOf(Doneable.class));
 		combined.addAll(resolveSerializationClasses(JsonSerialize.class));
 		combined.addAll(resolveSerializationClasses(JsonDeserialize.class));
 		combined
@@ -167,7 +172,7 @@ public class Fabric8NativeConfiguration implements NativeConfiguration {
 <p>You'll need to add that your <code>META-INF/spring.factories</code> file, like this:</p>
 <pre><code class="language-properties">org.springframework.nativex.type.NativeConfiguration=com.example.fabric8native.nativex.Fabric8NativeConfiguration
 </code></pre>
-<p>Now you just need an example that uses the Fabric8 API. I was able to sort of figure it out by looking at the blog post. The result looks fairly similar to my original example, so that helped, too. Here's the example:</p>
+<p>Now you just need an example that uses the newly configured and ready-to-run on GraalVM, Fabric8-powered API. I was able to sort of figure it out by looking at the blog post. The result looks fairly similar to my original example, which helped, too. Here's the example:</p>
 <pre><code class="language-java">package com.example.fabric8native;
 
 import io.fabric8.kubernetes.api.model.*;
@@ -187,14 +192,11 @@ import org.springframework.context.event.ContextStoppedEvent;
 import java.util.Objects;
 
 /**
-	* This example uses &lt;a href=&quot;https://developers.redhat.com/blog/2020/05/20/getting-started-with-the-fabric8-kubernetes-java-client#using_fabric8_with_kubernetes&quot;&gt;
-	* the Red Hat Fabric8 Kubernetes client&lt;/a&gt;.
-	* &lt;p&gt;
-	* The example is inspired by &lt;a href=&quot;https://blog.marcnuri.com/fabric8-kubernetes-java-client-and-quarkus-and-graalvm&quot;&gt;this blog&lt;/a&gt;,
-	* which in turn was inspired by a blog I did.
-	*
-	* @author Josh Long
-	*/
+ * This example uses &lt;a href=&quot;https://developers.redhat.com/blog/2020/05/20/getting-started-with-the-fabric8-kubernetes-java-client#using_fabric8_with_kubernetes&quot;&gt;
+ * the Red Hat Fabric8 Kubernetes client&lt;/a&gt;. The example is inspired by &lt;a href=&quot;https://blog.marcnuri.com/fabric8-kubernetes-java-client-and-quarkus-and-graalvm&quot;&gt;this blog&lt;/a&gt;, which in turn was inspired by a blog I did.
+ *
+ * @author Josh Long
+ */
 
 @Slf4j
 @SpringBootApplication
@@ -210,9 +212,7 @@ public class Fabric8NativeApplication {
 	}
 
 	@Bean
-	ApplicationListener&lt;ApplicationReadyEvent&gt; start(KubernetesClient client,
-																																																		SharedInformerFactory sharedInformerFactory,
-																																																		ResourceEventHandler&lt;Node&gt; nodeEventHandler) {
+	ApplicationListener&lt;ApplicationReadyEvent&gt; start(KubernetesClient client, SharedInformerFactory sharedInformerFactory, ResourceEventHandler&lt;Node&gt; nodeEventHandler) {
 		return args -&gt; {
 			client.nodes().list(new ListOptionsBuilder().withLimit(1L).build());
 			sharedInformerFactory.startAllRegisteredInformers();
