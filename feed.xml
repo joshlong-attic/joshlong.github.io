@@ -6,9 +6,77 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Thu, 30 Dec 2021 02:43:34 +0000</pubDate>
-    <lastBuildDate>Thu, 30 Dec 2021 02:43:34 +0000</lastBuildDate>
+    <pubDate>Thu, 30 Dec 2021 10:52:50 +0000</pubDate>
+    <lastBuildDate>Thu, 30 Dec 2021 10:52:50 +0000</lastBuildDate>
 
+    <item>
+      <title>Spring Native, GraalVM, and Kubernetes Native Java</title>
+      <link>https://joshlong.com/jl/blogPost/kubernetes-native-java-and-spring-native.html</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/kubernetes-native-java-and-spring-native.html</guid>
+      	<description>
+	&lt;p&gt;Hi, Spring fans! You know I love &lt;em&gt;the cloud&lt;/em&gt; (cue Daft Punk&apos;s &lt;em&gt;The Grid&lt;/em&gt; theme from the &lt;em&gt;Tron Legacy&lt;/em&gt; movie). I think it&apos;s an exciting way to build software. And, as you may have noticed, from literally everything I &lt;a href=&quot;https://spring.io/team/joshlong&quot;&gt;write&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/starbuxman&quot;&gt;tweet&lt;/a&gt;, &lt;a href=&quot;https://bit.ly/spring-tips-playlist&quot;&gt;produce&lt;/a&gt;,  etc., I am also absolutely &lt;em&gt;gaga&lt;/em&gt; for &lt;a href=&quot;https://www.graalvm.org/&quot;&gt;GraalVM&lt;/a&gt; and &lt;a href=&quot;https://github.com/Spring-Projects-Experimental/Spring-Native&quot;&gt;Spring Native&lt;/a&gt;. There&apos;s such an exciting opportunity here! By the by, if you want to learn more about Spring Native in general, may I humbly recommend this YouTube video I put together?&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/DVo5vmk5Cuw&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;If you don&apos;t want to sit through all that, I&apos;ll happily summarize some salient points here. Spring provides an integration point for so much of the enterprise Java ecosystem, which means that we provide the clean glue code to integrate and adapt all the fantastic and best-of-breed bits into one cohesive whole. It&apos;s a dirty job, but somebody has to do it! So it was when &lt;a href=&quot;https://github.com/spring-projects/spring-framework&quot;&gt;Spring Framework&lt;/a&gt; arrived on the scene more than 20 years ago! Spring integrated many components from around the ecosystem and provided a component model that third-party libraries could use to give their integrations. So it was when we introduced &lt;a href=&quot;https://start.spring.io&quot;&gt;Spring Boot&lt;/a&gt;. Spring Boot ships with autoconfiguration which means that the mere presence of types on the classpath can trigger some default and helpful behavior in your application. And, of course, the ecosystem rushed in to provide autoconfiguration and starters of their own, too. And so it is with &lt;a href=&quot;https://github.com/spring-projects-experimental/spring-native&quot;&gt;Spring Native&lt;/a&gt;, which offers integrations for as many projects as possible to make those projects compile effortlessly into   GraalVM native images.&lt;/p&gt;
+&lt;p&gt;But, Spring Native &lt;em&gt;isn&apos;t&lt;/em&gt; a runtime framework like Spring Framework and Spring Boot are. No, Spring Native is a different beast altogether. It is a way to feed configuration into the GraalVM &lt;code&gt;native-image&lt;/code&gt; compiler tool. Broadly, GraalVM is a drop-in replacement for &lt;a href=&quot;https://openjdk.java.net/&quot;&gt;OpenJDK&lt;/a&gt; that offers a superior alternative to the &lt;a href=&quot;https://www.ibm.com/docs/en/sdk-java-technology/8?topic=reference-jit-compiler&quot;&gt;Just-in-Time&lt;/a&gt; compiler &lt;a href=&quot;https://en.wikipedia.org/wiki/HotSpot_(virtual_machine)&quot;&gt;HotSpot&lt;/a&gt;. But that&apos;s not all. It provides an intriguing, optional, and extra little utility called &lt;code&gt;native-image&lt;/code&gt;, and that utility is an &lt;a href=&quot;https://en.wikipedia.org/wiki/Ahead-of-time_compilation&quot;&gt;ahead-of-time (AOT) compiler&lt;/a&gt;. Henceforth, I&apos;ll refer to GraalVM and the &lt;code&gt;native-image&lt;/code&gt; AOT  compiler utility interchangeably since the native image compilation is the subject of this discussion. Most people do anyway.&lt;/p&gt;
+&lt;p&gt;I hope that you&apos;re familiar with the JIT compiler&apos;s magic at this point: the Java runtime looks at frequently run code paths in your application and turns them into native code. This transition only kicks in after a certain threshold number of runs. The effect is that a mediocre Java application can sometimes run faster than a well-written and analogous C or C++ application, whose memory shapes are rife with the memory spikes associated with local resource initialization, acquisition, and - very shortly after that - destruction. Large organizations with large applications sometimes exploit this dynamic, &lt;em&gt;warming&lt;/em&gt; their applications up by barraging them with traffic to start the JIT process before introducing real traffic.&lt;/p&gt;
+&lt;p&gt;&amp;quot;If JIT compilers are such a good idea,&amp;quot; I hear you muse, &amp;quot;why not go the whole nine yards and transpile everything into native code, soup to nuts?&amp;quot; Why bother with adaptive compilation? This question (and the obvious answer) is the core conceit of the GraalVM &lt;code&gt;native-image&lt;/code&gt; AOT engine. It takes your &lt;code&gt;.class&lt;/code&gt; files and all the &lt;code&gt;.class&lt;/code&gt; files on the classpath and turns them into architecture- and operating-system-native code, like the binary you&apos;d get using a language like C, C++, Go, Rust, etc.&lt;/p&gt;
+&lt;!--  TODO in the more extended form version of this show how to set up a basic project using Spring Native, the Spring INitializr, and GraalVM  --&gt;
+&lt;p&gt;Spring Native (and GraalVM) are almost like magic. &lt;em&gt;Almost&lt;/em&gt;. Spring Native (and GraalVM) is not a silver bullet. GraalVM does static analysis at compile-time and throws away everything in your application that the compiler can&apos;t &amp;quot;reach.&amp;quot; Unfortunately, static analysis can only get you so far. &amp;quot;Runtime&amp;quot; - the very concept and all that it implies - is an NP-incomplete problem! There are many things that GraalVM doesn&apos;t support out-of-the-box unless you feed the GraalVM native image compiler the appropriate configuration. Then, the compiler will bake a sort of shim into the heap of the native image so that your code appears to execute correctly. These things include but are not limited to reflection, serialization, proxies (Cglib and JDK-based proxies), JNI, and more.&lt;/p&gt;
+&lt;p&gt;For all of its warts and stodginess, Java is a very dynamic language that has more in common with Python, Ruby, JavaScript, Perl, Lua, Tcl, PHP, and Smalltalk than it does languages like C++ and C. Java is a very dynamic language. It&apos;s possible in a Java application to compile a class definition (from a &lt;code&gt;java.lang.String&lt;/code&gt;) into a &lt;code&gt;.class&lt;/code&gt; file, load that &lt;code&gt;.class&lt;/code&gt;  into the &lt;code&gt;ClassLoader&lt;/code&gt;, reflectively instantiate an instance of that class, invoke methods on that class, create proxies of that class, serialize instances of that class, and to do all this all without ever referencing a concrete type! You can do all that in terms of &lt;code&gt;java.lang.Object&lt;/code&gt; and reflection, not once referencing a concrete class in your code. Java&apos;s beyond amazing! But GraalVM, well, GraalVM &lt;em&gt;hates&lt;/em&gt; all these fun things. It doesn&apos;t know about them, and unless you feed it configuration telling it otherwise, it doesn&apos;t care about those things, either.&lt;/p&gt;
+&lt;p&gt;So, you have two, not necessarily mutually exclusive, paths forward. First, you could minimize those things that GraaLVM hates. Next, you can provide configuration for the stuff you can&apos;t eliminate but still need. Spring Native helps with both.&lt;/p&gt;
+&lt;p&gt;Spring Native ships with build time plugin infrastructure (for Maven and Gradle) called Spring AOT. The Spring AOT infrastructure transforms your codebase in meaningful ways to eliminate or reduce things that GraalVM doesn&apos;t like.&lt;/p&gt;
+&lt;!--  
+The more extended form version shows how it converts Spring when you run a new spring native build. factories into a class, and show how it transpires the `@Configuration` annotated code into functional configuration (also: make sure to deliver the functional configuration in the introduction chapter ) 
+--&gt;
+&lt;p&gt;Spring Native also ships with a system to contribute configuration to the graalvm compiler called &amp;quot;hints.&amp;quot; These are like the autoconfiguration of Spring Boot. Hints are bits of code that are aware of the Spring component model and your Spring beans. This mechanism is an extension plane, as well. Your organization can hook into these extension planes, too! They&apos;re also very different than autoconfiguration in that they are involved entirely in the compilation process at compile-time and have no impact on the runtime of the application. They exist to analyze the components in your Spring Boot-based component model and contribute hints accordingly. Is Spring Data on the classpath, and has the user-created any repositories? Well, that&apos;ll indeed require some configuration for the proxies created from your repository interface and for the reflection done to analyze the method signatures of that interface. Is Hibernate on the classpath? That&apos;ll require configuration, as well. What about any aspect-oriented code? Yep, that&apos;ll require special support. What about Spring Batch&apos;s &lt;code&gt;Step&lt;/code&gt; scope and the proxies it creates? Yep. What about Mybatis&apos; interface-based mappers? What about Spring Cloud Gateway&apos;s Java and Kotlin DSLs? Yep, yep, and yep. The list goes on and on. Spring Native covers the common cases, but it can&apos;t know about every type ever written, so you&apos;ll need to provide your integrations as well.&lt;/p&gt;
+&lt;!-- TODO in a more extended version, this is where I would  --&gt;
+&lt;p&gt;GraalVM native applications are small, and they start up very quickly. They take very little in the way of memory. Spring Native applications run inside containers with a minimal operating system. To the extent that it&apos;s possible, Spring Native makes Spring Boot and Spring Cloud applications even &lt;em&gt;more&lt;/em&gt; cloud-native! Trust me; I&apos;m a professional. I even wrote &lt;a href=&quot;https://www.amazon.com/Cloud-Native-Java-Designing-Resilient/dp/1449374646&quot;&gt;the book&lt;/a&gt; on building cloud-native Java-based services.&lt;/p&gt;
+&lt;!-- Here I&apos;m going to cut the big piece short with a discussion of Kubernetes native clients --&gt;
+&lt;p&gt;One of the most exciting opportunities these days is using Spring Native to write memory-efficient, small-footprint controllers for Kubernetes. I love the idea. Kubernetes clients are typically code-generated from the schema of the objects in the Kubernetes API server, so who cares in what language a person writes their code? So long as the client can talk to the Kubernetes API server, then you&apos;re all set. All set, that is, until you have to deploy the client to production. You&apos;ll need to containerize the application in production and get it running. Spring Boot&apos;s got built-in support for buildpacks, which you can use to containerize your applications with ease: &lt;code&gt;mvn spring-boot:build-image&lt;/code&gt; and then &lt;code&gt;docker tag&lt;/code&gt; and &lt;code&gt;docker push&lt;/code&gt; your image to production, and you&apos;re off to the races! Almost.   If you&apos;re using a complete JRE, this will require a more fully-featured operating system like Ubuntu. The JRE and the operating system add substantially to the OCI/Docker image size that contains your application. You can eliminate a lot of that extra heft by using Spring native to create native images with your GraalVm applications. Still, GraalVM is an all-or-nothing proposition: either all of your code works on a GraalVm context, or none of it does.&lt;/p&gt;
+&lt;p&gt;There are two outstanding Java clients you can use to create controllers in the Java ecosystem, and both do all sorts of stuff you won&apos;t appreciate in a GraalVM context. I wanted to make this easier, so I&apos;ve built two Spring Native integrations, one for Fabric8 and another for the official Java Kubernetes client.&lt;/p&gt;
+&lt;p&gt;NB: I&apos;ve gotten some pretty interesting examples working with these clients, but it&apos;s not to say that they&apos;re perfect. If u discover some poorly supported use case when building your operators with these integrations, _please, &lt;a href=&quot;https://twitter.com/starbuxman&quot;&gt;let me know_ (@starbuxman) &lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Let&apos;s take a look at them.&lt;/p&gt;
+&lt;p&gt;One of the most exciting opportunities with these clients is building custom Kubernetes resources and Kubernetes operators to manage those custom resources. If you think about it, this is the real power of Kubernetes: it&apos;s an API server! It cares about objects, and Spring is great at managing objects and lifecycles.&lt;/p&gt;
+&lt;p&gt;Specifically, a Kubernetes controller is what &lt;a href=&quot;https://github.com/kubernetes/community/blob/8cafef897a22026d42f5e5bb3f104febe7e29830/contributors/devel/controllers.md&quot;&gt;the documentation&lt;/a&gt; calls an &amp;quot;active reconciliation process:&amp;quot; it watches some object for the world&apos;s desired state, and it watches the world&apos;s actual state, too. Then, it sends instructions to try and make the world&apos;s current state be more like the desired state. Suffice it to say that you must act as a client to the API.&lt;/p&gt;
+&lt;p&gt;Here are some simple examples.&lt;/p&gt;
+&lt;h2&gt;Working with the Official Kubernetes Java Client&lt;/h2&gt;
+&lt;p&gt;The Kubernetes project has a module that aims to make working with the Kubernetes API as easy as possible. It even has &lt;a href=&quot;https://github.com/kubernetes-client/java/tree/master/spring&quot;&gt;a Spring Boot integration&lt;/a&gt;! It&apos;s very powerful. If you&apos;re not sure where to start with Kubernetes, this is a safe-bet. I found &lt;a href=&quot;https://github.com/kubernetes-native-java/kubernetes-java-sample-controller/blob/edd6cc59c1d3a30a24675d221399c9724cbe0f17/src/main/java/io/kubernetesnativejava/kubernetes/sample/KubernetesControllerApplication.java&quot;&gt;an interesting example&lt;/a&gt; that the good &lt;a href=&quot;https://twitter.com/david_syer&quot;&gt;Dr. Dave Syer (@david_syer)&lt;/a&gt; put together a little while back and used it to figure out an integration for Spring Native and GraalVM.&lt;/p&gt;
+&lt;p&gt;If you want to see it in action, follow these steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git clone&lt;/code&gt; the &lt;code&gt;kubernetes-java-sample-controller&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Connect to a Kubernetes cluster of some sort. Ensure that when you issue a &lt;code&gt;kubectl&lt;/code&gt; command, like &lt;code&gt;kubectl get crds&lt;/code&gt;, it produces results. Anything. As long as it&apos;s more than just &lt;code&gt;NAME&lt;/code&gt; and &lt;code&gt;CREATED AT&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Start the operator on the JRE: &lt;code&gt;mvn spring-boot:run&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In another shell, deploy a pod. Any pod. &lt;code&gt;kubectl create deployment my-nginx --image nginx&lt;/code&gt;, maybe? You&apos;ll see that new &lt;code&gt;pod&lt;/code&gt; reflected in the output on the console of the client.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Not bad, eh? Now for my favorite part. Let&apos;s compile the application using GraalVM and Spring Native. You&apos;ll need to have GraalVM installed and run &lt;code&gt;gu install native-image&lt;/code&gt;. Then, run &lt;code&gt;mvn -DskipTests=true -Pnative clean package&lt;/code&gt;. This process takes a good amount of time - perhaps a minute or two. Now&apos;s a good time to go to the bathroom. Or have a quick snack. You know they say you shouldn&apos;t eat too much in one sitting, but instead snack in small portions throughout the day. Five or six smaller meals instead of two or three big ones. I don&apos;t know if that works. I&apos;m no diet expert. I gained COVID-25 pounds during the COVID-19 pandemic. But it might work. And anyway, even if it doesn&apos;t work, at least you&apos;ll have a built in excuse to get up and head to the pantry during the day? It&apos;s important to be mindful, you know.&lt;/p&gt;
+&lt;p&gt;Anyway, the build may have finished! If so, run the application: &lt;code&gt;./target/kubernetes-java-sample-controller&lt;/code&gt;, and stand back! Hello, minimal memory footprint! Goodbye, gigabyte gluttony!&lt;/p&gt;
+&lt;h2&gt;Working with Fabric8 and Spring Native&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://fabric8.io/&quot;&gt;Fabric8&lt;/a&gt; is the RedHat-sponsored Java client for Kubernetes. As far as I know, it is older than the official Java client. It works well,  and some Spring modules, such as Spring Cloud Data Flow for Kubernetes and  Spring Cloud Deployer, use the Fabric8 client. And many others besides. It&apos;s awesome. Thank you, Red Hat. There are a lot of really cool samples out there that demonstrate how to get something interesting working. I found &lt;a href=&quot;https://github.com/rohanKanojia/sample-controller-java&quot;&gt;this example&lt;/a&gt; by Rohan Kanojia that shows building a simple Operator to manage custom resources (of type &lt;code&gt;Foo&lt;/code&gt;) that the example defines in a custom resource definition (CRD). Each time the user deploys a new &lt;code&gt;Foo&lt;/code&gt;, the operator creates a new &lt;code&gt;Foo&lt;/code&gt; instance. Trivial, but it does work. I adapted it to use Spring Boot and its lifecycle management. Then I integrated it with the &lt;a href=&quot;https://github.com/kubernetes-native-java/fabric8-spring-native/&quot;&gt;Fabric8 Spring Native&lt;/a&gt; integration that I wrote to make compilation into a native image easier.&lt;/p&gt;
+&lt;p&gt;If you want to see it in action, follow these steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git clone&lt;/code&gt; the &lt;code&gt;fabric8-sample-controller&lt;/code&gt; repository.&lt;/li&gt;
+&lt;li&gt;Connect to a Kubernetes cluster of some sort. Ensure that when you issue a &lt;code&gt;kubectl&lt;/code&gt; command, like &lt;code&gt;kubectl get crds&lt;/code&gt;, it produces results. Anything. As long as it&apos;s more than just &lt;code&gt;NAME&lt;/code&gt; and &lt;code&gt;CREATED AT&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Apply the &lt;code&gt;crd.yaml&lt;/code&gt; file in the &lt;code&gt;k8s&lt;/code&gt; folder: &lt;code&gt;kubectl apply -f k8s/crd.yaml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start the operator on the JRE: &lt;code&gt;mvn spring-boot:run&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Then apply the sample YAML for the custom &lt;code&gt;Foo&lt;/code&gt; resource: &lt;code&gt;kubectl apply -f k8s/example-foo.yml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;kubectl get deployments&lt;/code&gt; to confirm that there&apos;s a new deployment whose name lines up with the name of the &lt;code&gt;foo&apos; specified in&lt;/code&gt;example-foo.yaml`.&lt;/li&gt;
+&lt;li&gt;Open &lt;code&gt;example-foo.yaml&lt;/code&gt; in your text editor and update the &lt;code&gt;replicas&lt;/code&gt; value from &lt;code&gt;1&lt;/code&gt; to &lt;code&gt;3&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Apply &lt;code&gt;kubectl apply -f k8s/example-foo.yaml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;kubectl get deployments&lt;/code&gt; to confirm that the &lt;code&gt;deployment&lt;/code&gt; also has had its &lt;code&gt;replicas&lt;/code&gt; count changed to &lt;code&gt;3&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Not bad, eh? Now for my favorite part. Let&apos;s compile the application using GraalVM and Spring Native. You&apos;ll need to have GraalVM installed and run &lt;code&gt;gu install native-image&lt;/code&gt;. Then, run &lt;code&gt;mvn -DskipTests=true -Pnative clean package&lt;/code&gt;. This process takes a good amount of time - perhaps a minute or two. Pour some coffee if you like. Or take a few sips of the coffee you already have. Or maybe take a breather? I have glasses, and my optometrist told me that it&apos;s a good idea to exercise your eyes periodically. First, you stare at some point far away, like a distant corner, for 30 seconds. Then you stare at some nearer point, like the wall, for another 30 seconds. Then &lt;em&gt;relax&lt;/em&gt;. Maybe close your eyes? Wherever it is that you cast your gaze, &lt;em&gt;don&apos;t&lt;/em&gt; stare at your monitor. You want some natural and neutral light source. Something that doesn&apos;t ask anything more of your eyes than they&apos;ve already done. You can&apos;t know how long you&apos;re going to have your peepers. You gotta cherish &apos;em while you&apos;ve got &apos;em! The world would be a lot darker without sight and light. Sometimes, even the fully sighted can&apos;t see. Isn&apos;t it ironic?&lt;/p&gt;
+&lt;p&gt;Anyway, the build may have finished! If so, run the application: &lt;code&gt;./target/fabric8-sample-controller&lt;/code&gt;, and stand back! Hello, speed! Goodbye, Go! What a time to be alive. I&apos;ve just built this on my local machine, and I want to get it to production. That&apos;s going to require a container.&lt;/p&gt;
+&lt;h2&gt;Containerizing Your Kubernetes Clients&lt;/h2&gt;
+&lt;p&gt;One of the many nice things about Spring Boot these days is that there&apos;s built-in support for Docker containerization using &lt;a href=&quot;https://buildpacks.io&quot;&gt;Buildpacks&lt;/a&gt;. If you&apos;re using Spring Native, as this sample certainly does, then you can get a GraalVM-compiled Linux binary in your Docker image with the following incantation: &lt;code&gt;mvn spring-boot:build-image&lt;/code&gt;. Stand back, as that&apos;ll take ever so slightly longer than the first GraalVM compilation, but the result will be a Docker image you can run (&lt;code&gt;docker run ...&lt;/code&gt;) and &lt;code&gt;docker tag&lt;/code&gt; and &lt;code&gt;docker push&lt;/code&gt; to your container registry of choice (&lt;a href=&quot;https://docs.pivotal.io/vmware-harbor/index.html&quot;&gt;VMWare Harbor&lt;/a&gt;, anyone?).&lt;/p&gt;
+&lt;p&gt;You can deploy that to your Kubernetes cluster, but you&apos;ll probably want to set up service accounts and all that for security. The original &lt;code&gt;README.md&lt;/code&gt; in Rohan&apos;s project does a good job &lt;a href=&quot;https://github.com/rohanKanojia/sample-controller-java/blob/master/README.md&quot;&gt;detailing the security setup&lt;/a&gt;, so I&apos;ll refer you to that.&lt;/p&gt;
+&lt;!--
+* Working with Kubernetes java client
+
+--&gt;
+
+	</description>
+    </item>
     <item>
       <title>Bootiful Podcast: Yugabyte CEO Karthik Ranganathan</title>
       <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2021-12-23-yugabyte_ceo_karthik_ranganathan.html</link>
@@ -5526,6 +5594,25 @@ Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.sprin
 	</description>
     </item>
     <item>
+      <title>On Java Code Style</title>
+      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
+      	<description>
+	
+&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
+
+&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
+
+&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
+
+&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Simplified Web Configuration with Spring</title>
       <link>https://joshlong.com/jl/blogPost/simplified_web_configuration_with_spring.html</link>
       <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
@@ -5684,25 +5771,6 @@ The video of my webinar on
 &lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
 &lt;/p&gt; 
 &lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>On Java Code Style</title>
-      <link>https://joshlong.com/jl/blogPost/on_java_code_style.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/on_java_code_style.html</guid>
-      	<description>
-	
-&lt;p&gt;Many languages have a sense of &amp;quot;idiomatic&amp;quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. &lt;/p&gt;
-
-&lt;p&gt;Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;hashCode&lt;/code&gt; and &lt;code&gt;toString&lt;/code&gt; do - there&amp;#39;s very little to &amp;quot;idiomatic&amp;quot; Java code, except perhaps compliance with Java style. &lt;/p&gt;
-
-&lt;p&gt;There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. &lt;a href=&quot;http://www.ontko.com/java/java_coding_standards.html&quot;&gt;This directory has a good listing of several style guides&lt;/a&gt;. I&amp;#39;d definitely recommend taking a look at the first two guides, in particular.&lt;/p&gt;
-
-&lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
-
-&lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -6081,24 +6149,6 @@ public void showProfileInformation( Model model){
 	</description>
     </item>
     <item>
-      <title>One Big Bag of Beans</title>
-      <link>https://joshlong.com/jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</link>
-      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</guid>
-      	<description>
-	
-&lt;P&gt;At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean&apos;s class, optionally an &lt;CODE&gt;id&lt;/CODE&gt; by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc.
-&lt;/P&gt;
-&lt;P&gt;Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The &lt;A href=&quot;http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL&quot;&gt;Groovy Bean Builder&lt;/a&gt;. The &lt;A href=&quot;http://blog.springsource.org/2012/12/10/introducing-spring-scala/&quot;&gt; Spring Scala&lt;/a&gt; approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces.
-&lt;/P&gt;&lt;P&gt;
-Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the &lt;CODE&gt;@Transactional&lt;/CODE&gt; annotation. Then the stereotype annotations emerged -&lt;CODE&gt;@Controller&lt;/CODE&gt;, &lt;CODE&gt;@Component&lt;/CODE&gt;, &lt;CODE&gt;@Service&lt;/CODE&gt;, etc, that – along with component scanning and &lt;CODE&gt;@Autowired&lt;/CODE&gt; – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. &lt;/p&gt;
-
-&lt;P&gt;Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. 
-&lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Java Configuration</title>
       <link>https://joshlong.com/jl/blogPost/java_configuration.html</link>
       <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
@@ -6168,6 +6218,24 @@ This class is too annotated with &lt;Code&gt;@Configuration&lt;/CODE&gt;. It ena
 This was by no means an exhaustive look at Java configuration, but hopefully you see that there is a lot of  convenience in this approach. You can still substitute values from external property files, you can still override and extend the frameworks, and you can still achieve a single configuration artifact – a place where you can get a bird’s eye view of the system. 
 &lt;/p&gt;&lt;P&gt;
  There are many Spring projects that provide idiomatic, Java configuration centric APIs and DSLs as Spring core does for building services using Spring and web applications using Spring MVC.
+&lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>One Big Bag of Beans</title>
+      <link>https://joshlong.com/jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</link>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/one_big_bag_of_beansone_big_bag_of_beans.html</guid>
+      	<description>
+	
+&lt;P&gt;At runtime, Spring is just a bunch of beans. Spring provides basic services like dependency injection and lifecycle management, of course, but everything else is just a bean that can be injected, and participate in all the services that the container provides. One big bag of beans. To take advantage of this, all you have to do is tell Spring about your beans. You don’t need to tell it much – just basic things, like the bean&apos;s class, optionally an &lt;CODE&gt;id&lt;/CODE&gt; by which to disambiguate it, an optional scope, and information about which dependencies a bean has. If you want to build the bean in a special way, besides just using a regular no-arg constructor, you need to tell Spring what to do: use the constructor, use a factory method, etc.
+&lt;/P&gt;
+&lt;P&gt;Before Java 5, the natural way to describe this information to Spring in the enterprise Java landscape was XML. So, that begat Spring’s XML flavor. But, as I say, this is just a format by which Spring ingests information about your classes. Metadata. There are lots of other ways. The &lt;A href=&quot;http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL&quot;&gt;Groovy Bean Builder&lt;/a&gt;. The &lt;A href=&quot;http://blog.springsource.org/2012/12/10/introducing-spring-scala/&quot;&gt; Spring Scala&lt;/a&gt; approach. At one point early on there was a property-file based approach that you could use to manage beans (not from SpringSource, obviously, but still pretty novel!) Some of you may remember the work being done by the XBean project before Spring 2 had official support for namespaces.
+&lt;/P&gt;&lt;P&gt;
+Then Java 5 came out and with it annotations. We had ways for the class files to carry the metadata with them! And very shortly after that, we saw the first annotation-centric approaches to – by convention – applying services in Spring with the &lt;CODE&gt;@Transactional&lt;/CODE&gt; annotation. Then the stereotype annotations emerged -&lt;CODE&gt;@Controller&lt;/CODE&gt;, &lt;CODE&gt;@Component&lt;/CODE&gt;, &lt;CODE&gt;@Service&lt;/CODE&gt;, etc, that – along with component scanning and &lt;CODE&gt;@Autowired&lt;/CODE&gt; – made it dead simple to register beans entirely based on convention. Concurrently, work began on Spring Java Config. This approach predates Guice or CDI, for example. Spring Java Configuration lived on the side, as a separate project where the ideas could be fleshed out. In 2009, for Spring 3.0, it was merged into the core framework. &lt;/p&gt;
+
+&lt;P&gt;Remember, at runtime all of these beans exist as beans in the same, giant bag, described using the same metadata. For this reason, Spring makes it very easy to assemble applications that employ different approaches as appropriate. You can let component scanning and stereotypes carry you 80% of the way, use Java configuration to assemble everything else and then use XML DSLs in domains where an expressive DSL is available. Beans defined by component scanning can participate in AOP defined by Java configuration, etc. Beans defined in Java configuration can have injected references to beans defined in XML. One type of stuff at runtime. One big bag of beans. 
 &lt;/P&gt;
 
 	</description>
@@ -6324,6 +6392,23 @@ In the same vein, years ago, there was a project called &lt;A href=&quot;http://
 	</description>
     </item>
     <item>
+      <title>Spring MVC Performance FTW</title>
+      <link>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</link>
+      <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_mvc_performance_ftw.html</guid>
+      	<description>
+	
+&lt;P&gt; We&apos;ve all seen 
+ &lt;A href=&quot;http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5&quot;&gt; Matt Raible&apos;s awesome talk&lt;/a&gt;
+ comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
+&lt;/p&gt; 
+&lt;P&gt; 
+ For a very detailed dissection of performance, you might check out this talk &lt;a href=&quot;http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/&quot;&gt;comparing web framework performance&lt;/a&gt;. Matt&apos;s talk builds on the data amassed from that talk. 
+&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Multi Client Development with Spring Webinar on March 14, 2013</title>
       <link>https://joshlong.com/jl/blogPost/performance_and_the_restful_web.html</link>
       <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
@@ -6339,23 +6424,6 @@ Once we&apos;ve introduced Spring&apos;s REST support, we&apos;ll look at how to
 &lt;P&gt; Be sure to register now and bring questions, ideas, etc.  I look forward to seeing you at there, and we&apos;ll look at some of the amazing support  
  Spring offers for building best-of-breed web-centric, RESTful applications.
 &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Spring MVC Performance FTW</title>
-      <link>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</link>
-      <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_mvc_performance_ftw.html</guid>
-      	<description>
-	
-&lt;P&gt; We&apos;ve all seen 
- &lt;A href=&quot;http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5&quot;&gt; Matt Raible&apos;s awesome talk&lt;/a&gt;
- comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
-&lt;/p&gt; 
-&lt;P&gt; 
- For a very detailed dissection of performance, you might check out this talk &lt;a href=&quot;http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/&quot;&gt;comparing web framework performance&lt;/a&gt;. Matt&apos;s talk builds on the data amassed from that talk. 
-&lt;/p&gt;
 
 	</description>
     </item>
@@ -6460,6 +6528,23 @@ Also,  you&apos;ll need to have a domain you can point to this. During this proc
 	</description>
     </item>
     <item>
+      <title>Coffee Drinks in China</title>
+      <link>https://joshlong.com/jl/blogPost/coffee_drinks_in_china.html</link>
+      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/coffee_drinks_in_china.html</guid>
+      	<description>
+	
+&lt;P&gt; 
+ My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must  wind down my time here. As part of that, I need to finish my &lt;EM&gt;amazing&lt;/EM&gt; stash 
+&apos;o iced coffee drinks that I&apos;ve only found here in China. I don&apos;t know if you know this about me, but I &lt;EM&gt;love&lt;/EM&gt; coffee. 
+ And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@
+
+&lt;/P&gt;
+&lt;Div style   =&quot;padding-bottom: 10px; &quot;&gt;  &lt;img src   =&quot;/media/18596&quot;  width = &quot;500&quot; /&gt;&lt;/div&gt;
+
+	</description>
+    </item>
+    <item>
       <title>On Damien Katz&apos; &quot;The Unreasonable Effectiveness of C&quot;</title>
       <link>https://joshlong.com/jl/blogPost/on_damien_katz_the_unreasonable_effectiveness_of_c.html</link>
       <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
@@ -6481,23 +6566,6 @@ When using JNI, I try to never &apos;leak&apos; any complex C types into my java
  &lt;/p&gt;&lt;P&gt;
 Once you&apos;ve gone through this process, then exposing the C API via messaging is easier because the message payloads between two systems can&apos;t, by definition, be much more complicated than the surface area of the C library. Of course, if you&apos;re using messaging, that means either writing messaging code in C, or exposing the C library to some higher level language and doing the messaging there. The nice part about messaging is that insulates your higher-level language code from your C code which - let&apos;s be honest - might be flakier than your Java code. I still won&apos;t link code written against the imagemagick C APIs directly to my application! There is some black magic in that library...! If the C code dies, the messaging system absorbs the requests until another node running the C code can pick up the slack. On the other hand, if you really are using C for performance, then messaging introduces at least a network hop, not to mention another component in the system, and you might lose any gains you made by writing it in C. In this case, it is possible to use write stable, well-behaved JNI or native extensions, but this again requires keeping the surface area small and understanding the pre-conditions nad post-conditions. No threads. Don&apos;t pass around pointers to complex objects between C and Java. Make sure you understand who&apos;s supposed to clean up memory, and when. 
 &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Coffee Drinks in China</title>
-      <link>https://joshlong.com/jl/blogPost/coffee_drinks_in_china.html</link>
-      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/coffee_drinks_in_china.html</guid>
-      	<description>
-	
-&lt;P&gt; 
- My amazing adventure in Shanghai, China is almost up. I return home to the US on January 31, and must  wind down my time here. As part of that, I need to finish my &lt;EM&gt;amazing&lt;/EM&gt; stash 
-&apos;o iced coffee drinks that I&apos;ve only found here in China. I don&apos;t know if you know this about me, but I &lt;EM&gt;love&lt;/EM&gt; coffee. 
- And yes, before you ask, that really is the bedspread they gave me at this hotel in Shanghai. @_@
-
-&lt;/P&gt;
-&lt;Div style   =&quot;padding-bottom: 10px; &quot;&gt;  &lt;img src   =&quot;/media/18596&quot;  width = &quot;500&quot; /&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -6539,17 +6607,6 @@ Sometimes I wonder if people test things before they release it :/
 	</description>
     </item>
     <item>
-      <title>Happy New Year, and Here&apos;s to 2013</title>
-      <link>https://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
-      <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
-      	<description>
-	
-&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>They Think of Everything</title>
       <link>https://joshlong.com/jl/blogPost/they_think_of_everything.html</link>
       <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
@@ -6560,6 +6617,17 @@ Sometimes I wonder if people test things before they release it :/
   Just bought some ramen at the store.  I love that it comes with a serving bowl. I know you&apos;re thinking, &quot;but, who wouldn&apos;t... have.. a bowl?&quot; And the answer is: I didn&apos;t have a bowl! But now I do. Problem solved.  The Chinese think of &lt;EM&gt;everything&lt;/EM&gt;! 
 &lt;div&gt; &lt;img src = &quot;/media/18574&quot; width = &quot;400&quot; /&gt;&lt;/div&gt;
 &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Happy New Year, and Here&apos;s to 2013</title>
+      <link>https://joshlong.com/jl/blogPost/happy_new_year_and_heres_to_2013.html</link>
+      <pubDate>Mon, 31 Dec 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/happy_new_year_and_heres_to_2013.html</guid>
+      	<description>
+	
+&lt;p&gt; I just wanted to state the obvious: I wish you all a wonderful and happy new year, and hope your 2012 has been as awesome as can be. Mine sure was! Here&apos;s to 2013! This year I&apos;ll ring in the new year in Shanghai, which should be interesting! &lt;/p&gt;
 
 	</description>
     </item>
@@ -6754,19 +6822,6 @@ Wish me luck!
 	</description>
     </item>
     <item>
-      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
-      <link>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
-      <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
-      	<description>
-	
-&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
-         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
- &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Spring Data Mongo transaction synchronization does not find a bound DB</title>
       <link>https://joshlong.com/jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
@@ -6800,6 +6855,19 @@ at org.springframework.transaction.support.AbstractPlatformTransactionManager.co
 at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:393) [spring-tx-3.1.1.RELEASE.jar:3.1.1.RELEASE]
  &lt;/pre&gt;
 &lt;/p&gt; &lt;p&gt; Hat tip to the one and only  &lt;a href= &quot;https://twitter.com/olivergierke&quot;&gt;Oliver Gierke&lt;/a&gt; for helping me with this! &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
+      <link>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
+      	<description>
+	
+&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
+         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
+ &lt;/p&gt;
 
 	</description>
     </item>
@@ -7108,6 +7176,18 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
 	</description>
     </item>
     <item>
+      <title>My Dear Aunt Sandra</title>
+      <link>https://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/my_dear_aunt_sandra.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;img src  = &quot;/media/18467&quot; style = &quot;margin-bottom: 10px;&quot;   /&gt; &lt;br/&gt; My aunt Sandra passed gentle into that good night, yesterday morning, from complications of &lt;a href =&quot;http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/&quot; height = &quot;400&quot;&gt;ALS&lt;/a&gt;. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She&apos;s the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She&apos;d visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad&apos;s side of the family. A true family Matriarch. Sandra was the best of us, and I&apos;ll miss her with all my heart. RIP Aunt Sandra.
+ &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>SpringOne2GX 2012</title>
       <link>https://joshlong.com/jl/blogPost/springone2gx_2012.html</link>
       <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
@@ -7118,18 +7198,6 @@ And so concludes &lt;A href =&quot;http://www.springone2gx.com&quot;&gt;SpringOn
  &lt;img src = &quot;/media/18460&quot;/&gt; &lt;img src = &quot;/media/18462&quot;/&gt; &lt;img src = &quot;/media/18459&quot;/&gt;
  &lt;img src = &quot;/media/18461&quot;/&gt; &lt;/div&gt;It&apos;s my favorite time of year! SpringOne2GX kicks off tomorrow. I&apos;ll be &lt;A href=&quot;http://springone2gx.com/conference/washington/2012/10/speakers/josh_long&quot;&gt;giving two talks&lt;/a&gt; -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry.  This year&apos;s already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more.  If you&apos;re around, feel free to find me roaming the halls &lt;a href=&quot;http://www.twitter.com/starbuxman&quot;&gt;or ping me on Twitter&lt;/a&gt;!   
   
- &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>My Dear Aunt Sandra</title>
-      <link>https://joshlong.com/jl/blogPost/my_dear_aunt_sandra.html</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/my_dear_aunt_sandra.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;img src  = &quot;/media/18467&quot; style = &quot;margin-bottom: 10px;&quot;   /&gt; &lt;br/&gt; My aunt Sandra passed gentle into that good night, yesterday morning, from complications of &lt;a href =&quot;http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/&quot; height = &quot;400&quot;&gt;ALS&lt;/a&gt;. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She&apos;s the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She&apos;d visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad&apos;s side of the family. A true family Matriarch. Sandra was the best of us, and I&apos;ll miss her with all my heart. RIP Aunt Sandra.
  &lt;/P&gt;
 
 	</description>
@@ -8100,6 +8168,18 @@ Exposing your frameworks and common abstractions in terms of these well known, i
 	</description>
     </item>
     <item>
+      <title>Getting Started with Spring Roo</title>
+      <link>https://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
+      	<description>
+	
+&lt;P&gt;  &lt;IMG src = &quot;/media/17884&quot; style = &quot; float:left;margin-right:10px;&quot; /&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;EM&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/A&gt;&lt;/EM&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;B&gt;Vaadin&lt;/B&gt; - a powerful, alternative web framework, and &lt;B&gt;Neo4j&lt;/B&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out.
+ &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>RabbitMQ is now officially available on CloudFoundry!</title>
       <link>https://joshlong.com/jl/blogPost/rabbitmq_is_now_officially_available_on_cloudfoundry.html</link>
       <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
@@ -8114,18 +8194,6 @@ For you &lt;a href=&quot;http://github.com/CloudFoundry&quot;&gt;code lurkers&lt
                any other message broker on the cloud, and on Amazon Web Services in particular. The AWS tidbit&apos;s a bit more awesome when you realize that AWS already has a message broker service called SQS!  ;-)    Anyway, it&apos;s now available on CloudFoundry. You &lt;a href=&quot;http://support.cloudfoundry.com/entries/20322602-getting-started-with-the-rabbitmq-service-from-a-spring-application&quot;&gt;should definitely&lt;/a&gt; check &lt;a href=&quot;http://blog.cloudfoundry.com/post/8713844574/rabbitmq-cloud-foundry-cloud-messaging-that-just-works&quot;&gt;it out.&lt;/a&gt; The &lt;a href=&quot;http://www.theregister.co.uk/2011/08/10/vmware_cloud_foundry_adds_rabbitmq_messaging/&quot;&gt;news&lt;/a&gt;  overall seems good, too! Messaging middleware is &lt;EM&gt;the&lt;/EM&gt; critical component for scale. Cloud-scale is a way of life, not just a switch to be turned on and off. Specifically, an architecure that scales is going to enjoy temporally decoupling, or &lt;EM&gt;asynchronism,&lt;/EM&gt; and RabbitMQ is the perfect vehicle to enable that asynchronous coordination. 
 &lt;/p&gt; &lt;P&gt;  If you&apos;re a Spring developer, and haven&apos;t had a chance to look at CloudFoundry, then I strongly recommend you see  &lt;a href=&quot;http://blog.springsource.com/2011/04/12/cloud-foundry-for-spring-developers/&quot;&gt;Mark Fisher&apos;s entry  on the SpringSource blog&lt;/a&gt; introducing the wide world of the cloud for Spring developers from a few months ago. There&apos;s also great content on &lt;A href=&quot;http://www.youtube.com/SpringSourceDev&quot;&gt;the SpringSource YouTube channel.&lt;/a&gt;
 		
- &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Getting Started with Spring Roo</title>
-      <link>https://joshlong.com/jl/blogPost/getting_started_with_spring_roo.html</link>
-      <pubDate>Fri, 12 Aug 2011 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/getting_started_with_spring_roo.html</guid>
-      	<description>
-	
-&lt;P&gt;  &lt;IMG src = &quot;/media/17884&quot; style = &quot; float:left;margin-right:10px;&quot; /&gt; Steve Mayzak and I have just finished a book for O&apos;REILLY, &lt;EM&gt;&lt;a href=&quot;http://oreilly.com/catalog/0636920020981&quot;&gt;Getting Started with Spring Roo.&lt;/A&gt;&lt;/EM&gt; The book&apos;s a very quick introduction to Spring Roo, and includes information about the many useful addons (including support for &lt;B&gt;Vaadin&lt;/B&gt; - a powerful, alternative web framework, and &lt;B&gt;Neo4j&lt;/B&gt; - an alternative, powerful NOSQL data-store), as well as the in-built Spring Roo addons. If you&apos;re interested in Spring Roo, I hope you&apos;ll check this out.
  &lt;/P&gt;
 
 	</description>
@@ -12698,19 +12766,6 @@ Did you know that &lt;code&gt;mvn archetype:generate&lt;/code&gt;, by itself, on
 	</description>
     </item>
     <item>
-      <title>Subversion 1.5, IntelliJ IDEA, and you</title>
-      <link>https://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
-      <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/subversion_1_5_intellij_idea.html</guid>
-      	<description>
-	
-&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &amp;quot;dirty&amp;quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &amp;quot;No Changes found&amp;quot;.  I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue.
-&lt;/p&gt;&lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! 
-&lt;/p&gt; &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand...  &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Keith Donald speaking on Spring Web MVC 2.5 and Beyond at this week&apos;s Phoenix Java User Group</title>
       <link>https://joshlong.com/jl/blogPost/keith_donald_speaking_on_spring.html</link>
       <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
@@ -12721,6 +12776,19 @@ Did you know that &lt;code&gt;mvn archetype:generate&lt;/code&gt;, by itself, on
 Keith Donald&apos;s going to be at this week&apos;s &lt;a href=&quot;http://www.phxjug.org/&quot;&gt;Phoenix Java User Group&lt;/a&gt; talking about Spring MVC and Spring WebFlow 2.5/2.0, respectively! I am bringing at least 3 friends, I suggest if you can make it, you should try and go. I had a weird month last month so I missed it, but I can&apos;t wait for this one! 
 
 &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Subversion 1.5, IntelliJ IDEA, and you</title>
+      <link>https://joshlong.com/jl/blogPost/subversion_1_5_intellij_idea.html</link>
+      <pubDate>Sun, 10 Aug 2008 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/subversion_1_5_intellij_idea.html</guid>
+      	<description>
+	
+&lt;p&gt; I recently had to upgrade a project to Subversion 1.5 which caused IntelliJ&apos;s Subversion support to lose its mind. It would paint the files blue as though it realized the file was &amp;quot;dirty&amp;quot; but then when I hit ctrl + k to submit the changes to Subversion, it would respond, &amp;quot;No Changes found&amp;quot;.  I did some sleuthing: &lt;a href=&quot;http://www.jetbrains.net/confluence/display/IDEADEV/Selena+EAP&quot;&gt;IntelliJ IDEA build 7938&lt;/a&gt; fixes the issue.
+&lt;/p&gt;&lt;p&gt;I installed the new version and opened up a project and everything was in error. It was almost as thought it didn&apos;t have a JDK set, so I tried to point it at a JDK but that didn&apos;t work. Finally, I removed my IntelliJ metadata folder (a desperate move, but I had little time and nothing to lose) which is where IntelliJ stores user specific metadata (&lt;code&gt;/home/jlong/.IntelliJIdea70&lt;/code&gt;). &lt;b&gt;That&lt;/b&gt; worked! 
+&lt;/p&gt; &lt;p&gt; In all, I lose 20 minutes of time. By far, one of the longest periods that IntelliJ itself (where it wasn&apos;t genuine user error!) has delayed me... now, Eclipse on the other hand...  &lt;/p&gt;
 
 	</description>
     </item>
