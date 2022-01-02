@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 2 Jan 2022 07:13:16 +0000</pubDate>
-    <lastBuildDate>Sun, 2 Jan 2022 07:13:16 +0000</lastBuildDate>
+    <pubDate>Sun, 2 Jan 2022 08:11:07 +0000</pubDate>
+    <lastBuildDate>Sun, 2 Jan 2022 08:11:07 +0000</lastBuildDate>
 
     <item>
       <title>Bootiful Podcast: Geertjan Wielenga, senior director of opensource projects at Azul Systems and Foojay.io founder</title>
@@ -2682,9 +2682,9 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
     </item>
     <item>
       <title>Bootiful Podcast: Spring and Java community member Eddú Meléndez about working in open-source, his journey to Spring and its community, contributing to Spring and more.</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-05-07-spring_and_java_community_member_edd%C3%BA_mel%C3%A9ndez_about_working_in_ope.html</link>
+      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-05-07-spring_and_java_community_member_eddu_mel%C3%A9ndez_about_working_in_ope.html</link>
       <pubDate>Thu, 7 May 2020 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2020-05-07-spring_and_java_community_member_edd%C3%BA_mel%C3%A9ndez_about_working_in_ope.html</guid>
+      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2020-05-07-spring_and_java_community_member_eddu_mel%C3%A9ndez_about_working_in_ope.html</guid>
       	<description>
 	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/7d323056-84e8-4026-a783-4704db38709d/produced-audio&quot;&gt;(2020-05-07) Spring and Java community member Eddú Meléndez about working in open-source, his journey to Spring and its community, contributing to Spring and more.&lt;/a&gt;&lt;/p&gt;
 
