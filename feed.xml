@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Thu, 6 Jan 2022 03:51:43 +0000</pubDate>
-    <lastBuildDate>Thu, 6 Jan 2022 03:51:43 +0000</lastBuildDate>
+    <pubDate>Thu, 6 Jan 2022 03:53:26 +0000</pubDate>
+    <lastBuildDate>Thu, 6 Jan 2022 03:53:26 +0000</lastBuildDate>
 
     <item>
       <title>Bootiful Podcast: Geertjan Wielenga, senior director of opensource projects at Azul Systems and Foojay.io founder</title>
@@ -2428,9 +2428,9 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
     </item>
     <item>
       <title>Bootiful Podcast: Lightbend CTO Jonas Bonér on his epic, aspect-oriented, distributed, reactive work</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-09-17-lightbend_cto_jonas_bon%C3%A9r_on_his_epic_aspectoriented_distributed_re.html</link>
+      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-09-17-lightbend_cto_jonas_boner_on_his_epic_aspectoriented_distributed_re.html</link>
       <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2020-09-17-lightbend_cto_jonas_bon%C3%A9r_on_his_epic_aspectoriented_distributed_re.html</guid>
+      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2020-09-17-lightbend_cto_jonas_boner_on_his_epic_aspectoriented_distributed_re.html</guid>
       	<description>
 	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/45acdf3e-e8bd-4e66-bc8d-62dd5b092b69/produced-audio&quot;&gt;(2020-09-17) Lightbend CTO Jonas Bonér on his epic, aspect-oriented, distributed, reactive work&lt;/a&gt;&lt;/p&gt;
 
