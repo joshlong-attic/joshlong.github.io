@@ -97,6 +97,12 @@
 <p>If you have to pick one video to buy this year, may I humbly recommend this one? This video took <em>weeks</em> to film and months to produce. It's as good a video as Pearson and I have ever done together and I'm very proud of it.</p>
 <p>You can buy this for 50% off with this special code: <strong>LONGVID50</strong>. Buy the video on <a href="https://www.informit.com/store/cloud-native-java-with-kubernetes-livelessons-2nd-edition-9780137833993">InformIT</a> or on <a href="https://learning.oreilly.com/videos/cloud-native-java/9780137834051/">O'Reilly's Safari Platform</a></p>
 </p>
+  			<a href="jl/blogPost/using-graphql-from-http.html"><h1>Using GraphQL from HTTP</h1></a>
+  			<p>28 January 2022</p>
+  			<p><p>I love GraphQL, and <a href="https://spring.io/projects/spring-graphql">Spring GraphQL in particular</a>, but sometimes it's easy to forget that it can and often does run on top of regular 'ol HTTP. GraphQL can run on any number of transports, one of hwihc is commonly HTTP. For example, you could use WebSockets. I hope one day we see support for RSocket. But, if you are running on top of HTTP, it's not hard to get data from it using ye 'ole <code>curl</code> or <code>httpie</code>:</p>
+<pre><code class="language-shell">curl -H&quot;content-type: application/json&quot; -d'{&quot;query&quot;:&quot;{appearances{event,startDate,endDate,time,marketingBlurb } }&quot; }' http://localhost:8080/graphql
+</code></pre>
+</p>
   			<a href="jl/blogPost/announcement-podcasts-2022-01-28-spring_framework_cofounder_and_project_lead_friend_and_all_around_a.html"><h1>Bootiful Podcast: Spring Framework cofounder and project lead, friend, and all around amazing human being, Juergen Hoeller</h1></a>
   			<p>28 January 2022</p>
   			<p><p><a href="http://api.bootifulpodcast.fm/podcasts/1c136ac9-2cc3-4b76-80fa-da458fedbafe/produced-audio">(2022-01-28) Spring Framework cofounder and project lead, friend, and all around amazing human being, Juergen Hoeller</a></p>
@@ -3730,6 +3736,19 @@ Have you booked your tickets for <strong><a href="http://www.springone2gx.com/co
 
 <p>My colleague Oliver Gierke also has a <a href="http://www.olivergierke.de/2013/03/juergenized/">great post on this anomaly, as well as a proper definition on his blog</a>. </p>
 </p>
+  			<a href="jl/blogPost/webinar_replay_building_rest_apis_with_spring.html"><h1>Webinar Replay: Building REST APIs with Spring</h1></a>
+  			<p>19 June 2013</p>
+  			<p>
+<p> <a href="http://www.youtube.com/watch?v=SC0FPuDKei0">
+ <img  style = "float: left; margin-right :10px" src = "/media/18688" width = "300" /></a>
+
+The video of my webinar on
+<a href= "http://www.youtube.com/watch?v=SC0FPuDKei0"> building RESTful APIs with Spring is available online</a>. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
+</p>  
+<P> The code is available at <a href="http://www.slideshare.net/joshlong/rest-apis-with-spring"> on my SlideShare account (vote it up if you like it!)</a> and on <a href="http://github.com/joshlong/the-spring-rest-stack">my private GitHub account (star or fork it if you like it!)</a>.  
+</p> 
+<P> If you have questions or comments, as always, don't hesitate to reach out to me <a href="http://twitter.com/starbuxman">on Twitter</a> or <A href="http://www.joshlong.com/jl/contact.html">by email (see this page for the email)</a>. </p>
+</p>
   			<a href="jl/blogPost/simplified_web_configuration_with_spring.html"><h1>Simplified Web Configuration with Spring</h1></a>
   			<p>19 June 2013</p>
   			<p>
@@ -3866,19 +3885,6 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
     }
 }
 </code></pre>
-</p>
-  			<a href="jl/blogPost/webinar_replay_building_rest_apis_with_spring.html"><h1>Webinar Replay: Building REST APIs with Spring</h1></a>
-  			<p>19 June 2013</p>
-  			<p>
-<p> <a href="http://www.youtube.com/watch?v=SC0FPuDKei0">
- <img  style = "float: left; margin-right :10px" src = "/media/18688" width = "300" /></a>
-
-The video of my webinar on
-<a href= "http://www.youtube.com/watch?v=SC0FPuDKei0"> building RESTful APIs with Spring is available online</a>. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
-</p>  
-<P> The code is available at <a href="http://www.slideshare.net/joshlong/rest-apis-with-spring"> on my SlideShare account (vote it up if you like it!)</a> and on <a href="http://github.com/joshlong/the-spring-rest-stack">my private GitHub account (star or fork it if you like it!)</a>.  
-</p> 
-<P> If you have questions or comments, as always, don't hesitate to reach out to me <a href="http://twitter.com/starbuxman">on Twitter</a> or <A href="http://www.joshlong.com/jl/contact.html">by email (see this page for the email)</a>. </p>
 </p>
   			<a href="jl/blogPost/moar_hypermedia.html"><h1>MOAR HYPERMEDIA PAYPAL</h1></a>
   			<p>28 May 2013</p>
