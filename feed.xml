@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 30 Jan 2022 09:25:23 +0000</pubDate>
-    <lastBuildDate>Sun, 30 Jan 2022 09:25:23 +0000</lastBuildDate>
+    <pubDate>Sun, 30 Jan 2022 09:33:29 +0000</pubDate>
+    <lastBuildDate>Sun, 30 Jan 2022 09:33:29 +0000</lastBuildDate>
 
     <item>
       <title>Cloud Native Java with Kubernetes Livelessons</title>
@@ -150,6 +150,17 @@ Buy on O&apos;REILLY
       <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2022-01-28-spring_framework_cofounder_and_project_lead_friend_and_all_around_a.html</guid>
       	<description>
 	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/1c136ac9-2cc3-4b76-80fa-da458fedbafe/produced-audio&quot;&gt;(2022-01-28) Spring Framework cofounder and project lead, friend, and all around amazing human being, Juergen Hoeller&lt;/a&gt;&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Reactive Spring Livelessons 3rd Edition</title>
+      <link>https://joshlong.com/jl/blogPost/reactive-spring-3e-livelessons.html</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/reactive-spring-3e-livelessons.html</guid>
+      	<description>
+	&lt;p&gt;I was so excited to return to the studio last year for the first time since the pandemic to update this video looking at reactive programming with Spring.&lt;/p&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://learning.oreilly.com/videos/reactive-spring-boot/9780137831463/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/reactive-spring-boot-livelessons-video-training-9780137831401&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt; 
 
 	</description>
     </item>
@@ -514,6 +525,307 @@ public class Fabric8NativeApplication {
       <guid isPermaLink="false">jl/blogPost/announcement-videos-2021-12-22-controllers_wrapup_all_together_now.html</guid>
       	<description>
 	&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xhNGqTwsGw0&quot;&gt;(2021-12-22) @Controllers: Wrapup (All Together Now...!)&lt;/a&gt;&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring GraphQL and Spring Native</title>
+      <link>https://joshlong.com/jl/blogPost/spring-graphql-and-spring-native.html</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring-graphql-and-spring-native.html</guid>
+      	<description>
+	&lt;p&gt;The sample code that I&apos;m reproducing here can be &lt;a href=&quot;https://github.com/joshlong/graphql-spring-native&quot;&gt;found in this Github Repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I wanted to make Spring GraphQL and Spring Native work well together. It&apos;s pretty easy to get the absolute basic application working. Go to the Spring Initializr and generate a new application usign Spring Webflux an Spring Native. Spring GraphQL works with both the Servlet API (and something like Apache Tomcat) and the reactive, non-blocking Spring Webflux webstack. I obviously quite prefer anything reactive, so I chose that.&lt;/p&gt;
+&lt;p&gt;The next bit&apos;s not so easy: you need to add the dependency to the build for Spring GraphQL itself. The project&apos;s not yet on the Spring Initializr as of the time of this writing. You&apos;ll have to do things the old fashioned way.&lt;/p&gt;
+&lt;p&gt;Add the dependency proper:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;org.springframework.experimental&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;graphql-spring-boot-starter&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;1.0.0-M4&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then add the Maven repositories by which you can resolve that dependency:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt; &amp;lt;repositories&amp;gt;
+    &amp;lt;repository&amp;gt;
+        &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;
+        &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;
+    &amp;lt;/repository&amp;gt;
+    &amp;lt;repository&amp;gt;
+        &amp;lt;id&amp;gt;spring-snapshots&amp;lt;/id&amp;gt;
+        &amp;lt;name&amp;gt;Spring Snapshots&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;https://repo.spring.io/snapshot&amp;lt;/url&amp;gt;
+        &amp;lt;snapshots&amp;gt;
+            &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt;
+        &amp;lt;/snapshots&amp;gt;
+    &amp;lt;/repository&amp;gt;
+    &amp;lt;repository&amp;gt;
+        &amp;lt;id&amp;gt;spring-releases&amp;lt;/id&amp;gt;
+        &amp;lt;name&amp;gt;Spring Releases&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;https://repo.spring.io/release&amp;lt;/url&amp;gt;
+        &amp;lt;snapshots&amp;gt;
+            &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;
+        &amp;lt;/snapshots&amp;gt;
+    &amp;lt;/repository&amp;gt;
+&amp;lt;/repositories&amp;gt;
+&amp;lt;pluginRepositories&amp;gt;
+    &amp;lt;pluginRepository&amp;gt;
+        &amp;lt;id&amp;gt;spring-releases&amp;lt;/id&amp;gt;
+        &amp;lt;name&amp;gt;Spring Releases&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;https://repo.spring.io/release&amp;lt;/url&amp;gt;
+        &amp;lt;snapshots&amp;gt;
+            &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;
+        &amp;lt;/snapshots&amp;gt;
+    &amp;lt;/pluginRepository&amp;gt;
+&amp;lt;/pluginRepositories&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That done, you can put together a trivial Spring GraphQL application (&lt;code&gt;src/main/java/com/example/graphqlnative/GraphqlNativeApplication.java&lt;/code&gt;) that looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.graphqlnative;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.NativeDetector;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.graphql.boot.GraphQlSourceBuilderCustomizer;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.nativex.hint.ResourceHint;
+import org.springframework.nativex.hint.TypeAccess;
+import org.springframework.nativex.hint.TypeHint;
+import org.springframework.stereotype.Controller;
+import reactor.core.publisher.Flux;
+
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+
+@SpringBootApplication
+public class GraphqlNativeApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(GraphqlNativeApplication.class, args);
+	}
+}
+
+@Controller
+class CustomerGraphQlController {
+
+
+	private final Map&amp;lt;Integer, Customer&amp;gt; db;
+
+	CustomerGraphQlController() {
+		var ctr = new AtomicInteger();
+		this.db = List
+			.of(&amp;quot;Tammie&amp;quot;, &amp;quot;Kimly&amp;quot;, &amp;quot;Josh&amp;quot;, &amp;quot;Peanut&amp;quot;)
+			.stream()
+			.map(name -&amp;gt; new Customer(ctr.incrementAndGet(), name))
+			.collect(Collectors.toMap(Customer::id, customer -&amp;gt; customer));
+
+	}
+
+	@QueryMapping
+	Flux&amp;lt;Customer&amp;gt; customers() {
+		return Flux.fromIterable(this.db.values());
+	}
+}
+
+record Customer(Integer id, String name) {
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You&apos;ll also need to define some schema for the application. Create a schema file, &lt;code&gt;src/main/resource/graphql/schema.graphqls&lt;/code&gt;, and specify the following content:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type Query {
+    customers : [Customer]
+}
+type Customer {
+    id: ID
+    name :String
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run the application on the JRE, and open up &lt;code&gt;http://localhost:8080/graphiql/&lt;/code&gt; and you&apos;ll be confronted with a fancy dashboard/console you can use to query your new GraphQL endpoints. Clear the text that starts with &lt;code&gt;#&lt;/code&gt; and type out the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;query {
+
+	customers {
+		id, name
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hit Command / Control + Enter and you should see four records return.&lt;/p&gt;
+&lt;p&gt;Alrighty, everything&apos;s good on the JRE. What about in the world of GraalVM and Spring Native? Well, there, as you can imagine, things get considerably more difficult.&lt;/p&gt;
+&lt;p&gt;The first problem is that the way that the GraphQL auto configuration works right now is that it tries to resolve the &lt;code&gt;schema.graphqls&lt;/code&gt;, and indeed any other file in that folder, using a &lt;code&gt;PatterResourceResolver&lt;/code&gt;, which &lt;em&gt;scans&lt;/em&gt;, after a fashion, the contents of the classpath. But there is no classpath in a GraalVM native image. If we&apos;d specified a classpath URL and then used that to laod the resource from the &lt;code&gt;.jar&lt;/code&gt;, we could provide a Sprign Native &lt;code&gt;@ResourceHint&lt;/code&gt;, specifying the pattern of the resource, and feed that into the GraalVM native image compiler.&lt;/p&gt;
+&lt;p&gt;The problem is that we don&apos;t do that. What we&apos;re in essence trying to do is &lt;em&gt;scan&lt;/em&gt; the classpath and then load the things we find. Since there&apos;s no classpath, there&apos;s nothing to find. And so we never end up loading it in the first place. I don&apos;t know how to make that work in a more natural way just yet. I found soemthing a bit hackety, but it works: specify a &lt;code&gt;org.springframework.graphql.boot.GraphQlSourceBuilderCustomizer&lt;/code&gt; which adds the &lt;code&gt;Resource&lt;/code&gt; we&apos;d like to load to the chain of &amp;quot;discovered&amp;quot; resources. In a GraalVM native image context, nothng will be discovered, so our  customization will have the effect of adding the one resource that should&apos;ve been discovered in the first place. On the JRE, however, the resource &lt;em&gt;will&lt;/em&gt; be discovered, so we need to make sure we only &lt;em&gt;add&lt;/em&gt; the resource in a Native Image.&lt;/p&gt;
+&lt;p&gt;Here&apos;s a definition that does the trick:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+	@Bean
+	GraphQlSourceBuilderCustomizer graphQlSourceBuilderCustomizer() {
+		return builder -&amp;gt; {
+			// this part isn&apos;t great, but:
+			// right now the PatternResourceResolver used to &apos;find&apos; the schema files on the classpath fails because
+			// in the graalvm native image world there is NO classpath to speak of. So this code manually
+			// adds a Resource, knowing that the default resolution logic fail. But, it only does so in
+			// a GraalVM native image context
+			if (NativeDetector.inNativeImage())
+				builder.schemaResources(new ClassPathResource(&amp;quot;graphql/schema.graphqls&amp;quot;));
+		};
+	}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, we&apos;ll need to account for the resource we do plan on loading, so add the following hint to your &lt;code&gt;@SpringBootApplication&lt;/code&gt;-annotated class:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@ResourceHint(patterns = {&amp;quot;graphql/schema.graphqls&amp;quot; })
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We&apos;re also going to reflectively access the &lt;code&gt;Customer&lt;/code&gt; domain type, so let&apos;s add a hint for that in the same fashion as the &lt;code&gt;@ResourecHint&lt;/code&gt;. Add the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@TypeHint(types = Customer.class, access = {TypeAccess.DECLARED_METHODS, TypeAccess.DECLARED_CONSTRUCTORS})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Goody. That done, let&apos;s turn to building out some hints for Spring GraphQL itself, not just our code.&lt;/p&gt;
+&lt;p&gt;Since this will be largely the same no matter what Spring GraphQL application you&apos;re building, I&apos;ve extracted the hints out into a separate &lt;code&gt;NativeConfiguration&lt;/code&gt; class that&apos;ll get loaded when the application is compiled.&lt;/p&gt;
+&lt;p&gt;Here&apos;s the definition of the class.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package org.springframework.experimental.graphql;
+
+import graphql.GraphQL;
+import graphql.analysis.QueryVisitorFieldArgumentEnvironment;
+import graphql.analysis.QueryVisitorFieldArgumentInputValue;
+import graphql.execution.Execution;
+import graphql.execution.nextgen.result.RootExecutionResultNode;
+import graphql.language.*;
+import graphql.parser.ParserOptions;
+import graphql.schema.*;
+import graphql.schema.validation.SchemaValidationErrorCollector;
+import graphql.util.NodeAdapter;
+import graphql.util.NodeZipper;
+import org.springframework.nativex.hint.ResourceHint;
+import org.springframework.nativex.hint.TypeHint;
+import org.springframework.nativex.type.NativeConfiguration;
+
+import java.util.List;
+
+import static org.springframework.nativex.hint.TypeAccess.*;
+
+/**
+	* Provides Spring Native hints to support using Spring GraphQL in a Spring Native application.
+	*
+	* @author &amp;lt;a href=&amp;quot;mailto:josh@joshlong.com&amp;quot;&amp;gt;Josh Long&amp;lt;/a&amp;gt;
+	*/
+@TypeHint(
+	typeNames = {
+		&amp;quot;graphql.analysis.QueryTraversalContext&amp;quot;,
+		&amp;quot;graphql.schema.idl.SchemaParseOrder&amp;quot;,
+	},
+	types = {
+		Argument.class,
+		ArrayValue.class,
+		Boolean.class,
+		BooleanValue.class,
+		DataFetchingEnvironment.class,
+		Directive.class,
+		DirectiveDefinition.class,
+		DirectiveLocation.class,
+		Document.class,
+		EnumTypeDefinition.class,
+		EnumTypeExtensionDefinition.class,
+		EnumValue.class,
+		EnumValueDefinition.class,
+		Execution.class,
+		Field.class,
+		FieldDefinition.class,
+		FloatValue.class,
+		FragmentDefinition.class,
+		FragmentSpread.class,
+		GraphQL.class,
+		GraphQLArgument.class,
+		GraphQLCodeRegistry.Builder.class,
+		GraphQLDirective.class,
+		GraphQLEnumType.class,
+		GraphQLEnumValueDefinition.class,
+		GraphQLFieldDefinition.class,
+		GraphQLInputObjectField.class,
+		GraphQLInputObjectType.class,
+		GraphQLInterfaceType.class,
+		GraphQLList.class,
+		GraphQLNamedType.class,
+		GraphQLNonNull.class,
+		GraphQLObjectType.class,
+		GraphQLOutputType.class,
+		GraphQLScalarType.class,
+		GraphQLSchema.class,
+		GraphQLSchemaElement.class,
+		GraphQLUnionType.class,
+		ImplementingTypeDefinition.class,
+		InlineFragment.class,
+		InputObjectTypeDefinition.class,
+		InputObjectTypeExtensionDefinition.class,
+		InputValueDefinition.class,
+		IntValue.class,
+		InterfaceTypeDefinition.class,
+		InterfaceTypeExtensionDefinition.class,
+		List.class,
+		ListType.class,
+		NodeAdapter.class,
+		NodeZipper.class,
+		NonNullType.class,
+		NullValue.class,
+		ObjectField.class,
+		ObjectTypeDefinition.class,
+		ObjectTypeExtensionDefinition.class,
+		ObjectValue.class,
+		OperationDefinition.class,
+		OperationTypeDefinition.class,
+		ParserOptions.class,
+		QueryVisitorFieldArgumentEnvironment.class,
+		QueryVisitorFieldArgumentInputValue.class,
+		RootExecutionResultNode.class,
+		ScalarTypeDefinition.class,
+		ScalarTypeExtensionDefinition.class,
+		SchemaDefinition.class,
+		SchemaExtensionDefinition.class,
+		SchemaValidationErrorCollector.class,
+		SelectionSet.class,
+		StringValue.class,
+		TypeDefinition.class,
+		TypeName.class,
+		UnionTypeDefinition.class,
+		UnionTypeExtensionDefinition.class,
+		VariableDefinition.class,
+		VariableReference.class,
+	}, //
+	access = {//
+		PUBLIC_CLASSES, PUBLIC_CONSTRUCTORS, PUBLIC_FIELDS, PUBLIC_METHODS,
+		DECLARED_CLASSES, DECLARED_CONSTRUCTORS, DECLARED_FIELDS, DECLARED_METHODS
+	} //
+)
+@ResourceHint(patterns = {  &amp;quot;graphiql/index.html&amp;quot;})
+public class GraphQlNativeHints implements NativeConfiguration {
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In order for Spring Native to discover that type, you&apos;ll need to register it in the &lt;code&gt;src/main/resources/META-INF/spring.factories&lt;/code&gt; file, like so:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;org.springframework.nativex.type.NativeConfiguration=\
+  org.springframework.experimental.graphql.GraphQlNativeHints
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That done, you can build and run the application like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;#!/usr/bin/env bash
+mvn -DskipTests=true -Pnative clean package &amp;amp;&amp;amp; ./target/graphql-native
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When I run it, I get output like the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;17:00:47.748 [main] INFO org.springframework.boot.SpringApplication - AOT mode enabled
+2021-12-18 17:00:47.765  INFO 91366 --- [           main] o.s.nativex.NativeListener               : This application is bootstrapped with code generated with Spring AOT
+
+  .   ____          _            __ _ _
+ /\\ / ___&apos;_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | &apos;_ | &apos;_| | &apos;_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  &apos;  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.1)
+
+2021-12-18 17:00:47.767  INFO 91366 --- [           main] c.e.g.GraphqlNativeApplication           : Starting GraphqlNativeApplication v0.0.1-SNAPSHOT using Java 17.0.1 on mbp2019.local with PID 91366 (/Users/jlong/Downloads/graphql-native/target/graphql-native started by jlong in /Users/jlong/Downloads/graphql-native)
+2021-12-18 17:00:47.767  INFO 91366 --- [           main] c.e.g.GraphqlNativeApplication           : No active profile set, falling back to default profiles: default
+2021-12-18 17:00:47.789  INFO 91366 --- [           main] o.s.g.b.GraphQlWebFluxAutoConfiguration  : GraphQL endpoint HTTP POST /graphql
+2021-12-18 17:00:47.802  INFO 91366 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2021-12-18 17:00:47.803  INFO 91366 --- [           main] c.e.g.GraphqlNativeApplication           : Started GraphqlNativeApplication in 0.051 seconds (JVM running for 0.052)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Good stuff. Even better? The RSS - the memory of the application taken - is a mere 49.9M. Enjoy!&lt;/p&gt;
 
 	</description>
     </item>
@@ -1100,307 +1412,6 @@ City(id=4, name=NYC, state=NY, country=USA)
 2021-12-18 11:07:40.704  INFO 6857 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I&apos;ve preserved all the code for this in the &lt;code&gt;mybatis-spring&lt;/code&gt; &lt;a href=&quot;https://github.com/joshlong/mybatis-spring-native/tree/mybatis-spring&quot;&gt;branch in this Git repository&lt;/a&gt;.&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Spring GraphQL and Spring Native</title>
-      <link>https://joshlong.com/jl/blogPost/spring-graphql-and-spring-native.html</link>
-      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring-graphql-and-spring-native.html</guid>
-      	<description>
-	&lt;p&gt;The sample code that I&apos;m reproducing here can be &lt;a href=&quot;https://github.com/joshlong/graphql-spring-native&quot;&gt;found in this Github Repository&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I wanted to make Spring GraphQL and Spring Native work well together. It&apos;s pretty easy to get the absolute basic application working. Go to the Spring Initializr and generate a new application usign Spring Webflux an Spring Native. Spring GraphQL works with both the Servlet API (and something like Apache Tomcat) and the reactive, non-blocking Spring Webflux webstack. I obviously quite prefer anything reactive, so I chose that.&lt;/p&gt;
-&lt;p&gt;The next bit&apos;s not so easy: you need to add the dependency to the build for Spring GraphQL itself. The project&apos;s not yet on the Spring Initializr as of the time of this writing. You&apos;ll have to do things the old fashioned way.&lt;/p&gt;
-&lt;p&gt;Add the dependency proper:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;dependency&amp;gt;
-	&amp;lt;groupId&amp;gt;org.springframework.experimental&amp;lt;/groupId&amp;gt;
-	&amp;lt;artifactId&amp;gt;graphql-spring-boot-starter&amp;lt;/artifactId&amp;gt;
-	&amp;lt;version&amp;gt;1.0.0-M4&amp;lt;/version&amp;gt;
-&amp;lt;/dependency&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then add the Maven repositories by which you can resolve that dependency:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt; &amp;lt;repositories&amp;gt;
-    &amp;lt;repository&amp;gt;
-        &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;
-        &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;
-        &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;
-    &amp;lt;/repository&amp;gt;
-    &amp;lt;repository&amp;gt;
-        &amp;lt;id&amp;gt;spring-snapshots&amp;lt;/id&amp;gt;
-        &amp;lt;name&amp;gt;Spring Snapshots&amp;lt;/name&amp;gt;
-        &amp;lt;url&amp;gt;https://repo.spring.io/snapshot&amp;lt;/url&amp;gt;
-        &amp;lt;snapshots&amp;gt;
-            &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt;
-        &amp;lt;/snapshots&amp;gt;
-    &amp;lt;/repository&amp;gt;
-    &amp;lt;repository&amp;gt;
-        &amp;lt;id&amp;gt;spring-releases&amp;lt;/id&amp;gt;
-        &amp;lt;name&amp;gt;Spring Releases&amp;lt;/name&amp;gt;
-        &amp;lt;url&amp;gt;https://repo.spring.io/release&amp;lt;/url&amp;gt;
-        &amp;lt;snapshots&amp;gt;
-            &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;
-        &amp;lt;/snapshots&amp;gt;
-    &amp;lt;/repository&amp;gt;
-&amp;lt;/repositories&amp;gt;
-&amp;lt;pluginRepositories&amp;gt;
-    &amp;lt;pluginRepository&amp;gt;
-        &amp;lt;id&amp;gt;spring-releases&amp;lt;/id&amp;gt;
-        &amp;lt;name&amp;gt;Spring Releases&amp;lt;/name&amp;gt;
-        &amp;lt;url&amp;gt;https://repo.spring.io/release&amp;lt;/url&amp;gt;
-        &amp;lt;snapshots&amp;gt;
-            &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;
-        &amp;lt;/snapshots&amp;gt;
-    &amp;lt;/pluginRepository&amp;gt;
-&amp;lt;/pluginRepositories&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;That done, you can put together a trivial Spring GraphQL application (&lt;code&gt;src/main/java/com/example/graphqlnative/GraphqlNativeApplication.java&lt;/code&gt;) that looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.graphqlnative;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.core.NativeDetector;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.graphql.boot.GraphQlSourceBuilderCustomizer;
-import org.springframework.graphql.data.method.annotation.QueryMapping;
-import org.springframework.nativex.hint.ResourceHint;
-import org.springframework.nativex.hint.TypeAccess;
-import org.springframework.nativex.hint.TypeHint;
-import org.springframework.stereotype.Controller;
-import reactor.core.publisher.Flux;
-
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
-
-@SpringBootApplication
-public class GraphqlNativeApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(GraphqlNativeApplication.class, args);
-	}
-}
-
-@Controller
-class CustomerGraphQlController {
-
-
-	private final Map&amp;lt;Integer, Customer&amp;gt; db;
-
-	CustomerGraphQlController() {
-		var ctr = new AtomicInteger();
-		this.db = List
-			.of(&amp;quot;Tammie&amp;quot;, &amp;quot;Kimly&amp;quot;, &amp;quot;Josh&amp;quot;, &amp;quot;Peanut&amp;quot;)
-			.stream()
-			.map(name -&amp;gt; new Customer(ctr.incrementAndGet(), name))
-			.collect(Collectors.toMap(Customer::id, customer -&amp;gt; customer));
-
-	}
-
-	@QueryMapping
-	Flux&amp;lt;Customer&amp;gt; customers() {
-		return Flux.fromIterable(this.db.values());
-	}
-}
-
-record Customer(Integer id, String name) {
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You&apos;ll also need to define some schema for the application. Create a schema file, &lt;code&gt;src/main/resource/graphql/schema.graphqls&lt;/code&gt;, and specify the following content:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;type Query {
-    customers : [Customer]
-}
-type Customer {
-    id: ID
-    name :String
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Run the application on the JRE, and open up &lt;code&gt;http://localhost:8080/graphiql/&lt;/code&gt; and you&apos;ll be confronted with a fancy dashboard/console you can use to query your new GraphQL endpoints. Clear the text that starts with &lt;code&gt;#&lt;/code&gt; and type out the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;query {
-
-	customers {
-		id, name
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Hit Command / Control + Enter and you should see four records return.&lt;/p&gt;
-&lt;p&gt;Alrighty, everything&apos;s good on the JRE. What about in the world of GraalVM and Spring Native? Well, there, as you can imagine, things get considerably more difficult.&lt;/p&gt;
-&lt;p&gt;The first problem is that the way that the GraphQL auto configuration works right now is that it tries to resolve the &lt;code&gt;schema.graphqls&lt;/code&gt;, and indeed any other file in that folder, using a &lt;code&gt;PatterResourceResolver&lt;/code&gt;, which &lt;em&gt;scans&lt;/em&gt;, after a fashion, the contents of the classpath. But there is no classpath in a GraalVM native image. If we&apos;d specified a classpath URL and then used that to laod the resource from the &lt;code&gt;.jar&lt;/code&gt;, we could provide a Sprign Native &lt;code&gt;@ResourceHint&lt;/code&gt;, specifying the pattern of the resource, and feed that into the GraalVM native image compiler.&lt;/p&gt;
-&lt;p&gt;The problem is that we don&apos;t do that. What we&apos;re in essence trying to do is &lt;em&gt;scan&lt;/em&gt; the classpath and then load the things we find. Since there&apos;s no classpath, there&apos;s nothing to find. And so we never end up loading it in the first place. I don&apos;t know how to make that work in a more natural way just yet. I found soemthing a bit hackety, but it works: specify a &lt;code&gt;org.springframework.graphql.boot.GraphQlSourceBuilderCustomizer&lt;/code&gt; which adds the &lt;code&gt;Resource&lt;/code&gt; we&apos;d like to load to the chain of &amp;quot;discovered&amp;quot; resources. In a GraalVM native image context, nothng will be discovered, so our  customization will have the effect of adding the one resource that should&apos;ve been discovered in the first place. On the JRE, however, the resource &lt;em&gt;will&lt;/em&gt; be discovered, so we need to make sure we only &lt;em&gt;add&lt;/em&gt; the resource in a Native Image.&lt;/p&gt;
-&lt;p&gt;Here&apos;s a definition that does the trick:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
-	@Bean
-	GraphQlSourceBuilderCustomizer graphQlSourceBuilderCustomizer() {
-		return builder -&amp;gt; {
-			// this part isn&apos;t great, but:
-			// right now the PatternResourceResolver used to &apos;find&apos; the schema files on the classpath fails because
-			// in the graalvm native image world there is NO classpath to speak of. So this code manually
-			// adds a Resource, knowing that the default resolution logic fail. But, it only does so in
-			// a GraalVM native image context
-			if (NativeDetector.inNativeImage())
-				builder.schemaResources(new ClassPathResource(&amp;quot;graphql/schema.graphqls&amp;quot;));
-		};
-	}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, we&apos;ll need to account for the resource we do plan on loading, so add the following hint to your &lt;code&gt;@SpringBootApplication&lt;/code&gt;-annotated class:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@ResourceHint(patterns = {&amp;quot;graphql/schema.graphqls&amp;quot; })
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We&apos;re also going to reflectively access the &lt;code&gt;Customer&lt;/code&gt; domain type, so let&apos;s add a hint for that in the same fashion as the &lt;code&gt;@ResourecHint&lt;/code&gt;. Add the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@TypeHint(types = Customer.class, access = {TypeAccess.DECLARED_METHODS, TypeAccess.DECLARED_CONSTRUCTORS})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Goody. That done, let&apos;s turn to building out some hints for Spring GraphQL itself, not just our code.&lt;/p&gt;
-&lt;p&gt;Since this will be largely the same no matter what Spring GraphQL application you&apos;re building, I&apos;ve extracted the hints out into a separate &lt;code&gt;NativeConfiguration&lt;/code&gt; class that&apos;ll get loaded when the application is compiled.&lt;/p&gt;
-&lt;p&gt;Here&apos;s the definition of the class.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
-package org.springframework.experimental.graphql;
-
-import graphql.GraphQL;
-import graphql.analysis.QueryVisitorFieldArgumentEnvironment;
-import graphql.analysis.QueryVisitorFieldArgumentInputValue;
-import graphql.execution.Execution;
-import graphql.execution.nextgen.result.RootExecutionResultNode;
-import graphql.language.*;
-import graphql.parser.ParserOptions;
-import graphql.schema.*;
-import graphql.schema.validation.SchemaValidationErrorCollector;
-import graphql.util.NodeAdapter;
-import graphql.util.NodeZipper;
-import org.springframework.nativex.hint.ResourceHint;
-import org.springframework.nativex.hint.TypeHint;
-import org.springframework.nativex.type.NativeConfiguration;
-
-import java.util.List;
-
-import static org.springframework.nativex.hint.TypeAccess.*;
-
-/**
-	* Provides Spring Native hints to support using Spring GraphQL in a Spring Native application.
-	*
-	* @author &amp;lt;a href=&amp;quot;mailto:josh@joshlong.com&amp;quot;&amp;gt;Josh Long&amp;lt;/a&amp;gt;
-	*/
-@TypeHint(
-	typeNames = {
-		&amp;quot;graphql.analysis.QueryTraversalContext&amp;quot;,
-		&amp;quot;graphql.schema.idl.SchemaParseOrder&amp;quot;,
-	},
-	types = {
-		Argument.class,
-		ArrayValue.class,
-		Boolean.class,
-		BooleanValue.class,
-		DataFetchingEnvironment.class,
-		Directive.class,
-		DirectiveDefinition.class,
-		DirectiveLocation.class,
-		Document.class,
-		EnumTypeDefinition.class,
-		EnumTypeExtensionDefinition.class,
-		EnumValue.class,
-		EnumValueDefinition.class,
-		Execution.class,
-		Field.class,
-		FieldDefinition.class,
-		FloatValue.class,
-		FragmentDefinition.class,
-		FragmentSpread.class,
-		GraphQL.class,
-		GraphQLArgument.class,
-		GraphQLCodeRegistry.Builder.class,
-		GraphQLDirective.class,
-		GraphQLEnumType.class,
-		GraphQLEnumValueDefinition.class,
-		GraphQLFieldDefinition.class,
-		GraphQLInputObjectField.class,
-		GraphQLInputObjectType.class,
-		GraphQLInterfaceType.class,
-		GraphQLList.class,
-		GraphQLNamedType.class,
-		GraphQLNonNull.class,
-		GraphQLObjectType.class,
-		GraphQLOutputType.class,
-		GraphQLScalarType.class,
-		GraphQLSchema.class,
-		GraphQLSchemaElement.class,
-		GraphQLUnionType.class,
-		ImplementingTypeDefinition.class,
-		InlineFragment.class,
-		InputObjectTypeDefinition.class,
-		InputObjectTypeExtensionDefinition.class,
-		InputValueDefinition.class,
-		IntValue.class,
-		InterfaceTypeDefinition.class,
-		InterfaceTypeExtensionDefinition.class,
-		List.class,
-		ListType.class,
-		NodeAdapter.class,
-		NodeZipper.class,
-		NonNullType.class,
-		NullValue.class,
-		ObjectField.class,
-		ObjectTypeDefinition.class,
-		ObjectTypeExtensionDefinition.class,
-		ObjectValue.class,
-		OperationDefinition.class,
-		OperationTypeDefinition.class,
-		ParserOptions.class,
-		QueryVisitorFieldArgumentEnvironment.class,
-		QueryVisitorFieldArgumentInputValue.class,
-		RootExecutionResultNode.class,
-		ScalarTypeDefinition.class,
-		ScalarTypeExtensionDefinition.class,
-		SchemaDefinition.class,
-		SchemaExtensionDefinition.class,
-		SchemaValidationErrorCollector.class,
-		SelectionSet.class,
-		StringValue.class,
-		TypeDefinition.class,
-		TypeName.class,
-		UnionTypeDefinition.class,
-		UnionTypeExtensionDefinition.class,
-		VariableDefinition.class,
-		VariableReference.class,
-	}, //
-	access = {//
-		PUBLIC_CLASSES, PUBLIC_CONSTRUCTORS, PUBLIC_FIELDS, PUBLIC_METHODS,
-		DECLARED_CLASSES, DECLARED_CONSTRUCTORS, DECLARED_FIELDS, DECLARED_METHODS
-	} //
-)
-@ResourceHint(patterns = {  &amp;quot;graphiql/index.html&amp;quot;})
-public class GraphQlNativeHints implements NativeConfiguration {
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In order for Spring Native to discover that type, you&apos;ll need to register it in the &lt;code&gt;src/main/resources/META-INF/spring.factories&lt;/code&gt; file, like so:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;org.springframework.nativex.type.NativeConfiguration=\
-  org.springframework.experimental.graphql.GraphQlNativeHints
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;That done, you can build and run the application like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;#!/usr/bin/env bash
-mvn -DskipTests=true -Pnative clean package &amp;amp;&amp;amp; ./target/graphql-native
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When I run it, I get output like the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;17:00:47.748 [main] INFO org.springframework.boot.SpringApplication - AOT mode enabled
-2021-12-18 17:00:47.765  INFO 91366 --- [           main] o.s.nativex.NativeListener               : This application is bootstrapped with code generated with Spring AOT
-
-  .   ____          _            __ _ _
- /\\ / ___&apos;_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | &apos;_ | &apos;_| | &apos;_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  &apos;  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v2.6.1)
-
-2021-12-18 17:00:47.767  INFO 91366 --- [           main] c.e.g.GraphqlNativeApplication           : Starting GraphqlNativeApplication v0.0.1-SNAPSHOT using Java 17.0.1 on mbp2019.local with PID 91366 (/Users/jlong/Downloads/graphql-native/target/graphql-native started by jlong in /Users/jlong/Downloads/graphql-native)
-2021-12-18 17:00:47.767  INFO 91366 --- [           main] c.e.g.GraphqlNativeApplication           : No active profile set, falling back to default profiles: default
-2021-12-18 17:00:47.789  INFO 91366 --- [           main] o.s.g.b.GraphQlWebFluxAutoConfiguration  : GraphQL endpoint HTTP POST /graphql
-2021-12-18 17:00:47.802  INFO 91366 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
-2021-12-18 17:00:47.803  INFO 91366 --- [           main] c.e.g.GraphqlNativeApplication           : Started GraphqlNativeApplication in 0.051 seconds (JVM running for 0.052)
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Good stuff. Even better? The RSS - the memory of the application taken - is a mere 49.9M. Enjoy!&lt;/p&gt;
 
 	</description>
     </item>
@@ -2832,16 +2843,6 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
 	</description>
     </item>
     <item>
-      <title>Bootiful Podcast: A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space</title>
-      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-05-28-a_bootiful_podcast_dr_malini_bhandaru_on_edgex_and_the_opportunitie.html</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2020-05-28-a_bootiful_podcast_dr_malini_bhandaru_on_edgex_and_the_opportunitie.html</guid>
-      	<description>
-	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/60026531-40a7-4e6b-a404-7bc033172af9/produced-audio&quot;&gt;(2020-05-28) A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space&lt;/a&gt;&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>I&apos;m so tired of winning</title>
       <link>https://joshlong.com/jl/blogPost/tired_of_winning.html</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
@@ -2863,6 +2864,16 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
 &lt;/ul&gt;
 &lt;p&gt;All of this was in the last ten days or so! And I know I&apos;ve missed &lt;a href=&quot;http://TheTrumpDump.info&quot;&gt;a zillion other things&lt;/a&gt;, too.&lt;/p&gt;
 &lt;p&gt;So, let&apos;s please ask this November as we amble up to the voting box: are we better off than we were in 2016?&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Bootiful Podcast: A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space</title>
+      <link>https://joshlong.com/jl/blogPost/announcement-podcasts-2020-05-28-a_bootiful_podcast_dr_malini_bhandaru_on_edgex_and_the_opportunitie.html</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/announcement-podcasts-2020-05-28-a_bootiful_podcast_dr_malini_bhandaru_on_edgex_and_the_opportunitie.html</guid>
+      	<description>
+	&lt;p&gt;&lt;a href=&quot;http://api.bootifulpodcast.fm/podcasts/60026531-40a7-4e6b-a404-7bc033172af9/produced-audio&quot;&gt;(2020-05-28) A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space&lt;/a&gt;&lt;/p&gt;
 
 	</description>
     </item>
@@ -5875,6 +5886,19 @@ shell.auth=spring
 	</description>
     </item>
     <item>
+      <title>SpringOne2GX 2013 is Coming!</title>
+      <link>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
+      <pubDate>Wed, 7 Aug 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
+      	<description>
+	
+&lt;p&gt; 
+ &lt;IMG src = &quot;/media/18738&quot; width =&quot;300&quot;  style = &quot;float: left; margin-right:10px; &quot;/&gt;
+Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;?  This year&amp;#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&amp;#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&amp;#39;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&amp;#39;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&amp;#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&amp;#39;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Introducing Spring Boot</title>
       <link>https://joshlong.com/jl/blogPost/introducing_spring_boot.html</link>
       <pubDate>Wed, 7 Aug 2013 00:00:00 +0000</pubDate>
@@ -5896,19 +5920,6 @@ class ThisWillActuallyRun {
     }
 }
 &lt;/CODE&gt;&lt;/PRE&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>SpringOne2GX 2013 is Coming!</title>
-      <link>https://joshlong.com/jl/blogPost/springone2gx_2013_is_coming.html</link>
-      <pubDate>Wed, 7 Aug 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/springone2gx_2013_is_coming.html</guid>
-      	<description>
-	
-&lt;p&gt; 
- &lt;IMG src = &quot;/media/18738&quot; width =&quot;300&quot;  style = &quot;float: left; margin-right:10px; &quot;/&gt;
-Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/home&quot;&gt;SpringOne2GX&lt;/a&gt;&lt;/strong&gt;?  This year&amp;#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at &lt;em&gt;many&lt;/em&gt; conferences all around the world. Ask any developer with a pulse, and they&amp;#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today&apos;s developers, and SpringOne2GX&apos;s agenda represents in my estimation the perfect blend of content for today&amp;#39;s developers. Check out &lt;a href=&quot;https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule&quot;&gt;the agenda&lt;/a&gt;. We&amp;#39;ve just recently added talks on &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165&quot;&gt;big data&lt;/a&gt;, and &lt;a href=&quot;http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425&quot;&gt;REST service security with OAuth&lt;/a&gt;. This will be our first show under &lt;a href=&quot;http://gopivotal.com&quot;&gt;Pivotal&lt;/a&gt;, and it&amp;#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&amp;#39;ve just announced our Cloud Foundry conference, &lt;a href=&quot;http://platformcf.com&quot;&gt;Platform&lt;/a&gt;, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!&lt;/p&gt;
 
 	</description>
     </item>
@@ -5955,25 +5966,6 @@ Have you booked your tickets for &lt;strong&gt;&lt;a href=&quot;http://www.sprin
 &lt;p&gt;If you want &lt;em&gt;very&lt;/em&gt; well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&amp;#39;s &lt;a href=&quot;http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller&quot;&gt;a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code&lt;/a&gt; (code that, as I&amp;#39;m sure you&amp;#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&amp;#39;s actually won awards at various conferences. This is because &lt;a href=&quot;http://blog.springsource.org/author/juergenh/&quot;&gt;Juergen Hoeller&lt;/a&gt;, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. &lt;em&gt;ALL&lt;/em&gt; the Spring projects follow his basic style and approach. That&amp;#39;s why they&amp;#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&amp;#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as &lt;em&gt;Juergenization&lt;/em&gt;. &lt;/p&gt;
 
 &lt;p&gt;My colleague Oliver Gierke also has a &lt;a href=&quot;http://www.olivergierke.de/2013/03/juergenized/&quot;&gt;great post on this anomaly, as well as a proper definition on his blog&lt;/a&gt;. &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Webinar Replay: Building REST APIs with Spring</title>
-      <link>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</link>
-      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt;
- &lt;img  style = &quot;float: left; margin-right :10px&quot; src = &quot;/media/18688&quot; width = &quot;300&quot; /&gt;&lt;/a&gt;
-
-The video of my webinar on
-&lt;a href= &quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; building RESTful APIs with Spring is available online&lt;/a&gt;. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
-&lt;/p&gt;  
-&lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
-&lt;/p&gt; 
-&lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -6117,6 +6109,25 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Webinar Replay: Building REST APIs with Spring</title>
+      <link>https://joshlong.com/jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</link>
+      <pubDate>Wed, 19 Jun 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/webinar_replay_building_rest_apis_with_spring.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt;
+ &lt;img  style = &quot;float: left; margin-right :10px&quot; src = &quot;/media/18688&quot; width = &quot;300&quot; /&gt;&lt;/a&gt;
+
+The video of my webinar on
+&lt;a href= &quot;http://www.youtube.com/watch?v=SC0FPuDKei0&quot;&gt; building RESTful APIs with Spring is available online&lt;/a&gt;. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
+&lt;/p&gt;  
+&lt;P&gt; The code is available at &lt;a href=&quot;http://www.slideshare.net/joshlong/rest-apis-with-spring&quot;&gt; on my SlideShare account (vote it up if you like it!)&lt;/a&gt; and on &lt;a href=&quot;http://github.com/joshlong/the-spring-rest-stack&quot;&gt;my private GitHub account (star or fork it if you like it!)&lt;/a&gt;.  
+&lt;/p&gt; 
+&lt;P&gt; If you have questions or comments, as always, don&apos;t hesitate to reach out to me &lt;a href=&quot;http://twitter.com/starbuxman&quot;&gt;on Twitter&lt;/a&gt; or &lt;A href=&quot;http://www.joshlong.com/jl/contact.html&quot;&gt;by email (see this page for the email)&lt;/a&gt;. &lt;/p&gt;
 
 	</description>
     </item>
@@ -6738,23 +6749,6 @@ In the same vein, years ago, there was a project called &lt;A href=&quot;http://
 	</description>
     </item>
     <item>
-      <title>Spring MVC Performance FTW</title>
-      <link>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</link>
-      <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_mvc_performance_ftw.html</guid>
-      	<description>
-	
-&lt;P&gt; We&apos;ve all seen 
- &lt;A href=&quot;http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5&quot;&gt; Matt Raible&apos;s awesome talk&lt;/a&gt;
- comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
-&lt;/p&gt; 
-&lt;P&gt; 
- For a very detailed dissection of performance, you might check out this talk &lt;a href=&quot;http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/&quot;&gt;comparing web framework performance&lt;/a&gt;. Matt&apos;s talk builds on the data amassed from that talk. 
-&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Multi Client Development with Spring Webinar on March 14, 2013</title>
       <link>https://joshlong.com/jl/blogPost/performance_and_the_restful_web.html</link>
       <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
@@ -6770,6 +6764,23 @@ Once we&apos;ve introduced Spring&apos;s REST support, we&apos;ll look at how to
 &lt;P&gt; Be sure to register now and bring questions, ideas, etc.  I look forward to seeing you at there, and we&apos;ll look at some of the amazing support  
  Spring offers for building best-of-breed web-centric, RESTful applications.
 &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Spring MVC Performance FTW</title>
+      <link>https://joshlong.com/jl/blogPost/spring_mvc_performance_ftw.html</link>
+      <pubDate>Thu, 7 Mar 2013 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_mvc_performance_ftw.html</guid>
+      	<description>
+	
+&lt;P&gt; We&apos;ve all seen 
+ &lt;A href=&quot;http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5&quot;&gt; Matt Raible&apos;s awesome talk&lt;/a&gt;
+ comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
+&lt;/p&gt; 
+&lt;P&gt; 
+ For a very detailed dissection of performance, you might check out this talk &lt;a href=&quot;http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/&quot;&gt;comparing web framework performance&lt;/a&gt;. Matt&apos;s talk builds on the data amassed from that talk. 
+&lt;/p&gt;
 
 	</description>
     </item>
@@ -7168,6 +7179,19 @@ Wish me luck!
 	</description>
     </item>
     <item>
+      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
+      <link>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
+      	<description>
+	
+&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
+         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
+ &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Spring Data Mongo transaction synchronization does not find a bound DB</title>
       <link>https://joshlong.com/jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
@@ -7201,19 +7225,6 @@ at org.springframework.transaction.support.AbstractPlatformTransactionManager.co
 at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:393) [spring-tx-3.1.1.RELEASE.jar:3.1.1.RELEASE]
  &lt;/pre&gt;
 &lt;/p&gt; &lt;p&gt; Hat tip to the one and only  &lt;a href= &quot;https://twitter.com/olivergierke&quot;&gt;Oliver Gierke&lt;/a&gt; for helping me with this! &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Nice Application to Enumerate the Cloud Foundry Environment Properties</title>
-      <link>https://joshlong.com/jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</link>
-      <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html</guid>
-      	<description>
-	
-&lt;P&gt; I found &lt;a href= &quot;https://gho-env.cloudfoundry.com/&quot;&gt;a nice application on Cloud Foundry that enumerates the  
-         environment variables&lt;/a&gt; in Cloud Foundry with the values for this particular application.  
- &lt;/p&gt;
 
 	</description>
     </item>
@@ -7612,17 +7623,6 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
 	</description>
     </item>
     <item>
-      <title>Speaking at the Aarhus, Denmark Java User Group</title>
-      <link>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</link>
-      <pubDate>Mon, 1 Oct 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</guid>
-      	<description>
-	
-&lt;P&gt; I&apos;ll be speaking at &lt;a href=&quot;https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609&quot;&gt;the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00&lt;/A&gt;. I&apos;ll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! &lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Lanyrd</title>
       <link>https://joshlong.com/jl/blogPost/lanyrd.html</link>
       <pubDate>Mon, 1 Oct 2012 00:00:00 +0000</pubDate>
@@ -7632,6 +7632,17 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
 &lt;P&gt; If you guys want to know when and where I&apos;ll be speaking next, feel free to check out my &lt;A href =&quot;http://lanyrd.com/profile/starbuxman/&quot;&gt;Lanyrd.com&lt;/a&gt; page, which usually has information about which shows I&apos;ll be at and where. In fact, some times &lt;EM&gt;I&lt;/EM&gt; check it out and learn of my obligations before I&apos;ve been told!  &lt;br/&gt; &lt;img  width = &quot;800&quot; style = &quot;margin-top:10px;&quot; src = &quot;/media/18436&quot;/&gt;
 
  &lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Speaking at the Aarhus, Denmark Java User Group</title>
+      <link>https://joshlong.com/jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</link>
+      <pubDate>Mon, 1 Oct 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html</guid>
+      	<description>
+	
+&lt;P&gt; I&apos;ll be speaking at &lt;a href=&quot;https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609&quot;&gt;the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00&lt;/A&gt;. I&apos;ll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! &lt;/P&gt;
 
 	</description>
     </item>
@@ -7843,6 +7854,22 @@ This was my first time in Madrid, Spain, for the &lt;a href = &quot;http://www.s
 	</description>
     </item>
     <item>
+      <title>Spring IO 2012</title>
+      <link>https://joshlong.com/jl/blogPost/spring_io_2012.html</link>
+      <pubDate>Fri, 17 Feb 2012 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/spring_io_2012.html</guid>
+      	<description>
+	
+&lt;P&gt; 
+ &lt;img src = &quot;/media/17885&quot; style = &quot;margin-right:10px;float:left;&quot; width  = &quot;300&quot;/&gt;
+Looking forward to presenting my talk on  &lt;a href =&quot;http://www.springio.net/agenda&quot;&gt;Integration and Batch Processing with Cloud Foundry&lt;/A&gt; tomorrow at Spring IO 2012.  
+	
+	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I&apos;ll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, &lt;a href = &quot;http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry&quot;&gt;it&apos;s available here&lt;/a&gt;.
+&lt;/P&gt;
+
+	</description>
+    </item>
+    <item>
       <title>JFokus and Vaadin 2012</title>
       <link>https://joshlong.com/jl/blogPost/jfokus_and_vaadin_2012.html</link>
       <pubDate>Fri, 17 Feb 2012 00:00:00 +0000</pubDate>
@@ -7857,22 +7884,6 @@ This was my first time in Madrid, Spain, for the &lt;a href = &quot;http://www.s
  
  If you&apos;re in Helsinki, might I recommend  &lt;a href = &quot;https://vaadin.com/meetup/jfokus-2012&quot;&gt;the JFokus with Vaadin&lt;/A&gt; cruise which leaves from Helsinki aboard the &lt;a href = &quot;http://en.wikipedia.org/wiki/MS_Silja_Symphony&quot;&gt;MS Silja Symphony&lt;/A&gt; at 17:00 EET, and then works it way to Stockholm, where of course you&apos;re then free to attend JFokus. I&apos;ll be there, giving a talk on getting to production quicker with technologies like &lt;a href = &quot;http://www.cloudfoundry.org&quot;&gt;Cloud Foundry&lt;/A&gt;, &lt;A href = &quot;http://www.springframework.org&quot;&gt;Spring&lt;/A&gt; and &lt;A href = &quot;http://www.vaadin.com&quot;&gt;Vaadin&lt;/A&gt;. The deck from the  &lt;a href = &quot;http://www.slideshare.net/joshlong/cf-vaadin&quot;&gt;talk from the Vaadin dev meetup on Spring, Roo and Vaadin  is available&lt;/A&gt;, and so is the  deck from the &lt;a href= &quot;http://www.slideshare.net/joshlong/a-running-tour-of-cloud-foundry&quot;&gt;JFokus Cloud Foundry quickie is available here&lt;/a&gt;.
 	&lt;/P&gt;
-
-	</description>
-    </item>
-    <item>
-      <title>Spring IO 2012</title>
-      <link>https://joshlong.com/jl/blogPost/spring_io_2012.html</link>
-      <pubDate>Fri, 17 Feb 2012 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/spring_io_2012.html</guid>
-      	<description>
-	
-&lt;P&gt; 
- &lt;img src = &quot;/media/17885&quot; style = &quot;margin-right:10px;float:left;&quot; width  = &quot;300&quot;/&gt;
-Looking forward to presenting my talk on  &lt;a href =&quot;http://www.springio.net/agenda&quot;&gt;Integration and Batch Processing with Cloud Foundry&lt;/A&gt; tomorrow at Spring IO 2012.  
-	
-	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I&apos;ll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, &lt;a href = &quot;http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry&quot;&gt;it&apos;s available here&lt;/a&gt;.
-&lt;/P&gt;
 
 	</description>
     </item>
@@ -9442,6 +9453,20 @@ fantastic new year, and a new decade.
 	</description>
     </item>
     <item>
+      <title>Devoxx 2010</title>
+      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
+      	<description>
+	
+&lt;p&gt;  
+ I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
+&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;https://www.salesforce.com/dreamforce/&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
+ The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>The H2 Embedded Database</title>
       <link>https://joshlong.com/jl/blogPost/the_h2_embedded_database.html</link>
       <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
@@ -9478,20 +9503,6 @@ featured exclusive support   for persisting process state in H2, and H2 alone. A
 	</description>
     </item>
     <item>
-      <title>Devoxx 2010</title>
-      <link>https://joshlong.com/jl/blogPost/devoxx_2010.html</link>
-      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/devoxx_2010.html</guid>
-      	<description>
-	
-&lt;p&gt;  
- I&apos;ve just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I&apos;m glad to be home! There&apos;s a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!&lt;/p&gt;
-&lt;P&gt;Then, I&apos;m off to speak at the Salesforce.com &lt;a href=&quot;https://www.salesforce.com/dreamforce/&quot;&gt;Dreamforce conference&lt;/a&gt;. I&apos;ll be giving an intro to &lt;a href=&quot;http://www.springsource.org/about&quot;&gt;Spring&lt;/a&gt; for the busy Force.com developer with my friend &lt;a href=&quot;http://twitter.com/quintonwall&quot;&gt;Quinton Wall,&lt;/a&gt; the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the &lt;a href=&quot;http://www.vmforce.com&quot;&gt;VMforce&lt;/a&gt; cloud, coming from a Force.com background. 
- The event looks to be &lt;em&gt;very&lt;/em&gt; interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton&apos;s giving a keynote, and Stevie Wonder&apos;s the musical talent... not too shabby!), so don&apos;t miss it!&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Adobe MAX 2010</title>
       <link>https://joshlong.com/jl/blogPost/adobe_max_2010.html</link>
       <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
@@ -9521,17 +9532,6 @@ As you might expect from a good conference, there were plenty of great hallway c
 	</description>
     </item>
     <item>
-      <title>Java2Days 2010</title>
-      <link>https://joshlong.com/jl/blogPost/java2days_2010.html</link>
-      <pubDate>Mon, 4 Oct 2010 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/java2days_2010.html</guid>
-      	<description>
-	
-&lt;p&gt; &lt;div style = &quot;float:left; margin-bottom:10px;  margin-right:10px; padding: 10px; background-color: black; width:220px &quot;&gt; &lt;img width =&quot;200&quot;  src = &quot;/media/17872&quot;/&gt;  &lt;/div&gt; I&apos;ll be speaking (again) in Sofia, Bulgaria at &lt;a href=&quot;http://2010.java2days.com/&quot;&gt;the Java2Days conference&lt;/a&gt; on the 7th and 8th of October. I was there last year and quite enjoyed the conference. What a wonderful group! I&apos;ll be copresenting two talks with Oleg Zhurakousky (we&apos;ll be talking about &lt;a href=&quot;http://www.springsource.org/spring-integration&quot;&gt;Spring Integration 2&lt;/a&gt; as well as RabbitMQ and AMQP), and another with &lt;a href=&quot;http://www.jamesward.com/&quot;&gt;James Ward&lt;/a&gt; (we&apos;ll be talking about Spring BlazeDS and Flex, naturally). Finally, I&apos;ll be giving another presentation  on using Spring and the Apache 2 licensed BPMN 2 solution &lt;a href=&quot;http://www.activiti.org&quot;&gt;Activiti&lt;/a&gt; (simialar to the talk I gave at  &lt;a href=&quot;http://jz10.java.no/&quot;&gt;JavaZone&lt;/a&gt; recently).  Java2Days is the only conference of its kind in the Balkans and I sincerely hope to see you there!  &lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Ubuntu 10.10 (Maverick Meerkat) on a MacBook Pro</title>
       <link>https://joshlong.com/jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html</link>
       <pubDate>Mon, 4 Oct 2010 00:00:00 +0000</pubDate>
@@ -9539,6 +9539,17 @@ As you might expect from a good conference, there were plenty of great hallway c
       	<description>
 	
 &lt;p&gt; I have long used &lt;a href=&quot;http://refit.sourceforge.net/&quot;&gt;rEFIt&lt;/a&gt; to install Ubuntu on a MacBook Pro. Simply install rEFIt as instructed on the site and then install Ubuntu on the newly created partition. No weirdness. Depending on your hardware, you may need to make sure that the Ubuntu installer program uses &lt;i&gt;nomemset&lt;/i&gt;. This wasn&apos;t the case for me. &lt;/p&gt;&lt;p&gt;This setup lets me have my favorite operating system on (admittedly) fairly nice (albeit overpriced) Intel x86 machines.  However, the latest generation of MacBook Pros &lt;a href=&quot;https://bugs.launchpad.net/linux/+bug/576601&quot;&gt;have caused me no end of grief with Ubuntu 10.04.&lt;/a&gt; Ubuntu 10.10, Maverick Meerkat, remies everthing and I&apos;m happy to report I&apos;m running the release candidate of Ubuntu 10.10 on my Macbook Pro as I type this. &lt;/p&gt;&lt;p&gt;Everything seems to be working fairly well. I put this post out to confirm it can work for you on a Mac, and to also point people &lt;a href=&quot;http://www.pagondel.org/how-to-instalar-vmware-en-ubuntu-10-10-64-bits/&quot;&gt;to this&lt;/a&gt; page if they&apos;re having trouble getting &lt;a href=&quot;http://www.vmware.com/products/player/&quot;&gt;VMware&apos;s excellent VMware Player&lt;/a&gt; product working on 10.10. &lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Java2Days 2010</title>
+      <link>https://joshlong.com/jl/blogPost/java2days_2010.html</link>
+      <pubDate>Mon, 4 Oct 2010 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/java2days_2010.html</guid>
+      	<description>
+	
+&lt;p&gt; &lt;div style = &quot;float:left; margin-bottom:10px;  margin-right:10px; padding: 10px; background-color: black; width:220px &quot;&gt; &lt;img width =&quot;200&quot;  src = &quot;/media/17872&quot;/&gt;  &lt;/div&gt; I&apos;ll be speaking (again) in Sofia, Bulgaria at &lt;a href=&quot;http://2010.java2days.com/&quot;&gt;the Java2Days conference&lt;/a&gt; on the 7th and 8th of October. I was there last year and quite enjoyed the conference. What a wonderful group! I&apos;ll be copresenting two talks with Oleg Zhurakousky (we&apos;ll be talking about &lt;a href=&quot;http://www.springsource.org/spring-integration&quot;&gt;Spring Integration 2&lt;/a&gt; as well as RabbitMQ and AMQP), and another with &lt;a href=&quot;http://www.jamesward.com/&quot;&gt;James Ward&lt;/a&gt; (we&apos;ll be talking about Spring BlazeDS and Flex, naturally). Finally, I&apos;ll be giving another presentation  on using Spring and the Apache 2 licensed BPMN 2 solution &lt;a href=&quot;http://www.activiti.org&quot;&gt;Activiti&lt;/a&gt; (simialar to the talk I gave at  &lt;a href=&quot;http://jz10.java.no/&quot;&gt;JavaZone&lt;/a&gt; recently).  Java2Days is the only conference of its kind in the Balkans and I sincerely hope to see you there!  &lt;/p&gt;
 
 	</description>
     </item>
@@ -12091,31 +12102,6 @@ Hope this helps somebody else looking for information on how to get started. Thi
 	</description>
     </item>
     <item>
-      <title>Dust</title>
-      <link>https://joshlong.com/jl/blogPost/dust.html</link>
-      <pubDate>Wed, 4 Feb 2009 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/dust.html</guid>
-      	<description>
-	
-&lt;p&gt;Sometimes people tell me, &quot;Josh, you&apos;re an idiot!&quot; Then I have myself a good cry and walk it off.
-&lt;/p&gt; &lt;p&gt;
- Then people ask me about the 7-node grid I keep in my home office. &lt;/p&gt; &lt;p&gt;They wonder why I would keep that many computers in so small a space. They wonder, &quot;why?&quot;
- Besides providing something of an electric heater (the room&apos;s consistently 10F warmer than the rest of the place!), the computers let me test algorithms/concepts in scale. Frameworks like &lt;a href=&quot;http://terracotta.org/&quot;&gt;Teracotta&lt;/a&gt; don&apos;t test very consistently on a single node, after all. And, of course, there&apos;s nothing like having 2TB of space exposed as one giant mount.
-&lt;/p&gt;
-&lt;p&gt;Finally, people ask me if there are any disadvantages. They ask if the electric bill&apos;s high. It isn&apos;t, but that&apos;s a side effect of living in Arizona, where my air conditioner&apos;s on 24/7 and so an extra few computers doesn&apos;t really make a difference.
-
- They ask if I spend my time maintaining them.I tell them I run &lt;a href=&quot;http://en.wikipedia.org/wiki/Ubuntu&quot;&gt;Ubuntu&lt;/a&gt;, so I never get viruses. If a PC malfunctions then I simply repair it and reimage the node.
-
- They press me. Surely there&apos;s &lt;i&gt;something&lt;/i&gt; disadvantageous to running so many computers. I tell them the honest truth. It&apos;s the &lt;a href=&quot;http://en.wikipedia.org/wiki/Dust&quot;&gt;dust&lt;/a&gt;. The dust alone is the reason I want to just invest in EC2. And of course, I&apos;m an asthmatic &lt;b&gt;and&lt;/b&gt; a green fiend. So I can&apos;t use the aerosol canisters to dispel the dust. Nor can I use the Ozone-friendly canisters -- they both trigger my asthma or offend my green sensibilities. So, I have to clean them with a rag on occasion (once every couple of weeks).
-
-&lt;/p&gt;
-
-&lt;p&gt;Next time I get a home office, I&apos;m going to get it with tile. Remember, if you&apos;re going to setup a grid, the biggest challenge you face may not be technical.
-&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Revised Spring Integration Maven &lt;code&gt;pom.xml&lt;/code&gt; Example</title>
       <link>https://joshlong.com/jl/blogPost/revised_spring_integration_maven_codepomxmlcode_example.html</link>
       <pubDate>Wed, 4 Feb 2009 00:00:00 +0000</pubDate>
@@ -12222,6 +12208,31 @@ A bug was &lt;a href=&quot;http://jira.springframework.org/browse/INT-245&quot;&
  			&amp;lt;/dependency&amp;gt;
         &amp;lt;/dependencies&amp;gt;
         &lt;/pre&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Dust</title>
+      <link>https://joshlong.com/jl/blogPost/dust.html</link>
+      <pubDate>Wed, 4 Feb 2009 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/dust.html</guid>
+      	<description>
+	
+&lt;p&gt;Sometimes people tell me, &quot;Josh, you&apos;re an idiot!&quot; Then I have myself a good cry and walk it off.
+&lt;/p&gt; &lt;p&gt;
+ Then people ask me about the 7-node grid I keep in my home office. &lt;/p&gt; &lt;p&gt;They wonder why I would keep that many computers in so small a space. They wonder, &quot;why?&quot;
+ Besides providing something of an electric heater (the room&apos;s consistently 10F warmer than the rest of the place!), the computers let me test algorithms/concepts in scale. Frameworks like &lt;a href=&quot;http://terracotta.org/&quot;&gt;Teracotta&lt;/a&gt; don&apos;t test very consistently on a single node, after all. And, of course, there&apos;s nothing like having 2TB of space exposed as one giant mount.
+&lt;/p&gt;
+&lt;p&gt;Finally, people ask me if there are any disadvantages. They ask if the electric bill&apos;s high. It isn&apos;t, but that&apos;s a side effect of living in Arizona, where my air conditioner&apos;s on 24/7 and so an extra few computers doesn&apos;t really make a difference.
+
+ They ask if I spend my time maintaining them.I tell them I run &lt;a href=&quot;http://en.wikipedia.org/wiki/Ubuntu&quot;&gt;Ubuntu&lt;/a&gt;, so I never get viruses. If a PC malfunctions then I simply repair it and reimage the node.
+
+ They press me. Surely there&apos;s &lt;i&gt;something&lt;/i&gt; disadvantageous to running so many computers. I tell them the honest truth. It&apos;s the &lt;a href=&quot;http://en.wikipedia.org/wiki/Dust&quot;&gt;dust&lt;/a&gt;. The dust alone is the reason I want to just invest in EC2. And of course, I&apos;m an asthmatic &lt;b&gt;and&lt;/b&gt; a green fiend. So I can&apos;t use the aerosol canisters to dispel the dust. Nor can I use the Ozone-friendly canisters -- they both trigger my asthma or offend my green sensibilities. So, I have to clean them with a rag on occasion (once every couple of weeks).
+
+&lt;/p&gt;
+
+&lt;p&gt;Next time I get a home office, I&apos;m going to get it with tile. Remember, if you&apos;re going to setup a grid, the biggest challenge you face may not be technical.
+&lt;/p&gt;
 
 	</description>
     </item>
