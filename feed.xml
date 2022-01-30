@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 30 Jan 2022 05:24:08 +0000</pubDate>
-    <lastBuildDate>Sun, 30 Jan 2022 05:24:08 +0000</lastBuildDate>
+    <pubDate>Sun, 30 Jan 2022 05:26:22 +0000</pubDate>
+    <lastBuildDate>Sun, 30 Jan 2022 05:26:22 +0000</lastBuildDate>
 
     <item>
       <title>Cloud Native Java with Kubernetes Livelessons</title>
@@ -55,7 +55,7 @@
       <guid isPermaLink="false">jl/blogPost/livelessons-reactive-spring-3e.html</guid>
       	<description>
 	&lt;p&gt;Want to learn about how to build reactive systems and services with Spring Boot? Then you&apos;re in luck! These are just the lessons for you!&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/reactive-spring-boot-livelessons-video-training-9780137831401&quot;&gt;Buy on InformIT&lt;/a&gt; &lt;/div&gt; 
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/reactive-spring-boot-livelessons-video-training-9780137831401&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt; 
 
 	</description>
     </item>
@@ -66,11 +66,7 @@
       <guid isPermaLink="false">jl/blogPost/livelessons-cloud-native-java-with-kubernetes.html</guid>
       	<description>
 	&lt;p&gt;Spring Boot is the most efficient and productive way to get to production and these days, as often as not, production  &lt;em&gt;is&lt;/em&gt; Kubernetes. Join me, and we&apos;ll look at how to applications that survive and thrive in the cloud, an on Kubernetes, in particular&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;
-&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-native-java-with-kubernetes-livelessons-2nd-edition-9780137833993&quot;&gt;
-Buy on InformIT
-&lt;/a&gt;
-&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-native-java-with-kubernetes-livelessons-2nd-edition-9780137833993&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt;
 
 	</description>
     </item>
