@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 30 Jan 2022 05:59:24 +0000</pubDate>
-    <lastBuildDate>Sun, 30 Jan 2022 05:59:24 +0000</lastBuildDate>
+    <pubDate>Sun, 30 Jan 2022 06:06:21 +0000</pubDate>
+    <lastBuildDate>Sun, 30 Jan 2022 06:06:21 +0000</lastBuildDate>
 
     <item>
       <title>Cloud Native Java with Kubernetes Livelessons</title>
@@ -62,6 +62,17 @@
 	</description>
     </item>
     <item>
+      <title>Reactive Spring, 3rd Edition</title>
+      <link>https://joshlong.com/jl/blogPost/livelessons-reactive-spring-3e.html</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/livelessons-reactive-spring-3e.html</guid>
+      	<description>
+	&lt;p&gt;Want to learn about how to build reactive systems and services with Spring Boot? Then you&apos;re in luck! These are just the lessons for you!&lt;/p&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/reactive-spring-boot-livelessons-video-training-9780137831401&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt; 
+
+	</description>
+    </item>
+    <item>
       <title>Spring Boot and Kotlin Livelessons</title>
       <link>https://joshlong.com/jl/blogPost/livelessons-spring-boot-and-kotlin.html</link>
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
@@ -95,13 +106,26 @@
 	</description>
     </item>
     <item>
-      <title>Reactive Spring, 3rd Edition</title>
-      <link>https://joshlong.com/jl/blogPost/livelessons-reactive-spring-3e.html</link>
+      <title>Cloud Foundry Livelessons</title>
+      <link>https://joshlong.com/jl/blogPost/livelessons-cloudfoundry.html</link>
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">jl/blogPost/livelessons-reactive-spring-3e.html</guid>
+      <guid isPermaLink="false">jl/blogPost/livelessons-cloudfoundry.html</guid>
       	<description>
-	&lt;p&gt;Want to learn about how to build reactive systems and services with Spring Boot? Then you&apos;re in luck! These are just the lessons for you!&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/reactive-spring-boot-livelessons-video-training-9780137831401&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt; 
+	&lt;p&gt;CloudFoundry is the leading on-prem Platform-as-a-Service. It&apos;s been designed from the ground up to allow organizations to deliver value - software, systems, and services - into production with ease. As a Spring developer, it&apos;s a natural fit and this is your must-watch introduction to going to production with Cloud Foundry.&lt;br /&gt;
+Cloud Foundry is the opensource foundation for some enterprise leading platform-as-a-service offerings &lt;a href=&quot;https://docs.vmware.com/en/VMware-Tanzu-Application-Service/index.html&quot;&gt;like Tanzu Application Service (TAS)&lt;/a&gt;.&lt;br /&gt;
+I put together this video with cloud infrastructure legend Josh McKenty (creator of OpenStack, among other things) so that you could get the operator&apos;s experience  &lt;em&gt;and&lt;/em&gt; the developer&apos;s experience for building cloud native applications with Spring Boot.&lt;/p&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.safaribooksonline.com/library/view/cloud-foundry-livelessons/9780134836126/&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt; 
+
+	</description>
+    </item>
+    <item>
+      <title>RESTful Spring</title>
+      <link>https://joshlong.com/jl/blogPost/livelessons-restful-spring.html</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">jl/blogPost/livelessons-restful-spring.html</guid>
+      	<description>
+	&lt;p&gt;HTTP and REST are the backbone of the service-oriented web, and Spring is one of the best ways to build HTTP endpoints. Join me, and we&apos;ll look at how Spring Boot makes building HTTP endpoints and elegant REST APIs easy!&lt;/p&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://shop.oreilly.com/product/0636920006126.do&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt;
 
 	</description>
     </item>
