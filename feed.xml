@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 30 Jan 2022 09:05:04 +0000</pubDate>
-    <lastBuildDate>Sun, 30 Jan 2022 09:05:04 +0000</lastBuildDate>
+    <pubDate>Sun, 30 Jan 2022 09:07:02 +0000</pubDate>
+    <lastBuildDate>Sun, 30 Jan 2022 09:07:02 +0000</lastBuildDate>
 
     <item>
       <title>Cloud Native Java with Kubernetes Livelessons</title>
@@ -56,7 +56,7 @@ Buy on InformIT&lt;/a&gt;&lt;/div&gt;
       <guid isPermaLink="false">jl/blogPost/livelessons-cloud-native-java-with-kubernetes.html</guid>
       	<description>
 	&lt;p&gt;Spring Boot is the most efficient and productive way to get to production and these days, as often as not, production &lt;em&gt;is&lt;/em&gt; Kubernetes. Join me, and we&apos;ll look at how to applications that survive and thrive in the cloud, an on Kubernetes, in particular.&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-native-java-with-kubernetes-livelessons-2nd-edition-9780137833993&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://learning.oreilly.com/videos/cloud-native-java/9780137834051/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://learning.oreilly.com/videos/cloud-native-java/9780137834051/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-native-java-with-kubernetes-livelessons-2nd-edition-9780137833993&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -116,7 +116,7 @@ Buy on O&apos;REILLY
 	&lt;p&gt;&lt;a href=&quot;https://www.cloudfoundry.org/&quot;&gt;CloudFoundry&lt;/a&gt; is the leading on-prem Platform-as-a-Service. It&apos;s been designed from the ground up to allow organizations to deliver value - software, systems, and services - into production with ease. As a Spring developer, it&apos;s a natural fit and this is your must-watch introduction to going to production with Cloud Foundry.&lt;br /&gt;
 Cloud Foundry is the opensource foundation for some enterprise leading platform-as-a-service offerings &lt;a href=&quot;https://docs.vmware.com/en/VMware-Tanzu-Application-Service/index.html&quot;&gt;like Tanzu Application Service (TAS)&lt;/a&gt;.&lt;br /&gt;
 I put together this video with cloud infrastructure legend &lt;a href=&quot;https://twitter.com/jmckenty&quot;&gt;Josh McKenty&lt;/a&gt; (creator of OpenStack, among other things) so that you could get the operator&apos;s experience  &lt;em&gt;and&lt;/em&gt; the developer&apos;s experience for building cloud native applications with Spring Boot on an industry leading platform-as-a-service.&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-foundry-livelessons-video-training-9780134836102&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/cloud-foundry-livelessons/9780134836126/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;/div&gt; 
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/cloud-foundry-livelessons/9780134836126/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-foundry-livelessons-video-training-9780134836102&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt; 
 
 	</description>
     </item>
