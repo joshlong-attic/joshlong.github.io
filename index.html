@@ -106,10 +106,15 @@ Buy on InformIT
 </a>
 </div>
 </p>
-  			<a href="jl/blogPost/livelessons-reactive-spring-3e.html"><h1>Cloud Native Java with Kubernetes Livelessons</h1></a>
+  			<a href="jl/blogPost/livelessons-spring-boot-and-kotlin.html"><h1>Spring Boot and Kotlin Livelessons</h1></a>
+  			<p>29 January 2022</p>
+  			<p><p>Kotlin is the new JVM language sensation that's sweeping nations. It's elegant, concise, easy-to-learn and - most importantly: very, very, very pragmatic. This pragmatism was born of deep collaborations with various communities (like server-side JVM-based workloads and mobile Android-based workloads) and their use cases. Join me, Spring Developer Advocate Josh Long and we'll look at why Spring Boot and Kotlin were made for each other!</p>
+<div class="buttons"><a class="icon livelessons" href="https://www.oreilly.com/library/view/spring-boot-and/9780136836377/">Buy on InformIT</a> </div>
+</p>
+  			<a href="jl/blogPost/livelessons-reactive-spring-3e.html"><h1>Reactive Spring, 3rd Edition</h1></a>
   			<p>29 January 2022</p>
   			<p><p>Want to learn about how to build reactive systems and services with Spring Boot? Then you're in luck! These are just the lessons for you!</p>
-<div class="buttons"><a class="icon livelessons" href="https://www.safaribooksonline.com/library/view/reactive-spring-boot/9780135255124/">Buy on InformIT</a> </div> 
+<div class="buttons"><a class="icon livelessons" href="https://www.informit.com/store/reactive-spring-boot-livelessons-video-training-9780137831401">Buy on InformIT</a> </div> 
 </p>
   			<a href="jl/blogPost/announcement-podcasts-2022-01-28-spring_framework_cofounder_and_project_lead_friend_and_all_around_a.html"><h1>Bootiful Podcast: Spring Framework cofounder and project lead, friend, and all around amazing human being, Juergen Hoeller</h1></a>
   			<p>28 January 2022</p>
@@ -424,6 +429,346 @@ public class Fabric8NativeApplication {
   			<a href="jl/blogPost/announcement-videos-2021-12-22-controllers_wrapup_all_together_now.html"><h1>Spring Tips: @Controllers: Wrapup (All Together Now...!)</h1></a>
   			<p>22 December 2021</p>
   			<p><p><a href="https://www.youtube.com/watch?v=xhNGqTwsGw0">(2021-12-22) @Controllers: Wrapup (All Together Now...!)</a></p>
+</p>
+  			<a href="jl/blogPost/kubernetes-java-client-and-spring-native-and-graalvm.html"><h1>The Kubernetes Java Client and GraalVM support with Spring Native 0.11.x</h1></a>
+  			<p>18 December 2021</p>
+  			<p><p>You know, I love Spring Native. I've been working on making as much of the Java ecosystem work with Spring Native as I can. Spring Native works all but perfectly for most Spring configuration classes. You don't need to do much <em>unless</em> your objects do something tricky that might anger the GraalVM native image compiler deity, like reflection, loading resources from the CLASSPATH, JDK or AOT(ByteBuddy, CGLib) proxies, serialization, etc. Then, you need to feed the beast some extra information about what went wrong and why.</p>
+<p>The Kubernetes Java client is an automatically code-generated Java client for the Kubernetes Java API. It uses GSON and other reflective technologies to work, so you have to register all the types that get generated. This could of course change from one release to another. The ideal solution is to update the Kubernetes Java client so that it automatically includes all the types in a <code>META-INF/native-image/</code> directory with the full and proper configuration to allow for reflection on those types. But, short of that happening, I've built a Spring Native hint that does the same thing in a fairly automatic fashion.</p>
+<p>I won't reproduce the build because the whole thing is in <a href="https://github.com/kubernetes-native-java/spring-native-kubernetes">the Kubernetes Native Java (<code>kubernetes-native-java</code>) repository, here</a>. Suffice it to say that you'll need the Spring Native and Spring AOT libraries on the classpath, and the latest version of the Kubernetes Java client (14.0 at the time of this writing). You could alternatively <code>git clone</code> that repository and <code>mvn install</code> it.</p>
+<p>This hint works because, in addition to registering some types that are invariants and always need to be registered, it uses the handy <a href="https://github.com/ronmamo/reflections">Reflections</a> API to find all the types annotated with certain annotations and register them for reflection.</p>
+<pre><code class="language-java">
+package io.kubernetes.nativex;
+
+import com.google.gson.annotations.JsonAdapter;
+import io.swagger.annotations.ApiModel;
+import lombok.extern.log4j.Log4j2;
+import org.reflections.Reflections;
+import org.springframework.aot.context.bootstrap.generator.infrastructure.nativex.NativeConfigurationRegistry;
+import org.springframework.nativex.AotOptions;
+import org.springframework.nativex.hint.NativeHint;
+import org.springframework.nativex.hint.TypeHint;
+import org.springframework.nativex.type.NativeConfiguration;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import static org.springframework.nativex.hint.TypeAccess.*;
+
+@NativeHint(//
+
+		options = { &quot;-H:+AddAllCharsets&quot;, &quot;--enable-all-security-services&quot;, &quot;--enable-https&quot;, &quot;--enable-http&quot; },
+		types = { //
+				@TypeHint( //
+						access = { DECLARED_CLASSES, DECLARED_CONSTRUCTORS, DECLARED_FIELDS, DECLARED_METHODS }, //
+						typeNames = { &quot;io.kubernetes.client.informer.cache.ProcessorListener&quot;,
+								&quot;io.kubernetes.client.extended.controller.Controller&quot;,
+								&quot;io.kubernetes.client.custom.IntOrString&quot;,
+								&quot;io.kubernetes.client.custom.Quantity$QuantityAdapter&quot;,
+								&quot;io.kubernetes.client.custom.IntOrString$IntOrStringAdapter&quot;,
+								&quot;io.kubernetes.client.util.generic.GenericKubernetesApi$StatusPatch&quot;,
+								&quot;io.kubernetes.client.util.Watch$Response&quot; }) //
+		}//
+)
+@Log4j2
+public class KubernetesApiNativeConfiguration implements NativeConfiguration {
+
+	@Override
+	public void computeHints(NativeConfigurationRegistry registry, AotOptions aotOptions) {
+		Reflections reflections = new Reflections(&quot;io.kubernetes&quot;);
+		Set&lt;Class&lt;?&gt;&gt; apiModels = reflections.getTypesAnnotatedWith(ApiModel.class);
+		Set&lt;Class&lt;?&gt;&gt; jsonAdapters = reflections.getTypesAnnotatedWith(JsonAdapter.class);
+		Set&lt;Class&lt;?&gt;&gt; all = new HashSet&lt;&gt;();
+		all.addAll(jsonAdapters);
+		all.addAll(apiModels);
+		all.forEach(clzz -&gt; {
+			if (log.isDebugEnabled()) {
+				log.debug(clzz.getName());
+			}
+			registry.reflection().forType(clzz).withAccess(values()).build();
+		});
+	}
+
+}
+
+</code></pre>
+<p>You'll need to make this discoverable by registering it in the <code>src/main/resources/META-INF/spring.factories</code> file.</p>
+<pre><code class="language-properties">org.springframework.nativex.type.NativeConfiguration=io.kubernetes.nativex.KubernetesApiNativeConfiguration
+</code></pre>
+<p>Once that's done, install the library and then add it to the classpath of a module that uses it. I've got <a href="https://github.com/kubernetes-native-java/kubernetes-controller">just such an example here</a>. This examples uses not just the Kubernetes Java client but the Spring Boot autoconfiguration for the Kubernetes Java client.</p>
+<pre><code class="language-java">
+package booternetes.k8s;
+
+import io.kubernetes.client.extended.controller.Controller;
+import io.kubernetes.client.extended.controller.builder.ControllerBuilder;
+import io.kubernetes.client.extended.controller.reconciler.Reconciler;
+import io.kubernetes.client.extended.controller.reconciler.Result;
+import io.kubernetes.client.informer.SharedIndexInformer;
+import io.kubernetes.client.informer.SharedInformerFactory;
+import io.kubernetes.client.informer.cache.Lister;
+import io.kubernetes.client.openapi.ApiClient;
+import io.kubernetes.client.openapi.models.V1Node;
+import io.kubernetes.client.openapi.models.V1NodeList;
+import io.kubernetes.client.openapi.models.V1Pod;
+import io.kubernetes.client.openapi.models.V1PodList;
+import io.kubernetes.client.util.generic.GenericKubernetesApi;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import java.util.Objects;
+
+/**
+ * @author Dave Syer
+ * @author Josh Long
+ */
+@Log4j2
+@SpringBootApplication
+public class KubernetesControllerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(KubernetesControllerApplication.class, args);
+	}
+
+	@Bean
+	SharedIndexInformer&lt;V1Node&gt; nodeInformer(ApiClient apiClient, SharedInformerFactory sharedInformerFactory) {
+		return sharedInformerFactory.sharedIndexInformerFor(
+				new GenericKubernetesApi&lt;&gt;(V1Node.class, V1NodeList.class, &quot;&quot;, &quot;v1&quot;, &quot;nodes&quot;, apiClient), V1Node.class,
+				0);
+	}
+
+	@Bean
+	SharedIndexInformer&lt;V1Pod&gt; podInformer(ApiClient apiClient, SharedInformerFactory sharedInformerFactory) {
+		return sharedInformerFactory.sharedIndexInformerFor(
+				new GenericKubernetesApi&lt;&gt;(V1Pod.class, V1PodList.class, &quot;&quot;, &quot;v1&quot;, &quot;pods&quot;, apiClient), V1Pod.class, 0);
+	}
+
+	// Lists the current nodes and pods that it finds
+	@Bean
+	Lister&lt;V1Node&gt; nodeLister(SharedIndexInformer&lt;V1Node&gt; informer) {
+		return new Lister&lt;&gt;(informer.getIndexer());
+	}
+
+	@Bean
+	Lister&lt;V1Pod&gt; podLister(SharedIndexInformer&lt;V1Pod&gt; informer) {
+		return new Lister&lt;&gt;(informer.getIndexer());
+	}
+
+	@Bean
+	Reconciler reconciler(Lister&lt;V1Node&gt; nodeLister, Lister&lt;V1Pod&gt; podLister) {
+		return request -&gt; {
+			var namespace = &quot;bk&quot;;
+			var node = nodeLister.get(request.getName());
+
+			System.out.println(&quot;node: &quot; + Objects.requireNonNull(node.getMetadata()).getName());
+
+			podLister.namespace(namespace).list().stream()
+					.map(pod -&gt; Objects.requireNonNull(pod.getMetadata()).getName())
+					.forEach(podName -&gt; System.out.println(&quot;pod name: &quot; + podName));
+
+			return new Result(false);
+		};
+	}
+
+	@Bean
+	Controller controller(SharedIndexInformer&lt;V1Pod&gt; podInformer, SharedIndexInformer&lt;V1Node&gt; nodeInformer,
+			SharedInformerFactory sharedInformerFactory, Reconciler reconciler) {
+
+		return ControllerBuilder.defaultBuilder(sharedInformerFactory)
+				.watch(q -&gt; ControllerBuilder.controllerWatchBuilder(V1Node.class, q).build())
+				.withReadyFunc(() -&gt; podInformer.hasSynced() &amp;&amp; nodeInformer.hasSynced()).withReconciler(reconciler)
+				.withName(&quot;booternetesController&quot;).build();
+	}
+
+	@Bean
+	CommandLineRunner go(SharedInformerFactory sharedInformerFactory, Controller controller) {
+		return args -&gt; {
+			sharedInformerFactory.startAllRegisteredInformers();
+			controller.run();
+		};
+	}
+
+}
+
+</code></pre>
+<p>This example iterates the current <code>pod</code> and <code>node</code> instances of the Kubernetes cluster to which you're authenticated and the <code>default</code> namespace. (There's a Java <code>String</code> with the name of the namespace specified in the Java code, and it defaults to <code>default</code>. Change it to use whatever namespace you'd like.).</p>
+<p>Compile the application thusly:</p>
+<pre><code class="language-shell">mvn -DskipTests=true -Pnative clean package
+</code></pre>
+<p>Then run the application. I get output that looks like this.</p>
+<pre><code class="language-shell">13:36:46.713 [main] INFO org.springframework.boot.SpringApplication - AOT mode enabled
+2021-12-18 13:36:46.731  INFO 42020 --- [           main] o.s.nativex.NativeListener               : This application is bootstrapped with code generated with Spring AOT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.1)
+
+2021-12-18 13:36:46.733  INFO 42020 --- [           main] b.k8s.KubernetesControllerApplication    : Starting KubernetesControllerApplication v0.0.1-SNAPSHOT using Java 17.0.1 on mbp2019.local with PID 42020 (/Users/jlong/code/k8s/kubernetes-controller/target/kubernetes-controller started by jlong in /Users/jlong/code/k8s/kubernetes-controller)
+2021-12-18 13:36:46.733  INFO 42020 --- [           main] b.k8s.KubernetesControllerApplication    : No active profile set, falling back to default profiles: default
+2021-12-18 13:36:46.735  INFO 42020 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.kubernetes.client.spring.extended.manifests.config.KubernetesManifestsAutoConfiguration' of type [io.kubernetes.client.spring.extended.manifests.config.KubernetesManifestsAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-18 13:36:46.736  INFO 42020 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'kubernetes.manifests-io.kubernetes.client.spring.extended.manifests.config.KubernetesManifestsProperties' of type [io.kubernetes.client.spring.extended.manifests.config.KubernetesManifestsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-18 13:36:46.737  INFO 42020 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.kubernetes.client.spring.extended.controller.config.KubernetesInformerAutoConfiguration' of type [io.kubernetes.client.spring.extended.controller.config.KubernetesInformerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-18 13:36:46.743  INFO 42020 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'defaultApiClient' of type [io.kubernetes.client.openapi.ApiClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-18 13:36:46.755  INFO 42020 --- [           main] b.k8s.KubernetesControllerApplication    : Started KubernetesControllerApplication in 0.038 seconds (JVM running for 0.041)
+2021-12-18 13:36:46.755  INFO 42020 --- [ntroller-V1Node] i.k.client.informer.cache.Controller     : informer#Controller: ready to run resync &amp; reflector runnable
+2021-12-18 13:36:46.755  INFO 42020 --- [ontroller-V1Pod] i.k.client.informer.cache.Controller     : informer#Controller: ready to run resync &amp; reflector runnable
+2021-12-18 13:36:46.755  INFO 42020 --- [ontroller-V1Pod] i.k.client.informer.cache.Controller     : informer#Controller: resync skipped due to 0 full resync period
+2021-12-18 13:36:46.755  INFO 42020 --- [ntroller-V1Node] i.k.client.informer.cache.Controller     : informer#Controller: resync skipped due to 0 full resync period
+2021-12-18 13:36:46.755  INFO 42020 --- [.models.V1Pod-1] i.k.c.informer.cache.ReflectorRunnable   : class io.kubernetes.client.openapi.models.V1Pod#Start listing and watching...
+2021-12-18 13:36:46.755  INFO 42020 --- [models.V1Node-1] i.k.c.informer.cache.ReflectorRunnable   : class io.kubernetes.client.openapi.models.V1Node#Start listing and watching...
+node: gke-knj-demos-default-pool-8fdf2ef6-p3kz
+node: gke-knj-demos-default-pool-8fdf2ef6-xh08
+node: gke-knj-demos-default-pool-8fdf2ef6-55q9
+pod name: hello-knj-native-6765d4b4d4-vcg9f
+pod name: my-app-68dc994b7c-nddqs
+pod name: hello-knj-native-6765d4b4d4-vcg9f
+pod name: my-app-68dc994b7c-nddqs
+pod name: hello-knj-native-6765d4b4d4-vcg9f
+pod name: my-app-68dc994b7c-nddqs
+
+
+</code></pre>
+<p>That's 38 milliseconds, or 38 thousandths of a second. The resulting application takes up a trivially small memory footprint, too, taking 67.3 megabytes of RAM. You could easily put this inside of a container using the Spring Boot buildpacks support. Just run the following:</p>
+<pre><code class="language-shell">mvn spring-boot:build-image
+</code></pre>
+<p>The default, out-of-the-box configuration for Spring Native and Buildpacks configures a tiny Linux distribution (like Alpine), so the resulting container might indeed be only a tiny bit larger than the GraalVM image itself. It's not uncommon to see Docker images that take up less than 80 megabytes of RAM, complete with an operating system and the GraalVM native image.</p>
+<p>You could then deploy that application to a Kubernetes cluster, which the example also demonstrates by deploying the application to Google Cloud's Kubernetes environment (GKE).</p>
+<p>Here's the trivial Kubernetes configuration (<code>./k8s/controller.yaml</code>) for an example deployment in my Kubernetes cluster's <code>bk</code> namespace.</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Namespace
+metadata:
+  name: bk
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kce-rolebinding
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: bk
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: bk
+  labels:
+    app: kubernetes-controller
+  name: kubernetes-controller
+spec:
+  selector:
+    matchLabels:
+      app: kubernetes-controller
+  template:
+    metadata:
+      labels:
+        app: kubernetes-controller
+    spec:
+      containers:
+        - image: gcr.io/pgtm-jlong/kubernetes-controller
+          imagePullPolicy: Always
+          name: kubernetes-controller
+
+
+</code></pre>
+<p>Here's the trivial Github Actions file required to setup the build and the Google Cloud cluster connection from  my Github Actions pipeline:</p>
+<pre><code class="language-yaml">
+name: Deploy
+
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+  GCLOUD_ZONE: ${{ secrets.GCLOUD_ZONE }}
+  GCLOUD_PROJECT: ${{ secrets.GCLOUD_PROJECT  }}
+  GKE_CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME  }}
+  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME  }}
+  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD  }}
+
+on:
+
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v1
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+
+      - uses: google-github-actions/setup-gcloud@master
+        with:
+          version: '290.0.1'
+          service_account_key: ${{ secrets.GCLOUD_SA_KEY }}
+          project_id: ${{ env.GCLOUD_PROJECT }}
+          export_default_credentials: true
+
+      - run: |-
+          gcloud config set project $GCLOUD_PROJECT
+          gcloud --quiet auth configure-docker
+          gcloud container clusters get-credentials $GKE_CLUSTER_NAME --zone &quot;$GCLOUD_ZONE&quot; --project $GCLOUD_PROJECT
+
+      - name: Deploy
+        run: |
+          cd $GITHUB_WORKSPACE
+          .github/workflows/deploy.sh
+
+
+</code></pre>
+<p>That done, the only thing that remained was the actual build and deployment, which happens, ultimately, in a shell script:</p>
+<pre><code class="language-shell">#!/usr/bin/env bash
+set -e
+set -o pipefail
+
+HERE=&quot;$(dirname $0)&quot;
+echo &quot;current directory is $HERE &quot;
+cd &quot;${HERE}&quot;/..
+export PROJECT_ID=${GCLOUD_PROJECT}
+export ROOT_DIR=$(cd $(dirname $0) &amp;&amp; pwd)
+export APP_NAME=kubernetes-controller
+export GCR_IMAGE_NAME=gcr.io/${PROJECT_ID}/${APP_NAME}
+docker rmi $(docker images -a -q)
+mvn -f &quot;${ROOT_DIR}&quot;/../pom.xml -DskipTests=true clean package spring-boot:build-image
+
+image_id=$(docker images -q $APP_NAME)
+
+echo &quot;tagging ${GCR_IMAGE_NAME}&quot;
+docker tag &quot;${image_id}&quot; $GCR_IMAGE_NAME
+
+echo &quot;pushing ${image_id} to $GCR_IMAGE_NAME &quot;
+docker push $GCR_IMAGE_NAME
+
+echo &quot;deploying to Kubernetes&quot;
+kubectl apply -f ./k8s/controller.yaml
+</code></pre>
+<p>Awkwardly, the very large majority of work required to get a Spring Boot application to production as a GraalVM native image in a Docker image is the stuff <em>after</em> Spring Boot, GraalVM, and and Spring Native are involved. Nice!</p>
+<p>It's a very exciting time to be alive. There are millions of Spring Boot developers out there, and now - with this  - Spring Boot developers can be unqualified Kubernetes developers, too.</p>
+<p>A huge tip of the hat to the <a href="https://twitter.com/David_Syer">good Dr. David Syer</a> who put together a prototype (without Spring Native) on which I based the sample and the beginning of the Spring Native configuration.</p>
 </p>
   			<a href="jl/blogPost/mybatis-and-spring-native.html"><h1>MyBatis and Spring Native 0.11.x</h1></a>
   			<p>18 December 2021</p>
@@ -953,346 +1298,6 @@ mvn -DskipTests=true -Pnative clean package &amp;&amp; ./target/graphql-native
 
 </code></pre>
 <p>Good stuff. Even better? The RSS - the memory of the application taken - is a mere 49.9M. Enjoy!</p>
-</p>
-  			<a href="jl/blogPost/kubernetes-java-client-and-spring-native-and-graalvm.html"><h1>The Kubernetes Java Client and GraalVM support with Spring Native 0.11.x</h1></a>
-  			<p>18 December 2021</p>
-  			<p><p>You know, I love Spring Native. I've been working on making as much of the Java ecosystem work with Spring Native as I can. Spring Native works all but perfectly for most Spring configuration classes. You don't need to do much <em>unless</em> your objects do something tricky that might anger the GraalVM native image compiler deity, like reflection, loading resources from the CLASSPATH, JDK or AOT(ByteBuddy, CGLib) proxies, serialization, etc. Then, you need to feed the beast some extra information about what went wrong and why.</p>
-<p>The Kubernetes Java client is an automatically code-generated Java client for the Kubernetes Java API. It uses GSON and other reflective technologies to work, so you have to register all the types that get generated. This could of course change from one release to another. The ideal solution is to update the Kubernetes Java client so that it automatically includes all the types in a <code>META-INF/native-image/</code> directory with the full and proper configuration to allow for reflection on those types. But, short of that happening, I've built a Spring Native hint that does the same thing in a fairly automatic fashion.</p>
-<p>I won't reproduce the build because the whole thing is in <a href="https://github.com/kubernetes-native-java/spring-native-kubernetes">the Kubernetes Native Java (<code>kubernetes-native-java</code>) repository, here</a>. Suffice it to say that you'll need the Spring Native and Spring AOT libraries on the classpath, and the latest version of the Kubernetes Java client (14.0 at the time of this writing). You could alternatively <code>git clone</code> that repository and <code>mvn install</code> it.</p>
-<p>This hint works because, in addition to registering some types that are invariants and always need to be registered, it uses the handy <a href="https://github.com/ronmamo/reflections">Reflections</a> API to find all the types annotated with certain annotations and register them for reflection.</p>
-<pre><code class="language-java">
-package io.kubernetes.nativex;
-
-import com.google.gson.annotations.JsonAdapter;
-import io.swagger.annotations.ApiModel;
-import lombok.extern.log4j.Log4j2;
-import org.reflections.Reflections;
-import org.springframework.aot.context.bootstrap.generator.infrastructure.nativex.NativeConfigurationRegistry;
-import org.springframework.nativex.AotOptions;
-import org.springframework.nativex.hint.NativeHint;
-import org.springframework.nativex.hint.TypeHint;
-import org.springframework.nativex.type.NativeConfiguration;
-
-import java.util.HashSet;
-import java.util.Set;
-
-import static org.springframework.nativex.hint.TypeAccess.*;
-
-@NativeHint(//
-
-		options = { &quot;-H:+AddAllCharsets&quot;, &quot;--enable-all-security-services&quot;, &quot;--enable-https&quot;, &quot;--enable-http&quot; },
-		types = { //
-				@TypeHint( //
-						access = { DECLARED_CLASSES, DECLARED_CONSTRUCTORS, DECLARED_FIELDS, DECLARED_METHODS }, //
-						typeNames = { &quot;io.kubernetes.client.informer.cache.ProcessorListener&quot;,
-								&quot;io.kubernetes.client.extended.controller.Controller&quot;,
-								&quot;io.kubernetes.client.custom.IntOrString&quot;,
-								&quot;io.kubernetes.client.custom.Quantity$QuantityAdapter&quot;,
-								&quot;io.kubernetes.client.custom.IntOrString$IntOrStringAdapter&quot;,
-								&quot;io.kubernetes.client.util.generic.GenericKubernetesApi$StatusPatch&quot;,
-								&quot;io.kubernetes.client.util.Watch$Response&quot; }) //
-		}//
-)
-@Log4j2
-public class KubernetesApiNativeConfiguration implements NativeConfiguration {
-
-	@Override
-	public void computeHints(NativeConfigurationRegistry registry, AotOptions aotOptions) {
-		Reflections reflections = new Reflections(&quot;io.kubernetes&quot;);
-		Set&lt;Class&lt;?&gt;&gt; apiModels = reflections.getTypesAnnotatedWith(ApiModel.class);
-		Set&lt;Class&lt;?&gt;&gt; jsonAdapters = reflections.getTypesAnnotatedWith(JsonAdapter.class);
-		Set&lt;Class&lt;?&gt;&gt; all = new HashSet&lt;&gt;();
-		all.addAll(jsonAdapters);
-		all.addAll(apiModels);
-		all.forEach(clzz -&gt; {
-			if (log.isDebugEnabled()) {
-				log.debug(clzz.getName());
-			}
-			registry.reflection().forType(clzz).withAccess(values()).build();
-		});
-	}
-
-}
-
-</code></pre>
-<p>You'll need to make this discoverable by registering it in the <code>src/main/resources/META-INF/spring.factories</code> file.</p>
-<pre><code class="language-properties">org.springframework.nativex.type.NativeConfiguration=io.kubernetes.nativex.KubernetesApiNativeConfiguration
-</code></pre>
-<p>Once that's done, install the library and then add it to the classpath of a module that uses it. I've got <a href="https://github.com/kubernetes-native-java/kubernetes-controller">just such an example here</a>. This examples uses not just the Kubernetes Java client but the Spring Boot autoconfiguration for the Kubernetes Java client.</p>
-<pre><code class="language-java">
-package booternetes.k8s;
-
-import io.kubernetes.client.extended.controller.Controller;
-import io.kubernetes.client.extended.controller.builder.ControllerBuilder;
-import io.kubernetes.client.extended.controller.reconciler.Reconciler;
-import io.kubernetes.client.extended.controller.reconciler.Result;
-import io.kubernetes.client.informer.SharedIndexInformer;
-import io.kubernetes.client.informer.SharedInformerFactory;
-import io.kubernetes.client.informer.cache.Lister;
-import io.kubernetes.client.openapi.ApiClient;
-import io.kubernetes.client.openapi.models.V1Node;
-import io.kubernetes.client.openapi.models.V1NodeList;
-import io.kubernetes.client.openapi.models.V1Pod;
-import io.kubernetes.client.openapi.models.V1PodList;
-import io.kubernetes.client.util.generic.GenericKubernetesApi;
-import lombok.extern.log4j.Log4j2;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import java.util.Objects;
-
-/**
- * @author Dave Syer
- * @author Josh Long
- */
-@Log4j2
-@SpringBootApplication
-public class KubernetesControllerApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(KubernetesControllerApplication.class, args);
-	}
-
-	@Bean
-	SharedIndexInformer&lt;V1Node&gt; nodeInformer(ApiClient apiClient, SharedInformerFactory sharedInformerFactory) {
-		return sharedInformerFactory.sharedIndexInformerFor(
-				new GenericKubernetesApi&lt;&gt;(V1Node.class, V1NodeList.class, &quot;&quot;, &quot;v1&quot;, &quot;nodes&quot;, apiClient), V1Node.class,
-				0);
-	}
-
-	@Bean
-	SharedIndexInformer&lt;V1Pod&gt; podInformer(ApiClient apiClient, SharedInformerFactory sharedInformerFactory) {
-		return sharedInformerFactory.sharedIndexInformerFor(
-				new GenericKubernetesApi&lt;&gt;(V1Pod.class, V1PodList.class, &quot;&quot;, &quot;v1&quot;, &quot;pods&quot;, apiClient), V1Pod.class, 0);
-	}
-
-	// Lists the current nodes and pods that it finds
-	@Bean
-	Lister&lt;V1Node&gt; nodeLister(SharedIndexInformer&lt;V1Node&gt; informer) {
-		return new Lister&lt;&gt;(informer.getIndexer());
-	}
-
-	@Bean
-	Lister&lt;V1Pod&gt; podLister(SharedIndexInformer&lt;V1Pod&gt; informer) {
-		return new Lister&lt;&gt;(informer.getIndexer());
-	}
-
-	@Bean
-	Reconciler reconciler(Lister&lt;V1Node&gt; nodeLister, Lister&lt;V1Pod&gt; podLister) {
-		return request -&gt; {
-			var namespace = &quot;bk&quot;;
-			var node = nodeLister.get(request.getName());
-
-			System.out.println(&quot;node: &quot; + Objects.requireNonNull(node.getMetadata()).getName());
-
-			podLister.namespace(namespace).list().stream()
-					.map(pod -&gt; Objects.requireNonNull(pod.getMetadata()).getName())
-					.forEach(podName -&gt; System.out.println(&quot;pod name: &quot; + podName));
-
-			return new Result(false);
-		};
-	}
-
-	@Bean
-	Controller controller(SharedIndexInformer&lt;V1Pod&gt; podInformer, SharedIndexInformer&lt;V1Node&gt; nodeInformer,
-			SharedInformerFactory sharedInformerFactory, Reconciler reconciler) {
-
-		return ControllerBuilder.defaultBuilder(sharedInformerFactory)
-				.watch(q -&gt; ControllerBuilder.controllerWatchBuilder(V1Node.class, q).build())
-				.withReadyFunc(() -&gt; podInformer.hasSynced() &amp;&amp; nodeInformer.hasSynced()).withReconciler(reconciler)
-				.withName(&quot;booternetesController&quot;).build();
-	}
-
-	@Bean
-	CommandLineRunner go(SharedInformerFactory sharedInformerFactory, Controller controller) {
-		return args -&gt; {
-			sharedInformerFactory.startAllRegisteredInformers();
-			controller.run();
-		};
-	}
-
-}
-
-</code></pre>
-<p>This example iterates the current <code>pod</code> and <code>node</code> instances of the Kubernetes cluster to which you're authenticated and the <code>default</code> namespace. (There's a Java <code>String</code> with the name of the namespace specified in the Java code, and it defaults to <code>default</code>. Change it to use whatever namespace you'd like.).</p>
-<p>Compile the application thusly:</p>
-<pre><code class="language-shell">mvn -DskipTests=true -Pnative clean package
-</code></pre>
-<p>Then run the application. I get output that looks like this.</p>
-<pre><code class="language-shell">13:36:46.713 [main] INFO org.springframework.boot.SpringApplication - AOT mode enabled
-2021-12-18 13:36:46.731  INFO 42020 --- [           main] o.s.nativex.NativeListener               : This application is bootstrapped with code generated with Spring AOT
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v2.6.1)
-
-2021-12-18 13:36:46.733  INFO 42020 --- [           main] b.k8s.KubernetesControllerApplication    : Starting KubernetesControllerApplication v0.0.1-SNAPSHOT using Java 17.0.1 on mbp2019.local with PID 42020 (/Users/jlong/code/k8s/kubernetes-controller/target/kubernetes-controller started by jlong in /Users/jlong/code/k8s/kubernetes-controller)
-2021-12-18 13:36:46.733  INFO 42020 --- [           main] b.k8s.KubernetesControllerApplication    : No active profile set, falling back to default profiles: default
-2021-12-18 13:36:46.735  INFO 42020 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.kubernetes.client.spring.extended.manifests.config.KubernetesManifestsAutoConfiguration' of type [io.kubernetes.client.spring.extended.manifests.config.KubernetesManifestsAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-12-18 13:36:46.736  INFO 42020 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'kubernetes.manifests-io.kubernetes.client.spring.extended.manifests.config.KubernetesManifestsProperties' of type [io.kubernetes.client.spring.extended.manifests.config.KubernetesManifestsProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-12-18 13:36:46.737  INFO 42020 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.kubernetes.client.spring.extended.controller.config.KubernetesInformerAutoConfiguration' of type [io.kubernetes.client.spring.extended.controller.config.KubernetesInformerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-12-18 13:36:46.743  INFO 42020 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'defaultApiClient' of type [io.kubernetes.client.openapi.ApiClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-12-18 13:36:46.755  INFO 42020 --- [           main] b.k8s.KubernetesControllerApplication    : Started KubernetesControllerApplication in 0.038 seconds (JVM running for 0.041)
-2021-12-18 13:36:46.755  INFO 42020 --- [ntroller-V1Node] i.k.client.informer.cache.Controller     : informer#Controller: ready to run resync &amp; reflector runnable
-2021-12-18 13:36:46.755  INFO 42020 --- [ontroller-V1Pod] i.k.client.informer.cache.Controller     : informer#Controller: ready to run resync &amp; reflector runnable
-2021-12-18 13:36:46.755  INFO 42020 --- [ontroller-V1Pod] i.k.client.informer.cache.Controller     : informer#Controller: resync skipped due to 0 full resync period
-2021-12-18 13:36:46.755  INFO 42020 --- [ntroller-V1Node] i.k.client.informer.cache.Controller     : informer#Controller: resync skipped due to 0 full resync period
-2021-12-18 13:36:46.755  INFO 42020 --- [.models.V1Pod-1] i.k.c.informer.cache.ReflectorRunnable   : class io.kubernetes.client.openapi.models.V1Pod#Start listing and watching...
-2021-12-18 13:36:46.755  INFO 42020 --- [models.V1Node-1] i.k.c.informer.cache.ReflectorRunnable   : class io.kubernetes.client.openapi.models.V1Node#Start listing and watching...
-node: gke-knj-demos-default-pool-8fdf2ef6-p3kz
-node: gke-knj-demos-default-pool-8fdf2ef6-xh08
-node: gke-knj-demos-default-pool-8fdf2ef6-55q9
-pod name: hello-knj-native-6765d4b4d4-vcg9f
-pod name: my-app-68dc994b7c-nddqs
-pod name: hello-knj-native-6765d4b4d4-vcg9f
-pod name: my-app-68dc994b7c-nddqs
-pod name: hello-knj-native-6765d4b4d4-vcg9f
-pod name: my-app-68dc994b7c-nddqs
-
-
-</code></pre>
-<p>That's 38 milliseconds, or 38 thousandths of a second. The resulting application takes up a trivially small memory footprint, too, taking 67.3 megabytes of RAM. You could easily put this inside of a container using the Spring Boot buildpacks support. Just run the following:</p>
-<pre><code class="language-shell">mvn spring-boot:build-image
-</code></pre>
-<p>The default, out-of-the-box configuration for Spring Native and Buildpacks configures a tiny Linux distribution (like Alpine), so the resulting container might indeed be only a tiny bit larger than the GraalVM image itself. It's not uncommon to see Docker images that take up less than 80 megabytes of RAM, complete with an operating system and the GraalVM native image.</p>
-<p>You could then deploy that application to a Kubernetes cluster, which the example also demonstrates by deploying the application to Google Cloud's Kubernetes environment (GKE).</p>
-<p>Here's the trivial Kubernetes configuration (<code>./k8s/controller.yaml</code>) for an example deployment in my Kubernetes cluster's <code>bk</code> namespace.</p>
-<pre><code class="language-yaml">apiVersion: v1
-kind: Namespace
-metadata:
-  name: bk
-
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: kce-rolebinding
-subjects:
-  - kind: ServiceAccount
-    name: default
-    namespace: bk
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  namespace: bk
-  labels:
-    app: kubernetes-controller
-  name: kubernetes-controller
-spec:
-  selector:
-    matchLabels:
-      app: kubernetes-controller
-  template:
-    metadata:
-      labels:
-        app: kubernetes-controller
-    spec:
-      containers:
-        - image: gcr.io/pgtm-jlong/kubernetes-controller
-          imagePullPolicy: Always
-          name: kubernetes-controller
-
-
-</code></pre>
-<p>Here's the trivial Github Actions file required to setup the build and the Google Cloud cluster connection from  my Github Actions pipeline:</p>
-<pre><code class="language-yaml">
-name: Deploy
-
-
-env:
-  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-  GCLOUD_ZONE: ${{ secrets.GCLOUD_ZONE }}
-  GCLOUD_PROJECT: ${{ secrets.GCLOUD_PROJECT  }}
-  GKE_CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME  }}
-  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME  }}
-  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD  }}
-
-on:
-
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-
-      - uses: actions/checkout@v2
-
-      - uses: actions/cache@v1
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-
-      - name: Set up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: 17
-
-      - uses: google-github-actions/setup-gcloud@master
-        with:
-          version: '290.0.1'
-          service_account_key: ${{ secrets.GCLOUD_SA_KEY }}
-          project_id: ${{ env.GCLOUD_PROJECT }}
-          export_default_credentials: true
-
-      - run: |-
-          gcloud config set project $GCLOUD_PROJECT
-          gcloud --quiet auth configure-docker
-          gcloud container clusters get-credentials $GKE_CLUSTER_NAME --zone &quot;$GCLOUD_ZONE&quot; --project $GCLOUD_PROJECT
-
-      - name: Deploy
-        run: |
-          cd $GITHUB_WORKSPACE
-          .github/workflows/deploy.sh
-
-
-</code></pre>
-<p>That done, the only thing that remained was the actual build and deployment, which happens, ultimately, in a shell script:</p>
-<pre><code class="language-shell">#!/usr/bin/env bash
-set -e
-set -o pipefail
-
-HERE=&quot;$(dirname $0)&quot;
-echo &quot;current directory is $HERE &quot;
-cd &quot;${HERE}&quot;/..
-export PROJECT_ID=${GCLOUD_PROJECT}
-export ROOT_DIR=$(cd $(dirname $0) &amp;&amp; pwd)
-export APP_NAME=kubernetes-controller
-export GCR_IMAGE_NAME=gcr.io/${PROJECT_ID}/${APP_NAME}
-docker rmi $(docker images -a -q)
-mvn -f &quot;${ROOT_DIR}&quot;/../pom.xml -DskipTests=true clean package spring-boot:build-image
-
-image_id=$(docker images -q $APP_NAME)
-
-echo &quot;tagging ${GCR_IMAGE_NAME}&quot;
-docker tag &quot;${image_id}&quot; $GCR_IMAGE_NAME
-
-echo &quot;pushing ${image_id} to $GCR_IMAGE_NAME &quot;
-docker push $GCR_IMAGE_NAME
-
-echo &quot;deploying to Kubernetes&quot;
-kubectl apply -f ./k8s/controller.yaml
-</code></pre>
-<p>Awkwardly, the very large majority of work required to get a Spring Boot application to production as a GraalVM native image in a Docker image is the stuff <em>after</em> Spring Boot, GraalVM, and and Spring Native are involved. Nice!</p>
-<p>It's a very exciting time to be alive. There are millions of Spring Boot developers out there, and now - with this  - Spring Boot developers can be unqualified Kubernetes developers, too.</p>
-<p>A huge tip of the hat to the <a href="https://twitter.com/David_Syer">good Dr. David Syer</a> who put together a prototype (without Spring Native) on which I based the sample and the beginning of the Spring Native configuration.</p>
 </p>
   			<a href="jl/blogPost/announcement-podcasts-2021-12-17-ronald_dehuysser_creator_of_the_distributed_job_scheduler_jobrunr.html"><h1>Bootiful Podcast: Ronald Dehuysser, Creator of the Distributed Job Scheduler JobRunr</h1></a>
   			<p>17 December 2021</p>
@@ -1917,6 +1922,10 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
   			<p>05 June 2020</p>
   			<p><p><a href="http://api.bootifulpodcast.fm/podcasts/85dc9285-ba68-4180-aec2-52cccc140655/produced-audio">(2020-06-05) Kubernetes contributor and Kubernetes Release SIG Chair Tim Pepper</a></p>
 </p>
+  			<a href="jl/blogPost/announcement-podcasts-2020-05-28-a_bootiful_podcast_dr_malini_bhandaru_on_edgex_and_the_opportunitie.html"><h1>Bootiful Podcast: A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space</h1></a>
+  			<p>28 May 2020</p>
+  			<p><p><a href="http://api.bootifulpodcast.fm/podcasts/60026531-40a7-4e6b-a404-7bc033172af9/produced-audio">(2020-05-28) A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space</a></p>
+</p>
   			<a href="jl/blogPost/tired_of_winning.html"><h1>I&apos;m so tired of winning</h1></a>
   			<p>28 May 2020</p>
   			<p><p>I'm so tired of all this <em>winning</em>.</p>
@@ -1935,10 +1944,6 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $E/beam.smp
 </ul>
 <p>All of this was in the last ten days or so! And I know I've missed <a href="http://TheTrumpDump.info">a zillion other things</a>, too.</p>
 <p>So, let's please ask this November as we amble up to the voting box: are we better off than we were in 2016?</p>
-</p>
-  			<a href="jl/blogPost/announcement-podcasts-2020-05-28-a_bootiful_podcast_dr_malini_bhandaru_on_edgex_and_the_opportunitie.html"><h1>Bootiful Podcast: A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space</h1></a>
-  			<p>28 May 2020</p>
-  			<p><p><a href="http://api.bootifulpodcast.fm/podcasts/60026531-40a7-4e6b-a404-7bc033172af9/produced-audio">(2020-05-28) A Bootiful Podcast: Dr. Malini Bhandaru on EdgeX and the opportunities for developers in the IoT space</a></p>
 </p>
   			<a href="jl/blogPost/announcement-podcasts-2020-05-21-jenkins_founder_and_launchable_founder_kohsuke_kawaguchi.html"><h1>Bootiful Podcast: Jenkins founder and Launchable founder Kohsuke Kawaguchi</h1></a>
   			<p>21 May 2020</p>
@@ -3694,13 +3699,6 @@ shell.auth=spring
 
 <p>Any class that&#39;s not in Android&#39;s JDK-class whitelist is not available on Android and thus renders code that depends on it incompatible. Some classes, like those in the JAXB module, are hard to ignore as they&#39;re pervasive. I wanted to use the Spring HATEOAS <code>Resource</code>, <code>Link</code>, types. These types are used as representations of various entities in REST responses that are sometimes rendered as XML using JAXB, they could not be loaded in Android! So, I <a href="https://github.com/joshlong/the-spring-rest-stack/tree/master/code/client/android/src/org/springframework/hateoas">had to copy those types locally</a> and mirror the package structure and remove the offending annotations. Hopefully I can clean this up going forward. </p>
 </p>
-  			<a href="jl/blogPost/springone2gx_2013_is_coming.html"><h1>SpringOne2GX 2013 is Coming!</h1></a>
-  			<p>07 August 2013</p>
-  			<p>
-<p> 
- <IMG src = "/media/18738" width ="300"  style = "float: left; margin-right:10px; "/>
-Have you booked your tickets for <strong><a href="http://www.springone2gx.com/conference/santa_clara/2013/09/home">SpringOne2GX</a></strong>?  This year&#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at <em>many</em> conferences all around the world. Ask any developer with a pulse, and they&#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today's developers, and SpringOne2GX's agenda represents in my estimation the perfect blend of content for today&#39;s developers. Check out <a href="https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule">the agenda</a>. We&#39;ve just recently added talks on <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165">big data</a>, and <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425">REST service security with OAuth</a>. This will be our first show under <a href="http://gopivotal.com">Pivotal</a>, and it&#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&#39;ve just announced our Cloud Foundry conference, <a href="http://platformcf.com">Platform</a>, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!</p>
-</p>
   			<a href="jl/blogPost/introducing_spring_boot.html"><h1>Introducing Spring Boot</h1></a>
   			<p>07 August 2013</p>
   			<p>
@@ -3719,6 +3717,13 @@ class ThisWillActuallyRun {
     }
 }
 </CODE></PRE>
+</p>
+  			<a href="jl/blogPost/springone2gx_2013_is_coming.html"><h1>SpringOne2GX 2013 is Coming!</h1></a>
+  			<p>07 August 2013</p>
+  			<p>
+<p> 
+ <IMG src = "/media/18738" width ="300"  style = "float: left; margin-right:10px; "/>
+Have you booked your tickets for <strong><a href="http://www.springone2gx.com/conference/santa_clara/2013/09/home">SpringOne2GX</a></strong>?  This year&#39;s show is a special one. In my work as the Spring Developer Advocate, I speak at <em>many</em> conferences all around the world. Ask any developer with a pulse, and they&#39;ll confirm that big data (and Hadoop), reactive web applications, REST, mobile application development, and cloud computing are sizzling hot topics today. Pivotal, and Spring, support today's developers, and SpringOne2GX's agenda represents in my estimation the perfect blend of content for today&#39;s developers. Check out <a href="https://springone2gx.com/conference/santa_clara/2013/09/springone/event_schedule">the agenda</a>. We&#39;ve just recently added talks on <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29165">big data</a>, and <a href="http://www.springone2gx.com/conference/santa_clara/2013/09/session?id=29425">REST service security with OAuth</a>. This will be our first show under <a href="http://gopivotal.com">Pivotal</a>, and it&#39;s the only place where you can talk to the developers working on the technologies you care about both at SpringSource and in the community. As you know, we&#39;ve just announced our Cloud Foundry conference, <a href="http://platformcf.com">Platform</a>, and SpringOne2GX full pass ticket holders may register for that show - which is at the same venue as SpringOne2GX just two days earlier - for free! If I had to pay for just one show a year, this would be that show.  Hurry the early bird rate expires this friday!</p>
 </p>
   			<a href="jl/blogPost/icloud_part_1.html"><h1>iCloud (Part #1)</h1></a>
   			<p>01 July 2013</p>
@@ -3740,6 +3745,32 @@ class ThisWillActuallyRun {
 <p>The other problem I've encountered is that it's easy to get duplicate notes or reminders. The easiest way to fix this is to pick on service capable of storing notes and reminders and just stick with it, disabling the rest. For me, this is my personal GMail account. So I've disabled the Reminders from iCloud, deleted all the notes and now when I add a note in one account it appaears across the other devices. </p>
 
 <p>I'll chime back in as I discover more.</p>
+</p>
+  			<a href="jl/blogPost/on_java_code_style.html"><h1>On Java Code Style</h1></a>
+  			<p>19 June 2013</p>
+  			<p>
+<p>Many languages have a sense of &quot;idiomatic&quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. </p>
+
+<p>Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what <code>equals</code>, <code>hashCode</code> and <code>toString</code> do - there&#39;s very little to &quot;idiomatic&quot; Java code, except perhaps compliance with Java style. </p>
+
+<p>There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. <a href="http://www.ontko.com/java/java_coding_standards.html">This directory has a good listing of several style guides</a>. I&#39;d definitely recommend taking a look at the first two guides, in particular.</p>
+
+<p>If you want <em>very</em> well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&#39;s <a href="http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller">a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code</a> (code that, as I&#39;m sure you&#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&#39;s actually won awards at various conferences. This is because <a href="http://blog.springsource.org/author/juergenh/">Juergen Hoeller</a>, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. <em>ALL</em> the Spring projects follow his basic style and approach. That&#39;s why they&#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as <em>Juergenization</em>. </p>
+
+<p>My colleague Oliver Gierke also has a <a href="http://www.olivergierke.de/2013/03/juergenized/">great post on this anomaly, as well as a proper definition on his blog</a>. </p>
+</p>
+  			<a href="jl/blogPost/webinar_replay_building_rest_apis_with_spring.html"><h1>Webinar Replay: Building REST APIs with Spring</h1></a>
+  			<p>19 June 2013</p>
+  			<p>
+<p> <a href="http://www.youtube.com/watch?v=SC0FPuDKei0">
+ <img  style = "float: left; margin-right :10px" src = "/media/18688" width = "300" /></a>
+
+The video of my webinar on
+<a href= "http://www.youtube.com/watch?v=SC0FPuDKei0"> building RESTful APIs with Spring is available online</a>. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
+</p>  
+<P> The code is available at <a href="http://www.slideshare.net/joshlong/rest-apis-with-spring"> on my SlideShare account (vote it up if you like it!)</a> and on <a href="http://github.com/joshlong/the-spring-rest-stack">my private GitHub account (star or fork it if you like it!)</a>.  
+</p> 
+<P> If you have questions or comments, as always, don't hesitate to reach out to me <a href="http://twitter.com/starbuxman">on Twitter</a> or <A href="http://www.joshlong.com/jl/contact.html">by email (see this page for the email)</a>. </p>
 </p>
   			<a href="jl/blogPost/simplified_web_configuration_with_spring.html"><h1>Simplified Web Configuration with Spring</h1></a>
   			<p>19 June 2013</p>
@@ -3877,32 +3908,6 @@ class WebMvcConfiguration extends WebMvcConfigurationSupport {
     }
 }
 </code></pre>
-</p>
-  			<a href="jl/blogPost/on_java_code_style.html"><h1>On Java Code Style</h1></a>
-  			<p>19 June 2013</p>
-  			<p>
-<p>Many languages have a sense of &quot;idiomatic&quot; code: code that embraces the norms of that language. These idioms can often reflect the opinions of the language themselves: functional vs. object oriented vs. imperative, etc. </p>
-
-<p>Java, on the other hand, debuted more as a simpler version of existing norms, rather than an opinion motivating people in any one direction. I would argue that - aside from understanding basics like JavaBean properties and what <code>equals</code>, <code>hashCode</code> and <code>toString</code> do - there&#39;s very little to &quot;idiomatic&quot; Java code, except perhaps compliance with Java style. </p>
-
-<p>There have been many texts published over the years espousing Java style. Compliance with Java style will make your code imminently more readable to 99% of the Java community. Sun / Oracle have published several documents over the years espousing good guidelines for code names and conventions. <a href="http://www.ontko.com/java/java_coding_standards.html">This directory has a good listing of several style guides</a>. I&#39;d definitely recommend taking a look at the first two guides, in particular.</p>
-
-<p>If you want <em>very</em> well structured code, then I can recommend no finer a guide than the Spring framework code itself. Here&#39;s <a href="http://www.se-radio.net/2008/01/episode-82-organization-of-large-code-bases-with-juergen-hoeller">a great podcast on some of the lengths Spring framework lead Juergen Hoeller has gone to over the years to ensure clean, well structured code</a> (code that, as I&#39;m sure you&#39;re aware, has stood the test of time and remained utterly and completely backwards compatible for more than a decade!). The Spring framework is legendary for having a REALLY great codebase. It routinely scores high on code quality tests. It&#39;s actually won awards at various conferences. This is because <a href="http://blog.springsource.org/author/juergenh/">Juergen Hoeller</a>, lead of the Spring framework, is notorious for ensuring a VERY consistent look and feel to the Spring framework. <em>ALL</em> the Spring projects follow his basic style and approach. That&#39;s why they&#39;re so easy to get started with, because they all look and feel consistent. In fact, Juergen&#39;s discipline is so famous that the act of having your code torn to shreds and rebuilt in a stylistically more consistent way is known as <em>Juergenization</em>. </p>
-
-<p>My colleague Oliver Gierke also has a <a href="http://www.olivergierke.de/2013/03/juergenized/">great post on this anomaly, as well as a proper definition on his blog</a>. </p>
-</p>
-  			<a href="jl/blogPost/webinar_replay_building_rest_apis_with_spring.html"><h1>Webinar Replay: Building REST APIs with Spring</h1></a>
-  			<p>19 June 2013</p>
-  			<p>
-<p> <a href="http://www.youtube.com/watch?v=SC0FPuDKei0">
- <img  style = "float: left; margin-right :10px" src = "/media/18688" width = "300" /></a>
-
-The video of my webinar on
-<a href= "http://www.youtube.com/watch?v=SC0FPuDKei0"> building RESTful APIs with Spring is available online</a>. The webinar is basically a whirwind tour of Spring MVC, Spring HATEOAS (for Hypermedia), Spring Data REST (for conventions-oriented REST endpoints powered by Spring Data repositories), Spring Security and Spring Security OAuth to lock down the API, and Spring Social to consume the OAuth API in a clean, consistant manner from Java and Android.
-</p>  
-<P> The code is available at <a href="http://www.slideshare.net/joshlong/rest-apis-with-spring"> on my SlideShare account (vote it up if you like it!)</a> and on <a href="http://github.com/joshlong/the-spring-rest-stack">my private GitHub account (star or fork it if you like it!)</a>.  
-</p> 
-<P> If you have questions or comments, as always, don't hesitate to reach out to me <a href="http://twitter.com/starbuxman">on Twitter</a> or <A href="http://www.joshlong.com/jl/contact.html">by email (see this page for the email)</a>. </p>
 </p>
   			<a href="jl/blogPost/moar_hypermedia.html"><h1>MOAR HYPERMEDIA PAYPAL</h1></a>
   			<p>28 May 2013</p>
@@ -4443,6 +4448,17 @@ In the same vein, years ago, there was a project called <A href="http://www.bean
  <A target="_blank" href="http://datameer2.datameer.com/blog/wp-content/uploads/2012/06/hadoop_ecosystem_d3_photoshop.jpg"> <img  width = "600" src = "/media/18627" /> </a>
 </div>
 </p>
+  			<a href="jl/blogPost/spring_mvc_performance_ftw.html"><h1>Spring MVC Performance FTW</h1></a>
+  			<p>07 March 2013</p>
+  			<p>
+<P> We've all seen 
+ <A href="http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5"> Matt Raible's awesome talk</a>
+ comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
+</p> 
+<P> 
+ For a very detailed dissection of performance, you might check out this talk <a href="http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/">comparing web framework performance</a>. Matt's talk builds on the data amassed from that talk. 
+</p>
+</p>
   			<a href="jl/blogPost/performance_and_the_restful_web.html"><h1>Multi Client Development with Spring Webinar on March 14, 2013</h1></a>
   			<p>07 March 2013</p>
   			<p>
@@ -4455,17 +4471,6 @@ Once we've introduced Spring's REST support, we'll look at how to take  your app
 <P> Be sure to register now and bring questions, ideas, etc.  I look forward to seeing you at there, and we'll look at some of the amazing support  
  Spring offers for building best-of-breed web-centric, RESTful applications.
 </P>
-</p>
-  			<a href="jl/blogPost/spring_mvc_performance_ftw.html"><h1>Spring MVC Performance FTW</h1></a>
-  			<p>07 March 2013</p>
-  			<p>
-<P> We've all seen 
- <A href="http://raibledesigns.com/rd/entry/comparing_web_frameworks_and_html5"> Matt Raible's awesome talk</a>
- comparing  web frameworks with each other. He routinely gives this talk, often updating it as new technologies emerge. More often than not, Spring MVC and Grails emerge as leaders. These sorts of talks of course never have a conclusive winner, but, as I say, more often than not, Grails and Spring MVC emerge near - or at - the top of the stack in terms of community, ease of use, lines of code, performance, features, etc.
-</p> 
-<P> 
- For a very detailed dissection of performance, you might check out this talk <a href="http://www.java-tv.com/2013/02/11/jsf-gwt-springmvc-and-wicket-compared/">comparing web framework performance</a>. Matt's talk builds on the data amassed from that talk. 
-</p>
 </p>
   			<a href="jl/blogPost/my_post_on_spring_at_china_scale.html"><h1>My Post on Spring at China Scale</h1></a>
   			<p>06 March 2013</p>
@@ -4741,13 +4746,6 @@ Wish me luck!
   <img  src = "/media/18534" width = "800" /></DIV>
 </p>
 </p>
-  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
-  			<p>25 November 2012</p>
-  			<p>
-<P> I found <a href= "https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the  
-         environment variables</a> in Cloud Foundry with the values for this particular application.  
- </p>
-</p>
   			<a href="jl/blogPost/spring_data_mongo_transaction_synchronization_does_not_find_a_bound_db.html"><h1>Spring Data Mongo transaction synchronization does not find a bound DB</h1></a>
   			<p>25 November 2012</p>
   			<p>
@@ -4778,6 +4776,13 @@ at org.springframework.transaction.support.AbstractPlatformTransactionManager.co
 at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:393) [spring-tx-3.1.1.RELEASE.jar:3.1.1.RELEASE]
  </pre>
 </p> <p> Hat tip to the one and only  <a href= "https://twitter.com/olivergierke">Oliver Gierke</a> for helping me with this! </P>
+</p>
+  			<a href="jl/blogPost/nice_application_to_enumerate_the_cloud_foundry_environment_properties.html"><h1>Nice Application to Enumerate the Cloud Foundry Environment Properties</h1></a>
+  			<p>25 November 2012</p>
+  			<p>
+<P> I found <a href= "https://gho-env.cloudfoundry.com/">a nice application on Cloud Foundry that enumerates the  
+         environment variables</a> in Cloud Foundry with the values for this particular application.  
+ </p>
 </p>
   			<a href="jl/blogPost/devoxx_2012_trip_report.html"><h1>Devoxx 2012 Trip Report</h1></a>
   			<p>16 November 2012</p>
@@ -5029,6 +5034,12 @@ And so concludes <A href ="http://www.springone2gx.com">SpringOne2GX 2012</A>!
   This is the premier event for JVM developers, featuring <a href = "http://springone2gx.com/conference/washington/2012/10/schedule">great speakers from VMWare, SpringSource, TypeSafe, Neo4j, and many others</a> speaking on all manner of topics.  I thoroughly enjoyed giving my talks on <A href= "http://www.slideshare.net/joshlong/the-cloud-foundry-bootcamp-talk-from-springone-on-the-road-europe">Cloud Foundry</a>, <A href= "http://www.slideshare.net/joshlong/integration-and-batch-processing-on-cloud-foundry">Spring Integration and Spring Batch, and RabbitMQ</a>.  
 		</p>
 </p>
+  			<a href="jl/blogPost/my_dear_aunt_sandra.html"><h1>My Dear Aunt Sandra</h1></a>
+  			<p>15 October 2012</p>
+  			<p>
+<p> <img src  = "/media/18467" style = "margin-bottom: 10px;"   /> <br/> My aunt Sandra passed gentle into that good night, yesterday morning, from complications of <a href ="http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/" height = "400">ALS</a>. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She's the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She'd visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad's side of the family. A true family Matriarch. Sandra was the best of us, and I'll miss her with all my heart. RIP Aunt Sandra.
+ </P>
+</p>
   			<a href="jl/blogPost/springone2gx_2012.html"><h1>SpringOne2GX 2012</h1></a>
   			<p>15 October 2012</p>
   			<p>
@@ -5036,12 +5047,6 @@ And so concludes <A href ="http://www.springone2gx.com">SpringOne2GX 2012</A>!
  <img src = "/media/18460"/> <img src = "/media/18462"/> <img src = "/media/18459"/>
  <img src = "/media/18461"/> </div>It's my favorite time of year! SpringOne2GX kicks off tomorrow. I'll be <A href="http://springone2gx.com/conference/washington/2012/10/speakers/josh_long">giving two talks</a> -- the Cloud Foundry Bootcamp, introducing Cloud Foundry for the Spring developer, and my talk on enterprise application integration and batch processing on Cloud Foundry.  This year's already more exciting than ever before, with talks on Spring, Cloud Foundry, Grails, Hadoop and Scala, and much more.  If you're around, feel free to find me roaming the halls <a href="http://www.twitter.com/starbuxman">or ping me on Twitter</a>!   
   
- </P>
-</p>
-  			<a href="jl/blogPost/my_dear_aunt_sandra.html"><h1>My Dear Aunt Sandra</h1></a>
-  			<p>15 October 2012</p>
-  			<p>
-<p> <img src  = "/media/18467" style = "margin-bottom: 10px;"   /> <br/> My aunt Sandra passed gentle into that good night, yesterday morning, from complications of <a href ="http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001708/" height = "400">ALS</a>. Sandra raised my sister and I as children like her very own every summer for years and years in her home of Salem, Oregon. She raised her own beautiful family. She worked her entire life and made a good living for herself all the while donating substantial time and money to church and charity. She took students in as part of foreign exchanges, mentored children at schools and at the YMCA, where she was a swimming teacher and swam thrice weekly up until last year, in her late 70s. She took me to Paris and London for the first time, and showed me what a quick flight across the ocean could do. She's the reason I speak French (and other languages), and the reason I enjoy so many privileges in this life. Sandra was brave and adventurous. She'd visited by cruise or by plane almost all the ports on earth and over 75+ different countries in her long life. She never went into anything with assumptions. She never let a bad situation stand, always attempting to fix it or better it. She was unpretentious. The matriarch of my dad's side of the family. A true family Matriarch. Sandra was the best of us, and I'll miss her with all my heart. RIP Aunt Sandra.
  </P>
 </p>
   			<a href="jl/blogPost/anders_hejlsberg_introducing_typescript.html"><h1>Anders Hejlsberg Introducing TypeScript</h1></a>
@@ -5083,17 +5088,17 @@ I was in Aarhus, Denmark last week and gave my talk on using Cloud Foundry, and 
  Check out the <a href="http://highscalability.com/blog/2012/9/24/google-spanners-most-surprising-revelation-nosql-is-out-and.html">High Scalability</A> post for more.
 </P>
 </p>
+  			<a href="jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html"><h1>Speaking at the Aarhus, Denmark Java User Group</h1></a>
+  			<p>01 October 2012</p>
+  			<p>
+<P> I'll be speaking at <a href="https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609">the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00</A>. I'll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! </P>
+</p>
   			<a href="jl/blogPost/lanyrd.html"><h1>Lanyrd</h1></a>
   			<p>01 October 2012</p>
   			<p>
 <P> If you guys want to know when and where I'll be speaking next, feel free to check out my <A href ="http://lanyrd.com/profile/starbuxman/">Lanyrd.com</a> page, which usually has information about which shows I'll be at and where. In fact, some times <EM>I</EM> check it out and learn of my obligations before I've been told!  <br/> <img  width = "800" style = "margin-top:10px;" src = "/media/18436"/>
 
  </P>
-</p>
-  			<a href="jl/blogPost/speaking_at_the_aarhus_denmark_java_user_group.html"><h1>Speaking at the Aarhus, Denmark Java User Group</h1></a>
-  			<p>01 October 2012</p>
-  			<p>
-<P> I'll be speaking at <a href="https://secure.trifork.com/aarhus-2012/freeevent/index.jsp?eventOID=4609">the Aarhus, Denmark Java User Group on Tuesday, October 2, 2012 from 17:00-19:00</A>. I'll be talking about Spring and Multi Client Development and giving a Cloud Foundry Bootcamp. I hope to see you there! </P>
 </p>
   			<a href="jl/blogPost/goto_conference_in_aarhus_denmark_2012.html"><h1>GOTO conference in Aarhus, Denmark, 2012</h1></a>
   			<p>27 September 2012</p>
@@ -5254,16 +5259,6 @@ This was my first time in Madrid, Spain, for the <a href = "http://www.springio.
     <P>I really enjoyed JFokus, the Vaadin Dev Days, and finally Spring IO both because they were great events with enthusiastic developers, but also because I got to go with my dad, who got to experience Europe for the first time with me. We learned a lot. I'll be back in Europe next month for <a href = "http://2012.33degree.org/">33rd Degree</a>, and I'll be in Sweden, <EM>again</EM>(!), and in numerous other countries in April for <a href = "http://www.scandevconf.se/">ScanDevConf</a> and the <a href="http://opentour.cloudfoundry.com/">Cloud Foundry Open Tour</a> (which we'll talk about a bit later), respectively, and I'll be sure to approach those trips in the same  way as my dad did: full of a (renewed) curiousity. 
 </P>
 </p>
-  			<a href="jl/blogPost/spring_io_2012.html"><h1>Spring IO 2012</h1></a>
-  			<p>17 February 2012</p>
-  			<p>
-<P> 
- <img src = "/media/17885" style = "margin-right:10px;float:left;" width  = "300"/>
-Looking forward to presenting my talk on  <a href ="http://www.springio.net/agenda">Integration and Batch Processing with Cloud Foundry</A> tomorrow at Spring IO 2012.  
-	
-	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I'll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, <a href = "http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry">it's available here</a>.
-</P>
-</p>
   			<a href="jl/blogPost/jfokus_and_vaadin_2012.html"><h1>JFokus and Vaadin 2012</h1></a>
   			<p>17 February 2012</p>
   			<p>
@@ -5275,6 +5270,16 @@ Looking forward to presenting my talk on  <a href ="http://www.springio.net/agen
  
  If you're in Helsinki, might I recommend  <a href = "https://vaadin.com/meetup/jfokus-2012">the JFokus with Vaadin</A> cruise which leaves from Helsinki aboard the <a href = "http://en.wikipedia.org/wiki/MS_Silja_Symphony">MS Silja Symphony</A> at 17:00 EET, and then works it way to Stockholm, where of course you're then free to attend JFokus. I'll be there, giving a talk on getting to production quicker with technologies like <a href = "http://www.cloudfoundry.org">Cloud Foundry</A>, <A href = "http://www.springframework.org">Spring</A> and <A href = "http://www.vaadin.com">Vaadin</A>. The deck from the  <a href = "http://www.slideshare.net/joshlong/cf-vaadin">talk from the Vaadin dev meetup on Spring, Roo and Vaadin  is available</A>, and so is the  deck from the <a href= "http://www.slideshare.net/joshlong/a-running-tour-of-cloud-foundry">JFokus Cloud Foundry quickie is available here</a>.
 	</P>
+</p>
+  			<a href="jl/blogPost/spring_io_2012.html"><h1>Spring IO 2012</h1></a>
+  			<p>17 February 2012</p>
+  			<p>
+<P> 
+ <img src = "/media/17885" style = "margin-right:10px;float:left;" width  = "300"/>
+Looking forward to presenting my talk on  <a href ="http://www.springio.net/agenda">Integration and Batch Processing with Cloud Foundry</A> tomorrow at Spring IO 2012.  
+	
+	RabbitMQ, Spring Integration and Cloud Foundry are Natural Vehicles for applications that handle large workloads and scale well. In this talk, I'll introduce common architectural patterns to  better scale, using Spring Integration and Spring Batch, using RabbitMQ as the communication fabric.  For those of you who want the deck, <a href = "http://www.slideshare.net/joshlong/enterprise-integration-and-batch-processing-on-cloud-foundry">it's available here</a>.
+</P>
 </p>
   			<a href="jl/blogPost/a_google_music_api_please.html"><h1>A Google Music API, Please?</h1></a>
   			<p>26 January 2012</p>
@@ -6649,14 +6654,6 @@ and I can't wait to see what comes next.
 fantastic new year, and a new decade. 
 </P>
 </p>
-  			<a href="jl/blogPost/devoxx_2010.html"><h1>Devoxx 2010</h1></a>
-  			<p>23 November 2010</p>
-  			<p>
-<p>  
- I've just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I'm glad to be home! There's a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!</p>
-<P>Then, I'm off to speak at the Salesforce.com <a href="https://www.salesforce.com/dreamforce/">Dreamforce conference</a>. I'll be giving an intro to <a href="http://www.springsource.org/about">Spring</a> for the busy Force.com developer with my friend <a href="http://twitter.com/quintonwall">Quinton Wall,</a> the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the <a href="http://www.vmforce.com">VMforce</a> cloud, coming from a Force.com background. 
- The event looks to be <em>very</em> interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton's giving a keynote, and Stevie Wonder's the musical talent... not too shabby!), so don't miss it!</p>
-</p>
   			<a href="jl/blogPost/the_h2_embedded_database.html"><h1>The H2 Embedded Database</h1></a>
   			<p>23 November 2010</p>
   			<p>
@@ -6687,6 +6684,14 @@ featured exclusive support   for persisting process state in H2, and H2 alone. A
  As I've never sat down and done a comparison against my  RDBMS-of-choice, <a href="http://www.postgresql.org">PostgreSQL</a>, I don't really know where H2 stands as an alternative, but my cursory sort of uses thus far give me the impression that it'd handily give MySQL a run for its money. </p> 
 </p> 
 </p>
+  			<a href="jl/blogPost/devoxx_2010.html"><h1>Devoxx 2010</h1></a>
+  			<p>23 November 2010</p>
+  			<p>
+<p>  
+ I've just returned from Devoxx 2010 where I manned the SpringSource booth and talked to members from the community and gave a talk on the latest and greatest in the wide world of Spring. It was a lot of fun, but I'm glad to be home! There's a bit of downtown for those of us in the states as we celebrate Thanksgiving. Looking forward to catching up on some work!</p>
+<P>Then, I'm off to speak at the Salesforce.com <a href="https://www.salesforce.com/dreamforce/">Dreamforce conference</a>. I'll be giving an intro to <a href="http://www.springsource.org/about">Spring</a> for the busy Force.com developer with my friend <a href="http://twitter.com/quintonwall">Quinton Wall,</a> the SalesForce.com evangelist. This talk will be useful for developers interested in moving to the <a href="http://www.vmforce.com">VMforce</a> cloud, coming from a Force.com background. 
+ The event looks to be <em>very</em> interesting (beyond the incredibly cool technical sessions, I hear Bill Clinton's giving a keynote, and Stevie Wonder's the musical talent... not too shabby!), so don't miss it!</p>
+</p>
   			<a href="jl/blogPost/adobe_max_2010.html"><h1>Adobe MAX 2010</h1></a>
   			<p>30 October 2010</p>
   			<p>
@@ -6704,15 +6709,15 @@ As you might expect from a good conference, there were plenty of great hallway c
   			<p>
 <p><a href="http://www.springone2gx.com/" border="0"> <img src = "/media/17878" style  = "float:left; margin-right:10px; " /></a>  I'll be speaking at <a href="http://www.springone2gx.com/">SpringOne2GX</a> this week along with a raft of supremely awesome speakers from the Spring and Grails communities.   I'll be delivering a talk about building custom components (mostly, custom adapters) for <a href="http://www.springsource.com/spring-integration">Spring Integration.</a>  There are other talks happening concurrently that, if I weren't giving a talk, I'd want to attend. :-) This year is poised to continue last year's agressive growth in attendance. Besides my talk, I'll be there  taking in the talks and chatting with people in the hallways.  I hope to see you there! </p>
 </p>
-  			<a href="jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html"><h1>Ubuntu 10.10 (Maverick Meerkat) on a MacBook Pro</h1></a>
-  			<p>04 October 2010</p>
-  			<p>
-<p> I have long used <a href="http://refit.sourceforge.net/">rEFIt</a> to install Ubuntu on a MacBook Pro. Simply install rEFIt as instructed on the site and then install Ubuntu on the newly created partition. No weirdness. Depending on your hardware, you may need to make sure that the Ubuntu installer program uses <i>nomemset</i>. This wasn't the case for me. </p><p>This setup lets me have my favorite operating system on (admittedly) fairly nice (albeit overpriced) Intel x86 machines.  However, the latest generation of MacBook Pros <a href="https://bugs.launchpad.net/linux/+bug/576601">have caused me no end of grief with Ubuntu 10.04.</a> Ubuntu 10.10, Maverick Meerkat, remies everthing and I'm happy to report I'm running the release candidate of Ubuntu 10.10 on my Macbook Pro as I type this. </p><p>Everything seems to be working fairly well. I put this post out to confirm it can work for you on a Mac, and to also point people <a href="http://www.pagondel.org/how-to-instalar-vmware-en-ubuntu-10-10-64-bits/">to this</a> page if they're having trouble getting <a href="http://www.vmware.com/products/player/">VMware's excellent VMware Player</a> product working on 10.10. </p>
-</p>
   			<a href="jl/blogPost/java2days_2010.html"><h1>Java2Days 2010</h1></a>
   			<p>04 October 2010</p>
   			<p>
 <p> <div style = "float:left; margin-bottom:10px;  margin-right:10px; padding: 10px; background-color: black; width:220px "> <img width ="200"  src = "/media/17872"/>  </div> I'll be speaking (again) in Sofia, Bulgaria at <a href="http://2010.java2days.com/">the Java2Days conference</a> on the 7th and 8th of October. I was there last year and quite enjoyed the conference. What a wonderful group! I'll be copresenting two talks with Oleg Zhurakousky (we'll be talking about <a href="http://www.springsource.org/spring-integration">Spring Integration 2</a> as well as RabbitMQ and AMQP), and another with <a href="http://www.jamesward.com/">James Ward</a> (we'll be talking about Spring BlazeDS and Flex, naturally). Finally, I'll be giving another presentation  on using Spring and the Apache 2 licensed BPMN 2 solution <a href="http://www.activiti.org">Activiti</a> (simialar to the talk I gave at  <a href="http://jz10.java.no/">JavaZone</a> recently).  Java2Days is the only conference of its kind in the Balkans and I sincerely hope to see you there!  </p>
+</p>
+  			<a href="jl/blogPost/ubuntu_1010_maverick_meerkat_on_a_macbook_pro.html"><h1>Ubuntu 10.10 (Maverick Meerkat) on a MacBook Pro</h1></a>
+  			<p>04 October 2010</p>
+  			<p>
+<p> I have long used <a href="http://refit.sourceforge.net/">rEFIt</a> to install Ubuntu on a MacBook Pro. Simply install rEFIt as instructed on the site and then install Ubuntu on the newly created partition. No weirdness. Depending on your hardware, you may need to make sure that the Ubuntu installer program uses <i>nomemset</i>. This wasn't the case for me. </p><p>This setup lets me have my favorite operating system on (admittedly) fairly nice (albeit overpriced) Intel x86 machines.  However, the latest generation of MacBook Pros <a href="https://bugs.launchpad.net/linux/+bug/576601">have caused me no end of grief with Ubuntu 10.04.</a> Ubuntu 10.10, Maverick Meerkat, remies everthing and I'm happy to report I'm running the release candidate of Ubuntu 10.10 on my Macbook Pro as I type this. </p><p>Everything seems to be working fairly well. I put this post out to confirm it can work for you on a Mac, and to also point people <a href="http://www.pagondel.org/how-to-instalar-vmware-en-ubuntu-10-10-64-bits/">to this</a> page if they're having trouble getting <a href="http://www.vmware.com/products/player/">VMware's excellent VMware Player</a> product working on 10.10. </p>
 </p>
   			<a href="jl/blogPost/spring_and_the_activiti_bpmn2_engine_at_javazone_2010.html"><h1>Spring and the Activiti BPMN2 engine  at JavaZone 2010</h1></a>
   			<p>03 September 2010</p>
@@ -8998,6 +9003,25 @@ So the next piece is to ensure you give Spring a chance to react to the new clas
 Hope this helps somebody else looking for information on how to get started. This is really quite powerful.
 </p>
 </p>
+  			<a href="jl/blogPost/dust.html"><h1>Dust</h1></a>
+  			<p>04 February 2009</p>
+  			<p>
+<p>Sometimes people tell me, "Josh, you're an idiot!" Then I have myself a good cry and walk it off.
+</p> <p>
+ Then people ask me about the 7-node grid I keep in my home office. </p> <p>They wonder why I would keep that many computers in so small a space. They wonder, "why?"
+ Besides providing something of an electric heater (the room's consistently 10F warmer than the rest of the place!), the computers let me test algorithms/concepts in scale. Frameworks like <a href="http://terracotta.org/">Teracotta</a> don't test very consistently on a single node, after all. And, of course, there's nothing like having 2TB of space exposed as one giant mount.
+</p>
+<p>Finally, people ask me if there are any disadvantages. They ask if the electric bill's high. It isn't, but that's a side effect of living in Arizona, where my air conditioner's on 24/7 and so an extra few computers doesn't really make a difference.
+
+ They ask if I spend my time maintaining them.I tell them I run <a href="http://en.wikipedia.org/wiki/Ubuntu">Ubuntu</a>, so I never get viruses. If a PC malfunctions then I simply repair it and reimage the node.
+
+ They press me. Surely there's <i>something</i> disadvantageous to running so many computers. I tell them the honest truth. It's the <a href="http://en.wikipedia.org/wiki/Dust">dust</a>. The dust alone is the reason I want to just invest in EC2. And of course, I'm an asthmatic <b>and</b> a green fiend. So I can't use the aerosol canisters to dispel the dust. Nor can I use the Ozone-friendly canisters -- they both trigger my asthma or offend my green sensibilities. So, I have to clean them with a rag on occasion (once every couple of weeks).
+
+</p>
+
+<p>Next time I get a home office, I'm going to get it with tile. Remember, if you're going to setup a grid, the biggest challenge you face may not be technical.
+</p>
+</p>
   			<a href="jl/blogPost/revised_spring_integration_maven_codepomxmlcode_example.html"><h1>Revised Spring Integration Maven &lt;code&gt;pom.xml&lt;/code&gt; Example</h1></a>
   			<p>04 February 2009</p>
   			<p>
@@ -9101,25 +9125,6 @@ A bug was <a href="http://jira.springframework.org/browse/INT-245">filed</a>. Fi
  			&lt;/dependency&gt;
         &lt;/dependencies&gt;
         </pre>
-</p>
-  			<a href="jl/blogPost/dust.html"><h1>Dust</h1></a>
-  			<p>04 February 2009</p>
-  			<p>
-<p>Sometimes people tell me, "Josh, you're an idiot!" Then I have myself a good cry and walk it off.
-</p> <p>
- Then people ask me about the 7-node grid I keep in my home office. </p> <p>They wonder why I would keep that many computers in so small a space. They wonder, "why?"
- Besides providing something of an electric heater (the room's consistently 10F warmer than the rest of the place!), the computers let me test algorithms/concepts in scale. Frameworks like <a href="http://terracotta.org/">Teracotta</a> don't test very consistently on a single node, after all. And, of course, there's nothing like having 2TB of space exposed as one giant mount.
-</p>
-<p>Finally, people ask me if there are any disadvantages. They ask if the electric bill's high. It isn't, but that's a side effect of living in Arizona, where my air conditioner's on 24/7 and so an extra few computers doesn't really make a difference.
-
- They ask if I spend my time maintaining them.I tell them I run <a href="http://en.wikipedia.org/wiki/Ubuntu">Ubuntu</a>, so I never get viruses. If a PC malfunctions then I simply repair it and reimage the node.
-
- They press me. Surely there's <i>something</i> disadvantageous to running so many computers. I tell them the honest truth. It's the <a href="http://en.wikipedia.org/wiki/Dust">dust</a>. The dust alone is the reason I want to just invest in EC2. And of course, I'm an asthmatic <b>and</b> a green fiend. So I can't use the aerosol canisters to dispel the dust. Nor can I use the Ozone-friendly canisters -- they both trigger my asthma or offend my green sensibilities. So, I have to clean them with a rag on occasion (once every couple of weeks).
-
-</p>
-
-<p>Next time I get a home office, I'm going to get it with tile. Remember, if you're going to setup a grid, the biggest challenge you face may not be technical.
-</p>
 </p>
   			<a href="jl/blogPost/scalability_is_not_an_architectural_capabity_anymore_on_artimacom.html"><h1>&quot;Scalability Is Not An Architectural &quot;Capabity&quot; Anymore,&quot; on Artima.com</h1></a>
   			<p>02 February 2009</p>
