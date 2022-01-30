@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 30 Jan 2022 09:00:22 +0000</pubDate>
-    <lastBuildDate>Sun, 30 Jan 2022 09:00:22 +0000</lastBuildDate>
+    <pubDate>Sun, 30 Jan 2022 09:03:37 +0000</pubDate>
+    <lastBuildDate>Sun, 30 Jan 2022 09:03:37 +0000</lastBuildDate>
 
     <item>
       <title>Cloud Native Java with Kubernetes Livelessons</title>
@@ -44,10 +44,8 @@
       <guid isPermaLink="false">jl/blogPost/livelessons-applied-continuous-delivery.html</guid>
       	<description>
 	&lt;p&gt;Go faster! Go! Go! Go! They all cry. But any idiot can get in a Ferarri and drive it into a wall and great speed. Speed without safety is pointless! In this video, join Spring Cloud contributor, Spring Cloud Contract founder, and my friend Marcin Grzejszczak and me, and we&apos;ll look at how to embrace continuous delivery to build applications and get them to production not just quickly, but &lt;em&gt;safely&lt;/em&gt;.&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;
-&lt;p&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/applied-continuous-delivery/9780134857053/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/applied-continuous-delivery-livelessons-video-training-9780134857060&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/applied-continuous-delivery/9780134857053/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/applied-continuous-delivery-livelessons-video-training-9780134857060&quot;&gt;
+Buy on InformIT&lt;/a&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -58,10 +56,7 @@
       <guid isPermaLink="false">jl/blogPost/livelessons-cloud-native-java-with-kubernetes.html</guid>
       	<description>
 	&lt;p&gt;Spring Boot is the most efficient and productive way to get to production and these days, as often as not, production &lt;em&gt;is&lt;/em&gt; Kubernetes. Join me, and we&apos;ll look at how to applications that survive and thrive in the cloud, an on Kubernetes, in particular.&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;
-&lt;p&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-native-java-with-kubernetes-livelessons-2nd-edition-9780137833993&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://learning.oreilly.com/videos/cloud-native-java/9780137834051/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-native-java-with-kubernetes-livelessons-2nd-edition-9780137833993&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://learning.oreilly.com/videos/cloud-native-java/9780137834051/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -84,12 +79,9 @@ Buy on O&apos;REILLY&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quo
       <guid isPermaLink="false">jl/blogPost/livelessons-spring-boot-and-kotlin.html</guid>
       	<description>
 	&lt;p&gt;Kotlin is the new JVM language sensation that&apos;s sweeping nations. It&apos;s elegant, concise, easy-to-learn and - most importantly: very, very, very pragmatic. This pragmatism was born of deep collaborations with various communities (like server-side JVM-based workloads and mobile Android-based workloads) and their use cases. Join me, Spring Developer Advocate Josh Long and we&apos;ll look at why Spring Boot and Kotlin were made for each other!&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;
-&lt;p&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/library/view/spring-boot-and/9780136836377/&quot;&gt;&lt;br /&gt;
-Buy on O&apos;REILLY&lt;br /&gt;
-&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/spring-boot-and-kotlin-livelessons-video-training-9780136836407&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/library/view/spring-boot-and/9780136836377/&quot;&gt;
+Buy on O&apos;REILLY
+&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/spring-boot-and-kotlin-livelessons-video-training-9780136836407&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -100,10 +92,7 @@ Buy on O&apos;REILLY&lt;br /&gt;
       <guid isPermaLink="false">jl/blogPost/livelessons-spring-security.html</guid>
       	<description>
 	&lt;p&gt;Spring Security has been around almost as long as Spring itself. In the early days, it was called the Acegi framework. It has come quite the distance since then! Spring Security features the most robust ecosystem for security integrations for enterprise Java developers (or, indeed, all developers!) and you should definitely get to know it. Join Spring Security project lead Rob Winch and yours truly and we&apos;ll look at how to build secure Spring Boot applications and services.&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;
-&lt;p&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/spring-security/9780135415054/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/spring-security-livelessons-video-training-9780135383117&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt; 
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/spring-security/9780135415054/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/spring-security-livelessons-video-training-9780135383117&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt; 
 
 	</description>
     </item>
@@ -114,10 +103,7 @@ Buy on O&apos;REILLY&lt;br /&gt;
       <guid isPermaLink="false">jl/blogPost/livelessons-building-microservices-with-spring-boot.html</guid>
       	<description>
 	&lt;p&gt;This should be your first stop if you haven&apos;t used Spring Boot before! This video, featuring Spring Boot lead and project cofounder &lt;a href=&quot;https://twitter.com/phillip_webb&quot;&gt;Phil Webb (@phillip_webb)&lt;/a&gt; and yours truly, Spring Developer Advocate &lt;a href=&quot;https://twitter.com/starbuxman&quot;&gt;Josh Long (@starbuxman)&lt;/a&gt;, presents an exhaustive look at the framework and its various, supported use cases. If you haven&apos;t started with Spring Boot, &lt;a href=&quot;https://start.spring.io&quot;&gt;start here&lt;/a&gt;. But, if you&apos;re confused about what to do there and you want two of the best tour guides around, then start &lt;em&gt;here&lt;/em&gt;!&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;
-&lt;p&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.safaribooksonline.com/library/view/building-microservices-with/9780134192468&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/building-microservices-with-spring-boot-livelessons-9780134678665&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.safaribooksonline.com/library/view/building-microservices-with/9780134192468&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/building-microservices-with-spring-boot-livelessons-9780134678665&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -130,10 +116,7 @@ Buy on O&apos;REILLY&lt;br /&gt;
 	&lt;p&gt;&lt;a href=&quot;https://www.cloudfoundry.org/&quot;&gt;CloudFoundry&lt;/a&gt; is the leading on-prem Platform-as-a-Service. It&apos;s been designed from the ground up to allow organizations to deliver value - software, systems, and services - into production with ease. As a Spring developer, it&apos;s a natural fit and this is your must-watch introduction to going to production with Cloud Foundry.&lt;br /&gt;
 Cloud Foundry is the opensource foundation for some enterprise leading platform-as-a-service offerings &lt;a href=&quot;https://docs.vmware.com/en/VMware-Tanzu-Application-Service/index.html&quot;&gt;like Tanzu Application Service (TAS)&lt;/a&gt;.&lt;br /&gt;
 I put together this video with cloud infrastructure legend &lt;a href=&quot;https://twitter.com/jmckenty&quot;&gt;Josh McKenty&lt;/a&gt; (creator of OpenStack, among other things) so that you could get the operator&apos;s experience  &lt;em&gt;and&lt;/em&gt; the developer&apos;s experience for building cloud native applications with Spring Boot on an industry leading platform-as-a-service.&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;
-&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/cloud-foundry-livelessons/9780134836126/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;
-&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-foundry-livelessons-video-training-9780134836102&quot;&gt;Buy on InformIT&lt;/a&gt;
-&lt;/div&gt; 
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/cloud-foundry-livelessons/9780134836126/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/cloud-foundry-livelessons-video-training-9780134836102&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt; 
 
 	</description>
     </item>
@@ -144,9 +127,7 @@ I put together this video with cloud infrastructure legend &lt;a href=&quot;http
       <guid isPermaLink="false">jl/blogPost/livelessons-restful-spring.html</guid>
       	<description>
 	&lt;p&gt;HTTP and REST are the backbone of the service-oriented web, and Spring is one of the best ways to build HTTP endpoints. Join me, and we&apos;ll look at how Spring Boot makes building HTTP endpoints and elegant REST APIs easy!&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;
-	&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/restful-web-apis/9780133890204/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;
-&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.oreilly.com/videos/restful-web-apis/9780133890204/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;/div&gt;
 
 	</description>
     </item>
@@ -157,12 +138,9 @@ I put together this video with cloud infrastructure legend &lt;a href=&quot;http
       <guid isPermaLink="false">jl/blogPost/livelessons-spring-framework.html</guid>
       	<description>
 	&lt;p&gt;Want to learn all about the wide and wonderful world of Springdom? Well, look no further! Join me, Spring Developer Advocate &lt;a href=&quot;https://twitter.com/starbuxman&quot;&gt;Josh Long (@starbuxman)&lt;/a&gt; and we&apos;ll look at the various ecosystem components of Spring. NB: this video predates Spring Boot. It provides a good grounding on the components that provide the foundation for microframework sensation that&apos;s sweeping nations, Spring Boot.&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;
-&lt;p&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.safaribooksonline.com/library/view/spring-framework/9780133477252/&quot;&gt;&lt;br /&gt;
-Buy on O&apos;REILLY&lt;br /&gt;
-&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.safaribooksonline.com/library/view/spring-framework/9780133477252/&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://www.safaribooksonline.com/library/view/spring-framework/9780133477252/&quot;&gt;
+Buy on O&apos;REILLY
+&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.safaribooksonline.com/library/view/spring-framework/9780133477252/&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt;
 
 	</description>
     </item>
