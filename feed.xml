@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 30 Jan 2022 05:58:14 +0000</pubDate>
-    <lastBuildDate>Sun, 30 Jan 2022 05:58:14 +0000</lastBuildDate>
+    <pubDate>Sun, 30 Jan 2022 05:59:24 +0000</pubDate>
+    <lastBuildDate>Sun, 30 Jan 2022 05:59:24 +0000</lastBuildDate>
 
     <item>
       <title>Cloud Native Java with Kubernetes Livelessons</title>
@@ -111,7 +111,7 @@
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">jl/blogPost/livelessons-spring-framework.html</guid>
       	<description>
-	&lt;p&gt;Want to learn all about the wide and wonderful world of Springdom? Well, look no further! Join me, Spring Developer Advocate Josh Long and we&apos;ll look at the various ecosystem components of Spring. NB: this video predates Spring Boot. It provides a good grounding on the components that provide the foundation for Spring Boot.&lt;/p&gt;
+	&lt;p&gt;Want to learn all about the wide and wonderful world of Springdom? Well, look no further! Join me, Spring Developer Advocate &lt;a href=&quot;https://twitter.com/starbuxman&quot;&gt;Josh Long (@starbuxman)&lt;/a&gt; and we&apos;ll look at the various ecosystem components of Spring. NB: this video predates Spring Boot. It provides a good grounding on the components that provide the foundation for microframework sensation that&apos;s sweeping nations, Spring Boot.&lt;/p&gt;
 &lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.safaribooksonline.com/library/view/spring-framework/9780133477252/&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt;
 
 	</description>
