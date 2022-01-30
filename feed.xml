@@ -6,8 +6,8 @@
     <atom:link href="https://joshlong.com/feed.xml" rel="self" type="application/rss+xml" />
     <description> Josh Long's Bootiful Blog </description>
     <language>en-gb</language>
-    <pubDate>Sun, 30 Jan 2022 09:37:42 +0000</pubDate>
-    <lastBuildDate>Sun, 30 Jan 2022 09:37:42 +0000</lastBuildDate>
+    <pubDate>Sun, 30 Jan 2022 09:42:48 +0000</pubDate>
+    <lastBuildDate>Sun, 30 Jan 2022 09:42:48 +0000</lastBuildDate>
 
     <item>
       <title>Cloud Native Java with Kubernetes Livelessons</title>
@@ -160,7 +160,7 @@ Buy on O&apos;REILLY
       <guid isPermaLink="false">jl/blogPost/reactive-spring-3e-livelessons.html</guid>
       	<description>
 	&lt;p&gt;I was so excited to return to the studio last year for the first time since the pandemic to update this video looking at reactive programming with Spring.&lt;/p&gt;
-&lt;div class=&quot;buttons&quot;&gt;&lt;a class=&quot;icon oreilly&quot; href=&quot;https://learning.oreilly.com/videos/reactive-spring-boot/9780137831463/&quot;&gt;Buy on O&apos;REILLY&lt;/a&gt;&lt;a class=&quot;icon livelessons&quot; href=&quot;https://www.informit.com/store/reactive-spring-boot-livelessons-video-training-9780137831401&quot;&gt;Buy on InformIT&lt;/a&gt;&lt;/div&gt; 
+&lt;p&gt;You can buy this video  on &lt;a href=&quot;https://learning.oreilly.com/videos/reactive-spring-boot/9780137831463/&quot;&gt;O&apos;REILLY &lt;/a&gt; or on &lt;a href=&quot;https://www.informit.com/store/reactive-spring-boot-livelessons-video-training-9780137831401&quot;&gt;InformIT&lt;/a&gt;.&lt;/p&gt;
 
 	</description>
     </item>
